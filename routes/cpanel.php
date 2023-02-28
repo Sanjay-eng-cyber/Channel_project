@@ -19,7 +19,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::put('/change-password/{id}', [changePasswordController::class, 'passwordChange'])->name('cms.password.submit');
 
         Route::get('/', 'App\Http\Controllers\cms\statisticsController@index')->name("cms.statistics.index");
-        Route::get('/logout', [LoginController::class, 'logout'])->name("cms.logout");
+        Route::get('/logout', 'App\Http\Controllers\cms\LoginController@logout')->name("cms.logout");
+
     });
 
     require __DIR__ . '/auth.php';
