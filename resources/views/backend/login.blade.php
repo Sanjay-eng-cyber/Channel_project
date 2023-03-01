@@ -59,7 +59,7 @@
 
                 <div class="text-center mb-4">
 
-                    <a href="{{ route('password.request') }}" class="text-black text-muted text-underline">
+                    <a href="{{ route('cms.forgotPassword.index') }}" class="text-black text-muted text-underline">
                         <small>
                             Forgot your password?
                         </small>

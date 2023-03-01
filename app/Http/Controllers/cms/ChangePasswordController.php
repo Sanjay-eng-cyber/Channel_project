@@ -12,7 +12,7 @@ class ChangePasswordController extends Controller
     public function changePassword()
     {
         $user = Auth::guard('admin')->user('id');
-        return view('cms.changePassword.index', ['user' => $user]);
+        return view('backend.changePassword.index', ['user' => $user]);
     }
 
     public function passwordChange(Request $request, $id)
