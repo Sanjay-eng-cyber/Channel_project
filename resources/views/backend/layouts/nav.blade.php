@@ -18,7 +18,7 @@
                   </a>
               </li>
               <li class="nav-item theme-text w-auto">
-                  <a href="/" class="nav-link"> Vission EMR </a>
+                  <a href="/" class="nav-link"> Channel </a>
               </li>
               <li class="nav-item toggle-sidebar">
                   <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
