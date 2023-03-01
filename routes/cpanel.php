@@ -15,14 +15,12 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
     Route::group(['middleware' => 'auth:admin'], function () {
 
-        Route::get('/change-password', [changePasswordController::class, 'changePassword'])->name('cms.changePassword.index');
-        Route::put('/change-password/{id}', [changePasswordController::class, 'passwordChange'])->name('cms.password.submit');
+        Route::get('/change-password', 'App\Http\Controllers\cms\ChangePasswordController@changePassword')->name('cms.changePassword.index');
+        Route::get('/change-password/{id}', 'App\Http\Controllers\cms\ChangePasswordController@passwordChange')->name('cms.password.submit');
 
         Route::get('/', 'App\Http\Controllers\cms\statisticsController@index')->name("cms.statistics.index");
         Route::get('/logout', 'App\Http\Controllers\cms\LoginController@logout')->name("cms.logout");
-
     });
 
     require __DIR__ . '/auth.php';
-
 });
