@@ -84,13 +84,13 @@
                         <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
-                                    <h4 class="text-center">Appointments</h4>
+                                    <h4 class="text-center">Brands</h4>
                                     <div class="w-title justify-content-center align-items-center">
                                         <div class="w-icon">
                                             <i class="far fa-chart-bar big-font-icon"> </i>
                                         </div>
                                         <div class="">
-                                            <p class="w-value">{{ '78' }}</p>
+                                            <p class="w-value">{{ $brand }}</p>
                                         </div>
                                     </div>
                                     <div class="text-center">
@@ -104,13 +104,53 @@
                         <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
-                                    <h4 class="text-center">Total Surgeries</h4>
+                                    <h4 class="text-center">Total Categories</h4>
                                     <div class="w-title justify-content-center align-items-center">
                                         <div class="w-icon">
                                             <i class="far fa-chart-bar big-font-icon"> </i>
                                         </div>
                                         <div class="">
-                                            <p class="w-value">{{ '50' }}</p>
+                                            <p class="w-value">{{ $category }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="" class="btn btn-outline-primary mx-auto">
+                                            <small><i class="far fa-edit"> </i></small> Manage
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing">
+                            <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
+                                <div class="widget-heading p-0 m-0">
+                                    <h4 class="text-center">Total Sub Categories</h4>
+                                    <div class="w-title justify-content-center align-items-center">
+                                        <div class="w-icon">
+                                            <i class="far fa-chart-bar big-font-icon"> </i>
+                                        </div>
+                                        <div class="">
+                                            <p class="w-value">{{ $subCategory }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="" class="btn btn-outline-primary mx-auto">
+                                            <small><i class="far fa-edit"> </i></small> Manage
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing">
+                            <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
+                                <div class="widget-heading p-0 m-0">
+                                    <h4 class="text-center">Total Product</h4>
+                                    <div class="w-title justify-content-center align-items-center">
+                                        <div class="w-icon">
+                                            <i class="far fa-chart-bar big-font-icon"> </i>
+                                        </div>
+                                        <div class="">
+                                            <p class="w-value">{{ $products }}</p>
                                         </div>
                                     </div>
                                     <div class="text-center">
