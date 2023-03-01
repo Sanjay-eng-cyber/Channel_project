@@ -20,7 +20,8 @@ class NewPasswordController extends Controller
      */
     public function create(Request $request)
     {
-        return view('auth.reset-password', ['request' => $request]);
+        // return view('auth.reset-password', ['request' => $request]);
+        return view('backend.reset-password', ['request' => $request]);
     }
 
     /**
@@ -42,7 +43,7 @@ class NewPasswordController extends Controller
         // Here we will attempt to reset the user's password. If it is successful we
         // will update the password on an actual user model and persist it to the
         // database. Otherwise we will parse the error and return the response.
-        $status = Password::reset(
+        $status = $this->broker()->reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
             function ($user) use ($request) {
                 $user->forceFill([
@@ -57,9 +58,18 @@ class NewPasswordController extends Controller
         // If the password was successfully reset, we will redirect the user back to
         // the application's home authenticated view. If there is an error we can
         // redirect them back to where they came from with their error message.
-        return $status == Password::PASSWORD_RESET
-                    ? redirect()->route('login')->with('status', __($status))
+        return $status == $this->broker()::PASSWORD_RESET
+                    ? redirect()->route('cms.login')->with('status', __($status))
                     : back()->withInput($request->only('email'))
                             ->withErrors(['email' => __($status)]);
+    }
+
+    public function broker()
+    {
+        if (strpos(config('app.web_domain'), request()->getHost()) !== FALSE) {
+            return Password::broker('users');
+        } else if (strpos(config('app.cms_domain'), request()->getHost()) !== FALSE) {
+            return Password::broker('cms_users');
+        }
     }
 }

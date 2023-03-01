@@ -7,7 +7,13 @@ use Illuminate\Http\Request;
 
 class ForgotPasswordController extends Controller
 {
-    public function index(){
+    public function __construct()
+    {
+        $this->middleware('guest:admin');
+    }
+
+    public function index()
+    {
         return view('backend.forgot-password');
     }
 }
