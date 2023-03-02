@@ -7,15 +7,15 @@
                 <div class="col-xs-12 col-sm-6 hidden-xs">
                     <span class="tel active"> <i class="fa fa-phone" aria-hidden="true"></i> +1 (555) 333 22
                         11</span>
-                    <a class="tel" href="frontend/#"> <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <a class="tel" href=""> <i class="fa fa-envelope-o" aria-hidden="true"></i>
                         info@schon.chairs</a>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-right">
                     <!-- mt top list start here -->
                     <ul class="mt-top-list">
-                        <li><a href="frontend/#">Order Track</a></li>
-                        <li><a href="frontend/#">My Account</a></li>
-                        <li class="active"><a href="frontend/#">Checkout</a></li>
+                        <li><a href="">Order Track</a></li>
+                        <li><a href="">My Account</a></li>
+                        <li class="active"><a href="">Checkout</a></li>
                     </ul>
                     <!-- mt top list end here -->
                 </div>
@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <!-- mt logo start here -->
-                    <div class="mt-logo"><a href="frontend/#"><img src="frontend/images/mt-logo.png"
+                    <div class="mt-logo"><a href=""><img src="frontend/images/mt-logo.png"
                                 alt="schon"></a></div>
                     <!-- mt sh cart start here -->
                     <div class="mt-sh-cart">
@@ -41,61 +41,48 @@
                     <!-- mt icon list start here -->
                     <ul class="mt-icon-list">
                         <li class="hidden-lg hidden-md">
-                            <a href="frontend/#" class="bar-opener mobile-toggle">
+                            <a href="" class="bar-opener mobile-toggle">
                                 <span class="bar"></span>
                                 <span class="bar small"></span>
                                 <span class="bar"></span>
                             </a>
                         </li>
-                        <li><a href="frontend/#" class="icon-magnifier"></a></li>
+                        <li><a href="" class="icon-magnifier"></a></li>
                     </ul><!-- mt icon list end here -->
                     <!-- navigation start here -->
                     <nav id="nav">
                         <ul>
                             <li>
-                                <a class="drop-link" href="frontend/homepage1.html">HOME <i
+                                <a class="drop-link" href="">HOME <i
                                         class="fa fa-angle-down hidden-lg hidden-md"
                                         aria-hidden="true"></i></a>
-                                <div class="s-drop">
-                                    <ul>
-                                        <li><a href="frontend/homepage1.html">Homepage1</a></li>
-                                        <li><a href="frontend/homepage2.html">homepage2</a></li>
-                                        <li><a href="frontend/homepage3.html">homepage3</a></li>
-                                        <li><a href="frontend/homepage4.html">homepage4</a></li>
-                                        <li><a href="frontend/homepage5.html">Homepage5</a></li>
-                                        <li><a href="frontend/homepage6.html">homepage6</a></li>
-                                        <li><a href="frontend/homepage7.html">homepage7</a></li>
-                                        <li><a href="frontend/homepage8.html">homepage8</a></li>
-                                        <li><a href="frontend/homepage9.html">homepage9</a></li>
-                                        <li><a href="frontend/homepage10.html">homepage10</a></li>
-                                    </ul>
-                                </div>
+
                             </li>
                             <li>
-                                <a class="drop-link" href="frontend/product-grid-view.html">PRODUCTS <i
+                                <a class="drop-link" href="">PRODUCTS <i
                                         class="fa fa-angle-down hidden-lg hidden-md"
                                         aria-hidden="true"></i></a>
                                 <div class="s-drop">
                                     <ul>
-                                        <li><a href="frontend/product-grid-view.html">Product Grid View</a>
+                                        <li><a href="">Product Grid View</a>
                                         </li>
-                                        <li><a href="frontend/product-grid-view2.html">Product Grid
+                                        <li><a href="">Product Grid
                                                 View2</a></li>
-                                        <li><a href="frontend/product-grid-view3.html">Product Grid
+                                        <li><a href="">Product Grid
                                                 View3</a></li>
-                                        <li><a href="frontend/product-grid-view4.html">Product Grid
+                                        <li><a href="">Product Grid
                                                 View4</a></li>
-                                        <li><a href="frontend/product-grid-view5.html">Product Grid
+                                        <li><a href="">Product Grid
                                                 View5</a></li>
-                                        <li><a href="frontend/product-grid-view6.html">Product Grid
+                                        <li><a href="">Product Grid
                                                 View6</a></li>
-                                        <li><a href="frontend/product-grid-view7.html">Product Grid
+                                        <li><a href="">Product Grid
                                                 View7</a></li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="drop">
-                                <a href="frontend/#">PAGES <i class="fa fa-angle-down"
+                                <a href="">PAGES <i class="fa fa-angle-down"
                                         aria-hidden="true"></i></a>
                                 <!-- mt dropmenu start here -->
                                 <div class="mt-dropmenu text-left">
@@ -107,36 +94,36 @@
                                             <div class="mt-col-3">
                                                 <div class="sub-dropcont">
                                                     <strong class="title"><a
-                                                            href="frontend/product-grid-view.html"
+                                                            href=""
                                                             class="mt-subopener">Shop Pages</a></strong>
                                                     <div class="sub-drop">
                                                         <ul>
-                                                            <li><a href="frontend/product-grid-view.html">Product
+                                                            <li><a href="">Product
                                                                     Grid View</a></li>
-                                                            <li><a href="frontend/product-list-view.html">Product
+                                                            <li><a href="">Product
                                                                     List View</a></li>
-                                                            <li><a href="frontend/product-quickview.html">Product
+                                                            <li><a href="">Product
                                                                     QuickView popup</a></li>
-                                                            <li><a href="frontend/product-detail.html">Product
+                                                            <li><a href="">Product
                                                                     Detail</a></li>
-                                                            <li><a href="frontend/product-detail2.html">Product
+                                                            <li><a href="">Product
                                                                     Detail V2</a></li>
-                                                            <li><a href="frontend/order-shopping-cart.html">Shopping
+                                                            <li><a href="">Shopping
                                                                     Cart</a></li>
                                                             <li><a
-                                                                    href="frontend/order-checkout.html">Checkout</a>
+                                                                    href="">Checkout</a>
                                                             </li>
-                                                            <li><a href="frontend/ordertracking.html">Order
+                                                            <li><a href="">Order
                                                                     Tracking</a></li>
-                                                            <li><a href="frontend/wishlist.html">Wish
+                                                            <li><a href="">Wish
                                                                     List</a></li>
-                                                            <li><a href="frontend/faq.html">FAQ Page</a>
+                                                            <li><a href="">FAQ Page</a>
                                                             </li>
-                                                            <li><a href="frontend/loginpage.html">Login
+                                                            <li><a href="">Login
                                                                     Page</a></li>
-                                                            <li><a href="frontend/registerpage.html">Register
+                                                            <li><a href="">Register
                                                                     Page</a></li>
-                                                            <li><a href="frontend/newsletter-popup.html">Newsletter
+                                                            <li><a href="">Newsletter
                                                                     Popup</a></li>
                                                         </ul>
                                                     </div>
@@ -147,32 +134,32 @@
                                             <!-- mt col3 start here -->
                                             <div class="mt-col-3">
                                                 <div class="sub-dropcont">
-                                                    <strong class="title"><a href="frontend/#"
+                                                    <strong class="title"><a href=""
                                                             class="mt-subopener">404 Pages</a></strong>
                                                     <div class="sub-drop">
                                                         <ul>
-                                                            <li><a href="frontend/404-page.html">404
+                                                            <li><a href="">404
                                                                     Page</a></li>
-                                                            <li><a href="frontend/404-page2.html">404
+                                                            <li><a href="">404
                                                                     Page2</a></li>
-                                                            <li><a href="frontend/404-page3.html">404
+                                                            <li><a href="">404
                                                                     Page3</a></li>
-                                                            <li><a href="frontend/404-page4.html">404
+                                                            <li><a href="">404
                                                                     Page4</a></li>
-                                                            <li><a href="frontend/404-page5.html">404
+                                                            <li><a href="">404
                                                                     Page5</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div class="sub-dropcont">
-                                                    <strong class="title"><a href="frontend/#"
+                                                    <strong class="title"><a href=""
                                                             class="mt-subopener">Coming Soon</a></strong>
                                                     <div class="sub-drop">
                                                         <ul>
-                                                            <li><a href="frontend/coming-soon.html">Coming
+                                                            <li><a href="">Coming
                                                                     Soon</a>
                                                             </li>
-                                                            <li><a href="frontend/coming-soon2.html">Coming
+                                                            <li><a href="">Coming
                                                                     Soon2</a>
                                                             </li>
                                                         </ul>
@@ -184,25 +171,25 @@
                                             <!-- mt col3 start here -->
                                             <div class="mt-col-3">
                                                 <div class="sub-dropcont">
-                                                    <strong class="title"><a href="frontend/#"
+                                                    <strong class="title"><a href=""
                                                             class="mt-subopener">KITCHEN
                                                             FURNITURE</a></strong>
                                                     <div class="sub-drop">
                                                         <ul>
-                                                            <li><a href="frontend/#">Kitchen Taps</a></li>
-                                                            <li><a href="frontend/#">Breakfast time</a>
+                                                            <li><a href="">Kitchen Taps</a></li>
+                                                            <li><a href="">Breakfast time</a>
                                                             </li>
-                                                            <li><a href="frontend/#">Cooking</a></li>
-                                                            <li><a href="frontend/#">Food Storage Boxes</a>
+                                                            <li><a href="">Cooking</a></li>
+                                                            <li><a href="">Food Storage Boxes</a>
                                                             </li>
-                                                            <li><a href="frontend/#">Spice Jars</a></li>
-                                                            <li><a href="frontend/#">Napskins</a></li>
-                                                            <li><a href="frontend/#">Oven Gloves</a></li>
-                                                            <li><a href="frontend/#">Placemats</a></li>
-                                                            <li><a href="frontend/#">Cooking</a></li>
-                                                            <li><a href="frontend/#">Food Storage Boxes</a>
+                                                            <li><a href="">Spice Jars</a></li>
+                                                            <li><a href="">Napskins</a></li>
+                                                            <li><a href="">Oven Gloves</a></li>
+                                                            <li><a href="">Placemats</a></li>
+                                                            <li><a href="">Cooking</a></li>
+                                                            <li><a href="">Food Storage Boxes</a>
                                                             </li>
-                                                            <li><a href="frontend/#">Spice Jars</a></li>
+                                                            <li><a href="">Spice Jars</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -212,7 +199,7 @@
                                             <!-- mt col3 start here -->
                                             <div class="mt-col-3 promo">
                                                 <div class="mt-promobox">
-                                                    <a href="frontend/#"><img
+                                                    <a href=""><img
                                                             src="frontend/images/banner-drop.jpg"
                                                             alt="promo banner" class="img-responsive"></a>
                                                 </div>
@@ -226,37 +213,37 @@
                                 <!-- mt dropmenu end here -->
                                 <span class="mt-mdropover"></span>
                             </li>
-                            <li><a href="frontend/about-us.html">About</a></li>
+                            <li><a href="">About</a></li>
                             <li>
-                                <a class="drop-link" href="frontend/blog-right-sidebar.html">Blog <i
+                                <a class="drop-link" href="">Blog <i
                                         class="fa fa-angle-down hidden-lg hidden-md"
                                         aria-hidden="true"></i></a>
                                 <div class="s-drop">
                                     <ul>
-                                        <li><a href="frontend/blog-fullwidth-page.html">Blog Fullwidth
+                                        <li><a href="">Blog Fullwidth
                                                 Page</a></li>
-                                        <li><a href="frontend/blog-right-sidebar2.html">blog right
+                                        <li><a href="">blog right
                                                 sidebar2</a></li>
-                                        <li><a href="frontend/blog-postlist-3-masonry.html">blog postlist
+                                        <li><a href="">blog postlist
                                                 masonry</a>
                                         </li>
-                                        <li><a href="frontend/blog-post-detail-sidebar.html">blog post
+                                        <li><a href="">blog post
                                                 detail
                                                 sidebar</a></li>
-                                        <li><a href="frontend/blog-post-detail-full-width.html">blog post
+                                        <li><a href="">blog post
                                                 detail full
                                                 width</a></li>
                                     </ul>
                                 </div>
                             </li>
                             <li>
-                                <a class="drop-link" href="frontend/contact-us.html">Contact <i
+                                <a class="drop-link" href="">Contact <i
                                         class="fa fa-angle-down hidden-lg hidden-md"
                                         aria-hidden="true"></i></a>
                                 <div class="s-drop">
                                     <ul>
-                                        <li><a href="frontend/contact-us.html">Contact</a></li>
-                                        <li><a href="frontend/contact-us2.html">Contact 2</a></li>
+                                        <li><a href="">Contact</a></li>
+                                        <li><a href="">Contact 2</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -273,7 +260,7 @@
 <!-- mt search popup start here -->
 <div class="mt-search-popup">
     <div class="mt-holder">
-        <a href="frontend/#" class="search-close"><span></span><span></span></a>
+        <a href="" class="search-close"><span></span><span></span></a>
         <div class="mt-frame">
             <form action="#">
                 <fieldset>
