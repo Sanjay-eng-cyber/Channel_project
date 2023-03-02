@@ -213,7 +213,7 @@
                                 <!-- mt dropmenu end here -->
                                 <span class="mt-mdropover"></span>
                             </li>
-                            <li><a href="">About</a></li>
+                            <li><a href="{{route('about')}}">About</a></li>
                             <li>
                                 <a class="drop-link" href="">Blog <i
                                         class="fa fa-angle-down hidden-lg hidden-md"
@@ -237,12 +237,12 @@
                                 </div>
                             </li>
                             <li>
-                                <a class="drop-link" href="">Contact <i
-                                        class="fa fa-angle-down hidden-lg hidden-md"
+                                <a class="drop-link" href="">Contact
+                                    <i class="fa fa-angle-down hidden-lg hidden-md"
                                         aria-hidden="true"></i></a>
                                 <div class="s-drop">
                                     <ul>
-                                        <li><a href="">Contact</a></li>
+                                        <li><a href="{{route('contact')}}">Contact</a></li>
                                         <li><a href="">Contact 2</a></li>
                                     </ul>
                                 </div>
