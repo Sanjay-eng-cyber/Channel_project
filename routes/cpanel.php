@@ -45,5 +45,13 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('sub_category/edit/{id}', 'App\Http\Controllers\cms\SubCategoryController@edit')->name('backend.sub_category.edit');
         Route::post('sub_category/update/{id}', 'App\Http\Controllers\cms\SubCategoryController@update')->name('backend.sub_category.update');
         Route::get('sub_category/delete/{id}', 'App\Http\Controllers\cms\SubCategoryController@destroy')->name('backend.sub_category.destroy');
+
+        Route::get('attributes/', 'App\Http\Controllers\cms\AttributeController@index')->name('backend.attribute.index');
+        Route::get('/attribute/show/{id}', 'App\Http\Controllers\cms\AttributeController@show')->name("backend.attribute.show");
+        Route::get('attribute/create', 'App\Http\Controllers\cms\AttributeController@create')->name('backend.attribute.create');
+        Route::post('attribute/store', 'App\Http\Controllers\cms\AttributeController@store')->name('backend.attribute.store');
+        Route::get('attribute/edit/{id}', 'App\Http\Controllers\cms\AttributeController@edit')->name('backend.attribute.edit');
+        Route::post('attribute/update/{id}', 'App\Http\Controllers\cms\AttributeController@update')->name('backend.attribute.update');
+        Route::get('attribute/delete/{id}', 'App\Http\Controllers\cms\AttributeController@destroy')->name('backend.attribute.destroy');
     });
 });

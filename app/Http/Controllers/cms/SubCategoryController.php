@@ -37,7 +37,7 @@ class SubCategoryController extends Controller
     {
         $categorys = Category::pluck('id')->toArray();
         $request->validate([
-            'name' => 'required|min:3|max:40|unique:categories,name,',
+            'name' => 'required|min:3|max:40|unique:sub_categories,name,',
            'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf',
            'descriptions' => 'nullable|min:3|max:250',
            'category_id' => ['required', Rule::in($categorys)],
@@ -78,7 +78,7 @@ class SubCategoryController extends Controller
     {
         $categorys = Category::pluck('id')->toArray();
         $request->validate([
-            'name' => 'required|min:3|max:40|unique:categories,name,' .$id,
+            'name' => 'required|min:3|max:40|unique:sub_categories,name,' .$id,
             'image' => 'nullable|max:1024|mimes:jpeg,png,jpg,pdf',
             'descriptions' => 'nullable|min:3|max:250',
             'category_id' => ['required', Rule::in($categorys)],

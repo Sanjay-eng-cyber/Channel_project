@@ -9,7 +9,7 @@
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-lg-4 col-md-12 col-sm-12">
                             <legend class="h4">
-                                Categories
+                                Attributes
                             </legend>
                         </div>
 
@@ -18,7 +18,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Categories</a></li>
+                                            href="javascript:void(0);">Attributes</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -45,9 +45,9 @@
                         </div>
 
                         <div class="align-items-center col-xl-5 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
-                            <a href="{{ route('backend.category.create') }}" name="txt"
+                            <a href="{{ route('backend.attribute.create') }}" name="txt"
                                 class="btn btn-primary mt-2 ml-3 ">
-                                Add New Category
+                                Add New Attribute
                             </a>
                         </div>
 
@@ -64,19 +64,14 @@
                                     <tr>
                                         <th>Sr no.</th>
                                         <th>Name</th>
-                                        <th>Image</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($categorys as $category)
+                                    @forelse($attributes as $attribute)
                                         <tr>
-                                            <td>{{ tableRowSrNo($loop->index, $categorys) }}</td>
-                                            <td>{{ $category->name }}</td>
-                                            <td>
-                                                <img src="{{ asset('storage/images/categories/' . $category->image) }}"
-                                                height="150px" width="150px" alt="">
-                                            </td>
+                                            <td>{{ tableRowSrNo($loop->index, $attributes) }}</td>
+                                            <td>{{ $attribute->name }}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"
@@ -94,11 +89,11 @@
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                         <a class="dropdown-item"
-                                                            href="{{ route('backend.category.show', $category->id) }}">View</a>
+                                                            href="{{ route('backend.attribute.show', $attribute->id) }}">View</a>
                                                         <a class="dropdown-item"
-                                                            href="{{ route('backend.category.edit', $category->id) }}">Edit</a>
+                                                            href="{{ route('backend.attribute.edit', $attribute->id) }}">Edit</a>
                                                             <a class="dropdown-item"
-                                                            href="{{ route('backend.category.destroy', $category->id) }}">Delete</a>
+                                                            href="{{ route('backend.attribute.destroy', $attribute->id) }}">Delete</a>
                                                     </div>
                                                 </div>
 
@@ -115,7 +110,7 @@
                         <div class="pagination col-lg-12">
                             <div class="col-md-12 text-center align-self-center">
                                 <ul class="pagination text-center">
-                                    {{ $categorys->appends(Request::all())->links('pagination::bootstrap-4') }}
+                                    {{ $attributes->appends(Request::all())->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
                         </div>
