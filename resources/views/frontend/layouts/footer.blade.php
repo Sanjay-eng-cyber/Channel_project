@@ -60,7 +60,7 @@
                     <!-- F Widget About of the Page -->
                     <div class="f-widget-about">
                         <div class="logo">
-                            <a href="frontend/#"><img src="frontend/images/logo.png" alt="Schon"></a>
+                            <a href=""><img src="frontend/images/logo.png" alt="Schon"></a>
                         </div>
                         <p>Exercitation ullamco laboris nisi ut aliquip ex<br> commodo consequat. Duis aute
                             irure</p>
@@ -83,12 +83,12 @@
                     <div class="nav-widget-1">
                         <h3 class="f-widget-heading">Categories</h3>
                         <ul class="list-unstyled f-widget-nav">
-                            <li><a href="frontend/#">Chairs</a></li>
-                            <li><a href="frontend/#">Sofas</a></li>
-                            <li><a href="frontend/#">Living</a></li>
-                            <li><a href="frontend/#">Bedroom</a></li>
-                            <li><a href="frontend/#">Tables</a></li>
-                            <li><a href="frontend/#">New</a></li>
+                            <li><a href="">Chairs</a></li>
+                            <li><a href="">Sofas</a></li>
+                            <li><a href="">Living</a></li>
+                            <li><a href="">Bedroom</a></li>
+                            <li><a href="">Tables</a></li>
+                            <li><a href="">New</a></li>
                         </ul>
                     </div>
                     <!-- Footer Nav of the Page end -->
@@ -96,12 +96,12 @@
                     <div class="nav-widget-1">
                         <h3 class="f-widget-heading">Information</h3>
                         <ul class="list-unstyled f-widget-nav">
-                            <li><a href="frontend/#">About Us</a></li>
-                            <li><a href="frontend/#">Contact Us</a></li>
-                            <li><a href="frontend/#">Terms &amp; Conditions</a></li>
-                            <li><a href="frontend/#">Privacy Policy</a></li>
-                            <li><a href="frontend/#">Customer Service</a></li>
-                            <li><a href="frontend/#">FAQs</a></li>
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Contact Us</a></li>
+                            <li><a href="">Terms &amp; Conditions</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                            <li><a href="">Customer Service</a></li>
+                            <li><a href="">FAQs</a></li>
                         </ul>
                     </div>
                     <!-- Footer Nav of the Page end -->
@@ -109,11 +109,11 @@
                     <div class="nav-widget-1">
                         <h3 class="f-widget-heading">Account</h3>
                         <ul class="list-unstyled f-widget-nav">
-                            <li><a href="frontend/#">My Account</a></li>
-                            <li><a href="frontend/#">Order Tracking</a></li>
-                            <li><a href="frontend/#">Wish List</a></li>
-                            <li><a href="frontend/#">Shopping Cart</a></li>
-                            <li><a href="frontend/#">Checkout</a></li>
+                            <li><a href="">My Account</a></li>
+                            <li><a href="">Order Tracking</a></li>
+                            <li><a href="">Wish List</a></li>
+                            <li><a href="">Shopping Cart</a></li>
+                            <li><a href="">Checkout</a></li>
                         </ul>
                     </div>
                     <!-- Footer Nav of the Page end -->
@@ -134,12 +134,12 @@
                         <h4 class="f-widget-heading follow">Follow Us</h4>
                         <!-- Social Network of the Page -->
                         <ul class="list-unstyled social-network social-icon">
-                            <li><a href="frontend/#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="frontend/#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="frontend/#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="frontend/#"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="frontend/#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="frontend/#"><i class="fa fa-whatsapp"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href=""><i class="fa fa-whatsapp"></i></a></li>
                         </ul>
                         <!-- Social Network of the Page end -->
                     </div>
@@ -153,7 +153,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
-                    <p>© <a href="frontend/#">schön.</a> - All rights Reserved</p>
+                    <p>© <a href="">schön.</a> - All rights Reserved</p>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-right">
                     <div class="bank-card">
