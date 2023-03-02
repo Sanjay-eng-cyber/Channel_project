@@ -24,55 +24,53 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow temp-a">
+            <div class="statbox widget box box-shadow temp-a col-md-6">
                 <div class="row m-0">
                     <div class="col-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.sub_category.store') }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
-                            <div class="form-group mb-4 row">
-                                <div class="form-group mb-2 row">
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
-                                        <label for="formGroupExampleInput" class="">Name</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput"
-                                            placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
-                                            value="{{ old('name') }}">
-                                        @if ($errors->has('name'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
-                                        @endif
-                                    </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
-                                        <label for="degree2">Category</label>
-                                        <select class="form-control mb-4" name="category_id" required>
-                                            <option value="">Select Any Category</option>
-                                            @foreach ($categorys as $category)
-                                                <option value="{{ $category->id }}"
-                                                    @if (old('category_id') == $category->id) {{ 'selected' }} @endif>
-                                                    {{ $category->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        @if ($errors->has('category_id'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('category_id') }}
-                                            </div>
-                                        @endif
-                                    </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
-                                        <label for="formGroupExampleInput" class="">Image</label>
-                                        <input type="file" class="form-control" id="formGroupExampleInput"required
-                                            name="image">
-                                        @if ($errors->has('image'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('image') }}</div>
-                                        @endif
-                                    </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
-                                        <label for="degree2">Description</label>
-                                        <textarea class="form-control" placeholder="Enter Description" rows="3" name="descriptions" minlength="3"
-                                            maxlength="250">{{ old('descriptions') }}</textarea>
-                                        @if ($errors->has('descriptions'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
-                                            </div>
-                                        @endif
-                                    </div>
+                            <div class="form-group mb-3 row">
+                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-3">
+                                    <label for="formGroupExampleInput" class="">Name</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
+                                        value="{{ old('name') }}">
+                                    @if ($errors->has('name'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-3">
+                                    <label for="degree2">Category</label>
+                                    <select class="form-control mb-4" name="category_id" required>
+                                        <option value="">Select Any Category</option>
+                                        @foreach ($categorys as $category)
+                                            <option value="{{ $category->id }}"
+                                                @if (old('category_id') == $category->id) {{ 'selected' }} @endif>
+                                                {{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('category_id'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('category_id') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-3">
+                                    <label for="formGroupExampleInput" class="">Image</label>
+                                    <input type="file" class="form-control" id="formGroupExampleInput"required
+                                        name="image">
+                                    @if ($errors->has('image'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('image') }}</div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-3">
+                                    <label for="degree2">Description</label>
+                                    <textarea class="form-control" placeholder="Enter Description" rows="3" name="descriptions" minlength="3"
+                                        maxlength="250">{{ old('descriptions') }}</textarea>
+                                    @if ($errors->has('descriptions'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                             <input type="submit" class="btn btn-primary">
@@ -86,8 +84,8 @@
 @section('js')
     <script>
         /*
-                                                                            Please try with devices with camera!
-                                                                            */
+                                                                                Please try with devices with camera!
+                                                                                */
 
         /*
         Reference:

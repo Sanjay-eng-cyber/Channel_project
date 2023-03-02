@@ -16,7 +16,7 @@ class SubCategoryController extends Controller
 {
     public function index()
     {
-        $sub_categories = SubCategory::latest()->Paginate(10);
+        $sub_categories = SubCategory::latest()->paginate(10);
         return view('backend.sub_category.index',compact('sub_categories'));
     }
 

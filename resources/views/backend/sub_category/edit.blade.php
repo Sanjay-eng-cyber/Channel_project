@@ -16,18 +16,19 @@
                             <nav class="breadcrumb-two" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Sub Category</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">Sub
+                                            Category</a></li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow">
-                <div class="row">
+            <div class="statbox widget box box-shadow col-md-6">
+                <div class="row m-0">
                     <div class="col-12">
-                        <form class="mt-3" method="POST" action="{{ route('backend.sub_category.update', $sub_category->id) }}"
+                        <form class="mt-3" method="POST"
+                            action="{{ route('backend.sub_category.update', $sub_category->id) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
@@ -80,19 +81,17 @@
                                 <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-3">
                                     <label for="degree2">Description</label>
                                     <textarea class="form-control" placeholder="Enter Description" rows="3" name="descriptions" minlength="3"
-                                        maxlength="250">{{ old('descriptions',$sub_category->descriptions) }}</textarea>
+                                        maxlength="250">{{ old('descriptions', $sub_category->descriptions) }}</textarea>
                                     @if ($errors->has('descriptions'))
                                         <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
                                         </div>
                                     @endif
                                 </div>
                             </div>
+                            <input type="submit" class="btn btn-primary"
+                                onclick="return confirm('Are you sure, you want to update?')">
+                        </form>
                     </div>
-
-
-                    <input type="submit" class="btn btn-primary"
-                        onclick="return confirm('Are you sure, you want to update?')">
-                    </form>
                 </div>
             </div>
         </div>
@@ -102,8 +101,8 @@
 @section('js')
     <script>
         /*
-                                                                                                        Please try with devices with camera!
-                                                                                                        */
+                                                                                                            Please try with devices with camera!
+                                                                                                            */
 
         /*
         Reference:
@@ -264,7 +263,8 @@
     </script>
     <link type=" text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css" />
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}"></script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}">
+    </script>
     <script src="{{ asset('js/lg-zoom.min.js') }}"></script>
     {{-- <link rel="stylesheet" type=" text/css" href="{{ asset('css/lightgallery.css') }}">
         <script src="{{ asset('js/lightgallery.js') }}"></script> --}}

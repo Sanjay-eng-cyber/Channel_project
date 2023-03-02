@@ -13,7 +13,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categorys = Category::latest()->Paginate(10);
+        $categorys = Category::latest()->paginate(10);
         return view('backend.category.index',compact('categorys'));
     }
 

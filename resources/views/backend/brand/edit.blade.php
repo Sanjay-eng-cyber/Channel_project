@@ -24,15 +24,15 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow">
-                <div class="row">
+            <div class="statbox widget box box-shadow temp-a col-md-6">
+                <div class="row m-0">
                     <div class="col-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.brand.update', $brand->id) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
-                                <div class="col-md-12">
-                                    <label for="formGroupExampleInput">Category Name</label>
+                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-3">
+                                    <label for="formGroupExampleInput">Name</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
                                         value="{{ old('name') ?? $brand->name }}">
@@ -40,11 +40,11 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-3">
                                     <label for="degree2">Image:</label><br>
                                     @if ($brand->image)
-                                        <img src="{{ asset('storage/images/brands/' . $brand->image) }}"
-                                            height="150px" width="150px" alt="">
+                                        <img src="{{ asset('storage/images/brands/' . $brand->image) }}" height="150px"
+                                            width="150px" alt="">
                                     @endif
                                     <br>
                                     <input class="form-control" name="image" type="file" />
@@ -56,19 +56,17 @@
                                 <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-3">
                                     <label for="degree2">Description</label>
                                     <textarea class="form-control" placeholder="Enter Description" rows="3" name="descriptions" minlength="3"
-                                        maxlength="250">{{ old('descriptions',$brand->descriptions) }}</textarea>
+                                        maxlength="250">{{ old('descriptions', $brand->descriptions) }}</textarea>
                                     @if ($errors->has('descriptions'))
                                         <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
                                         </div>
                                     @endif
                                 </div>
                             </div>
+                            <input type="submit" class="btn btn-primary"
+                                onclick="return confirm('Are you sure, you want to update?')">
+                        </form>
                     </div>
-
-
-                    <input type="submit" class="btn btn-primary"
-                        onclick="return confirm('Are you sure, you want to update?')">
-                    </form>
                 </div>
             </div>
         </div>
@@ -78,8 +76,8 @@
 @section('js')
     <script>
         /*
-                                                                                                        Please try with devices with camera!
-                                                                                                        */
+                                                                                                            Please try with devices with camera!
+                                                                                                            */
 
         /*
         Reference:
