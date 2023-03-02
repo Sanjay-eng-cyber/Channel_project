@@ -1,4 +1,4 @@
-@extends('cms.layouts.app')
+@extends('backend.layouts.app')
 @section('title', 'Dashboard')
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
@@ -69,9 +69,10 @@
                                                 </a>
 
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                    {{-- <a class="dropdown-item" href="">View</a> --}}
-                                                    <a class="dropdown-item"
-                                                        href="{{ route('cms.user.edit', $user->id) }}">Edit</a>
+                                                     <a class="dropdown-item"
+                                                        href="{{ route('backend.user.show', $user->id) }}">View</a>
+                                                    {{-- <a class="dropdown-item"
+                                                        href="{{ route('cms.user.edit', $user->id) }}">Edit</a> --}}
                                                     {{-- <a class="dropdown-item"
                                                         href="{{ route('cms.followups.delete', $user->id) }}"
                                                         onclick="return confirm('Are you sure you want to delete this Follow-Up?')">Delete</a> --}}

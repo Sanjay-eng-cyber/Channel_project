@@ -69,5 +69,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('coupon/edit/{id}', 'App\Http\Controllers\cms\CouponController@edit')->name('backend.coupon.edit');
         Route::post('coupon/update/{id}', 'App\Http\Controllers\cms\CouponController@update')->name('backend.coupon.update');
         Route::get('coupon/delete/{id}', 'App\Http\Controllers\cms\CouponController@destroy')->name('backend.coupon.destroy');
+
+        Route::get('users/', 'App\Http\Controllers\cms\UserController@index')->name('backend.user.index');
+        Route::get('/user/show/{id}', 'App\Http\Controllers\cms\UserController@show')->name("backend.user.show");
     });
 });
