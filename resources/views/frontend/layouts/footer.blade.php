@@ -60,7 +60,7 @@
                     <!-- F Widget About of the Page -->
                     <div class="f-widget-about">
                         <div class="logo">
-                            <a href="frontend/#"><img src="frontend/images/logo.png" alt="Schon"></a>
+                            <a href="frontend/#"><img src="frontend/images/channel-logo.svg" height="30" alt="Schon"></a>
                         </div>
                         <p>Exercitation ullamco laboris nisi ut aliquip ex<br> commodo consequat. Duis aute
                             irure</p>

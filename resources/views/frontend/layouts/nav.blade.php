@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <!-- mt logo start here -->
-                    <div class="mt-logo"><a href="frontend/#"><img src="frontend/images/mt-logo.png"
+                    <div class="mt-logo"><a href="frontend/#"><img height="35" src="frontend/images/channel-logo.svg"
                                 alt="schon"></a></div>
                     <!-- mt sh cart start here -->
                     <div class="mt-sh-cart">
