@@ -20,7 +20,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         Route::get('/logout', 'App\Http\Controllers\cms\LoginController@logout')->name("cms.logout");
 
-        Route::get('/', 'App\Http\Controllers\cms\statisticsController@index')->name("cms.statistics.index");
+        Route::get('/', 'App\Http\Controllers\cms\StatisticsController@index')->name("cms.statistics.index");
 
         Route::get('categories/', 'App\Http\Controllers\cms\CategoryController@index')->name('backend.category.index');
         Route::get('/category/show/{id}', 'App\Http\Controllers\cms\CategoryController@show')->name("backend.category.show");
