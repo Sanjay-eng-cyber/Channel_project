@@ -19,6 +19,7 @@ class UserAddressSeeder extends Seeder
         foreach ( $users as $user ) {
             \DB::table('user_addresses')->insert([
                 "user_id" => $user->id,
+                "type" => 'primary',
                 "street_address" => $faker->address,
                 "country" => 'India',
                 "city" => $faker->city,
