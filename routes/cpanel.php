@@ -21,6 +21,29 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('/logout', 'App\Http\Controllers\cms\LoginController@logout')->name("cms.logout");
 
         Route::get('/', 'App\Http\Controllers\cms\statisticsController@index')->name("cms.statistics.index");
-    });
 
+        Route::get('categories/', 'App\Http\Controllers\cms\CategoryController@index')->name('backend.category.index');
+        Route::get('/category/show/{id}', 'App\Http\Controllers\cms\CategoryController@show')->name("backend.category.show");
+        Route::get('category/create', 'App\Http\Controllers\cms\CategoryController@create')->name('backend.category.create');
+        Route::post('category/store', 'App\Http\Controllers\cms\CategoryController@store')->name('backend.category.store');
+        Route::get('category/edit/{id}', 'App\Http\Controllers\cms\CategoryController@edit')->name('backend.category.edit');
+        Route::post('category/update/{id}', 'App\Http\Controllers\cms\CategoryController@update')->name('backend.category.update');
+        Route::get('category/delete/{id}', 'App\Http\Controllers\cms\CategoryController@destroy')->name('backend.category.destroy');
+
+        Route::get('brands/', 'App\Http\Controllers\cms\BrandController@index')->name('backend.brand.index');
+        Route::get('/brand/show/{id}', 'App\Http\Controllers\cms\BrandController@show')->name("backend.brand.show");
+        Route::get('brand/create', 'App\Http\Controllers\cms\BrandController@create')->name('backend.brand.create');
+        Route::post('brand/store', 'App\Http\Controllers\cms\BrandController@store')->name('backend.brand.store');
+        Route::get('brand/edit/{id}', 'App\Http\Controllers\cms\BrandController@edit')->name('backend.brand.edit');
+        Route::post('brand/update/{id}', 'App\Http\Controllers\cms\BrandController@update')->name('backend.brand.update');
+        Route::get('brand/delete/{id}', 'App\Http\Controllers\cms\BrandController@destroy')->name('backend.brand.destroy');
+
+        Route::get('sub_categories/', 'App\Http\Controllers\cms\SubCategoryController@index')->name('backend.sub_category.index');
+        Route::get('/sub_category/show/{id}', 'App\Http\Controllers\cms\SubCategoryController@show')->name("backend.sub_category.show");
+        Route::get('sub_category/create', 'App\Http\Controllers\cms\SubCategoryController@create')->name('backend.sub_category.create');
+        Route::post('sub_category/store', 'App\Http\Controllers\cms\SubCategoryController@store')->name('backend.sub_category.store');
+        Route::get('sub_category/edit/{id}', 'App\Http\Controllers\cms\SubCategoryController@edit')->name('backend.sub_category.edit');
+        Route::post('sub_category/update/{id}', 'App\Http\Controllers\cms\SubCategoryController@update')->name('backend.sub_category.update');
+        Route::get('sub_category/delete/{id}', 'App\Http\Controllers\cms\SubCategoryController@destroy')->name('backend.sub_category.destroy');
+    });
 });

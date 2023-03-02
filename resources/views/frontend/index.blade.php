@@ -29,7 +29,7 @@
                                 <span class="price-less">$ 659.00</span>
                                 <span class="prices">$ 499.00</span>
                             </span>
-                            <a href="frontend/product-detail.html" class="btn-shop">
+                            <a href="" class="btn-shop">
                                 <span>shop now</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -50,7 +50,7 @@
                                 </ul>
                                 <div class="price-tag">
                                     <span class="price">$ 99.00</span>
-                                    <a class="shop-now" href="frontend/product-detail.html">SHOP NOW</a>
+                                    <a class="shop-now" href="">SHOP NOW</a>
                                 </div>
                             </div>
                         </div><!-- banner 7 right end here -->
@@ -68,7 +68,7 @@
                                 <div class="price-tag">
                                     <span class="price-off">$ 129.00</span>
                                     <span class="price">$ 99.00</span>
-                                    <a class="btn-shop" href="frontend/product-detail.html">
+                                    <a class="btn-shop" href="">
                                         <span>HURRY UP!</span>
                                         <i class="fa fa-angle-right"></i>
                                     </a>
@@ -86,7 +86,7 @@
                             <img src="frontend/images/banner/img12.jpg" alt="image description">
                             <div class="holder">
                                 <h2><span>Chairs</span><strong>ZIO DINING CHAIR</strong></h2>
-                                <a class="btn-shop" href="frontend/product-detail.html">
+                                <a class="btn-shop" href="">
                                     <span>SHOP NOW</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
@@ -98,7 +98,7 @@
                             <div class="holder">
                                 <h2><span>Accessories / Lighting</span><strong>TOTEM FLOOR LAMP</strong>
                                 </h2>
-                                <a class="btn-shop" href="frontend/product-detail.html">
+                                <a class="btn-shop" href="">
                                     <span>SHOP NOW</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
@@ -159,7 +159,7 @@
                                         <p>Consectetur adipisicing elit. Beatae accusamus, optio,
                                             repellendus inventore</p>
                                     </div>
-                                    <a href="frontend/product-detail.html" class="s-shop">SHOP NOW</a>
+                                    <a href="" class="s-shop">SHOP NOW</a>
                                 </div>
                             </div><!-- holder end here -->
                         </div>
@@ -185,7 +185,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img22.jpg"
                                                             alt="image description"></a>
                                                     <ul class="mt-stars">
@@ -207,7 +207,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Bombi
+                                            <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>399,00</span></span>
@@ -222,7 +222,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img23.jpg"
                                                             alt="image description"></a>
                                                     <ul class="links">
@@ -238,7 +238,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Marvelous
+                                            <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>599,00</span></span>
@@ -253,7 +253,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img24.jpg"
                                                             alt="image description"></a>
                                                     <span class="caption">
@@ -278,7 +278,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Chair with
+                                            <strong class="title"><a href="">Chair with
                                                     armrests</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>200,00</span></span>
@@ -293,7 +293,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img22.jpg"
                                                             alt="image description"></a>
                                                     <ul class="mt-stars">
@@ -315,7 +315,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Bombi
+                                            <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>399,00</span></span>
@@ -330,7 +330,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img23.jpg"
                                                             alt="image description"></a>
                                                     <ul class="links">
@@ -346,7 +346,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Marvelous
+                                            <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>599,00</span></span>
@@ -366,7 +366,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img23.jpg"
                                                             alt="image description"></a>
                                                     <ul class="links">
@@ -382,7 +382,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Marvelous
+                                            <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>599,00</span></span>
@@ -397,7 +397,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img22.jpg"
                                                             alt="image description"></a>
                                                     <ul class="mt-stars">
@@ -419,7 +419,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Bombi
+                                            <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>399,00</span></span>
@@ -434,7 +434,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img24.jpg"
                                                             alt="image description"></a>
                                                     <span class="caption">
@@ -459,7 +459,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Chair with
+                                            <strong class="title"><a href="">Chair with
                                                     armrests</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>200,00</span></span>
@@ -474,7 +474,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img22.jpg"
                                                             alt="image description"></a>
                                                     <ul class="mt-stars">
@@ -496,7 +496,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Bombi
+                                            <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>399,00</span></span>
@@ -511,7 +511,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img23.jpg"
                                                             alt="image description"></a>
                                                     <ul class="links">
@@ -527,7 +527,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Marvelous
+                                            <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>599,00</span></span>
@@ -547,7 +547,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img24.jpg"
                                                             alt="image description"></a>
                                                     <span class="caption">
@@ -572,7 +572,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Chair with
+                                            <strong class="title"><a href="">Chair with
                                                     armrests</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>200,00</span></span>
@@ -587,7 +587,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img22.jpg"
                                                             alt="image description"></a>
                                                     <ul class="mt-stars">
@@ -609,7 +609,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Bombi
+                                            <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>399,00</span></span>
@@ -624,7 +624,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img23.jpg"
                                                             alt="image description"></a>
                                                     <ul class="links">
@@ -640,7 +640,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Marvelous
+                                            <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>599,00</span></span>
@@ -655,7 +655,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img22.jpg"
                                                             alt="image description"></a>
                                                     <ul class="mt-stars">
@@ -677,7 +677,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Bombi
+                                            <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>399,00</span></span>
@@ -692,7 +692,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href="frontend/product-detail.html"><img
+                                                    <a href=""><img
                                                             src="frontend/images/products/img23.jpg"
                                                             alt="image description"></a>
                                                     <ul class="links">
@@ -708,7 +708,7 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="frontend/product-detail.html">Marvelous
+                                            <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
                                             <span class="price"><i class="fa fa-eur"></i>
                                                 <span>599,00</span></span>
@@ -727,7 +727,7 @@
                         <img src="frontend/images/banner/img20.jpg" alt="image description">
                         <div class="holder">
                             <h2><span>Wall Decor</span><strong>CLOCKs</strong></h2>
-                            <a class="btn-shop" href="frontend/product-detail.html">
+                            <a class="btn-shop" href="">
                                 <span>VIEW</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -738,7 +738,7 @@
                         <img src="frontend/images/banner/img21.jpg" alt="image description">
                         <div class="holder">
                             <h2><span>Coffee Tables</span><strong>S.O.S. BLOCKS</strong></h2>
-                            <a class="btn-shop" href="frontend/product-detail.html">
+                            <a class="btn-shop" href="">
                                 <span>VIEW</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -749,7 +749,7 @@
                         <img src="frontend/images/banner/img19.jpg" alt="image description">
                         <div class="holder">
                             <h2><span>Floor Lamps</span><strong>ROCKING LAMP</strong></h2>
-                            <a class="btn-shop" href="frontend/product-detail.html">
+                            <a class="btn-shop" href="">
                                 <span>VIEW</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -768,7 +768,7 @@
                                 <div class="box">
                                     <div class="b1">
                                         <div class="b2">
-                                            <a href="frontend/product-detail.html"><img
+                                            <a href=""><img
                                                     src="frontend/images/products/img01.jpg" alt="image description"></a>
                                             <span class="caption">
                                                 <span class="new">new</span>
@@ -791,7 +791,7 @@
                                     </div>
                                 </div>
                                 <div class="txt">
-                                    <strong class="title"><a href="frontend/product-detail.html">Puff
+                                    <strong class="title"><a href="">Puff
                                             Chair</a></strong>
                                     <span class="price"><i class="fa fa-eur"></i>
                                         <span>287,00</span></span>
@@ -806,7 +806,7 @@
                                 <div class="box">
                                     <div class="b1">
                                         <div class="b2">
-                                            <a href="frontend/product-detail.html"><img
+                                            <a href=""><img
                                                     src="frontend/images/products/img02.jpg" alt="image description"></a>
                                             <ul class="links">
                                                 <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
@@ -820,7 +820,7 @@
                                     </div>
                                 </div>
                                 <div class="txt">
-                                    <strong class="title"><a href="frontend/product-detail.html">Bombi
+                                    <strong class="title"><a href="">Bombi
                                             Chair</a></strong>
                                     <span class="price"><i class="fa fa-eur"></i>
                                         <span>399,00</span></span>
@@ -835,7 +835,7 @@
                                 <div class="box">
                                     <div class="b1">
                                         <div class="b2">
-                                            <a href="frontend/product-detail.html"><img
+                                            <a href=""><img
                                                     src="frontend/images/products/img03.jpg" alt="image description"></a>
                                             <ul class="links">
                                                 <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
@@ -849,7 +849,7 @@
                                     </div>
                                 </div>
                                 <div class="txt">
-                                    <strong class="title"><a href="frontend/product-detail.html">Wood
+                                    <strong class="title"><a href="">Wood
                                             Chair</a></strong>
                                     <span class="price"><i class="fa fa-eur"></i>
                                         <span>198,00</span></span>
@@ -864,7 +864,7 @@
                                 <div class="box">
                                     <div class="b1">
                                         <div class="b2">
-                                            <a href="frontend/product-detail.html"><img
+                                            <a href=""><img
                                                     src="frontend/images/products/img04.jpg" alt="image description"></a>
                                             <span class="caption">
                                                 <span class="off">15% Off</span>
@@ -882,7 +882,7 @@
                                     </div>
                                 </div>
                                 <div class="txt">
-                                    <strong class="title"><a href="frontend/product-detail.html">Bombi
+                                    <strong class="title"><a href="">Bombi
                                             Chair</a></strong>
                                     <span class="price"><i class="fa fa-eur"></i>
                                         <span>200,00</span></span>
@@ -897,7 +897,7 @@
                                 <div class="box">
                                     <div class="b1">
                                         <div class="b2">
-                                            <a href="frontend/product-detail.html"><img
+                                            <a href=""><img
                                                     src="frontend/images/products/img05.jpg" alt="image description"></a>
                                             <ul class="links">
                                                 <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
@@ -911,7 +911,7 @@
                                     </div>
                                 </div>
                                 <div class="txt">
-                                    <strong class="title"><a href="frontend/product-detail.html">Bombi
+                                    <strong class="title"><a href="">Bombi
                                             Chair</a></strong>
                                     <span class="price"><i class="fa fa-eur"></i>
                                         <span>200,00</span></span>
@@ -926,7 +926,7 @@
                                 <div class="box">
                                     <div class="b1">
                                         <div class="b2">
-                                            <a href="frontend/product-detail.html"><img
+                                            <a href=""><img
                                                     src="frontend/images/products/img03.jpg" alt="image description"></a>
                                             <ul class="links">
                                                 <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
@@ -940,7 +940,7 @@
                                     </div>
                                 </div>
                                 <div class="txt">
-                                    <strong class="title"><a href="frontend/product-detail.html">Wood
+                                    <strong class="title"><a href="">Wood
                                             Chair</a></strong>
                                     <span class="price"><i class="fa fa-eur"></i>
                                         <span>198,00</span></span>
