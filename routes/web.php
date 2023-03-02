@@ -17,7 +17,7 @@ Route::domain(config('app.web_domain'))->group(function () {
 
     Route::get('/', function () {
         return view('frontend.index');
-    });
+    })->name('index');
 
     Route::get('/about-us', function () {
         return view('frontend/layouts/about-us');
