@@ -61,5 +61,16 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('product_attribute_value/edit/{id}', 'App\Http\Controllers\cms\ProductAttributeController@edit')->name('backend.product_attribute_value.edit');
         Route::post('product_attribute_value/update/{id}', 'App\Http\Controllers\cms\ProductAttributeController@update')->name('backend.product_attribute_value.update');
         Route::get('product_attribute_value/delete/{id}', 'App\Http\Controllers\cms\ProductAttributeController@destroy')->name('backend.product_attribute_value.destroy');
+
+        Route::get('coupons/', 'App\Http\Controllers\cms\CouponController@index')->name('backend.coupon.index');
+        Route::get('/coupon/show/{id}', 'App\Http\Controllers\cms\CouponController@show')->name("backend.coupon.show");
+        Route::get('coupon/create', 'App\Http\Controllers\cms\CouponController@create')->name('backend.coupon.create');
+        Route::post('coupon/store', 'App\Http\Controllers\cms\CouponController@store')->name('backend.coupon.store');
+        Route::get('coupon/edit/{id}', 'App\Http\Controllers\cms\CouponController@edit')->name('backend.coupon.edit');
+        Route::post('coupon/update/{id}', 'App\Http\Controllers\cms\CouponController@update')->name('backend.coupon.update');
+        Route::get('coupon/delete/{id}', 'App\Http\Controllers\cms\CouponController@destroy')->name('backend.coupon.destroy');
+
+        Route::get('users/', 'App\Http\Controllers\cms\UserController@index')->name('backend.user.index');
+        Route::get('/user/show/{id}', 'App\Http\Controllers\cms\UserController@show')->name("backend.user.show");
     });
 });

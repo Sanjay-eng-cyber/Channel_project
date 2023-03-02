@@ -53,9 +53,7 @@
                     <nav id="nav">
                         <ul>
                             <li>
-                                <a class="drop-link" href="">HOME <i
-                                        class="fa fa-angle-down hidden-lg hidden-md"
-                                        aria-hidden="true"></i></a>
+                                <li><a href="{{route('index')}}">Home</a></li>
 
                             </li>
                             <li>
