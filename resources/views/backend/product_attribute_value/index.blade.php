@@ -9,7 +9,7 @@
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-lg-4 col-md-12 col-sm-12">
                             <legend class="h4">
-                                Categories
+                                Product Attribute Values
                             </legend>
                         </div>
 
@@ -18,7 +18,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Categories</a></li>
+                                            href="javascript:void(0);">Product Attribute Values</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -45,9 +45,9 @@
                         </div>
 
                         <div class="align-items-center col-xl-5 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
-                            <a href="{{ route('backend.category.create') }}" name="txt"
+                            <a href="{{ route('backend.product_attribute_value.create') }}" name="txt"
                                 class="btn btn-primary mt-2 ml-3 ">
-                                Add New Category
+                                Add Product Attribute Value
                             </a>
                         </div>
 
@@ -59,24 +59,21 @@
                 <div class="">
                     <div class="widget-content widget-content-area">
                         <div class="table-responsive min-height-20em">
-                            <table class="table table-bordered mb-4">
+                            <table class="table mb-4">
                                 <thead>
                                     <tr>
                                         <th>Sr no.</th>
                                         <th>Name</th>
-                                        <th>Image</th>
+                                        <th>Attribute</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($categorys as $category)
+                                    @forelse($product_attribute_values as $product_attribute_value)
                                         <tr>
-                                            <td>{{ tableRowSrNo($loop->index, $categorys) }}</td>
-                                            <td>{{ $category->name }}</td>
-                                            <td>
-                                                <img src="{{ asset('storage/images/categories/' . $category->image) }}"
-                                                height="150px" width="150px" alt="">
-                                            </td>
+                                            <td>{{ tableRowSrNo($loop->index, $product_attribute_values) }}</td>
+                                            <td>{{ $product_attribute_value->name }}</td>
+                                            <td>{{ $product_attribute_value->attribute->name }}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"
@@ -94,11 +91,11 @@
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                         <a class="dropdown-item"
-                                                            href="{{ route('backend.category.show', $category->id) }}">View</a>
+                                                            href="{{ route('backend.product_attribute_value.show', $product_attribute_value->id) }}">View</a>
                                                         <a class="dropdown-item"
-                                                            href="{{ route('backend.category.edit', $category->id) }}">Edit</a>
+                                                            href="{{ route('backend.product_attribute_value.edit', $product_attribute_value->id) }}">Edit</a>
                                                             <a class="dropdown-item"
-                                                            href="{{ route('backend.category.destroy', $category->id) }}">Delete</a>
+                                                            href="{{ route('backend.product_attribute_value.destroy', $product_attribute_value->id) }}">Delete</a>
                                                     </div>
                                                 </div>
 
@@ -115,7 +112,7 @@
                         <div class="pagination col-lg-12">
                             <div class="col-md-12 text-center align-self-center">
                                 <ul class="pagination text-center">
-                                    {{ $categorys->appends(Request::all())->links('pagination::bootstrap-4') }}
+                                    {{ $product_attribute_values->appends(Request::all())->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
                         </div>

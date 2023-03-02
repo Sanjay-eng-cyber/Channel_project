@@ -45,5 +45,21 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('sub_category/edit/{id}', 'App\Http\Controllers\cms\SubCategoryController@edit')->name('backend.sub_category.edit');
         Route::post('sub_category/update/{id}', 'App\Http\Controllers\cms\SubCategoryController@update')->name('backend.sub_category.update');
         Route::get('sub_category/delete/{id}', 'App\Http\Controllers\cms\SubCategoryController@destroy')->name('backend.sub_category.destroy');
+
+        Route::get('attributes/', 'App\Http\Controllers\cms\AttributeController@index')->name('backend.attribute.index');
+        Route::get('/attribute/show/{id}', 'App\Http\Controllers\cms\AttributeController@show')->name("backend.attribute.show");
+        Route::get('attribute/create', 'App\Http\Controllers\cms\AttributeController@create')->name('backend.attribute.create');
+        Route::post('attribute/store', 'App\Http\Controllers\cms\AttributeController@store')->name('backend.attribute.store');
+        Route::get('attribute/edit/{id}', 'App\Http\Controllers\cms\AttributeController@edit')->name('backend.attribute.edit');
+        Route::post('attribute/update/{id}', 'App\Http\Controllers\cms\AttributeController@update')->name('backend.attribute.update');
+        Route::get('attribute/delete/{id}', 'App\Http\Controllers\cms\AttributeController@destroy')->name('backend.attribute.destroy');
+
+        Route::get('product_attribute_values/', 'App\Http\Controllers\cms\ProductAttributeController@index')->name('backend.product_attribute_value.index');
+        Route::get('/product_attribute_value/show/{id}', 'App\Http\Controllers\cms\ProductAttributeController@show')->name("backend.product_attribute_value.show");
+        Route::get('product_attribute_value/create', 'App\Http\Controllers\cms\ProductAttributeController@create')->name('backend.product_attribute_value.create');
+        Route::post('product_attribute_value/store', 'App\Http\Controllers\cms\ProductAttributeController@store')->name('backend.product_attribute_value.store');
+        Route::get('product_attribute_value/edit/{id}', 'App\Http\Controllers\cms\ProductAttributeController@edit')->name('backend.product_attribute_value.edit');
+        Route::post('product_attribute_value/update/{id}', 'App\Http\Controllers\cms\ProductAttributeController@update')->name('backend.product_attribute_value.update');
+        Route::get('product_attribute_value/delete/{id}', 'App\Http\Controllers\cms\ProductAttributeController@destroy')->name('backend.product_attribute_value.destroy');
     });
 });
