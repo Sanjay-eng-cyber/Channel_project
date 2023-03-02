@@ -13,13 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::domain(config('app.web_domain'))->group(function () {
 
-    Route::get('/', function () {
-        return view('frontend.index');
-    });
-
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth'])->name('dashboard');
+Route::get('/', function () {
+    return view('frontend.index');
 });
+
+Route::get('/about-us', function () {
+    return view('frontend/layouts/about-us');
+})->name('about');
+
+Route::get('/contact-us', function () {
+    return view('frontend/layouts/contact-us');
+})->name('contact');
+
+
+
+// Route::domain(config('app.web_domain'))->group(function () {
+
+//     Route::get('/', function () {
+//         return view('frontend.index');
+//     });
+
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->middleware(['auth'])->name('dashboard');
+// });
