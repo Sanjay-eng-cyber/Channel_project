@@ -214,17 +214,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li>
-                                <a class="drop-link" href="">Contact
-                                    <i class="fa fa-angle-down hidden-lg hidden-md"
-                                        aria-hidden="true"></i></a>
-                                <div class="s-drop">
-                                    <ul>
-                                        <li><a href="{{route('contact')}}">Contact</a></li>
-                                        <li><a href="">Contact 2</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+                            <li><a href="{{route('contact')}}">Contact</a></li>
                         </ul>
                     </nav>
                     <!-- mt icon list end here -->
