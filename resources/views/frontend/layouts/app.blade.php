@@ -160,12 +160,13 @@
             </section><!-- Mt Newsletter Popup of the Page -->
         </div><!-- Popup of the Page end -->
     </div><!-- Popup Holder of the Page end -->
-    <!-- include jQuery -->
-    <script src="frontend/js/jquery.js"></script>
-    <!-- include jQuery -->
-    <script src="frontend/js/plugins.js"></script>
-    <!-- include jQuery -->
-    <script src="frontend/js/jquery.main.js"></script>
+ <!-- include jQuery -->
+<script src="{{ asset('frontend/js/jquery.js') }}"></script>
+<!-- include jQuery -->
+<script src="{{ asset('frontend/js/plugins.js') }}"></script>
+<!-- include jQuery -->
+<script src="{{ asset('frontend/js/jquery.main.js') }}"></script>
+
     @yield('js')
 
 </body>
