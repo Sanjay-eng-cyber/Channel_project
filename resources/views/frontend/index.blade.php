@@ -15,7 +15,7 @@
                                 <h3><strong>New</strong> Collection</h3>
                                 <p>Consectetur adipisicing elit. Beatae accusamus, optio, repellendus
                                     inventore</p>
-                                <span class="price-add">$ 79.00</span>
+                                <span class="price-add">₹ 79.00</span>
                             </div>
                         </div>
                     </div><!-- banner 5 white end here -->
@@ -26,8 +26,8 @@
                             <strong class="sub-title">SOFAS &amp; ARMCHAIRS</strong>
                             <h3>3 Seater Leather Sofa</h3>
                             <span class="offer">
-                                <span class="price-less">$ 659.00</span>
-                                <span class="prices">$ 499.00</span>
+                                <span class="price-less">₹ 659.00</span>
+                                <span class="prices">₹ 499.00</span>
                             </span>
                             <a href="" class="btn-shop">
                                 <span>shop now</span>
@@ -49,7 +49,7 @@
                                     <li><i class="fa fa-star-o"></i></li>
                                 </ul>
                                 <div class="price-tag">
-                                    <span class="price">$ 99.00</span>
+                                    <span class="price">₹ 99.00</span>
                                     <a class="shop-now" href="">SHOP NOW</a>
                                 </div>
                             </div>
@@ -66,8 +66,8 @@
                                     <li><i class="fa fa-star-o"></i></li>
                                 </ul>
                                 <div class="price-tag">
-                                    <span class="price-off">$ 129.00</span>
-                                    <span class="price">$ 99.00</span>
+                                    <span class="price-off">₹ 129.00</span>
+                                    <span class="price">₹ 99.00</span>
                                     <a class="btn-shop" href="">
                                         <span>HURRY UP!</span>
                                         <i class="fa fa-angle-right"></i>
@@ -200,7 +200,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -209,7 +209,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -231,7 +231,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -240,7 +240,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -271,7 +271,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -280,7 +280,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Chair with
                                                     armrests</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>200,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -308,7 +308,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -317,7 +317,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -339,7 +339,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -348,7 +348,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -375,7 +375,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -384,7 +384,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -412,7 +412,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -421,7 +421,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -452,7 +452,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -461,7 +461,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Chair with
                                                     armrests</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>200,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -489,7 +489,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -498,7 +498,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -520,7 +520,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -529,7 +529,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -565,7 +565,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -574,7 +574,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Chair with
                                                     armrests</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>200,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -602,7 +602,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -611,7 +611,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -633,7 +633,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -642,7 +642,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -670,7 +670,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -679,7 +679,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -701,7 +701,7 @@
                                                         <li><a href="frontend/#"><i
                                                                     class="icomoon icon-heart-empty"></i></a>
                                                         </li>
-                                                        <li><a href="frontend/#popup1" class="lightbox"><i
+                                                        <li><a href="#popup1" class="lightbox"><i
                                                                     class="icomoon icon-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -710,7 +710,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -784,7 +784,7 @@
                                                             Cart</span></a></li>
                                                 <li><a href="frontend/#"><i class="icomoon icon-heart-empty"></i></a>
                                                 </li>
-                                                <li><a href="frontend/#popup1" class="lightbox"><i
+                                                <li><a href="#popup1" class="lightbox"><i
                                                             class="icomoon icon-eye"></i></a></li>
                                             </ul>
                                         </div>
@@ -793,7 +793,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Puff
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>287,00</span></span>
                                 </div>
                             </div><!-- mt product1  end here -->
@@ -813,7 +813,7 @@
                                                             Cart</span></a></li>
                                                 <li><a href="frontend/#"><i class="icomoon icon-heart-empty"></i></a>
                                                 </li>
-                                                <li><a href="frontend/#popup1" class="lightbox"><i
+                                                <li><a href="#popup1" class="lightbox"><i
                                                             class="icomoon icon-eye"></i></a></li>
                                             </ul>
                                         </div>
@@ -822,7 +822,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Bombi
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>399,00</span></span>
                                 </div>
                             </div><!-- mt product1 center end here -->
@@ -842,7 +842,7 @@
                                                             Cart</span></a></li>
                                                 <li><a href="frontend/#"><i class="icomoon icon-heart-empty"></i></a>
                                                 </li>
-                                                <li><a href="frontend/#popup1" class="lightbox"><i
+                                                <li><a href="#popup1" class="lightbox"><i
                                                             class="icomoon icon-eye"></i></a></li>
                                             </ul>
                                         </div>
@@ -851,7 +851,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Wood
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>198,00</span></span>
                                 </div>
                             </div><!-- mt product1 end here -->
@@ -875,7 +875,7 @@
                                                             Cart</span></a></li>
                                                 <li><a href="frontend/#"><i class="icomoon icon-heart-empty"></i></a>
                                                 </li>
-                                                <li><a href="frontend/#popup1" class="lightbox"><i
+                                                <li><a href="#popup1" class="lightbox"><i
                                                             class="icomoon icon-eye"></i></a></li>
                                             </ul>
                                         </div>
@@ -884,7 +884,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Bombi
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>200,00</span></span>
                                 </div>
                             </div><!-- mt product1 end here -->
@@ -904,7 +904,7 @@
                                                             Cart</span></a></li>
                                                 <li><a href="frontend/#"><i class="icomoon icon-heart-empty"></i></a>
                                                 </li>
-                                                <li><a href="frontend/#popup1" class="lightbox"><i
+                                                <li><a href="#popup1" class="lightbox"><i
                                                             class="icomoon icon-eye"></i></a></li>
                                             </ul>
                                         </div>
@@ -913,7 +913,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Bombi
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>200,00</span></span>
                                 </div>
                             </div><!-- mt product1 end here -->
@@ -933,7 +933,7 @@
                                                             Cart</span></a></li>
                                                 <li><a href="frontend/#"><i class="icomoon icon-heart-empty"></i></a>
                                                 </li>
-                                                <li><a href="frontend/#popup1" class="lightbox"><i
+                                                <li><a href="#popup1" class="lightbox"><i
                                                             class="icomoon icon-eye"></i></a></li>
                                             </ul>
                                         </div>
@@ -942,7 +942,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Wood
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>198,00</span></span>
                                 </div>
                             </div><!-- mt product1 end here -->
@@ -1017,4 +1017,144 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+    <a id="newsletter-hiddenlink" href="#popup2" class="lightbox" style="display: none;">NEWSLETTER</a>
+	<!-- Popup Holder of the Page -->
+	<div class="popup-holder">
+		<!-- Popup of the Page -->
+		<div id="popup1" class="lightbox">
+			<!-- Mt Product Detial of the Page -->
+			<section class="mt-product-detial">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- Slider of the Page -->
+							<div class="slider">
+								<!-- Comment List of the Page -->
+								<ul class="list-unstyled comment-list">
+									<li><a href="#"><i class="fa fa-heart"></i>27</a></li>
+									<li><a href="#"><i class="fa fa-comments"></i>12</a></li>
+									<li><a href="#"><i class="fa fa-share-alt"></i>14</a></li>
+								</ul><!-- Comment List of the Page end -->
+								<!-- Product Slider of the Page -->
+								<div class="product-slider">
+									<div class="slide">
+										<img src="frontend/images/img03.jpg" alt="image descrption">
+									</div>
+									<div class="slide">
+										<img src="frontend/images/img03.jpg" alt="image descrption">
+									</div>
+									<div class="slide">
+										<img src="frontend/images/img03.jpg" alt="image descrption">
+									</div>
+									<div class="slide">
+										<img src="frontend/images/img03.jpg" alt="image descrption">
+									</div>
+								</div><!-- Product Slider of the Page end -->
+								<!-- Pagg Slider of the Page -->
+								<ul class="list-unstyled slick-slider pagg-slider">
+									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
+									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
+									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
+									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
+									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
+									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
+								</ul><!-- Pagg Slider of the Page end -->
+							</div><!-- Slider of the Page end -->
+							<!-- Detail Holder of the Page -->
+							<div class="detial-holder">
+								<!-- Breadcrumbs of the Page -->
+								<ul class="list-unstyled breadcrumbs">
+									<li><a href="#">Chairs <i class="fa fa-angle-right"></i></a></li>
+									<li>Products</li>
+								</ul>
+								<!-- Breadcrumbs of the Page end -->
+								<h2>KAILA FABRIC CHAIR</h2>
+								<!-- Rank Rating of the Page -->
+								<div class="rank-rating">
+									<ul class="list-unstyled rating-list">
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star-o"></i></a></li>
+									</ul>
+									<span class="total-price">Reviews (12)</span>
+								</div><!-- Rank Rating of the Page end -->
+								<ul class="list-unstyled list">
+									<li><a href="#"><i class="fa fa-share-alt"></i>SHARE</a></li>
+									<li><a href="#"><i class="fa fa-exchange"></i>COMPARE</a></li>
+									<li><a href="#"><i class="fa fa-heart"></i>ADD TO WISHLIST</a></li>
+								</ul>
+								<div class="txt-wrap">
+									<p>Koila is a chair designed for restaurants and food lovers in general. Designed in
+										collaboration with restaurant professionals, it ensures comfort and an ideal
+										posture, as there are armrests on both sides of the chair.</p>
+									<p>Koila is a seat designed for restaurants and gastronomic places in general.
+										Designed in collaboration with professional of restaurants and hotels field,
+										this armchair is composed of a curved shell with a base in oak who has pinched
+										the back upholstered in fabric or leather. It provides comfort and holds for
+										ideal sitting position,the arms may rest on the sides ofthe armchair.</p>
+								</div>
+								<div class="text-holder">
+									<span class="price">$ 79.00 <del>399,00</del></span>
+								</div><!-- Product Form of the Page -->
+								<form action="#" method="post" class="product-form">
+                                    @csrf
+									<fieldset>
+										<div class="row-val">
+											<label for="qty">qty</label>
+											<select id="clr">
+												<option>1</option>
+											</select>
+										</div>
+										<div class="row-val">
+											<button type="submit">ADD TO CART</button>
+										</div>
+									</fieldset>
+								</form><!-- Product Form of the Page end -->
+							</div><!-- Detail Holder of the Page end -->
+						</div>
+					</div>
+				</div>
+			</section><!-- Mt Product Detial of the Page end -->
+		</div><!-- Popup of the Page end -->
+		<!-- Popup of the Page -->
+		<!-- Popup of the Page -->
+		<div id="popup2" class="lightbox">
+			<!-- Mt Newsletter Popup of the Page -->
+			<section class="mt-newsletter-popup">
+				<span class="title">NEWSLETTER</span>
+				<div class="holder">
+					<div class="txt-holder">
+						<h1>JOIN OUR NEWSLETTER</h1>
+						<span class="txt">Subscribe now to get <b>15%</b> off on any product!</span>
+						<!-- Newsletter Form of the Page -->
+						<form action="#" method="post" class="newsletter-form">
+                            @csrf
+							<fieldset>
+								<input type="email" class="form-control" placeholder="Enter your e-mail">
+								<button type="submit">SUBSCRIBE</button>
+							</fieldset>
+						</form><!-- Newsletter Form of the Page -->
+					</div>
+					<div class="img-holder">
+						<img src="frontend/images/img02.png" alt="image description">
+					</div>
+				</div><!-- Popup Form of the Page -->
+				<form action="#" method="post" class="popup-form">
+                    @csrf
+					<fieldset>
+						<input type="checkbox" class="form-control">Don’t show this popup again
+					</fieldset>
+				</form><!-- Popup Form of the Page end -->
+			</section><!-- Mt Newsletter Popup of the Page -->
+		</div><!-- Popup of the Page end -->
+	</div><!-- Popup Holder of the Page end -->
 @endsection
