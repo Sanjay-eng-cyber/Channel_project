@@ -72,5 +72,16 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         Route::get('users/', 'App\Http\Controllers\cms\UserController@index')->name('backend.user.index');
         Route::get('/user/show/{id}', 'App\Http\Controllers\cms\UserController@show')->name("backend.user.show");
+
+        Route::get('products/', 'App\Http\Controllers\cms\ProductController@index')->name('backend.product.index');
+        Route::get('/product/show/{id}', 'App\Http\Controllers\cms\ProductController@show')->name("backend.product.show");
+        Route::get('product/create', 'App\Http\Controllers\cms\ProductController@create')->name('backend.product.create');
+        Route::post('product/store', 'App\Http\Controllers\cms\ProductController@store')->name('backend.product.store');
+        Route::get('product/edit/{id}', 'App\Http\Controllers\cms\ProductController@edit')->name('backend.product.edit');
+        Route::post('product/update/{id}', 'App\Http\Controllers\cms\ProductController@update')->name('backend.product.update');
+        Route::get('product/delete/{id}', 'App\Http\Controllers\cms\ProductController@destroy')->name('backend.product.destroy');
+
+        Route::get('/category/get/subcategory/{id}', 'App\Http\Controllers\cms\ProductController@getSubCategory')->name("cms.subcategory.get");
+
     });
 });

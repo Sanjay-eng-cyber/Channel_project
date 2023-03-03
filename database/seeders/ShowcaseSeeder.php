@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ShowcaseSeeder extends Seeder
 {
@@ -13,6 +14,17 @@ class ShowcaseSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $showcase = [
+            'Featured',
+            'Best Seller',
+        ];
+
+        foreach ($showcase as $s) {
+            DB::table('showcases')->insert([
+                "name" => $s,
+                "created_at" => now(),
+                "updated_at" => now()
+            ]);
+        }
     }
 }
