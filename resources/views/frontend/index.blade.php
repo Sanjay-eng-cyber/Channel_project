@@ -15,7 +15,7 @@
                                 <h3><strong>New</strong> Collection</h3>
                                 <p>Consectetur adipisicing elit. Beatae accusamus, optio, repellendus
                                     inventore</p>
-                                <span class="price-add">$ 79.00</span>
+                                <span class="price-add">₹ 79.00</span>
                             </div>
                         </div>
                     </div><!-- banner 5 white end here -->
@@ -26,8 +26,8 @@
                             <strong class="sub-title">SOFAS &amp; ARMCHAIRS</strong>
                             <h3>3 Seater Leather Sofa</h3>
                             <span class="offer">
-                                <span class="price-less">$ 659.00</span>
-                                <span class="prices">$ 499.00</span>
+                                <span class="price-less">₹ 659.00</span>
+                                <span class="prices">₹ 499.00</span>
                             </span>
                             <a href="" class="btn-shop">
                                 <span>shop now</span>
@@ -49,7 +49,7 @@
                                     <li><i class="fa fa-star-o"></i></li>
                                 </ul>
                                 <div class="price-tag">
-                                    <span class="price">$ 99.00</span>
+                                    <span class="price">₹ 99.00</span>
                                     <a class="shop-now" href="">SHOP NOW</a>
                                 </div>
                             </div>
@@ -66,8 +66,8 @@
                                     <li><i class="fa fa-star-o"></i></li>
                                 </ul>
                                 <div class="price-tag">
-                                    <span class="price-off">$ 129.00</span>
-                                    <span class="price">$ 99.00</span>
+                                    <span class="price-off">₹ 129.00</span>
+                                    <span class="price">₹ 99.00</span>
                                     <a class="btn-shop" href="">
                                         <span>HURRY UP!</span>
                                         <i class="fa fa-angle-right"></i>
@@ -209,7 +209,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -240,7 +240,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -280,7 +280,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Chair with
                                                     armrests</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>200,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -317,7 +317,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -348,7 +348,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -384,7 +384,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -421,7 +421,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -461,7 +461,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Chair with
                                                     armrests</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>200,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -498,7 +498,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -529,7 +529,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -574,7 +574,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Chair with
                                                     armrests</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>200,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -611,7 +611,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -642,7 +642,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -679,7 +679,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Bombi
                                                     Chair</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>399,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -710,7 +710,7 @@
                                         <div class="txt">
                                             <strong class="title"><a href="">Marvelous
                                                     Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-eur"></i>
+                                            <span class="price"><i class="fa fa-inr"></i>
                                                 <span>599,00</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
@@ -793,7 +793,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Puff
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>287,00</span></span>
                                 </div>
                             </div><!-- mt product1  end here -->
@@ -822,7 +822,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Bombi
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>399,00</span></span>
                                 </div>
                             </div><!-- mt product1 center end here -->
@@ -851,7 +851,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Wood
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>198,00</span></span>
                                 </div>
                             </div><!-- mt product1 end here -->
@@ -884,7 +884,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Bombi
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>200,00</span></span>
                                 </div>
                             </div><!-- mt product1 end here -->
@@ -913,7 +913,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Bombi
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>200,00</span></span>
                                 </div>
                             </div><!-- mt product1 end here -->
@@ -942,7 +942,7 @@
                                 <div class="txt">
                                     <strong class="title"><a href="">Wood
                                             Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i>
+                                    <span class="price"><i class="fa fa-inr"></i>
                                         <span>198,00</span></span>
                                 </div>
                             </div><!-- mt product1 end here -->
