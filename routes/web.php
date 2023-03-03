@@ -27,4 +27,12 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend/layouts/contact-us');
     })->name('contact');
 
+    Route::get('/products', function () {
+        return view('frontend/product/index');
+    })->name('products');
+
+    Route::get('/products/{slug}', function () {
+        return view('frontend/product/show');
+    })->name('products.show');
+
 });
