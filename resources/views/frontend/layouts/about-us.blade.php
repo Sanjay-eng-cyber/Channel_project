@@ -66,7 +66,7 @@
                   <div class="col wow fadeInUp" data-wow-delay="0.4s">
                     <div class="img-holder">
                       <a href="#">
-                        <img src="frontend/images/img44.jpg" alt="CLARA WOODEN">
+                        <img src="{{asset('frontend/images/img44.jpg')}}" alt="CLARA WOODEN">
                         <ul class="list-unstyled social-icon">
                           <li><i class="fa fa-twitter"></i></li>
                           <li><i class="fa fa-facebook"></i></li>
@@ -84,7 +84,7 @@
                   <div class="col wow fadeInUp" data-wow-delay="0.6s">
                     <div class="img-holder">
                       <a href="#">
-                        <img src="frontend/images/img45.jpg" alt="JOHN WICK">
+                        <img src="{{asset('frontend/images/img45.jpg')}}" alt="JOHN WICK">
                         <ul class="list-unstyled social-icon">
                           <li><i class="fa fa-twitter"></i></li>
                           <li><i class="fa fa-facebook"></i></li>
@@ -102,7 +102,7 @@
                   <div class="col wow fadeInUp" data-wow-delay="0.8s">
                     <div class="img-holder">
                       <a href="#">
-                        <img src="frontend/images/img46.jpg" alt="HARRY KANE">
+                        <img src="{{asset('frontend/images/img46.jpg')}}" alt="HARRY KANE">
                         <ul class="list-unstyled social-icon">
                           <li><i class="fa fa-twitter"></i></li>
                           <li><i class="fa fa-facebook"></i></li>
@@ -120,7 +120,7 @@
                   <div class="col wow fadeInUp" data-wow-delay="0.10s">
                     <div class="img-holder">
                       <a href="#">
-                        <img src="frontend/images/img47.jpg" alt="CLARA WOODEN">
+                        <img src="{{asset('frontend/images/img47.jpg')}}" alt="CLARA WOODEN">
                       </a>
                     </div>
                   </div>
@@ -144,49 +144,49 @@
           <ul class="list-unstyled work-slider">
             <li>
               <div class="img-holder">
-                <img src="frontend/images/img48.jpg" alt="image description">
+                <img src="{{asset('frontend/images/img48.jpg')}}" alt="image description">
               </div>
               <div class="img-holder">
                 <div class="coll1">
-                  <img src="frontend/images/img49.jpg" alt="image description">
+                  <img src="{{asset('frontend/images/img49.jpg')}}" alt="image description">
                 </div>
                 <div class="coll2">
-                  <img src="frontend/images/img50.jpg" alt="image description">
+                  <img src="{{asset('frontend/images/img50.jpg')}}" alt="image description">
                 </div>
                 <div class="coll3">
-                  <img src="frontend/images/img51.jpg" alt="image description">
+                  <img src="{{asset('frontend/images/img51.jpg')}}" alt="image description">
                 </div>
               </div>
             </li>
             <li>
               <div class="img-holder">
-                <img src="frontend/images/img48.jpg" alt="image description">
+                <img src="{{asset('frontend/images/img48.jpg')}}" alt="image description">
               </div>
               <div class="img-holder">
                 <div class="coll1">
-                  <img src="frontend/images/img49.jpg" alt="image description">
+                  <img src="{{asset('frontend/images/img49.jpg')}}" alt="image description">
                 </div>
                 <div class="coll2">
-                  <img src="frontend/images/img50.jpg" alt="image description">
+                  <img src="{{asset('frontend/images/img50.jpg')}}" alt="image description">
                 </div>
                 <div class="coll3">
-                  <img src="frontend/images/img51.jpg" alt="image description">
+                  <img src="{{asset('frontend/images/img51.jpg')}}" alt="image description">
                 </div>
               </div>
             </li>
             <li>
               <div class="img-holder">
-                <img src="frontend/images/img48.jpg" alt="image description">
+                <img src="{{asset('frontend/images/img48.jpg')}}" alt="image description">
               </div>
               <div class="img-holder">
                 <div class="coll1">
-                  <img src="frontend/images/img49.jpg" alt="image description">
+                  <img src="{{asset('frontend/images/img49.jpg')}}" alt="image description">
                 </div>
                 <div class="coll2">
-                  <img src="frontend/images/img50.jpg" alt="image description">
+                  <img src="{{asset('frontend/images/img50.jpg')}}" alt="image description">
                 </div>
                 <div class="coll3">
-                  <img src="frontend/images/img51.jpg" alt="image description">
+                  <img src="{{asset('frontend/images/img51.jpg')}}" alt="image description">
                 </div>
               </div>
             </li>
