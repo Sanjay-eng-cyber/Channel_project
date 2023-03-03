@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <!-- mt logo start here -->
-                    <div class="mt-logo"><a href="frontend/#"><img height="35" src="frontend/images/channel-logo.svg"
+                    <div class="mt-logo"><a href="frontend/#"><img height="35" src="{{asset('frontend/images/channel-logo.svg')}}"
                                 alt="schon"></a></div>
                     <!-- mt sh cart start here -->
                     <div class="mt-sh-cart">
@@ -56,29 +56,9 @@
                                 <li><a href="{{route('index')}}">Home</a></li>
 
                             </li>
-                            <li>
-                                <a class="drop-link" href="">PRODUCTS <i
-                                        class="fa fa-angle-down hidden-lg hidden-md"
-                                        aria-hidden="true"></i></a>
-                                <div class="s-drop">
-                                    <ul>
-                                        <li><a href="">Product Grid View</a>
-                                        </li>
-                                        <li><a href="">Product Grid
-                                                View2</a></li>
-                                        <li><a href="">Product Grid
-                                                View3</a></li>
-                                        <li><a href="">Product Grid
-                                                View4</a></li>
-                                        <li><a href="">Product Grid
-                                                View5</a></li>
-                                        <li><a href="">Product Grid
-                                                View6</a></li>
-                                        <li><a href="">Product Grid
-                                                View7</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+
+                            <li><a href="{{route('products')}}">PRODUCTS</a></li>
+
                             <li class="drop">
                                 <a href="">PAGES <i class="fa fa-angle-down"
                                         aria-hidden="true"></i></a>
@@ -198,7 +178,7 @@
                                             <div class="mt-col-3 promo">
                                                 <div class="mt-promobox">
                                                     <a href=""><img
-                                                            src="frontend/images/banner-drop.jpg"
+                                                            src="{{asset('frontend/images/banner-drop.jpg')}}"
                                                             alt="promo banner" class="img-responsive"></a>
                                                 </div>
                                             </div>
