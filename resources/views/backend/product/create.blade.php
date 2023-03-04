@@ -31,7 +31,7 @@
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput" class="">Name</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
@@ -40,7 +40,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="degree2">Brand</label>
                                     <select class="form-control mb-4" name="brand_id">
                                         <option value="">Select Any Brand</option>
@@ -55,7 +55,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="degree2">Category</label>
                                     <select class="form-control mb-4" name="category_id" id="sel1" onchange="getValues()" required>
                                         <option value="">Select Any Category</option>
@@ -70,7 +70,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="degree2">Sub Category</label>
                                     <select class="form-control mb-4" name="sub_category_id" id="sub">
                                         <option value="">Select Any Sub Category</option>
@@ -80,7 +80,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput" class="">MRP</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Mrp" minlength="3" maxlength="40" required name="mrp"
@@ -89,7 +89,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('mrp') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput" class="">Final Price</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Final Price" minlength="3" maxlength="40" required name="final_price"
@@ -116,7 +116,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('sku') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-3">
+                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
                                     <label for="descriptions">Description</label>
                                     <textarea id="team-about" name="descriptions">{{ old('descriptions') }}</textarea>
                                     @if ($errors->has('body'))
