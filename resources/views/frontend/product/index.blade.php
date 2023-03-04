@@ -150,74 +150,21 @@
                 <!-- shop-widget of the Page start here -->
                 <section class="shop-widget">
                     <h2>HOT SALE</h2>
-                    <!-- mt product4 start here -->
+                    @for ($i=1;$i<5;$i++)
                     <div class="mt-product4 mt-paddingbottom20">
                         <div class="img">
-                            <a href="product-detail.html"><img src="frontend/images/products/img14.jpg"
+                            <a href="{{route('products.show','product-name')}}"><img src="frontend/images/products/img15.jpg"
                                     alt="image description"></a>
                         </div>
                         <div class="text">
                             <div class="frame">
-                                <strong><a href="product-detail.html">Egon Wooden Chair</a></strong>
-                                <ul class="mt-stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                </ul>
+                                <strong><a href="{{route('products.show','product-name')}}">product-name {{$i}}</a></strong>
                             </div>
-                            <del class="off">$75,00</del>
-                            <span class="price">$55,00</span>
+                            <del class="off">₹75,00</del>
+                            <span class="price">₹55,00  Upto 60%</span>
                         </div>
                     </div><!-- mt product4 end here -->
-                    <!-- mt product4 start here -->
-                    <div class="mt-product4 mt-paddingbottom20">
-                        <div class="img">
-                            <a href="product-detail.html"><img src="frontend/images/products/img15.jpg"
-                                    alt="image description"></a>
-                        </div>
-                        <div class="text">
-                            <div class="frame">
-                                <strong><a href="product-detail.html">Oyo Cantilever Chair</a></strong>
-                            </div>
-                            <del class="off">$75,00</del>
-                            <span class="price">$55,00</span>
-                        </div>
-                    </div><!-- mt product4 end here -->
-                    <!-- mt product4 start here -->
-                    <div class="mt-product4 mt-paddingbottom20">
-                        <div class="img">
-                            <a href="product-detail.html"><img src="images/products/img16.jpg"
-                                    alt="image description"></a>
-                        </div>
-                        <div class="text">
-                            <div class="frame">
-                                <strong><a href="product-detail.html">Kurve Chair</a></strong>
-                                <ul class="mt-stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                </ul>
-                            </div>
-                            <del class="off">$75,00</del>
-                            <span class="price">$55,00</span>
-                        </div>
-                    </div><!-- mt product4 end here -->
-                    <!-- mt product4 start here -->
-                    <div class="mt-product4 mt-paddingbottom20">
-                        <div class="img">
-                            <a href="product-detail.html"><img src="frontend/images/products/img20.jpg"
-                                    alt="image description"></a>
-                        </div>
-                        <div class="text">
-                            <div class="frame">
-                                <strong><a href="product-detail.html">Marvelous Wooden Chair</a></strong>
-                            </div>
-                            <del class="off">$75,00</del>
-                            <span class="price">$55,00</span>
-                        </div>
-                    </div><!-- mt product4 end here -->
+                    @endfor
                 </section><!-- shop-widget of the Page end here -->
             </aside><!-- sidebar of the Page end here -->
             <div class="col-xs-12 col-sm-8 col-md-9 wow fadeInRight" data-wow-delay="0.4s">
@@ -254,275 +201,33 @@
                 </header><!-- mt shoplist header end here -->
                 <!-- mt productlisthold start here -->
                 <ul class="mt-productlisthold list-inline">
-
-                    <li>
-                        <!-- mt product1 large start here -->
-                        <div class="mt-product1 bg-grey large">
-                            <div class="box">
-                                <div class="b1">
-                                    <div class="b2">
-                                        <a href="{{route('products.show',1)}}"><img src="frontend/images/products/img11.jpg"
+                    @for ($i = 1; $i < 10; $i++)
+                        <li>
+                            <!-- mt product1 large start here -->
+                            <div class="mt-product1 bg-grey large">
+                                <div class="box">
+                                    <div class="b1">
+                                        <div class="b2">
+                                            <a href="{{ route('products.show', $i) }}"><img src="frontend/images/products/img12.jpg"
                                                 alt="image description"></a>
-                                        <span class="caption">
-                                            <span class="best-price">Best Price</span>
-                                        </span>
-                                        <ul class="mt-stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <ul class="links add">
-                                            <li><a href="#"><i class="icon-handbag"></i><span></span></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                        </ul>
+                                            <ul class="links add">
+                                                <li><a href="#"><i class="icon-handbag"></i><span></span></a></li>
+                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a></li>
+                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="txt">
-                                <strong class="title"><a href="product-detail.html">Bombi Chair</a></strong>
-                                <span class="price"><i class="fa fa-inr"></i> <span>399,00</span></span>
-                            </div>
-                            <br>
-                        </div><!-- mt product1 center end here -->
-                    </li>
-                    <li>
-                        <!-- mt product1 large start here -->
-                        <div class="mt-product1 bg-grey large">
-                            <div class="box">
-                                <div class="b1">
-                                    <div class="b2">
-                                        <a href="product-detail.html"><img src="frontend/images/products/img12.jpg"
-                                                alt="image description"></a>
-                                        <ul class="links add">
-                                            <li><a href="#"><i class="icon-handbag"></i><span></span></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                        </ul>
-                                    </div>
+                                <div class="txt">
+                                    <strong class="title"><a href="{{ route('products.show', $i) }}">Product {{ $i }}</a></strong>
+                                    <span class="price"><i class="fa fa-inr"></i> <span>Product-price {{$i}} </span></span>
                                 </div>
-                            </div>
-                            <div class="txt">
-                                <strong class="title"><a href="product-detail.html">Marvelous Modern 3
-                                        Seater</a></strong>
-                                <span class="price"><i class="fa fa-inr"></i> <span>599,00</span></span>
-                            </div>
-                            <br>
-                        </div><!-- mt product1 center end here -->
-                    </li>
-                    <li>
-                        <!-- mt product1 large start here -->
-                        <div class="mt-product1 bg-grey large">
-                            <div class="box">
-                                <div class="b1">
-                                    <div class="b2">
-                                        <a href="product-detail.html"><img src="frontend/images/products/img13.jpg"
-                                                alt="image description"></a>
-                                        <span class="caption">
-                                            <span class="off">15% Off</span>
-                                        </span>
-                                        <ul class="links add">
-                                            <li><a href="#"><i class="icon-handbag"></i><span></span></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="txt">
-                                <strong class="title"><a href="product-detail.html">Chair with
-                                        armrests</a></strong>
-                                <span class="price"><i class="fa fa-inr"></i> <span>200,00</span></span>
-                            </div>
-                            <br>
-                        </div><!-- mt product1 center end here -->
-                    </li>
-                    <li>
-                        <!-- mt product1 large start here -->
-                        <div class="mt-product1 bg-grey large">
-                            <div class="box">
-                                <div class="b1">
-                                    <div class="b2">
-                                        <a href="product-detail.html"><img src="frontend/images/products/img12.jpg"
-                                                alt="image description"></a>
-                                        <ul class="links add">
-                                            <li><a href="#"><i class="icon-handbag"></i><span></span></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="txt">
-                                <strong class="title"><a href="product-detail.html">Marvelous Modern 3
-                                        Seater</a></strong>
-                                <span class="price"><i class="fa fa-inr"></i> <span>599,00</span></span>
-                            </div>
-                            <br>
-                        </div><!-- mt product1 center end here -->
-                    </li>
-                    <li>
-                        <!-- mt product1 large start here -->
-                        <div class="mt-product1 bg-grey large">
-                            <div class="box">
-                                <div class="b1">
-                                    <div class="b2">
-                                        <a href="product-detail.html"><img src="frontend/images/products/img13.jpg"
-                                                alt="image description"></a>
-                                        <span class="caption">
-                                            <span class="off">15% Off</span>
-                                        </span>
-                                        <ul class="links add">
-                                            <li><a href="#"><i class="icon-handbag"></i><span></span></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="txt">
-                                <strong class="title"><a href="product-detail.html">Chair with
-                                        armrests</a></strong>
-                                <span class="price"><i class="fa fa-inr"></i> <span>200,00</span></span>
-                            </div>
-                            <br>
-                        </div><!-- mt product1 center end here -->
-                    </li>
-                    <li>
-                        <!-- mt product1 large start here -->
-                        <div class="mt-product1 bg-grey large">
-                            <div class="box">
-                                <div class="b1">
-                                    <div class="b2">
-                                        <a href="product-detail.html"><img src="frontend/images/products/img11.jpg"
-                                                alt="image description"></a>
-                                        <span class="caption">
-                                            <span class="best-price">Best Price</span>
-                                        </span>
-                                        <ul class="mt-stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <ul class="links add">
-                                            <li><a href="#"><i class="icon-handbag"></i><span></span></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="txt">
-                                <strong class="title"><a href="product-detail.html">Bombi Chair</a></strong>
-                                <span class="price"><i class="fa fa-inr"></i> <span>399,00</span></span>
-                            </div>
-                            <br>
-                        </div><!-- mt product1 center end here -->
-                    </li>
-                    <li>
-                        <!-- mt product1 large start here -->
-                        <div class="mt-product1 bg-grey large">
-                            <div class="box">
-                                <div class="b1">
-                                    <div class="b2">
-                                        <a href="product-detail.html"><img src="frontend/images/products/img13.jpg"
-                                                alt="image description"></a>
-                                        <span class="caption">
-                                            <span class="off">15% Off</span>
-                                        </span>
-                                        <ul class="links add">
-                                            <li><a href="#"><i class="icon-handbag"></i><span></span></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="txt">
-                                <strong class="title"><a href="product-detail.html">Chair with
-                                        armrests</a></strong>
-                                <span class="price"><i class="fa fa-inr"></i> <span>200,00</span></span>
-                            </div>
-                            <br>
-                        </div><!-- mt product1 center end here -->
-                    </li>
-                    <li>
-                        <!-- mt product1 large start here -->
-                        <div class="mt-product1 bg-grey large">
-                            <div class="box">
-                                <div class="b1">
-                                    <div class="b2">
-                                        <a href="product-detail.html"><img src="frontend/images/products/img11.jpg"
-                                                alt="image description"></a>
-                                        <span class="caption">
-                                            <span class="best-price">Best Price</span>
-                                        </span>
-                                        <ul class="mt-stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <ul class="links add">
-                                            <li><a href="#"><i class="icon-handbag"></i><span></span></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="txt">
-                                <strong class="title"><a href="product-detail.html">Bombi Chair</a></strong>
-                                <span class="price"><i class="fa fa-inr"></i> <span>399,00</span></span>
-                            </div>
-                            <br>
-                        </div><!-- mt product1 center end here -->
-                    </li>
-                    <li>
-                        <!-- mt product1 large start here -->
-                        <div class="mt-product1 bg-grey large">
-                            <div class="box">
-                                <div class="b1">
-                                    <div class="b2">
-                                        <a href="product-detail.html"><img src="frontend/images/products/img12.jpg"
-                                                alt="image description"></a>
-                                        <ul class="links add">
-                                            <li><a href="#"><i class="icon-handbag"></i><span></span></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="txt">
-                                <strong class="title"><a href="product-detail.html">Marvelous Modern 3
-                                        Seater</a></strong>
-                                <span class="price"><i class="fa fa-inr"></i> <span>599,00</span></span>
-                            </div>
-                            <br>
-                        </div><!-- mt product1 center end here -->
-                    </li>
+                                <br>
+                            </div><!-- mt product1 center end here -->
+                        </li>
+                    @endfor
                 </ul><!-- mt productlisthold end here -->
+
                 <!-- mt pagination start here -->
                 <nav class="mt-pagination">
                     <ul class="list-inline">
