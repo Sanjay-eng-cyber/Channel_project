@@ -29,7 +29,7 @@
                                 <span class="price-less">₹ 659.00</span>
                                 <span class="prices">₹ 499.00</span>
                             </span>
-                            <a href="" class="btn-shop">
+                            <a href="{{route('products.show','product-name')}}" class="btn-shop">
                                 <span>shop now</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -50,7 +50,7 @@
                                 </ul>
                                 <div class="price-tag">
                                     <span class="price">₹ 99.00</span>
-                                    <a class="shop-now" href="">SHOP NOW</a>
+                                    <a class="shop-now" href="{{route('products.show','product-name')}}">SHOP NOW</a>
                                 </div>
                             </div>
                         </div><!-- banner 7 right end here -->
@@ -86,7 +86,7 @@
                             <img src="frontend/images/banner/img12.jpg" alt="image description">
                             <div class="holder">
                                 <h2><span>Chairs</span><strong>ZIO DINING CHAIR</strong></h2>
-                                <a class="btn-shop" href="">
+                                <a class="btn-shop" href="{{route('products.show','product-name')}}">
                                     <span>SHOP NOW</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
@@ -98,7 +98,7 @@
                             <div class="holder">
                                 <h2><span>Accessories / Lighting</span><strong>TOTEM FLOOR LAMP</strong>
                                 </h2>
-                                <a class="btn-shop" href="">
+                                <a class="btn-shop" href="{{route('products.show','product-name')}}">
                                     <span>SHOP NOW</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
@@ -159,7 +159,7 @@
                                         <p>Consectetur adipisicing elit. Beatae accusamus, optio,
                                             repellendus inventore</p>
                                     </div>
-                                    <a href="" class="s-shop">SHOP NOW</a>
+                                    <a href="{{route('products.show','product-name')}}" class="s-shop">SHOP NOW</a>
                                 </div>
                             </div><!-- holder end here -->
                         </div>
@@ -175,9 +175,12 @@
                     </ul>
                     <!-- producttabs end here -->
                     <div class="tab-content">
+
                         <div id="tab1">
                             <!-- tabs slider start here -->
                             <div class="tabs-sliderlg">
+                            @for ($i = 1; $i < 6; $i++)
+
                                 <!-- slide start here -->
                                 <div class="slide">
                                     <!-- mt product1 large start here -->
@@ -185,7 +188,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href=""><img
+                                                    <a href="{{route('products.show','product-name')}}"><img
                                                             src="frontend/images/products/img22.jpg"
                                                             alt="image description"></a>
                                                     <ul class="mt-stars">
@@ -207,158 +210,26 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="">Bombi
-                                                    Chair</a></strong>
+                                            <strong class="title">
+                                                <a href="{{route('products.show','product-name')}}">
+                                               product-name{{$i}}
+                                                </a>
+                                            </strong>
                                             <span class="price"><i class="fa fa-inr"></i>
-                                                <span>399,00</span></span>
+                                                <span>product-price</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
                                 </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img23.jpg"
-                                                            alt="image description"></a>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Marvelous
-                                                    Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>599,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img24.jpg"
-                                                            alt="image description"></a>
-                                                    <span class="caption">
-                                                        <span class="off">15% Off</span>
-                                                    </span>
-                                                    <ul class="mt-stars">
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Chair with
-                                                    armrests</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>200,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img22.jpg"
-                                                            alt="image description"></a>
-                                                    <ul class="mt-stars">
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Bombi
-                                                    Chair</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>399,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img23.jpg"
-                                                            alt="image description"></a>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Marvelous
-                                                    Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>599,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
+
+                            @endfor
                             </div>
                             <!-- tabs slider end here -->
                         </div>
+
                         <div id="tab2">
                             <!-- tabs slider start here -->
                             <div class="tabs-sliderlg">
+                                @for ($i = 1; $i < 6; $i++)
                                 <!-- slide start here -->
                                 <div class="slide">
                                     <!-- mt product1 large start here -->
@@ -366,7 +237,7 @@
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href=""><img
+                                                    <a href="{{route('products.show','product-name')}}"><img
                                                             src="frontend/images/products/img23.jpg"
                                                             alt="image description"></a>
                                                     <ul class="links">
@@ -382,158 +253,16 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="">Marvelous
-                                                    Modern 3 Seater</a></strong>
+                                            <strong class="title"><a href="{{route('products.show','product-name')}}">
+                                               product-name{{$i}}
+                                                </a></strong>
                                             <span class="price"><i class="fa fa-inr"></i>
-                                                <span>599,00</span></span>
+                                                <span>product-price{{$i}}</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
                                 </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img22.jpg"
-                                                            alt="image description"></a>
-                                                    <ul class="mt-stars">
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Bombi
-                                                    Chair</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>399,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img24.jpg"
-                                                            alt="image description"></a>
-                                                    <span class="caption">
-                                                        <span class="off">15% Off</span>
-                                                    </span>
-                                                    <ul class="mt-stars">
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Chair with
-                                                    armrests</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>200,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img22.jpg"
-                                                            alt="image description"></a>
-                                                    <ul class="mt-stars">
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Bombi
-                                                    Chair</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>399,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img23.jpg"
-                                                            alt="image description"></a>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Marvelous
-                                                    Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>599,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
+
+                            @endfor
                             </div>
                             <!-- tabs slider end here -->
                         </div>
@@ -541,13 +270,14 @@
                             <!-- tabs slider start here -->
                             <div class="tabs-sliderlg">
                                 <!-- slide start here -->
+                                @for ($i = 1; $i < 6; $i++)
                                 <div class="slide">
                                     <!-- mt product1 large start here -->
                                     <div class="mt-product1 large">
                                         <div class="box">
                                             <div class="b1">
                                                 <div class="b2">
-                                                    <a href=""><img
+                                                    <a href="{{route('products.show','product-name')}}"><img
                                                             src="frontend/images/products/img24.jpg"
                                                             alt="image description"></a>
                                                     <span class="caption">
@@ -572,149 +302,13 @@
                                             </div>
                                         </div>
                                         <div class="txt">
-                                            <strong class="title"><a href="">Chair with
-                                                    armrests</a></strong>
+                                            <strong class="title"><a href="{{route('products.show','product-name')}}">product-name</a></strong>
                                             <span class="price"><i class="fa fa-inr"></i>
-                                                <span>200,00</span></span>
+                                                <span>product-price</span></span>
                                         </div>
                                     </div><!-- mt product1 center end here -->
                                 </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img22.jpg"
-                                                            alt="image description"></a>
-                                                    <ul class="mt-stars">
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Bombi
-                                                    Chair</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>399,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img23.jpg"
-                                                            alt="image description"></a>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Marvelous
-                                                    Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>599,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img22.jpg"
-                                                            alt="image description"></a>
-                                                    <ul class="mt-stars">
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Bombi
-                                                    Chair</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>399,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-                                <!-- slide end here -->
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href=""><img
-                                                            src="frontend/images/products/img23.jpg"
-                                                            alt="image description"></a>
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <strong class="title"><a href="">Marvelous
-                                                    Modern 3 Seater</a></strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>599,00</span></span>
-                                        </div>
-                                    </div><!-- mt product1 center end here -->
-                                </div>
+                                @endfor
                             </div>
                             <!-- tabs slider end here -->
                         </div>
@@ -727,7 +321,7 @@
                         <img src="frontend/images/banner/img20.jpg" alt="image description">
                         <div class="holder">
                             <h2><span>Wall Decor</span><strong>CLOCKs</strong></h2>
-                            <a class="btn-shop" href="">
+                            <a class="btn-shop" href="{{route('products.show','product-name')}}">
                                 <span>VIEW</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -738,7 +332,7 @@
                         <img src="frontend/images/banner/img21.jpg" alt="image description">
                         <div class="holder">
                             <h2><span>Coffee Tables</span><strong>S.O.S. BLOCKS</strong></h2>
-                            <a class="btn-shop" href="">
+                            <a class="btn-shop" href="{{route('products.show','product-name')}}">
                                 <span>VIEW</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -749,7 +343,7 @@
                         <img src="frontend/images/banner/img19.jpg" alt="image description">
                         <div class="holder">
                             <h2><span>Floor Lamps</span><strong>ROCKING LAMP</strong></h2>
-                            <a class="btn-shop" href="">
+                            <a class="btn-shop" href="{{route('products.show','product-name')}}">
                                 <span>VIEW</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -761,44 +355,7 @@
                     <h2 class="heading">BEST SELLER</h2>
                     <!-- tabs slider start here -->
                     <div class="tabs-slider">
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <!-- mt product1  start here -->
-                            <div class="mt-product1">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href=""><img
-                                                    src="frontend/images/products/img01.jpg" alt="image description"></a>
-                                            <span class="caption">
-                                                <span class="new">new</span>
-                                            </span>
-                                            <ul class="mt-stars">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                            <ul class="links">
-                                                <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                            Cart</span></a></li>
-                                                <li><a href="frontend/#"><i class="icomoon icon-heart-empty"></i></a>
-                                                </li>
-                                                <li><a href="#popup1" class="lightbox"><i
-                                                            class="icomoon icon-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="">Puff
-                                            Chair</a></strong>
-                                    <span class="price"><i class="fa fa-inr"></i>
-                                        <span>287,00</span></span>
-                                </div>
-                            </div><!-- mt product1  end here -->
-                        </div>
-                        <!-- slide end here -->
+                        @for ($i = 1; $i < 7; $i++)
                         <!-- slide start here -->
                         <div class="slide">
                             <!-- mt product1 start here -->
@@ -806,36 +363,7 @@
                                 <div class="box">
                                     <div class="b1">
                                         <div class="b2">
-                                            <a href=""><img
-                                                    src="frontend/images/products/img02.jpg" alt="image description"></a>
-                                            <ul class="links">
-                                                <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                            Cart</span></a></li>
-                                                <li><a href="frontend/#"><i class="icomoon icon-heart-empty"></i></a>
-                                                </li>
-                                                <li><a href="#popup1" class="lightbox"><i
-                                                            class="icomoon icon-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="">Bombi
-                                            Chair</a></strong>
-                                    <span class="price"><i class="fa fa-inr"></i>
-                                        <span>399,00</span></span>
-                                </div>
-                            </div><!-- mt product1 center end here -->
-                        </div>
-                        <!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <!-- mt product1 start here -->
-                            <div class="mt-product1">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href=""><img
+                                            <a href="{{route('products.show','product-name')}}"><img
                                                     src="frontend/images/products/img03.jpg" alt="image description"></a>
                                             <ul class="links">
                                                 <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
@@ -849,105 +377,15 @@
                                     </div>
                                 </div>
                                 <div class="txt">
-                                    <strong class="title"><a href="">Wood
-                                            Chair</a></strong>
+                                    <strong class="title"><a href="{{route('products.show','product-name')}}">product-name</a></strong>
                                     <span class="price"><i class="fa fa-inr"></i>
-                                        <span>198,00</span></span>
+                                        <span>product-price</span></span>
                                 </div>
                             </div><!-- mt product1 end here -->
                         </div>
                         <!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <!-- mt product1 start here -->
-                            <div class="mt-product1">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href=""><img
-                                                    src="frontend/images/products/img04.jpg" alt="image description"></a>
-                                            <span class="caption">
-                                                <span class="off">15% Off</span>
-                                                <span class="new">new</span>
-                                            </span>
-                                            <ul class="links">
-                                                <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                            Cart</span></a></li>
-                                                <li><a href="frontend/#"><i class="icomoon icon-heart-empty"></i></a>
-                                                </li>
-                                                <li><a href="#popup1" class="lightbox"><i
-                                                            class="icomoon icon-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="">Bombi
-                                            Chair</a></strong>
-                                    <span class="price"><i class="fa fa-inr"></i>
-                                        <span>200,00</span></span>
-                                </div>
-                            </div><!-- mt product1 end here -->
-                        </div>
-                        <!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <!-- mt product1 start here -->
-                            <div class="mt-product1">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href=""><img
-                                                    src="frontend/images/products/img05.jpg" alt="image description"></a>
-                                            <ul class="links">
-                                                <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                            Cart</span></a></li>
-                                                <li><a href="frontend/#"><i class="icomoon icon-heart-empty"></i></a>
-                                                </li>
-                                                <li><a href="#popup1" class="lightbox"><i
-                                                            class="icomoon icon-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="">Bombi
-                                            Chair</a></strong>
-                                    <span class="price"><i class="fa fa-inr"></i>
-                                        <span>200,00</span></span>
-                                </div>
-                            </div><!-- mt product1 end here -->
-                        </div>
-                        <!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <!-- mt product1 start here -->
-                            <div class="mt-product1">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href=""><img
-                                                    src="frontend/images/products/img03.jpg" alt="image description"></a>
-                                            <ul class="links">
-                                                <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                            Cart</span></a></li>
-                                                <li><a href="frontend/#"><i class="icomoon icon-heart-empty"></i></a>
-                                                </li>
-                                                <li><a href="#popup1" class="lightbox"><i
-                                                            class="icomoon icon-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="">Wood
-                                            Chair</a></strong>
-                                    <span class="price"><i class="fa fa-inr"></i>
-                                        <span>198,00</span></span>
-                                </div>
-                            </div><!-- mt product1 end here -->
-                        </div>
-                        <!-- slide end here -->
+                        @endfor
+
                     </div>
                     <!-- tabs slider end here -->
                 </div><!-- mt producttabs style3 end here -->
@@ -959,7 +397,42 @@
                         <!-- slide start here -->
                         <div class="slide">
                             <div class="box1">
-                                <div class="box2"><a href="frontend/#"><img src="frontend/images/logo/img01.jpg"
+                                <div class="box2"><a href=""><img src="frontend/images/logo/img01.jpg"
+                                            alt="img"></a></div>
+                            </div>
+                        </div><!-- slide end here -->
+                        <!-- slide start here -->
+                        <div class="slide">
+                            <div class="box1">
+                                <div class="box2"><a href=""><img src="frontend/images/logo/img02.jpg"
+                                            alt="img"></a></div>
+                            </div>
+                        </div><!-- slide end here -->
+                        <!-- slide start here -->
+                        <div class="slide">
+                            <div class="box1">
+                                <div class="box2"><a href=""><img src="frontend/images/logo/img03.jpg"
+                                            alt="img"></a></div>
+                            </div>
+                        </div><!-- slide end here -->
+                        <!-- slide start here -->
+                        <div class="slide">
+                            <div class="box1">
+                                <div class="box2"><a href=""><img src="frontend/images/logo/img04.jpg"
+                                            alt="img"></a></div>
+                            </div>
+                        </div><!-- slide end here -->
+                        <!-- slide start here -->
+                        <div class="slide">
+                            <div class="box1">
+                                <div class="box2"><a href=""><img src="frontend/images/logo/img05.jpg"
+                                            alt="img"></a></div>
+                            </div>
+                        </div><!-- slide end here -->
+                        <!-- slide start here -->
+                        <div class="slide">
+                            <div class="box1">
+                                <div class="box2"><a href=""><img src="frontend/images/logo/img06.jpg"
                                             alt="img"></a></div>
                             </div>
                         </div><!-- slide end here -->
@@ -973,42 +446,7 @@
                         <!-- slide start here -->
                         <div class="slide">
                             <div class="box1">
-                                <div class="box2"><a href="frontend/#"><img src="frontend/images/logo/img03.jpg"
-                                            alt="img"></a></div>
-                            </div>
-                        </div><!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <div class="box1">
-                                <div class="box2"><a href="frontend/#"><img src="frontend/images/logo/img04.jpg"
-                                            alt="img"></a></div>
-                            </div>
-                        </div><!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <div class="box1">
-                                <div class="box2"><a href="frontend/#"><img src="frontend/images/logo/img05.jpg"
-                                            alt="img"></a></div>
-                            </div>
-                        </div><!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <div class="box1">
-                                <div class="box2"><a href="frontend/#"><img src="frontend/images/logo/img06.jpg"
-                                            alt="img"></a></div>
-                            </div>
-                        </div><!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <div class="box1">
-                                <div class="box2"><a href="frontend/#"><img src="frontend/images/logo/img02.jpg"
-                                            alt="img"></a></div>
-                            </div>
-                        </div><!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <div class="box1">
-                                <div class="box2"><a href="frontend/#"><img src="frontend/images/logo/img03.jpg"
+                                <div class="box2"><a href=""><img src="frontend/images/logo/img03.jpg"
                                             alt="img"></a></div>
                             </div>
                         </div><!-- slide start here -->
