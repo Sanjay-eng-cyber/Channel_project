@@ -8,73 +8,98 @@
                 <div class="banner-frame toppadding-zero">
                     <!-- banner 5 white start here -->
                     <div class="banner-5 white wow fadeInLeft" data-wow-delay="0.6s">
-                        <img src="frontend/images/banner/img05.jpg" alt="image description">
-                        <div class="holder">
-                            <div class="texts">
-                                <strong class="title">FURNITURE DESIGNS IDEAS</strong>
-                                <h3><strong>New</strong> Collection</h3>
-                                <p>Consectetur adipisicing elit. Beatae accusamus, optio, repellendus
-                                    inventore</p>
-                                <span class="price-add">₹ 79.00</span>
+                            <img src="frontend/images/banner/ix1.png" alt="image description">
+                            <div class="holder">
+                                <div class="texts">
+                                    <strong class="title"></strong>
+                                    <h3><strong></strong> Collection</h3>
+                                    <p>Consectetur adipisicing elit. Beatae accusamus, optio, repellendus
+                                        inventore</p>
+                                    <span class="price-add">₹ 79.00</span>
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- banner 5 white end here -->
+                    <!-- banner 6 white start here -->
+                    <div class="banner-6 white wow fadeInRight banner-custome" data-wow-delay="0.6s">
+                        <div class="card" style="">
+                            <img src="frontend/images/banner/ix2.png" class="card-img-top m-0" alt="...">
+                            <div class="card-body mt-0" style="background-color:#FB8CA5;padding:15px 20px 15px 20px;border-radius:0px 0px 26.6782px 26.6782px">
+                              <h3 class="card-title m-0 text-center">
+                               <strong class="text-center" style="color:black">
+                                Love Your Hair
+                               </strong>
+                              </h3>
+                              <p class="card-text text-center" style="color:black">
+                                treat yourself with the best in haircare
+                              </p>
+                                <h4 class="text-center">
+
+                                    <a href="#" class="" style="color:black">
+                                        Shop More
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </h4>
                             </div>
                         </div>
-                    </div><!-- banner 5 white end here -->
-                    <!-- banner 6 white start here -->
-                    <div class="banner-6 white wow fadeInRight" data-wow-delay="0.6s">
-                        <img src="frontend/images/banner/img06.jpg" alt="image description">
-                        <div class="holder">
-                            <strong class="sub-title">SOFAS &amp; ARMCHAIRS</strong>
-                            <h3>3 Seater Leather Sofa</h3>
-                            <span class="offer">
-                                <span class="price-less">₹ 659.00</span>
-                                <span class="prices">₹ 499.00</span>
-                            </span>
-                            <a href="{{route('products.show','product-name')}}" class="btn-shop">
-                                <span>shop now</span>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </div>
+
                     </div><!-- banner 5 white end here -->
                     <!-- banner box two start here -->
                     <div class="banner-box two">
                         <!-- banner 7 right start here -->
-                        <div class="banner-7 right wow fadeInUp" data-wow-delay="0.6s">
-                            <img src="frontend/images/banner/img07.jpg" alt="image description">
-                            <div class="holder">
-                                <h2><strong>ACRYLIC FABRIC <br>BEAN BAG</strong></h2>
-                                <ul class="mt-stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                </ul>
-                                <div class="price-tag">
-                                    <span class="price">₹ 99.00</span>
-                                    <a class="shop-now" href="{{route('products.show','product-name')}}">SHOP NOW</a>
-                                </div>
-                            </div>
-                        </div><!-- banner 7 right end here -->
+                        <div class="banner-7 right wow fadeInUp  banner-custome" data-wow-delay="0.6s">
+                        <div class="card" style="">
+                            <img src="frontend/images/banner/ix3.jpg" class="card-img-top" alt="..." style="border-radius: 26.6782px 26.6782px 0px 0px;">
+                            <div class="card-body mt-0" style="background-color:#F1D2AD;padding:8px 10px 8px 10px;border-radius:0px 0px 26.6782px 26.6782px">
+                                <h3 class="card-title m-0 text-center">
+                                 <strong class="text-center" style="color:black">
+                                    Luxe Fragrances
+                                 </strong>
+                                </h3>
+                                <p class="card-text text-center" style="color:black">
+                                    indulge in premium perfumes
+                                </p>
+                                  <h4 class="text-center">
+
+                                      <a href="#" class="" style="color:black">
+                                          Shop More
+                                          <i class="fa fa-angle-right"></i>
+                                      </a>
+                                  </h4>
+                              </div>
+                        </div>
+
+                        </div>
+
                         <!-- banner 8 start here -->
-                        <div class="banner-8 wow fadeInDown" data-wow-delay="0.6s">
-                            <img src="frontend/images/banner/img08.jpg" alt="image description">
-                            <div class="holder">
-                                <h2><strong>CHAIR WITH <br>ARMRESTS</strong></h2>
-                                <ul class="mt-stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                </ul>
-                                <div class="price-tag">
-                                    <span class="price-off">₹ 129.00</span>
-                                    <span class="price">₹ 99.00</span>
-                                    <a class="btn-shop" href="">
-                                        <span>HURRY UP!</span>
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div><!-- banner 8 start here -->
+                        <div class="banner-8 wow fadeInDown " data-wow-delay="0.6s">
+
+
+                        <div class="card" style="">
+                            <img src="frontend/images/banner/ix4.jpg" class="card-img-top" alt="..." style="border-radius: 26.6782px 26.6782px 0px 0px;">
+                            <div class="card-body mt-0" style="background-color:#EBB579;padding:8px 10px 8px 10px;border-radius:0px 0px 26.6782px 26.6782px">
+                                <h3 class="card-title m-0 text-center">
+                                 <strong class="text-center" style="color:black">
+                                    Home Decor
+                                 </strong>
+                                </h3>
+                                <p class="card-text text-center" style="color:black">
+                                    My love language
+                                </p>
+                                  <h4 class="text-center">
+
+                                      <a href="#" class="" style="color:black">
+                                          Shop More
+                                          <i class="fa fa-angle-right"></i>
+                                      </a>
+                                  </h4>
+                              </div>
+                        </div>
+
+                        </div>
+
+                        <!-- banner 8 start here -->
                     </div>
                 </div><!-- banner frame end here -->
                 <!-- banner frame start here -->
