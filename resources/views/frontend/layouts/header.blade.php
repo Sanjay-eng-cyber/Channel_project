@@ -11,3 +11,5 @@
 <link rel="stylesheet" href="{{ asset('frontend/css/main.css') }}">
 <!-- include the site stylesheet -->
 <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+
+<link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
