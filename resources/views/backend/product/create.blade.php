@@ -57,7 +57,8 @@
                                 </div>
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="degree2">Category</label>
-                                    <select class="form-control mb-4" name="category_id" id="sel1" onchange="getValues()" required>
+                                    <select class="form-control mb-4" name="category_id" id="sel1"
+                                        onchange="getValues()" required>
                                         <option value="">Select Any Category</option>
                                         @foreach ($categorys as $category)
                                             <option value="{{ $category->id }}"
@@ -81,6 +82,18 @@
                                     @endif
                                 </div>
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                    <label for="degree2">Image</label>
+                                    <input class="form-control" name="image[]" type="file" id="image" multiple />
+                                    @if ($errors->has('image'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('image') }}
+                                        </div>
+                                    @endif
+                                    @if ($errors->has('image.*'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('image.*') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput" class="">MRP</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Mrp" minlength="3" maxlength="40" required name="mrp"
@@ -92,8 +105,8 @@
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput" class="">Final Price</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Final Price" minlength="3" maxlength="40" required name="final_price"
-                                        value="{{ old('final_price') }}">
+                                        placeholder="Enter Final Price" minlength="3" maxlength="40" required
+                                        name="final_price" value="{{ old('final_price') }}">
                                     @if ($errors->has('final_price'))
                                         <div class="text-danger" role="alert">{{ $errors->first('final_price') }}</div>
                                     @endif
@@ -110,8 +123,7 @@
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
                                     <label for="formGroupExampleInput" class="">SKU</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter SKU" required name="sku"
-                                        value="{{ old('sku') }}">
+                                        placeholder="Enter SKU" required name="sku" value="{{ old('sku') }}">
                                     @if ($errors->has('sku'))
                                         <div class="text-danger" role="alert">{{ $errors->first('sku') }}</div>
                                     @endif
@@ -120,7 +132,8 @@
                                     <label for="descriptions">Description</label>
                                     <textarea id="team-about" name="descriptions">{{ old('descriptions') }}</textarea>
                                     @if ($errors->has('body'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}</div>
+                                        <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
+                                        </div>
                                     @endif
                                 </div>
                             </div>
@@ -133,61 +146,61 @@
     </div>
 @endsection
 @section('js')
-     <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
-     </script>
-     <script>
-         tinymce.init({
-             selector: '#team-about',
-             height: 200,
-             plugins: 'textcolor colorpicker lists link',
-             toolbar: "formatselect | fontsizeselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify  | numlist bullist | link | outdent indent  | removeformat",
-             // theme: 'modern',
-             // plugins: ' fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample  charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern ',
-             // toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
-             // image_advtab: true,
-             // templates: [{
-             //         title: 'Test template 1',
-             //         content: 'Test 1'
-             //     },
-             //     {
-             //         title: 'Test template 2',
-             //         content: 'Test 2'
-             //     }
-             // ],
-             // content_css: [
-             //     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+    <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
+    </script>
+    <script>
+        tinymce.init({
+            selector: '#team-about',
+            height: 200,
+            plugins: 'textcolor colorpicker lists link',
+            toolbar: "formatselect | fontsizeselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify  | numlist bullist | link | outdent indent  | removeformat",
+            // theme: 'modern',
+            // plugins: ' fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample  charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern ',
+            // toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+            // image_advtab: true,
+            // templates: [{
+            //         title: 'Test template 1',
+            //         content: 'Test 1'
+            //     },
+            //     {
+            //         title: 'Test template 2',
+            //         content: 'Test 2'
+            //     }
+            // ],
+            // content_css: [
+            //     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
 
-             // ]
-         });
+            // ]
+        });
 
-         function getValues() {
-                $('#sub').html('')
+        function getValues() {
+            $('#sub').html('')
 
-                if ($('#sel1').val()) {
+            if ($('#sel1').val()) {
 
-                    $.ajax({
-                        url: '/category/get/subcategory/' + $('#sel1').val(),
-                        method: "GET",
-                        success: function(data) {
-                            if (data.data == '') {
-                                $('#sub').append(`<option value=''>No data</option>`)
-                            } else {
-                                $('#sub').append(`<option value=''>Select If Required</option>`)
-                                $.each(data.data, function(id, value) {
-                                    $('#sub').append(`<option value="${value.id}">${value.name}</option>`)
-                                })
-                            }
-                        },
-                        error: function() {
-                            Snackbar.show({
-                                text: "Internal Error",
-                                pos: 'top-right',
-                                actionTextColor: '#fff',
-                                backgroundColor: '#e7515a'
-                            });
+                $.ajax({
+                    url: '/category/get/subcategory/' + $('#sel1').val(),
+                    method: "GET",
+                    success: function(data) {
+                        if (data.data == '') {
+                            $('#sub').append(`<option value=''>No data</option>`)
+                        } else {
+                            $('#sub').append(`<option value=''>Select If Required</option>`)
+                            $.each(data.data, function(id, value) {
+                                $('#sub').append(`<option value="${value.id}">${value.name}</option>`)
+                            })
                         }
-                    })
-                }
+                    },
+                    error: function() {
+                        Snackbar.show({
+                            text: "Internal Error",
+                            pos: 'top-right',
+                            actionTextColor: '#fff',
+                            backgroundColor: '#e7515a'
+                        });
+                    }
+                })
             }
-     </script>
+        }
+    </script>
 @endsection

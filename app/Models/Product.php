@@ -21,4 +21,9 @@ class Product extends Model
     {
         return $this->belongsTo(SubCategory::class);
     }
+
+    public function medias()
+    {
+        return $this->morphMany(Media::class, 'model');
+    }
 }

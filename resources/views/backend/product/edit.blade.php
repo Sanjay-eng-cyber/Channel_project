@@ -16,7 +16,8 @@
                             <nav class="breadcrumb-two" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">Product</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><a
+                                            href="javascript:void(0);">Product</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -26,8 +27,7 @@
             <div class="statbox widget box box-shadow col-md-12">
                 <div class="row m-0">
                     <div class="col-12">
-                        <form class="mt-3" method="POST"
-                            action="{{ route('backend.product.update', $product->id) }}"
+                        <form class="mt-3" method="POST" action="{{ route('backend.product.update', $product->id) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
@@ -36,7 +36,7 @@
                                         <label for="formGroupExampleInput" class="">Name</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
-                                            value="{{ old('name') ?? $product->name}}">
+                                            value="{{ old('name') ?? $product->name }}">
                                         @if ($errors->has('name'))
                                             <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                         @endif
@@ -46,18 +46,18 @@
                                         <select class="form-control mb-4" name="brand_id">
                                             <option value="">Select Any Brand</option>
                                             @if (old('brand_id'))
-                                            @foreach ($brands as $brand)
-                                                <option value="{{ $brand->id }}"
-                                                    @if (old('brand_id') == $brand->id) {{ 'selected' }} @endif>
-                                                    {{ $brand->name }}</option>
-                                            @endforeach
-                                        @else
-                                            @foreach ($brands as $brand)
-                                                <option value="{{ $brand->id }}"
-                                                    @if ($product->brand_id == $brand->id) {{ 'selected' }} @endif>
-                                                    {{ $brand->name }}</option>
-                                            @endforeach
-                                        @endif
+                                                @foreach ($brands as $brand)
+                                                    <option value="{{ $brand->id }}"
+                                                        @if (old('brand_id') == $brand->id) {{ 'selected' }} @endif>
+                                                        {{ $brand->name }}</option>
+                                                @endforeach
+                                            @else
+                                                @foreach ($brands as $brand)
+                                                    <option value="{{ $brand->id }}"
+                                                        @if ($product->brand_id == $brand->id) {{ 'selected' }} @endif>
+                                                        {{ $brand->name }}</option>
+                                                @endforeach
+                                            @endif
                                         </select>
                                         @if ($errors->has('brand_id'))
                                             <div class="text-danger" role="alert">{{ $errors->first('brand_id') }}
@@ -66,21 +66,22 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                         <label for="degree2">Category</label>
-                                        <select class="form-control mb-4" name="category_id" id="sel1" onchange="getValues()" required>
+                                        <select class="form-control mb-4" name="category_id" id="sel1"
+                                            onchange="getValues()" required>
                                             <option value="">Select Any Category</option>
                                             @if (old('category_id'))
-                                            @foreach ($categorys as $category)
-                                                <option value="{{ $category->id }}"
-                                                    @if (old('category_id') == $category->id) {{ 'selected' }} @endif>
-                                                    {{ $category->name }}</option>
-                                            @endforeach
-                                        @else
-                                            @foreach ($categorys as $category)
-                                                <option value="{{ $category->id }}"
-                                                    @if ($product->category_id == $category->id) {{ 'selected' }} @endif>
-                                                    {{ $category->name }}</option>
-                                            @endforeach
-                                        @endif
+                                                @foreach ($categorys as $category)
+                                                    <option value="{{ $category->id }}"
+                                                        @if (old('category_id') == $category->id) {{ 'selected' }} @endif>
+                                                        {{ $category->name }}</option>
+                                                @endforeach
+                                            @else
+                                                @foreach ($categorys as $category)
+                                                    <option value="{{ $category->id }}"
+                                                        @if ($product->category_id == $category->id) {{ 'selected' }} @endif>
+                                                        {{ $category->name }}</option>
+                                                @endforeach
+                                            @endif
                                         </select>
                                         @if ($errors->has('category_id'))
                                             <div class="text-danger" role="alert">{{ $errors->first('category_id') }}
@@ -101,7 +102,7 @@
                                         <label for="formGroupExampleInput" class="">MRP</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Mrp" minlength="3" maxlength="40" required name="mrp"
-                                            value="{{ old('mrp') ?? $product->mrp}}">
+                                            value="{{ old('mrp') ?? $product->mrp }}">
                                         @if ($errors->has('mrp'))
                                             <div class="text-danger" role="alert">{{ $errors->first('mrp') }}</div>
                                         @endif
@@ -109,17 +110,18 @@
                                     <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                         <label for="formGroupExampleInput" class="">Final Price</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
-                                            placeholder="Enter Final Price" minlength="3" maxlength="40" required name="final_price"
-                                            value="{{ old('final_price') ?? $product->final_price }}">
+                                            placeholder="Enter Final Price" minlength="3" maxlength="40" required
+                                            name="final_price" value="{{ old('final_price') ?? $product->final_price }}">
                                         @if ($errors->has('final_price'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('final_price') }}</div>
+                                            <div class="text-danger" role="alert">{{ $errors->first('final_price') }}
+                                            </div>
                                         @endif
                                     </div>
                                     <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
                                         <label for="formGroupExampleInput" class="">Stock</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
-                                            placeholder="Enter Stock" minlength="3" maxlength="40" required name="stock"
-                                            value="{{ old('stock') ?? $product->stock }}">
+                                            placeholder="Enter Stock" minlength="3" maxlength="40" required
+                                            name="stock" value="{{ old('stock') ?? $product->stock }}">
                                         @if ($errors->has('stock'))
                                             <div class="text-danger" role="alert">{{ $errors->first('stock') }}</div>
                                         @endif
@@ -128,21 +130,44 @@
                                         <label for="formGroupExampleInput" class="">SKU</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter SKU" required name="sku"
-                                            value="{{ old('sku')  ?? $product->sku }}">
+                                            value="{{ old('sku') ?? $product->sku }}">
                                         @if ($errors->has('sku'))
                                             <div class="text-danger" role="alert">{{ $errors->first('sku') }}</div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
-                                        <label for="descriptions">Description</label>
-                                        <textarea id="team-about" name="descriptions">{{ old('descriptions') ?? $product->descriptions}}</textarea>
-                                        @if ($errors->has('body'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}</div>
+                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                        <label for="degree2">Image</label>
+                                        <div class="d-flex flex-wrap">
+                                            @forelse ($product->medias()->get() as $media)
+                                                <img class="m-2 border"
+                                                    src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    height="150px" width="150px" alt="">
+
+                                            @empty
+                                            @endforelse
+                                        </div>
+                                        <input class="form-control" name="image[]" type="file" id="image"
+                                            multiple />
+                                        @if ($errors->has('image'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('image') }}
+                                            </div>
+                                        @endif
+                                        @if ($errors->has('image.*'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('image.*') }}
+                                            </div>
                                         @endif
                                     </div>
-                            </div>
-                            <input type="submit" class="btn btn-primary"
-                                onclick="return confirm('Are you sure, you want to update?')">
+                                    <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
+                                        <label for="descriptions">Description</label>
+                                        <textarea id="team-about" name="descriptions">{{ old('descriptions') ?? $product->descriptions }}</textarea>
+                                        @if ($errors->has('body'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <input type="submit" class="btn btn-primary"
+                                    onclick="return confirm('Are you sure, you want to update?')">
                         </form>
                     </div>
                 </div>
@@ -201,36 +226,39 @@
         // ]
     });
     const sub_category_id = '{{ $product->sub_category_id ?? 'null' }}'
+
     function getValues() {
-           $('#sub').html('')
+        $('#sub').html('')
 
-           if ($('#sel1').val()) {
+        if ($('#sel1').val()) {
 
-               $.ajax({
-                   url: '/category/get/subcategory/' + $('#sel1').val(),
-                   method: "GET",
-                   success: function(data) {
-                       if (data.data == '') {
-                           $('#sub').append(`<option value=''>No data</option>`)
-                       } else {
-                           $('#sub').append(`<option value=''>Select If Required</option>`)
-                           $.each(data.data, function(id, value) {
-                               $('#sub').append(`<option value="${value.id}" ${sub_category_id == value.id ? 'selected' : ''}>${value.name}</option>`)
-                           })
-                       }
-                   },
-                   error: function() {
-                       Snackbar.show({
-                           text: "Internal Error",
-                           pos: 'top-right',
-                           actionTextColor: '#fff',
-                           backgroundColor: '#e7515a'
-                       });
-                   }
-               })
-           }
-       }
-       $(document).ready(function() {
-                getValues()
-            });
+            $.ajax({
+                url: '/category/get/subcategory/' + $('#sel1').val(),
+                method: "GET",
+                success: function(data) {
+                    if (data.data == '') {
+                        $('#sub').append(`<option value=''>No data</option>`)
+                    } else {
+                        $('#sub').append(`<option value=''>Select If Required</option>`)
+                        $.each(data.data, function(id, value) {
+                            $('#sub').append(
+                                `<option value="${value.id}" ${sub_category_id == value.id ? 'selected' : ''}>${value.name}</option>`
+                            )
+                        })
+                    }
+                },
+                error: function() {
+                    Snackbar.show({
+                        text: "Internal Error",
+                        pos: 'top-right',
+                        actionTextColor: '#fff',
+                        backgroundColor: '#e7515a'
+                    });
+                }
+            })
+        }
+    }
+    $(document).ready(function() {
+        getValues()
+    });
 </script>

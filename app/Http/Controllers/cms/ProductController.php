@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\cms;
 
 use App\Models\Brand;
+use App\Models\Media;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\SubCategory;
@@ -17,7 +18,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::latest()->paginate(10);
-        return view('backend.product.index',compact('products'));
+        return view('backend.product.index', compact('products'));
     }
 
     public function show($id)
@@ -30,7 +31,7 @@ class ProductController extends Controller
     {
         $brands = Brand::all();
         $categorys = Category::all();
-        return view('backend.product.create',compact('categorys','brands'));
+        return view('backend.product.create', compact('categorys', 'brands'));
     }
 
 
@@ -42,15 +43,18 @@ class ProductController extends Controller
         $sub_categorys = SubCategory::pluck('id')->toArray();
         $request->validate([
             'name' => 'required|min:3|max:40|unique:products,name,',
-           'descriptions' => 'nullable|min:3|max:250',
-           'mrp' => 'required|numeric',
-           'final_price' => 'required|numeric',
-           'stock' => 'required|numeric',
-           'sku' => 'required|string|unique:products,sku,',
-           'category_id' => ['required', Rule::in($categorys)],
-           'brand_id' => ['nullable', Rule::in($brands)],
-           'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
+            'descriptions' => 'nullable|min:3|max:250',
+            'mrp' => 'required|numeric',
+            'final_price' => 'required|numeric',
+            'stock' => 'required|numeric',
+            'sku' => 'required|string|unique:products,sku,',
+            'category_id' => ['required', Rule::in($categorys)],
+            'brand_id' => ['nullable', Rule::in($brands)],
+            'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
+            'image' => 'required|max:10',
+            'image.*' => 'mimes:png,jpg,jpeg|max:1024',
         ]);
+
         $product = new Product();
         $product->name = $request->name;
         $product->slug = Str::slug($request->name);
@@ -62,7 +66,19 @@ class ProductController extends Controller
         $product->stock = $request->stock;
         $product->sku = $request->sku;
         $product->descriptions = $request->descriptions;
+
+
         if ($product->save()) {
+            $files = $request->file('image');
+            foreach ($files as $file) {
+                $file_details = uploadFile($file, 'images/products');
+                $media = new Media();
+                $media->model_id = $product->id;
+                $media->model_type = Product::class;
+                $media->mime_type = $file_details['type'];
+                $media->file_name = $file_details['filename'];
+                $media->save();
+            }
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Stored Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
@@ -74,7 +90,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $brands = Brand::all();
         $categorys = Category::all();
-        return view('backend.product.edit', compact('product','categorys','brands'));
+        return view('backend.product.edit', compact('product', 'categorys', 'brands'));
     }
 
     public function update(Request $request, $id)
@@ -83,16 +99,19 @@ class ProductController extends Controller
         $brands = Brand::pluck('id')->toArray();
         $sub_categorys = SubCategory::pluck('id')->toArray();
         $product = Product::findOrFail($id);
+        // dd($media);
         $request->validate([
-            'name' => 'required|min:3|max:40|unique:products,name,' .$id,
-           'descriptions' => 'nullable|min:3|max:250',
-           'mrp' => 'required|numeric',
-           'final_price' => 'required|numeric',
-           'stock' => 'required|numeric',
-           'sku' => 'required|string|unique:products,sku,' .$id,
-           'category_id' => ['required', Rule::in($categorys)],
-           'brand_id' => ['nullable', Rule::in($brands)],
-           'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
+            'name' => 'required|min:3|max:40|unique:products,name,' . $id,
+            'descriptions' => 'nullable|min:3|max:250',
+            'mrp' => 'required|numeric',
+            'final_price' => 'required|numeric',
+            'stock' => 'required|numeric',
+            'sku' => 'required|string|unique:products,sku,' . $id,
+            'category_id' => ['required', Rule::in($categorys)],
+            'brand_id' => ['nullable', Rule::in($brands)],
+            'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
+            'image' => 'required|max:10',
+            'image.*' => 'mimes:png,jpg,jpeg|max:1024',
         ]);
         $product->name = $request->name;
         $product->slug = Str::slug($request->name);
@@ -104,11 +123,30 @@ class ProductController extends Controller
         $product->stock = $request->stock;
         $product->sku = $request->sku;
         $product->descriptions = $request->descriptions;
+
+        if ($request->file('image')) {
+            $medias = Media::where('model_id', $id)->where('model_type', Product::class)->get();
+            foreach ($medias as $media) {
+                if (Storage::disk('public')->delete('images/products/' . $media->file_name)) {
+                    $media->delete();
+                }
+            }
+            //insert multiple image
+            $files = $request->file('image');
+            foreach ($files as $file) {
+                $file_details = uploadFile($file, 'images/products');
+                $media = new Media();
+                $media->model_id = $product->id;
+                $media->model_type = Product::class;
+                $media->mime_type = $file_details['type'];
+                $media->file_name = $file_details['filename'];
+                $media->save();
+            }
+        }
         if ($product->save()) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Update Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
-
     }
 
     public function getSubCategory($id)
@@ -124,6 +162,12 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
+        $medias = Media::where('model_id', $id)->where('model_type', Product::class)->get();
+        foreach ($medias as $media) {
+            if (Storage::disk('public')->delete('images/products/' . $media->file_name)) {
+                $media->delete();
+            }
+        }
         if ($product->delete()) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Deleted Successfully']);
         }

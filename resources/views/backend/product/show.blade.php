@@ -43,36 +43,37 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Brand Name</label><br>
-                                                <p class="label-title">{{ $product->brand ? $product->brand->name : '---'  }}</p>
+                                                <label for="degree3" class="cust-title" class="label-title">Brand
+                                                    Name</label><br>
+                                                <p class="label-title">{{ $product->brand ? $product->brand->name : '---' }}
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Category Name</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Category
+                                                    Name</label><br>
                                                 <p class="label-title">{{ $product->category->name }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Sub Category Name</label><br>
-                                                <p class="label-title">{{ $product->subCategory ? $product->subCategory->name : '---' }}</p>
+                                                <label for="degree3" class="cust-title" class="label-title">Sub Category
+                                                    Name</label><br>
+                                                <p class="label-title">
+                                                    {{ $product->subCategory ? $product->subCategory->name : '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">MRP</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">MRP</label><br>
                                                 <p class="label-title">{{ $product->mrp }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Final Price</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Final
+                                                    Price</label><br>
                                                 <p class="label-title">{{ $product->final_price }}</p>
                                             </div>
                                         </div>
@@ -85,8 +86,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">SKU</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">SKU</label><br>
                                                 <p class="label-title">{{ $product->sku }}</p>
                                             </div>
                                         </div>
@@ -95,6 +95,20 @@
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Description</label><br>
                                                 <p class="label-title">{{ strip_tags($product->descriptions) }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Images</label><br>
+                                                <div class="d-flex flex-wrap">
+                                                    @forelse ($product->medias()->get() as $media)
+                                                        <img class="m-2 border"
+                                                            src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                            height="150px" width="150px" alt="">
+                                                    @empty
+                                                    @endforelse
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
