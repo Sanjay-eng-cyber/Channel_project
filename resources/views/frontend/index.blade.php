@@ -103,93 +103,10 @@
                     </div>
                 </div><!-- banner frame end here -->
                 <!-- banner frame start here -->
-                <div class="banner-frame mt-paddingsmzero">
-                    <!-- banner box third start here -->
-                    <div class="banner-box third wow fadeInLeft" data-wow-delay="0.6s">
-                        <!-- banner 12 right white start here -->
-                        <div class="banner-12 right white wow fadeInUp" data-wow-delay="0.6s">
-                            <img src="frontend/images/banner/img12.jpg" alt="image description">
-                            <div class="holder">
-                                <h2><span>Chairs</span><strong>ZIO DINING CHAIR</strong></h2>
-                                <a class="btn-shop" href="{{route('products.show','product-name')}}">
-                                    <span>SHOP NOW</span>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- banner 12 right white end here -->
-                        <!-- banner 13 right start here -->
-                        <div class="banner-13 right wow fadeInDown" data-wow-delay="0.6s">
-                            <img src="frontend/images/banner/img13.jpg" alt="image description">
-                            <div class="holder">
-                                <h2><span>Accessories / Lighting</span><strong>TOTEM FLOOR LAMP</strong>
-                                </h2>
-                                <a class="btn-shop" href="{{route('products.show','product-name')}}">
-                                    <span>SHOP NOW</span>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- banner 13 right end here -->
-                    </div><!-- banner box third end here -->
-                    <!-- slider 7 start here -->
-                    <div class="slider-7 wow fadeInRight" data-wow-delay="0.6s">
-                        <!-- slider start here -->
-                        <div class="slider banner-slider">
-                            <!-- holder start here -->
-                            <div class="s-holder">
-                                <img src="frontend/images/sliders/img10.jpg" alt="image description">
-                                <div class="s-box">
-                                    <strong class="s-title">FURNITURE DESIGNS IDEAS</strong>
-                                    <span class="heading">Upholstered fabric</span>
-                                    <span class="heading add">Counter stool</span>
-                                    <div class="s-txt">
-                                        <p>Consectetur adipisicing elit. Beatae accusamus, optio,
-                                            repellendus inventore</p>
-                                    </div>
-                                </div>
-                            </div><!-- holder end here -->
-                            <!-- holder start here -->
-                            <div class="s-holder">
-                                <img src="frontend/images/sliders/img08.jpg" alt="image description">
-                                <div class="s-box">
-                                    <strong class="s-title">FURNITURE DESIGNS IDEAS</strong>
-                                    <span class="heading">Upholstered fabric</span>
-                                    <span class="heading add">Counter stool</span>
-                                    <div class="s-txt">
-                                        <p>Consectetur adipisicing elit. Beatae accusamus, optio,
-                                            repellendus inventore</p>
-                                    </div>
-                                </div>
-                            </div><!-- holder end here -->
-                            <!-- holder start here -->
-                            <div class="s-holder">
-                                <img src="frontend/images/sliders/img09.jpg" alt="image description">
-                                <div class="s-box">
-                                    <strong class="s-title">KITCHEN ACCESSORIES</strong>
-                                    <span class="heading">Wooden chopping board</span>
-                                    <span class="heading add">Chopping Boards</span>
-                                    <div class="s-txt">
-                                        <p>Remo is a cutting board in solid oak wood, with an explicit
-                                            reference to the oars of the boats.</p>
-                                    </div>
-                                </div>
-                            </div><!-- holder end here -->
-                            <!-- holder star here -->
-                            <div class="s-holder">
-                                <img src="frontend/images/sliders/img07.jpg" alt="image description">
-                                <div class="s-box">
-                                    <strong class="s-title">FURNITURE DESIGNS IDEAS</strong>
-                                    <span class="heading add">NEW</span>
-                                    <span class="heading add">COLLECTION</span>
-                                    <div class="s-txt">
-                                        <p>Consectetur adipisicing elit. Beatae accusamus, optio,
-                                            repellendus inventore</p>
-                                    </div>
-                                    <a href="{{route('products.show','product-name')}}" class="s-shop">SHOP NOW</a>
-                                </div>
-                            </div><!-- holder end here -->
-                        </div>
-                    </div><!-- slider 7 end here -->
-                </div><!-- banner frame end here -->
+
+             
+
+                <!-- banner frame end here -->
                 <!-- mt producttabs style2 start here -->
                 <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
                     <!-- producttabs start here -->
