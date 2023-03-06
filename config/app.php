@@ -18,6 +18,9 @@ return [
     'web_domain' => env('WEB_DOMAIN'),
     'cms_domain' => env('CMS_DOMAIN'),
 
+    'cgst' => env('CGST', 9),
+    'sgst' => env('SGST', 9),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

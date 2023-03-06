@@ -22,5 +22,15 @@ class UserSeeder extends Seeder
             "created_at" => now(),
             "updated_at" => now()
         ]);
+        for ($i = 1; $i <= 9; $i++) {
+            DB::table('users')->insert([
+                "name" => 'Testing User ' . $i,
+                "email" => 'user' . $i . '@test.com',
+                "phone" => '123456789' . $i,
+                "password" => bcrypt('password'),
+                "created_at" => now(),
+                "updated_at" => now()
+            ]);
+        }
     }
 }

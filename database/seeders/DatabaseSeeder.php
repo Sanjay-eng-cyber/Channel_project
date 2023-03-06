@@ -17,5 +17,11 @@ class DatabaseSeeder extends Seeder
         $this->call(CmsUserSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(UserAddressSeeder::class);
+        $this->call(CategorySeeder::class);
+        // $this->call(SubCategorySeeder::class);
+        $this->call(ProductSeeder::class);
+        $this->call(OrderSeeder::class);
+        $this->call(OrderItemSeeder::class);
+        $this->call(TransactionSeeder::class);
     }
 }
