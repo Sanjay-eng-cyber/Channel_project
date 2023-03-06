@@ -11,6 +11,8 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
+use App\Models\Showcase;
+use App\Models\ShowcaseProduct;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -31,16 +33,21 @@ class ProductController extends Controller
     {
         $brands = Brand::all();
         $categorys = Category::all();
-        return view('backend.product.create', compact('categorys', 'brands'));
+        $showcases = Showcase::all();
+        // dd($showcases);
+        return view('backend.product.create', compact('categorys', 'brands', 'showcases'));
     }
 
 
     public function store(Request $request)
     {
-        // dd($request);
         $categorys = Category::pluck('id')->toArray();
         $brands = Brand::pluck('id')->toArray();
         $sub_categorys = SubCategory::pluck('id')->toArray();
+        $showcases_id = Showcase::pluck('id')->toArray();
+        // dd($categorys);
+        // dd($request);
+        // dd($showcases_id);
         $request->validate([
             'name' => 'required|min:3|max:40|unique:products,name,',
             'descriptions' => 'nullable|min:3|max:250',
@@ -53,6 +60,8 @@ class ProductController extends Controller
             'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
             'image' => 'required|max:10',
             'image.*' => 'mimes:png,jpg,jpeg|max:1024',
+            'showcases' => ['nullable', 'array'],
+            'showcases.*' => [Rule::in($showcases_id)],
         ]);
 
         $product = new Product();
@@ -78,6 +87,13 @@ class ProductController extends Controller
                 $media->mime_type = $file_details['type'];
                 $media->file_name = $file_details['filename'];
                 $media->save();
+            }
+            $showcases = $request->showcases;
+            foreach ($showcases as $showcase) {
+                $showcase_product = new ShowcaseProduct();
+                $showcase_product->showcase_id = $showcase;
+                $showcase_product->product_id = $product->id;
+                $showcase_product->save();
             }
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Stored Successfully']);
         }

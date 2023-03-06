@@ -96,7 +96,7 @@
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput" class="">MRP</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Mrp" minlength="3" maxlength="40" required name="mrp"
+                                        placeholder="Enter Mrp" required name="mrp"
                                         value="{{ old('mrp') }}">
                                     @if ($errors->has('mrp'))
                                         <div class="text-danger" role="alert">{{ $errors->first('mrp') }}</div>
@@ -114,7 +114,7 @@
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
                                     <label for="formGroupExampleInput" class="">Stock</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Stock" minlength="3" maxlength="40" required name="stock"
+                                        placeholder="Enter Stock" required name="stock"
                                         value="{{ old('stock') }}">
                                     @if ($errors->has('stock'))
                                         <div class="text-danger" role="alert">{{ $errors->first('stock') }}</div>
@@ -129,9 +129,24 @@
                                     @endif
                                 </div>
                                 <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
+                                    <label for="descriptions">Showcase</label><br>
+                                    @foreach ($showcases as $showcase)
+                                        {{-- @dd($showcase) --}}
+                                        <label for="{{ $showcase->id }}">{{ $showcase->name }}</label>
+                                        <input type="checkbox" id="{{ $showcase->id }}" name="showcases[]"
+                                            value="{{ $showcase->id }}"
+                                            @if (old('showcases') && in_array($showcase->id, old('showcases'))) {{ 'checked' }} @endif>
+                                    @endforeach
+
+                                    @if ($errors->has('showcases'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('showcases') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
                                     <label for="descriptions">Description</label>
                                     <textarea id="team-about" name="descriptions">{{ old('descriptions') }}</textarea>
-                                    @if ($errors->has('body'))
+                                    @if ($errors->has('descriptions'))
                                         <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
                                         </div>
                                     @endif
