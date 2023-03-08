@@ -117,191 +117,45 @@
                         <div id="tab1">
                             <!-- tabs slider start here -->
                             <div class="tabs-sliderlg">
-
-
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href="{{route('products.show','product-name')}}"><img
-                                                            src="frontend/images/products/skin/sk1.png"
-                                                            alt="image description"></a>
-
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="txt">
-                                            <strong class="title">
-                                                <a href="{{route('products.show','product-name')}}">
-                                               product-name{{$i}}
-                                                </a>
-                                            </strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>product-price</span></span>
-                                        </div> --}}
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-
+                            @for ($i = 1; $i < 6; $i++)
 
                                 <!-- slide start here -->
                                 <div class="slide">
                                     <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
+                                    <div class="mt-product1 large mt-skin-product1">
+                                        <div class="box skin-box">
                                             <div class="b1">
                                                 <div class="b2">
                                                     <a href="{{route('products.show','product-name')}}"><img
                                                             src="frontend/images/products/skin/sk2.png"
                                                             alt="image description"></a>
 
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
+                                                    <ul class="links product-desc">
+                                                        <h4 class="card-title m-0 text-center">
+                                                            <strong class="text-center" style="color:black">
+                                                             Love Your Hair
+                                                            </strong>
+                                                           </h4>
+                                                           <p class="card-text text-center" style="color:black">
+                                                            treat yourself with the best in skincare
+                                                           </p>
+                                                             <h5 class="text-center">
+
+                                                                <a href="#" class="p-0" style="color:black">
+                                                                        Shop More
+                                                                        <i class="fa fa-angle-right"></i>
+                                                                    </a>
+
+                                                        </h5>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <div class="txt">
-                                            <strong class="title">
-                                                <a href="{{route('products.show','product-name')}}">
-                                               product-name{{$i}}
-                                                </a>
-                                            </strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>product-price</span></span>
-                                        </div> --}}
+
                                     </div><!-- mt product1 center end here -->
                                 </div>
 
-
-
-
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href="{{route('products.show','product-name')}}"><img
-                                                            src="frontend/images/products/skin/sk3.png"
-                                                            alt="image description"></a>
-
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="txt">
-                                            <strong class="title">
-                                                <a href="{{route('products.show','product-name')}}">
-                                               product-name{{$i}}
-                                                </a>
-                                            </strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>product-price</span></span>
-                                        </div> --}}
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-
-
-
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href="{{route('products.show','product-name')}}">
-                                                        <img src="frontend/images/products/skin/sk4.png"
-                                                            alt="image description"></a>
-
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="txt">
-                                            <strong class="title">
-                                                <a href="{{route('products.show','product-name')}}">
-                                               product-name{{$i}}
-                                                </a>
-                                            </strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>product-price</span></span>
-                                        </div> --}}
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-
-
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href="{{route('products.show','product-name')}}"><img
-                                                            src="frontend/images/products/skin/sk5.png"
-                                                            alt="image description"></a>
-
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="txt">
-                                            <strong class="title">
-                                                <a href="{{route('products.show','product-name')}}">
-                                               product-name{{$i}}
-                                                </a>
-                                            </strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>product-price</span></span>
-                                        </div> --}}
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-
-
+                            @endfor
                             </div>
                             <!-- tabs slider end here -->
                         </div>
@@ -314,35 +168,36 @@
                                 <!-- slide start here -->
                                 <div class="slide">
                                     <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
+                                    <div class="mt-product1 large mt-skin-product1">
+                                        <div class="box skin-box">
                                             <div class="b1">
                                                 <div class="b2">
                                                     <a href="{{route('products.show','product-name')}}"><img
                                                             src="frontend/images/products/skin/sk1.png"
                                                             alt="image description"></a>
 
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
+                                                    <ul class="links product-desc">
+                                                        <h4 class="card-title m-0 text-center">
+                                                            <strong class="text-center" style="color:black">
+                                                             Love Your Hair
+                                                            </strong>
+                                                           </h4>
+                                                           <p class="card-text text-center" style="color:black">
+                                                            treat yourself with the best in skincare
+                                                           </p>
+                                                             <h5 class="text-center">
+
+                                                                <a href="#" class="p-0" style="color:black">
+                                                                        Shop More
+                                                                        <i class="fa fa-angle-right"></i>
+                                                                    </a>
+
+                                                        </h5>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <div class="txt">
-                                            <strong class="title">
-                                                <a href="{{route('products.show','product-name')}}">
-                                               product-name{{$i}}
-                                                </a>
-                                            </strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>product-price</span></span>
-                                        </div> --}}
+
                                     </div><!-- mt product1 center end here -->
                                 </div>
 
@@ -360,35 +215,36 @@
                                 <!-- slide start here -->
                                 <div class="slide">
                                     <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large">
-                                        <div class="box">
+                                    <div class="mt-product1 large mt-skin-product1">
+                                        <div class="box skin-box">
                                             <div class="b1">
                                                 <div class="b2">
                                                     <a href="{{route('products.show','product-name')}}"><img
                                                             src="frontend/images/products/skin/sk2.png"
                                                             alt="image description"></a>
 
-                                                    <ul class="links">
-                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
-                                                                    Cart</span></a></li>
-                                                        <li><a href="frontend/#"><i
-                                                                    class="icomoon icon-heart-empty"></i></a>
-                                                        </li>
-                                                        <li><a href="#popup1" class="lightbox"><i
-                                                                    class="icomoon icon-eye"></i></a></li>
+                                                    <ul class="links product-desc">
+                                                        <h4 class="card-title m-0 text-center">
+                                                            <strong class="text-center" style="color:black">
+                                                             Love Your Hair
+                                                            </strong>
+                                                           </h4>
+                                                           <p class="card-text text-center" style="color:black">
+                                                            treat yourself with the best in skincare
+                                                           </p>
+                                                             <h5 class="text-center">
+
+                                                                <a href="#" class="p-0" style="color:black">
+                                                                        Shop More
+                                                                        <i class="fa fa-angle-right"></i>
+                                                                    </a>
+
+                                                        </h5>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <div class="txt">
-                                            <strong class="title">
-                                                <a href="{{route('products.show','product-name')}}">
-                                               product-name{{$i}}
-                                                </a>
-                                            </strong>
-                                            <span class="price"><i class="fa fa-inr"></i>
-                                                <span>product-price</span></span>
-                                        </div> --}}
+
                                     </div><!-- mt product1 center end here -->
                                 </div>
 
@@ -396,6 +252,8 @@
                             </div>
                             <!-- tabs slider end here -->
                         </div>
+
+
 
                     </div>
                 </div><!-- mt producttabs end here -->

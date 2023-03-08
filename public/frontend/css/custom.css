@@ -1,7 +1,9 @@
 :root{
 
 }
-
+.p-0{
+    padding: 0px;
+}
 .m-0{
     margin: 0px;
 }
@@ -120,10 +122,55 @@
 
 /* sking care slider */
 .mt-producttabs .producttabs a.active, .mt-producttabs .producttabs a:hover {
-    color: #EC268F;   
+    color: #EC268F;
     text-decoration: none;
 }
 
+.mt-producttabs.style2 .mt-product1 .links {
+    left: 0%;
+    right: 0%;
+    width: 100%;
+}
+
+.mt-skin-product1{
+    padding:10px 10px 10px 0px;
+}
+.skin-box{
+    background-color: rgba(245, 134, 52, 0.3);
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.16);
+    border-radius: 15px;
+}
+
+.mt-skin-product1
+.product-desc{
+    background: rgba(245, 134, 52, 0.4);
+backdrop-filter: blur(15.5px);
+padding: 15px 10px 5px 10px;
+}
+
+
+.mt-skin-product1
+.product-desc a{
+ padding: 0px;
+ font-weight: 600;
+}
+
+
+
+.mt-producttabs:after {
+    right: 0;
+    top: 56px;
+    width: 0px;
+    content: "";
+    height: 37px;
+    position: absolute;
+    border-radius: 19px;
+    background: #eeeeee;
+  }
+
+  #tab21 .slick-arrow{
+    display: none;
+  }
 /* end sking care slider */
 
 /*first page first section */
@@ -203,7 +250,12 @@
 
 
 @media screen and (max-width:480px) {
-
+    /* skin slider */
+    .mt-skin-product1{
+        display: flex;
+        justify-content: center;
+    }
+     /* end skin slider */
 }
 
 
