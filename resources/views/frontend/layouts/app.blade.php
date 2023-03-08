@@ -167,6 +167,8 @@
 <!-- include jQuery -->
 <script src="{{ asset('frontend/js/jquery.main.js') }}"></script>
 
+<script src="{{ asset('frontend/js/custom.js') }}"></script>
+
     @yield('js')
 
 </body>
