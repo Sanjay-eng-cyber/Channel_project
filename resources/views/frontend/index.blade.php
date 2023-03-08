@@ -425,8 +425,37 @@
 
 
 
-
-
+{{-- home decor slider --}}
+  <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-12">
+                <div class="home-decor-wrapper">
+                    <div class="home-decor-slider">
+                        <div>
+                          <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
+                        </div>
+                        <div>
+                            <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
+                        </div>
+                        <div>
+                            <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
+                        </div>
+                        <div>
+                            <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
+                        </div>
+                        <div>
+                            <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
+                        </div>
+                        <div>
+                            <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
+                        </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+  </section>
 
 
 

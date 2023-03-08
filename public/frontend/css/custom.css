@@ -258,60 +258,57 @@ padding: 15px 10px 5px 10px;
 }
 /*  end FRAGRANCES slider */
 
+
+/* home decore slider */
+
+.home-decor-wrapperr{
+    padding: 70px 0;
+  }
+  /* Default slide */
+  .home-decor-slider .slick-slide{
+    background-color:rgba(0, 175, 239, 0.29);
+    color: #FFF;
+    height: 400px;
+    margin: 0 15px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.8);
+    transition: all 0.4s ease-in-out;
+  }
+  .home-decor-slider .slick-slide,
+  .home-decor-slider .slick-slide[aria-hidden="true"]:not(.slick-cloned) ~ .slick-cloned[aria-hidden="true"] {
+    transform: scale(0.8, 0.8);
+    transition: all 0.4s ease-in-out;
+  }
+
+  /* Active center slide (You can change anything here for cenetr slide)*/
+  .home-decor-slider .slick-center,
+  .home-decor-slider .slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"] {
+    transform: scale(1.1);
+    background-color: rgba(0, 175, 239, 0.29);
+  }
+
+  .home-decor-slider .slick-current.slick-active{
+    transform: scale(1.1);
+    background-color: rgba(0, 175, 239, 0.29);
+  }
+
+/*
+  .home-decor-slider .slick-current.slick-active img{
+  bottom: 100px;
+  } */
+
+/* end home decore slider */
+
+
+
 /*first page first section */
 
 .banner-custome{
     margin-top: 50px;
 }
 /*
-
-.banner-5 .texts {
-    position: absolute;
-    padding: 31px;
-    line-height: 21px;
-    width: 92%;
-    height: 60px;
-    bottom: 27px;
-    left: 14px;
-    background: #EBB579;
-} */
-
-/*
-.text-over {
-    position: relative;
-    display: inline-block;
-  }
-
-  .text-over:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
-  }
-
-  .text-over > * {
-    position: relative;
-    z-index: 2;
-  }
-
-
-  .text-over > h3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-  } */
-
-/* end first page first section */
-
 
 @media screen and (max-width:1400px) {
 
@@ -347,3 +344,8 @@ padding: 15px 10px 5px 10px;
 @media screen and (max-width:320px) {
 
 }
+
+
+
+
+
