@@ -106,7 +106,10 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $brands = Brand::all();
         $categorys = Category::all();
-        return view('backend.product.edit', compact('product', 'categorys', 'brands'));
+        $showcases = Showcase::all();
+        // $showcase_product = $product->showcaseProduct->pluck('id')->toArray();
+        // dd($showcase_product);
+        return view('backend.product.edit', compact('product', 'categorys', 'brands', 'showcases'));
     }
 
     public function update(Request $request, $id)
@@ -159,6 +162,21 @@ class ProductController extends Controller
                 $media->save();
             }
         }
+        $showcases = $request->showcases;
+        if ($showcases) {
+            $showcase_products = ShowcaseProduct::where('product_id', $id)->get();
+            foreach ($showcase_products as $showcase_product) {
+                $showcase_product->delete();
+            }
+            //insert multiple image
+
+            foreach ($showcases as $showcase) {
+                $showcase_product = new ShowcaseProduct();
+                $showcase_product->showcase_id = $showcase;
+                $showcase_product->product_id = $product->id;
+                $showcase_product->save();
+            }
+        }
         if ($product->save()) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Update Successfully']);
         }
@@ -183,6 +201,10 @@ class ProductController extends Controller
             if (Storage::disk('public')->delete('images/products/' . $media->file_name)) {
                 $media->delete();
             }
+        }
+        $showcase_products = ShowcaseProduct::where('product_id', $id)->get();
+        foreach ($showcase_products as $showcase_product) {
+            $showcase_product->delete();
         }
         if ($product->delete()) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Deleted Successfully']);
