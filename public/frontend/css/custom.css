@@ -1,6 +1,31 @@
 :root{
 
 }
+
+.display-1{
+font-size: 6rem;
+}
+
+.display-2{
+    font-size: 5.5rem;
+
+}
+
+.display-3{
+    font-size: 4.5rem;
+
+}
+
+.display-4{
+    font-size: 3.5rem;
+
+}
+
+.display-5{
+    font-size: 2.5rem;
+
+}
+
 .p-0{
     padding: 0px;
 }
@@ -157,6 +182,12 @@ padding: 15px 10px 5px 10px;
 
 
 
+.mt-skin-product1
+.product-desc .pra{
+    margin: 0px;
+}
+
+
 .mt-producttabs:after {
     right: 0;
     top: 56px;
@@ -172,6 +203,61 @@ padding: 15px 10px 5px 10px;
     display: none;
   }
 /* end sking care slider */
+
+/*  FRAGRANCES slider */
+
+.mt-fragrances{
+    padding:10px 10px 10px 0px;
+}
+.fragrances-box {
+    background-color: rgba(245, 134, 52, 0.3);
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.16);
+    border-radius: 15px;
+}
+
+
+.mt-fragrances
+.product-desc{
+    background: rgba(245, 134, 52, 0.4);
+backdrop-filter: blur(15.5px);
+padding: 15px 10px 5px 10px;
+}
+
+
+
+.mt-fragrances
+.product-desc h4 strong{
+   font-size: 2.5rem;
+}
+
+.mt-fragrances
+.product-desc a{
+ padding: 0px;
+ font-weight: 600;
+}
+
+
+ .mt-fragrances .links {
+    left: 0%;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.mt-fragrances .pra{
+    margin: 0 0 9.5px;
+}
+
+.fragrances-box .img-slider{
+    width: 100%;
+    height: 100%;
+}
+/*  end FRAGRANCES slider */
 
 /*first page first section */
 
