@@ -89,6 +89,12 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::post('showcase/update/{id}', 'App\Http\Controllers\cms\ShowcaseController@update')->name('backend.showcase.update');
         Route::get('showcase/delete/{id}', 'App\Http\Controllers\cms\ShowcaseController@destroy')->name('backend.showcase.destroy');
 
+        Route::get('orders/', 'App\Http\Controllers\cms\OrderController@index')->name('backend.order.index');
+        Route::get('/order/show/{id}', 'App\Http\Controllers\cms\OrderController@show')->name("backend.order.show");
+
+        Route::get('transactions/', 'App\Http\Controllers\cms\TransactionController@index')->name('backend.transaction.index');
+        Route::get('/transaction/show/{id}', 'App\Http\Controllers\cms\TransactionController@show')->name("backend.transaction.show");
+
         Route::get('/category/get/subcategory/{id}', 'App\Http\Controllers\cms\ProductController@getSubCategory')->name("cms.subcategory.get");
 
     });
