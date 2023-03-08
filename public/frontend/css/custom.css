@@ -118,7 +118,13 @@
     color: black;
 }
 
+/* sking care slider */
+.mt-producttabs .producttabs a.active, .mt-producttabs .producttabs a:hover {
+    color: #EC268F;   
+    text-decoration: none;
+}
 
+/* end sking care slider */
 
 /*first page first section */
 
