@@ -103,11 +103,7 @@
                     </div>
                 </div><!-- banner frame end here -->
                 <!-- banner frame start here -->
-
-
-
-
-                <!-- mt producttabs style2 start here -->
+                   {{-- skin slider --}}
                 <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
                     <!-- producttabs start here -->
                     <ul class="producttabs">
@@ -404,6 +400,156 @@
                     </div>
                 </div><!-- mt producttabs end here -->
 
+                   {{-- FRAGRANCES slider --}}
+                <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
+                    <!-- producttabs start here -->
+                    <ul class="producttabs">
+                        <li><a href="#tab21" class="active">Fragrances</a></li>
+                        <li><a href="#tab22">Latest</a></li>
+                        <li><a href="#tab23">Best Seller</a></li>
+                    </ul>
+                    <!-- producttabs end here -->
+                    <div class="tab-content">
+
+                        <div id="tab21">
+                            <!-- tabs slider start here -->
+                            <div class="tabs-sliderlg">
+                            @for ($i = 1; $i < 6; $i++)
+
+                                <!-- slide start here -->
+                                <div class="slide">
+                                    <!-- mt product1 large start here -->
+                                    <div class="mt-product1 large">
+                                        <div class="box">
+                                            <div class="b1">
+                                                <div class="b2">
+                                                    <a href="{{route('products.show','product-name')}}"><img
+                                                            src="frontend/images/products/img22.jpg"
+                                                            alt="image description"></a>
+
+                                                    <ul class="links">
+                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
+                                                                    Cart</span></a></li>
+                                                        <li><a href="frontend/#"><i
+                                                                    class="icomoon icon-heart-empty"></i></a>
+                                                        </li>
+                                                        <li><a href="#popup1" class="lightbox"><i
+                                                                    class="icomoon icon-eye"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <div class="txt">
+                                            <strong class="title">
+                                                <a href="{{route('products.show','product-name')}}">
+                                               product-name{{$i}}
+                                                </a>
+                                            </strong>
+                                            <span class="price"><i class="fa fa-inr"></i>
+                                                <span>product-price</span></span>
+                                        </div> --}}
+                                    </div><!-- mt product1 center end here -->
+                                </div>
+
+                            @endfor
+                            </div>
+                            <!-- tabs slider end here -->
+                        </div>
+
+                        <div id="tab22">
+                            <!-- tabs slider start here -->
+                            <div class="tabs-sliderlg">
+                            @for ($i = 1; $i < 6; $i++)
+
+                                <!-- slide start here -->
+                                <div class="slide">
+                                    <!-- mt product1 large start here -->
+                                    <div class="mt-product1 large">
+                                        <div class="box">
+                                            <div class="b1">
+                                                <div class="b2">
+                                                    <a href="{{route('products.show','product-name')}}"><img
+                                                            src="frontend/images/products/img22.jpg"
+                                                            alt="image description"></a>
+
+                                                    <ul class="links">
+                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
+                                                                    Cart</span></a></li>
+                                                        <li><a href="frontend/#"><i
+                                                                    class="icomoon icon-heart-empty"></i></a>
+                                                        </li>
+                                                        <li><a href="#popup1" class="lightbox"><i
+                                                                    class="icomoon icon-eye"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <div class="txt">
+                                            <strong class="title">
+                                                <a href="{{route('products.show','product-name')}}">
+                                               product-name{{$i}}
+                                                </a>
+                                            </strong>
+                                            <span class="price"><i class="fa fa-inr"></i>
+                                                <span>product-price</span></span>
+                                        </div> --}}
+                                    </div><!-- mt product1 center end here -->
+                                </div>
+
+                            @endfor
+                            </div>
+                            <!-- tabs slider end here -->
+                        </div>
+
+
+                        <div id="tab23">
+                            <!-- tabs slider start here -->
+                            <div class="tabs-sliderlg">
+                            @for ($i = 1; $i < 6; $i++)
+
+                                <!-- slide start here -->
+                                <div class="slide">
+                                    <!-- mt product1 large start here -->
+                                    <div class="mt-product1 large">
+                                        <div class="box">
+                                            <div class="b1">
+                                                <div class="b2">
+                                                    <a href="{{route('products.show','product-name')}}"><img
+                                                            src="frontend/images/products/img22.jpg"
+                                                            alt="image description"></a>
+
+                                                    <ul class="links">
+                                                        <li><a href="frontend/#"><i class="icon-handbag"></i><span>Add to
+                                                                    Cart</span></a></li>
+                                                        <li><a href="frontend/#"><i
+                                                                    class="icomoon icon-heart-empty"></i></a>
+                                                        </li>
+                                                        <li><a href="#popup1" class="lightbox"><i
+                                                                    class="icomoon icon-eye"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <div class="txt">
+                                            <strong class="title">
+                                                <a href="{{route('products.show','product-name')}}">
+                                               product-name{{$i}}
+                                                </a>
+                                            </strong>
+                                            <span class="price"><i class="fa fa-inr"></i>
+                                                <span>product-price</span></span>
+                                        </div> --}}
+                                    </div><!-- mt product1 center end here -->
+                                </div>
+
+                            @endfor
+                            </div>
+                            <!-- tabs slider end here -->
+                        </div>
+
+                    </div>
+                </div>
+                <!-- mt producttabs end here -->
 
 
 
