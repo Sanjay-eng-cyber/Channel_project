@@ -135,6 +135,30 @@
                                             <div class="text-danger" role="alert">{{ $errors->first('sku') }}</div>
                                         @endif
                                     </div>
+                                    <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
+                                        <label for="descriptions">Showcase</label><br>
+                                        {{-- @if (old('showcases')) --}}
+                                            @foreach ($showcases as $showcase)
+                                                {{-- @dd($showcase) --}}
+                                                <label for="{{ $showcase->id }}">{{ $showcase->name }}</label>
+                                                <input type="checkbox" id="{{ $showcase->id }}" name="showcases[]"
+                                                    value="{{ $showcase->id }}"
+                                                    @if (old('showcases') && in_array($showcase->id, old('showcases'))) {{ 'checked' }} @endif>
+                                            @endforeach
+                                        {{-- @else --}}
+                                            {{-- @foreach ($showcases as $showcase)
+                                                <label for="{{ $showcase->id }}">{{ $showcase->name }}</label>
+                                                <input type="checkbox" id="{{ $showcase->id }}" name="showcases[]"
+                                                    value="{{ $showcase->id }}"
+                                                    @if (in_array($showcase->id,$showcase_product)) {{ 'checked' }} @endif>
+                                            @endforeach --}}
+                                        {{-- @endif --}}
+
+                                        @if ($errors->has('showcases'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('showcases') }}
+                                            </div>
+                                        @endif
+                                    </div>
                                     <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                         <label for="degree2">Image</label>
                                         <div class="d-flex flex-wrap">
