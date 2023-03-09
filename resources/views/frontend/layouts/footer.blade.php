@@ -7,7 +7,10 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 mt-paddingbottomsm">
                     <!-- F Widget Item of the Page -->
                     <div class="f-widget-item">
-                        <span class="widget-icon"><i class="fa fa-plane"></i></span>
+                        <span class="widget-icon">
+                            <img src="{{asset('frontend/images/products/footer-icon/free-shipping.svg')}}" alt="">
+
+                        </span>
                         <div class="txt-holder">
                             <h1 class="f-promo-box-heading">FREE SHIPPING</h1>
                             <p>Free shipping on all US order</p>
@@ -18,7 +21,9 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 mt-paddingbottomsm">
                     <!-- F Widget Item of the Page -->
                     <div class="f-widget-item">
-                        <span class="widget-icon"><i class="fa fa-life-ring"></i></span>
+                        <span class="widget-icon">
+                            <img src="{{asset('frontend/images/products/footer-icon/support.svg')}}" alt="">
+                        </span>
                         <div class="txt-holder">
                             <h1 class="f-promo-box-heading">SUPPORT 24/7</h1>
                             <p>We support 24 hours a day</p>
@@ -29,7 +34,9 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 mt-paddingbottomxs">
                     <!-- F Widget Item of the Page -->
                     <div class="f-widget-item">
-                        <span class="widget-icon"><i class="fa fa-dropbox"></i></span>
+                         <span class="widget-icon">
+                            <img src="{{asset('frontend/images/products/footer-icon/gift-card.svg')}}" alt="">
+                        </span>
                         <div class="txt-holder">
                             <h1 class="f-promo-box-heading">GIFT CARDS</h1>
                             <p>Give perfect gift</p>
@@ -40,7 +47,9 @@
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <!-- F Widget Item of the Page -->
                     <div class="f-widget-item">
-                        <span class="widget-icon"><i class="fa fa-money"></i></span>
+                        <span class="widget-icon">
+                            <img src="{{asset('frontend/images/products/footer-icon/payment.svg')}}" alt="">
+                        </span>
                         <div class="txt-holder">
                             <h1 class="f-promo-box-heading">PAYMENT 100% SECURE</h1>
                             <p>Payment 100% secure</p>
