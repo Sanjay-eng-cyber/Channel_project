@@ -59,13 +59,13 @@
                 <div class="">
                     <div class="widget-content widget-content-area">
                         <div class="table-responsive min-height-20em">
-                            <table class="table mb-4">
+                            <table class="table table-bordered mb-4">
                                 <thead>
                                     <tr>
                                         <th>Sr no.</th>
                                         <th>Name</th>
                                         <th>Category</th>
-                                        <th>Image</th>
+                                        {{-- <th>Image</th> --}}
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -75,10 +75,10 @@
                                             <td>{{ tableRowSrNo($loop->index, $sub_categories) }}</td>
                                             <td>{{ $sub_category->name }}</td>
                                             <td>{{ $sub_category->category->name }}</td>
-                                            <td>
+                                            {{-- <td>
                                                 <img src="{{ asset('storage/images/sub_categories/' . $sub_category->image) }}"
                                                 height="150px" width="150px" alt="">
-                                            </td>
+                                            </td> --}}
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"

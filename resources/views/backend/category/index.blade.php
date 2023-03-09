@@ -64,7 +64,7 @@
                                     <tr>
                                         <th>Sr no.</th>
                                         <th>Name</th>
-                                        <th>Image</th>
+                                        {{-- <th>Image</th> --}}
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -73,10 +73,10 @@
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $categorys) }}</td>
                                             <td>{{ $category->name }}</td>
-                                            <td>
+                                            {{-- <td>
                                                 <img src="{{ asset('storage/images/categories/' . $category->image) }}"
                                                 height="150px" width="150px" alt="">
-                                            </td>
+                                            </td> --}}
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"

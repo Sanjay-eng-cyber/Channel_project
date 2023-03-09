@@ -74,7 +74,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="" class="btn btn-outline-primary mx-auto">
+                                        <a href="{{route('backend.user.index')}}" class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>
@@ -94,7 +94,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="" class="btn btn-outline-primary mx-auto">
+                                        <a href="{{route('backend.brand.index')}}" class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>
@@ -114,7 +114,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="" class="btn btn-outline-primary mx-auto">
+                                        <a href="{{route('backend.category.index')}}" class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>
@@ -134,7 +134,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="" class="btn btn-outline-primary mx-auto">
+                                        <a href="{{route('backend.sub_category.index')}}" class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>
@@ -154,7 +154,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="" class="btn btn-outline-primary mx-auto">
+                                        <a href="{{route('backend.product.index')}}" class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>

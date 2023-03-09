@@ -66,7 +66,7 @@
                                         <th>User</th>
                                         <th>Total Amount</th>
                                         <th>Status</th>
-                                        <th>Payment Type</th>
+                                        <th>Date</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -74,21 +74,18 @@
                                     @forelse($orders as $order)
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $orders) }}</td>
-                                            <td>{{ $order->user->name }}</td>
+                                            <td><a class="blue-col-a" href="{{ route('backend.user.show', $order->user_id) }}" target="target_blank">{{ $order->user->name }}</a></td>
                                             <td>{{ $order->total_amount }}</td>
                                             <td>
                                                 @if ($order->status == 'initial')
-                                                    <button type="button"
-                                                        class="btn btn-primary">{{ $order->status }}</button>
+                                                    <label class="label label-primary">{{ $order->status }}</label>
                                                 @elseif ($order->status == 'failed')
-                                                    <button type="button"
-                                                        class="btn btn-danger">{{ $order->status }}</button>
-                                                        @else
-                                                        <button type="button"
-                                                        class="btn btn-success">{{ $order->status }}</button>
+                                                    <label class="label label-danger">{{ $order->status }}</label>
+                                                @else
+                                                    <label class="label label-success">{{ $order->status }}</label>
                                                 @endif
                                             </td>
-                                            <td>{{ $order->delivery_type }}</td>
+                                            <td>{{ $order->created_at }}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"
