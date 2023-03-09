@@ -34,7 +34,7 @@
                 <div class="col mt-paddingbottomxs ft-svg-class-3">
                     <!-- F Widget Item of the Page -->
                     <div class="f-widget-item ft-svg-sub-class-3">
-                         <span class="widget-icon ">
+                         <span class="widget-icon ft-svg-child-1">
                             <img src="{{asset('frontend/images/products/footer-icon/gift-card.svg')}}" alt="">
                         </span>
                         <div class="txt-holder ft-svg-child-2">
@@ -50,7 +50,7 @@
                         <span class="widget-icon ft-svg-child-1">
                             <img src="{{asset('frontend/images/products/footer-icon/payment.svg')}}" alt="">
                         </span>
-                        <div class="txt-holder ft-svg-child-1">
+                        <div class="txt-holder ft-svg-child-2">
                             <h1 class="f-promo-box-heading">PAYMENT 100% SECURE</h1>
                             <p>Payment 100% secure</p>
                         </div>
