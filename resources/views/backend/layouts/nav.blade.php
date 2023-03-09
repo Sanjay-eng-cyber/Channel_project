@@ -303,17 +303,17 @@
                                       <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
                                   </svg>
                                   <span>Users</span>
-                              </div>
-                          </a>
+                                </div>
+                            </a>
                       </li>
                   @endadmin --}}
                   <li class="menu">
-                    <a href="{{ route('cms.statistics.index') }}"
-                        aria-expanded="{{ route('cms.statistics.index') == request()->url() ? 'true' : 'false' }}"
+                      <a href="{{ route('cms.statistics.index') }}"
+                      aria-expanded="{{ route('cms.statistics.index') == request()->url() ? 'true' : 'false' }}"
                         class="dropdown-toggle">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -321,25 +321,70 @@
                             <span>Dashboard</span>
                         </div>
                     </a>
-                  </li>
-                  <li class="menu">
+                </li>
+                <li class="menu">
+                  <a href="{{ route('backend.user.index') }}"
+                  aria-expanded="{{ route('backend.user.index') == request()->url() ? 'true' : 'false' }}"
+                  class="dropdown-toggle">
+                      <div class="">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                          </svg>
+                          <span>Users</span>
+                      </div>
+                    </a>
+                </li>
+                <li class="menu">
+                  <a href="{{ route('backend.product.index') }}"
+                      aria-expanded="{{ route('backend.product.index') == request()->url() ? 'true' : 'false' }}"
+                      class="dropdown-toggle">
+                      <div class="">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                          </svg>
+                          <span>Products</span>
+                      </div>
+                  </a>
+                </li>
+                <li class="menu">
                     <a href="{{ route('backend.category.index') }}"
                         aria-expanded="{{ route('backend.category.index') == request()->url() ? 'true' : 'false' }}"
                         class="dropdown-toggle">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                            <span>Categories</span>
-                        </div>
-                    </a>
-                  </li>
-                  <li class="menu">
-                    <a href="{{ route('backend.brand.index') }}"
-                        aria-expanded="{{ route('backend.brand.index') == request()->url() ? 'true' : 'false' }}"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        <span>Categories</span>
+                    </div>
+                </a>
+            </li>
+            <li class="menu">
+              <a href="{{ route('backend.sub_category.index') }}"
+                  aria-expanded="{{ route('backend.sub_category.index') == request()->url() ? 'true' : 'false' }}"
+                  class="dropdown-toggle">
+                  <div class="">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                      </svg>
+                      <span>Sub Categories</span>
+                  </div>
+              </a>
+            </li>
+            <li class="menu">
+                <a href="{{ route('backend.brand.index') }}"
+                aria-expanded="{{ route('backend.brand.index') == request()->url() ? 'true' : 'false' }}"
                         class="dropdown-toggle">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -349,21 +394,6 @@
                                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
                             </svg>
                             <span>Brands</span>
-                        </div>
-                    </a>
-                  </li>
-                  <li class="menu">
-                    <a href="{{ route('backend.sub_category.index') }}"
-                        aria-expanded="{{ route('backend.sub_category.index') == request()->url() ? 'true' : 'false' }}"
-                        class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                            <span>Sub Categories</span>
                         </div>
                     </a>
                   </li>
@@ -413,21 +443,6 @@
                     </a>
                   </li>
                   <li class="menu">
-                    <a href="{{ route('backend.product.index') }}"
-                        aria-expanded="{{ route('backend.product.index') == request()->url() ? 'true' : 'false' }}"
-                        class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                            <span>Products</span>
-                        </div>
-                    </a>
-                  </li>
-                  <li class="menu">
                     <a href="{{ route('backend.showcase.index') }}"
                         aria-expanded="{{ route('backend.showcase.index') == request()->url() ? 'true' : 'false' }}"
                         class="dropdown-toggle">
@@ -443,52 +458,37 @@
                     </a>
                   </li>
                   <li class="menu">
-                    <a href="{{ route('backend.order.index') }}"
-                        aria-expanded="{{ route('backend.order.index') == request()->url() ? 'true' : 'false' }}"
-                        class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                            <span>Orders</span>
-                        </div>
-                    </a>
-                  </li>
-                  <li class="menu">
-                    <a href="{{ route('backend.transaction.index') }}"
-                        aria-expanded="{{ route('backend.transaction.index') == request()->url() ? 'true' : 'false' }}"
-                        class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                            <span>Transactions</span>
-                        </div>
-                    </a>
-                  </li>
-                  <li class="menu">
-                    <a href="{{ route('backend.user.index') }}"
-                        aria-expanded="{{ route('backend.user.index') == request()->url() ? 'true' : 'false' }}"
-                        class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                            <span>Users</span>
-                        </div>
-                    </a>
-                  </li>
-                  <li class="menu">
-                      <a href="" aria-expanded="true">
+                      <a href="{{ route('backend.transaction.index') }}"
+                      aria-expanded="{{ route('backend.transaction.index') == request()->url() ? 'true' : 'false' }}"
+                      class="dropdown-toggle">
+                      <div class="">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        <span>Transactions</span>
+                    </div>
+                </a>
+            </li>
+            <li class="menu">
+              <a href="{{ route('backend.order.index') }}"
+                  aria-expanded="{{ route('backend.order.index') == request()->url() ? 'true' : 'false' }}"
+                  class="dropdown-toggle">
+                  <div class="">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                      </svg>
+                      <span>Orders</span>
+                  </div>
+              </a>
+            </li>
+            <li class="menu">
+                <a href="" aria-expanded="true">
 
                       </a>
                   </li>
