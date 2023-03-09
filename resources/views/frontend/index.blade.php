@@ -457,7 +457,17 @@
     </div>
   </section>
 
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
 
+            </div>
+            <div class="col-lg-6 col-md-12">
+            </div>
+        </div>
+    </div>
+</section>
 
     <a id="newsletter-hiddenlink" href="#popup2" class="lightbox" style="display: none;">NEWSLETTER</a>
 	<!-- Popup Holder of the Page -->
@@ -558,37 +568,38 @@
 					</div>
 				</div>
 			</section><!-- Mt Product Detial of the Page end -->
-		</div><!-- Popup of the Page end -->
+		</div>
+        <!-- Popup of the Page end -->
 		<!-- Popup of the Page -->
 		<!-- Popup of the Page -->
 		<div id="popup2" class="lightbox">
-			<!-- Mt Newsletter Popup of the Page -->
+
 			<section class="mt-newsletter-popup">
 				<span class="title">NEWSLETTER</span>
 				<div class="holder">
 					<div class="txt-holder">
 						<h1>JOIN OUR NEWSLETTER</h1>
 						<span class="txt">Subscribe now to get <b>15%</b> off on any product!</span>
-						<!-- Newsletter Form of the Page -->
+
 						<form action="#" method="post" class="newsletter-form">
                             @csrf
 							<fieldset>
 								<input type="email" class="form-control" placeholder="Enter your e-mail">
 								<button type="submit">SUBSCRIBE</button>
 							</fieldset>
-						</form><!-- Newsletter Form of the Page -->
+						</form>
 					</div>
 					<div class="img-holder">
 						<img src="frontend/images/img02.png" alt="image description">
 					</div>
-				</div><!-- Popup Form of the Page -->
+				</div>
 				<form action="#" method="post" class="popup-form">
                     @csrf
 					<fieldset>
 						<input type="checkbox" class="form-control">Don’t show this popup again
 					</fieldset>
-				</form><!-- Popup Form of the Page end -->
-			</section><!-- Mt Newsletter Popup of the Page -->
-		</div><!-- Popup of the Page end -->
-	</div><!-- Popup Holder of the Page end -->
+				</form>
+			</section>
+		</div>
+	</div>
 @endsection
