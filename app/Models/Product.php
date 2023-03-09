@@ -26,4 +26,9 @@ class Product extends Model
     {
         return $this->morphMany(Media::class, 'model');
     }
+
+    public function showcaseProducts()
+    {
+        return $this->hasMany(ShowcaseProduct::class);
+    }
 }

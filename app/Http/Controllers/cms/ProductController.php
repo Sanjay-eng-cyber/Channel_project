@@ -107,9 +107,9 @@ class ProductController extends Controller
         $brands = Brand::all();
         $categorys = Category::all();
         $showcases = Showcase::all();
-        // $showcase_product = $product->showcaseProduct->pluck('id')->toArray();
-        // dd($showcase_product);
-        return view('backend.product.edit', compact('product', 'categorys', 'brands', 'showcases'));
+        $product_showcases = $product->showcaseProducts()->exists() ? $product->showcaseProducts()->pluck('showcase_id')->toArray() : [];
+        // dd($product_showcases);
+        return view('backend.product.edit', compact('product', 'categorys', 'brands', 'showcases', 'product_showcases'));
     }
 
     public function update(Request $request, $id)
@@ -118,6 +118,7 @@ class ProductController extends Controller
         $brands = Brand::pluck('id')->toArray();
         $sub_categorys = SubCategory::pluck('id')->toArray();
         $product = Product::findOrFail($id);
+        $showcases_id = Showcase::pluck('id')->toArray();
         // dd($media);
         $request->validate([
             'name' => 'required|min:3|max:40|unique:products,name,' . $id,
@@ -129,9 +130,12 @@ class ProductController extends Controller
             'category_id' => ['required', Rule::in($categorys)],
             'brand_id' => ['nullable', Rule::in($brands)],
             'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
-            'image' => 'required|max:10',
+            'image' => 'nullable|max:10',
             'image.*' => 'mimes:png,jpg,jpeg|max:1024',
+            'showcases' => ['nullable', 'array'],
+            'showcases.*' => [Rule::in($showcases_id)],
         ]);
+
         $product->name = $request->name;
         $product->slug = Str::slug($request->name);
         $product->category_id = $request->category_id;
@@ -164,12 +168,9 @@ class ProductController extends Controller
         }
         $showcases = $request->showcases;
         if ($showcases) {
-            $showcase_products = ShowcaseProduct::where('product_id', $id)->get();
-            foreach ($showcase_products as $showcase_product) {
-                $showcase_product->delete();
-            }
-            //insert multiple image
-
+            $showcase_products = ShowcaseProduct::where('product_id', $id);
+            optional($showcase_products->delete());
+            //insert Showcases
             foreach ($showcases as $showcase) {
                 $showcase_product = new ShowcaseProduct();
                 $showcase_product->showcase_id = $showcase;
