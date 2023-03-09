@@ -1,5 +1,5 @@
  <!-- footer of the Page -->
- <footer id="mt-footer" class="style2 wow fadeInUp" data-wow-delay="0.6s">
+ <footer id="mt-footer" class="style2 wow fadeInUp custome-footer" data-wow-delay="0.6s">
     <!-- F Promo Box of the Page -->
     <aside class="f-promo-box dark">
         <div class="container divider">

@@ -341,7 +341,6 @@ a {
 
 /*
 
-
 .header-top-navbar .mt-icon-list {
     margin: 0;
     padding: 0;
@@ -389,6 +388,18 @@ a {
 
 /*end na header  */
 
+
+
+/* footer css */
+#mt-footer .dark {
+    background: none;
+    position: relative;
+}
+.custome-footer{
+    background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%, rgba(0, 175, 239, 0.29) 100%);
+
+}
+/* end footer css */
 @media screen and (max-width: 1400px) {
 }
 
