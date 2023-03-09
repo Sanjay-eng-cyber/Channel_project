@@ -78,17 +78,13 @@
                                             <td>{{ $transaction->amount }}</td>
                                             <td>
                                                 @if ($transaction->status == 'initial')
-                                                    <button type="button"
-                                                        class="btn btn-primary">{{ $transaction->status }}</button>
+                                                <label class="badge badge-primary">{{ $transaction->status }}</label>
                                                 @elseif ($transaction->status == 'failed')
-                                                    <button type="button"
-                                                        class="btn btn-danger">{{ $transaction->status }}</button>
+                                                <label class="badge badge-danger">{{ $transaction->status }}</label>
                                                         @elseif ($transaction->status == 'pending')
-                                                    <button type="button"
-                                                        class="btn btn-warning">{{ $transaction->status }}</button>
+                                                        <label class="badge badge-warning">{{ $transaction->status }}</label>
                                                         @else
-                                                        <button type="button"
-                                                        class="btn btn-success">{{ $transaction->status }}</button>
+                                                        <label class="badge badge-success">{{ $transaction->status }}</label>
                                                 @endif
                                             </td>
                                             <td>{{ $transaction->transaction_date }}</td>

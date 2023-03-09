@@ -78,11 +78,11 @@
                                             <td>{{ $order->total_amount }}</td>
                                             <td>
                                                 @if ($order->status == 'initial')
-                                                    <label class="label label-primary">{{ $order->status }}</label>
+                                                    <label class="badge badge-primary">{{ $order->status }}</label>
                                                 @elseif ($order->status == 'failed')
-                                                    <label class="label label-danger">{{ $order->status }}</label>
+                                                    <label class="badge badge-danger">{{ $order->status }}</label>
                                                 @else
-                                                    <label class="label label-success">{{ $order->status }}</label>
+                                                    <label class="badge badge-success">{{ $order->status }}</label>
                                                 @endif
                                             </td>
                                             <td>{{ $order->created_at }}</td>

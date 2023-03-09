@@ -95,15 +95,12 @@
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Status</label><br>
                                                 <p class="label-title">
-                                                     @if ($order->status == 'initial')
-                                                    <button type="button"
-                                                        class="btn btn-primary">{{ $order->status }}</button>
+                                                    @if ($order->status == 'initial')
+                                                    <label class="badge badge-primary" style="color:white">{{ $order->status }}</label>
                                                 @elseif ($order->status == 'failed')
-                                                    <button type="button"
-                                                        class="btn btn-danger">{{ $order->status }}</button>
-                                                        @else
-                                                        <button type="button"
-                                                        class="btn btn-success">{{ $order->status }}</button>
+                                                    <label class="badge badge-danger" style="color:white">{{ $order->status }}</label>
+                                                @else
+                                                    <label class="badge badge-success" style="color:white">{{ $order->status }}</label>
                                                 @endif
                                             </p>
                                             </div>

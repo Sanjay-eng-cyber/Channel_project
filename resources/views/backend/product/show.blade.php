@@ -111,6 +111,17 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        {{-- @dd($product_showcases) --}}
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Showcases</label><br>
+                                                @foreach ($product_showcases as $p_showcase)
+                                                    <p class="label-title">{{ $p_showcase->showcase->name }}</p>
+                                                @endforeach
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -36,43 +36,43 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Order Id</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Order
+                                                    Id</label><br>
                                                 <p class="label-title">{{ $transactions->order_id }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Pg Payment Id</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Pg Payment
+                                                    Id</label><br>
                                                 <p class="label-title">{{ $transactions->pg_payment_id }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Pg Response</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Pg
+                                                    Response</label><br>
                                                 <p class="label-title">{{ $transactions->pg_response }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Pg Amount</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Pg
+                                                    Amount</label><br>
                                                 <p class="label-title">{{ $transactions->pg_amount }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Pg Status</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Pg
+                                                    Status</label><br>
                                                 <p class="label-title">{{ $transactions->pg_status }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Payment Type</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Payment
+                                                    Type</label><br>
                                                 <p class="label-title">{{ $transactions->payment_type }}</p>
                                             </div>
                                         </div>
@@ -88,20 +88,20 @@
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Status</label><br>
                                                 <p class="label-title">
-                                                     @if ($transactions->status == 'initial')
-                                                    <button type="button"
-                                                        class="btn btn-primary">{{ $transactions->status }}</button>
-                                                @elseif ($transactions->status == 'failed')
-                                                    <button type="button"
-                                                        class="btn btn-danger">{{ $transactions->status }}</button>
-                                                        @elseif ($transactions->status == 'pending')
-                                                        <button type="button"
-                                                            class="btn btn-warning">{{ $transactions->status }}</button>
-                                                        @else
-                                                        <button type="button"
-                                                        class="btn btn-success">{{ $transactions->status }}</button>
-                                                @endif
-                                            </p>
+                                                    @if ($transactions->status == 'initial')
+                                                        <label class="badge badge-primary"
+                                                            style="color:white">{{ $transactions->status }}</label>
+                                                    @elseif ($transactions->status == 'failed')
+                                                        <label class="badge badge-danger"
+                                                            style="color:white">{{ $transactions->status }}</label>
+                                                    @elseif ($transactions->status == 'pending')
+                                                        <label class="badge badge-warning"
+                                                            style="color:white">{{ $transactions->status }}</label>
+                                                    @else
+                                                        <label class="badge badge-success"
+                                                            style="color:white">{{ $transactions->status }}</label>
+                                                    @endif
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
