@@ -12,7 +12,7 @@
                             </legend>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 col-sm-6 mb-2 d-flex justify-content-end align-it mt-2 ">
+                        <div class="col-lg-4 col-md-6 col-sm-6 mb-2 d-flex justify-content-end align-it mt-2">
                             <nav class="breadcrumb-two" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -25,9 +25,9 @@
                 </div>
             </div>
 
-            <div class="info statbox widget box box-shadow" style="padding: 15px;">
-                <div class="row">
-                    <div class="col-md-11 mx-auto">
+            <div class="info statbox widget box box-shadow">
+                <div class="row widget-header" >
+                    <div class="col-md-11">
                         <div class="work-section">
                             <div class="row">
                                 <div class="col-md-12">
@@ -129,9 +129,9 @@
                     </div>
                 </div>
             </div>
-            <div class="widget-content widget-content-area">
+            {{-- <div class="widget-content widget-content-area">
 
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
