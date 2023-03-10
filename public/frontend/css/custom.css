@@ -2,6 +2,7 @@
 }
 a {
     text-decoration: none;
+    color:black;
 }
 
 .text-white {
@@ -391,9 +392,10 @@ a {
 
 #mt-footer .f-widget-newsletter .newsletter-form.form2 {
     border: none;
-    width: none;
-    height: none;
+    width: 255px;
+     height: auto;
 }
+
 
 #mt-footer .f-widget-newsletter .newsletter-form {
     width: 218px;
@@ -405,6 +407,28 @@ a {
     border-style: solid;
     border-radius: 25px;
     border-color: #868686;
+}
+
+#mt-footer .footer-holder .f-widget-heading {
+    font-size: 16px;
+    line-height: 16px;
+    margin: 0 0 35px;
+    font-weight: 700;
+    color: rgba(236, 38, 143, 1);
+}
+.f-widget-news-custome{
+    background: rgba(251, 140, 165, 0.1);
+    padding: 26px;
+}
+.fieldset{
+padding: none;
+}
+#mt-footer .f-widget-newsletter .newsletter-form.form2 button{
+    border-radius: 0;
+    background: rgba(236, 38, 143, 1);
+}
+#mt-footer .f-widget-about {
+    color: black;
 }
 /* end footer css */
 @media screen and (max-width: 1400px) {
