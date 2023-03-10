@@ -26,7 +26,7 @@
             </div>
 
             <div class="info statbox widget box box-shadow">
-                <div class="row widget-header" >
+                <div class="row widget-header">
                     <div class="col-md-11">
                         <div class="work-section">
                             <div class="row">
@@ -116,9 +116,12 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Showcases</label><br>
-                                                @foreach ($product_showcases as $p_showcase)
-                                                    <p class="label-title">{{ $p_showcase->showcase->name ?? '---' }}</p>
-                                                @endforeach
+                                                @forelse ($product_showcases as $p_showcase)
+                                                    <p class="label-title">{{ $p_showcase->showcase->name }}
+                                                    </p>
+                                                @empty
+                                                    <p class="label-title">---</p>
+                                                @endforelse
 
                                             </div>
                                         </div>
