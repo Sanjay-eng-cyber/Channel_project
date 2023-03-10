@@ -424,7 +424,7 @@ a {
 padding: none;
 }
 #mt-footer .f-widget-newsletter .newsletter-form.form2 button{
-    border-radius: 0;
+    border-radius: 0px 4px 4px 0px;
     background: rgba(236, 38, 143, 1);
 }
 #mt-footer .f-widget-about {
@@ -492,6 +492,19 @@ padding: none;
 }
 
 @media screen and (max-width: 992px) {
+    #mt-footer .footer-holder .f-widget-heading{
+        text-align: center;
+    }
+    #mt-footer .f-widget-newsletter .newsletter-form.form2 .form-control {
+        width: 78%;
+        height: 38px;
+    }
+
+    #mt-footer .f-widget-newsletter .holder {
+        display: flex;
+        justify-content: center;
+    }
+
     .cainco-breackpoint{
         display: flex;
 
