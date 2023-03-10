@@ -6,7 +6,7 @@
             {{ config('app.name') }}. All Rights Reserved |
 
             Designed & Developed by
-            <a href="http://acetrot.com" target="_blank">Acetrot<img src="{{ url('images/acetrot.png') }}" width="24" alt="">
+            <a href="http://acetrot.com" target="_blank">Acetrot<img src="{{ url('backend/images/acetrot.png') }}" width="24" alt="">
             </a>
         </p>
     </div>
