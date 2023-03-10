@@ -62,7 +62,7 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Description</label><br>
-                                                <p class="label-title">{{ $sub_category->descriptions }}</p>
+                                                <p class="label-title">{{ $sub_category->descriptions ?? '---'}}</p>
                                             </div>
                                         </div>
                                     </div>
