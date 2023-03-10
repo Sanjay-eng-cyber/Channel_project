@@ -5,7 +5,7 @@
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
-                    <div class="row justify-content-between align-items-center mb-1 ">
+                    <div class="row justify-content-between align-items-center mb-1">
                         <div class="col-lg-4 col-md-6 col-sm-6 mt-2 mb-1">
                             <legend class="h4">
                                 Category Deatails
@@ -25,8 +25,8 @@
                 </div>
             </div>
 
-            <div class="info statbox widget box box-shadow" style="padding: 15px;">
-                <div class="row">
+            <div class="info statbox widget box box-shadow">
+                <div class="row widget-header">
                     <div class="col-md-6">
                         <div class="work-section">
                             <div class="row">
@@ -36,8 +36,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Category Name</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Category
+                                                    Name</label><br>
                                                 <p class="label-title">{{ $category->name }}</p>
                                             </div>
                                         </div>
@@ -45,7 +45,7 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Image</label><br>
-                                                    @if ($category->image)
+                                                @if ($category->image)
                                                     <img src="{{ asset('storage/images/categories/' . $category->image) }}"
                                                         height="150px" width="150px" alt="">
                                                 @endif
@@ -55,7 +55,7 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Description</label><br>
-                                                <p class="label-title">{{ $category->descriptions }}</p>
+                                                <p class="label-title">{{ $category->descriptions ?? '---' }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -65,9 +65,9 @@
                     </div>
                 </div>
             </div>
-            <div class="widget-content widget-content-area">
+            {{-- <div class="widget-content widget-content-area">
 
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
@@ -88,8 +88,7 @@
     </script>
     <link type=" text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css" />
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}">
-    </script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}"></script>
     <script src="{{ asset('js/lg-zoom.min.js') }}"></script>
     {{-- <link rel="stylesheet" type=" text/css" href="{{ asset('css/lightgallery.css') }}">
         <script src="{{ asset('js/lightgallery.js') }}"></script> --}}
