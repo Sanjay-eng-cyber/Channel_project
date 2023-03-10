@@ -282,20 +282,8 @@ a {
 }
 
 .navbar {
-    --bs-navbar-padding-x: none;
-    --bs-navbar-padding-y: none;
-    --bs-navbar-color: none;
-    --bs-navbar-hover-color: none;
-    --bs-navbar-disabled-color: none;
-    --bs-navbar-active-color: none;
-    --bs-navbar-brand-padding-y: none;
-    --bs-navbar-brand-margin-end: none;
-    --bs-navbar-brand-font-size: none;
-    --bs-navbar-brand-color: none;
-    --bs-navbar-brand-hover-color: none;
-    --bs-navbar-nav-link-padding-x: none;
-    --bs-navbar-toggler-padding-y: none;
-    --bs-navbar-toggler-padding-x: none;
+
+    --bs-navbar-toggler-padding-x:  0.5rem;
     --bs-navbar-toggler-font-size: none;
 
     --bs-navbar-toggler-icon-bg: url(
@@ -401,6 +389,23 @@ a {
 }
 
 
+#mt-footer .f-widget-newsletter .newsletter-form.form2 {
+    border: none;
+    width: none;
+    height: none;
+}
+
+#mt-footer .f-widget-newsletter .newsletter-form {
+    width: 218px;
+    height: 30px;
+    float:none;
+    margin: 0 0 20px;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: #868686;
+}
 /* end footer css */
 @media screen and (max-width: 1400px) {
 }

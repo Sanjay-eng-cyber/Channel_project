@@ -17,8 +17,8 @@
 
                    </div>
 
-                   <div class="col hide-nav-top nav-custom-width">
-                       <nav class="navbar">
+                   <div class="col hide-nav-top nav-custom-width p-0">
+                       <nav class="navbar navbar-expand-lg" style="width: 100vw;">
 
 
                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
