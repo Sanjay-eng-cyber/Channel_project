@@ -25,9 +25,9 @@
                 </div>
             </div>
 
-            <div class="info statbox widget box box-shadow" style="padding: 15px;">
-                <div class="row">
-                    <div class="col-md-11 mx-auto">
+            <div class="info statbox widget box box-shadow">
+                <div class="row widget-header">
+                    <div class="col-md-11">
                         <div class="work-section">
                             <div class="row">
                                 <div class="col-md-12">
@@ -55,9 +55,9 @@
                     </div>
                 </div>
             </div>
-            <div class="widget-content widget-content-area">
+            {{-- <div class="widget-content widget-content-area">
 
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
