@@ -59,7 +59,7 @@
                 <div class="">
                     <div class="widget-content widget-content-area">
                         <div class="table-responsive min-height-20em">
-                            <table class="table table-bordered mb-4">
+                            <table class="table mb-4">
                                 <thead>
                                     <tr>
                                         <th>Sr no.</th>
