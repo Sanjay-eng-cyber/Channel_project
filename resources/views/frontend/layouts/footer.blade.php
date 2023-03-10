@@ -92,12 +92,12 @@
                     <div class="nav-widget-1">
                         <h3 class="f-widget-heading">Categories</h3>
                         <ul class="list-unstyled f-widget-nav">
-                            <li><a href="">Chairs</a></li>
-                            <li><a href="">Sofas</a></li>
-                            <li><a href="">Living</a></li>
-                            <li><a href="">Bedroom</a></li>
-                            <li><a href="">Tables</a></li>
-                            <li><a href="">New</a></li>
+                            <li><a href="">Skin</a></li>
+                            <li><a href="">Fragrances</a></li>
+                            <li><a href="">Haircare</a></li>
+                            <li><a href="">Personal Care</a></li>
+                            <li><a href="">Home Decore </a></li>
+                            <li><a href="">gift</a></li>
                         </ul>
                     </div>
                     <!-- Footer Nav of the Page end -->
@@ -105,24 +105,21 @@
                     <div class="nav-widget-1">
                         <h3 class="f-widget-heading">Information</h3>
                         <ul class="list-unstyled f-widget-nav">
-                            <li><a href="{{route('about')}}">About Us</a></li>
-                            <li><a href="{{route('contact')}}">Contact Us</a></li>
-                            <li><a href="">Terms &amp; Conditions</a></li>
-                            <li><a href="">Privacy Policy</a></li>
-                            <li><a href="">Customer Service</a></li>
-                            <li><a href="">FAQs</a></li>
+                            <li><a href="{{route('about')}}">FAQ</a></li>
+                            <li><a href="{{route('contact')}}">BLOG</a></li>
+                            <li><a href="">Support</a></li>
+
                         </ul>
                     </div>
                     <!-- Footer Nav of the Page end -->
                     <!-- Footer Nav of the Page -->
                     <div class="nav-widget-1">
-                        <h3 class="f-widget-heading">Account</h3>
+                        <h3 class="f-widget-heading">Company</h3>
                         <ul class="list-unstyled f-widget-nav">
-                            <li><a href="">My Account</a></li>
-                            <li><a href="">Order Tracking</a></li>
-                            <li><a href="">Wish List</a></li>
-                            <li><a href="">Shopping Cart</a></li>
-                            <li><a href="">Checkout</a></li>
+                            <li><a href="">Abpit Us</a></li>
+                            <li><a href="">Careers</a></li>
+                            <li><a href="">Contact Us</a></li>
+
                         </ul>
                     </div>
                     <!-- Footer Nav of the Page end -->
@@ -130,7 +127,7 @@
                 <div class="col-xs-12 col-md-3 text-right hidden-sm">
                     <!-- F Widget Newsletter of the Page -->
                     <div class="f-widget-newsletter">
-                        <h3 class="f-widget-heading">Sing Up Newsletter</h3>
+                        <h3 class="f-widget-heading">Subscribe</h3>
                         <div class="holder">
                             <form class="newsletter-form form2" action="#">
                                 <fieldset>
@@ -139,18 +136,9 @@
                                 </fieldset>
                             </form>
                         </div>
-                        <!-- F Widget Newsletter of the Page end -->
-                        <h4 class="f-widget-heading follow">Follow Us</h4>
-                        <!-- Social Network of the Page -->
-                        <ul class="list-unstyled social-network social-icon">
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href=""><i class="fa fa-whatsapp"></i></a></li>
-                        </ul>
-                        <!-- Social Network of the Page end -->
+                      <p>
+                        Hello, we are Lift Media. Our goal is to translate the positive effects from revolutionizing how companies engage with their clients & their team.
+                      </p>
                     </div>
                 </div>
             </div>
