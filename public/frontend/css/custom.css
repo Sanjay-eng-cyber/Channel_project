@@ -430,11 +430,65 @@ padding: none;
 #mt-footer .f-widget-about {
     color: black;
 }
+
+.footer-tpc{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.footer-tpc-ul{
+    display: flex;
+    align-items: center;
+}
+
+.footer-lifinsta{
+    display: flex;
+    justify-content: center;
+    justify-content: flex-end;
+}
+
+.footer-lifinsta
+.footer-lifinsta-ul{
+    display:flex;list-style-type: none;
+}
+
+.footer-lifinsta
+.footer-lifinsta-ul li:nth-child(1) a,
+.footer-lifinsta-ul li:nth-child(2) a,
+.footer-lifinsta-ul li:nth-child(3) a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.4em;
+    height: 2.4em;
+    border-radius: 50%;
+    border: 2px solid rgba(236, 38, 143, 0.3);
+}
+
+
+
+
 /* end footer css */
 @media screen and (max-width: 1400px) {
+    #mt-footer .f-widget-newsletter .newsletter-form.form2 .form-control{
+        width: 61%;
+        height: 38px;
+    }
+    #mt-footer .f-widget-newsletter .newsletter-form.form2 button {
+        height: 38px;
+        width: 21%;
+    }
 }
 
 @media screen and (max-width: 1200px) {
+    #mt-footer .f-widget-newsletter .newsletter-form.form2 .form-control{
+        width: 51%;
+        height: 38px;
+    }
+    #mt-footer .f-widget-newsletter .newsletter-form.form2 button {
+        height: 38px;
+        width: 14%;
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -502,6 +556,33 @@ padding: none;
 }
 
 @media screen and (max-width: 576px) {
+
+    .footer-tpc {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .footer-lifinsta {
+        display: inline;
+        justify-content: flex-end;
+    }
+
+
+.footer-lifinsta
+.footer-lifinsta-ul li:nth-child(1) a,
+.footer-lifinsta-ul li:nth-child(2) a,
+.footer-lifinsta-ul li:nth-child(3) a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: 2px solid rgba(236, 38, 143, 0.3);
+}
+
+
+
     .header-sub-3 li:nth-child(1) .top-nav-carticon,
     .header-sub-3 li:nth-child(2) .top-nav-usericon {
         display: flex;

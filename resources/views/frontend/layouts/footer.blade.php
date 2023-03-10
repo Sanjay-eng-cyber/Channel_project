@@ -147,13 +147,13 @@
                      <div class="f-widget-newsletter f-widget-news-custome">
                          <h3 class="f-widget-heading" style="line-height:0px">Subscribe</h3>
                          <div class="holder">
-                             <form class="newsletter-form form2" action="#">
-                                 <fieldset>
+                             <form class="newsletter-form form2" action="#" style="padding:6px">
+
                                      <input type="email" class="form-control" placeholder="Your e-mail" style="border-radius:0px">
                                      <button type="submit">
                                         <i class="fas fa-arrow-right"></i>
                                      </button>
-                                 </fieldset>
+
                              </form>
                          </div>
                          <p class="text-red">
@@ -167,13 +167,120 @@
      </div>
      <!-- Footer Holder of the Page end -->
      <!-- Footer Area of the Page -->
+
      <div class="footer-area">
+        <hr>
+
+        <div class="container py-4">
+          <div class="row">
+            <div class="col-6 col-sm-7 footer-tpc" >
+                <ul class="gap-2 gap-sm-4  p-0  footer-tpc-ul">
+                    <a href="" class="fw-bolder">
+                        Terms
+                    </a>
+                    <a href="" class="fw-bolder">
+                        Privacy
+                    </a>
+                    <a href="" class="fw-bolder">
+                        Cookies
+                    </a>
+                </ul>
+                {{-- <ul class="gap-4 " style="display:flex;list-style-type: none;">
+                    <li>
+                        <a href="https://www.linkedin.com/"
+                        style="
+                        display: inline-flex;
+                               justify-content: center;
+                               align-items: center;
+                               width: 2.4em;
+                               height: 2.4em;
+                               border-radius: 50%;
+                               border: 2px solid rgba(236, 38, 143, 0.3);
+                               color: #1da1f2;
+                       "
+                        >
+                            <i class="fa-brands fa-linkedin-in text-red"></i>
+                        </a>
+                    </li>
+
+                    <li>
+
+                        <a href="https://www.linkedin.com/"
+                        style="
+                        display: inline-flex;
+                               justify-content: center;
+                               align-items: center;
+                               width: 2.4em;
+                               height: 2.4em;
+                               border-radius: 50%;
+                               border: 2px solid rgba(236, 38, 143, 0.3);
+                               color: #1da1f2;
+                       "
+                        >
+                            <i class="fa-brands fa-facebook-f text-red"></i>
+                        </a>
+                    </li>
+
+                    <li>
+
+                        <a href="https://www.linkedin.com/"
+                        style="
+                             display: inline-flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: 2.4em;
+                                    height: 2.4em;
+                                    border-radius: 50%;
+                                    border: 2px solid rgba(236, 38, 143, 0.3);
+                                    color: #1da1f2;
+                            "
+
+                            >
+                            <i class="fa-brands fa-twitter text-red"></i>
+                        </a>
+                    </li>
+
+                </ul> --}}
+            </div>
+
+            <div class="col-5 col-sm-5 footer-lifinsta">
+                <ul class="gap-2 gap-sm-4 footer-lifinsta-ul">
+                    <li class="footer-lifinsta-tag-1">
+                        <a href="https://www.linkedin.com/"
+
+                        >
+                            <i class="fa-brands fa-linkedin-in text-red"></i>
+                        </a>
+                    </li>
+
+                    <li class="footer-lifinsta-tag-2">
+
+                        <a href="https://www.linkedin.com/"
+
+                        >
+                            <i class="fa-brands fa-facebook-f text-red"></i>
+                        </a>
+                    </li>
+
+                    <li class="footer-lifinsta-tag-3">
+
+                        <a href="https://www.linkedin.com/">
+                            <i class="fa-brands fa-twitter text-red"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+          </div>
+
+        </div>
+
          <div class="container">
              <div class="row">
                  <div class="col-xs-12 col-sm-6">
                      <p> © 2023 channel. All Rights Reserved.</p>
                  </div>
-                 <div class="col-xs-12 col-sm-6 text-right">
+                 <div class="col-xs-12 col-sm-6 text-end">
                      <div class="bank-card">
                          Designed & Developed by Acetrot
                      </div>
