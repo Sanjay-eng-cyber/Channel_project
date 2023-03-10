@@ -94,7 +94,7 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Description</label><br>
-                                                <p class="label-title">{{ strip_tags($product->descriptions) }}</p>
+                                                <p class="label-title">{{ strip_tags($product->descriptions ?? '---') }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -117,7 +117,7 @@
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Showcases</label><br>
                                                 @foreach ($product_showcases as $p_showcase)
-                                                    <p class="label-title">{{ $p_showcase->showcase->name }}</p>
+                                                    <p class="label-title">{{ $p_showcase->showcase->name ?? '---' }}</p>
                                                 @endforeach
 
                                             </div>
