@@ -1,4 +1,5 @@
 :root {
+
 }
 a {
     text-decoration: none;
@@ -12,13 +13,13 @@ a {
 .text-black {
     color: black;
 }
-
 .text-red {
     color: rgba(236, 38, 143, 1);
 }
 .bg-red {
     background-color: rgba(236, 38, 143, 1);
 }
+
 /* sking care slider */
 .mt-producttabs .producttabs a.active,
 .mt-producttabs .producttabs a:hover {
@@ -283,24 +284,8 @@ a {
 }
 
 .navbar {
-
     --bs-navbar-toggler-padding-x:  0.5rem;
     --bs-navbar-toggler-font-size: none;
-
-    --bs-navbar-toggler-icon-bg: url(
-        data:image/svg + xml,
-        %3csvgxmlns="http://www.w3.org/2000/svg"viewBox="0 0 30 30"%3e%3cpathstroke="rgba%280, 0, 0, 0.55%29"stroke-linecap="round"stroke-miterlimit="10"stroke-width="2"d="M4 7h22M4 15h22M4 23h22"/%3e%3c/svg%3e
-    );
-    --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.1);
-    --bs-navbar-toggler-border-radius: 0.375rem;
-    --bs-navbar-toggler-focus-width: 0.25rem;
-    --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
     padding-top: 6px;
 }
 
@@ -424,6 +409,7 @@ a {
 padding: none;
 }
 #mt-footer .f-widget-newsletter .newsletter-form.form2 button{
+    width: 21%;
     border-radius: 0px 4px 4px 0px;
     background: rgba(236, 38, 143, 1);
 }
@@ -466,9 +452,18 @@ padding: none;
 }
 
 
+#mt-footer .f-widget-newsletter .newsletter-form.form2 .form-control{
+    width: 79%;
+}
 
-
+.contact-pc-version{
+    display: flex;
+}
+.contact-mobile-version{
+    display: flex;
+}
 /* end footer css */
+
 @media screen and (max-width: 1400px) {
     #mt-footer .f-widget-newsletter .newsletter-form.form2 .form-control{
         width: 61%;
@@ -570,6 +565,7 @@ padding: none;
 
 @media screen and (max-width: 576px) {
 
+    /* footer  */
     .footer-tpc {
         display: flex;
         justify-content: flex-start;
@@ -594,7 +590,87 @@ padding: none;
     border: 2px solid rgba(236, 38, 143, 0.3);
 }
 
+#mt-footer .footer-area p {
+    margin: 0 0 0px;
+}
 
+.designed_develop{
+    text-align: center;
+}
+
+
+.footer-first-order{
+order: -2;
+}
+
+.footer-second-order{
+order: -1;
+}
+
+#mt-footer .logo{
+    width: auto;
+    margin: 0;
+    display: block;
+    vertical-align: middle;
+}
+
+#mt-footer.style2 .f-widget-about p {
+    margin: 0 0 0px;
+    padding: 30px;
+    text-align: center;
+}
+
+.contact-pc-version{
+    display: none;
+}
+
+.contact-mobile-version{
+    display: flex;
+    justify-content: space-between;
+
+}
+.cainco-breackpoint{
+    padding-top: 30px;
+}
+.cainco-breackpoint-category{
+    display: none;
+}
+
+.cainco-breackpoint-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cainco-breackpoint-company {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cainco-breackpoint {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.cainco-breackpoint-company ul {
+    text-align: start;
+}
+
+.cainco-breackpoint-info ul {
+    text-align: start;
+}
+#mt-footer .footer-holder
+.c-f-heading{
+    margin:0px 0px 15px 0px;
+}
+#mt-footer .footer-holder .info-f-heading{
+    margin:0px 0px 15px 0px;
+}
+/* end footer  */
+
+
+/* navbar with heading */
 
     .header-sub-3 li:nth-child(1) .top-nav-carticon,
     .header-sub-3 li:nth-child(2) .top-nav-usericon {
@@ -720,6 +796,8 @@ padding: none;
     text-align: center;
 
 }
+/*end navbar with heading */
+
 
 
 

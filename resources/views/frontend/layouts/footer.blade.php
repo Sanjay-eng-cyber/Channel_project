@@ -67,7 +67,7 @@
      <div class="footer-holder dark">
          <div class="container">
              <div class="row">
-                 <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 col-xl-4 mt-paddingbottomxs">
+                 <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
                      <!-- F Widget About of the Page -->
                      <div class="f-widget-about">
                          <div class="logo">
@@ -84,7 +84,7 @@
                                 Exercitation ullamco laboris nisi ut aliquip excommodo consequat. Duis aute irure
                              </li>
                         </ul>
-                        <ul class="list-unstyled d-flex gap-2 p-0">
+                        <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
                             <li>
                                 <i class="fas fa-phone  text-red"></i>
                             </li>
@@ -92,13 +92,26 @@
                                 Exercitation ullamco laboris
                             </li>
                        </ul>
-                       <ul class="list-unstyled d-flex gap-2 p-0">
+                       <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
                         <li>
                             <i class="fas fa-envelope  text-red"></i>
                         </li>
                         <li>
                             Exercitation ullamco laboris
                         </li>
+                       </ul>
+
+                       <ul class="list-unstyled contact-mobile-version">
+                        <li class="gap-2 d-flex align-items-center">
+                            <i class="fas fa-phone  text-red"></i>
+                            12345678910
+                        </li>
+
+                        <li class="gap-2 d-flex align-items-center">
+                            <i class="fas fa-envelope  text-red"></i>
+                            channel@gmail.com
+                        </li>
+                       </ul>
                        </ul>
 
 
@@ -108,7 +121,7 @@
                  <nav class="col-xs-12 col-sm-7 col-md-8 col-lg-5 col-xl-5 mt-paddingbottomxs cainco-breackpoint gap-4">
                      <!-- Footer Nav of the Page -->
                      <div class="nav-widget-1 cainco-breackpoint-category">
-                         <h3 class="f-widget-heading text-red">Categories</h3>
+                         <h3 class="f-widget-heading text-red ct-f-heading">Categories</h3>
                          <ul class="list-unstyled f-widget-nav">
                              <li><a href="">Skin</a></li>
                              <li><a href="">Fragrances</a></li>
@@ -121,7 +134,7 @@
                      <!-- Footer Nav of the Page end -->
                      <!-- Footer Nav of the Page -->
                      <div class="nav-widget-1 cainco-breackpoint-info">
-                         <h3 class="f-widget-heading">Information</h3>
+                         <h3 class="f-widget-heading info-f-heading">Information</h3>
                          <ul class="list-unstyled f-widget-nav">
                              <li><a href="{{ route('about') }}">FAQ</a></li>
                              <li><a href="{{ route('contact') }}">BLOG</a></li>
@@ -132,7 +145,7 @@
                      <!-- Footer Nav of the Page end -->
                      <!-- Footer Nav of the Page -->
                      <div class="nav-widget-1 cainco-breackpoint-company">
-                         <h3 class="f-widget-heading">Company</h3>
+                         <h3 class="f-widget-heading c-f-heading">Company</h3>
                          <ul class="list-unstyled f-widget-nav">
                              <li><a href="">Abpit Us</a></li>
                              <li><a href="">Careers</a></li>
@@ -142,7 +155,7 @@
                      </div>
                      <!-- Footer Nav of the Page end -->
                  </nav>
-                 <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right">
+                 <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
                      <!-- F Widget Newsletter of the Page -->
                      <div class="f-widget-newsletter f-widget-news-custome">
                          <h3 class="f-widget-heading" style="line-height:0px">Subscribe</h3>
@@ -281,8 +294,8 @@
                      <p> © 2023 channel. All Rights Reserved.</p>
                  </div>
                  <div class="col-xs-12 col-sm-6 text-end">
-                     <div class="bank-card">
-                         Designed & Developed by Acetrot
+                     <div class="bank-card designed_develop">
+                         Designed & Developed by <a href="http://">Acetrot</a>
                      </div>
                  </div>
              </div>
