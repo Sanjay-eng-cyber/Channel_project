@@ -64,7 +64,7 @@
      </aside>
      <!-- F Promo Box of the Page end -->
      <!-- Footer Holder of the Page -->
-     <div class="footer-holder dark">
+     <div class="footer-holder dark mt-paddingbottomxs-hide-holder">
          <div class="container">
              <div class="row">
                  <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
@@ -118,7 +118,50 @@
                      </div>
                      <!-- F Widget About of the Page -->
                  </div>
-                 <nav class="col-xs-12 col-sm-7 col-md-8 col-lg-5 col-xl-5 mt-paddingbottomxs cainco-breackpoint gap-4">
+
+
+                <div class="container category-mobile-version">
+                    <h3 class="f-widget-heading text-red ct-f-heading mt-4">Categories</h3>
+
+                    <div class="row row-cols-3">
+
+                        <div class="col">
+                            <ul>
+                                <li><a href="">Skin</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li><a href="">Fragrances</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li><a href="">Haircare</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li><a href="">Personal Care</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li><a href="">Home Decore </a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li><a href="">gift</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                 <nav class="col-xs-12 col-sm-7 col-md-8 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
+
+
                      <!-- Footer Nav of the Page -->
                      <div class="nav-widget-1 cainco-breackpoint-category">
                          <h3 class="f-widget-heading text-red ct-f-heading">Categories</h3>
@@ -135,7 +178,7 @@
                      <!-- Footer Nav of the Page -->
                      <div class="nav-widget-1 cainco-breackpoint-info">
                          <h3 class="f-widget-heading info-f-heading">Information</h3>
-                         <ul class="list-unstyled f-widget-nav">
+                         <ul class="list-unstyled f-widget-nav info-f-list">
                              <li><a href="{{ route('about') }}">FAQ</a></li>
                              <li><a href="{{ route('contact') }}">BLOG</a></li>
                              <li><a href="">Support</a></li>
@@ -146,7 +189,7 @@
                      <!-- Footer Nav of the Page -->
                      <div class="nav-widget-1 cainco-breackpoint-company">
                          <h3 class="f-widget-heading c-f-heading">Company</h3>
-                         <ul class="list-unstyled f-widget-nav">
+                         <ul class="list-unstyled f-widget-nav  c-f-list">
                              <li><a href="">Abpit Us</a></li>
                              <li><a href="">Careers</a></li>
                              <li><a href="">Contact Us</a></li>
@@ -155,6 +198,56 @@
                      </div>
                      <!-- Footer Nav of the Page end -->
                  </nav>
+
+
+                <div class="conatiner-fluid hsac-footer-icon" style="background: white">
+                    <div class="row row-cols-4 ">
+                        <div class="col">
+                            <ul class="gap-2 d-flex flex-column align-items-center">
+                                <li>
+                                    <img src="frontend/images/svg/footer/home.svg" alt="">
+
+                                </li>
+                                <li>home</li>
+                            </ul>
+                        </div>
+
+                        <div class="col">
+                            <ul class="gap-2 d-flex flex-column align-items-center">
+                                <li>
+                                    <img src="frontend/images/svg/footer/search.svg" alt="">
+
+                                </li>
+                                <li>Search</li>
+                            </ul>
+                        </div>
+
+                        <div class="col">
+                            <ul class="gap-2 d-flex flex-column align-items-center">
+                                <li>
+                                    <img src="frontend/images/svg/footer/account.svg" alt="">
+
+                                </li>
+                                <li>Account</li>
+                            </ul>
+                        </div>
+
+                        <div class="col">
+                            <ul class="gap-2 d-flex flex-column align-items-center" >
+                                <li>
+                                    <img src="frontend/images/svg/footer/cart.svg" alt="">
+
+                                </li>
+                                <li>Cart</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
                  <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
                      <!-- F Widget Newsletter of the Page -->
                      <div class="f-widget-newsletter f-widget-news-custome">
