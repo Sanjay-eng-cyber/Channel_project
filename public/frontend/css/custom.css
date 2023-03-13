@@ -470,6 +470,20 @@ padding: none;
 .hsac-footer-icon{
 display: none;
 }
+
+#mt-footer.style2 .footer-holder{
+    padding: 51px 0 0px;
+}
+
+.footer-absolute-img1{
+    position: absolute;
+    bottom: -145px;
+    left: 70px;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 256px;
+}
+
 /* end footer css */
 
 @media screen and (max-width: 1400px) {
@@ -726,6 +740,14 @@ list-style-type: none;
     padding: 0px 0 0px;
 }
 
+.footer-absolute-img1 {
+    position: absolute;
+    bottom: 11px;
+    left: 0px;
+    transform: translate(-15%, -50%);
+    width: 23%;
+    height: 17%;
+}
 
 
 /* end footer  */

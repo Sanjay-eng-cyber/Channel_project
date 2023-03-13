@@ -1,5 +1,7 @@
  <!-- footer of the Page -->
- <footer id="mt-footer" class="style2 wow fadeInUp custome-footer" data-wow-delay="0.6s">
+ <footer id="mt-footer" class="style2 wow fadeInUp custome-footer position-relative" data-wow-delay="0.6s">
+    <img src="frontend/images/footer/ft-1.png" alt="" class="footer-absolute-img1">
+    {{-- <img src="" alt=""> --}}
      <!-- F Promo Box of the Page -->
      <aside class="f-promo-box dark">
          <div class="container divider">
@@ -64,7 +66,7 @@
      </aside>
      <!-- F Promo Box of the Page end -->
      <!-- Footer Holder of the Page -->
-     <div class="footer-holder dark mt-paddingbottomxs-hide-holder">
+     <div class="footer-holder dark mt-paddingbottomxs-hide-holder ">
          <div class="container">
              <div class="row">
                  <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
@@ -101,7 +103,7 @@
                         </li>
                        </ul>
 
-                       <ul class="list-unstyled contact-mobile-version">
+                       {{-- <ul class="list-unstyled contact-mobile-version">
                         <li class="gap-2 d-flex align-items-center">
                             <i class="fas fa-phone  text-red"></i>
                             12345678910
@@ -111,8 +113,8 @@
                             <i class="fas fa-envelope  text-red"></i>
                             channel@gmail.com
                         </li>
-                       </ul>
-                       </ul>
+                       </ul> --}}
+
 
 
                      </div>
@@ -274,7 +276,7 @@
      <!-- Footer Holder of the Page end -->
      <!-- Footer Area of the Page -->
 
-     <div class="footer-area">
+     <div class="footer-area p-0">
         <hr>
 
         <div class="container py-4">
