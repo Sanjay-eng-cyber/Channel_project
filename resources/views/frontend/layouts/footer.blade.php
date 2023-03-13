@@ -1,6 +1,8 @@
  <!-- footer of the Page -->
  <footer id="mt-footer" class="style2 wow fadeInUp custome-footer position-relative" data-wow-delay="0.6s">
     <img src="frontend/images/footer/ft-1.png" alt="" class="footer-absolute-img1">
+    <img src="frontend/images/footer/ft-2.png" alt="" class="footer-absolute-img2">
+
     {{-- <img src="" alt=""> --}}
      <!-- F Promo Box of the Page -->
      <aside class="f-promo-box dark">
@@ -103,7 +105,7 @@
                         </li>
                        </ul>
 
-                       {{-- <ul class="list-unstyled contact-mobile-version">
+                       <ul class="list-unstyled contact-mobile-version">
                         <li class="gap-2 d-flex align-items-center">
                             <i class="fas fa-phone  text-red"></i>
                             12345678910
@@ -113,7 +115,7 @@
                             <i class="fas fa-envelope  text-red"></i>
                             channel@gmail.com
                         </li>
-                       </ul> --}}
+                       </ul>
 
 
 
@@ -192,7 +194,7 @@
                      <div class="nav-widget-1 cainco-breackpoint-company">
                          <h3 class="f-widget-heading c-f-heading">Company</h3>
                          <ul class="list-unstyled f-widget-nav  c-f-list">
-                             <li><a href="">Abpit Us</a></li>
+                             <li><a href="">About Us</a></li>
                              <li><a href="">Careers</a></li>
                              <li><a href="">Contact Us</a></li>
 
@@ -293,62 +295,7 @@
                         Cookies
                     </a>
                 </ul>
-                {{-- <ul class="gap-4 " style="display:flex;list-style-type: none;">
-                    <li>
-                        <a href="https://www.linkedin.com/"
-                        style="
-                        display: inline-flex;
-                               justify-content: center;
-                               align-items: center;
-                               width: 2.4em;
-                               height: 2.4em;
-                               border-radius: 50%;
-                               border: 2px solid rgba(236, 38, 143, 0.3);
-                               color: #1da1f2;
-                       "
-                        >
-                            <i class="fa-brands fa-linkedin-in text-red"></i>
-                        </a>
-                    </li>
 
-                    <li>
-
-                        <a href="https://www.linkedin.com/"
-                        style="
-                        display: inline-flex;
-                               justify-content: center;
-                               align-items: center;
-                               width: 2.4em;
-                               height: 2.4em;
-                               border-radius: 50%;
-                               border: 2px solid rgba(236, 38, 143, 0.3);
-                               color: #1da1f2;
-                       "
-                        >
-                            <i class="fa-brands fa-facebook-f text-red"></i>
-                        </a>
-                    </li>
-
-                    <li>
-
-                        <a href="https://www.linkedin.com/"
-                        style="
-                             display: inline-flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    width: 2.4em;
-                                    height: 2.4em;
-                                    border-radius: 50%;
-                                    border: 2px solid rgba(236, 38, 143, 0.3);
-                                    color: #1da1f2;
-                            "
-
-                            >
-                            <i class="fa-brands fa-twitter text-red"></i>
-                        </a>
-                    </li>
-
-                </ul> --}}
             </div>
 
             <div class="col-5 col-sm-5 footer-lifinsta">
@@ -385,7 +332,7 @@
 
          <div class="container">
              <div class="row">
-                 <div class="col-xs-12 col-sm-6">
+                 <div class="col-xs-12 col-sm-6 right_reserved">
                      <p> © 2023 channel. All Rights Reserved.</p>
                  </div>
                  <div class="col-xs-12 col-sm-6 text-end">

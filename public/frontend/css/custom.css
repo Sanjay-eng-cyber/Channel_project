@@ -460,7 +460,7 @@ padding: none;
     display: flex;
 }
 .contact-mobile-version{
-    display: flex;
+    display: none;
 }
 
 .category-mobile-version{
@@ -484,6 +484,17 @@ display: none;
     height: 256px;
 }
 
+
+
+.footer-absolute-img2 {
+    position: absolute;
+    bottom: 0;
+    right: -51px;
+    transform: translate(-50%, -50%);
+
+    width: 102px;
+    height: 271px;
+}
 /* end footer css */
 
 @media screen and (max-width: 1400px) {
@@ -614,10 +625,15 @@ display: none;
 
 #mt-footer .footer-area p {
     margin: 0 0 0px;
+    display: flex;
 }
 
+#mt-footer .bank-card-2, #mt-footer
 .designed_develop{
-    text-align: center;
+    float: none;
+    margin:0px;
+    float: start;
+    display: flex;
 }
 
 
@@ -748,6 +764,21 @@ list-style-type: none;
     width: 23%;
     height: 17%;
 }
+
+
+.footer-absolute-img2{
+position: absolute;
+bottom: 38%;
+right: -7px;
+transform: translate(-50%, -50%);
+width: 100px;
+height: 251px;
+rotate: (60deg);
+transform: rotate(14deg);
+
+
+}
+
 
 
 /* end footer  */
