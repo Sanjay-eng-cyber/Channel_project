@@ -15,11 +15,11 @@
     <!-- main container of all the page elements -->
     <div id="wrapper">
         <!-- Page Loader -->
-        <div id="pre-loader" class="loader-container">
+        {{-- <div id="pre-loader" class="loader-container">
             <div class="loader">
                 <img src="frontend/images/svg/rings.svg" alt="loader">
             </div>
-        </div>
+        </div> --}}
         <!-- W1 start here -->
         <div class="w1">
          @include('frontend.layouts.nav')
@@ -31,12 +31,10 @@
         <!-- W1 end here -->
         <span id="back-top" class="fa fa-arrow-up"></span>
     </div>
-    <a id="newsletter-hiddenlink" href="frontend/#popup2" class="lightbox" style="display: none;">NEWSLETTER</a>
-    <!-- Popup Holder of the Page -->
+
+    {{-- <a id="newsletter-hiddenlink" href="frontend/#popup2" class="lightbox" style="display: none;">NEWSLETTER</a>
     <div class="popup-holder">
-        <!-- Popup of the Page -->
         <div id="popup1" class="lightbox">
-            <!-- Mt Product Detial of the Page -->
             <section class="mt-product-detial">
                 <div class="container">
                     <div class="row">
@@ -129,7 +127,8 @@
                     </div>
                 </div>
             </section><!-- Mt Product Detial of the Page end -->
-        </div><!-- Popup of the Page end -->
+        </div>
+        <!-- Popup of the Page end -->
         <!-- Popup of the Page -->
         <!-- Popup of the Page -->
         <div id="popup2" class="lightbox">
@@ -158,8 +157,10 @@
                     </fieldset>
                 </form><!-- Popup Form of the Page end -->
             </section><!-- Mt Newsletter Popup of the Page -->
-        </div><!-- Popup of the Page end -->
-    </div><!-- Popup Holder of the Page end -->
+        </div>
+        <!-- Popup of the Page end -->
+    </div> --}}
+    <!-- Popup Holder of the Page end -->
  <!-- include jQuery -->
 <script src="{{ asset('frontend/js/jquery.js') }}"></script>
 <!-- include jQuery -->

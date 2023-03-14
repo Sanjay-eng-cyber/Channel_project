@@ -469,25 +469,25 @@
     </div>
 </section>
 
-    <a id="newsletter-hiddenlink" href="#popup2" class="lightbox" style="display: none;">NEWSLETTER</a>
-	<!-- Popup Holder of the Page -->
+    {{-- <a id="newsletter-hiddenlink" href="#popup2" class="lightbox" style="display: none;">NEWSLETTER</a>
+
 	<div class="popup-holder">
-		<!-- Popup of the Page -->
+
 		<div id="popup1" class="lightbox">
-			<!-- Mt Product Detial of the Page -->
+
 			<section class="mt-product-detial">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
-							<!-- Slider of the Page -->
+
 							<div class="slider">
-								<!-- Comment List of the Page -->
+
 								<ul class="list-unstyled comment-list">
 									<li><a href="#"><i class="fa fa-heart"></i>27</a></li>
 									<li><a href="#"><i class="fa fa-comments"></i>12</a></li>
 									<li><a href="#"><i class="fa fa-share-alt"></i>14</a></li>
-								</ul><!-- Comment List of the Page end -->
-								<!-- Product Slider of the Page -->
+								</ul>
+
 								<div class="product-slider">
 									<div class="slide">
 										<img src="frontend/images/img03.jpg" alt="image descrption">
@@ -501,8 +501,8 @@
 									<div class="slide">
 										<img src="frontend/images/img03.jpg" alt="image descrption">
 									</div>
-								</div><!-- Product Slider of the Page end -->
-								<!-- Pagg Slider of the Page -->
+								</div>
+
 								<ul class="list-unstyled slick-slider pagg-slider">
 									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
 									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
@@ -510,18 +510,17 @@
 									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
 									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
 									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
-								</ul><!-- Pagg Slider of the Page end -->
-							</div><!-- Slider of the Page end -->
-							<!-- Detail Holder of the Page -->
+								</ul>
+							</div>
 							<div class="detial-holder">
-								<!-- Breadcrumbs of the Page -->
+
 								<ul class="list-unstyled breadcrumbs">
 									<li><a href="#">Chairs <i class="fa fa-angle-right"></i></a></li>
 									<li>Products</li>
 								</ul>
-								<!-- Breadcrumbs of the Page end -->
+
 								<h2>KAILA FABRIC CHAIR</h2>
-								<!-- Rank Rating of the Page -->
+
 								<div class="rank-rating">
 									<ul class="list-unstyled rating-list">
 										<li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -530,7 +529,7 @@
 										<li><a href="#"><i class="fa fa-star-o"></i></a></li>
 									</ul>
 									<span class="total-price">Reviews (12)</span>
-								</div><!-- Rank Rating of the Page end -->
+								</div>
 								<ul class="list-unstyled list">
 									<li><a href="#"><i class="fa fa-share-alt"></i>SHARE</a></li>
 									<li><a href="#"><i class="fa fa-exchange"></i>COMPARE</a></li>
@@ -562,18 +561,15 @@
 											<button type="submit">ADD TO CART</button>
 										</div>
 									</fieldset>
-								</form><!-- Product Form of the Page end -->
-							</div><!-- Detail Holder of the Page end -->
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
-			</section><!-- Mt Product Detial of the Page end -->
+			</section>
 		</div>
-        <!-- Popup of the Page end -->
-		<!-- Popup of the Page -->
-		<!-- Popup of the Page -->
-		<div id="popup2" class="lightbox">
 
+		<div id="popup2" class="lightbox">
 			<section class="mt-newsletter-popup">
 				<span class="title">NEWSLETTER</span>
 				<div class="holder">
@@ -601,5 +597,5 @@
 				</form>
 			</section>
 		</div>
-	</div>
+	</div> --}}
 @endsection
