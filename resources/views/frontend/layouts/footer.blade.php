@@ -1,9 +1,9 @@
  <!-- footer of the Page -->
  <footer id="mt-footer" class="style2 wow fadeInUp custome-footer position-relative" data-wow-delay="0.6s">
-    <img src="frontend/images/footer/ft-1.png" alt="" class="footer-absolute-img1">
-    <img src="frontend/images/footer/ft-2.png" alt="" class="footer-absolute-img2">
+     <img src="frontend/images/footer/ft-1.png" alt="" class="footer-absolute-img1">
+     <img src="frontend/images/footer/ft-2.png" alt="" class="footer-absolute-img2">
 
-    {{-- <img src="" alt=""> --}}
+     {{-- <img src="" alt=""> --}}
      <!-- F Promo Box of the Page -->
      <aside class="f-promo-box dark">
          <div class="container divider">
@@ -80,42 +80,42 @@
                          </div>
                          <p>Exercitation ullamco laboris nisi ut aliquip ex<br> commodo consequat. Duis aute
                              irure</p>
-                        <ul class="list-unstyled d-flex gap-2 p-0">
+                         <ul class="list-unstyled d-flex gap-2 p-0">
                              <li>
-                                <i class="fas fa-map-marker-alt text-red"></i>
+                                 <i class="fas fa-map-marker-alt text-red"></i>
                              </li>
                              <li>
-                                Exercitation ullamco laboris nisi ut aliquip excommodo consequat. Duis aute irure
+                                 Exercitation ullamco laboris nisi ut aliquip excommodo consequat. Duis aute irure
                              </li>
-                        </ul>
-                        <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
-                            <li>
-                                <i class="fas fa-phone  text-red"></i>
-                            </li>
-                            <li>
-                                Exercitation ullamco laboris
-                            </li>
-                       </ul>
-                       <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
-                        <li>
-                            <i class="fas fa-envelope  text-red"></i>
-                        </li>
-                        <li>
-                            Exercitation ullamco laboris
-                        </li>
-                       </ul>
+                         </ul>
+                         <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
+                             <li>
+                                 <i class="fas fa-phone  text-red"></i>
+                             </li>
+                             <li>
+                                 Exercitation ullamco laboris
+                             </li>
+                         </ul>
+                         <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
+                             <li>
+                                 <i class="fas fa-envelope  text-red"></i>
+                             </li>
+                             <li>
+                                 Exercitation ullamco laboris
+                             </li>
+                         </ul>
 
-                       <ul class="list-unstyled contact-mobile-version">
-                        <li class="gap-2 d-flex align-items-center">
-                            <i class="fas fa-phone  text-red"></i>
-                            12345678910
-                        </li>
+                         <ul class="list-unstyled contact-mobile-version">
+                             <li class="gap-2 d-flex align-items-center">
+                                 <i class="fas fa-phone  text-red"></i>
+                                 12345678910
+                             </li>
 
-                        <li class="gap-2 d-flex align-items-center">
-                            <i class="fas fa-envelope  text-red"></i>
-                            channel@gmail.com
-                        </li>
-                       </ul>
+                             <li class="gap-2 d-flex align-items-center">
+                                 <i class="fas fa-envelope  text-red"></i>
+                                 channel@gmail.com
+                             </li>
+                         </ul>
 
 
 
@@ -124,46 +124,47 @@
                  </div>
 
 
-                <div class="container category-mobile-version">
-                    <h3 class="f-widget-heading text-red ct-f-heading mt-4">Categories</h3>
+                 <div class="container category-mobile-version">
+                     <h3 class="f-widget-heading text-red ct-f-heading mt-4">Categories</h3>
 
-                    <div class="row row-cols-3">
+                     <div class="row row-cols-3">
 
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Skin</a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Fragrances</a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Haircare</a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Personal Care</a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Home Decore </a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">gift</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                         <div class="col">
+                             <ul>
+                                 <li><a href="">Skin</a></li>
+                             </ul>
+                         </div>
+                         <div class="col">
+                             <ul>
+                                 <li><a href="">Fragrances</a></li>
+                             </ul>
+                         </div>
+                         <div class="col">
+                             <ul>
+                                 <li><a href="">Haircare</a></li>
+                             </ul>
+                         </div>
+                         <div class="col">
+                             <ul>
+                                 <li><a href="">Personal Care</a></li>
+                             </ul>
+                         </div>
+                         <div class="col">
+                             <ul>
+                                 <li><a href="">Home Decore </a></li>
+                             </ul>
+                         </div>
+                         <div class="col">
+                             <ul>
+                                 <li><a href="">gift</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
 
 
-                 <nav class="col-xs-12 col-sm-7 col-md-8 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
+                 <nav
+                     class="col-xs-12 col-sm-7 col-md-8 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
 
 
                      <!-- Footer Nav of the Page -->
@@ -202,56 +203,6 @@
                      </div>
                      <!-- Footer Nav of the Page end -->
                  </nav>
-
-
-                <div class="conatiner-fluid hsac-footer-icon" style="background: white">
-                    <div class="row row-cols-4 ">
-                        <div class="col">
-                            <ul class="gap-2 d-flex flex-column align-items-center">
-                                <li>
-                                    <img src="frontend/images/svg/footer/home.svg" alt="">
-
-                                </li>
-                                <li>home</li>
-                            </ul>
-                        </div>
-
-                        <div class="col">
-                            <ul class="gap-2 d-flex flex-column align-items-center">
-                                <li>
-                                    <img src="frontend/images/svg/footer/search.svg" alt="">
-
-                                </li>
-                                <li>Search</li>
-                            </ul>
-                        </div>
-
-                        <div class="col">
-                            <ul class="gap-2 d-flex flex-column align-items-center">
-                                <li>
-                                    <img src="frontend/images/svg/footer/account.svg" alt="">
-
-                                </li>
-                                <li>Account</li>
-                            </ul>
-                        </div>
-
-                        <div class="col">
-                            <ul class="gap-2 d-flex flex-column align-items-center" >
-                                <li>
-                                    <img src="frontend/images/svg/footer/cart.svg" alt="">
-
-                                </li>
-                                <li>Cart</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-
-
-
-
                  <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
                      <!-- F Widget Newsletter of the Page -->
                      <div class="f-widget-newsletter f-widget-news-custome">
@@ -259,10 +210,11 @@
                          <div class="holder">
                              <form class="newsletter-form form2" action="#" style="padding:6px">
 
-                                     <input type="email" class="form-control" placeholder="Your e-mail" style="border-radius:0px">
-                                     <button type="submit">
-                                        <i class="fas fa-arrow-right"></i>
-                                     </button>
+                                 <input type="email" class="form-control" placeholder="Your e-mail"
+                                     style="border-radius:0px">
+                                 <button type="submit">
+                                     <i class="fas fa-arrow-right"></i>
+                                 </button>
 
                              </form>
                          </div>
@@ -279,56 +231,52 @@
      <!-- Footer Area of the Page -->
 
      <div class="footer-area p-0">
-        <hr>
+         <hr>
 
-        <div class="container py-4">
-          <div class="row">
-            <div class="col-6 col-sm-7 footer-tpc" >
-                <ul class="gap-2 gap-sm-4  p-0  footer-tpc-ul">
-                    <a href="" class="fw-bolder">
-                        Terms
-                    </a>
-                    <a href="" class="fw-bolder">
-                        Privacy
-                    </a>
-                    <a href="" class="fw-bolder">
-                        Cookies
-                    </a>
-                </ul>
+         <div class="container py-4">
+             <div class="row">
+                 <div class="col-6 col-sm-7 footer-tpc">
+                     <ul class="gap-2 gap-sm-4  p-0  footer-tpc-ul">
+                         <a href="" class="fw-bolder">
+                             Terms
+                         </a>
+                         <a href="" class="fw-bolder">
+                             Privacy
+                         </a>
+                         <a href="" class="fw-bolder">
+                             Cookies
+                         </a>
+                     </ul>
 
-            </div>
+                 </div>
 
-            <div class="col-5 col-sm-5 footer-lifinsta">
-                <ul class="gap-2 gap-sm-4 footer-lifinsta-ul">
-                    <li class="footer-lifinsta-tag-1">
-                        <a href="https://www.linkedin.com/"
+                 <div class="col-5 col-sm-5 footer-lifinsta">
+                     <ul class="gap-2 gap-sm-4 footer-lifinsta-ul">
+                         <li class="footer-lifinsta-tag-1">
+                             <a href="https://www.linkedin.com/">
+                                 <i class="fa-brands fa-linkedin-in text-red"></i>
+                             </a>
+                         </li>
 
-                        >
-                            <i class="fa-brands fa-linkedin-in text-red"></i>
-                        </a>
-                    </li>
+                         <li class="footer-lifinsta-tag-2">
 
-                    <li class="footer-lifinsta-tag-2">
+                             <a href="https://www.linkedin.com/">
+                                 <i class="fa-brands fa-facebook-f text-red"></i>
+                             </a>
+                         </li>
 
-                        <a href="https://www.linkedin.com/"
+                         <li class="footer-lifinsta-tag-3">
 
-                        >
-                            <i class="fa-brands fa-facebook-f text-red"></i>
-                        </a>
-                    </li>
+                             <a href="https://www.linkedin.com/">
+                                 <i class="fa-brands fa-twitter text-red"></i>
+                             </a>
+                         </li>
 
-                    <li class="footer-lifinsta-tag-3">
+                     </ul>
+                 </div>
+             </div>
 
-                        <a href="https://www.linkedin.com/">
-                            <i class="fa-brands fa-twitter text-red"></i>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-          </div>
-
-        </div>
+         </div>
 
          <div class="container">
              <div class="row">
@@ -346,3 +294,47 @@
      <!-- Footer Area of the Page end -->
  </footer>
  <!-- footer of the Page end -->
+ <div class="py-5"></div>
+ <div class="conatiner-fluid phone-fixed-bottom-menu" style="background: white">
+     <div class="row row-cols-4 ">
+         <div class="col">
+             <ul class="gap-2 d-flex flex-column align-items-center">
+                 <li>
+                     <img src="frontend/images/svg/footer/home.svg" alt="">
+                 </li>
+                 <li>home</li>
+             </ul>
+         </div>
+
+         <div class="col">
+             <ul class="gap-2 d-flex flex-column align-items-center">
+                 <li>
+                     <img src="frontend/images/svg/footer/search.svg" alt="">
+
+                 </li>
+                 <li>Search</li>
+             </ul>
+         </div>
+
+         <div class="col">
+             <ul class="gap-2 d-flex flex-column align-items-center">
+                 <li>
+                     <img src="frontend/images/svg/footer/account.svg" alt="">
+
+                 </li>
+                 <li>Account</li>
+             </ul>
+         </div>
+
+         <div class="col">
+             <ul class="gap-2 d-flex flex-column align-items-center">
+                 <li>
+                     <img src="frontend/images/svg/footer/cart.svg" alt="">
+
+                 </li>
+                 <li>Cart</li>
+             </ul>
+         </div>
+
+     </div>
+ </div>

@@ -452,7 +452,7 @@ a {
     display: none;
 }
 
-.hsac-footer-icon {
+.phone-fixed-bottom-menu {
     display: none;
 }
 
@@ -705,14 +705,18 @@ a {
         display: none;
     }
 
-    .hsac-footer-icon {
+    .phone-fixed-bottom-menu {
         display: block;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
-    .hsac-footer-icon .col {
+    .phone-fixed-bottom-menu .col {
         padding-top: 15px;
     }
-    .hsac-footer-icon ul {
+    .phone-fixed-bottom-menu ul {
         list-style-type: none;
+        padding: 0;
     }
 
     .mt-paddingbottomxs-hide {
