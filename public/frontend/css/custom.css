@@ -1,5 +1,27 @@
 :root {
 }
+
+/* body{
+    font-family: 'Judson', serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+} */
+
+
+#wrapper {
+    font-family: 'Poppins', sans-serif;
+}
+
+.head{
+    font-family: 'Judson', serif;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Judson', serif;
+}
+
+
 a {
     text-decoration: none;
     color: black;
