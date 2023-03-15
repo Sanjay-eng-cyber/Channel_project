@@ -114,7 +114,7 @@
     </div>
 </section>
 
-     {{-- skin slider --}}
+     {{-- skin slider with latest & best seller --}}
 <section>
     <div class="container">
         <div class="row">
@@ -133,7 +133,7 @@
 
                     <div id="skincare">
                         <!-- tabs slider start here -->
-                        <div class="tabs-sliderlg">
+                        <div class="skin-sliderlg">
                         @for ($i = 1; $i < 7; $i++)
 
                             <!-- slide start here -->
@@ -178,7 +178,7 @@
 
                     <div id="skinlatest">
                         <!-- tabs slider start here -->
-                        <div class="tabs-sliderlg">
+                        <div class="skin-sliderlg">
                         @for ($i = 1; $i < 6; $i++)
 
                             <!-- slide start here -->
@@ -225,7 +225,7 @@
 
                     <div id="skinbestseller">
                         <!-- tabs slider start here -->
-                        <div class="tabs-sliderlg">
+                        <div class="skin-sliderlg">
                         @for ($i = 1; $i < 6; $i++)
 
                             <!-- slide start here -->

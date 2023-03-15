@@ -1,6 +1,11 @@
-jQuery('.tabs-sliderlg').slick({
+jQuery('.skin-sliderlg').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 7000,
+    pauseOnHover: false,
+    cssEase: 'linear',
     responsive: [
         {
             breakpoint: 1400,
@@ -70,7 +75,6 @@ jQuery('.fragrances').slick({
 
 
 // home decor slider
-
 $('.home-decor-slider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
