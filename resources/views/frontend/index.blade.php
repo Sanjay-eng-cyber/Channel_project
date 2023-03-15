@@ -188,7 +188,7 @@
                             <div class="skin-sliderlg">
                                 @for ($i = 1; $i < 6; $i++)
                                     <!-- slide start here -->
-                                    <div class="slide">
+                                    <div class="slide skin-slide">
                                         <!-- mt product1 large start here -->
                                         <div class="mt-product1 large mt-skin-product1">
                                             <div class="box skin-box">
@@ -198,24 +198,24 @@
                                                                 src="frontend/images/products/skin/sk1.png"
                                                                 alt="image description"></a>
 
-                                                        <ul class="links product-desc">
-                                                            <h4 class="card-title m-0 text-center">
-                                                                <strong class="text-center" style="color:black">
-                                                                    Love Your Hair
-                                                                </strong>
-                                                            </h4>
-                                                            <p class="card-text text-center pra" style="color:black">
-                                                                treat yourself with the best
-                                                            </p>
-                                                            <h5 class="text-center">
+                                                                <ul class="links skin-text-desc py-2 px-3">
+                                                                    <div class="card-title  m-0 text-center pro-head ">
+                                                                        Zara BEST PERFUMES
+                                                                    </div>
+                                                                       <p class="card-text text-center">
+                                                                        treat yourself with the best in skincare
+                                                                       </p>
 
-                                                                <a href="#" class="p-0" style="color:black">
-                                                                    Shop More
-                                                                    <i class="fa fa-angle-right"></i>
-                                                                </a>
 
-                                                            </h5>
-                                                        </ul>
+                                                                       <button type="button" class="btn btn-light">
+                                                                      <a href="" class="p-0  text-black">
+                                                                        Shop Nov
+                                                                      </a>
+                                                                      </button>
+
+
+                                                                   </a>
+                                                                </ul>
                                                     </div>
                                                 </div>
                                             </div>
@@ -233,7 +233,7 @@
                             <div class="skin-sliderlg">
                                 @for ($i = 1; $i < 6; $i++)
                                     <!-- slide start here -->
-                                    <div class="slide">
+                                    <div class="slide skin-slide">
                                         <!-- mt product1 large start here -->
                                         <div class="mt-product1 large mt-skin-product1">
                                             <div class="box skin-box">
@@ -243,24 +243,24 @@
                                                                 src="frontend/images/products/skin/sk2.png"
                                                                 alt="image description"></a>
 
-                                                        <ul class="links product-desc">
-                                                            <h4 class="card-title m-0 text-center">
-                                                                <strong class="text-center" style="color:black">
-                                                                    Love Your Hair
-                                                                </strong>
-                                                            </h4>
-                                                            <p class="card-text text-center pra" style="color:black">
-                                                                treat yourself with the best
-                                                            </p>
-                                                            <h5 class="text-center">
+                                                                <ul class="links skin-text-desc py-2 px-3">
+                                                                    <div class="card-title  m-0 text-center pro-head ">
+                                                                        Zara BEST PERFUMES
+                                                                    </div>
+                                                                       <p class="card-text text-center">
+                                                                        treat yourself with the best in skincare
+                                                                       </p>
 
-                                                                <a href="#" class="p-0" style="color:black">
-                                                                    Shop More
-                                                                    <i class="fa fa-angle-right"></i>
-                                                                </a>
 
-                                                            </h5>
-                                                        </ul>
+                                                                       <button type="button" class="btn btn-light">
+                                                                      <a href="" class="p-0  text-black">
+                                                                        Shop Nov
+                                                                      </a>
+                                                                      </button>
+
+
+                                                                   </a>
+                                                                </ul>
                                                     </div>
                                                 </div>
                                             </div>

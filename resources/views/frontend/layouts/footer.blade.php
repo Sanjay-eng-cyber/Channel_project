@@ -285,7 +285,9 @@
                  </div>
                  <div class="col-xs-12 col-sm-6 text-end">
                      <div class="bank-card designed_develop">
-                         Designed & Developed by <a href="http://">Acetrot</a>
+                        <p>
+                            Designed & Developed by <a href="http://">Acetrot</a>
+                        </p>
                      </div>
                  </div>
              </div>
