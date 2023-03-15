@@ -48,6 +48,12 @@ jQuery('.fragrances').slick({
           }
         },
         {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
+        {
           breakpoint: 599,
           settings: {
             slidesToShow: 2,

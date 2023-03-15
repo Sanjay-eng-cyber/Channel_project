@@ -12,10 +12,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.head{
-    font-family: 'Judson', serif;
+.main-head{
+    font-family: 'Poppins', sans-serif;
+
 }
 
+.pro-head{
+    font-family: 'Judson', serif;
+}
 
 h1,h2,h3,h4,h5,h6{
     font-family: 'Judson', serif;
@@ -39,6 +43,13 @@ a {
 }
 .bg-red {
     background-color: rgba(236, 38, 143, 1);
+}
+
+.card-text-heading{
+    font-size: 2rem;
+}
+.card-text-shop-now{
+
 }
 
 /* sking care slider */
@@ -105,11 +116,7 @@ a {
     border-radius: 15px;
 }
 
-.mt-fragrances .product-desc {
-    background: #f1d2ad;
-    padding: 15px 10px 5px 10px;
-}
-
+/*
 .mt-fragrances .product-desc h4 strong {
     font-size: 2.5rem;
 }
@@ -117,7 +124,7 @@ a {
 .mt-fragrances .product-desc a {
     padding: 0px;
     font-weight: 600;
-}
+} */
 
 .mt-fragrances .links {
     left: 0%;
@@ -137,6 +144,67 @@ a {
     width: 100%;
     height: 100%;
 }
+
+.mt-product1 .fragrances-text-desc {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    width: 100%;
+    display: table;
+    font-size: 17px;
+    background: #f1d2ad;;
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    border: 1px solid #eee;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s;
+}
+.fragrances-text-desc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fragrances-slide:hover .mt-product1 .fragrances-text-desc {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*
+.fragrances{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transition: height 0.5s ease-out;
+}
+
+.fragrances .mt-fragrances .b2  .product-desc{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+
+    background-color: red;
+    overflow: hidden;
+    transition: height 0.5s ease-out;
+}
+
+.fragrances:hover .fragrances .mt-fragrances .b2 .product-desc{
+    height: 100%;
+  } */
 /*  end FRAGRANCES slider */
 
 /* home decore slider */
@@ -537,6 +605,10 @@ a {
 }
 
 @media screen and (max-width: 992px) {
+    .card-text-heading{
+        font-size: calc(1.0rem + 1.0vw);
+    }
+
     #mt-footer .footer-holder .f-widget-heading {
         text-align: center;
     }
@@ -897,6 +969,10 @@ a {
 }
 
 @media screen and (max-width: 480px) {
+    .card-text-heading {
+        font-size: calc(1.0rem + 1.8vw);
+    }
+
     .ft-svg-class-1 .ft-svg-sub-class-1 {
         width: 100%;
         height: 158px;
