@@ -7,24 +7,26 @@
     font-family: 'Roboto', sans-serif;
 } */
 
-
 #wrapper {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-.main-head{
-    font-family: 'Poppins', sans-serif;
-
+.main-head {
+    font-family: "Poppins", sans-serif;
 }
 
-.pro-head{
-    font-family: 'Judson', serif;
+.pro-head {
+    font-family: "Judson", serif;
 }
 
-h1,h2,h3,h4,h5,h6{
-    font-family: 'Judson', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Judson", serif;
 }
-
 
 a {
     text-decoration: none;
@@ -45,11 +47,17 @@ a {
     background-color: rgba(236, 38, 143, 1);
 }
 
-.card-text-heading{
+.text-orange {
+    color: #f58634;
+}
+.text-pink {
+    color: #ec268f;
+}
+
+.card-text-heading {
     font-size: 2rem;
 }
-.card-text-shop-now{
-
+.card-text-shop-now {
 }
 
 /* sking care slider */
@@ -154,7 +162,7 @@ a {
     width: 100%;
     display: table;
     font-size: 17px;
-    background: #f1d2ad;;
+    background: #f1d2ad;
     visibility: hidden;
     position: absolute;
     text-align: center;
@@ -164,7 +172,7 @@ a {
     transform: translateY(100%);
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s;
 }
-.fragrances-text-desc{
+.fragrances-text-desc {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,7 +187,6 @@ a {
     align-items: center;
     justify-content: center;
 }
-
 
 /*
 .fragrances{
@@ -290,7 +297,7 @@ a {
     float: none;
     margin: 0px 0 0;
     text-transform: uppercase;
-    font: 14px/20px 'Poppins', sans-serif;
+    font: 14px/20px "Poppins", sans-serif;
 }
 
 .header-sub-3 ul {
@@ -395,7 +402,6 @@ a {
     background-position: center;
     background-size: 100%;
 }
-
 
 .mt-bottom-bar .mt-icon-list li {
     position: relative;
@@ -599,14 +605,14 @@ a {
         width: 14%;
     }
 
-#mt-header.style3 #nav {
-    margin: 10px 0 0;
-}
+    #mt-header.style3 #nav {
+        margin: 10px 0 0;
+    }
 }
 
 @media screen and (max-width: 992px) {
-    .card-text-heading{
-        font-size: calc(1.0rem + 1.0vw);
+    .card-text-heading {
+        font-size: calc(1rem + 1vw);
     }
 
     #mt-footer .footer-holder .f-widget-heading {
@@ -679,7 +685,6 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-
     .mt-bottom-bar .mt-icon-list li {
         position: relative;
         margin: 0px 0 0 2px;
@@ -962,15 +967,15 @@ a {
         text-align: center;
     }
 
-    .navbar-nav li a{
-        color:black;
+    .navbar-nav li a {
+        color: black;
     }
     /*end navbar with heading */
 }
 
 @media screen and (max-width: 480px) {
     .card-text-heading {
-        font-size: calc(1.0rem + 1.8vw);
+        font-size: calc(1rem + 1.8vw);
     }
 
     .ft-svg-class-1 .ft-svg-sub-class-1 {
@@ -1004,8 +1009,6 @@ a {
         left: 4px;
     }
 
-
-
     /* skin slider */
     .mt-skin-product1 {
         display: flex;
@@ -1024,4 +1027,56 @@ a {
 }
 
 @media screen and (max-width: 320px) {
+}
+.rise-up-sider * {
+    transition: all 0.3s ease-in-out;
+}
+.rise-up-sider .slick-slide {
+    margin: 0 10px;
+}
+.rise-up-sider .rise-up-sider-card {
+    background: rgba(0, 175, 239, 0.29);
+    border-radius: 30px;
+    transform: translateY(50px);
+}
+.rise-up-sider .rise-up-sider-card.slick-current {
+    box-shadow: 0px -13px 10px -1px rgba(0, 0, 0, 0.25);
+    transform: translateY(100px);
+    margin-bottom: 100px;
+}
+.rise-up-sider .rise-up-sider-card .product {
+    display: block;
+    width: 85%;
+    margin: auto;
+    padding: 1em;
+}
+.rise-up-sider .rise-up-sider-card.slick-current .product {
+    margin-top: -100px;
+}
+.rise-up-sider .rise-up-sider-card .text {
+    background: #fae3c6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    border-radius: 0px 0px 30px 30px;
+    padding: 0;
+    font-size: 0;
+    height: 0;
+    overflow: hidden;
+}
+.rise-up-sider .rise-up-sider-card.slick-current .text {
+    padding: 20px 10px;
+    font-size: 1em;
+    height: auto;
+}
+.rise-up-sider .rise-up-sider-card .like-btn {
+    background-color: white;
+    border-radius: 3em;
+    width: 2em;
+    height: 2em;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
