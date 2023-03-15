@@ -27,20 +27,36 @@
 
                     </div>
                     <div class="row">
-                        {{-- <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12 mb-2">
-                            <div class="">
-                                <form class="form-inline row px-4 pa_form_responsive" action="{{ route('backend.category.index') }}" method="GET">
-                                    <input class="form-control form-control-sm pa_form_input" type="text"
-                                        placeholder="Search By MRD/Name/Mobile" name="q"
-                                        value="{{ request('q') ?? '' }}" minlength="3" maxlength="40">
-                                    <input type="submit" value="Search" class="btn btn-success  ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn_size pa_search_btn">
-                                </form>
-                                @if ($errors->has('q'))
-                                    <div class="text-danger" role="alert">{{ $errors->first('q') }}
-                                    </div>
-                                @endif
-                            </div>
-                        </div> --}}
+                        <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 mt-2">
+                            <form class="form-inline row app_form" action="{{ route('backend.transaction.index') }}"
+                                method="GET">
+                                <select class="form-control form-control-sm app_form_select" id="exampleFormControlSelect1"
+                                    name="status">
+                                    <option {{ request('status') && request('status') == 'all' ? 'selected' : '' }}>All
+                                    </option>
+                                    <option value="initial"
+                                        {{ request('status') && request('status') == 'initial' ? 'selected' : '' }}>
+                                        Initial</option>
+                                        <option value="pending"
+                                        {{ request('status') && request('status') == 'pending' ? 'selected' : '' }}>
+                                        Pending</option>
+                                    <option value="failed"
+                                        {{ request('status') && request('status') == 'failed' ? 'selected' : '' }}>
+                                        Failed</option>
+                                    <option value="completed"
+                                        {{ request('status') && request('status') == 'completed' ? 'selected' : '' }}>
+                                        Completed</option>
+                                </select>
+                                {{-- <input id="rangeCalendarFlatpickr" name="date_range" value="{{request('date_range')}}" class="form-control flatpickr flatpickr-input active w-50"
+                                        type="text" placeholder="Select Date.." readonly="readonly"> --}}
+                                <input type="submit" value="Search"
+                                    class="btn btn-success ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
+                            </form>
+                            @if ($errors->has('q'))
+                                <div class="text-danger" role="alert">{{ $errors->first('q') }}
+                                </div>
+                            @endif
+                        </div>
                         <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12 mb-2">
                         </div>
                         {{--
@@ -78,13 +94,13 @@
                                             <td>{{ $transaction->amount }}</td>
                                             <td>
                                                 @if ($transaction->status == 'initial')
-                                                <label class="badge badge-primary">{{ $transaction->status }}</label>
+                                                    <label class="badge badge-primary">{{ $transaction->status }}</label>
                                                 @elseif ($transaction->status == 'failed')
-                                                <label class="badge badge-danger">{{ $transaction->status }}</label>
-                                                        @elseif ($transaction->status == 'pending')
-                                                        <label class="badge badge-warning">{{ $transaction->status }}</label>
-                                                        @else
-                                                        <label class="badge badge-success">{{ $transaction->status }}</label>
+                                                    <label class="badge badge-danger">{{ $transaction->status }}</label>
+                                                @elseif ($transaction->status == 'pending')
+                                                    <label class="badge badge-warning">{{ $transaction->status }}</label>
+                                                @else
+                                                    <label class="badge badge-success">{{ $transaction->status }}</label>
                                                 @endif
                                             </td>
                                             <td>{{ $transaction->transaction_date }}</td>
