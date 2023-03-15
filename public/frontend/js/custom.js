@@ -6,6 +6,7 @@ jQuery('.skin-sliderlg').slick({
     speed: 7000,
     pauseOnHover: false,
     cssEase: 'linear',
+    arrows: false,
     responsive: [
         {
             breakpoint: 1400,
@@ -20,11 +21,17 @@ jQuery('.skin-sliderlg').slick({
             }
           },
         {
-          breakpoint: 1024,
+          breakpoint: 992,
           settings: {
             slidesToShow: 3,
           }
         },
+        {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
         {
           breakpoint: 599,
           settings: {
@@ -39,6 +46,7 @@ jQuery('.skin-sliderlg').slick({
         }
     ]
 });
+
 
 // fragrances slider
 jQuery('.fragrances').slick({
