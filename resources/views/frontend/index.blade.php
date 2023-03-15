@@ -340,11 +340,11 @@
 
                         <div id="fragranceslatest">
                             <!-- tabs slider start here -->
-                            <div class="fragrances">
+                            <div class="fragrances ">
                             @for ($i = 1; $i < 6; $i++)
 
                                 <!-- slide start here -->
-                                <div class="slide">
+                                <div class="slide fragrances-slide">
                                     <!-- mt product1 large start here -->
                                     <div class="mt-product1 large mt-fragrances">
                                         <div class="box fragrances-box">
@@ -354,24 +354,20 @@
                                                             src="frontend/images/products/fragrances/fg.png"
                                                             class="img-slider" alt="image description"></a>
 
-                                                    <ul class="links product-desc">
-                                                        <h4 class="card-title m-0 text-center">
-                                                            <strong class="text-center" style="color:black">
-                                                             Love Your Hair
-                                                            </strong>
-                                                           </h4>
-                                                           <p class="card-text text-center" style="color:black">
-                                                            treat yourself with the best
-                                                           </p>
-                                                             <h5 class="text-center">
-
-                                                                <a href="#" class="p-0" style="color:black">
-                                                                        Shop More
-                                                                        <i class="fa fa-angle-right"></i>
+                                                            <ul class="links fragrances-text-desc">
+                                                                <div class="card-title card-text-heading m-0 text-center pro-head ">
+                                                                    Zara BEST PERFUMES
+                                                                </div>
+                                                                   <p class="card-text text-center">
+                                                                    treat yourself with the best
+                                                                   </p>
+                                                                    <h5 class="text-center">
+                                                                    <a href="#" class="p-0 main-head text-black">
+                                                                             Shop Nov
                                                                     </a>
 
-                                                        </h5>
-                                                    </ul>
+                                                                </h5>
+                                                            </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -390,7 +386,7 @@
                             @for ($i = 1; $i < 6; $i++)
 
                                 <!-- slide start here -->
-                                <div class="slide">
+                                <div class="slide fragrances-slide">
                                     <!-- mt product1 large start here -->
                                     <div class="mt-product1 large mt-fragrances">
                                         <div class="box fragrances-box">
@@ -400,24 +396,20 @@
                                                             src="frontend/images/products/fragrances/fg.png"
                                                             class="img-slider" alt="image description"></a>
 
-                                                    <ul class="links product-desc">
-                                                        <h4 class="card-title m-0 text-center">
-                                                            <strong class="text-center" style="color:black">
-                                                             Love Your Hair
-                                                            </strong>
-                                                           </h4>
-                                                           <p class="card-text text-center" style="color:black">
-                                                            treat yourself with the best
-                                                           </p>
-                                                             <h5 class="text-center">
-
-                                                                <a href="#" class="p-0" style="color:black">
-                                                                        Shop More
-                                                                        <i class="fa fa-angle-right"></i>
+                                                            <ul class="links fragrances-text-desc">
+                                                                <div class="card-title card-text-heading m-0 text-center pro-head ">
+                                                                    Zara BEST PERFUMES
+                                                                </div>
+                                                                   <p class="card-text text-center">
+                                                                    treat yourself with the best
+                                                                   </p>
+                                                                    <h5 class="text-center">
+                                                                    <a href="#" class="p-0 main-head text-black">
+                                                                             Shop Nov
                                                                     </a>
 
-                                                        </h5>
-                                                    </ul>
+                                                                </h5>
+                                                            </ul>
                                                 </div>
                                             </div>
                                         </div>
