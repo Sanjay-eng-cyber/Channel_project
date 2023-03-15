@@ -222,7 +222,7 @@ a {
     float: none;
     margin: 0px 0 0;
     text-transform: uppercase;
-    font: 14px/20px "Montserrat", sans-serif;
+    font: 14px/20px 'Poppins', sans-serif;
 }
 
 .header-sub-3 ul {
