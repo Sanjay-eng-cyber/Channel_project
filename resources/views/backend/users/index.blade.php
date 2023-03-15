@@ -25,6 +25,20 @@
                             </nav>
                         </div>
                     </div>
+                    <div class="row pl-2">
+                        <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 mt-2">
+                            <form class="form-inline row app_form" action="{{ route('backend.user.index') }}" method="GET">
+                                <input class="form-control form-control-sm app_form_input" type="text"
+                                    placeholder="Name/Email/Phone" name="q" value="{{ request('q') ?? '' }}"
+                                    minlength="3" maxlength="40">
+                                <input type="submit" value="Search" class="btn btn-success ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
+                            </form>
+                            @if ($errors->has('q'))
+                                <div class="text-danger" role="alert">{{ $errors->first('q') }}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
 

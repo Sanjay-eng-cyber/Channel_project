@@ -17,10 +17,37 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::latest()->paginate(10);
+        $products = Product::latest();
+        $products = $this->filterResults($request, $products);
+        $products = $products->paginate(10);
         return view('backend.product.index', compact('products'));
+    }
+
+    protected function filterResults($request, $products)
+    {
+        if ($request->q !== '' && !is_null($request->q)) {
+            if (is_numeric($request->q)) {
+                $request->validate(['q' => 'digits_between:3,40'], ['q.*' => 'Please enter proper Number']);
+            } else {
+                $request->validate(['q' => 'min:3']);
+            }
+        }
+
+        if ($request !== null && $request->has('q') && $request['q'] !== '') {
+            $search = $request['q'];
+
+            // $temp_appointment = $temp_appointment->where('mobile', 'LIKE', '%' . $search . '%')
+            //     ->orWhere('name', 'LIKE', '%' . $search . '%')
+            //     ->orWhere('email', 'LIKE', '%' . $search . '%');
+
+            $products = $products->where(function ($query) use ($search) {
+                $query->where('name', 'LIKE', '%' . $search . '%')->
+                orWhere('sku', 'LIKE', '%' . $search . '%');
+            });
+        }
+        return $products;
     }
 
     public function show($id)
