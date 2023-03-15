@@ -35,12 +35,26 @@
                                        <a class="nav-link" href="#">Features</a>
                                    </li>
                                    <li class="nav-item">
-                                       <a class="nav-link" href="#">Pricing</a>
+                                       <a class="nav-link" href="#">fragrances</a>
+
                                    </li>
                                    <li class="nav-item">
-                                       <a class="nav-link disabled" href="#" tabindex="-1"
-                                           aria-disabled="true">Disabled</a>
-                                   </li>
+                                    <a class="nav-link" href="#">Haircare</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">PersonalCare</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home Decor</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Gift</a>
+                                </li>
+
+
                                </ul>
                            </div>
 
@@ -117,7 +131,7 @@
                            <ul style="margin-right: 0px">
                                <li><a href="{{ route('index') }}">Home</a></li>
                                <li><a href="{{ route('products') }}">Skin</a></li>
-
+                               <li><a href="{{ route('about') }}">fragrances</a></li>
                                <li><a href="{{ route('about') }}">Haircare</a></li>
                                <li><a href="{{ route('about') }}">PersonalCare</a></li>
                                <li><a href="{{ route('about') }}">Home Decor</a></li>
