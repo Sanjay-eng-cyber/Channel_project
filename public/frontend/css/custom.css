@@ -328,6 +328,14 @@ a {
     background-size: 100%;
 }
 
+
+.mt-bottom-bar .mt-icon-list li {
+    position: relative;
+    margin: 4px 0 0 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 /*
 
 .header-top-navbar .mt-icon-list {
@@ -522,6 +530,10 @@ a {
         height: 38px;
         width: 14%;
     }
+
+#mt-header.style3 #nav {
+    margin: 10px 0 0;
+}
 }
 
 @media screen and (max-width: 992px) {
@@ -595,6 +607,13 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+
+    .mt-bottom-bar .mt-icon-list li {
+        position: relative;
+        margin: 0px 0 0 2px;
+        display: inline-block;
+        vertical-align: middle;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -870,6 +889,10 @@ a {
         padding-top: 10px;
         text-align: center;
     }
+
+    .navbar-nav li a{
+        color:black;
+    }
     /*end navbar with heading */
 }
 
@@ -893,17 +916,19 @@ a {
     }
     .header-sub-1 input {
         border-radius: 30px;
-        width: 39%;
+        width: 43%;
         padding-left: 30px;
         padding-right: 0px;
         font-size: 12px;
-        height: 32px;
+        height: 31px;
     }
     .header-seach-icon {
         position: absolute;
         top: 9px;
         left: 4px;
     }
+
+
 
     /* skin slider */
     .mt-skin-product1 {
