@@ -111,6 +111,37 @@ a {
 #tab21 .slick-arrow {
     display: none;
 }
+
+
+.mt-product1 .skin-text-desc {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    width: 100%;
+    display: table;
+    font-size: 17px;
+    background: rgba(245, 134, 52, 0.4);
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s;
+}
+
+
+.skin-slide:hover .mt-product1 .skin-text-desc {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+
+}
+
 /* end sking care slider */
 
 /*  FRAGRANCES slider */
@@ -1014,6 +1045,7 @@ a {
         display: flex;
         justify-content: center;
     }
+
     /* end skin slider */
 
     .nav-custom-width {

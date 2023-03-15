@@ -139,42 +139,46 @@
                         <div id="skincare">
                             <!-- tabs slider start here -->
                             <div class="skin-sliderlg">
-                                @for ($i = 1; $i < 7; $i++)
-                                    <!-- slide start here -->
-                                    <div class="slide">
-                                        <!-- mt product1 large start here -->
-                                        <div class="mt-product1 large mt-skin-product1">
-                                            <div class="box skin-box">
-                                                <div class="b1">
-                                                    <div class="b2">
-                                                        <a href="{{ route('products.show', 'product-name') }}"><img
-                                                                src="frontend/images/products/skin/sk2.png"
-                                                                alt="image description"></a>
+                            @for ($i = 1; $i < 7; $i++)
 
-                                                        <ul class="links product-desc">
-                                                            <h4 class="card-title m-0 text-center">
-                                                                <strong class="text-center" style="color:black">
-                                                                    Love Your Hair
-                                                                </strong>
-                                                            </h4>
-                                                            <p class="card-text text-center pra" style="color:black">
-                                                                treat yourself with the best
-                                                            <h5 class="text-center">
+                                <!-- slide start here -->
+                                <div class="slide  skin-slide">
+                                    <!-- mt product1 large start here -->
+                                    <div class="mt-product1 large mt-skin-product1">
+                                        <div class="box skin-box">
+                                            <div class="b1">
+                                                <div class="b2">
+                                                    <a href="{{route('products.show','product-name')}}"><img
+                                                            src="frontend/images/products/skin/sk2.png"
+                                                            alt="image description"></a>
 
-                                                                <a href="#" class="p-0" style="color:black">
-                                                                    Shop More
-                                                                    <i class="fa fa-angle-right"></i>
-                                                                </a>
+                                                            <ul class="links skin-text-desc py-2 px-3">
+                                                                <div class="card-title  m-0 text-center pro-head ">
+                                                                    Zara BEST PERFUMES
+                                                                </div>
+                                                                   <p class="card-text text-center">
+                                                                    treat yourself with the best in skincare
+                                                                   </p>
 
-                                                            </h5>
-                                                        </ul>
-                                                    </div>
+
+                                                                   <button type="button" class="btn btn-light">
+                                                                  <a href="" class="p-0  text-black">
+                                                                    Shop Nov
+                                                                  </a>
+                                                                  </button>
+
+
+                                                               </a>
+                                                            </ul>
+
                                                 </div>
                                             </div>
+                                        </div>
 
-                                        </div><!-- mt product1 center end here -->
-                                    </div>
-                                @endfor
+                                    </div><!-- mt product1 center end here -->
+                                </div>
+
+                            @endfor
                             </div>
                             <!-- tabs slider end here -->
                         </div>
