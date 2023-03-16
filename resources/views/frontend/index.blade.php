@@ -154,7 +154,7 @@
 
                                                             <ul class="links skin-text-desc py-2 px-3">
                                                                 <div class="card-title  m-0 text-center pro-head ">
-                                                                    Zara BEST PERFUMES
+                                                                    <h4 class=""> Zara Best Perfumes</h4>
                                                                 </div>
                                                                    <p class="card-text text-center">
                                                                     treat yourself with the best in skincare
@@ -186,7 +186,7 @@
                         <div id="skinlatest">
                             <!-- tabs slider start here -->
                             <div class="skin-sliderlg">
-                                @for ($i = 1; $i < 6; $i++)
+                                @for ($i = 1; $i < 7; $i++)
                                     <!-- slide start here -->
                                     <div class="slide skin-slide">
                                         <!-- mt product1 large start here -->
@@ -200,14 +200,14 @@
 
                                                                 <ul class="links skin-text-desc py-2 px-3">
                                                                     <div class="card-title  m-0 text-center pro-head ">
-                                                                        Zara BEST PERFUMES
+                                                                        <h4 class=""> Zara Best Perfumes</h4>
                                                                     </div>
                                                                        <p class="card-text text-center">
                                                                         treat yourself with the best in skincare
                                                                        </p>
 
 
-                                                                       <button type="button" class="btn btn-light">
+                                                                       <button type="button" class="btn btn-light sk-btn">
                                                                       <a href="" class="p-0  text-black">
                                                                         Shop Nov
                                                                       </a>
@@ -231,7 +231,7 @@
                         <div id="skinbestseller">
                             <!-- tabs slider start here -->
                             <div class="skin-sliderlg">
-                                @for ($i = 1; $i < 6; $i++)
+                                @for ($i = 1; $i < 7; $i++)
                                     <!-- slide start here -->
                                     <div class="slide skin-slide">
                                         <!-- mt product1 large start here -->
@@ -245,14 +245,14 @@
 
                                                                 <ul class="links skin-text-desc py-2 px-3">
                                                                     <div class="card-title  m-0 text-center pro-head ">
-                                                                        Zara BEST PERFUMES
+                                                                        <h4 class=""> Zara Best Perfumes</h4>
                                                                     </div>
                                                                        <p class="card-text text-center">
                                                                         treat yourself with the best in skincare
                                                                        </p>
 
 
-                                                                       <button type="button" class="btn btn-light">
+                                                                       <button type="button" class="btn btn-light sk-btn">
                                                                       <a href="" class="p-0  text-black">
                                                                         Shop Nov
                                                                       </a>

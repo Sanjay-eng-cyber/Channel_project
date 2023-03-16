@@ -2,11 +2,13 @@ jQuery('.skin-sliderlg').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 0,
+    autoplaySpeed: 5000,
     speed: 7000,
     pauseOnHover: false,
-    cssEase: 'linear',
+    cssEase: 'ease',
     arrows: false,
+    ltr: false, // set rtl option to false
+
     responsive: [
         {
             breakpoint: 1400,
@@ -15,13 +17,13 @@ jQuery('.skin-sliderlg').slick({
             }
           },
         {
-            breakpoint: 1200,
+            breakpoint: 1250,
             settings: {
               slidesToShow: 4,
             }
           },
         {
-          breakpoint: 992,
+          breakpoint: 1024,
           settings: {
             slidesToShow: 3,
           }
@@ -45,10 +47,7 @@ jQuery('.skin-sliderlg').slick({
           }
         }
     ],
-    afterChange: function(slick, currentSlide) {
-        // Hide all slides except the active one
-        $('.slider div').not('.slick-active').hide();
-      }
+
 });
 
 

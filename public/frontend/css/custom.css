@@ -138,6 +138,10 @@ a {
 
 
 
+.mt-product1 .skin-text-desc p{
+   color:rgba(0, 0, 0, 0.7)
+  }
+
 .mt-product1 .skin-text-desc .sk-btn{
     border-radius: 30px;
     background-color: white;
@@ -156,6 +160,11 @@ a {
     -ms-transform: translateY(0%);
     transform: translateY(0%);
 
+}
+
+
+.mt-producttabs.style2 {
+    padding: 39px 0 0px;
 }
 
 /* end sking care slider */
