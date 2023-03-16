@@ -31,7 +31,7 @@
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Name</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
@@ -40,9 +40,9 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="degree2">Brand</label>
-                                    <select class="form-control mb-4" name="brand_id">
+                                    <select class="form-control" name="brand_id">
                                         <option value="">Select Any Brand</option>
                                         @foreach ($brands as $brand)
                                             <option value="{{ $brand->id }}"
@@ -55,9 +55,9 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="degree2">Category</label>
-                                    <select class="form-control mb-4" name="category_id" id="sel1"
+                                    <select class="form-control" name="category_id" id="sel1"
                                         onchange="getValues()" required>
                                         <option value="">Select Any Category</option>
                                         @foreach ($categorys as $category)
@@ -71,9 +71,9 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="degree2">Sub Category</label>
-                                    <select class="form-control mb-4" name="sub_category_id" id="sub">
+                                    <select class="form-control" name="sub_category_id" id="sub">
                                         <option value="">Select Any Sub Category</option>
                                     </select>
                                     @if ($errors->has('sub_category_id'))
@@ -81,7 +81,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="degree2">Image</label>
                                     <input class="form-control" name="image[]" type="file" id="image" multiple />
                                     @if ($errors->has('image'))
@@ -93,16 +93,15 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="formGroupExampleInput" class="">MRP</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Mrp" required name="mrp"
-                                        value="{{ old('mrp') }}">
+                                        placeholder="Enter Mrp" required name="mrp" value="{{ old('mrp') }}">
                                     @if ($errors->has('mrp'))
                                         <div class="text-danger" role="alert">{{ $errors->first('mrp') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Final Price</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Final Price" minlength="3" maxlength="40" required
@@ -111,16 +110,15 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('final_price') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Stock</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Stock" required name="stock"
-                                        value="{{ old('stock') }}">
+                                        placeholder="Enter Stock" required name="stock" value="{{ old('stock') }}">
                                     @if ($errors->has('stock'))
                                         <div class="text-danger" role="alert">{{ $errors->first('stock') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="formGroupExampleInput" class="">SKU</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter SKU" required name="sku" value="{{ old('sku') }}">
@@ -128,7 +126,53 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('sku') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
+
+                                @foreach ($attributes as $attribute)
+                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                        <input hidden name="attributeKeys[]" value="{{ $attribute->id }}">
+                                        <label for="degree2">{{ $attribute->name }}</label>
+                                        <select class="form-control" name="values[]">
+                                            <option value="">Select Any Attribute</option>
+                                            @foreach ($attribute->values()->get() as $attrbuteValue)
+                                                <option value="{{ $attrbuteValue->id }}"
+                                                    @if (old('values') == $attrbuteValue->id) {{ 'selected' }} @endif>
+                                                    {{ $attrbuteValue->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                @endforeach
+
+                                {{-- <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <label for="degree2">Attribute</label>
+                                    <select class="form-control mb-4" name="attribute_id">
+                                        <option value="">Select Any Attribute</option>
+                                        @foreach (ProductAttributeValue()->where('attribute_id', '1')->get() as $attrbutes)
+                                            <option value="{{ $attrbutes->id }}"
+                                                @if (old('attribute_id') == $attrbutes->id) {{ 'selected' }} @endif>
+                                                {{ $attrbutes->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('attribute_id'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('attribute_id') }}
+                                        </div>
+                                    @endif
+                                </div> --}}
+                                {{-- <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <label for="degree2">Attribute Value</label>
+                                    <select class="form-control mb-4" name="product_attribute_value_id">
+                                        <option value="">Select Any Attribute Value</option>
+                                        @foreach ($productAttributeValues as $productAttributeValue)
+                                            <option value="{{ $productAttributeValue->id }}"
+                                                @if (old('attribute_id') == $productAttributeValue->id) {{ 'selected' }} @endif>
+                                                {{ $productAttributeValue->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('product_attribute_value_id'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('product_attribute_value_id') }}
+                                        </div>
+                                    @endif
+                                </div> --}}
+                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="descriptions">Showcase</label><br>
                                     @foreach ($showcases as $showcase)
                                         {{-- @dd($showcase) --}}
@@ -143,7 +187,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
+                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="descriptions">Description</label>
                                     <textarea id="team-about" name="descriptions">{{ old('descriptions') }}</textarea>
                                     @if ($errors->has('descriptions'))

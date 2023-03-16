@@ -13,6 +13,9 @@ use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use App\Models\Showcase;
 use App\Models\ShowcaseProduct;
+use App\Models\Attribute;
+use App\Models\ProductAttribute;
+use App\Models\ProductAttributeValue;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -62,17 +65,21 @@ class ProductController extends Controller
         $brands = Brand::all();
         $categorys = Category::all();
         $showcases = Showcase::all();
+        $attributes = Attribute::all();
         // dd($showcases);
-        return view('backend.product.create', compact('categorys', 'brands', 'showcases'));
+        return view('backend.product.create', compact('categorys', 'brands', 'showcases','attributes'));
     }
 
 
     public function store(Request $request)
     {
+        // dd($request);
         $categorys = Category::pluck('id')->toArray();
         $brands = Brand::pluck('id')->toArray();
         $sub_categorys = SubCategory::pluck('id')->toArray();
         $showcases_id = Showcase::pluck('id')->toArray();
+        $attribute = Attribute::pluck('id')->toArray();
+        $productAttributeValues = Attribute::pluck('id')->toArray();
         // dd($categorys);
         // dd($request);
         // dd($showcases_id);
@@ -90,6 +97,8 @@ class ProductController extends Controller
             'image.*' => 'mimes:png,jpg,jpeg|max:1024',
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
+            // 'attribute_id' => ['nullable',Rule::in($attribute)],
+            // 'product_attribute_value_id' => ['nullable',Rule::in($productAttributeValues)],
         ]);
 
         $product = new Product();
@@ -123,6 +132,7 @@ class ProductController extends Controller
                 $showcase_product->product_id = $product->id;
                 $showcase_product->save();
             }
+            $product->storeProductAttributes($request->attributeKeys, $request->values, $product->id);
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Stored Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
@@ -135,9 +145,10 @@ class ProductController extends Controller
         $brands = Brand::all();
         $categorys = Category::all();
         $showcases = Showcase::all();
+        $attributes = Attribute::all();
         $product_showcases = $product->showcaseProducts()->exists() ? $product->showcaseProducts()->pluck('showcase_id')->toArray() : [];
         // dd($product_showcases);
-        return view('backend.product.edit', compact('product', 'categorys', 'brands', 'showcases', 'product_showcases'));
+        return view('backend.product.edit', compact('product', 'categorys', 'brands', 'showcases', 'product_showcases','attributes'));
     }
 
     public function update(Request $request, $id)
@@ -206,6 +217,7 @@ class ProductController extends Controller
                 $showcase_product->save();
             }
         }
+        $product->updateProductAttributes($request->attributeKeys, $request->values, $product->id);
         if ($product->save()) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Update Successfully']);
         }

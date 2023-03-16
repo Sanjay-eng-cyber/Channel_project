@@ -124,6 +124,7 @@ a {
     width: 100%;
     display: table;
     font-size: 17px;
+    border-radius: 15px 15px 0px 0px;
     border: 0px;
     background: rgba(245, 134, 52, 0.4);
     backdrop-filter: blur(10px);
@@ -137,6 +138,10 @@ a {
 }
 
 
+
+.mt-product1 .skin-text-desc p{
+   color:rgba(0, 0, 0, 0.7)
+  }
 
 .mt-product1 .skin-text-desc .sk-btn{
     border-radius: 30px;
@@ -156,6 +161,31 @@ a {
     -ms-transform: translateY(0%);
     transform: translateY(0%);
 
+}
+
+.mt-product1 .like-btn-skin{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    right: 17px;
+    top: 17px;
+    background-color: white;
+    border-radius: 3em;
+    width: 2.3em;
+    height: 2.3em;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skin-slide:hover .mt-product1 .like-btn-skin {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mt-producttabs.style2 {
+    padding: 39px 0 0px;
 }
 
 /* end sking care slider */
@@ -1021,6 +1051,25 @@ a {
 }
 
 @media screen and (max-width: 480px) {
+
+    /* skin slider  slider show */
+     .mt-product1 .skin-text-desc {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        transform: translateY(0%);
+
+    }
+
+     .mt-product1 .like-btn-skin {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /*end skin slider  slider show */
+
     .card-text-heading {
         font-size: calc(1rem + 1.8vw);
     }
@@ -1118,6 +1167,7 @@ a {
     font-size: 1em;
     height: auto;
 }
+
 .rise-up-slider .rise-up-slider-card .like-btn {
     background-color: white;
     border-radius: 3em;
