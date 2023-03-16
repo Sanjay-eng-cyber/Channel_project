@@ -59,7 +59,9 @@ a {
 }
 .card-text-shop-now {
 }
-
+.mt-top-bar a{
+    color: black;
+}
 /* sking care slider */
 .mt-producttabs .producttabs a.active,
 .mt-producttabs .producttabs a:hover {
