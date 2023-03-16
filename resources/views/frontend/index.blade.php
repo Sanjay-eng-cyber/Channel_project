@@ -444,6 +444,76 @@
     </section>
 
 
+
+
+    {{-- organic-product slider --}}
+
+    <section class="py-4">
+        <div class="container raeesh og-main" style="">
+            <div class="row">
+                <div class="col-md-12 col-lg-6 raeesh1 og-main-part-1">
+                    <img src="frontend/images/organic-product/og-1.png" alt="" class="og-main-img-first"
+                    >
+
+
+                    <div class="organic-product-slider raeesh2 og-main-card">
+                            <div class="text raeesh4 og-main-text" >
+                                <div class="raeesh5 og-main-sy">
+                                    <h4 class="pro-head">pure and organic products </h4>
+                                    <p style="font-weight: 300;">
+                                        Enhance your self-care routine with<br/>
+                                        our premium personal care products.
+                                    </p>
+                                </div>
+                                <div class="raeesh6 og-main-button">
+                                    <button type="button" class="oganic-button" >
+                                        <a href="">
+                                            Shop Now
+                                        </a>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-6" style="">
+
+                </div>
+            </div>
+          {{-- <div class="organic-product-slider">
+            @for ($i = 0; $i < 5; $i++)
+              <div class="organic-product-slider-card" style="background: rgba(250, 227, 198, 1);margin-left:70px;">
+                <div class="text">
+                  <div>
+                    <h4>pure and organic products </h4>
+                    <p>Enhance your self-care routine with <br/>
+                      our premium personal care products.</p>
+                  </div>
+                  <div>
+                    <button type="button" class="">
+                     <a href="">
+                        Shop Now
+                     </a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            @endfor
+          </div> --}}
+        </div>
+</section>
+
+
+
+
+
+
+
+
+
+
     <section>
         <div class="container">
             <h2 class="text-orange text-center">
@@ -474,6 +544,8 @@
 
         </div>
     </section>
+
+
 
   <!-- F Promo Box of the Page -->
 <section>

@@ -62,6 +62,19 @@ a {
     color: #ec268f;
 }
 
+.underline {
+    text-decoration: underline;
+  }
+
+.footer-custome-c{
+
+   color: rgba(0, 0, 0, 0.7);
+}
+#mt-footer .footer-area p a {
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.7);
+}
+
 .card-text-heading {
     font-size: 2rem;
 }
@@ -669,7 +682,81 @@ a {
 }
 /* end footer css */
 
+/* organic product */
+/* style="padding: 40px 0px 30px 35px" */
+.og-main
+.og-main-part-1{
+    position: relative;
+}
+
+.og-main
+.og-main-card{
+   background: rgba(250, 227, 198, 1);
+   border-radius: 6px;
+}
+
+.og-main .og-main-part-1 .og-main-img-first{
+   position: absolute;
+    width: 37%;
+    height: 309px;
+    bottom: 0px;
+    right: 10px;
+
+}
+
+.og-main .og-main-card .og-main-button button{
+ background-color:rgba(236, 38, 143, 1);
+ justify-content: center;
+ align-items: center;
+ padding: 7px 18px;
+ gap: 30px;
+ border-radius: 30px;
+ border: 0px;
+ color: white;
+}
+
+
+
+.og-main .og-main-card .og-main-button button a{
+    color:white;
+}
+
+
+.og-main .og-main-part-1
+.og-main-text
+.og-main-sy h4
+{
+    padding: 40px 0px 0px 30px;
+    color:rgba(236, 38, 143, 1);
+    ;
+}
+
+
+.og-main .og-main-part-1
+.og-main-text
+.og-main-sy p{
+    padding: 0px 0px 0px 30px;
+}
+
+.og-main .og-main-card .og-main-button {
+    padding: 15px 0px 35px 30px;
+
+}
+
+/*end organic product */
+
 @media screen and (max-width: 1400px) {
+    /* organic-product */
+    .og-main .og-main-part-1 .og-main-img-first {
+        position: absolute;
+        width: 37%;
+        height: 294px;
+        bottom: 0px;
+        right: 10px;
+    }
+
+
+
     #mt-footer .f-widget-newsletter .newsletter-form.form2 .form-control {
         width: 61%;
         height: 38px;

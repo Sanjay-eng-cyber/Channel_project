@@ -44,7 +44,7 @@ jQuery('.skin-sliderlg').slick({
           breakpoint: 480,
           settings: {
             slidesToShow: 1,
-          
+
           }
         }
     ],
@@ -79,6 +79,37 @@ jQuery('.fragrances').slick({
         }
     ]
 });
+
+
+
+
+
+
+// jQuery('.organic-product-slider').slick({
+//     slidesToShow: 2,
+//     arrows: false,
+//     responsive: [
+//       {
+//         breakpoint: 1200,
+//         settings: {
+//           slidesToShow: 2,
+//         }
+//       },
+//       {
+//         breakpoint: 768,
+//         settings: {
+//           slidesToShow: 1,
+//         }
+//       },
+//       {
+//         breakpoint: 320,
+//         settings: {
+//           slidesToShow: 1,
+//         }
+//       }
+//     ]
+//   });
+
 
 
 // home decor slider
