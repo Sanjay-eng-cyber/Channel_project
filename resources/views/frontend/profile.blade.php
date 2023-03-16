@@ -57,6 +57,10 @@
             </div>
         </div>
     </section>
+
+
+    {{-- we will move this styles in css file before production --}}
+
     <style>
         .profile-breadcrumb {
             position: relative;
@@ -150,7 +154,7 @@
             align-items: center;
             justify-content: center;
             font-size: 15px;
-            border:none;
+            border: none;
         }
 
         .menu-icon {

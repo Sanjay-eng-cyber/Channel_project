@@ -19,6 +19,14 @@
     font-family: "Judson", serif;
 }
 
+.font-head {
+    font-family: "Judson", serif !important;
+}
+.font-body {
+    font-family: "Poppins", sans-serif !important;
+}
+
+
 h1,
 h2,
 h3,
