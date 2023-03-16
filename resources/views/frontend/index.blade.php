@@ -152,6 +152,10 @@
                                                             src="frontend/images/products/skin/sk2.png"
                                                             alt="image description"></a>
 
+                                                            <button type="button" class="like-btn-skin btn">
+                                                                <i class="far fa-heart"></i>
+                                                            </button>
+
                                                             <ul class="links skin-text-desc py-2 px-3">
                                                                 <div class="card-title  m-0 text-center pro-head ">
                                                                     <h4 class=""> Zara Best Perfumes</h4>
@@ -198,6 +202,10 @@
                                                                 src="frontend/images/products/skin/sk1.png"
                                                                 alt="image description"></a>
 
+                                                                <button type="button" class="like-btn-skin btn">
+                                                                    <i class="far fa-heart"></i>
+                                                                </button>
+
                                                                 <ul class="links skin-text-desc py-2 px-3">
                                                                     <div class="card-title  m-0 text-center pro-head ">
                                                                         <h4 class=""> Zara Best Perfumes</h4>
@@ -242,6 +250,10 @@
                                                         <a href="{{ route('products.show', 'product-name') }}"><img
                                                                 src="frontend/images/products/skin/sk2.png"
                                                                 alt="image description"></a>
+
+                                                                <button type="button" class="like-btn-skin btn">
+                                                                    <i class="far fa-heart"></i>
+                                                                </button>
 
                                                                 <ul class="links skin-text-desc py-2 px-3">
                                                                     <div class="card-title  m-0 text-center pro-head ">

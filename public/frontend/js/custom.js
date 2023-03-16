@@ -41,9 +41,10 @@ jQuery('.skin-sliderlg').slick({
           }
         },
         {
-          breakpoint: 479,
+          breakpoint: 480,
           settings: {
             slidesToShow: 1,
+          
           }
         }
     ],
