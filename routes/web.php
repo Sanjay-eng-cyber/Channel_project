@@ -19,6 +19,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.index');
     })->name('index');
 
+    Route::get('/profile', function () {
+        return view('frontend.profile');
+    })->name('profile');
+
     Route::get('/about-us', function () {
         return view('frontend/layouts/about-us');
     })->name('about');
