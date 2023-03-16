@@ -85,7 +85,7 @@
 
 
         .profile-photo-section {
-            max-width: 300px;
+            max-width: 250px;
             position: relative;
             margin: auto;
         }
@@ -134,7 +134,7 @@
 
         .profile-menu {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: flex-end;
             flex-wrap: wrap;
             background: #FFFFFF;
@@ -149,7 +149,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 15px;
             border:none;
         }
 
