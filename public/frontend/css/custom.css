@@ -1074,32 +1074,32 @@ a {
 
 @media screen and (max-width: 320px) {
 }
-.rise-up-sider * {
+.rise-up-slider * {
     transition: all 0.3s ease-in-out;
 }
-.rise-up-sider .slick-slide {
+.rise-up-slider .slick-slide {
     margin: 0 10px;
 }
-.rise-up-sider .rise-up-sider-card {
+.rise-up-slider .rise-up-slider-card {
     background: rgba(0, 175, 239, 0.29);
     border-radius: 30px;
     transform: translateY(50px);
 }
-.rise-up-sider .rise-up-sider-card.slick-current {
+.rise-up-slider .rise-up-slider-card.slick-current {
     box-shadow: 0px -13px 10px -1px rgba(0, 0, 0, 0.25);
     transform: translateY(100px);
     margin-bottom: 100px;
 }
-.rise-up-sider .rise-up-sider-card .product {
+.rise-up-slider .rise-up-slider-card .product {
     display: block;
     width: 85%;
     margin: auto;
     padding: 1em;
 }
-.rise-up-sider .rise-up-sider-card.slick-current .product {
+.rise-up-slider .rise-up-slider-card.slick-current .product {
     margin-top: -100px;
 }
-.rise-up-sider .rise-up-sider-card .text {
+.rise-up-slider .rise-up-slider-card .text {
     background: #fae3c6;
     display: flex;
     justify-content: space-between;
@@ -1111,12 +1111,12 @@ a {
     height: 0;
     overflow: hidden;
 }
-.rise-up-sider .rise-up-sider-card.slick-current .text {
+.rise-up-slider .rise-up-slider-card.slick-current .text {
     padding: 20px 10px;
     font-size: 1em;
     height: auto;
 }
-.rise-up-sider .rise-up-sider-card .like-btn {
+.rise-up-slider .rise-up-slider-card .like-btn {
     background-color: white;
     border-radius: 3em;
     width: 2em;

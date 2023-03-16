@@ -439,9 +439,9 @@
                 <br> sanctuary with unique <span class="text-pink"> home decor</span> accents
             </h2>
 
-            <div class="rise-up-sider">
+            <div class="rise-up-slider">
                 @for ($i = 0; $i < 5; $i++)
-                    <div class="rise-up-sider-card">
+                    <div class="rise-up-slider-card">
                         <img class="product" src="{{ url('frontend/images/chair.png') }}" alt="">
                         <div class="text ">
                             <div>
@@ -465,7 +465,7 @@
 @endsection
 @section('js')
     <script>
-        $('.rise-up-sider').slick({
+        $('.rise-up-slider').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
             centerMode: true,
@@ -492,4 +492,3 @@
         });
     </script>
 @endsection
-{{-- rise-up-sider-card slick-slide slick-current slick-active slick-center --}}
