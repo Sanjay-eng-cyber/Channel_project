@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ProductAttributeValue extends Model
 {
     use HasFactory;
-    public function attribute()
-    {
-        return $this->belongsTo(Attribute::class);
-    }
+    // public function attribute()
+    // {
+    //     return $this->belongsTo(Attribute::class);
+    // }
 }

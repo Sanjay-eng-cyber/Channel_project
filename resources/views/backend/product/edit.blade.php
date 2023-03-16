@@ -135,6 +135,20 @@
                                             <div class="text-danger" role="alert">{{ $errors->first('sku') }}</div>
                                         @endif
                                     </div>
+                                    @foreach ($attributes as $attribute)
+                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                        <input hidden name="attributeKeys[]" value="{{ $attribute->id }}">
+                                        <label for="degree2">{{ $attribute->name }}</label>
+                                        <select class="form-control" name="values[]">
+                                            <option value="">Select Any Attribute</option>
+                                            @foreach ($attribute->values()->get() as $attrbuteValue)
+                                                <option value="{{ $attrbuteValue->id }}"
+                                                    @if (old('values') == $attrbuteValue->id) {{ 'selected' }} @endif>
+                                                    {{ $attrbuteValue->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                @endforeach
                                     <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
                                         <label for="descriptions">Showcase</label><br>
                                         @if (old('showcases'))
