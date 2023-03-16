@@ -44,7 +44,11 @@ jQuery('.skin-sliderlg').slick({
             slidesToShow: 1,
           }
         }
-    ]
+    ],
+    afterChange: function(slick, currentSlide) {
+        // Hide all slides except the active one
+        $('.slider div').not('.slick-active').hide();
+      }
 });
 
 

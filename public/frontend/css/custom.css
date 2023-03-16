@@ -122,6 +122,7 @@ a {
     width: 100%;
     display: table;
     font-size: 17px;
+    border: 0px;
     background: rgba(245, 134, 52, 0.4);
     backdrop-filter: blur(10px);
     visibility: hidden;
@@ -132,6 +133,18 @@ a {
     transform: translateY(100%);
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s;
 }
+
+
+
+.mt-product1 .skin-text-desc .sk-btn{
+    border-radius: 30px;
+    background-color: white;
+  }
+
+.mt-product1 .skin-text-desc .sk-btn:hover  {
+    background-color:white;
+    border-radius: 30px;
+  }
 
 
 .skin-slide:hover .mt-product1 .skin-text-desc {

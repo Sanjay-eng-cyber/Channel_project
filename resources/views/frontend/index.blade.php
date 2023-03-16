@@ -161,7 +161,7 @@
                                                                    </p>
 
 
-                                                                   <button type="button" class="btn btn-light">
+                                                                   <button type="button" class="btn btn-light sk-btn">
                                                                   <a href="" class="p-0  text-black">
                                                                     Shop Nov
                                                                   </a>
