@@ -1,6 +1,12 @@
-jQuery('.tabs-sliderlg').slick({
+jQuery('.skin-sliderlg').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 7000,
+    pauseOnHover: false,
+    cssEase: 'linear',
+    arrows: false,
     responsive: [
         {
             breakpoint: 1400,
@@ -15,11 +21,17 @@ jQuery('.tabs-sliderlg').slick({
             }
           },
         {
-          breakpoint: 1024,
+          breakpoint: 992,
           settings: {
             slidesToShow: 3,
           }
         },
+        {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
         {
           breakpoint: 599,
           settings: {
@@ -32,8 +44,13 @@ jQuery('.tabs-sliderlg').slick({
             slidesToShow: 1,
           }
         }
-    ]
+    ],
+    afterChange: function(slick, currentSlide) {
+        // Hide all slides except the active one
+        $('.slider div').not('.slick-active').hide();
+      }
 });
+
 
 // fragrances slider
 jQuery('.fragrances').slick({
@@ -47,6 +64,12 @@ jQuery('.fragrances').slick({
             slidesToShow: 3,
           }
         },
+        {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
         {
           breakpoint: 599,
           settings: {
@@ -64,7 +87,6 @@ jQuery('.fragrances').slick({
 
 
 // home decor slider
-
 $('.home-decor-slider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,

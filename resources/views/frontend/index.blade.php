@@ -2,17 +2,17 @@
 @section('title')
 @section('content')
 
-   {{-- first slider slider --}}
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <!-- banner frame start here -->
-                <h2 class="text-red main-head pt-4 pb-3">#Bestseller of channel</h2>
+    {{-- first slider slider --}}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- banner frame start here -->
+                    <h2 class="text-red main-head pt-4 pb-3">#Bestseller of channel</h2>
 
-                <div class="banner-frame toppadding-zero">
-                    <!-- banner 5 white start here -->
-                    <div class="banner-5 white wow fadeInLeft" data-wow-delay="0.6s">
+                    <div class="banner-frame toppadding-zero">
+                        <!-- banner 5 white start here -->
+                        <div class="banner-5 white wow fadeInLeft" data-wow-delay="0.6s">
                             <img src="frontend/images/banner/ix1.png" alt="image description">
                             <div class="holder">
                                 <div class="texts">
@@ -23,313 +23,154 @@
                                     <span class="price-add">₹ 79.00</span>
                                 </div>
                             </div>
-                    </div>
+                        </div>
 
-                    <!-- banner 5 white end here -->
-                    <!-- banner 6 white start here -->
-                    <div class="banner-6 white wow fadeInRight banner-custome" data-wow-delay="0.6s">
-                        <div class="card" style="">
-                            <img src="frontend/images/banner/ix2.png" class="card-img-top m-0" alt="...">
-                            <div class="card-body mt-0" style="background-color:#FB8CA5;padding:15px 20px 15px 20px;border-radius:0px 0px 26.6782px 26.6782px">
-                              <h3 class="card-title m-0 text-center">
-                               <strong class="text-center" style="color:black">
-                                Love Your Hair
-                               </strong>
-                              </h3>
-                              <p class="card-text text-center" style="color:black">
-                                treat yourself with the best in haircare
-                              </p>
-                                <h4 class="text-center">
+                        <!-- banner 5 white end here -->
+                        <!-- banner 6 white start here -->
+                        <div class="banner-6 white wow fadeInRight banner-custome" data-wow-delay="0.6s">
+                            <div class="card" style="">
+                                <img src="frontend/images/banner/ix2.png" class="card-img-top m-0" alt="...">
+                                <div class="card-body mt-0"
+                                    style="background-color:#FB8CA5;padding:15px 20px 15px 20px;border-radius:0px 0px 26.6782px 26.6782px">
+                                    <h3 class="card-title m-0 text-center">
+                                        <strong class="text-center" style="color:black">
+                                            Love Your Hair
+                                        </strong>
+                                    </h3>
+                                    <p class="card-text text-center" style="color:black">
+                                        treat yourself with the best in haircare
+                                    </p>
+                                    <h4 class="text-center">
 
-                                    <a href="#" class="" style="color:black">
-                                        Shop More
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </h4>
+                                        <a href="#" class="" style="color:black">
+                                            Shop More
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </h4>
+                                </div>
                             </div>
-                        </div>
 
-                    </div><!-- banner 5 white end here -->
-                    <!-- banner box two start here -->
-                    <div class="banner-box two">
-                        <!-- banner 7 right start here -->
-                        <div class="banner-7 right wow fadeInUp  banner-custome" data-wow-delay="0.6s">
-                        <div class="card" style="">
-                            <img src="frontend/images/banner/ix3.jpg" class="card-img-top" alt="..." style="border-radius: 26.6782px 26.6782px 0px 0px;">
-                            <div class="card-body mt-0" style="background-color:#F1D2AD;padding:8px 10px 8px 10px;border-radius:0px 0px 26.6782px 26.6782px">
-                                <h3 class="card-title m-0 text-center">
-                                 <strong class="text-center" style="color:black">
-                                    Luxe Fragrances
-                                 </strong>
-                                </h3>
-                                <p class="card-text text-center" style="color:black">
-                                    indulge in premium perfumes
-                                </p>
-                                  <h4 class="text-center">
+                        </div><!-- banner 5 white end here -->
+                        <!-- banner box two start here -->
+                        <div class="banner-box two">
+                            <!-- banner 7 right start here -->
+                            <div class="banner-7 right wow fadeInUp  banner-custome" data-wow-delay="0.6s">
+                                <div class="card" style="">
+                                    <img src="frontend/images/banner/ix3.jpg" class="card-img-top" alt="..."
+                                        style="border-radius: 26.6782px 26.6782px 0px 0px;">
+                                    <div class="card-body mt-0"
+                                        style="background-color:#F1D2AD;padding:8px 10px 8px 10px;border-radius:0px 0px 26.6782px 26.6782px">
+                                        <h3 class="card-title m-0 text-center">
+                                            <strong class="text-center" style="color:black">
+                                                Luxe Fragrances
+                                            </strong>
+                                        </h3>
+                                        <p class="card-text text-center" style="color:black">
+                                            indulge in premium perfumes
+                                        </p>
+                                        <h4 class="text-center">
 
-                                      <a href="#" class="" style="color:black">
-                                          Shop More
-                                          <i class="fa fa-angle-right"></i>
-                                      </a>
-                                  </h4>
-                              </div>
-                        </div>
-
-                        </div>
-
-                        <!-- banner 8 start here -->
-                        <div class="banner-8 wow fadeInDown " data-wow-delay="0.6s">
-
-
-                        <div class="card" style="">
-                            <img src="frontend/images/banner/ix4.jpg" class="card-img-top" alt="..." style="border-radius: 26.6782px 26.6782px 0px 0px;">
-                            <div class="card-body mt-0" style="background-color:#EBB579;padding:8px 10px 8px 10px;border-radius:0px 0px 26.6782px 26.6782px">
-                                <h3 class="card-title m-0 text-center">
-                                 <strong class="text-center" style="color:black">
-                                    Home Decor
-                                 </strong>
-                                </h3>
-                                <p class="card-text text-center" style="color:black">
-                                    My love language
-                                </p>
-                                  <h4 class="text-center">
-
-                                      <a href="#" class="" style="color:black">
-                                          Shop More
-                                          <i class="fa fa-angle-right"></i>
-                                      </a>
-                                  </h4>
-                              </div>
-                        </div>
-
-                        </div>
-
-                        <!-- banner 8 start here -->
-                    </div>
-                </div><!-- banner frame end here -->
-                <!-- banner frame start here -->
-
-            </div>
-        </div>
-    </div>
-</section>
-
-     {{-- skin slider --}}
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-
-                <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
-                      <!-- producttabs start here -->
-                      <ul class="producttabs">
-                        <li><a href="#skincare" class="active">Skin Care</a></li>
-                        <li><a href="#skinlatest">Latest</a></li>
-                        <li><a href="#skinbestseller">Best Seller</a></li>
-                    </ul>
-                </div>
-
-                <div class="tab-content">
-
-                    <div id="skincare">
-                        <!-- tabs slider start here -->
-                        <div class="tabs-sliderlg">
-                        @for ($i = 1; $i < 7; $i++)
-
-                            <!-- slide start here -->
-                            <div class="slide">
-                                <!-- mt product1 large start here -->
-                                <div class="mt-product1 large mt-skin-product1">
-                                    <div class="box skin-box">
-                                        <div class="b1">
-                                            <div class="b2">
-                                                <a href="{{route('products.show','product-name')}}"><img
-                                                        src="frontend/images/products/skin/sk2.png"
-                                                        alt="image description"></a>
-
-                                                <ul class="links product-desc">
-                                                    <h4 class="card-title m-0 text-center">
-                                                        <strong class="text-center" style="color:black">
-                                                         Love Your Hair
-                                                        </strong>
-                                                       </h4>
-                                                       <p class="card-text text-center pra" style="color:black">
-                                                        treat yourself with the best
-                                                         <h5 class="text-center">
-
-                                                            <a href="#" class="p-0" style="color:black">
-                                                                    Shop More
-                                                                    <i class="fa fa-angle-right"></i>
-                                                                </a>
-
-                                                    </h5>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                            <a href="#" class="" style="color:black">
+                                                Shop More
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </h4>
                                     </div>
+                                </div>
 
-                                </div><!-- mt product1 center end here -->
                             </div>
 
-                        @endfor
-                        </div>
-                        <!-- tabs slider end here -->
-                    </div>
+                            <!-- banner 8 start here -->
+                            <div class="banner-8 wow fadeInDown " data-wow-delay="0.6s">
 
-                    <div id="skinlatest">
-                        <!-- tabs slider start here -->
-                        <div class="tabs-sliderlg">
-                        @for ($i = 1; $i < 6; $i++)
 
-                            <!-- slide start here -->
-                            <div class="slide">
-                                <!-- mt product1 large start here -->
-                                <div class="mt-product1 large mt-skin-product1">
-                                    <div class="box skin-box">
-                                        <div class="b1">
-                                            <div class="b2">
-                                                <a href="{{route('products.show','product-name')}}"><img
-                                                        src="frontend/images/products/skin/sk1.png"
-                                                        alt="image description"></a>
+                                <div class="card" style="">
+                                    <img src="frontend/images/banner/ix4.jpg" class="card-img-top" alt="..."
+                                        style="border-radius: 26.6782px 26.6782px 0px 0px;">
+                                    <div class="card-body mt-0"
+                                        style="background-color:#EBB579;padding:8px 10px 8px 10px;border-radius:0px 0px 26.6782px 26.6782px">
+                                        <h3 class="card-title m-0 text-center">
+                                            <strong class="text-center" style="color:black">
+                                                Home Decor
+                                            </strong>
+                                        </h3>
+                                        <p class="card-text text-center" style="color:black">
+                                            My love language
+                                        </p>
+                                        <h4 class="text-center">
 
-                                                <ul class="links product-desc">
-                                                    <h4 class="card-title m-0 text-center">
-                                                        <strong class="text-center" style="color:black">
-                                                         Love Your Hair
-                                                        </strong>
-                                                       </h4>
-                                                       <p class="card-text text-center pra" style="color:black">
-                                                        treat yourself with the best
-                                                       </p>
-                                                         <h5 class="text-center">
-
-                                                            <a href="#" class="p-0" style="color:black">
-                                                                    Shop More
-                                                                    <i class="fa fa-angle-right"></i>
-                                                                </a>
-
-                                                    </h5>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                            <a href="#" class="" style="color:black">
+                                                Shop More
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </h4>
                                     </div>
+                                </div>
 
-                                </div><!-- mt product1 center end here -->
                             </div>
 
-                        @endfor
+                            <!-- banner 8 start here -->
                         </div>
-                        <!-- tabs slider end here -->
-                    </div>
-
-
-                    <div id="skinbestseller">
-                        <!-- tabs slider start here -->
-                        <div class="tabs-sliderlg">
-                        @for ($i = 1; $i < 6; $i++)
-
-                            <!-- slide start here -->
-                            <div class="slide">
-                                <!-- mt product1 large start here -->
-                                <div class="mt-product1 large mt-skin-product1">
-                                    <div class="box skin-box">
-                                        <div class="b1">
-                                            <div class="b2">
-                                                <a href="{{route('products.show','product-name')}}"><img
-                                                        src="frontend/images/products/skin/sk2.png"
-                                                        alt="image description"></a>
-
-                                                <ul class="links product-desc">
-                                                    <h4 class="card-title m-0 text-center">
-                                                        <strong class="text-center" style="color:black">
-                                                         Love Your Hair
-                                                        </strong>
-                                                       </h4>
-                                                       <p class="card-text text-center pra" style="color:black">
-                                                        treat yourself with the best
-                                                       </p>
-                                                         <h5 class="text-center">
-
-                                                            <a href="#" class="p-0" style="color:black">
-                                                                    Shop More
-                                                                    <i class="fa fa-angle-right"></i>
-                                                                </a>
-
-                                                    </h5>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div><!-- mt product1 center end here -->
-                            </div>
-
-                        @endfor
-                        </div>
-                        <!-- tabs slider end here -->
-                    </div>
-
-
+                    </div><!-- banner frame end here -->
+                    <!-- banner frame start here -->
 
                 </div>
-
-
-
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-{{-- FRAGRANCES slider --}}
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
+    {{-- skin slider with latest & best seller --}}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
 
-                <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
-                    <!-- producttabs start here -->
-                    <ul class="producttabs">
-                        <li><a href="#fragrances" class="active">Fragrances</a></li>
-                        <li><a href="#fragranceslatest">Latest</a></li>
-                        <li><a href="#fragrancesbestseller">Best Seller</a></li>
-                    </ul>
+                    <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
+                        <!-- producttabs start here -->
+                        <ul class="producttabs">
+                            <li><a href="#skincare" class="active">Skin Care</a></li>
+                            <li><a href="#skinlatest">Latest</a></li>
+                            <li><a href="#skinbestseller">Best Seller</a></li>
+                        </ul>
+                    </div>
 
                     <div class="tab-content">
 
-                        <div id="fragrances">
+                        <div id="skincare">
                             <!-- tabs slider start here -->
-                            <div class="fragrances">
-                            @for ($i = 1; $i < 6; $i++)
+                            <div class="skin-sliderlg">
+                            @for ($i = 1; $i < 7; $i++)
 
                                 <!-- slide start here -->
-                                <div class="slide">
+                                <div class="slide  skin-slide">
                                     <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large mt-fragrances">
-                                        <div class="box fragrances-box">
+                                    <div class="mt-product1 large mt-skin-product1">
+                                        <div class="box skin-box">
                                             <div class="b1">
                                                 <div class="b2">
                                                     <a href="{{route('products.show','product-name')}}"><img
-                                                            src="frontend/images/products/fragrances/fg.png"
-                                                            class="img-slider" alt="image description"></a>
+                                                            src="frontend/images/products/skin/sk2.png"
+                                                            alt="image description"></a>
 
-                                                    <ul class="links product-desc">
-                                                        <h4 class="card-title m-0 text-center">
-                                                            <strong class="text-center" style="color:black">
-                                                             Love Your Hair
-                                                            </strong>
-                                                           </h4>
-                                                           <p class="card-text text-center" style="color:black">
-                                                            treat yourself with the best
-                                                           </p>
-                                                             <h5 class="text-center">
+                                                            <ul class="links skin-text-desc py-2 px-3">
+                                                                <div class="card-title  m-0 text-center pro-head ">
+                                                                    Zara BEST PERFUMES
+                                                                </div>
+                                                                   <p class="card-text text-center">
+                                                                    treat yourself with the best in skincare
+                                                                   </p>
 
-                                                                <a href="#" class="p-0" style="color:black">
-                                                                        Shop More
-                                                                        <i class="fa fa-angle-right"></i>
-                                                                    </a>
 
-                                                        </h5>
-                                                    </ul>
+                                                                   <button type="button" class="btn btn-light sk-btn">
+                                                                  <a href="" class="p-0  text-black">
+                                                                    Shop Nov
+                                                                  </a>
+                                                                  </button>
+
+
+                                                               </a>
+                                                            </ul>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -342,278 +183,312 @@
                             <!-- tabs slider end here -->
                         </div>
 
-                        <div id="fragranceslatest">
+                        <div id="skinlatest">
                             <!-- tabs slider start here -->
-                            <div class="fragrances">
-                            @for ($i = 1; $i < 6; $i++)
+                            <div class="skin-sliderlg">
+                                @for ($i = 1; $i < 6; $i++)
+                                    <!-- slide start here -->
+                                    <div class="slide skin-slide">
+                                        <!-- mt product1 large start here -->
+                                        <div class="mt-product1 large mt-skin-product1">
+                                            <div class="box skin-box">
+                                                <div class="b1">
+                                                    <div class="b2">
+                                                        <a href="{{ route('products.show', 'product-name') }}"><img
+                                                                src="frontend/images/products/skin/sk1.png"
+                                                                alt="image description"></a>
 
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large mt-fragrances">
-                                        <div class="box fragrances-box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href="{{route('products.show','product-name')}}"><img
-                                                            src="frontend/images/products/fragrances/fg.png"
-                                                            class="img-slider" alt="image description"></a>
+                                                                <ul class="links skin-text-desc py-2 px-3">
+                                                                    <div class="card-title  m-0 text-center pro-head ">
+                                                                        Zara BEST PERFUMES
+                                                                    </div>
+                                                                       <p class="card-text text-center">
+                                                                        treat yourself with the best in skincare
+                                                                       </p>
 
-                                                    <ul class="links product-desc">
-                                                        <h4 class="card-title m-0 text-center">
-                                                            <strong class="text-center" style="color:black">
-                                                             Love Your Hair
-                                                            </strong>
-                                                           </h4>
-                                                           <p class="card-text text-center" style="color:black">
-                                                            treat yourself with the best
-                                                           </p>
-                                                             <h5 class="text-center">
 
-                                                                <a href="#" class="p-0" style="color:black">
-                                                                        Shop More
-                                                                        <i class="fa fa-angle-right"></i>
-                                                                    </a>
+                                                                       <button type="button" class="btn btn-light">
+                                                                      <a href="" class="p-0  text-black">
+                                                                        Shop Nov
+                                                                      </a>
+                                                                      </button>
 
-                                                        </h5>
-                                                    </ul>
+
+                                                                   </a>
+                                                                </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-
-                            @endfor
+                                        </div><!-- mt product1 center end here -->
+                                    </div>
+                                @endfor
                             </div>
                             <!-- tabs slider end here -->
                         </div>
 
-                        <div id="fragrancesbestseller">
+
+                        <div id="skinbestseller">
                             <!-- tabs slider start here -->
-                            <div class="fragrances">
-                            @for ($i = 1; $i < 6; $i++)
+                            <div class="skin-sliderlg">
+                                @for ($i = 1; $i < 6; $i++)
+                                    <!-- slide start here -->
+                                    <div class="slide skin-slide">
+                                        <!-- mt product1 large start here -->
+                                        <div class="mt-product1 large mt-skin-product1">
+                                            <div class="box skin-box">
+                                                <div class="b1">
+                                                    <div class="b2">
+                                                        <a href="{{ route('products.show', 'product-name') }}"><img
+                                                                src="frontend/images/products/skin/sk2.png"
+                                                                alt="image description"></a>
 
-                                <!-- slide start here -->
-                                <div class="slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large mt-fragrances">
-                                        <div class="box fragrances-box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href="{{route('products.show','product-name')}}"><img
-                                                            src="frontend/images/products/fragrances/fg.png"
-                                                            class="img-slider" alt="image description"></a>
+                                                                <ul class="links skin-text-desc py-2 px-3">
+                                                                    <div class="card-title  m-0 text-center pro-head ">
+                                                                        Zara BEST PERFUMES
+                                                                    </div>
+                                                                       <p class="card-text text-center">
+                                                                        treat yourself with the best in skincare
+                                                                       </p>
 
-                                                    <ul class="links product-desc">
-                                                        <h4 class="card-title m-0 text-center">
-                                                            <strong class="text-center" style="color:black">
-                                                             Love Your Hair
-                                                            </strong>
-                                                           </h4>
-                                                           <p class="card-text text-center" style="color:black">
-                                                            treat yourself with the best
-                                                           </p>
-                                                             <h5 class="text-center">
 
-                                                                <a href="#" class="p-0" style="color:black">
-                                                                        Shop More
-                                                                        <i class="fa fa-angle-right"></i>
-                                                                    </a>
+                                                                       <button type="button" class="btn btn-light">
+                                                                      <a href="" class="p-0  text-black">
+                                                                        Shop Nov
+                                                                      </a>
+                                                                      </button>
 
-                                                        </h5>
-                                                    </ul>
+
+                                                                   </a>
+                                                                </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-
-                            @endfor
+                                        </div><!-- mt product1 center end here -->
+                                    </div>
+                                @endfor
                             </div>
                             <!-- tabs slider end here -->
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- FRAGRANCES slider --}}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
+                        <!-- producttabs start here -->
+                        <ul class="producttabs">
+                            <li><a href="#fragrances" class="active">Fragrances</a></li>
+                            <li><a href="#fragranceslatest">Latest</a></li>
+                            <li><a href="#fragrancesbestseller">Best Seller</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <div id="fragrances">
+                                <!-- tabs slider start here -->
+                                <div class="fragrances">
+                                    @for ($i = 1; $i < 6; $i++)
+                                        <!-- slide start here -->
+                                        <div class="slide fragrances-slide">
+                                            <!-- mt product1 large start here -->
+                                            <div class="mt-product1 large mt-fragrances ">
+                                                <div class="box fragrances-box">
+                                                    <div class="b1">
+                                                        <div class="b2">
+                                                            <a href="{{ route('products.show', 'product-name') }}"><img
+                                                                    src="frontend/images/products/fragrances/fg.png"
+                                                                    class="img-slider" alt="image description"></a>
+
+                                                            <ul class="links fragrances-text-desc">
+                                                                <div
+                                                                    class="card-title card-text-heading m-0 text-center pro-head ">
+                                                                    Zara BEST PERFUMES
+                                                                </div>
+                                                                <p class="card-text text-center">
+                                                                    treat yourself with the best
+                                                                </p>
+                                                                <h5 class="text-center">
+                                                                    <a href="#" class="p-0 main-head text-black">
+                                                                        Shop Nov
+                                                                    </a>
+
+                                                                </h5>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div><!-- mt product1 center end here -->
+                                        </div>
+                                    @endfor
+                                </div>
+                                <!-- tabs slider end here -->
+                            </div>
+
+                            <div id="fragranceslatest">
+                                <!-- tabs slider start here -->
+                                <div class="fragrances ">
+                                    @for ($i = 1; $i < 6; $i++)
+                                        <!-- slide start here -->
+                                        <div class="slide fragrances-slide">
+                                            <!-- mt product1 large start here -->
+                                            <div class="mt-product1 large mt-fragrances">
+                                                <div class="box fragrances-box">
+                                                    <div class="b1">
+                                                        <div class="b2">
+                                                            <a href="{{ route('products.show', 'product-name') }}"><img
+                                                                    src="frontend/images/products/fragrances/fg.png"
+                                                                    class="img-slider" alt="image description"></a>
+
+                                                            <ul class="links fragrances-text-desc">
+                                                                <div
+                                                                    class="card-title card-text-heading m-0 text-center pro-head ">
+                                                                    Zara BEST PERFUMES
+                                                                </div>
+                                                                <p class="card-text text-center">
+                                                                    treat yourself with the best
+                                                                </p>
+                                                                <h5 class="text-center">
+                                                                    <a href="#" class="p-0 main-head text-black">
+                                                                        Shop Nov
+                                                                    </a>
+
+                                                                </h5>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div><!-- mt product1 center end here -->
+                                        </div>
+                                    @endfor
+                                </div>
+                                <!-- tabs slider end here -->
+                            </div>
+
+                            <div id="fragrancesbestseller">
+                                <!-- tabs slider start here -->
+                                <div class="fragrances">
+                                    @for ($i = 1; $i < 6; $i++)
+                                        <!-- slide start here -->
+                                        <div class="slide fragrances-slide">
+                                            <!-- mt product1 large start here -->
+                                            <div class="mt-product1 large mt-fragrances">
+                                                <div class="box fragrances-box">
+                                                    <div class="b1">
+                                                        <div class="b2">
+                                                            <a href="{{ route('products.show', 'product-name') }}"><img
+                                                                    src="frontend/images/products/fragrances/fg.png"
+                                                                    class="img-slider" alt="image description"></a>
+
+                                                            <ul class="links fragrances-text-desc">
+                                                                <div
+                                                                    class="card-title card-text-heading m-0 text-center pro-head ">
+                                                                    Zara BEST PERFUMES
+                                                                </div>
+                                                                <p class="card-text text-center">
+                                                                    treat yourself with the best
+                                                                </p>
+                                                                <h5 class="text-center">
+                                                                    <a href="#" class="p-0 main-head text-black">
+                                                                        Shop Nov
+                                                                    </a>
+
+                                                                </h5>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div><!-- mt product1 center end here -->
+                                        </div>
+                                    @endfor
+                                </div>
+                                <!-- tabs slider end here -->
+                            </div>
+
                         </div>
 
                     </div>
 
                 </div>
-
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-{{-- home decor slider --}}
-  <section>
-    <div class="container">
-        <div class="row">
-            <div class="col-xxl-12">
-                <div class="home-decor-wrapper">
-                    <div class="home-decor-slider">
-                        <div>
-                          <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
+
+    <section>
+        <div class="container">
+            <h2 class="text-orange text-center">
+                Transform your living space into a cozy
+                <br> sanctuary with unique <span class="text-pink"> home decor</span> accents
+            </h2>
+
+            <div class="rise-up-slider">
+                @for ($i = 0; $i < 5; $i++)
+                    <div class="rise-up-slider-card">
+                        <img class="product" src="{{ url('frontend/images/chair.png') }}" alt="">
+                        <div class="text ">
+                            <div>
+                                <h4>
+                                    handmade work chair
+                                </h4>
+                                ₹2,707 <s class="text-muted">₹4,509</s>
+                            </div>
+                            <div>
+                                <button type="button" class="like-btn btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div>
-                            <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
-                        </div>
-                        <div>
-                            <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
-                        </div>
-                        <div>
-                            <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
-                        </div>
-                        <div>
-                            <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
-                        </div>
-                        <div>
-                            <img src="frontend/images/products/home-decor/hd-1.png" alt="home-decor-image">
-                        </div>
-                      </div>
-                  </div>
+                    </div>
+                @endfor
             </div>
+
         </div>
-    </div>
-  </section>
-
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-12">
-
-            </div>
-            <div class="col-lg-6 col-md-12">
-            </div>
-        </div>
-    </div>
-</section>
-
-    {{-- <a id="newsletter-hiddenlink" href="#popup2" class="lightbox" style="display: none;">NEWSLETTER</a>
-
-	<div class="popup-holder">
-
-		<div id="popup1" class="lightbox">
-
-			<section class="mt-product-detial">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12">
-
-							<div class="slider">
-
-								<ul class="list-unstyled comment-list">
-									<li><a href="#"><i class="fa fa-heart"></i>27</a></li>
-									<li><a href="#"><i class="fa fa-comments"></i>12</a></li>
-									<li><a href="#"><i class="fa fa-share-alt"></i>14</a></li>
-								</ul>
-
-								<div class="product-slider">
-									<div class="slide">
-										<img src="frontend/images/img03.jpg" alt="image descrption">
-									</div>
-									<div class="slide">
-										<img src="frontend/images/img03.jpg" alt="image descrption">
-									</div>
-									<div class="slide">
-										<img src="frontend/images/img03.jpg" alt="image descrption">
-									</div>
-									<div class="slide">
-										<img src="frontend/images/img03.jpg" alt="image descrption">
-									</div>
-								</div>
-
-								<ul class="list-unstyled slick-slider pagg-slider">
-									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
-									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
-									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
-									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
-									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
-									<li><img src="frontend/images/img03.jpg" alt="image description"></li>
-								</ul>
-							</div>
-							<div class="detial-holder">
-
-								<ul class="list-unstyled breadcrumbs">
-									<li><a href="#">Chairs <i class="fa fa-angle-right"></i></a></li>
-									<li>Products</li>
-								</ul>
-
-								<h2>KAILA FABRIC CHAIR</h2>
-
-								<div class="rank-rating">
-									<ul class="list-unstyled rating-list">
-										<li><a href="#"><i class="fa fa-star"></i></a></li>
-										<li><a href="#"><i class="fa fa-star"></i></a></li>
-										<li><a href="#"><i class="fa fa-star"></i></a></li>
-										<li><a href="#"><i class="fa fa-star-o"></i></a></li>
-									</ul>
-									<span class="total-price">Reviews (12)</span>
-								</div>
-								<ul class="list-unstyled list">
-									<li><a href="#"><i class="fa fa-share-alt"></i>SHARE</a></li>
-									<li><a href="#"><i class="fa fa-exchange"></i>COMPARE</a></li>
-									<li><a href="#"><i class="fa fa-heart"></i>ADD TO WISHLIST</a></li>
-								</ul>
-								<div class="txt-wrap">
-									<p>Koila is a chair designed for restaurants and food lovers in general. Designed in
-										collaboration with restaurant professionals, it ensures comfort and an ideal
-										posture, as there are armrests on both sides of the chair.</p>
-									<p>Koila is a seat designed for restaurants and gastronomic places in general.
-										Designed in collaboration with professional of restaurants and hotels field,
-										this armchair is composed of a curved shell with a base in oak who has pinched
-										the back upholstered in fabric or leather. It provides comfort and holds for
-										ideal sitting position,the arms may rest on the sides ofthe armchair.</p>
-								</div>
-								<div class="text-holder">
-									<span class="price">$ 79.00 <del>399,00</del></span>
-								</div><!-- Product Form of the Page -->
-								<form action="#" method="post" class="product-form">
-                                    @csrf
-									<fieldset>
-										<div class="row-val">
-											<label for="qty">qty</label>
-											<select id="clr">
-												<option>1</option>
-											</select>
-										</div>
-										<div class="row-val">
-											<button type="submit">ADD TO CART</button>
-										</div>
-									</fieldset>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<div id="popup2" class="lightbox">
-			<section class="mt-newsletter-popup">
-				<span class="title">NEWSLETTER</span>
-				<div class="holder">
-					<div class="txt-holder">
-						<h1>JOIN OUR NEWSLETTER</h1>
-						<span class="txt">Subscribe now to get <b>15%</b> off on any product!</span>
-
-						<form action="#" method="post" class="newsletter-form">
-                            @csrf
-							<fieldset>
-								<input type="email" class="form-control" placeholder="Enter your e-mail">
-								<button type="submit">SUBSCRIBE</button>
-							</fieldset>
-						</form>
-					</div>
-					<div class="img-holder">
-						<img src="frontend/images/img02.png" alt="image description">
-					</div>
-				</div>
-				<form action="#" method="post" class="popup-form">
-                    @csrf
-					<fieldset>
-						<input type="checkbox" class="form-control">Don’t show this popup again
-					</fieldset>
-				</form>
-			</section>
-		</div>
-	</div> --}}
+    </section>
+@endsection
+@section('js')
+    <script>
+        $('.rise-up-slider').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            centerMode: true,
+            arrows: false,
+            dots: false,
+            speed: 300,
+            centerPadding: '0px',
+            infinite: true,
+            autoplaySpeed: 2000,
+            autoplay: true,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    </script>
 @endsection

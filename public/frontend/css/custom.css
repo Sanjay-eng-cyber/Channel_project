@@ -7,20 +7,26 @@
     font-family: 'Roboto', sans-serif;
 } */
 
-
 #wrapper {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-.head{
-    font-family: 'Judson', serif;
+.main-head {
+    font-family: "Poppins", sans-serif;
 }
 
-
-h1,h2,h3,h4,h5,h6{
-    font-family: 'Judson', serif;
+.pro-head {
+    font-family: "Judson", serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Judson", serif;
+}
 
 a {
     text-decoration: none;
@@ -41,6 +47,21 @@ a {
     background-color: rgba(236, 38, 143, 1);
 }
 
+.text-orange {
+    color: #f58634;
+}
+.text-pink {
+    color: #ec268f;
+}
+
+.card-text-heading {
+    font-size: 2rem;
+}
+.card-text-shop-now {
+}
+.mt-top-bar a{
+    color: black;
+}
 /* sking care slider */
 .mt-producttabs .producttabs a.active,
 .mt-producttabs .producttabs a:hover {
@@ -92,6 +113,51 @@ a {
 #tab21 .slick-arrow {
     display: none;
 }
+
+
+.mt-product1 .skin-text-desc {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    width: 100%;
+    display: table;
+    font-size: 17px;
+    border: 0px;
+    background: rgba(245, 134, 52, 0.4);
+    backdrop-filter: blur(10px);
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s;
+}
+
+
+
+.mt-product1 .skin-text-desc .sk-btn{
+    border-radius: 30px;
+    background-color: white;
+  }
+
+.mt-product1 .skin-text-desc .sk-btn:hover  {
+    background-color:white;
+    border-radius: 30px;
+  }
+
+
+.skin-slide:hover .mt-product1 .skin-text-desc {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+
+}
+
 /* end sking care slider */
 
 /*  FRAGRANCES slider */
@@ -105,11 +171,7 @@ a {
     border-radius: 15px;
 }
 
-.mt-fragrances .product-desc {
-    background: #f1d2ad;
-    padding: 15px 10px 5px 10px;
-}
-
+/*
 .mt-fragrances .product-desc h4 strong {
     font-size: 2.5rem;
 }
@@ -117,7 +179,7 @@ a {
 .mt-fragrances .product-desc a {
     padding: 0px;
     font-weight: 600;
-}
+} */
 
 .mt-fragrances .links {
     left: 0%;
@@ -137,6 +199,66 @@ a {
     width: 100%;
     height: 100%;
 }
+
+.mt-product1 .fragrances-text-desc {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    width: 100%;
+    display: table;
+    font-size: 17px;
+    background: #f1d2ad;
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    border: 1px solid #eee;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s;
+}
+.fragrances-text-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fragrances-slide:hover .mt-product1 .fragrances-text-desc {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+.fragrances{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transition: height 0.5s ease-out;
+}
+
+.fragrances .mt-fragrances .b2  .product-desc{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+
+    background-color: red;
+    overflow: hidden;
+    transition: height 0.5s ease-out;
+}
+
+.fragrances:hover .fragrances .mt-fragrances .b2 .product-desc{
+    height: 100%;
+  } */
 /*  end FRAGRANCES slider */
 
 /* home decore slider */
@@ -222,7 +344,7 @@ a {
     float: none;
     margin: 0px 0 0;
     text-transform: uppercase;
-    font: 14px/20px 'Poppins', sans-serif;
+    font: 14px/20px "Poppins", sans-serif;
 }
 
 .header-sub-3 ul {
@@ -327,7 +449,6 @@ a {
     background-position: center;
     background-size: 100%;
 }
-
 
 .mt-bottom-bar .mt-icon-list li {
     position: relative;
@@ -531,12 +652,16 @@ a {
         width: 14%;
     }
 
-#mt-header.style3 #nav {
-    margin: 10px 0 0;
-}
+    #mt-header.style3 #nav {
+        margin: 10px 0 0;
+    }
 }
 
 @media screen and (max-width: 992px) {
+    .card-text-heading {
+        font-size: calc(1rem + 1vw);
+    }
+
     #mt-footer .footer-holder .f-widget-heading {
         text-align: center;
     }
@@ -607,7 +732,6 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-
     .mt-bottom-bar .mt-icon-list li {
         position: relative;
         margin: 0px 0 0 2px;
@@ -890,13 +1014,17 @@ a {
         text-align: center;
     }
 
-    .navbar-nav li a{
-        color:black;
+    .navbar-nav li a {
+        color: black;
     }
     /*end navbar with heading */
 }
 
 @media screen and (max-width: 480px) {
+    .card-text-heading {
+        font-size: calc(1rem + 1.8vw);
+    }
+
     .ft-svg-class-1 .ft-svg-sub-class-1 {
         width: 100%;
         height: 158px;
@@ -928,13 +1056,12 @@ a {
         left: 4px;
     }
 
-
-
     /* skin slider */
     .mt-skin-product1 {
         display: flex;
         justify-content: center;
     }
+
     /* end skin slider */
 
     .nav-custom-width {
@@ -948,4 +1075,56 @@ a {
 }
 
 @media screen and (max-width: 320px) {
+}
+.rise-up-slider * {
+    transition: all 0.3s ease-in-out;
+}
+.rise-up-slider .slick-slide {
+    margin: 0 10px;
+}
+.rise-up-slider .rise-up-slider-card {
+    background: rgba(0, 175, 239, 0.29);
+    border-radius: 30px;
+    transform: translateY(50px);
+}
+.rise-up-slider .rise-up-slider-card.slick-current {
+    box-shadow: 0px -13px 10px -1px rgba(0, 0, 0, 0.25);
+    transform: translateY(100px);
+    margin-bottom: 100px;
+}
+.rise-up-slider .rise-up-slider-card .product {
+    display: block;
+    width: 85%;
+    margin: auto;
+    padding: 1em;
+}
+.rise-up-slider .rise-up-slider-card.slick-current .product {
+    margin-top: -100px;
+}
+.rise-up-slider .rise-up-slider-card .text {
+    background: #fae3c6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    border-radius: 0px 0px 30px 30px;
+    padding: 0;
+    font-size: 0;
+    height: 0;
+    overflow: hidden;
+}
+.rise-up-slider .rise-up-slider-card.slick-current .text {
+    padding: 20px 10px;
+    font-size: 1em;
+    height: auto;
+}
+.rise-up-slider .rise-up-slider-card .like-btn {
+    background-color: white;
+    border-radius: 3em;
+    width: 2em;
+    height: 2em;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
