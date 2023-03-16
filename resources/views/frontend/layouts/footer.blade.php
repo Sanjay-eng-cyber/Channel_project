@@ -4,68 +4,7 @@
      <img src="frontend/images/footer/ft-2.png" alt="" class="footer-absolute-img2">
 
      {{-- <img src="" alt=""> --}}
-     <!-- F Promo Box of the Page -->
-     <aside class="f-promo-box dark">
-         <div class="container divider">
-             <div class="row row-cols-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 ">
-                 <div class="col mt-paddingbottomsm ft-svg-class-1">
-                     <!-- F Widget Item of the Page -->
-                     <div class="f-widget-item ft-svg-sub-class-1">
-                         <span class="widget-icon ft-svg-child-1">
-                             <img src="{{ asset('frontend/images/products/footer-icon/free-shipping.svg') }}"
-                                 alt="">
-
-                         </span>
-                         <div class="txt-holder  ft-svg-child-2">
-                             <h1 class="f-promo-box-heading">FREE SHIPPING</h1>
-                             <p>Free shipping on all US order</p>
-                         </div>
-                     </div>
-                     <!-- F Widget Item of the Page end -->
-                 </div>
-                 <div class="col mt-paddingbottomsm ft-svg-class-2">
-                     <!-- F Widget Item of the Page -->
-                     <div class="f-widget-item ft-svg-sub-class-2">
-                         <span class="widget-icon ft-svg-child-1">
-                             <img src="{{ asset('frontend/images/products/footer-icon/support.svg') }}" alt="">
-                         </span>
-                         <div class="txt-holder ft-svg-child-2">
-                             <h1 class="f-promo-box-heading">SUPPORT 24/7</h1>
-                             <p>We support 24 hours a day</p>
-                         </div>
-                     </div>
-                     <!-- F Widget Item of the Page -->
-                 </div>
-                 <div class="col mt-paddingbottomxs ft-svg-class-3">
-                     <!-- F Widget Item of the Page -->
-                     <div class="f-widget-item ft-svg-sub-class-3">
-                         <span class="widget-icon ft-svg-child-1">
-                             <img src="{{ asset('frontend/images/products/footer-icon/gift-card.svg') }}"
-                                 alt="">
-                         </span>
-                         <div class="txt-holder ft-svg-child-2">
-                             <h1 class="f-promo-box-heading">GIFT CARDS</h1>
-                             <p>Give perfect gift</p>
-                         </div>
-                     </div>
-                     <!-- F Widget Item of the Page -->
-                 </div>
-                 <div class="col">
-                     <!-- F Widget Item of the Page -->
-                     <div class="f-widget-item ft-svg-class-4">
-                         <span class="widget-icon ft-svg-child-1">
-                             <img src="{{ asset('frontend/images/products/footer-icon/payment.svg') }}" alt="">
-                         </span>
-                         <div class="txt-holder ft-svg-child-2">
-                             <h1 class="f-promo-box-heading">PAYMENT 100% SECURE</h1>
-                             <p>Payment 100% secure</p>
-                         </div>
-                     </div>
-                     <!-- F Widget Item of the Page -->
-                 </div>
-             </div>
-         </div>
-     </aside>
+   
      <!-- F Promo Box of the Page end -->
      <!-- Footer Holder of the Page -->
      <div class="footer-holder dark mt-paddingbottomxs-hide-holder ">
