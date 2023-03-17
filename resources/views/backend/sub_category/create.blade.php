@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-2">
                                     <label for="degree2">Category</label>
-                                    <select class="form-control mb-4" name="category_id" required>
+                                    <select class="form-control" name="category_id" required>
                                         <option value="">Select Any Category</option>
                                         @foreach ($categorys as $category)
                                             <option value="{{ $category->id }}"
