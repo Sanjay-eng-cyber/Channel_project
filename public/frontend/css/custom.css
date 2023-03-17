@@ -112,6 +112,7 @@ a {
     width: 15px;
     height: 15px;
     font-size: 10px;
+    margin-top: 2px;
     padding: 6px;
 
 }
@@ -159,11 +160,15 @@ a {
 
 
 .group-card-2 .second-group-card{
-   width:100%;  border-radius: 26.6782px;
+   width:100%;
+   border-radius: 27px 27px 0px 0px;
+   border: 0px;
 }
 
 .group-card-2 .second-group-card .second-group-img{
     width: 100%;
+    border-radius: 27px 27px 0px 0px;
+
 }
 
 
@@ -1019,6 +1024,9 @@ a {
         display: flex;
         flex-direction: row;
     }
+    .group-card-3{
+        padding-top: 50px;
+    }
      /* organic-product */
      .og-main .og-main-part-1 .og-main-img-first {
         position: absolute;
@@ -1172,6 +1180,17 @@ a {
         display: flex;
         flex-direction: column;
     }
+
+    .group-card-3 .fourth-group-card{
+        padding-top: 35px;
+        border: 0px;
+    }
+
+    .group-card-2 .second-group-card{
+        padding-top: 50px;
+    }
+
+
     .og-main .og-main-part-1 .og-main-img-first {
         position: absolute;
         width: 171px;

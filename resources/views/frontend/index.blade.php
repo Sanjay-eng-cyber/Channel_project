@@ -33,7 +33,7 @@
                 <div class="card second-group-card" >
                     <img src="frontend/images/banner/ix2.png" class="card-img-top m-0 card second-group-img" alt="...">
                     <div class="card-body text-center  second-group-card-body">
-                            <h4 class="card-title text-center font-head">Love Your Hair</h4>
+                            <h4 class="card-title text-center font-head ">Love Your Hair</h4>
                             <p class="card-text group-card-text-color">
                                 treat yourself with the best in haircare
                             </p>
