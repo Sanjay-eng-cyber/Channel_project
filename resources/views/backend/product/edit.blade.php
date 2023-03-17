@@ -141,11 +141,19 @@
                                         <label for="degree2">{{ $attribute->name }}</label>
                                         <select class="form-control" name="values[]">
                                             <option value="">Select Any Attribute</option>
+                                            @if (old('values'))
+                                                @foreach ($attribute->values()->get() as $attrbuteValue)
+                                                    <option value="{{ $attrbuteValue->id }}"
+                                                        @if (old('values') == $attrbuteValue->id) {{ 'selected' }} @endif>
+                                                        {{ $attrbuteValue->name }}</option>
+                                                @endforeach
+                                            @else
                                             @foreach ($attribute->values()->get() as $attrbuteValue)
                                                 <option value="{{ $attrbuteValue->id }}"
-                                                    @if (old('values') == $attrbuteValue->id) {{ 'selected' }} @endif>
+                                                    @if ($attrbuteValue->attribute_id == $attrbuteValue->id) {{ 'selected' }} @endif>
                                                     {{ $attrbuteValue->name }}</option>
                                             @endforeach
+                                            @endif
                                         </select>
                                     </div>
                                 @endforeach
