@@ -448,22 +448,27 @@
 
     {{-- organic-product slider --}}
 
-    <section class="py-4">
+    <section class="" style="padding:100px 0px 100px 0px">
         <div class="container raeesh og-main" style="">
             <div class="row">
                 <div class="col-md-12 col-lg-6 raeesh1 og-main-part-1">
-                    <img src="frontend/images/organic-product/og-1.png" alt="" class="og-main-img-first"
-                    >
+                    <img src="frontend/images/organic-product/og-1.png" alt="" class="og-main-img-first">
+
+                    <img src="frontend/images/organic-product/og-2.png" alt="" class="og-main-img-second">
+                    <img src="frontend/images/organic-product/og-4.png" alt="" class="og-main-img-third">
+
 
 
                     <div class="organic-product-slider raeesh2 og-main-card">
                             <div class="text raeesh4 og-main-text" >
                                 <div class="raeesh5 og-main-sy">
-                                    <h4 class="pro-head">pure and organic products </h4>
+                                    <h3 class="pro-head">pure and organic products </h3>
+
                                     <p style="font-weight: 300;">
                                         Enhance your self-care routine with<br/>
                                         our premium personal care products.
                                     </p>
+
                                 </div>
                                 <div class="raeesh6 og-main-button">
                                     <button type="button" class="oganic-button" >
@@ -503,7 +508,7 @@
             @endfor
           </div> --}}
         </div>
-</section>
+    </section>
 
 
 
