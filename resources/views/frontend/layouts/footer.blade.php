@@ -217,7 +217,7 @@
 
          </div>
 
-         <div class="container">
+         <div class="container pb-3">
              <div class="row">
                  <div class="col-xs-12 col-sm-6 right_reserved">
                      <p class="footer-custome-c"> © 2023 channel. All Rights Reserved.</p>
@@ -236,7 +236,7 @@
      <!-- Footer Area of the Page end -->
  </footer>
  <!-- footer of the Page end -->
- <div class="py-5"></div>
+ <div class="py-5 phone-fixed-bottom-menu-gap"></div>
  <div class="conatiner-fluid phone-fixed-bottom-menu" style="background: white">
      <div class="row row-cols-4 ">
          <div class="col">

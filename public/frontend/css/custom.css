@@ -794,6 +794,7 @@ a:hover {
     display: none;
 }
 
+.phone-fixed-bottom-menu-gap,
 .phone-fixed-bottom-menu {
     display: none;
 }
@@ -1368,6 +1369,9 @@ a:hover {
         display: none;
     }
 
+    .phone-fixed-bottom-menu-gap{
+        display: block;
+    }
     .phone-fixed-bottom-menu {
         display: block;
         position: fixed;
