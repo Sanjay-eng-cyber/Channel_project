@@ -125,6 +125,30 @@
 
                                             </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Attribute</label><br>
+                                                <div class="row">
+                                                    @forelse ($product_attributes as $product_attribute)
+                                                        <div class="col-md-6">
+                                                            <p class="label-title">
+                                                                {{ $product_attribute->attribute->name }}
+                                                            </p>
+                                                        </div>
+
+                                                        @forelse ($product_attribute->values()->get() as $attVaule)
+                                                            <p class="label-title">{{ $attVaule->name }}
+                                                            </p>
+                                                        @empty
+                                                            <p class="label-title">---</p>
+                                                        @endforelse
+                                                    @empty
+                                                        <p class="label-title">---</p>
+                                                    @endforelse
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

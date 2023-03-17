@@ -32,9 +32,9 @@ class Product extends Model
         return $this->hasMany(ShowcaseProduct::class);
     }
 
-     public function ProductAttributeValue()
+     public function ProductAttribute()
     {
-        return $this->hasMany(ProductAttributeValue::class);
+        return $this->hasMany(ProductAttribute::class);
     }
 
     public function storeProductAttributes($attributes, $values, $product)
