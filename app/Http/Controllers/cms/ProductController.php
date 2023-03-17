@@ -57,7 +57,9 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $product_showcases = $product->showcaseProducts()->get();
-        return view('backend.product.show', compact('product','product_showcases'));
+        $product_attributes = $product->ProductAttribute()->latest()->get();
+       //  dd( $product_attribute_values);
+        return view('backend.product.show', compact('product','product_showcases','product_attributes'));
     }
 
     public function create()

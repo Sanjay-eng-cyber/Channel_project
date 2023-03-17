@@ -9,4 +9,14 @@ class ProductAttribute extends Model
 {
     use HasFactory;
     protected $fillable = ['product_id', 'attribute_id', 'product_attribute_value_id'];
+
+    public function attribute()
+    {
+        return $this->belongsTo(Attribute::class);
+    }
+
+    public function values()
+    {
+        return $this->hasMany(ProductAttributeValue::class,'id','product_attribute_value_id');
+    }
 }

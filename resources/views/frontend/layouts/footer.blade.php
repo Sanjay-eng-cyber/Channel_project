@@ -4,7 +4,7 @@
      <img src="frontend/images/footer/ft-2.png" alt="" class="footer-absolute-img2">
 
      {{-- <img src="" alt=""> --}}
-   
+
      <!-- F Promo Box of the Page end -->
      <!-- Footer Holder of the Page -->
      <div class="footer-holder dark mt-paddingbottomxs-hide-holder ">
@@ -220,14 +220,15 @@
          <div class="container">
              <div class="row">
                  <div class="col-xs-12 col-sm-6 right_reserved">
-                     <p> © 2023 channel. All Rights Reserved.</p>
+                     <p class="footer-custome-c"> © 2023 channel. All Rights Reserved.</p>
                  </div>
                  <div class="col-xs-12 col-sm-6 text-end">
-                     <div class="bank-card designed_develop">
-                        <p>
-                            Designed & Developed by <a href="http://">Acetrot</a>
+
+                        <p class="footer-custome-c">
+                            Designed & Developed by
+                            <a href="http://" class="underline footer-custome-c">Acetrot</a>
                         </p>
-                     </div>
+
                  </div>
              </div>
          </div>

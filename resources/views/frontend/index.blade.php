@@ -444,6 +444,7 @@
     </section>
 
 
+
     <section>
         <div class="container">
             <h2 class="text-orange text-center">
@@ -474,6 +475,54 @@
 
         </div>
     </section>
+
+
+    {{-- organic-product slider --}}
+
+    <section class="og-main-section">
+        <div class="container og-main" style="">
+            <div class="row">
+                <div class="col-md-12 col-lg-6 og-main-part-1">
+                    <h3 class="text-red card-text-heading" style="padding:40px 0px 40px 0px">#look for personal care too..</h3>
+
+                    <img src="frontend/images/organic-product/og-1.png" alt="" class="og-main-img-first">
+                    <img src="frontend/images/organic-product/og-2.png" alt="" class="og-main-img-second">
+                    <img src="frontend/images/organic-product/og-4.png" alt="" class="og-main-img-third">
+                    <img src="frontend/images/organic-product/og-5.png" alt="" class="og-main-img-fourth">
+                    <img src="frontend/images/organic-product/og-3.png" alt="" class="og-main-img-fifth">
+
+                    <div class="organic-product-slider raeesh2 og-main-card">
+                            <div class="text og-main-text" >
+                                <div class="og-main-sy">
+                                    <h3 class="pro-head">Pure And Organic Products </h3>
+
+                                    <p style="font-weight: 300;">
+                                        Enhance your self-care routine with<br/>
+                                        our premium personal care products.
+                                    </p>
+
+                                </div>
+                                <div class="og-main-button">
+                                    <button type="button" class="oganic-button" >
+                                        <a href="">
+                                            Shop Now
+                                        </a>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-6" style="">
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 
   <!-- F Promo Box of the Page -->
 <section>

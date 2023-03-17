@@ -62,6 +62,19 @@ a {
     color: #ec268f;
 }
 
+.underline {
+    text-decoration: underline;
+  }
+
+.footer-custome-c{
+
+   color: rgba(0, 0, 0, 0.7);
+}
+#mt-footer .footer-area p a {
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.7);
+}
+
 .card-text-heading {
     font-size: 2rem;
 }
@@ -669,7 +682,147 @@ a {
 }
 /* end footer css */
 
+/* organic product */
+/* style="padding: 40px 0px 30px 35px" */
+.og-main-section{
+  padding:75px 0px 50px 0px;
+}
+
+.og-main
+.og-main-part-1{
+    position: relative;
+    isolation: isolate;
+}
+
+.og-main
+.og-main-card{
+   background: rgba(250, 227, 198, 1);
+   border-radius: 6px;
+}
+
+.og-main .og-main-part-1 .og-main-img-first{
+   position: absolute;
+    width: 37%;
+    height: 309px;
+    bottom: 0px;
+    right: 10px;
+    z-index: 99;
+
+}
+
+
+
+.og-main .og-main-part-1 .og-main-img-second{
+    position: absolute;
+    width: 26%;
+    height: 161px;
+    bottom: 49px;
+    right: -56px;
+    z-index: 97;
+
+ }
+
+
+.og-main .og-main-part-1 .og-main-img-third{
+    position: absolute;
+    width: 36%;
+    height: 224px;
+    bottom: 68px;
+    right: -5px;
+    z-index: 98;
+
+ }
+
+
+.og-main .og-main-part-1 .og-main-img-fourth{
+    position: absolute;
+    z-index: 100;
+    width: 66.94px;
+    height: 62.74px;
+    left: -18px;
+    top: 95px;
+
+ }
+
+.og-main .og-main-part-1 .og-main-img-fifth{
+    position: absolute;
+    z-index: 101;
+    width: 62.94px;
+    height: 64.74px;
+    bottom: -21px;
+    left: 52%;
+
+ }
+
+.og-main .og-main-card .og-main-button button{
+ background-color:rgba(236, 38, 143, 1);
+ justify-content: center;
+ align-items: center;
+ padding: 7px 18px;
+ gap: 30px;
+ border-radius: 30px;
+ border: 0px;
+ color: white;
+}
+
+
+
+.og-main .og-main-card .og-main-button button a{
+    color:white;
+}
+
+
+.og-main .og-main-part-1
+.og-main-text
+.og-main-sy h3
+{
+    padding: 40px 0px 0px 30px;
+    color:rgba(236, 38, 143, 1);
+    ;
+}
+
+
+.og-main .og-main-part-1
+.og-main-text
+.og-main-sy p{
+    padding: 10px 0px 0px 30px;
+}
+
+.og-main .og-main-card .og-main-button {
+    padding: 15px 0px 35px 30px;
+
+}
+
+/*end organic product */
+
 @media screen and (max-width: 1400px) {
+    /* organic-product */
+    .og-main .og-main-part-1 .og-main-img-first {
+        position: absolute;
+        width: 36%;
+        height: 273px;
+        bottom: 0px;
+        right: 10px;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-second {
+        position: absolute;
+        width: 26%;
+        height: 156px;
+        bottom: 49px;
+        right: -40px;
+        z-index: 97;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-third {
+        position: absolute;
+        width: 38%;
+        height: 214px;
+        bottom: 70px;
+        right: -10px;
+        z-index: 98;
+    }
+
     #mt-footer .f-widget-newsletter .newsletter-form.form2 .form-control {
         width: 61%;
         height: 38px;
@@ -681,6 +834,38 @@ a {
 }
 
 @media screen and (max-width: 1200px) {
+    .og-main .og-main-part-1 .og-main-img-first {
+        position: absolute;
+        width: 39%;
+        height: 249px;
+        bottom: 0px;
+        right: 10px;
+
+    }
+    .og-main .og-main-part-1 .og-main-img-second {
+        position: absolute;
+        width: 24%;
+        height: 128px;
+        bottom: 49px;
+        right: -31px;
+        z-index: 97;
+
+    }
+
+    .og-main .og-main-part-1 .og-main-img-third {
+        position: absolute;
+        width: 37%;
+        height: 183px;
+        bottom: 60px;
+        right: -10px;
+        z-index: 98;
+    }
+
+    .og-main .og-main-part-1 .og-main-text .og-main-sy p {
+        padding: 10px 130px 0px 30px;
+    }
+
+
     #mt-footer .f-widget-newsletter .newsletter-form.form2 .form-control {
         width: 51%;
         height: 38px;
@@ -696,6 +881,38 @@ a {
 }
 
 @media screen and (max-width: 992px) {
+     /* organic-product */
+     .og-main .og-main-part-1 .og-main-img-first {
+        position: absolute;
+        width: 33%;
+        height: 273px;
+        bottom: 0px;
+        right: 10px;
+    }
+
+
+    .og-main .og-main-part-1 .og-main-img-second {
+        position: absolute;
+        width: 24%;
+        height: 158px;
+        bottom: 49px;
+        right: -31px;
+        z-index: 97;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-third {
+        position: absolute;
+        width: 34%;
+        height: 214px;
+        bottom: 82px;
+        right: -10px;
+        z-index: 98;
+    }
+
+    .og-main .og-main-part-1 .og-main-text .og-main-sy p {
+        padding: 10px 259px 0px 30px;
+    }
+
     .card-text-heading {
         font-size: calc(1rem + 1vw);
     }
@@ -770,6 +987,36 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+    .og-main .og-main-part-1 .og-main-img-first {
+        position: absolute;
+        width: 37%;
+        height: 249px;
+        bottom: 0px;
+        right: 10px;
+    }
+    .og-main .og-main-part-1 .og-main-img-second {
+        position: absolute;
+        width: 26%;
+        height: 132px;
+        bottom: 49px;
+        right: -40px;
+        z-index: 97;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-third {
+        position: absolute;
+        width: 40%;
+        height: 183px;
+        bottom: 70px;
+        right: -19px;
+        z-index: 98;
+    }
+
+        .og-main .og-main-part-1
+        .og-main-text
+        .og-main-sy p{
+            padding: 10px 130px 0px 30px;
+        }
     .mt-bottom-bar .mt-icon-list li {
         position: relative;
         margin: 0px 0 0 2px;
@@ -779,6 +1026,50 @@ a {
 }
 
 @media screen and (max-width: 576px) {
+    .og-main .og-main-part-1 .og-main-img-first {
+        position: absolute;
+        width: 171px;
+        height: 217px;
+        bottom: 0px;
+        right: 10px;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-second {
+        position: absolute;
+        width: 28%;
+        height: 118px;
+        bottom: 45px;
+        right: -40px;
+        z-index: 97;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-third {
+        position: absolute;
+        width: 40%;
+        height: 169px;
+        bottom: 47px;
+        right: -9px;
+        z-index: 98;
+    }
+
+.og-main .og-main-part-1 .og-main-img-fourth{
+    position: absolute;
+        z-index: 100;
+        width: 56.94px;
+        height: 50.74px;
+        left: -2px;
+        top: 100px;
+
+ }
+
+ .og-main .og-main-part-1 .og-main-img-fifth {
+    position: absolute;
+    z-index: 101;
+    width: 48.94px;
+    height: 49.74px;
+    bottom: -19px;
+    left: 45%;
+}
     /* footer  */
     .footer-tpc {
         display: flex;
