@@ -13,7 +13,7 @@
                        </form>
                    </div>
                    <div class="col hide-nav-top nav-custom-width p-0">
-                       <nav class="navbar navbar-expand-lg" >
+                       <nav class="navbar navbar-expand-lg">
                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                                aria-label="Toggle navigation">
@@ -146,47 +146,41 @@
    <!-- login Modal -->
    <div class="modal fade auth-popup" id="loginPopup" tabindex="-1" aria-labelledby="loginPopupLabel"
        aria-hidden="true">
-       <div class="modal-dialog  modal-lg modal-dialog-centered modal-dialog-scrollable">
+       <div class="modal-dialog    modal-dialog-centered modal-dialog-scrollable">
            <div class="modal-content">
 
                <div class="modal-body">
-                   <button class="auth-popup-close-button mb-5" type="button" data-bs-dismiss="modal"
+                   <button class="auth-popup-close-button mb-4" type="button" data-bs-dismiss="modal"
                        aria-label="Close">
-                       <img src="frontend/images/icons/icon-close.svg" alt="">
+                       <img src="frontend/images/icons/icon-close.svg" style="width: 51px;" alt="">
                    </button>
-
                    <div class="auth-popup-body">
-
-                       <h3 class="text-pink h2 font-body mb-5">
+                       <h4 class="text-pink  font-body my-4">
                            Log in/create account
-                       </h3>
+                       </h4>
                        <form action="">
-
-                           <div class="input-group phone-number-arrow mb-5">
+                           <div class="input-group phone-number-arrow mb-4">
                                <input type="text" class="form-control" placeholder="enter your mobile number*">
                                <button class="input-group-text">
                                    <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </form>
-                       <div class="h4 mb-5">
-                           or connect with`
+                               </button>
+                           </div>
+                       </form>
+                       <div class=" mb-4">
+                           or connect with
                        </div>
-                       <div class="d-flex flex-wrap justify-content-around ">
-                           <a href="" class="social-button px-3 py-2 mb-5">
+                       <div class="d-flex flex-wrap justify-content-evenly ">
+                           <a href="" class="social-button px-3 py-2 mb-4">
                                <img src="frontend/images/icons/icon-fb.png" class="pe-3" alt="">
                                facebook
                            </a>
-                           <a href="" class="social-button px-3 py-2 mb-5">
+                           <a href="" class="social-button px-3 py-2 mb-4">
                                <img src="frontend/images/icons/icon-google.png" class="pe-3" alt="">
                                google
                            </a>
                        </div>
                    </div>
-
-
                </div>
-
            </div>
        </div>
    </div>
@@ -216,17 +210,21 @@
 
        .auth-popup-body {
            background: #FFFFFF;
-           box-shadow: 11px 16px 21px 2px rgba(0, 0, 0, 0.13);
+           box-shadow: 0 0 8px 7px rgb(0 0 0 / 15%);
            border-radius: 15px;
-           padding: 4em;
+           padding: 2em;
            color: #979797;
        }
 
        @media (max-width: 992px) {
            .auth-popup-body {
-               padding: 4em 1em;
+               padding: 2em 1em;
 
            }
+       }
+
+       .social-button img {
+           height: 2em;
        }
 
        .social-button {
@@ -237,7 +235,7 @@
            justify-content: center;
            color: #979797;
            font-weight: 500;
-           font-size: 20px;
+           font-size: 1em;
        }
 
        .phone-number-arrow {
@@ -248,11 +246,12 @@
            padding-bottom: 5px;
        }
 
-       .phone-number-arrow input{
-        background: none;
+       .phone-number-arrow input {
+           background: none;
        }
+
        .phone-number-arrow * {
-           font-size: 1.4em;
+           font-size: 1em;
            border: none;
        }
 
@@ -263,7 +262,6 @@
            justify-content: center;
            width: 2em;
            height: 2em;
-
            background: #EC268F;
            color: white
        }
