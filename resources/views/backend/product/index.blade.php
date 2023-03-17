@@ -27,44 +27,27 @@
 
                     </div>
                     <div class="row">
-                        {{-- <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12 mb-2">
-                            <div class="">
-                                <form class="form-inline row px-4 pa_form_responsive" action="{{ route('backend.category.index') }}" method="GET">
-                                    <input class="form-control form-control-sm pa_form_input" type="text"
-                                        placeholder="Search By MRD/Name/Mobile" name="q"
-                                        value="{{ request('q') ?? '' }}" minlength="3" maxlength="40">
-                                    <input type="submit" value="Search" class="btn btn-success  ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn_size pa_search_btn">
-                                </form>
-                                @if ($errors->has('q'))
-                                    <div class="text-danger" role="alert">{{ $errors->first('q') }}
-                                    </div>
-                                @endif
-                            </div>
-                        </div> --}}
-                        <div class="col-xl-7 col-lg-4 col-md-12 col-sm-12 d-flex row mb-2">
-                            <div class="row pl-2">
-                                <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 mt-2">
-                                    <form class="form-inline row app_form" action="{{ route('backend.product.index') }}" method="GET">
-                                        <input class="form-control form-control-sm app_form_input" type="text"
-                                            placeholder="Name/Sku" name="q" value="{{ request('q') ?? '' }}"
-                                            minlength="3" maxlength="40">
-                                        <input type="submit" value="Search" class="btn btn-success ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
-                                    </form>
-                                    @if ($errors->has('q'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('q') }}
-                                        </div>
-                                    @endif
+                        <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 mt-2">
+                            <form class="form-inline row app_form" action="{{ route('backend.product.index') }}"
+                                method="GET">
+                                <input class="form-control form-control-sm app_form_input" type="text"
+                                    placeholder="Name/Sku" name="q" value="{{ request('q') ?? '' }}" minlength="3"
+                                    maxlength="40">
+                                <input type="submit" value="Search"
+                                    class="btn btn-success ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
+                            </form>
+                            @if ($errors->has('q'))
+                                <div class="text-danger" role="alert">{{ $errors->first('q') }}
                                 </div>
-                            </div>
+                            @endif
                         </div>
-
-                        <div class="align-items-center col-xl-5 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
+                        <div
+                            class="align-items-center col-xl-5 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
                             <a href="{{ route('backend.product.create') }}" name="txt"
                                 class="btn btn-primary mt-2 ml-3 ">
                                 Add Product
                             </a>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -89,7 +72,7 @@
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $products) }}</td>
                                             <td>{{ $product->name }}</td>
-                                            <td>{{ $product->brand ? $product->brand->name : '---'  }}</td>
+                                            <td>{{ $product->brand ? $product->brand->name : '---' }}</td>
                                             <td>{{ $product->category->name }}</td>
                                             <td>{{ $product->subCategory ? $product->subCategory->name : '---' }}</td>
                                             <td class="text-center">
@@ -112,7 +95,7 @@
                                                             href="{{ route('backend.product.show', $product->id) }}">View</a>
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.product.edit', $product->id) }}">Edit</a>
-                                                            <a class="dropdown-item"
+                                                        <a class="dropdown-item"
                                                             href="{{ route('backend.product.destroy', $product->id) }}">Delete</a>
                                                     </div>
                                                 </div>
@@ -141,7 +124,7 @@
         </div>
     </div>
 
-        @endsection
-        @section('js')
+@endsection
+@section('js')
 
-        @endsection
+@endsection
