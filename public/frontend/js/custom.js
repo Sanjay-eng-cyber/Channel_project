@@ -2,11 +2,13 @@ jQuery('.skin-sliderlg').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 0,
+    autoplaySpeed: 5000,
     speed: 7000,
     pauseOnHover: false,
-    cssEase: 'linear',
+    cssEase: 'ease',
     arrows: false,
+    ltr: false, // set rtl option to false
+
     responsive: [
         {
             breakpoint: 1400,
@@ -15,49 +17,11 @@ jQuery('.skin-sliderlg').slick({
             }
           },
         {
-            breakpoint: 1200,
+            breakpoint: 1250,
             settings: {
               slidesToShow: 4,
             }
           },
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 3,
-          }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 2,
-            }
-          },
-        {
-          breakpoint: 599,
-          settings: {
-            slidesToShow: 2,
-          }
-        },
-        {
-          breakpoint: 479,
-          settings: {
-            slidesToShow: 1,
-          }
-        }
-    ],
-    afterChange: function(slick, currentSlide) {
-        // Hide all slides except the active one
-        $('.slider div').not('.slick-active').hide();
-      }
-});
-
-
-// fragrances slider
-jQuery('.fragrances').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-
         {
           breakpoint: 1024,
           settings: {
@@ -77,13 +41,75 @@ jQuery('.fragrances').slick({
           }
         },
         {
-          breakpoint: 479,
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+
+          }
+        }
+    ],
+
+});
+
+
+// fragrances slider
+jQuery('.fragrances').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
+
+        {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+            }
+          },
+
+        {
+          breakpoint: 320,
           settings: {
             slidesToShow: 1,
           }
         }
     ]
 });
+
+
+
+
+
+
+// jQuery('.organic-product-slider').slick({
+//     slidesToShow: 2,
+//     arrows: false,
+//     responsive: [
+//       {
+//         breakpoint: 1200,
+//         settings: {
+//           slidesToShow: 2,
+//         }
+//       },
+//       {
+//         breakpoint: 768,
+//         settings: {
+//           slidesToShow: 1,
+//         }
+//       },
+//       {
+//         breakpoint: 320,
+//         settings: {
+//           slidesToShow: 1,
+//         }
+//       }
+//     ]
+//   });
+
 
 
 // home decor slider

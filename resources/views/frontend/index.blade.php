@@ -152,9 +152,13 @@
                                                             src="frontend/images/products/skin/sk2.png"
                                                             alt="image description"></a>
 
+                                                            <button type="button" class="like-btn-skin btn">
+                                                                <i class="far fa-heart"></i>
+                                                            </button>
+
                                                             <ul class="links skin-text-desc py-2 px-3">
                                                                 <div class="card-title  m-0 text-center pro-head ">
-                                                                    Zara BEST PERFUMES
+                                                                    <h4 class=""> Zara Best Perfumes</h4>
                                                                 </div>
                                                                    <p class="card-text text-center">
                                                                     treat yourself with the best in skincare
@@ -186,7 +190,7 @@
                         <div id="skinlatest">
                             <!-- tabs slider start here -->
                             <div class="skin-sliderlg">
-                                @for ($i = 1; $i < 6; $i++)
+                                @for ($i = 1; $i < 7; $i++)
                                     <!-- slide start here -->
                                     <div class="slide skin-slide">
                                         <!-- mt product1 large start here -->
@@ -198,16 +202,20 @@
                                                                 src="frontend/images/products/skin/sk1.png"
                                                                 alt="image description"></a>
 
+                                                                <button type="button" class="like-btn-skin btn">
+                                                                    <i class="far fa-heart"></i>
+                                                                </button>
+
                                                                 <ul class="links skin-text-desc py-2 px-3">
                                                                     <div class="card-title  m-0 text-center pro-head ">
-                                                                        Zara BEST PERFUMES
+                                                                        <h4 class=""> Zara Best Perfumes</h4>
                                                                     </div>
                                                                        <p class="card-text text-center">
                                                                         treat yourself with the best in skincare
                                                                        </p>
 
 
-                                                                       <button type="button" class="btn btn-light">
+                                                                       <button type="button" class="btn btn-light sk-btn">
                                                                       <a href="" class="p-0  text-black">
                                                                         Shop Nov
                                                                       </a>
@@ -231,7 +239,7 @@
                         <div id="skinbestseller">
                             <!-- tabs slider start here -->
                             <div class="skin-sliderlg">
-                                @for ($i = 1; $i < 6; $i++)
+                                @for ($i = 1; $i < 7; $i++)
                                     <!-- slide start here -->
                                     <div class="slide skin-slide">
                                         <!-- mt product1 large start here -->
@@ -243,16 +251,20 @@
                                                                 src="frontend/images/products/skin/sk2.png"
                                                                 alt="image description"></a>
 
+                                                                <button type="button" class="like-btn-skin btn">
+                                                                    <i class="far fa-heart"></i>
+                                                                </button>
+
                                                                 <ul class="links skin-text-desc py-2 px-3">
                                                                     <div class="card-title  m-0 text-center pro-head ">
-                                                                        Zara BEST PERFUMES
+                                                                        <h4 class=""> Zara Best Perfumes</h4>
                                                                     </div>
                                                                        <p class="card-text text-center">
                                                                         treat yourself with the best in skincare
                                                                        </p>
 
 
-                                                                       <button type="button" class="btn btn-light">
+                                                                       <button type="button" class="btn btn-light sk-btn">
                                                                       <a href="" class="p-0  text-black">
                                                                         Shop Nov
                                                                       </a>
@@ -432,6 +444,76 @@
     </section>
 
 
+
+
+    {{-- organic-product slider --}}
+
+    <section class="py-4">
+        <div class="container raeesh og-main" style="">
+            <div class="row">
+                <div class="col-md-12 col-lg-6 raeesh1 og-main-part-1">
+                    <img src="frontend/images/organic-product/og-1.png" alt="" class="og-main-img-first"
+                    >
+
+
+                    <div class="organic-product-slider raeesh2 og-main-card">
+                            <div class="text raeesh4 og-main-text" >
+                                <div class="raeesh5 og-main-sy">
+                                    <h4 class="pro-head">pure and organic products </h4>
+                                    <p style="font-weight: 300;">
+                                        Enhance your self-care routine with<br/>
+                                        our premium personal care products.
+                                    </p>
+                                </div>
+                                <div class="raeesh6 og-main-button">
+                                    <button type="button" class="oganic-button" >
+                                        <a href="">
+                                            Shop Now
+                                        </a>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-6" style="">
+
+                </div>
+            </div>
+          {{-- <div class="organic-product-slider">
+            @for ($i = 0; $i < 5; $i++)
+              <div class="organic-product-slider-card" style="background: rgba(250, 227, 198, 1);margin-left:70px;">
+                <div class="text">
+                  <div>
+                    <h4>pure and organic products </h4>
+                    <p>Enhance your self-care routine with <br/>
+                      our premium personal care products.</p>
+                  </div>
+                  <div>
+                    <button type="button" class="">
+                     <a href="">
+                        Shop Now
+                     </a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            @endfor
+          </div> --}}
+        </div>
+</section>
+
+
+
+
+
+
+
+
+
+
     <section>
         <div class="container">
             <h2 class="text-orange text-center">
@@ -462,6 +544,74 @@
 
         </div>
     </section>
+
+
+
+  <!-- F Promo Box of the Page -->
+<section>
+  <aside class="f-promo-box dark">
+    <div class="container divider">
+        <div class="row row-cols-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 ">
+            <div class="col mt-paddingbottomsm ft-svg-class-1">
+                <!-- F Widget Item of the Page -->
+                <div class="f-widget-item ft-svg-sub-class-1">
+                    <span class="widget-icon ft-svg-child-1">
+                        <img src="{{ asset('frontend/images/products/footer-icon/free-shipping.svg') }}"
+                            alt="">
+
+                    </span>
+                    <div class="txt-holder  ft-svg-child-2">
+                        <h1 class="f-promo-box-heading">FREE SHIPPING</h1>
+                        <p>Free shipping on all US order</p>
+                    </div>
+                </div>
+                <!-- F Widget Item of the Page end -->
+            </div>
+            <div class="col mt-paddingbottomsm ft-svg-class-2">
+                <!-- F Widget Item of the Page -->
+                <div class="f-widget-item ft-svg-sub-class-2">
+                    <span class="widget-icon ft-svg-child-1">
+                        <img src="{{ asset('frontend/images/products/footer-icon/support.svg') }}" alt="">
+                    </span>
+                    <div class="txt-holder ft-svg-child-2">
+                        <h1 class="f-promo-box-heading">SUPPORT 24/7</h1>
+                        <p>We support 24 hours a day</p>
+                    </div>
+                </div>
+                <!-- F Widget Item of the Page -->
+            </div>
+            <div class="col mt-paddingbottomxs ft-svg-class-3">
+                <!-- F Widget Item of the Page -->
+                <div class="f-widget-item ft-svg-sub-class-3">
+                    <span class="widget-icon ft-svg-child-1">
+                        <img src="{{ asset('frontend/images/products/footer-icon/gift-card.svg') }}"
+                            alt="">
+                    </span>
+                    <div class="txt-holder ft-svg-child-2">
+                        <h1 class="f-promo-box-heading">GIFT CARDS</h1>
+                        <p>Give perfect gift</p>
+                    </div>
+                </div>
+                <!-- F Widget Item of the Page -->
+            </div>
+            <div class="col">
+                <!-- F Widget Item of the Page -->
+                <div class="f-widget-item ft-svg-class-4">
+                    <span class="widget-icon ft-svg-child-1">
+                        <img src="{{ asset('frontend/images/products/footer-icon/payment.svg') }}" alt="">
+                    </span>
+                    <div class="txt-holder ft-svg-child-2">
+                        <h1 class="f-promo-box-heading">PAYMENT 100% SECURE</h1>
+                        <p>Payment 100% secure</p>
+                    </div>
+                </div>
+                <!-- F Widget Item of the Page -->
+            </div>
+        </div>
+    </div>
+ </aside>
+</section>
+
 @endsection
 @section('js')
     <script>
