@@ -4,119 +4,97 @@
 
     {{-- first slider slider --}}
     <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <!-- banner frame start here -->
-                    <h2 class="text-red main-head pt-4 pb-3">#Bestseller of channel</h2>
+      <div class="container">
+        <div class="row main-group-card">
+            <h2 class="text-red main-head" style="padding: 30px 0px 25px 0px">#Bestseller of channel</h2>
 
-                    <div class="banner-frame toppadding-zero">
-                        <!-- banner 5 white start here -->
-                        <div class="banner-5 white wow fadeInLeft" data-wow-delay="0.6s">
-                            <img src="frontend/images/banner/ix1.png" alt="image description">
-                            <div class="holder">
-                                <div class="texts">
-                                    <strong class="title"></strong>
-                                    <h3><strong></strong> Collection</h3>
-                                    <p>Consectetur adipisicing elit. Beatae accusamus, optio, repellendus
-                                        inventore</p>
-                                    <span class="price-add">₹ 79.00</span>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-sm-7 col-md-7 col-lg-6 group-card-1">
+                <div class="card first-group-card">
+                    <img src="frontend/images/banner/ix1.png" class="first-group-img" alt="image description"
+                           >
+                    <div class="card-body text-center first-group-card-body"
+                           >
+                      <h3 class="card-title text-center font-head">Love Your Skin </h3>
+                      <p class="card-text text-center group-card-text-color">Treat Yourself With The Best In Skincare </p>
 
-                        <!-- banner 5 white end here -->
-                        <!-- banner 6 white start here -->
-                        <div class="banner-6 white wow fadeInRight banner-custome" data-wow-delay="0.6s">
-                            <div class="card" style="">
-                                <img src="frontend/images/banner/ix2.png" class="card-img-top m-0" alt="...">
-                                <div class="card-body mt-0"
-                                    style="background-color:#FB8CA5;padding:15px 20px 15px 20px;border-radius:0px 0px 26.6782px 26.6782px">
-                                    <h3 class="card-title m-0 text-center">
-                                        <strong class="text-center" style="color:black">
-                                            Love Your Hair
-                                        </strong>
-                                    </h3>
-                                    <p class="card-text text-center" style="color:black">
-                                        treat yourself with the best in haircare
-                                    </p>
-                                    <h4 class="text-center">
+                      <button type="button" class="text-center group-buutton-bg-disable">
+                        <a class=" d-flex gap-2" href="">
+                            <span class="group-card-shop-btn">Shop Now</span>
+                             <i class="fa fa-angle-right group-button-arrow"></i>
+                        </a>
+                     </button>
 
-                                        <a href="#" class="" style="color:black">
-                                            Shop More
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </h4>
-                                </div>
-                            </div>
+                    </div>
+                  </div>
 
-                        </div><!-- banner 5 white end here -->
-                        <!-- banner box two start here -->
-                        <div class="banner-box two">
-                            <!-- banner 7 right start here -->
-                            <div class="banner-7 right wow fadeInUp  banner-custome" data-wow-delay="0.6s">
-                                <div class="card" style="">
-                                    <img src="frontend/images/banner/ix3.jpg" class="card-img-top" alt="..."
-                                        style="border-radius: 26.6782px 26.6782px 0px 0px;">
-                                    <div class="card-body mt-0"
-                                        style="background-color:#F1D2AD;padding:8px 10px 8px 10px;border-radius:0px 0px 26.6782px 26.6782px">
-                                        <h3 class="card-title m-0 text-center">
-                                            <strong class="text-center" style="color:black">
-                                                Luxe Fragrances
-                                            </strong>
-                                        </h3>
-                                        <p class="card-text text-center" style="color:black">
-                                            indulge in premium perfumes
-                                        </p>
-                                        <h4 class="text-center">
-
-                                            <a href="#" class="" style="color:black">
-                                                Shop More
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- banner 8 start here -->
-                            <div class="banner-8 wow fadeInDown " data-wow-delay="0.6s">
-
-
-                                <div class="card" style="">
-                                    <img src="frontend/images/banner/ix4.jpg" class="card-img-top" alt="..."
-                                        style="border-radius: 26.6782px 26.6782px 0px 0px;">
-                                    <div class="card-body mt-0"
-                                        style="background-color:#EBB579;padding:8px 10px 8px 10px;border-radius:0px 0px 26.6782px 26.6782px">
-                                        <h3 class="card-title m-0 text-center">
-                                            <strong class="text-center" style="color:black">
-                                                Home Decor
-                                            </strong>
-                                        </h3>
-                                        <p class="card-text text-center" style="color:black">
-                                            My love language
-                                        </p>
-                                        <h4 class="text-center">
-
-                                            <a href="#" class="" style="color:black">
-                                                Shop More
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- banner 8 start here -->
-                        </div>
-                    </div><!-- banner frame end here -->
-                    <!-- banner frame start here -->
 
                 </div>
+            <div class="col-sm-5 col-md-5 col-lg-3 group-card-2">
+                <div class="card second-group-card" >
+                    <img src="frontend/images/banner/ix2.png" class="card-img-top m-0 card second-group-img" alt="...">
+                    <div class="card-body text-center  second-group-card-body">
+                            <h4 class="card-title text-center font-head">Love Your Hair</h4>
+                            <p class="card-text group-card-text-color">
+                                treat yourself with the best in haircare
+                            </p>
+
+                        <button type="button" class="text-center group-buutton-bg-disable">
+                            <a class=" d-flex gap-2" href="">
+                                <span class="group-card-shop-btn">Shop Now</span>
+                                <i class="fa fa-angle-right group-button-arrow"></i>
+                            </a>
+                        </button>
+                    </div>
+                  </div>
             </div>
+            <div class="col-md-12 col-md-12  col-lg-3 group-card-3 gap-3 ">
+                <div class="card third-group-card">
+                    <img src="frontend/images/banner/ix3.jpg" class="card-img-top third-group-card-img" alt="...">
+                    <div class="card-body text-center third-group-card-body"
+
+                    >
+                    <h4 class="card-title text-center font-head">Luxe Fragrances</h4>
+
+                        <p class="card-text group-card-text-color">
+                            indulge in premium perfumes
+                      </p>
+
+
+                      <button type="button" class="text-center group-buutton-bg-disable">
+                        <a class=" d-flex gap-2" href="">
+                            <span class="group-card-shop-btn">Shop Now</span>
+                             <i class="fa fa-angle-right group-button-arrow"></i>
+                        </a>
+                     </button>
+
+                    </div>
+                </div>
+
+                <div class="card fourth-group-card">
+                    <img src="frontend/images/banner/ix4.jpg" class="card-img-top fourth-group-img" alt="..."
+                                        style="border-radius: 26.6782px 26.6782px 0px 0px;">
+                    <div class="card-body text-center fourth-group-card-body"
+                   >
+                   <h4 class="card-title text-center font-head">Home Decor</h4>
+
+
+                        <p class="card-text group-card-text-color">
+                            indulge in premium perfumes
+                      </p>
+
+                      <button type="button" class="text-center group-buutton-bg-disable">
+                        <a class=" d-flex gap-2" href="">
+                            <span class="group-card-shop-btn">Shop Now</span>
+                             <i class="fa fa-angle-right group-button-arrow"></i>
+                        </a>
+                     </button>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
+      </div>
     </section>
 
     {{-- skin slider with latest & best seller --}}
