@@ -684,9 +684,11 @@ a {
 
 /* organic product */
 /* style="padding: 40px 0px 30px 35px" */
+
 .og-main
 .og-main-part-1{
     position: relative;
+    isolation: isolate;
 }
 
 .og-main
@@ -701,8 +703,32 @@ a {
     height: 309px;
     bottom: 0px;
     right: 10px;
+    z-index: 99;
 
 }
+
+
+
+.og-main .og-main-part-1 .og-main-img-second{
+    position: absolute;
+    width: 26%;
+    height: 161px;
+    bottom: 49px;
+    right: -56px;
+    z-index: 97;
+
+ }
+
+
+.og-main .og-main-part-1 .og-main-img-third{
+    position: absolute;
+    width: 36%;
+    height: 224px;
+    bottom: 68px;
+    right: -5px;
+    z-index: 98;
+
+ }
 
 .og-main .og-main-card .og-main-button button{
  background-color:rgba(236, 38, 143, 1);
@@ -724,7 +750,7 @@ a {
 
 .og-main .og-main-part-1
 .og-main-text
-.og-main-sy h4
+.og-main-sy h3
 {
     padding: 40px 0px 0px 30px;
     color:rgba(236, 38, 143, 1);
@@ -735,7 +761,7 @@ a {
 .og-main .og-main-part-1
 .og-main-text
 .og-main-sy p{
-    padding: 0px 0px 0px 30px;
+    padding: 10px 0px 0px 30px;
 }
 
 .og-main .og-main-card .og-main-button {
@@ -749,13 +775,29 @@ a {
     /* organic-product */
     .og-main .og-main-part-1 .og-main-img-first {
         position: absolute;
-        width: 37%;
-        height: 294px;
+        width: 36%;
+        height: 273px;
         bottom: 0px;
         right: 10px;
     }
 
+    .og-main .og-main-part-1 .og-main-img-second {
+        position: absolute;
+        width: 26%;
+        height: 156px;
+        bottom: 49px;
+        right: -40px;
+        z-index: 97;
+    }
 
+    .og-main .og-main-part-1 .og-main-img-third {
+        position: absolute;
+        width: 38%;
+        height: 214px;
+        bottom: 70px;
+        right: -10px;
+        z-index: 98;
+    }
 
     #mt-footer .f-widget-newsletter .newsletter-form.form2 .form-control {
         width: 61%;
@@ -768,6 +810,38 @@ a {
 }
 
 @media screen and (max-width: 1200px) {
+    .og-main .og-main-part-1 .og-main-img-first {
+        position: absolute;
+        width: 39%;
+        height: 249px;
+        bottom: 0px;
+        right: 10px;
+
+    }
+    .og-main .og-main-part-1 .og-main-img-second {
+        position: absolute;
+        width: 24%;
+        height: 128px;
+        bottom: 49px;
+        right: -31px;
+        z-index: 97;
+
+    }
+
+    .og-main .og-main-part-1 .og-main-img-third {
+        position: absolute;
+        width: 37%;
+        height: 183px;
+        bottom: 60px;
+        right: -10px;
+        z-index: 98;
+    }
+
+    .og-main .og-main-part-1 .og-main-text .og-main-sy p {
+        padding: 10px 130px 0px 30px;
+    }
+
+
     #mt-footer .f-widget-newsletter .newsletter-form.form2 .form-control {
         width: 51%;
         height: 38px;
@@ -783,6 +857,38 @@ a {
 }
 
 @media screen and (max-width: 992px) {
+     /* organic-product */
+     .og-main .og-main-part-1 .og-main-img-first {
+        position: absolute;
+        width: 33%;
+        height: 273px;
+        bottom: 0px;
+        right: 10px;
+    }
+
+
+    .og-main .og-main-part-1 .og-main-img-second {
+        position: absolute;
+        width: 24%;
+        height: 158px;
+        bottom: 49px;
+        right: -31px;
+        z-index: 97;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-third {
+        position: absolute;
+        width: 34%;
+        height: 214px;
+        bottom: 82px;
+        right: -10px;
+        z-index: 98;
+    }
+
+    .og-main .og-main-part-1 .og-main-text .og-main-sy p {
+        padding: 10px 259px 0px 30px;
+    }
+
     .card-text-heading {
         font-size: calc(1rem + 1vw);
     }
@@ -857,6 +963,36 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+    .og-main .og-main-part-1 .og-main-img-first {
+        position: absolute;
+        width: 37%;
+        height: 249px;
+        bottom: 0px;
+        right: 10px;
+    }
+    .og-main .og-main-part-1 .og-main-img-second {
+        position: absolute;
+        width: 26%;
+        height: 132px;
+        bottom: 49px;
+        right: -40px;
+        z-index: 97;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-third {
+        position: absolute;
+        width: 40%;
+        height: 183px;
+        bottom: 70px;
+        right: -19px;
+        z-index: 98;
+    }
+
+        .og-main .og-main-part-1
+        .og-main-text
+        .og-main-sy p{
+            padding: 10px 130px 0px 30px;
+        }
     .mt-bottom-bar .mt-icon-list li {
         position: relative;
         margin: 0px 0 0 2px;
@@ -866,6 +1002,31 @@ a {
 }
 
 @media screen and (max-width: 576px) {
+    .og-main .og-main-part-1 .og-main-img-first {
+        position: absolute;
+        width: 171px;
+        height: 217px;
+        bottom: 0px;
+        right: 10px;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-second {
+        position: absolute;
+        width: 28%;
+        height: 118px;
+        bottom: 45px;
+        right: -40px;
+        z-index: 97;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-third {
+        position: absolute;
+        width: 40%;
+        height: 169px;
+        bottom: 47px;
+        right: -9px;
+        z-index: 98;
+    }
     /* footer  */
     .footer-tpc {
         display: flex;
