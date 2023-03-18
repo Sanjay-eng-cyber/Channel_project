@@ -245,10 +245,12 @@ class ProductController extends Controller
                 $media->delete();
             }
         }
-        $showcase_products = ShowcaseProduct::where('product_id', $id)->get();
-        foreach ($showcase_products as $showcase_product) {
-            $showcase_product->delete();
-        }
+        optional(ShowcaseProduct::where([['product_id', $id]])->delete());
+        optional(ProductAttribute::where([['product_id', $id]])->delete());
+        // $showcase_products = ShowcaseProduct::where('product_id', $id)->get();
+        // foreach ($showcase_products as $showcase_product) {
+        //     $showcase_product->delete();
+        // }
         if ($product->delete()) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Deleted Successfully']);
         }
