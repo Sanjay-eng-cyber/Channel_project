@@ -202,7 +202,7 @@
 
                             </div>
                             <div class="col-sm-6 py-2 profile-form-label-color">
-                                <select class="form-select-lg mb-3 profile-form-input-custome profile-f-l-color profile-box-s" aria-label=".form-select-lg example">
+                                <select class="form-select-lg mb-3 profile-form-input-custome profile-f-l-color" aria-label=".form-select-lg example">
                                   <option selected class="profile-f-l-color border-0">Home</option>
                                   <option value="1" class="profile-f-l-color">Office</option>
                                   <option value="2" class="profile-f-l-color">Other</option>
@@ -221,7 +221,7 @@
                     <div class="row">
                         <div class="col-sm-12 py-5 text-center">
                             <button type="submit" class="btn profile-btn-color">
-                                + Add address
+                                + Add Address
                             </button>
                         </div>
 
@@ -249,14 +249,6 @@
     background-color:rgba(236, 38, 143, 1);;
     border-color: rgba(236, 38, 143, 1);;
 }
-  .profile-box-s {
-        font-size: 18px;
-        color: #1c87c9;
-        background-color: #FFFFFF;
-        border-radius: 5px;
-        box-shadow: 0px 3.19365px 3.19365px rgba(0, 0, 0, 0.25);
-      }
-
 
         .profile-f-l-color {
             color: rgba(57, 53, 53, 0.34);
