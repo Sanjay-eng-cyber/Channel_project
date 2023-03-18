@@ -64,7 +64,7 @@
         <div class="container">
             <div class="row py-5 d-flex justify-content-center">
                 <div class="col-12 col-lg-6 ">
-                    <form class="p-5 profile-form-border" action="" method="post">
+                    <form class="p-4 profile-form-border" action="" method="post">
                         <h5 class="main-head text-red">Personal Information</h5>
                         <div class="row">
                             <div class="col-sm-6 py-2">
@@ -109,9 +109,9 @@
                         </div>
 
                     </form>
-                    <div class="py-4">
+                    <div class="py-3">
                     </div>
-                    <form class="p-5 profile-form-border" action="" method="post">
+                    <form class="p-4 profile-form-border" action="" method="post">
                         <h5 class="main-head text-red">Change Password</h5>
                         <div class="row">
                             <div class="col-sm-6 py-2">
@@ -141,83 +141,120 @@
                     </form>
                 </div>
 
-
-
                 <div class="col-12 col-lg-4 py-5 py-lg-0 py-xl-0 py-xxl-0">
-                    <form class="p-5 profile-form-border ">
 
-                        <h5 class="main-head text-red">Address</h5>
+                    <div class="profile-form-border p-4">
+                           <div class="row display: flex; align-items: center">
 
-                        <div class="form-group profile-form-group-star-name py-2">
-                            <input type="text" class="profile-form-input-custome" placeholder="Name*">
+                                    <div class="col-6 py-2">
+                                        <h5 class="main-head text-red">Address 1</h5>
+                                    </div>
 
-                        </div>
+                                    <div class="col-6 py-2">
+                                        <ul class="d-flex gap-4 list-unstyled">
+                                            <li>
+                                                <button type="button" class="btn btn-primary position-relative profile-s-bg-color">
+                                                   Home
+                                                    <span class="position-absolute top-0 start-100 translate-middle  bg-success border border-light rounded-circle profile-alert-icon" >
+                                                    <i class="fas fa-check" style="color:white"></i>
+                                                    <span class="visually-hidden">New alerts</span>
+                                                    </span>
+                                                </button>
 
+                                            </li>
+                                            <li>
+                                                <i class="far fa-trash-alt fa-1x profile-trash-icon" ></i>
+                                                <!-- alternate trash icon with red background color and circle border radius -->
+                                            </li>
 
-                        <div class="form-group  profile-form-group-star-pin-code py-2">
-                            <input type="text" class="profile-form-input-custome" placeholder="Pin Code*">
-                        </div>
+                                        </ul>
+                                    </div>
 
-                        <div class="form-group py-2">
-                            <input type="text" class=" profile-form-input-custome" placeholder="Enter name">
-                        </div>
+                                    <div class="col-12">
+                                        <h6 class="main-head">User name</h6>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto facere quaerat eaque pariatur aliquam a expedita illum aliquid cumque quae!
+                                        </p>
+                                    </div>
+                           </div>
+                    </div>
 
-                        <div class="form-group py-2">
-                            <input type="text" class=" profile-form-input-custome" placeholder="Address*">
-                        </div>
+                    <div class="py-3"></div>
 
-                        <div class="pt-5 pb-3">
-                            <hr class="m-0">
-                        </div>
+                    <div class="p-4 profile-form-border ">
+                        <form class="">
 
+                            <h5 class="main-head text-red">Address 2</h5>
 
-
-                        <div class="form-group py-2">
-                            <input type="text" class=" profile-form-input-custome" placeholder="Landmark">
-                        </div>
-
-                        <div class="form-group py-2">
-                            <input type="text" class=" profile-form-input-custome" placeholder="City">
-                        </div>
-
-                        <div class="form-group py-2">
-                            <input type="text" class=" profile-form-input-custome" placeholder="State">
-                        </div>
-
-                        <div class="form-group py-2">
-                            <input type="text" class=" profile-form-input-custome" placeholder="Country">
-                        </div>
-
-                        <div class="form-group py-2">
-                            <input type="text" class=" profile-form-input-custome" placeholder="Mobile No*">
-
-                        </div>
-
-
-
-                        <div class="row">
-                            <div class="col-sm-6 py-2">
-
-                                <label for="" class="profile-f-l-color"> Address Type</label>
+                            <div class="form-group profile-form-group-star-name py-2">
+                                <input type="text" class="profile-form-input-custome" placeholder="Name*">
 
                             </div>
-                            <div class="col-sm-6 py-2 profile-form-label-color">
-                                <select class="form-select-lg mb-3 profile-form-input-custome profile-f-l-color" aria-label=".form-select-lg example">
-                                  <option selected class="profile-f-l-color border-0">Home</option>
-                                  <option value="1" class="profile-f-l-color">Office</option>
-                                  <option value="2" class="profile-f-l-color">Other</option>
-                                </select>
+
+
+                            <div class="form-group  profile-form-group-star-pin-code py-2">
+                                <input type="text" class="profile-form-input-custome" placeholder="Pin Code*">
                             </div>
-                        </div>
+
+                            <div class="form-group py-2">
+                                <input type="text" class=" profile-form-input-custome" placeholder="Enter name">
+                            </div>
+
+                            <div class="form-group py-2">
+                                <input type="text" class=" profile-form-input-custome" placeholder="Address*">
+                            </div>
+
+                            <div class="pt-5 pb-3">
+                                <hr class="m-0">
+                            </div>
 
 
-                        <div class="col-sm-12 pt-4">
-                            <button type="submit" class="btn profile-btn-color">Save</button>
-                        </div>
 
-                    </form>
+                            <div class="form-group py-2">
+                                <input type="text" class=" profile-form-input-custome" placeholder="Landmark">
+                            </div>
+
+                            <div class="form-group py-2">
+                                <input type="text" class=" profile-form-input-custome" placeholder="City">
+                            </div>
+
+                            <div class="form-group py-2">
+                                <input type="text" class=" profile-form-input-custome" placeholder="State">
+                            </div>
+
+                            <div class="form-group py-2">
+                                <input type="text" class=" profile-form-input-custome" placeholder="Country">
+                            </div>
+
+                            <div class="form-group py-2">
+                                <input type="text" class=" profile-form-input-custome" placeholder="Mobile No*">
+
+                            </div>
 
 
+
+                            <div class="row">
+                                <div class="col-sm-6 py-2">
+
+                                    <label for="" class="profile-f-l-color"> Address Type</label>
+
+                                </div>
+                                <div class="col-sm-6 py-2 profile-form-label-color">
+                                    <select class="form-select-lg mb-3 profile-form-input-custome profile-f-l-color" aria-label=".form-select-lg example">
+                                    <option selected class="profile-f-l-color border-0">Home</option>
+                                    <option value="1" class="profile-f-l-color">Office</option>
+                                    <option value="2" class="profile-f-l-color">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-12 pt-4">
+                                <button type="submit" class="btn profile-btn-color">Save</button>
+                            </div>
+
+                        </form>
+                    </div>
                     <div class="row">
                         <div class="col-sm-12 py-5 text-center">
                             <button type="submit" class="btn profile-btn-color">
@@ -226,8 +263,6 @@
                         </div>
 
                     </div>
-
-
 
                 </div>
             </div>
@@ -239,6 +274,25 @@
     {{-- we will move this styles in css file before production --}}
 
     <style>
+.profile-s-bg-color{
+    background-color: rgba(236, 38, 143, 0.4);
+    color: black;
+    border: 0.782313px solid rgba(236, 38, 143, 0.4);
+border-radius: 637.585px;
+}
+.profile-s-bg-color:hover{
+    background-color: rgba(236, 38, 143, 0.4);
+    color: black;
+    border: 0.782313px solid rgba(236, 38, 143, 0.4);
+
+}
+.profile-trash-icon{
+  background-color: rgba(236, 38, 143, 0.4); border-radius: 50%; padding: 10px; width:15px;height:15px;
+}
+.profile-alert-icon{
+    border-radius: 50%;
+    height:24px;width:24px;
+}
  .profile-btn-color {
             background: rgba(236, 38, 143, 1);
             color: #fff;
