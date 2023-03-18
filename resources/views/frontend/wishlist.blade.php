@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title', 'Profile')
+@section('title', 'Wishlist |')
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
