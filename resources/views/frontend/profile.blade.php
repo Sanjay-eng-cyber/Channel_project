@@ -207,10 +207,7 @@
                                   <option value="1" class="profile-f-l-color">Office</option>
                                   <option value="2" class="profile-f-l-color">Other</option>
                                 </select>
-                              </div>
-
-
-
+                            </div>
                         </div>
 
 
@@ -220,9 +217,22 @@
 
                     </form>
 
+
+                    <div class="row">
+                        <div class="col-sm-12 py-5 text-center">
+                            <button type="submit" class="btn profile-btn-color">
+                                + Add address
+                            </button>
+                        </div>
+
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
+
 
     </section>
 
