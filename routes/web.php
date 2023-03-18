@@ -23,6 +23,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.profile');
     })->name('profile');
 
+    Route::get('/wishlist', function () {
+        return view('frontend.wishlist');
+    })->name('wishlist');
+
     Route::get('/about-us', function () {
         return view('frontend/layouts/about-us');
     })->name('about');
