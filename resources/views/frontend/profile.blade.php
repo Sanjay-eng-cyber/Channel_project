@@ -229,8 +229,16 @@
     {{-- we will move this styles in css file before production --}}
 
     <style>
+ .profile-btn-color {
+            background: rgba(236, 38, 143, 1);
+            color: #fff;
 
-
+        }
+.profile-btn-color:hover {
+    color:#FFFFFF;
+    background-color:rgba(236, 38, 143, 1);;
+    border-color: rgba(236, 38, 143, 1);;
+}
   .profile-box-s {
         font-size: 18px;
         color: #1c87c9;
@@ -238,11 +246,7 @@
         border-radius: 5px;
         box-shadow: 0px 3.19365px 3.19365px rgba(0, 0, 0, 0.25);
       }
-        .profile-btn-color {
-            background: rgba(236, 38, 143, 1);
-            color: #fff;
 
-        }
 
         .profile-f-l-color {
             color: rgba(57, 53, 53, 0.34);
