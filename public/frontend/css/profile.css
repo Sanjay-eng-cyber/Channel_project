@@ -214,7 +214,8 @@
 .wishlist-main .wishlist-main-out
 .wishlist-main-in
 .wishlist-main-in-img img{
-   width:170px;border: 0.646341px solid rgba(0, 0, 0, 0.6);
+   width:170px;
+   border: 0.646341px solid rgba(236, 38, 143, 0.6);;
     border-radius: 9.69512px;margin: auto;
 }
 
