@@ -317,6 +317,21 @@
 
 
 
-
 /* end wishlist  page */
+
+
+/* order page  */
+.order-main .order-main-li-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 66%;
+    border-bottom: 1px solid #000000;;
+}
+.order-main .order-main-li-section{
+    padding-top: 21px;
+}
+
+/*end order page  */
+
 
