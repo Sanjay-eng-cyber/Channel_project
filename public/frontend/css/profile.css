@@ -332,6 +332,119 @@
     padding-top: 21px;
 }
 
+
+.my-order-main .my-order-main-out{
+    background: #FFFFFF;
+    box-shadow: 3.23171px 5.81707px 9.69512px rgba(0, 0, 0, 0.16);
+    border-radius: 9.69512px;
+    padding:15px 25px 12px 25px;
+}
+.my-order-main .my-order-main-out
+.my-order-main-in
+.my-order-main-in-img img{
+   width:170px;
+   border: 0.646341px solid rgba(236, 38, 143, 0.6);;
+    border-radius: 9.69512px;margin: auto;
+}
+
+.my-order-main .my-order-main-out
+.my-order-main-in
+.my-order-main-desc
+{
+   padding-top: 15px;
+}
+
+.my-order-main .my-order-main-out
+.my-order-main-in
+.my-order-main-desc h5
+{
+    font-size: 1.1rem;
+}
+
+.my-order-main .my-order-main-out
+.my-order-main-in
+.my-order-main-desc .list-unstyled .price {
+    font-size: 1.02rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.my-order-main .my-order-main-out
+.my-order-main-in
+.my-order-main-desc .list-unstyled .status {
+        font-size: 1.02rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color:rgba(30, 186, 17, 1);
+
+}
+
+
+.my-order-main .my-order-main-out
+.my-order-main-in .my-order-main-in-btn{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.my-order-main .my-order-main-out
+.my-order-main-in .my-order-main-in-btn .add-pro-btn{
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    color: black;
+    background: #EBB579;
+box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+border-radius: 3px;
+}
+
+
+/*
+
+@media (max-width: 1400px) {
+    .wishlist-main .wishlist-main-out
+    .wishlist-main-in .wishlist-main-in-btn .add-p-btn{
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+}
+
+.wishlist-main .wishlist-main-out
+.wishlist-main-in .wishlist-main-in-btn .add-pd-btn{
+    padding-left: 1.5rem;
+    padding-right: 1.3rem;
+
+}
+
+}
+
+
+@media (max-width: 1200px) {
+    .wishlist-main .wishlist-main-out
+    .wishlist-main-in .wishlist-main-in-btn .add-p-btn{
+        padding-left: 2rem;
+        padding-right: 2rem;
+}
+
+.wishlist-main .wishlist-main-out
+.wishlist-main-in .wishlist-main-in-btn{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wishlist-main .wishlist-main-out
+.wishlist-main-in .wishlist-main-in-btn .add-pd-btn{
+    padding-left: 2.3rem;
+    padding-right: 2.8rem;
+}
+} */
+
+
+
+
 /*end order page  */
 
 
