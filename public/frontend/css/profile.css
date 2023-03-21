@@ -384,6 +384,12 @@
     color: rgba(30, 186, 17, 1);
 }
 
+.my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .arriving-or-btn {
+    font-size: 15px;
+    color:black;
+   
+}
+
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .add-track-btn {
     padding-left: 2.7rem;
     padding-right: 2.8rem;
