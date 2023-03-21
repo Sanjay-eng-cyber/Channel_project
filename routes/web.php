@@ -35,6 +35,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.not-yet-shipped');
     })->name('not-yet-shipped');
 
+    Route::get('/buy-again', function () {
+        return view('frontend.buy-again');
+    })->name('buy-again');
+
     Route::get('/about-us', function () {
         return view('frontend/layouts/about-us');
     })->name('about');
