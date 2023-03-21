@@ -49,6 +49,13 @@ a:hover {
     color: white;
 }
 
+.text-green{
+    color: rgba(30, 186, 17, 1);
+}
+
+.no-bullet {
+    list-style: none;
+  }
 .text-black {
     color: black;
 }

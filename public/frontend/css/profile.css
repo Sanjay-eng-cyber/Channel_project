@@ -227,6 +227,7 @@
 
 /* wishlist  page */
 
+
 .wishlist-main .wishlist-main-out {
     background: #ffffff;
     box-shadow: 3.23171px 5.81707px 9.69512px rgba(0, 0, 0, 0.16);
@@ -387,7 +388,7 @@
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .arriving-or-btn {
     font-size: 15px;
     color:black;
-   
+
 }
 
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .add-track-btn {
@@ -402,6 +403,15 @@
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .add-orderDetails-btn {
     padding-left: 2.2rem;
     padding-right: 2.6rem;
+    color: black;
+    background: #ebb579;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+}
+
+.my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .add-review-btn {
+    padding-left: 2rem;
+    padding-right: 2rem;
     color: black;
     background: #ebb579;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
