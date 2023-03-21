@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
 
 <link rel="stylesheet" href="{{ asset('frontend/css/fontawesome.min.css') }}">
-
+<link rel="shortcut icon" href="{{ asset('frontend/images/favicon.png') }}" type="image/x-icon">
 <!-- include the site stylesheet -->
 <link rel="stylesheet" href="{{ asset('frontend/css/animate.css') }}">
 <!-- include the site stylesheet -->
