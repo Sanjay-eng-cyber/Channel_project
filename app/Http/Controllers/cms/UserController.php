@@ -46,9 +46,9 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $userPrimaryAddress =  $user->userAddress->where('type','primary')->first();
-        $userOtherAddress =  $user->userAddress->where('type','!=','primary')->first();
+        $userOtherAddress =  $user->userAddress()->where('type','!=','primary')->get();
         $orders = $user->orders()->latest()->paginate(10, ['*'], 'orders');
-        // dd($orders);
+      // dd($userOtherAddress);
         return view('backend.users.show', compact('user','userPrimaryAddress','userOtherAddress','orders'));
     }
 }

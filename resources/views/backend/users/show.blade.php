@@ -59,17 +59,21 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title"
-                                                        class="label-title">Address</label><br>
+                                                        class="label-title">Primary Address</label><br>
                                                     <p class="label-title">{{ $userPrimaryAddress->street_address }}</p>
                                                 </div>
                                             </div>
                                         @endif
+                                     {{-- @dd($userOtherAddress->street_address) --}}
                                         @if ($userOtherAddress)
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title"
-                                                        class="label-title">Address</label><br>
-                                                    <p class="label-title">{{ $userOtherAddress->street_address }}</p>
+                                                        class="label-title">Other Address</label><br>
+                                                        @foreach ($userOtherAddress as $address )
+                                                        <p class="label-title">{{ $address->street_address }}</p>
+                                                        @endforeach
+
                                                 </div>
                                             </div>
                                         @endif
