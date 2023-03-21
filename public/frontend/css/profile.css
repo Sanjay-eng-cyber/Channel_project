@@ -211,22 +211,36 @@
 }
 
 .menu-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 5em;
     height: 5em;
     border-radius: 10em;
-    padding: 1.2em;
+    padding: 0.5em;
     margin-bottom: 0.2em;
     background: #ffffff;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.52);
     transition: box-shadow 1s;
 }
-
+.profile-menu a.btn:hover,
+.profile-menu a.btn.active {
+    color: #ec268f;
+}
+.profile-menu a.btn.active .menu-icon {
+    box-shadow: 0px 0px 4px #ec268f;
+}
+.profile-menu a.btn.active .menu-icon svg {
+    fill: #ec268f;
+}
 .profile-menu a.btn:hover .menu-icon {
-    box-shadow: -2px -8px 16px 0px rgba(0, 0, 0, 0.52);
+    box-shadow: -2px -8px 16px 0px #ec268f99;
+}
+.profile-menu a.btn:hover .menu-icon svg {
+    fill: #ec268f99;
 }
 
 /* wishlist  page */
-
 
 .wishlist-main .wishlist-main-out {
     background: #ffffff;
@@ -310,9 +324,6 @@
         padding-left: 2.3rem;
         padding-right: 2.8rem;
     }
-
-
-
 }
 
 /* end wishlist  page */
@@ -350,7 +361,6 @@
     font-size: 1.1rem;
 }
 
-
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-desc p {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     font-size: 14px;
@@ -387,8 +397,7 @@
 
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .arriving-or-btn {
     font-size: 15px;
-    color:black;
-
+    color: black;
 }
 
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .add-track-btn {
@@ -418,7 +427,6 @@
     border-radius: 3px;
 }
 
-
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .add-pro-btn {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -428,9 +436,6 @@
     border-radius: 3px;
 }
 
-
-
-
 @media (max-width: 1200px) {
     .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn {
         display: flex;
@@ -438,7 +443,6 @@
         justify-content: center;
         align-items: flex-end;
     }
-
 }
 
 @media (max-width: 992px) {
@@ -449,15 +453,12 @@
         padding-left: 17px;
         padding-top: 15px;
     }
-
 }
-
 
 @media (max-width: 768px) {
     .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn {
         align-items: center;
     }
-
 }
 
 /*
