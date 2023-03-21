@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div class="info statbox widget box box-shadow" >
+            <div class="info statbox widget box box-shadow">
                 <div class="row widget-header">
                     <div class="col-md-11">
                         <div class="work-section">
@@ -50,28 +50,28 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Phone No.</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Phone
+                                                    No.</label><br>
                                                 <p class="label-title">{{ $user->phone }}</p>
                                             </div>
                                         </div>
                                         @if ($userPrimaryAddress)
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Address</label><br>
-                                                <p class="label-title">{{ $userPrimaryAddress->street_address }}</p>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title"
+                                                        class="label-title">Address</label><br>
+                                                    <p class="label-title">{{ $userPrimaryAddress->street_address }}</p>
+                                                </div>
                                             </div>
-                                        </div>
                                         @endif
                                         @if ($userOtherAddress)
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Address</label><br>
-                                                <p class="label-title">{{ $userOtherAddress->street_address }}</p>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title"
+                                                        class="label-title">Address</label><br>
+                                                    <p class="label-title">{{ $userOtherAddress->street_address }}</p>
+                                                </div>
                                             </div>
-                                        </div>
                                         @endif
                                     </div>
                                 </div>
@@ -83,6 +83,92 @@
             {{-- <div class="widget-content widget-content-area">
 
             </div> --}}
+            <div class="widget-content widget-content-area simple-tab">
+                <ul class="nav nav-tabs " id="simpletab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" id="orders-tab" data-toggle="tab" href="#orders" role="tab"
+                            aria-controls="orders" aria-selected="true">Orders</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="simpletabContent">
+                    <div class="tab-pane fade p-0" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                        <div class="table-responsive orders-table min-height-20em">
+                            <table class="table mb-4">
+                                <thead>
+                                    <tr>
+                                        <th>Sr no.</th>
+                                        {{-- <th>User</th> --}}
+                                        <th>Total Amount</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse($orders as $order)
+                                        <tr>
+                                            <td>{{ tableRowSrNo($loop->index, $orders) }}</td>
+                                            {{-- <td><a class="blue-col-a"
+                                                    href="{{ route('backend.user.show', $order->user_id) }}"
+                                                    target="target_blank">{{ $order->user->name }}</a></td> --}}
+                                            <td>{{ $order->total_amount }}</td>
+                                            <td>
+                                                @if ($order->status == 'initial')
+                                                    <label class="badge badge-primary">{{ $order->status }}</label>
+                                                @elseif ($order->status == 'failed')
+                                                    <label class="badge badge-danger">{{ $order->status }}</label>
+                                                @else
+                                                    <label class="badge badge-success">{{ $order->status }}</label>
+                                                @endif
+                                            </td>
+                                            <td>{{ $order->created_at }}</td>
+                                            <td class="text-center">
+                                                <div class="dropdown custom-dropdown">
+                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                        id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                            height="24" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                            <circle cx="12" cy="12" r="1"></circle>
+                                                            <circle cx="19" cy="12" r="1"></circle>
+                                                            <circle cx="5" cy="12" r="1"></circle>
+                                                        </svg>
+                                                    </a>
+
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                                        <a class="dropdown-item"
+                                                            href="{{ route('backend.order.show', $order->id) }}">View</a>
+                                                        {{-- <a class="dropdown-item"
+                                                            href="{{ route('backend.showcase.edit', $showcase->id) }}">Edit</a>
+                                                            <a class="dropdown-item"
+                                                            href="{{ route('backend.showcase.destroy', $showcase->id) }}">Delete</a> --}}
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="4">No Records Found</td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                            @if ($orders)
+                                <div class="pagination col-lg-12 mt-4">
+                                    <div class="col-md-12 text-center align-self-center">
+                                        <ul class="pagination text-center">
+                                            {{ $orders->withQueryString()->links('pagination::bootstrap-4') }}
+                                        </ul>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
@@ -103,8 +189,7 @@
     </script>
     <link type=" text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css" />
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}">
-    </script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}"></script>
     <script src="{{ asset('js/lg-zoom.min.js') }}"></script>
     {{-- <link rel="stylesheet" type=" text/css" href="{{ asset('css/lightgallery.css') }}">
         <script src="{{ asset('js/lightgallery.js') }}"></script> --}}
