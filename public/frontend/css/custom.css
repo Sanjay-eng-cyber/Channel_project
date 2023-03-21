@@ -52,7 +52,9 @@ a:hover {
 .text-green{
     color: rgba(30, 186, 17, 1);
 }
-
+.text-blue{
+    color:rgba(0, 175, 239, 1);
+}
 .no-bullet {
     list-style: none;
   }
