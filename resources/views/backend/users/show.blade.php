@@ -37,7 +37,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
-                                                    class="label-title">User Name</label><br>
+                                                    class="label-title">Name</label><br>
                                                 <p class="label-title">{{ $user->name }}</p>
                                             </div>
                                         </div>
@@ -55,6 +55,24 @@
                                                 <p class="label-title">{{ $user->phone }}</p>
                                             </div>
                                         </div>
+                                        @if ($userPrimaryAddress)
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Address</label><br>
+                                                <p class="label-title">{{ $userPrimaryAddress->street_address }}</p>
+                                            </div>
+                                        </div>
+                                        @endif
+                                        @if ($userOtherAddress)
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Address</label><br>
+                                                <p class="label-title">{{ $userOtherAddress->street_address }}</p>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

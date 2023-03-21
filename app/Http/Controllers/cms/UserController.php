@@ -45,6 +45,9 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        return view('backend.users.show', compact('user'));
+        $userPrimaryAddress =  $user->userAddress->where('type','primary')->first();
+        $userOtherAddress =  $user->userAddress->where('type','!=','primary')->first();
+        // dd($userPrimaryAddress);
+        return view('backend.users.show', compact('user','userPrimaryAddress','userOtherAddress'));
     }
 }
