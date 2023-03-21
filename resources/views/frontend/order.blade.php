@@ -81,7 +81,9 @@
                 <div class="col-lg-9 col-xl-6 col-xxl-5 order-main">
                         <ul class="list-unstyled order-main-li-section" >
                         <li class="cmc wishlist-order" style="border-bottom: 4px solid rgba(0, 175, 239, 1);">
-                            My Order
+                            <a href="#home">
+                                My Order
+                            </a>
                         </li>
                         <li class="cmc wishlist-ship">
                             Not Yet Shipped
@@ -107,12 +109,12 @@
                             <div class="col-sm-12  col-md-8 col-lg-8 col-xl-6  my-order-main-desc">
 
                                 <h5 class="main-head">Essence Long Lasting Eye Pencil</h5>
-                                <p style="font-size: 14px;opacity: 0.6;">essence Long Lasting Eye Pencil is a creamy and
+                                <p>essence Long Lasting Eye Pencil is a creamy and
                                     pigmented eye pencil that brightens and accentuates your eye more....</p>
 
-                                <ul class="list-unstyled d-flex gap-3 flex-column flex-lg-row">
+                                <ul class="list-unstyled d-flex gap-2 flex-column flex-lg-row">
                                    <li>
-                                    <ul class="gap-2 d-flex flex-row flex-lg-column  gap-lg-0" style="padding: 0px 0px 0px 17px;">
+                                    <ul class="gap-2 d-flex flex-row flex-lg-column flex-xl-column  gap-lg-1 justify-content-between" style="padding: 0px 0px 0px 17px;">
                                         <li>Expected Delivery</li>
                                         <li>19 March 2023</li>
                                     </ul>
@@ -120,7 +122,7 @@
 
                                    </li>
                                     <li class="status">
-                                        <ul class="gap-4 d-flex flex-row flex-lg-column  gap-lg-0">
+                                        <ul class="gap-2 d-flex flex-row flex-lg-column flex-xl-column  gap-lg-2 justify-content-between" style="padding: 0px 0px 0px 17px;">
                                             <li class="return-order">Return Order</li>
                                             <li class="cancel-order">Cancel Order</li>
                                         </ul>
@@ -139,6 +141,8 @@
                     </div>
                 </div>
             </div>
+
+
 
 
 
