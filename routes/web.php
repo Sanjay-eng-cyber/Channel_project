@@ -39,6 +39,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.buy-again');
     })->name('buy-again');
 
+    Route::get('/cancelled-orders', function () {
+        return view('frontend.cancelled-orders');
+    })->name('cancelled-orders');
+
     Route::get('/about-us', function () {
         return view('frontend/layouts/about-us');
     })->name('about');
