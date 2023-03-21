@@ -309,6 +309,9 @@
         padding-left: 2.3rem;
         padding-right: 2.8rem;
     }
+
+
+
 }
 
 /* end wishlist  page */
@@ -346,6 +349,16 @@
     font-size: 1.1rem;
 }
 
+
+.my-order-main .my-order-main-out .my-order-main-in .my-order-main-desc p {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    opacity: 0.6;
+    padding-bottom: 4px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-desc .list-unstyled .price {
     font-size: 1.02rem;
     font-weight: 500;
@@ -372,6 +385,15 @@
 }
 
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .add-track-btn {
+    padding-left: 2.7rem;
+    padding-right: 2.8rem;
+    color: black;
+    background: #ebb579;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+}
+
+.my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .add-orderDetails-btn {
     padding-left: 2.2rem;
     padding-right: 2.6rem;
     color: black;
@@ -380,6 +402,7 @@
     border-radius: 3px;
 }
 
+
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn .add-pro-btn {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -387,6 +410,38 @@
     background: #ebb579;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 3px;
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .my-order-main .my-order-main-out .my-order-main-in .my-order-main-desc .list-unstyled .price {
+        font-size: 1.02rem;
+        font-weight: 500;
+        line-height: 1.2;
+        padding-left: 17px;
+        padding-top: 15px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .my-order-main .my-order-main-out .my-order-main-in .my-order-main-in-btn {
+        align-items: center;
+    }
+
 }
 
 /*
