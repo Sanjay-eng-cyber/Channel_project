@@ -104,7 +104,7 @@
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Final Price</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Final Price" minlength="3" maxlength="40" required
+                                        placeholder="Enter Final Price" required
                                         name="final_price" value="{{ old('final_price') }}">
                                     @if ($errors->has('final_price'))
                                         <div class="text-danger" role="alert">{{ $errors->first('final_price') }}</div>

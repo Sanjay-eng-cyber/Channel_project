@@ -51,8 +51,8 @@
                                     <label for="formGroupExampleInput" class="">Type</label>
                                     <select name="type" class="form-control" required>
                                         <option value="">Select Any</option>
-                                        <option value="promo">Promo</option>
-                                        <option value="external">External</option>
+                                        <option value="promo" @if (old('type') == 'promo') {{ 'selected' }} @endif>Promo</option>
+                                        <option value="external" @if (old('type') == 'external') {{ 'selected' }} @endif>External</option>
                                     </select>
                                     @if ($errors->has('type'))
                                         <div class="text-danger" role="alert">{{ $errors->first('type') }}</div>
@@ -62,8 +62,8 @@
                                     <label for="formGroupExampleInput" class="">Rate</label>
                                     <select name="rate" class="form-control" required>
                                         <option value="">Select Any</option>
-                                        <option value="flat">Flat</option>
-                                        <option value="percent">Percent</option>
+                                        <option value="flat"   @if (old('rate') == 'flat') {{ 'selected' }} @endif>Flat</option>
+                                        <option value="percent"   @if (old('rate') == 'percent') {{ 'selected' }} @endif>Percent</option>
                                     </select>
                                     @if ($errors->has('rate'))
                                         <div class="text-danger" role="alert">{{ $errors->first('rate') }}</div>
