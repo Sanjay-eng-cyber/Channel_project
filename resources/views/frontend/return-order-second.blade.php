@@ -46,11 +46,40 @@
 
                             <div class=" or-secondpage-fscard-bottom">
                                 <button type="button" class="btn  mb-1 bg-orange">
+                                    <i class="fas fa-phone"></i>
                                     Call Me
                                 </button>
-                                <button type="button" class="btn  mt-2 or-sp-second-btn">Cancel</button>
                             </div>
                     </div>
+
+
+
+                    <div class="p-4 my-4 or-secondpage-fscard">
+                        <div class="gap-2 or-secondpage-fs-top">
+                                <div class="or-secondpage-fscard-top">
+                                    <h5 class="main-head  or-secondpage-fscard-head d-none d-md-block" style="">How can we make it right?</h5>
+
+                                    <h5 class="main-head  or-secondpage-fscard-head pt-3 pb-1">Talk to customer service </h5>
+                                    <p class="pr-2">
+                                        Explain the issues with items<br />
+                                        Get instant resolution upon verification on issues
+                                    </p>
+                                </div>
+                                <div class="or-secondpage-fscard-imgTop">
+                                    <h5 class="main-head  or-secondpage-fscard-head d-block d-md-none" style="">How can we make it right?</h5>
+                                    <img src="frontend/images/order-img/or-3.png" alt="" class="img-fluid">
+                                </div>
+                        </div>
+
+                        <div class=" or-secondpage-fscard-bottom">
+                            <label for="">your number</label>
+                            <input type="text" class="form-control mt-2" id="exampleInput" placeholder="Enter text">
+
+                        </div>
+                    </div>
+
+
+
 
 
                 </div>
