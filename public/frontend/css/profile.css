@@ -586,6 +586,75 @@
 order-return second page */
 
 
+
+.or-secondpage-fscard {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+
+    .or-secondpage-fscard .or-secondpage-fs-top  {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .or-secondpage-fscard .or-secondpage-fs-top .or-secondpage-fscard-top .or-secondpage-fscard-head {
+        font-size: 1.25rem;
+    }
+
+
+
+
+
+    @media (max-width: 768px) {
+        .or-secondpage-fscard .or-secondpage-fs-top  {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column-reverse;
+    }
+
+    .or-secondpage-fscard .or-secondpage-fs-top .or-secondpage-fscard-imgTop img {
+        width: 194px;
+        margin: auto;
+        padding: 15px 0px 15px 0px;
+    }
+
+    }
+
+
+    .or-secondpage-fcard {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+    .or-secondpage-fcard .or-secondpage-fcard-top .or-secondpage-fcard-head {
+        font-size: 1.25rem;
+    }
+
+    .or-secondpage-fcard .or-secondpage-fcard-top div {
+        font-size: 14px;
+        opacity: 0.7;
+    }
+
+    .or-secondpage-fcard .or-secondpage-fcard-bottom .or-sp-first-btn {
+        background: rgba(245, 134, 52, 0.2);
+        border-radius: 8px;
+        color: black;
+    }
+
+
+    .or-secondpage-fcard .or-secondpage-fcard-bottom .or-sp-second-btn {
+        color: white;
+        background: #D02A2A;
+        border-radius: 8px;
+
+    }
+
+
+
     .or-first-card-color{
       color:black;
       -webkit-text-stroke-width: 0.5px;
@@ -627,8 +696,10 @@ order-return second page */
   }
   .or-secondpage-scard .or-secondpage-scard .or-secondpage-scard-card .or-secondpage-scard-card-des p {
     opacity: 0.6;
-    font-size: 15px;
+    font-size: 14px;
   }
+
+
 
 /*
 end
