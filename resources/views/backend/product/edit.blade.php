@@ -136,27 +136,27 @@
                                         @endif
                                     </div>
                                     @foreach ($attributes as $attribute)
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
-                                        <input hidden name="attributeKeys[]" value="{{ $attribute->id }}">
-                                        <label for="degree2">{{ $attribute->name }}</label>
-                                        <select class="form-control" name="values[]">
-                                            <option value="">Select Any Attribute</option>
-                                            @if (old('values'))
-                                                @foreach ($attribute->values()->get() as $attrbuteValue)
-                                                    <option value="{{ $attrbuteValue->id }}"
-                                                        @if (old('values') == $attrbuteValue->id) {{ 'selected' }} @endif>
-                                                        {{ $attrbuteValue->name }}</option>
-                                                @endforeach
-                                            @else
-                                            @foreach ($attribute->values()->get() as $attrbuteValue)
-                                                <option value="{{ $attrbuteValue->id }}"
-                                                    @if ($attrbuteValue->attribute_id == $attrbuteValue->id) {{ 'selected' }} @endif>
-                                                    {{ $attrbuteValue->name }}</option>
-                                            @endforeach
-                                            @endif
-                                        </select>
-                                    </div>
-                                @endforeach
+                                        <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                            <input hidden name="attributeKeys[]" value="{{ $attribute->id }}">
+                                            <label for="degree2">{{ $attribute->name }}</label>
+                                            <select class="form-control" name="values[]">
+                                                <option value="">Select Any Attribute</option>
+                                                @if (old('values'))
+                                                    @foreach ($attribute->values()->get() as $attrbuteValue)
+                                                        <option value="{{ $attrbuteValue->id }}"
+                                                            @if (old('values') == $attrbuteValue->id) {{ 'selected' }} @endif>
+                                                            {{ $attrbuteValue->name }}</option>
+                                                    @endforeach
+                                                @else
+                                                    @foreach ($attribute->values()->get() as $attrbuteValue)
+                                                        <option value="{{ $attrbuteValue->id }}"
+                                                            @if ($attrbuteValue->attribute_id == $attrbuteValue->id) {{ 'selected' }} @endif>
+                                                            {{ $attrbuteValue->name }}</option>
+                                                    @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+                                    @endforeach
                                     <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
                                         <label for="descriptions">Showcase</label><br>
                                         @if (old('showcases'))
@@ -169,11 +169,11 @@
                                             @endforeach
                                         @else
                                             @foreach ($showcases as $showcase)
-                                            {{-- @dd($showcases,$showcase->id,$product_showcases,in_array($showcase->id,$product_showcases)) --}}
-                                                <label for="{{ $showcase->id }}">{{ $showcase->name }}</label>
+                                                {{-- @dd($showcases,$showcase->id,$product_showcases,in_array($showcase->id,$product_showcases)) --}}
                                                 <input type="checkbox" id="{{ $showcase->id }}" name="showcases[]"
                                                     value="{{ $showcase->id }}"
-                                                    @if (in_array($showcase->id,$product_showcases)) {{ 'checked' }} @endif>
+                                                    @if (in_array($showcase->id, $product_showcases)) {{ 'checked' }} @endif>
+                                                <label for="{{ $showcase->id }}">{{ $showcase->name }}</label>
                                             @endforeach
                                         @endif
 
