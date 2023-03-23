@@ -68,9 +68,13 @@ a:hover {
     background-color: rgba(236, 38, 143, 1);
 }
 
+.bg-orange{
+  background: #EBB579;
+}
 .text-orange {
     color: #f58634;
 }
+
 .text-pink {
     color: #ec268f;
 }
