@@ -550,6 +550,16 @@
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
+
+
+.or-firstpage-scard .or-firstpage-scard .or-firstpage-scard-card{
+    background-color: white;
+    filter: drop-shadow(0px 0px 6.98502px rgba(0, 0, 0, 0.2));
+    border-radius: 8.73128px;
+
+   }
+
+
 .or-firstpage-scard .or-firstpage-scard .or-firstpage-scard-card .or-firstpage-scard-card-img img{
  width:162px;
  border: 1px solid rgba(236, 38, 143, 0.6);
@@ -566,6 +576,7 @@
   opacity: 0.6;
   font-size: 15px;
 }
+
 
 /*
     end order return first page  */

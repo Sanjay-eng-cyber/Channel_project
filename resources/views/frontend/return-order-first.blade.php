@@ -57,7 +57,7 @@
                     <div class="p-4 or-firstpage-scard">
 
                             <h6 class="main-head py-3 or-firstpage-scard-fhead">What is the issue with the item?</h6>
-                            <div class="row pt-3 pb-4 or-firstpage-scard-card">
+                            <div class="row pt-3 pb-3 or-firstpage-scard-card">
                                 <div class="col-sm-4 or-firstpage-scard-card-img" style="">
                                     <img src="frontend/images/products/skin/sk1.png" alt="" class="img-fluid">
                                 </div>
@@ -77,7 +77,7 @@
                                 </div>
 
                             </div>
-                            <button type="button" class="btn bg-orange or-firstpage-lbtn">Continue To Return</button>
+                            <button type="button" class="btn bg-orange or-firstpage-lbtn mt-4">Continue To Return</button>
                     </div>
                 </div>
             </div>
