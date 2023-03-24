@@ -517,6 +517,11 @@
         border: 0.646341px solid rgba(0, 0, 0, 0.2);
         border-radius: 8px;
     }
+
+    .order-return-first-main .or-first-card-select{
+        background-color: #C5E9F6;
+    }
+
     .order-return-first-main .order-return-first-add-one label{
         background: #A0E2FB;
         border: 1px solid #00AFEF;
