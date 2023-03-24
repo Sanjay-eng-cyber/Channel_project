@@ -630,7 +630,7 @@ a:hover {
 }
 
 .mt-bottom-bar {
-    background: rgba(0, 175, 239, 0.29);
+    background: #CBEFFC;
     padding: 42px 31px 42px 48px;
     -moz-transition: all 0.4s linear;
     -webkit-transition: all 0.4s linear;
