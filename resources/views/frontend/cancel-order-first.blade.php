@@ -11,29 +11,30 @@
         <div class="row d-flex justify-content-center gap-3">
             <div class="col-lg-12 col-xl-5">
                 <div class="p-4 order-return-first-main">
-                    <div class="order-return-first-search">
-                        <h6 class="main-head py-3 or-first-card-color">What is the issue with the item?</h6>
-                        <select class="form-select or-first-card-select" aria-label="Default select example" style="">
-                            <option selected>Choose a Response</option>
-                            <option value="1">Order created by mistake</option>
-                            <option value="2">Items would not arrive on time</option>
-                            <option value="3">Shipping cost too high</option>
-                            <option value="4">Found cheaper somewhere else</option>
-                            <option value="5">Others</option>
-                        </select>
-                    </div>
-
-
-                    <div class="py-4 order-return-first-cmnt">
-                        <h6 class="main-head py-3 or-first-card-color">Comments (optional):</h6>
-                        <div  class="d-block d-sm-flex justify-content-between align-items-center">
-                            <input type="text" class="form-control" placeholder="Add comment"
-                            aria-label="Input field" aria-describedby="basic-addon2" style="width: 200px">
-                            <button type="button" class="btn bg-orange or-firstpage-lbtn my-3 my-sm-0">Submit Request</button>
-
+                    <form action="" method="post">
+                        <div class="order-return-first-search">
+                            <h6 class="main-head py-3 or-first-card-color">What is the issue with the item?</h6>
+                            <select class="form-select or-first-card-select" aria-label="Default select example" style="">
+                                <option selected>Choose a Response</option>
+                                <option value="1">Order created by mistake</option>
+                                <option value="2">Items would not arrive on time</option>
+                                <option value="3">Shipping cost too high</option>
+                                <option value="4">Found cheaper somewhere else</option>
+                                <option value="5">Others</option>
+                            </select>
                         </div>
 
-                    </div>
+                        <div class="py-4 order-return-first-cmnt">
+                            <h6 class="main-head py-3 or-first-card-color">Comments (optional):</h6>
+                            <div  class="d-block d-sm-flex justify-content-between align-items-center">
+                                <input type="text" class="form-control" placeholder="Add comment"
+                                aria-label="Input field" aria-describedby="basic-addon2" style="width: 200px">
+                                <button type="submit" class="btn bg-orange or-firstpage-lbtn my-3 my-sm-0">Submit Request</button>
+
+                            </div>
+
+                        </div>
+                    </form>
                 </div>
 
             </div>
