@@ -150,7 +150,7 @@
                                                 @else
                                                     @foreach ($attribute->values()->get() as $attrbuteValue)
                                                         <option value="{{ $attrbuteValue->id }}"
-                                                            @if ($attrbuteValue->attribute_id == $attrbuteValue->id) {{ 'selected' }} @endif>
+                                                            @if (in_array($attrbuteValue->id, $product_attribute)) {{ 'selected' }} @endif>
                                                             {{ $attrbuteValue->name }}</option>
                                                     @endforeach
                                                 @endif
