@@ -2,389 +2,408 @@
 @section('title', 'About-Us |')
 @section('content')
 
-<main id="mt-main">
-    <!-- Mt Product Detial of the Page -->
-    <section class="mt-product-detial wow fadeInUp" data-wow-delay="0.4s">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <!-- Slider of the Page -->
-                    <div class="slider">
-                        <!-- Comment List of the Page -->
-                        <ul class="list-unstyled comment-list">
-                            <li><a href="#"><i class="fa fa-heart"></i>27</a></li>
-                            <li><a href="#"><i class="fa fa-comments"></i>12</a></li>
-                            <li><a href="#"><i class="fa fa-share-alt"></i>14</a></li>
-                        </ul>
-                        <!-- Comment List of the Page end -->
-                        <!-- Product Slider of the Page -->
-                        <div class="product-slider">
-                            <div class="slide">
-                                <img src="{{asset('frontend/images/products/img64.jpg')}}" alt="image descrption">
+    <main id="mt-main">
+        <!-- Mt Product detial of the Page -->
+        <section class="mt-product-detial wow fadeInUp mt-4 " data-wow-delay="0.4s">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- Slider of the Page -->
+                        <div class="slider">
+                            <div class="product-slider">
+                                <div class="slide">
+                                    <img src="https://via.placeholder.com/600" alt="image description">
+                                </div>
+                                <div class="slide">
+                                    <img src="https://via.placeholder.com/600" alt="image description">
+                                </div>
+                                <div class="slide">
+                                    <img src="https://via.placeholder.com/600" alt="image description">
+                                </div>
+                                <div class="slide">
+                                    <img src="https://via.placeholder.com/600" alt="image description">
+                                </div>
                             </div>
-                            <div class="slide">
-                                <img src="{{asset('frontend/images/products/img65.jpg')}}" alt="image descrption">
-                            </div>
-                            <div class="slide">
-                                <img src="{{asset('frontend/images/products/img66.jpg')}}" alt="image descrption">
-                            </div>
-                            <div class="slide">
-                                <img src="{{asset('frontend/images/products/img67.jpg')}}" alt="image descrption">
-                            </div>
-                        </div>
-                        <!-- Product Slider of the Page end -->
-                        <!-- Pagg Slider of the Page -->
-                        <ul class="list-unstyled slick-slider pagg-slider">
-                            <li>
-                                <div class="img"><img src="{{asset('frontend/images/products/img60.jpg')}}"
-                                        alt="image description"></div>
-                            </li>
-                            <li>
-                                <div class="img"><img src="{{asset('frontend/images/products/img61.jpg')}}"
-                                        alt="image description"></div>
-                            </li>
-                            <li>
-                                <div class="img"><img src="{{asset('frontend/images/products/img62.jpg')}}"
-                                        alt="image description"></div>
-                            </li>
-                            <li>
-                                <div class="img"><img src="{{asset('frontend/images/products/img63.jpg')}}"
-                                        alt="image description"></div>
-                            </li>
-                            <li>
-                                <div class="img"><img src="{{asset('frontend/images/products/img60.jpg')}}"
-                                        alt="image description"></div>
-                            </li>
-                        </ul>
-                        <!-- Pagg Slider of the Page end -->
-                    </div>
-                    <!-- Slider of the Page end -->
-                    <!-- Detail Holder of the Page -->
-                    <div class="detial-holder">
-                        <!-- Breadcrumbs of the Page -->
-                        <ul class="list-unstyled breadcrumbs">
-                            <li><a href="#">Chairs <i class="fa fa-angle-right"></i></a></li>
-                            <li>Products</li>
-                        </ul>
-                        <!-- Breadcrumbs of the Page end -->
-                        <h2>KAILA FABRIC CHAIR</h2>
-                        <!-- Rank Rating of the Page -->
-                        <div class="rank-rating">
-                            <span class="total-price">Reviews (12)</span>
-                            <ul class="list-unstyled rating-list">
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+
+                            <ul class="list-unstyled slick-slider pagg-slider">
+                                <li>
+                                    <div class="img">
+                                        <img src="https://via.placeholder.com/600" alt="image description">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="https://via.placeholder.com/600" alt="image description">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="https://via.placeholder.com/600" alt="image description">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="https://via.placeholder.com/600" alt="image description">
+                                    </div>
+                                </li>
+
                             </ul>
+                            <!-- Pagg Slider of the Page end -->
                         </div>
-                        <div class="text-holder">
-                            <span class="price">$ 79.00 <del>399,00</del></span>
-                        </div>
-                        <!-- Product Form of the Page -->
-                        <form action="#" class="product-form" style="margin-bottom: 40px">
-                            <fieldset>
-                                <div class="row-val">
-                                    <label for="qty">qty</label>
-                                    <input type="number" id="qty" placeholder="1">
+                        <!-- Slider of the Page end -->
+                        <!-- detial Holder of the Page -->
+                        <div class="detial-holder">
+                            <h1 class="h3 font-body">
+                                essence Long Lasting Eye Pencil
+                            </h1>
+                            <hr>
+                            <p class="text-muted">
+                                essence Long Lasting Eye Pencil is a creamy and pigmented eye pencil that brightens and
+                                accentuates your eyes. It is easy to apply and provides a smooth feel thanks to its
+                                formulation. It is time to get creative with this retractable and long-lasting eye pencil!
+                            </p>
+                            <h3 class="h5 font-body">
+                                From ₹145.55
+                            </h3>
+                            <h4 class="font-body h5 text-green">
+                                <i class="fa-regular fa-circle-check"></i> in stock
+                            </h4>
+                            <form action="">
+                                <label for="color-option">
+                                    Select a color * :
+                                </label>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <select class="form-select" name="color-option" id="color-option" id="">
+                                            <option value="choose an option" disabled selected> choose an option
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="qty-counter">
+                                            <label for="qty">
+                                                qty
+                                            </label>
+                                            <div class="input-group flex-nowrap">
+                                                <span class="input-group-text">-</span>
+                                                <input type="number" id="qty" class="form-control" value="1">
+                                                <span class="input-group-text">+</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-around my-3">
+                                        <button class="btn btn-primary btn-pink">
+                                            add to cart
+                                        </button>
+
+                                        <button class="btn btn-primary btn-black">
+                                            buy now
+                                        </button>
+
+                                        <a class="btn text-red">
+
+                                            <i class="fa-regular fa-heart"></i>
+                                            add to Wishlist
+                                        </a>
+                                    </div>
+                                    <h6 class="h5 font-body">
+                                        Main Ingredients
+                                    </h6>
+                                    <ul class="ms-3 text-muted">
+                                        <li>
+                                            Tocopherol, also known as vitamin E, contributes to eyelash development;
+                                        </li>
+                                        <li>
+                                            Cyclopentasiloxane is a silicone that provides a smooth feel and comfortable
+                                            wear;
+                                        </li>
+                                        <li>
+                                            Lecithin moisturizes and protects the skin.
+                                        </li>
+                                    </ul>
+                                    <h6 class="h5 font-body">
+                                        How to use
+                                    </h6>
+                                    <p class="text-muted">
+                                        Apply essence Long Lasting Eye Pencil directly to the lash and waterline of the eye.
+                                    </p>
                                 </div>
-                                <div class="row-val">
-                                    <button type="submit">ADD TO CART</button>
-                                </div>
-                            </fieldset>
-                        </form>
-                        <!-- Rank Rating of the Page end -->
-                        <div class="txt-wrap">
-                            <p>Koila is a chair designed for restaurants and food lovers in general.
-                                Designed in collaboration with restaurant professionals, it ensures comfort
-                                and an ideal posture, as there are armrests on both sides of the chair.</p>
-                            <p>Koila is a seat designed for restaurants and gastronomic places in general.
-                                Designed in collaboration with professional of restaurants and hotels field,
-                                this armchair is composed of a curved shell with a base in oak who has
-                                pinched the back upholstered in fabric or leather. It provides comfort and
-                                holds for ideal sitting position,the arms may rest on the sides ofthe
-                                armchair.</p>
+                            </form>
+                           
                         </div>
-                        <ul class="list-unstyled list">
-                            <li><a href="#"><i class="fa fa-share-alt"></i>SHARE</a></li>
-                            <li><a href="#"><i class="fa fa-exchange"></i>COMPARE</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i>ADD TO WISHLIST</a></li>
-                        </ul>
-                        <!-- Product Form of the Page end -->
+                        <!-- detial Holder of the Page end -->
                     </div>
-                    <!-- Detail Holder of the Page end -->
                 </div>
             </div>
-        </div>
-    </section><!-- Mt Product Detial of the Page end -->
-    <div class="product-detail-tab wow fadeInUp" data-wow-delay="0.4s">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <ul class="mt-tabs text-center text-uppercase">
-                        <li><a href="#tab1">DESCRIPTION</a></li>
-                        <li><a href="#tab2">INFORMATION</a></li>
-                        <li><a href="#tab3" class="active">REVIEWS (12)</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab1">
-                            <p>Koila is a chair designed for restaurants and food lovers in general.
-                                Designed in collaboration with restaurant professionals, it ensures comfort
-                                and an ideal posture, as there are armrests on both sides of the chair. </p>
-                            <p>Koila is a seat designed for restaurants and gastronomic places in general.
-                                Designed in collaboration with professional of restaurants and hotels field,
-                                this armchair is composed of a curved shell with a base in oak who has
-                                pinched the back upholstered in fabric or leather. It provides comfort and
-                                holds for ideal sitting position,the arms may rest on the sides ofthe
-                                armchair. <br>Solid oak construction.<br> Back in plywood (2 faces oak
-                                veneer) or upholstered in fabric, leather or eco-leather.<br> Seat
-                                upholstered in fabric, leather or eco-leather. <br> H 830 x L 585 x P 540
-                                mm.</p>
-                        </div>
-                        <div id="tab2">
-                            <p>Koila is a chair designed for restaurants and food lovers in general.
-                                Designed in collaboration with restaurant professionals, it ensures comfort
-                                and an ideal posture, as there are armrests on both sides of the chair. </p>
-                            <p>Koila is a seat designed for restaurants and gastronomic places in general.
-                                Designed in collaboration with professional of restaurants and hotels field,
-                                this armchair is composed of a curved shell with a base in oak who has
-                                pinched the back upholstered in fabric or leather. It provides comfort and
-                                holds for ideal sitting position,the arms may rest on the sides ofthe
-                                armchair. <br>Solid oak construction.<br> Back in plywood (2 faces oak
-                                veneer) or upholstered in fabric, leather or eco-leather.<br> Seat
-                                upholstered in fabric, leather or eco-leather. <br> H 830 x L 585 x P 540
-                                mm.</p>
-                        </div>
-                        <div id="tab3">
-                            <div class="product-comment">
-                                <div class="mt-box">
-                                    <div class="mt-hold">
-                                        <ul class="mt-star">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <span class="name">John Wick</span>
-                                        <time datetime="2016-01-01">09:10 Nov, 19 2016</time>
+        </section><!-- Mt Product detial of the Page end -->
+        <div class="product-detial-tab wow fadeInUp" data-wow-delay="0.4s">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="mt-tabs text-center text-uppercase">
+                            <li><a href="#tab1">DESCRIPTION</a></li>
+                            <li><a href="#tab2">INFORMATION</a></li>
+                            <li><a href="#tab3" class="active">REVIEWS (12)</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab1">
+                                <p>Koila is a chair designed for restaurants and food lovers in general.
+                                    Designed in collaboration with restaurant professionals, it ensures comfort
+                                    and an ideal posture, as there are armrests on both sides of the chair. </p>
+                                <p>Koila is a seat designed for restaurants and gastronomic places in general.
+                                    Designed in collaboration with professional of restaurants and hotels field,
+                                    this armchair is composed of a curved shell with a base in oak who has
+                                    pinched the back upholstered in fabric or leather. It provides comfort and
+                                    holds for ideal sitting position,the arms may rest on the sides ofthe
+                                    armchair. <br>Solid oak construction.<br> Back in plywood (2 faces oak
+                                    veneer) or upholstered in fabric, leather or eco-leather.<br> Seat
+                                    upholstered in fabric, leather or eco-leather. <br> H 830 x L 585 x P 540
+                                    mm.</p>
+                            </div>
+                            <div id="tab2">
+                                <p>Koila is a chair designed for restaurants and food lovers in general.
+                                    Designed in collaboration with restaurant professionals, it ensures comfort
+                                    and an ideal posture, as there are armrests on both sides of the chair. </p>
+                                <p>Koila is a seat designed for restaurants and gastronomic places in general.
+                                    Designed in collaboration with professional of restaurants and hotels field,
+                                    this armchair is composed of a curved shell with a base in oak who has
+                                    pinched the back upholstered in fabric or leather. It provides comfort and
+                                    holds for ideal sitting position,the arms may rest on the sides ofthe
+                                    armchair. <br>Solid oak construction.<br> Back in plywood (2 faces oak
+                                    veneer) or upholstered in fabric, leather or eco-leather.<br> Seat
+                                    upholstered in fabric, leather or eco-leather. <br> H 830 x L 585 x P 540
+                                    mm.</p>
+                            </div>
+                            <div id="tab3">
+                                <div class="product-comment">
+                                    <div class="mt-box">
+                                        <div class="mt-hold">
+                                            <ul class="mt-star">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                            <span class="name">John Wick</span>
+                                            <time datetime="2016-01-01">09:10 Nov, 19 2016</time>
+                                        </div>
+                                        <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                            sse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                            cupidatat non</p>
                                     </div>
-                                    <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                                        sse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non</p>
-                                </div>
-                                <div class="mt-box">
-                                    <div class="mt-hold">
-                                        <ul class="mt-star">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <span class="name">John Wick</span>
-                                        <time datetime="2016-01-01">09:10 Nov, 19 2016</time>
-                                    </div>
-                                    <p>Usmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                        aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                        reprehenderit in voluptate velit sse cillum dolore eu fugiat nulla
-                                        pariatur. Excepteur sint occaecat cupidatat non</p>
-                                </div>
-                                <form action="#" class="p-commentform">
-                                    <fieldset>
-                                        <h2>Add Comment</h2>
-                                        <div class="mt-row">
-                                            <label>Rating</label>
+                                    <div class="mt-box">
+                                        <div class="mt-hold">
                                             <ul class="mt-star">
                                                 <li><i class="fa fa-star"></i></li>
                                                 <li><i class="fa fa-star"></i></li>
                                                 <li><i class="fa fa-star-o"></i></li>
                                                 <li><i class="fa fa-star-o"></i></li>
                                             </ul>
+                                            <span class="name">John Wick</span>
+                                            <time datetime="2016-01-01">09:10 Nov, 19 2016</time>
                                         </div>
-                                        <div class="mt-row">
-                                            <label>Name</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="mt-row">
-                                            <label>E-Mail</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="mt-row">
-                                            <label>Review</label>
-                                            <textarea class="form-control"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn-type4">ADD REVIEW</button>
-                                    </fieldset>
-                                </form>
+                                        <p>Usmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                            reprehenderit in voluptate velit sse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non</p>
+                                    </div>
+                                    <form action="#" class="p-commentform">
+                                        <fieldset>
+                                            <h2>Add Comment</h2>
+                                            <div class="mt-row">
+                                                <label>Rating</label>
+                                                <ul class="mt-star">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mt-row">
+                                                <label>Name</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="mt-row">
+                                                <label>E-Mail</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="mt-row">
+                                                <label>Review</label>
+                                                <textarea class="form-control"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn-type4">ADD REVIEW</button>
+                                        </fieldset>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- related products start here -->
-    <div class="related-products wow fadeInUp" data-wow-delay="0.4s">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2>RELATED PRODUCTS</h2>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <!-- mt product1 center start here -->
-                            <div class="mt-product1 mt-paddingbottom20">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href="product-detail.html"><img
-                                                    src="{{asset('frontend/images/products/img01.jpg')}}"
-                                                    alt="image description"></a>
-                                            <span class="caption">
-                                                <span class="new">NEW</span>
-                                            </span>
-                                            <ul class="mt-stars">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                            <ul class="links">
-                                                <li><a href="#"><i class="icon-handbag"></i><span>Add to
-                                                            Cart</span></a></li>
-                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                                </li>
-                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a>
-                                                </li>
-                                            </ul>
+        <!-- related products start here -->
+        <div class="related-products wow fadeInUp" data-wow-delay="0.4s">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>RELATED PRODUCTS</h2>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <!-- mt product1 center start here -->
+                                <div class="mt-product1 mt-paddingbottom20">
+                                    <div class="box">
+                                        <div class="b1">
+                                            <div class="b2">
+                                                <a href="product-detial.html"><img
+                                                        src="{{ asset('frontend/images/products/img01.jpg') }}"
+                                                        alt="image description"></a>
+                                                <span class="caption">
+                                                    <span class="new">NEW</span>
+                                                </span>
+                                                <ul class="mt-stars">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                                <ul class="links">
+                                                    <li><a href="#"><i class="icon-handbag"></i><span>Add to
+                                                                Cart</span></a></li>
+                                                    <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i class="icomoon icon-exchange"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="product-detail.html">Puff
-                                            Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i> <span>287,00</span></span>
-                                </div>
-                            </div><!-- mt product1 center end here -->
-                            <!-- mt product1 center start here -->
-                            <div class="mt-product1 mt-paddingbottom20">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href="product-detail.html"><img
-                                                    src="{{asset('frontend/images/products/img02.jpg')}}"
-                                                    alt="image description"></a>
-                                            <ul class="links">
-                                                <li><a href="#"><i class="icon-handbag"></i><span>Add to
-                                                            Cart</span></a></li>
-                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                                </li>
-                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a>
-                                                </li>
-                                            </ul>
+                                    <div class="txt">
+                                        <strong class="title"><a href="product-detial.html">Puff
+                                                Chair</a></strong>
+                                        <span class="price"><i class="fa fa-eur"></i> <span>287,00</span></span>
+                                    </div>
+                                </div><!-- mt product1 center end here -->
+                                <!-- mt product1 center start here -->
+                                <div class="mt-product1 mt-paddingbottom20">
+                                    <div class="box">
+                                        <div class="b1">
+                                            <div class="b2">
+                                                <a href="product-detial.html"><img
+                                                        src="{{ asset('frontend/images/products/img02.jpg') }}"
+                                                        alt="image description"></a>
+                                                <ul class="links">
+                                                    <li><a href="#"><i class="icon-handbag"></i><span>Add to
+                                                                Cart</span></a></li>
+                                                    <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i class="icomoon icon-exchange"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="product-detail.html">Bombi
-                                            Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i> <span>399,00</span></span>
-                                </div>
-                            </div><!-- mt product1 center end here -->
-                            <!-- mt product1 center start here -->
-                            <div class="mt-product1 mt-paddingbottom20">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href="product-detail.html"><img
-                                                    src="{{asset('frontend/images/products/img03.jpg')}}"
-                                                    alt="image description"></a>
-                                            <ul class="links">
-                                                <li><a href="#"><i class="icon-handbag"></i><span>Add to
-                                                            Cart</span></a></li>
-                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                                </li>
-                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a>
-                                                </li>
-                                            </ul>
+                                    <div class="txt">
+                                        <strong class="title"><a href="product-detial.html">Bombi
+                                                Chair</a></strong>
+                                        <span class="price"><i class="fa fa-eur"></i> <span>399,00</span></span>
+                                    </div>
+                                </div><!-- mt product1 center end here -->
+                                <!-- mt product1 center start here -->
+                                <div class="mt-product1 mt-paddingbottom20">
+                                    <div class="box">
+                                        <div class="b1">
+                                            <div class="b2">
+                                                <a href="product-detial.html"><img
+                                                        src="{{ asset('frontend/images/products/img03.jpg') }}"
+                                                        alt="image description"></a>
+                                                <ul class="links">
+                                                    <li><a href="#"><i class="icon-handbag"></i><span>Add to
+                                                                Cart</span></a></li>
+                                                    <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i class="icomoon icon-exchange"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="product-detail.html">Wood
-                                            Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i> <span>198,00</span></span>
-                                </div>
-                            </div><!-- mt product1 center end here -->
-                            <!-- mt product1 center start here -->
-                            <div class="mt-product1 mt-paddingbottom20">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href="product-detail.html"><img
-                                                    src="{{asset('frontend/images/products/img04.jpg')}}"
-                                                    alt="image description"></a>
-                                            <span class="caption">
-                                                <span class="off">15% Off</span>
-                                                <span class="new">NEW</span>
-                                            </span>
-                                            <ul class="mt-stars">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                            <ul class="links">
-                                                <li><a href="#"><i class="icon-handbag"></i><span>Add to
-                                                            Cart</span></a></li>
-                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                                </li>
-                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a>
-                                                </li>
-                                            </ul>
+                                    <div class="txt">
+                                        <strong class="title"><a href="product-detial.html">Wood
+                                                Chair</a></strong>
+                                        <span class="price"><i class="fa fa-eur"></i> <span>198,00</span></span>
+                                    </div>
+                                </div><!-- mt product1 center end here -->
+                                <!-- mt product1 center start here -->
+                                <div class="mt-product1 mt-paddingbottom20">
+                                    <div class="box">
+                                        <div class="b1">
+                                            <div class="b2">
+                                                <a href="product-detial.html"><img
+                                                        src="{{ asset('frontend/images/products/img04.jpg') }}"
+                                                        alt="image description"></a>
+                                                <span class="caption">
+                                                    <span class="off">15% Off</span>
+                                                    <span class="new">NEW</span>
+                                                </span>
+                                                <ul class="mt-stars">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                                <ul class="links">
+                                                    <li><a href="#"><i class="icon-handbag"></i><span>Add to
+                                                                Cart</span></a></li>
+                                                    <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i class="icomoon icon-exchange"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="product-detail.html">Bombi
-                                            Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i> <span>200,00</span></span>
-                                </div>
-                            </div><!-- mt product1 center end here -->
-                            <!-- mt product1 center start here -->
-                            <div class="mt-product1 mt-paddingbottom20">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href="product-detail.html"><img
-                                                    src="{{asset('frontend/images/products/img05.jpg')}}"
-                                                    alt="image description"></a>
-                                            <ul class="links">
-                                                <li><a href="#"><i class="icon-handbag"></i><span>Add to
-                                                            Cart</span></a></li>
-                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
-                                                </li>
-                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a>
-                                                </li>
-                                            </ul>
+                                    <div class="txt">
+                                        <strong class="title"><a href="product-detial.html">Bombi
+                                                Chair</a></strong>
+                                        <span class="price"><i class="fa fa-eur"></i> <span>200,00</span></span>
+                                    </div>
+                                </div><!-- mt product1 center end here -->
+                                <!-- mt product1 center start here -->
+                                <div class="mt-product1 mt-paddingbottom20">
+                                    <div class="box">
+                                        <div class="b1">
+                                            <div class="b2">
+                                                <a href="product-detial.html"><img
+                                                        src="{{ asset('frontend/images/products/img05.jpg') }}"
+                                                        alt="image description"></a>
+                                                <ul class="links">
+                                                    <li><a href="#"><i class="icon-handbag"></i><span>Add to
+                                                                Cart</span></a></li>
+                                                    <li><a href="#"><i class="icomoon icon-heart-empty"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i class="icomoon icon-exchange"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="product-detail.html">Bombi
-                                            Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i> <span>200,00</span></span>
-                                </div>
-                            </div><!-- mt product1 center end here -->
+                                    <div class="txt">
+                                        <strong class="title"><a href="product-detial.html">Bombi
+                                                Chair</a></strong>
+                                        <span class="price"><i class="fa fa-eur"></i> <span>200,00</span></span>
+                                    </div>
+                                </div><!-- mt product1 center end here -->
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div><!-- related products end here -->
-    </div>
-</main><!-- mt main end here -->
+            </div><!-- related products end here -->
+        </div>
+    </main><!-- mt main end here -->
 
 
 @endsection
