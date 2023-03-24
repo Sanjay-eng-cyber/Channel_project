@@ -59,6 +59,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.cancel-order-second');
     })->name('cancel-order-second');
 
+    Route::get('/order-tracking-first', function () {
+        return view('frontend.order-tracking-first');
+    })->name('order-tracking-first');
+
     Route::get('/about-us', function () {
         return view('frontend/layouts/about-us');
     })->name('about');
