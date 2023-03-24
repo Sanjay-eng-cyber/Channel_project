@@ -33,7 +33,7 @@
                                         <h5 class="main-head  or-secondpage-fscard-head d-none d-md-block" style="">How can we make it right?</h5>
 
                                         <h5 class="main-head  or-secondpage-fscard-head pt-3 pb-1">Talk to customer service </h5>
-                                        <p class="pr-2">
+                                        <p class="pr-2 opacity-75">
                                             Explain the issues with items<br />
                                             Get instant resolution upon verification on issues
                                         </p>
@@ -60,7 +60,7 @@
                                     <h5 class="main-head  or-secondpage-fscard-head d-none d-md-block" style="">How can we make it right?</h5>
 
                                     <h5 class="main-head  or-secondpage-fscard-head pt-3 pb-1">Talk to customer service </h5>
-                                    <p class="pr-2">
+                                    <p class="pr-2 opacity-75">
                                         Explain the issues with items<br />
                                         Get instant resolution upon verification on issues
                                     </p>
@@ -72,8 +72,8 @@
                         </div>
 
                         <div class=" or-secondpage-fscard-bottom">
-                            <label for="">your number</label>
-                            <input type="text" class="form-control mt-2" id="exampleInput" placeholder="Enter text">
+                            <label for="" class="fw-bold">Your Number</label>
+                            <input type="text" class="form-control mt-2 return-order-custome-input " id="return-order-custome-input" placeholder="Enter text">
 
                         </div>
                     </div>
@@ -119,6 +119,7 @@
         </div>
     </section>
 @endsection
+
 
 
 

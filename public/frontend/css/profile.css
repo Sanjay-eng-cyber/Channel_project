@@ -367,7 +367,6 @@
     opacity: 0.6;
     padding-bottom: 4px;
     font-size: 14px;
-    opacity: 0.6;
 }
 
 .my-order-main .my-order-main-out .my-order-main-in .my-order-main-desc .list-unstyled .price {
@@ -574,7 +573,7 @@
   font-size: 1.1rem;
 }
 .or-firstpage-scard .or-firstpage-scard .or-firstpage-scard-card .or-firstpage-scard-card-des p {
-  opacity: 0.6;
+  opacity: 0.75;
   font-size: 15px;
 }
 
@@ -636,7 +635,7 @@ order-return second page */
 
     .or-secondpage-fcard .or-secondpage-fcard-top div {
         font-size: 14px;
-        opacity: 0.7;
+        opacity: 0.75;
     }
 
     .or-secondpage-fcard .or-secondpage-fcard-bottom .or-sp-first-btn {
@@ -695,7 +694,7 @@ order-return second page */
     font-size: 1.1rem;
   }
   .or-secondpage-scard .or-secondpage-scard .or-secondpage-scard-card .or-secondpage-scard-card-des p {
-    opacity: 0.6;
+    opacity: 0.75;
     font-size: 14px;
   }
 
