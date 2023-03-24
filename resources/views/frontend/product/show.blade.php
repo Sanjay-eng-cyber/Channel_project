@@ -73,13 +73,13 @@
                                     Select a color * :
                                 </label>
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-12 col-md-6 mb-3">
                                         <select class="form-select" name="color-option" id="color-option" id="">
                                             <option value="choose an option" disabled selected> choose an option
                                             </option>
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12 col-md-6 mb-3">
                                         <div class="qty-counter">
                                             <label for="qty">
                                                 qty
@@ -91,7 +91,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-around my-3">
+                                    <div class="d-flex justify-content-around flex-wrap my-3">
                                         <button class="btn btn-primary btn-pink">
                                             add to cart
                                         </button>
@@ -134,7 +134,7 @@
                                     <div class="col-12 col-sm-6 p-0">
                                         <div class="rating">
                                             <div class="d-flex align-items-center">
-                                                <h6 class="h5 font-body mb-0 me-3">
+                                                <h6 class="h5 font-body mb-0 me-2">
                                                     Ratings
                                                 </h6>
                                                 <div class="five-stars text-green d-flex">
