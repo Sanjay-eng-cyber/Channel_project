@@ -52,6 +52,10 @@ a:hover {
 .text-green{
     color: rgba(30, 186, 17, 1);
 }
+
+.bg-green{
+    background-color: rgba(30, 186, 17, 1);
+}
 .text-blue{
     color:rgba(0, 175, 239, 1);
 }
@@ -68,9 +72,14 @@ a:hover {
     background-color: rgba(236, 38, 143, 1);
 }
 
+.bg-orange{
+  background: #EBB579;
+}
+
 .text-orange {
     color: #f58634;
 }
+
 .text-pink {
     color: #ec268f;
 }
@@ -87,11 +96,14 @@ a:hover {
     color: rgba(0, 0, 0, 0.7);
 }
 
+#return-order-custome-input{
+    width: 40%;
+}
+
 .card-text-heading {
     font-size: 2rem;
 }
-.card-text-shop-now {
-}
+
 .mt-top-bar a{
     color: black;
 }
@@ -1532,6 +1544,10 @@ a:hover {
 }
 
 @media screen and (max-width: 480px) {
+    #return-order-custome-input{
+        width: 75%;
+    }
+
 
     /* skin slider  slider show */
      .mt-product1 .skin-text-desc {
