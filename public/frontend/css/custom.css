@@ -1818,3 +1818,46 @@ a:hover {
 .mt-product-detial .pagg-slider {
     margin: auto !important;
 }
+.rating-holder,
+.rating-holder > .row{
+    width: 100%;
+    margin: 0;
+}
+.rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.rating-stats {
+    border-left: 1px solid #00000054;
+    padding: 0;
+    padding-left: 20px;
+}
+.rating-stat {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.rating-stat .review-bar {
+    background: #e2e2e2;
+    height: 10px;
+    width: 90%;
+}
+.rating-stat .review-bar-value {
+    background-color: #048839;
+    height: 10px;
+}
+@media (max-width: 576px) {
+    .rating-stats {
+        border-left: none;
+        border-top: 1px solid #00000054;
+        padding-left: 0;
+        padding-top: 20px;
+    }
+    .rating{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+}

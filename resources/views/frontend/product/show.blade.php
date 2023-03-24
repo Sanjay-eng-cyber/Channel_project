@@ -129,7 +129,84 @@
                                     </p>
                                 </div>
                             </form>
-                           
+                            <div class="rating-holder">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6 p-0">
+                                        <div class="rating">
+                                            <div class="d-flex align-items-center">
+                                                <h6 class="h5 font-body mb-0 me-3">
+                                                    Ratings
+                                                </h6>
+                                                <div class="five-stars text-green d-flex">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="rating-total d-flex align-items-center me-3">
+                                                    <h6 class="h2 text-muted font-body mb-0">
+                                                        4.3
+                                                    </h6>
+                                                    <i class="fa-solid fa-star text-green"></i>
+                                                </div>
+                                                <div class="rating-count text-muted">
+                                                    based on Verified Buyers 1k
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 p-0">
+                                        <div class="rating-stats text-muted">
+                                            <div class="rating-stat">
+                                                <div>
+                                                    5
+                                                </div>
+                                                <div class="review-bar">
+                                                    <div class="review-bar-value" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="rating-stat">
+                                                <div>
+                                                    4
+                                                </div>
+                                                <div class="review-bar">
+                                                    <div class="review-bar-value" style="width: 80%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="rating-stat">
+                                                <div>
+                                                    3
+                                                </div>
+                                                <div class="review-bar">
+                                                    <div class="review-bar-value" style="width: 60%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="rating-stat">
+                                                <div>
+                                                    2
+                                                </div>
+                                                <div class="review-bar">
+                                                    <div class="review-bar-value" style="width: 40%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="rating-stat">
+                                                <div>
+                                                    1
+                                                </div>
+                                                <div class="review-bar">
+                                                    <div class="review-bar-value" style="width: 20%;"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <!-- detial Holder of the Page end -->
                     </div>
