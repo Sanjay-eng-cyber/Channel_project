@@ -51,6 +51,13 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.return-order-second');
     })->name('return-order-second');
 
+    Route::get('/cancel-order-first', function () {
+        return view('frontend.cancel-order-first');
+    })->name('cancel-order-first');
+
+    Route::get('/cancel-order-second', function () {
+        return view('frontend.cancel-order-second');
+    })->name('cancel-order-second');
 
     Route::get('/about-us', function () {
         return view('frontend/layouts/about-us');

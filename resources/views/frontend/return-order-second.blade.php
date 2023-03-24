@@ -44,7 +44,8 @@
                                     </div>
                             </div>
 
-                            <div class=" or-secondpage-fscard-bottom d-flex gap-4">
+                            <div class=" or-secondpage-fscard-bottom  d-flex gap-3 flex-column-reverse align-items-center
+                            flex-sm-row">
                                 <button type="button" class="btn  my-2 bg-orange px-5">
                                     <i class="fas fa-phone"></i>
                                     Call Me

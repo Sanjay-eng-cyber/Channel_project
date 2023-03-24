@@ -11,7 +11,7 @@
                     <div class="p-4 order-return-first-main">
                         <div class="order-return-first-search">
                             <h6 class="main-head py-3 or-first-card-color">What is the issue with the item?</h6>
-                            <select class="form-select" aria-label="Default select example" style="">
+                            <select class="form-select or-first-card-select" aria-label="Default select example" style="">
                                 <option selected>Choose a response</option>
                                 <option value="1">product damaged but shipping box ok </option>
                                 <option value="2">product and shipping box both damaged</option>
@@ -37,13 +37,13 @@
 
                             <img src="frontend/images/order-img/or-1.png" alt="" class="img-fluid py-3"
                                 style="width: 123px;">
-                            <label for="file-upload" class="btn btn-primary">
+                            <label for="file-upload" class="btn ">
                                 Add Photos
                             </label>
                             <input id="file-upload" type="file" style="display: none;">
                         </div>
 
-                        <div class="py-4 order-return-first-cmnt or-first-card-color">
+                        <div class="py-4 order-return-first-cmnt ">
                             <h6 class="main-head pt-3 or-first-card-color">Comments (optional):</h6>
                             <input type="text" class="form-control w-50" placeholder="Enter your text here"
                                 aria-label="Input field" aria-describedby="basic-addon2">
