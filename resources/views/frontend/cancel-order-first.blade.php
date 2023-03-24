@@ -29,7 +29,7 @@
                             <div  class="d-block d-sm-flex justify-content-between align-items-center">
                                 <input type="text" class="form-control" placeholder="Add comment"
                                 aria-label="Input field" aria-describedby="basic-addon2" style="width: 200px">
-                                <button type="submit" class="btn bg-orange or-firstpage-lbtn my-3 my-sm-0">Submit Request</button>
+                                <button type="submit" class="btn btn-orange or-firstpage-lbtn my-3 my-sm-0">Submit Request</button>
 
                             </div>
 
@@ -63,7 +63,7 @@
                             </div>
 
                         </div>
-                        <button type="button" class="btn bg-orange or-firstpage-lbtn mt-4">Continue Shopping</button>
+                        <button type="button" class="btn btn-orange or-firstpage-lbtn mt-4">Continue Shopping</button>
                 </div>
             </div>
         </div>

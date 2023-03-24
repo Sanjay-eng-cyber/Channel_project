@@ -46,7 +46,7 @@
 
                             <div class=" or-secondpage-fscard-bottom  d-flex gap-3 flex-column-reverse align-items-center
                             flex-sm-row">
-                                <button type="button" class="btn  my-2 bg-orange px-5">
+                                <button type="button" class="btn  my-2 btn-orange px-5">
                                     <i class="fas fa-phone"></i>
                                     Call Me
                                 </button>
@@ -82,7 +82,7 @@
                             <label for="" class="fw-bold">Your Number</label>
                             <input type="text" class="form-control mt-2 return-order-custome-input " id="return-order-custome-input" placeholder="Enter text">
 
-                            <button type="button" class="btn  my-2 bg-green text-white px-5" style="border: 1px solid #F58634;">
+                            <button type="button" class="btn  my-2 btn-green text-white px-5" style="border: 1px solid #F58634;">
                                 Call Me Now
                             </button>
 
@@ -121,7 +121,7 @@
                             </div>
 
                         </div>
-                        <button type="button" class="btn bg-orange or-secondpage-lbtn mt-4">Continue Shopping</button>
+                        <button type="button" class="btn btn-orange or-secondpage-lbtn mt-4">Continue Shopping</button>
                     </div>
                 </div>
 

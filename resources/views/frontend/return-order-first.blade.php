@@ -77,7 +77,7 @@
                                 </div>
 
                             </div>
-                            <button type="button" class="btn bg-orange or-firstpage-lbtn mt-4">Continue To Return</button>
+                            <button type="button" class="btn btn-orange or-firstpage-lbtn mt-4">Continue To Return</button>
                     </div>
                 </div>
             </div>
