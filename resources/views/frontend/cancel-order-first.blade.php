@@ -15,11 +15,11 @@
                         <h6 class="main-head py-3 or-first-card-color">What is the issue with the item?</h6>
                         <select class="form-select or-first-card-select" aria-label="Default select example" style="">
                             <option selected>Choose a Response</option>
-                            <option value="1">product damaged but shipping box ok </option>
-                            <option value="2">product and shipping box both damaged</option>
-                            <option value="3">wrong item was sent</option>
-                            <option value="4">item defective or not working</option>
-                            <option value="5">items or part missing</option>
+                            <option value="1">Order created by mistake</option>
+                            <option value="2">Items would not arrive on time</option>
+                            <option value="3">Shipping cost too high</option>
+                            <option value="4">Found cheaper somewhere else</option>
+                            <option value="5">Others</option>
                         </select>
                     </div>
 
