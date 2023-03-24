@@ -629,6 +629,19 @@ order-return second page */
         border-radius: 8px;
     }
 
+
+
+@media (max-width: 576px) {
+    .or-secondpage-fcard {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+}
+
     .or-secondpage-fcard .or-secondpage-fcard-top .or-secondpage-fcard-head {
         font-size: 1.25rem;
     }
@@ -649,7 +662,8 @@ order-return second page */
         color: white;
         background: #D02A2A;
         border-radius: 8px;
-
+        padding-right: 58px;
+        padding-left: 58px;
     }
 
 
@@ -703,3 +717,7 @@ order-return second page */
 /*
 end
 order-return second page */
+
+
+
+

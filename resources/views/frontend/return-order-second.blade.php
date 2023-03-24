@@ -19,7 +19,7 @@
                             <div>product damaged but shipping box ok </div>
                             <div>image uploaded</div>
                         </div>
-                        <div class="d-flex flex-column justify-content-end or-secondpage-fcard-bottom">
+                        <div class="d-flex flex-column justify-content-end align-items-end or-secondpage-fcard-bottom py-3 py-sm-0">
                             <button type="button" class="btn  mb-1 or-sp-first-btn">Request Summited</button>
                             <button type="button" class="btn  mt-2 or-sp-second-btn">Cancel</button>
                         </div>
@@ -44,11 +44,17 @@
                                     </div>
                             </div>
 
-                            <div class=" or-secondpage-fscard-bottom">
-                                <button type="button" class="btn  mb-1 bg-orange">
+                            <div class=" or-secondpage-fscard-bottom d-flex gap-4">
+                                <button type="button" class="btn  my-2 bg-orange px-5">
                                     <i class="fas fa-phone"></i>
                                     Call Me
                                 </button>
+                                <div>
+                                    <div>
+                                        <div class="text-green">Available Now</div>
+                                        <div>12 Am - 12 Am </div>
+                                    </div>
+                                </div>
                             </div>
                     </div>
 
@@ -74,6 +80,10 @@
                         <div class=" or-secondpage-fscard-bottom">
                             <label for="" class="fw-bold">Your Number</label>
                             <input type="text" class="form-control mt-2 return-order-custome-input " id="return-order-custome-input" placeholder="Enter text">
+
+                            <button type="button" class="btn  my-2 bg-green text-white px-5" style="border: 1px solid #F58634;">
+                                Call Me Now
+                            </button>
 
                         </div>
                     </div>
