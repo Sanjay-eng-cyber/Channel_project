@@ -117,12 +117,83 @@
             <div class="row ">
                 <div class="col-lg-12 col-xl-6">
                     <div class="p-4 order-return-first-main">
+                        <div class="fw-bolder">Order Details</div>
+                        <div class="d-flex gap-2 gap-md-5 py-2 flex-column flex-md-row">
+                            <div class="fw-order-details">Ordered on 13 March 2023</div>
+                            <div>Order# 403-2704927-5774705</div>
+                        </div>
+
+                        <div class="row py-3 px-3 px-md-0 profile-form-border">
+                            <div class="col-md-4">
+                                <div class="fw-order-details">
+                                    Shipping Address
+                                </div>
+                                <div class="py-2" style="font-size: 13px">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti explicabo laboriosam exercitationem?
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 py-3 py-md-0">
+                                <div class="fw-order-details">
+                                    Payment Methods
+                                </div>
+                                <div class="py-2" style="font-size: 13px">
+                                    BHIM UPI
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="fw-order-details">
+                                    Order Summary
+                                </div>
+                                <div class="py-2" >
+                                    <table class="table" style="font-size: 13px">
+
+                                        {{-- <thead>
+                                            <tr>
+                                              <th scope="col">#</th>
+                                              <th scope="col">First</th>
+                                            </tr>
+                                        </thead> --}}
+
+                                        <tbody>
+                                            <tr>
+                                              <td class="p-0" >Item(s) Subtotal:</td>
+                                              <td class="p-0">219.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="p-0">Shipping:</td>
+                                                <td class="p-0">0.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="p-0">Total:</td>
+                                                <td class="p-0">219.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="p-0">Grand Total:</td>
+                                                <td class="p-0">219.00</td>
+                                            </tr>
+
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+
+
+                        </div>
+
 
                     </div>
 
                 </div>
 
-                <div class="col-lg-12 col-xl-6 or-secondpage-scard">
+                <div class="col-lg-12 col-xl-6 or-secondpage-scard py-4 py-xl-0">
                     <div class="px-4 pb-4 or-secondpage-scard">
                         <div class="text-end">
                             <button type="submit" class="btn btn-orange px-4">
@@ -161,3 +232,9 @@
         </div>
     </section>
 @endsection
+
+<style>
+    .fw-order-details{
+        font-weight: 500;
+    }
+</style>
