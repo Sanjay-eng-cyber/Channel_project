@@ -1848,6 +1848,10 @@ a:hover {
     background-color: #048839;
     height: 10px;
 }
+.white-space-pre-line {
+    white-space: pre-line !important;
+}
+
 @media (max-width: 576px) {
     .rating-stats {
         border-left: none;

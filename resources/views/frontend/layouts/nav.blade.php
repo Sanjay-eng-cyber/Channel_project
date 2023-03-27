@@ -154,9 +154,12 @@
                        aria-label="Close">
                        <img src="frontend/images/icons/icon-close.svg" style="width: 51px;" alt="">
                    </button>
-                   <div class="auth-popup-body">
+
+                   {{-- if otp not send --}}
+
+                   {{-- <div class="auth-popup-body">
                        <h4 class="text-pink  font-body my-4">
-                           Log in/create account
+                           Log in/Create Account
                        </h4>
                        <form action="">
                            <div class="input-group phone-number-arrow mb-4">
@@ -166,20 +169,34 @@
                                </button>
                            </div>
                        </form>
-                       <div class=" mb-4">
-                           or connect with
-                       </div>
-                       <div class="d-flex flex-wrap justify-content-evenly ">
-                           <a href="" class="social-button px-3 py-2 mb-4">
-                               <img src="frontend/images/icons/icon-fb.png" class="pe-3" alt="">
-                               facebook
-                           </a>
-                           <a href="" class="social-button px-3 py-2 mb-4">
-                               <img src="frontend/images/icons/icon-google.png" class="pe-3" alt="">
-                               google
-                           </a>
-                       </div>
+                   </div> --}}
+
+                   {{-- else otp sent --}}
+                   <div class="auth-popup-body">
+                       <h4 class="text-pink  font-body my-4">
+                           Welcome
+                       </h4>
+                       <p class="text-muted text-start white-space-pre-line">OTP Has Been Sent To Your Registered
+                           <br>Mobile Number 0000000000
+                       </p>
+                       <form action="">
+                           <div class="input-group phone-number-arrow mb-2">
+                               <input type="text" class="form-control" placeholder="Please Enter OTP">
+                               {{-- <button class="input-group-text">
+                                   <i class="fas fa-arrow-right"></i>
+                               </button> --}}
+                           </div>
+                           <div class="d-flex justify-content-between mb-2">
+                               <button type="button" class="btn text-pink p-0 m-0">RESEND OTP</button>
+                               <span class="text-muted m-0">30s</span>
+                           </div>
+                           <div>
+                                <button type="button" class="btn btn-primary">Verify OTP</button>
+                           </div>
+                       </form>
                    </div>
+
+
                </div>
            </div>
        </div>
@@ -188,5 +205,5 @@
    {{-- we will move this styles in css file before production --}}
 
    <style>
-    
+
    </style>
