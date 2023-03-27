@@ -203,7 +203,7 @@
                             </div>
 
                             <div class="col-6 py-2">
-                                <ul class="d-flex gap-4 list-unstyled">
+                                <ul class="d-flex gap-4 list-unstyled justify-content-end">
                                     <li>
                                         <button type="button"
                                             class="btn btn-primary position-relative profile-s-bg-color">
