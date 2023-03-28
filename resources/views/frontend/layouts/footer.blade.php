@@ -1,8 +1,8 @@
 @livewireScripts
 <!-- footer of the Page -->
  <footer id="mt-footer" class="style2 wow fadeInUp custome-footer position-relative" data-wow-delay="0.6s">
-     <img src="frontend/images/footer/ft-1.png" alt="" class="footer-absolute-img1">
-     <img src="frontend/images/footer/ft-2.png" alt="" class="footer-absolute-img2">
+     <img src="{{ url('frontend/images/footer/ft-1.png') }}" alt="" class="footer-absolute-img1">
+     <img src="{{ url('frontend/images/footer/ft-2.png') }}" alt="" class="footer-absolute-img2">
 
      {{-- <img src="" alt=""> --}}
 
@@ -15,8 +15,9 @@
                      <!-- F Widget About of the Page -->
                      <div class="f-widget-about">
                          <div class="logo">
-                             <a href="frontend/#"><img src="frontend/images/channel-logo.svg" height="30"
-                                     alt="Schon"></a>
+                             <a href="frontend/#">
+                                <img src="{{ url('frontend/images/channel-logo.svg') }}" height="30"
+                                     alt="Channel"></a>
                          </div>
                          <p>Exercitation ullamco laboris nisi ut aliquip ex<br> commodo consequat. Duis aute
                              irure</p>
@@ -243,7 +244,7 @@
          <div class="col">
              <ul class="gap-2 d-flex flex-column align-items-center">
                  <li>
-                     <img src="frontend/images/svg/footer/home.svg" alt="">
+                     <img src="{{ url('frontend/images/svg/footer/home.svg') }}" alt="">
                  </li>
                  <li>home</li>
              </ul>
@@ -252,7 +253,7 @@
          <div class="col">
              <ul class="gap-2 d-flex flex-column align-items-center">
                  <li>
-                     <img src="frontend/images/svg/footer/search.svg" alt="">
+                     <img src="{{ url('frontend/images/svg/footer/search.svg') }}" alt="">
 
                  </li>
                  <li>Search</li>
@@ -262,7 +263,7 @@
          <div class="col">
              <ul class="gap-2 d-flex flex-column align-items-center">
                  <li>
-                     <img src="frontend/images/svg/footer/account.svg" alt="">
+                     <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
 
                  </li>
                  <li>Account</li>
@@ -272,7 +273,7 @@
          <div class="col">
              <ul class="gap-2 d-flex flex-column align-items-center">
                  <li>
-                     <img src="frontend/images/svg/footer/cart.svg" alt="">
+                     <img src="{{ url('frontend/images/svg/footer/cart.svg') }}" alt="">
 
                  </li>
                  <li>Cart</li>
