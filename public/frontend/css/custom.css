@@ -85,29 +85,26 @@ a:hover {
     --bs-btn-disabled-border-color: #ec268f;
 }
 
-
 .btn-green {
     --bs-btn-color: #0000;
     --bs-btn-bg: rgba(30, 186, 17, 1);
-    --bs-btn-border-color: #F58634;
+    --bs-btn-border-color: #f58634;
     --bs-btn-hover-color: #0000;
     --bs-btn-hover-bg: rgba(30, 186, 17, 1);
     --bs-btn-hover-border-color: rgba(30, 186, 17, 1);
     --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-color: #fff;
     --bs-btn-active-bg: rgba(30, 186, 17, 1);
-    --bs-btn-active-border-color:  #F58634;
+    --bs-btn-active-border-color: #f58634;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: rgba(30, 186, 17, 1);
     --bs-btn-disabled-border-color: rgba(30, 186, 17, 1);
 }
 
-
-
 .btn-orange {
     --bs-btn-color: #000;
-    --bs-btn-bg:#ebb579;
+    --bs-btn-bg: #ebb579;
     --bs-btn-border-color: #ebb579;
     --bs-btn-hover-color: #000;
     --bs-btn-hover-bg: #ebb579;
@@ -120,9 +117,7 @@ a:hover {
     --bs-btn-disabled-color: #000;
     --bs-btn-disabled-bg: #ebb579;
     --bs-btn-disabled-border-color: #ebb579;
-
 }
-
 
 .text-blue {
     color: rgba(0, 175, 239, 1);
@@ -630,7 +625,7 @@ a:hover {
 }
 
 .mt-bottom-bar {
-    background: #CBEFFC;
+    background: #cbeffc;
     padding: 42px 31px 42px 48px;
     -moz-transition: all 0.4s linear;
     -webkit-transition: all 0.4s linear;
@@ -1819,7 +1814,7 @@ a:hover {
     margin: auto !important;
 }
 .rating-holder,
-.rating-holder > .row{
+.rating-holder > .row {
     width: 100%;
     margin: 0;
 }
@@ -1855,9 +1850,46 @@ a:hover {
         padding-left: 0;
         padding-top: 20px;
     }
-    .rating{
+    .rating {
         margin-top: 1em;
         margin-bottom: 1em;
     }
-
+}
+.review-area .review-card .review-user {
+    padding-right: 1.5em;
+}
+.review-area .review-card .review-user img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.review-head {
+    display: flex;
+    flex-wrap: wrap;
+}
+.review-area .review-card .five-stars {
+    font-size: 1.5em;
+    margin-right: 1em;
+}
+.review-area .review-card .review-title {
+    font-size: 1.5em;
+}
+.review-area .review-card .review-title > * {
+    margin: 0;
+}
+.review-area .review-card .review-text {
+    margin-bottom: 1em;
+}
+.review-area .review-card .review-text > p {
+    margin: 0;
+}
+.review-area .review-card .review-content {
+    margin-top: 1em;
+}
+@media (min-width: 768px) {
+    .review-area .review-card .review-content {
+        margin-left: calc(75px + 1.5em);
+        margin-top: 0;
+    }
 }
