@@ -1,4 +1,5 @@
- <!-- footer of the Page -->
+@livewireScripts
+<!-- footer of the Page -->
  <footer id="mt-footer" class="style2 wow fadeInUp custome-footer position-relative" data-wow-delay="0.6s">
      <img src="frontend/images/footer/ft-1.png" alt="" class="footer-absolute-img1">
      <img src="frontend/images/footer/ft-2.png" alt="" class="footer-absolute-img2">

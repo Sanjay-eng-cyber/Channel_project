@@ -63,9 +63,18 @@
                                <i class="fas fa-user top-nav-usericon"></i>
                            </li>
                            <li class="text-end ">
-                               <a href="http://" data-bs-toggle="modal" data-bs-target="#loginPopup">
-                                   LOGIN
-                               </a>
+                               @auth
+                                   <form action="{{ route('frontend.logout') }}" method="POST">
+                                    @csrf
+                                       <button class="btn text-pink p-0 m-0" type="submit">
+                                           LOGOUT
+                                       </button>
+                                   </form>
+                               @else
+                                   <a href="http://" data-bs-toggle="modal" data-bs-target="#loginPopup">
+                                       LOGIN
+                                   </a>
+                               @endauth
                            </li>
                        </ul>
                    </div>
@@ -142,65 +151,9 @@
    {{-- <li><a href="{{route('about')}}">About</a></li>
                             <li><a href="{{route('contact')}}">Contact</a></li> --}}
 
-
-   <!-- login Modal -->
-   <div class="modal fade auth-popup" id="loginPopup" tabindex="-1" aria-labelledby="loginPopupLabel"
-       aria-hidden="true">
-       <div class="modal-dialog    modal-dialog-centered modal-dialog-scrollable">
-           <div class="modal-content">
-
-               <div class="modal-body">
-                   <button class="auth-popup-close-button mb-4" type="button" data-bs-dismiss="modal"
-                       aria-label="Close">
-                       <img src="frontend/images/icons/icon-close.svg" style="width: 51px;" alt="">
-                   </button>
-
-                   {{-- if otp not send --}}
-
-                   {{-- <div class="auth-popup-body">
-                       <h4 class="text-pink  font-body my-4">
-                           Log in/Create Account
-                       </h4>
-                       <form action="">
-                           <div class="input-group phone-number-arrow mb-4">
-                               <input type="text" class="form-control" placeholder="enter your mobile number*">
-                               <button class="input-group-text">
-                                   <i class="fas fa-arrow-right"></i>
-                               </button>
-                           </div>
-                       </form>
-                   </div> --}}
-
-                   {{-- else otp sent --}}
-                   <div class="auth-popup-body">
-                       <h4 class="text-pink  font-body my-4">
-                           Welcome
-                       </h4>
-                       <p class="text-muted text-start white-space-pre-line">OTP Has Been Sent To Your Registered
-                           <br>Mobile Number 0000000000
-                       </p>
-                       <form action="">
-                           <div class="input-group phone-number-arrow mb-2">
-                               <input type="text" class="form-control" placeholder="Please Enter OTP">
-                               {{-- <button class="input-group-text">
-                                   <i class="fas fa-arrow-right"></i>
-                               </button> --}}
-                           </div>
-                           <div class="d-flex justify-content-between mb-2">
-                               <button type="button" class="btn text-pink p-0 m-0">RESEND OTP</button>
-                               <span class="text-muted m-0">30s</span>
-                           </div>
-                           <div>
-                                <button type="button" class="btn btn-primary">Verify OTP</button>
-                           </div>
-                       </form>
-                   </div>
-
-
-               </div>
-           </div>
-       </div>
-   </div>
+   @guest('web')
+       <livewire:log-in />
+   @endguest
 
    {{-- we will move this styles in css file before production --}}
 

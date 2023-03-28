@@ -15,7 +15,8 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            "name" => 'Testing User',
+            "first_name" => 'Testing',
+            "last_name" => 'User',
             "email" => 'user@test.com',
             "phone" => '1234567890',
             "password" => bcrypt('password'),
@@ -24,7 +25,8 @@ class UserSeeder extends Seeder
         ]);
         for ($i = 1; $i <= 9; $i++) {
             DB::table('users')->insert([
-                "name" => 'Testing User ' . $i,
+                "first_name" => 'Testing-' . $i,
+                "last_name" => 'User-' . $i,
                 "email" => 'user' . $i . '@test.com',
                 "phone" => '123456789' . $i,
                 "password" => bcrypt('password'),
