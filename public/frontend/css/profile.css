@@ -1,16 +1,19 @@
 .profile-s-bg-color {
-    background-color: rgba(236, 38, 143, 0.4);
+    background-color: #FEEAEF;
+    color: black;
+    border: 0.782313px solid rgba(236, 38, 143, 0.4);
+    border-radius: 637.585px;
+
+}
+.profile-s-bg-color:hover {
+    background-color: #FEEAEF;
     color: black;
     border: 0.782313px solid rgba(236, 38, 143, 0.4);
     border-radius: 637.585px;
 }
-.profile-s-bg-color:hover {
-    background-color: rgba(236, 38, 143, 0.4);
-    color: black;
-    border: 0.782313px solid rgba(236, 38, 143, 0.4);
-}
 .profile-trash-icon {
-    background-color: rgba(236, 38, 143, 0.4);
+    background-color: #FEEAEF;
+    border: 0.782313px solid rgba(236, 38, 143, 0.4);
     border-radius: 50%;
     padding: 10px;
     width: 15px;
@@ -36,8 +39,9 @@
 }
 
 .profile-form-border {
-    border: 0.798412px solid #000000;
-    border-radius: 11.9762px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 
 .profile-form-group-star-name {

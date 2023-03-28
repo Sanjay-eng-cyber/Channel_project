@@ -7,6 +7,7 @@ use App\Lib\MSG91\MSG91;
 use App\Lib\MSG91\SMSCode;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 
 class LoginController extends Controller
@@ -60,5 +61,11 @@ class LoginController extends Controller
         }
 
         return response()->json(['success' => false, 'message' => 'INVALID OTP']);
+    }
+
+    public function logout()
+    {
+        Auth::guard('web')->logout();
+        return redirect('/')->with(toast('Logged Out Successfully'));
     }
 }

@@ -17,10 +17,12 @@ class CreateUserAddressesTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->enum('type', ['primary', 'secondary'])->nullable();
+            $table->string('name')->nullable();
             $table->longText('street_address');
-            $table->string('country');
+            $table->longText('landmark')->nullable();
             $table->string('city');
             $table->string('state');
+            $table->string('country');
             $table->string('postal_code');
             $table->timestamps();
         });

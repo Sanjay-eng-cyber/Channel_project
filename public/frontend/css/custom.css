@@ -119,6 +119,11 @@ a:hover {
     --bs-btn-disabled-border-color: #ebb579;
 }
 
+.img-border{
+    border: 0.646341px solid rgba(236, 38, 143, 0.6);
+    border-radius: 9.69512px;
+}
+
 .text-blue {
     color: rgba(0, 175, 239, 1);
 }
@@ -1843,6 +1848,10 @@ a:hover {
     background-color: #048839;
     height: 10px;
 }
+.white-space-pre-line {
+    white-space: pre-line !important;
+}
+
 @media (max-width: 576px) {
     .rating-stats {
         border-left: none;

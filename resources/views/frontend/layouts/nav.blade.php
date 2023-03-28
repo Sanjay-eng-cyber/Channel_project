@@ -63,9 +63,18 @@
                                <i class="fas fa-user top-nav-usericon"></i>
                            </li>
                            <li class="text-end ">
-                               <a href="http://" data-bs-toggle="modal" data-bs-target="#loginPopup">
-                                   LOGIN
-                               </a>
+                               @auth
+                                   <form action="{{ route('frontend.logout') }}" method="POST">
+                                    @csrf
+                                       <button class="btn text-pink p-0 m-0" type="submit">
+                                           LOGOUT
+                                       </button>
+                                   </form>
+                               @else
+                                   <a href="http://" data-bs-toggle="modal" data-bs-target="#loginPopup">
+                                       LOGIN
+                                   </a>
+                               @endauth
                            </li>
                        </ul>
                    </div>
@@ -142,51 +151,12 @@
    {{-- <li><a href="{{route('about')}}">About</a></li>
                             <li><a href="{{route('contact')}}">Contact</a></li> --}}
 
-
-   <!-- login Modal -->
-   <div class="modal fade auth-popup" id="loginPopup" tabindex="-1" aria-labelledby="loginPopupLabel"
-       aria-hidden="true">
-       <div class="modal-dialog    modal-dialog-centered modal-dialog-scrollable">
-           <div class="modal-content">
-
-               <div class="modal-body">
-                   <button class="auth-popup-close-button mb-4" type="button" data-bs-dismiss="modal"
-                       aria-label="Close">
-                       <img src="frontend/images/icons/icon-close.svg" style="width: 51px;" alt="">
-                   </button>
-                   <div class="auth-popup-body">
-                       <h4 class="text-pink  font-body my-4">
-                           Log in/create account
-                       </h4>
-                       <form action="">
-                           <div class="input-group phone-number-arrow mb-4">
-                               <input type="text" class="form-control" placeholder="enter your mobile number*">
-                               <button class="input-group-text">
-                                   <i class="fas fa-arrow-right"></i>
-                               </button>
-                           </div>
-                       </form>
-                       <div class=" mb-4">
-                           or connect with
-                       </div>
-                       <div class="d-flex flex-wrap justify-content-evenly ">
-                           <a href="" class="social-button px-3 py-2 mb-4">
-                               <img src="frontend/images/icons/icon-fb.png" class="pe-3" alt="">
-                               facebook
-                           </a>
-                           <a href="" class="social-button px-3 py-2 mb-4">
-                               <img src="frontend/images/icons/icon-google.png" class="pe-3" alt="">
-                               google
-                           </a>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
+   @guest('web')
+       <livewire:log-in />
+   @endguest
 
    {{-- we will move this styles in css file before production --}}
 
    <style>
-    
+
    </style>
