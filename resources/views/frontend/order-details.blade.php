@@ -118,7 +118,7 @@
                 <div class="col-lg-12 col-xl-6">
                     <div class="p-4 order-return-first-main">
                         <div class="fw-bolder">Order Details</div>
-                        <div class="d-flex gap-2 gap-md-5 py-2 flex-column flex-md-row">
+                        <div class="d-flex gap-2 gap-md-4 py-2 flex-column flex-md-row">
                             <div class="fw-order-details">Ordered on 13 March 2023</div>
                             <div>Order# 403-2704927-5774705</div>
                         </div>
