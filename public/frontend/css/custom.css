@@ -123,6 +123,10 @@ a:hover {
 
 }
 
+.img-border{
+    border: 0.646341px solid rgba(236, 38, 143, 0.6);
+    border-radius: 9.69512px;
+}
 
 .text-blue {
     color: rgba(0, 175, 239, 1);
