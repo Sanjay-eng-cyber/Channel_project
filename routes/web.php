@@ -71,6 +71,11 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.write-review');
     })->name('write-review');
 
+
+    Route::get('/review-index', function () {
+        return view('frontend.review-index');
+    })->name('review-index');
+
     Route::get('/about-us', function () {
         return view('frontend/layouts/about-us');
     })->name('about');
