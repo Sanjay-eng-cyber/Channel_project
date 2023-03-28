@@ -38,7 +38,7 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Name</label><br>
-                                                <p class="label-title">{{ $user->name }}</p>
+                                                <p class="label-title">{{ $user->first_name }} {{ $user->last_name }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">

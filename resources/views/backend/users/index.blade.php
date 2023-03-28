@@ -66,7 +66,7 @@
                                 @forelse($users as $user)
                                     <tr>
                                         <td>{{ tableRowSrNo($loop->index, $users) }}</td>
-                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->first_name }} {{ $user->last_name }}</td>
                                         <td class="text-center">
                                             <div class="dropdown custom-dropdown">
                                                 <a class="dropdown-toggle" href="#" role="button"
