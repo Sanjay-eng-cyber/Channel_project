@@ -38,7 +38,7 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">User</label><br>
-                                                <p class="label-title">{{ $order->user->name }}</p>
+                                                <p class="label-title">{{ $order->user->first_name }} {{ $order->user->last_name }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -66,7 +66,7 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Delivery Status</label><br>
-                                                <p class="label-title">{{ $order->delivery_status }}</p>
+                                                <p class="label-title">{{ $order->delivery_status ?? '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
