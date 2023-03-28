@@ -8,7 +8,8 @@
                 <div class="modal-body">
                     <button class="auth-popup-close-button mb-4" type="button" data-bs-dismiss="modal"
                         aria-label="Close">
-                        <img src="frontend/images/icons/icon-close.svg" style="width: 51px;" alt="">
+                        <img src="{{ url('frontend/images/icons/icon-close.svg') }}" style="width: 51px;"
+                            alt="">
                     </button>
 
                     {{-- if otp not send --}}
@@ -50,21 +51,40 @@
                                     <span class="text-danger">{{ $errors->first('otp') }}</span>
                                 @endif
                                 <div class="d-flex justify-content-between mb-2">
-                                    <button type="button" class="btn text-pink p-0 m-0">RESEND OTP</button>
-                                    <span class="text-muted m-0">30s</span>
+                                    <button type="button" class="btn text-pink p-0 m-0 border-0" id="resend-otp-btn"
+                                        disabled>
+                                        RESEND OTP
+                                    </button>
+                                    <span class="text-muted m-0" id="otp-timer">30s</span>
                                 </div>
-                                <div>
-                                    <button type="submit" class="btn profile-btn-color w-100 mt-4">Verify OTP</button>
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-pink w-100 mt-4">Verify OTP</button>
                                 </div>
-                                <a href="javascript:void()" class="text-muted text-center" wire:click="back()">Back To
-                                    Log In</a>
+                                <button class="text-muted text-center btn" onclick="breakCount()"
+                                    wire:click="back()">Back To
+                                    Log In</button>
                             </form>
+                            <script>
+                                var breakCount = () => {
+                                    window.clearInterval(otpTimer);
+                                }
+                                var count = 30;
+                                var otpTimer = setInterval(function() {
+                                    if (count <= 0) {
+                                        window.clearInterval(otpTimer);
+                                        document.getElementById("resend-otp-btn").disabled = false;
+                                        document.getElementById("otp-timer").innerHTML = "";
+                                    } else {
+                                        document.getElementById("otp-timer").innerHTML = count + "s";
+                                    }
+                                    count -= 1;
+                                }, 1000);
+                            </script>
                         </div>
                     @endif
-
-
                 </div>
             </div>
         </div>
     </div>
 </div>
+
