@@ -63,6 +63,14 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.order-tracking-first');
     })->name('order-tracking-first');
 
+    Route::get('/order-details', function () {
+        return view('frontend.order-details');
+    })->name('order-details');
+
+    Route::get('/write-review', function () {
+        return view('frontend.write-review');
+    })->name('write-review');
+
     Route::get('/about-us', function () {
         return view('frontend/layouts/about-us');
     })->name('about');
