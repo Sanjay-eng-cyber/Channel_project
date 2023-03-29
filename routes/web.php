@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -89,6 +90,12 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend/layouts/contact-us');
     })->name('contact');
 
+    // Product page
+    Route::get('/product-skin-care', function () {
+        return view('frontend/product/product-skin-care');
+    })->name('product-skin-care');
+
+    // end product page
     Route::get('/products', function () {
         return view('frontend/product/index');
     })->name('products');
