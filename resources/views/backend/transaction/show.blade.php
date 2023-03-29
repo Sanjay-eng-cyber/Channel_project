@@ -45,35 +45,35 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Pg Payment
                                                     Id</label><br>
-                                                <p class="label-title">{{ $transactions->pg_payment_id }}</p>
+                                                <p class="label-title">{{ $transactions->pg_payment_id ?? '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Pg
                                                     Response</label><br>
-                                                <p class="label-title">{{ $transactions->pg_response }}</p>
+                                                <p class="label-title">{{ $transactions->pg_response ?? '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Pg
                                                     Amount</label><br>
-                                                <p class="label-title">{{ $transactions->pg_amount }}</p>
+                                                <p class="label-title">{{ $transactions->pg_amount ?? '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Pg
                                                     Status</label><br>
-                                                <p class="label-title">{{ $transactions->pg_status }}</p>
+                                                <p class="label-title">{{ $transactions->pg_status ?? '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Payment
                                                     Type</label><br>
-                                                <p class="label-title">{{ $transactions->payment_type }}</p>
+                                                <p class="label-title">{{ $transactions->payment_type ?? '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
