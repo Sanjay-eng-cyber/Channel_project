@@ -7,6 +7,31 @@
 
 <section style="padding:70px 0px 70px 0px">
     <div class="container">
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-sm-10">
+                <div class="row">
+
+                 <div class="review-main-switch my-3">
+                    <div class="review-center-switch d-flex gap-5 justify-content-center mb-5 mb-md-0">
+                        <h5 class="main-head">Contribute</h5>
+                        <h5 class="main-head">Your Review</h5>
+                    </div>
+
+                    <div class="review-side-switch d-flex gap-2 justify-content-end">
+                        <div class="review-old-cl">Older</div>
+                        <div class="review-slash">|</div>
+                        <div class="review-old-cl">Newer</div>
+                    </div>
+
+                 </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
         <div class="row d-flex justify-content-center review-main-section" style="">
             <div class="col-sm-10">
                 <div class="row review-subsection">
@@ -69,7 +94,6 @@
                 </div>
             </div>
         </div>
-
 
         <div class="row d-flex justify-content-center review-main-section my-4" style="">
             <div class="col-sm-10">
@@ -143,6 +167,38 @@
 
 
 <style>
+.review-center-switch h5 {
+  color:rgba(57, 53, 53, 0.34);
+
+}
+
+.review-center-switch h5:active {
+  color:rgba(236, 38, 143, 1);
+}
+
+.review-old-cl{
+    color: rgba(57, 53, 53, 0.34);
+}
+
+.review-slash{
+    color: rgba(57, 53, 53, 0.34);
+}
+ .review-old-cl:active{
+    color:black;
+}
+    .review-main-switch{
+        isolation: isolate;
+        position: relative;
+    }
+
+   .review-main-switch .review-side-switch {
+           position: absolute;
+                    right: 0px;
+                    bottom: 8px;
+                    z-index: 10;
+
+    }
+
 .review-sub-textarea::placeholder {
         text-align: start;
 
@@ -187,6 +243,20 @@
     margin: 10px auto 10px auto;
 
 }
+}
+
+
+
+
+@media screen and (max-width:768px){
+    .review-main-switch .review-side-switch {
+    position: absolute;
+    right: 0px;
+    bottom: 8px;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
 }
 
 
