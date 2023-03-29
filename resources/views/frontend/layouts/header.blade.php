@@ -16,6 +16,8 @@
 <!-- include the site stylesheet -->
 <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
 
+<link href="{{ asset('plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
+
 <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
 
 <style>

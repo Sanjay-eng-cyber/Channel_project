@@ -282,3 +282,44 @@
 
      </div>
  </div>
+
+ <script src="{{asset('plugins/notification/snackbar/snackbar.min.js')}}"></script>
+ <script>
+     @if (Session::get('alert-type') == 'success')
+         @if (Session::has('message'))
+             Snackbar.show({
+                 text: "{{ Session::get('message') }}",
+                 pos: 'top-right',
+                 actionTextColor: '#fff',
+                 backgroundColor: '#1abc9c'
+             });
+         @endif
+     @elseif (Session::get('alert-type') == 'info')
+         @if (Session::has('message'))
+             Snackbar.show({
+                 text: "{{ Session::get('message') }}",
+                 pos: 'top-right',
+                 actionTextColor: '#fff',
+                 backgroundColor: '#2196f3'
+             });
+         @endif
+     @elseif (Session::get('alert-type') == 'error')
+         @if (Session::has('message'))
+             Snackbar.show({
+                 text: "{{ Session::get('message') }}",
+                 pos: 'top-right',
+                 actionTextColor: '#fff',
+                 backgroundColor: '#e7515a'
+             });
+         @endif
+     @else
+         @if (Session::has('message'))
+             Snackbar.show({
+                 text: "{{ Session::get('message') }}",
+                 pos: 'top-right',
+                 actionTextColor: '#fff',
+                 backgroundColor: '#3b3f5c'
+             });
+         @endif
+     @endif
+ </script>

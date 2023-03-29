@@ -92,5 +92,9 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend/product/show');
     })->name('products.show');
 
+
+    Route::post('send-otp', 'App\Http\Controllers\frontend\LoginController@sendOtp')->name('frontend.send-otp');
+    Route::post('verify-otp', 'App\Http\Controllers\frontend\LoginController@verifyOtp')->name('frontend.verify-otp');
+
     Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
 });

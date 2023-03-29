@@ -65,7 +65,7 @@
                            <li class="text-end ">
                                @auth
                                    <form action="{{ route('frontend.logout') }}" method="POST">
-                                    @csrf
+                                       @csrf
                                        <button class="btn text-pink p-0 m-0" type="submit">
                                            LOGOUT
                                        </button>
@@ -152,7 +152,218 @@
                             <li><a href="{{route('contact')}}">Contact</a></li> --}}
 
    @guest('web')
-       <livewire:log-in />
+       {{-- <livewire:log-in /> --}}
+       <div id="login_div">
+           <!-- login Modal -->
+           <div class="modal fade auth-popup" id="loginPopup" tabindex="-1" aria-labelledby="loginPopupLabel"
+               aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                   <div class="modal-content">
+
+                       <div class="modal-body">
+                           <button class="auth-popup-close-button mb-4" type="button" data-bs-dismiss="modal"
+                               aria-label="Close">
+                               <img src="{{ url('frontend/images/icons/icon-close.svg') }}" style="width: 51px;"
+                                   alt="">
+                           </button>
+
+                           {{-- if otp not send --}}
+
+                           {{-- @if ($step == 1) --}}
+                           <div class="auth-popup-body" v-if="!requested">
+                               <h4 class="text-pink  font-body my-4">
+                                   Log in/Create Account
+                               </h4>
+                               <form v-on:submit="submitMobileNo">
+                                   <div class="input-group phone-number-arrow mb-3">
+                                       <input type="text" class="form-control" placeholder="Enter Your Mobile Number"
+                                           required minlength="10" maxlength="10" v-model="mobile_no">
+                                       <button class="input-group-text" type="submit">
+                                           <i class="fas fa-arrow-right"></i>
+                                       </button>
+                                   </div>
+                                   <div v-if="error" v-for="(errorArray, idx) in errorTexts" :key='idx'>
+                                       <div v-for="(allErrors, idx) in errorArray" :key='idx'>
+                                           <span class="text-danger" v-text='allErrors'></span>
+                                       </div>
+                                   </div>
+                               </form>
+                           </div>
+                           {{-- @elseif($step == 2) --}}
+                           {{-- else otp sent --}}
+                           <div class="auth-popup-body" v-if="requested">
+                               <h4 class="text-pink  font-body my-4">
+                                   Welcome
+                               </h4>
+                               <p class="text-muted text-start">@{{ otpSendMsg }}
+                               </p>
+                               <form v-on:submit="verifyOtp">
+                                   <div class="input-group phone-number-arrow mb-2">
+                                       <input type="text" class="form-control" placeholder="Please Enter OTP" required
+                                           id="otpNew" v-model="otp">
+                                   </div>
+                                   @if ($errors->has('otp'))
+                                       <span class="text-danger">{{ $errors->first('otp') }}</span>
+                                   @endif
+                                   <div class="d-flex justify-content-between mb-2 flex-row-reverse">
+                                       <button type="button" class="btn text-pink p-0 m-0 border-0" id="resend-otp-btn"
+                                           id="resendOtpBtn" v-if="showResend" @click="resend">Resend
+                                       </button>
+                                       <span class="text-muted m-0" id="otp-timer" v-if="showTimer"></span>
+                                   </div>
+                                   <div class="mb-3">
+                                       <button type="submit" class="btn btn-pink w-100 mt-4">Verify OTP</button>
+                                   </div>
+                                   <button class="text-muted text-center btn" @click="back">Back To
+                                       Log In</button>
+                               </form>
+                           </div>
+                           {{-- @endif --}}
+
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+       <script>
+           const {
+               createApp
+           } = Vue;
+           createApp({
+               data() {
+                   return {
+                       mobile_no: null,
+                       otp: null,
+                       requested: false,
+                       error: false,
+                       showTimer: false,
+                       showResend: false,
+                       countDown: null,
+                       error: false,
+                       errorTexts: '',
+                       otpSendMsg: '',
+                       timer: 30,
+                   }
+               },
+               methods: {
+                   clearErrorMessage() {
+                       this.error = false;
+                       this.errorTexts = '';
+                   },
+                   sendOtp() {
+                       this.clearErrorMessage();
+                       axios.post("{{ route('frontend.send-otp') }}", {
+                               phone: this.mobile_no
+                           })
+                           .then(res => {
+                               if (res.data.success) {
+                                   Snackbar.show({
+                                       text: res.data.message,
+                                       pos: 'top-right',
+                                       actionTextColor: '#fff',
+                                       backgroundColor: '#1abc9c'
+                                   });
+                                   this.requested = true;
+                                   this.otpSendMsg = "OTP Has Been Sent To Your Registered Mobile Number " + this
+                                       .mobile_no;
+                                   this.beginTimer();
+                               }
+                               if (!res.data.success) {
+                                   this.requested = false;
+                                   Snackbar.show({
+                                       text: res.data.message,
+                                       pos: 'top-right',
+                                       actionTextColor: '#fff',
+                                       backgroundColor: '#e7515a'
+                                   });
+                               }
+                           })
+                           .catch(err => {
+                               this.requested = false;
+                               this.error = true;
+                               this.errorTexts = err.response.data.errors;
+                           });
+                   },
+                   verifyOtp(e) {
+                       e.preventDefault();
+                       this.clearErrorMessage();
+                       axios.post("{{ route('frontend.verify-otp') }}", {
+                               phone: this.mobile_no,
+                               otp: this.otp
+                           })
+                           .then(res => {
+                               if (res.data.success) {
+                                   this.showTimer = false;
+                                   this.showResend = false;
+                                   Snackbar.show({
+                                       text: res.data.message,
+                                       pos: 'top-right',
+                                       actionTextColor: '#fff',
+                                       backgroundColor: '#1abc9c'
+                                   });
+                                   setTimeout(() => {
+                                       window.location.href = '/';
+                                   }, 1000);
+                               } else {
+                                   Snackbar.show({
+                                       text: res.data.message,
+                                       pos: 'top-right',
+                                       actionTextColor: '#fff',
+                                       backgroundColor: '#e7515a'
+                                   });
+                               }
+                           })
+                           .catch(err => {
+                               this.error = true;
+                               this.errorTexts = err.response.data.errors;
+                               Snackbar.show({
+                                   text: "Something Went Wrong",
+                                   pos: 'top-right',
+                                   actionTextColor: '#fff',
+                                   backgroundColor: '#e7515a'
+                               });
+                           });
+                   },
+                   resend() {
+                       this.timer = 30;
+                       this.sendOtp();
+                   },
+                   otpNew() {
+                       //    $('#otpNew').focus();
+                   },
+                   beginTimer() {
+                       this.clearErrorMessage();
+                       this.showResend = false;
+                       this.countDown = window.setInterval(() => {
+                           if (this.timer == -1) {
+                               clearTimeout(this.countDown);
+                               this.showTimer = false;
+                               this.showResend = true;
+                               this.otpNew();
+                           } else {
+                               this.showTimer = true;
+                               $('#otp-timer').text(`Resend OTP in ${this.timer} seconds`)
+                               this.timer--;
+                               this.otpNew();
+                           }
+                       }, 1000);
+                   },
+                   submitMobileNo(e) {
+                       e.preventDefault();
+                       this.sendOtp();
+                   },
+                   back() {
+                       this.clearErrorMessage();
+                       this.requested = false;
+                   }
+               },
+               created() {
+                //    console.log(this.timer) // 30
+               }
+           }).mount('#login_div')
+       </script>
    @endguest
 
    {{-- we will move this styles in css file before production --}}
