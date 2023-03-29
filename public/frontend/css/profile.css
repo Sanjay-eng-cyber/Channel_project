@@ -730,3 +730,8 @@ order-return second page */
 
 
 
+.review-input-bg{
+    background-color: #FAF8F8;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
