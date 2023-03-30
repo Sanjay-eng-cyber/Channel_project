@@ -740,6 +740,7 @@ order-return second page */
 
 /* product page */
 
+/* product skin */
 
 .skin-radio-1{
 
@@ -757,5 +758,54 @@ order-return second page */
     border-radius: 4px;
 
     }
+
+
+.sckoo-card-main {
+    width: 19rem;
+}
+
+@media screen and (max-width:1400px) {
+    .sckoo-card-main {
+        width: 17rem;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .sckoo-card-main {
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .sckoo-card-main {
+        width: 18rem;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .sckoo-card-main {
+        width: 16.5rem;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .sckoo-card-main {
+        width: 18rem;
+        margin: auto;
+    }
+    .sckoo-card-main {
+        margin: auto;
+    }
+}
+
+
+.sckoo-card-img {
+    background: #fcdac2;
+    box-shadow: 4.37956px 5.10949px 8.75912px rgba(0, 0, 0, 0.59);
+    border-radius: 9.68917px;
+}
+
+/* product skin */
 
     /* end product page */
