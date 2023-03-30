@@ -764,6 +764,15 @@ color: #EC268F;
     color: rgba(0, 0, 0, 0.4);
 }
 
+.mt-producttabs .pro-slidetab a {
+    color: rgba(0, 0, 0, 0.4);
+    -moz-transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+}
+
+
 /* product skin */
 
 /* end product page */

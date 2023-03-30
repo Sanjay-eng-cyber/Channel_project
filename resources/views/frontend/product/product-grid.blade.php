@@ -86,7 +86,7 @@
 
                     <div class="mt-producttabs style2 wow fadeInUp p-0" data-wow-delay="0.6s">
 
-                        <ul class="producttabs">
+                        <ul class="producttabs pro-slidetab">
                             <li><a href="#__skincare" class="active">Skin Care</a></li>
                             <li><a href="#__skinlatest">Latest</a></li>
                             <li><a href="#__skinbestseller">Best Seller</a></li>
