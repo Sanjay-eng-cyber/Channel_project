@@ -91,9 +91,9 @@ Route::domain(config('app.web_domain'))->group(function () {
     })->name('contact');
 
     // Product page
-    Route::get('/product-skin-care', function () {
-        return view('frontend/product/product-skin-care');
-    })->name('product-skin-care');
+    Route::get('/product-grid', function () {
+        return view('frontend.product.product-grid');
+    })->name('product-grid');
 
     // end product page
     Route::get('/products', function () {
