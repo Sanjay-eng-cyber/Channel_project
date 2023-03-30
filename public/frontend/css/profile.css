@@ -741,71 +741,29 @@ order-return second page */
 /* product page */
 
 /* product skin */
-
-.skin-radio-1{
+.pro-radio-btn {
+    background: #FFFFFF;
+opacity: 0.3;
+border: 1px solid #000000;
+border-radius: 4px;
+color: rgba(0, 0, 0, 0.1);
+}
+.pro-radio-btn input[type="radio"]:checked + label {
 
     background: #FFFFFF;
-    border: 1px solid rgba(236, 38, 143, 0.3);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-    }
+border: 1px solid rgba(236, 38, 143, 0.3);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 4px;
+color: #EC268F;
 
-
-    .skin-radio-2{
-        background: #FFFFFF;
-    opacity: 0.3;
-    border: 1px solid #000000;
-    border-radius: 4px;
-
-    }
-
-
-.sckoo-card-main {
-    width: 19rem;
 }
 
-@media screen and (max-width:1400px) {
-    .sckoo-card-main {
-        width: 17rem;
-    }
-}
-
-@media screen and (max-width:1200px) {
-    .sckoo-card-main {
-        width: 18rem;
-    }
-}
-
-@media screen and (max-width:992px) {
-    .sckoo-card-main {
-        width: 18rem;
-    }
-}
-
-
-@media screen and (max-width:768px) {
-    .sckoo-card-main {
-        width: 16.5rem;
-    }
-}
-
-@media screen and (max-width:576px) {
-    .sckoo-card-main {
-        width: 18rem;
-        margin: auto;
-    }
-    .sckoo-card-main {
-        margin: auto;
-    }
-}
-
-
-.sckoo-card-img {
-    background: #fcdac2;
-    box-shadow: 4.37956px 5.10949px 8.75912px rgba(0, 0, 0, 0.59);
-    border-radius: 9.68917px;
+.top-product-des
+.top-product-text{
+    background-color:white;
+    color: rgba(0, 0, 0, 0.4);
 }
 
 /* product skin */
 
-    /* end product page */
+/* end product page */
