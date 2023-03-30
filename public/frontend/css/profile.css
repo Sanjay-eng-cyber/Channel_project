@@ -773,6 +773,11 @@ color: #EC268F;
 }
 
 
+.mt-producttabs .pro-slidetab a {
+    text-transform: capitalize;
+    font-size: 1.3em;
+}
+
 /* product skin */
 
 /* end product page */

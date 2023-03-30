@@ -95,6 +95,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.product.skin-care.index');
     })->name('skin');
 
+    Route::get('/fragrances', function () {
+        return view('frontend.product.fragrances.index');
+    })->name('fragrances');
+
     // end product page
     Route::get('/products', function () {
         return view('frontend/product/index');
