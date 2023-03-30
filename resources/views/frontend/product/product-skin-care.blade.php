@@ -23,7 +23,7 @@
                                 <input type="text" class="form-control" placeholder="" aria-label="Recipient's username"
                                     aria-describedby="basic-addon2">
                                 <span class="input-group-text" id="basic-addon2" style="background: rgba(251, 140, 165, 0.2);">
-                                    <i class="fas fa-search fa-fw text-red"></i>
+                                    <button type="submit" class="border-0" style="background: rgba(251, 140, 165, 0.2);"><i class="fas fa-search fa-fw text-red"></i></button>
                                 </span>
 
                             </div>
