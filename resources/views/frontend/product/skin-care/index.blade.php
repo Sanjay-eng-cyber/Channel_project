@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title', 'Skin Care |')
+@section('title', 'Skin |')
 
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
@@ -11,7 +11,7 @@
 
 
         <div class="container mb-5">
-            <div class="row my-5">
+            <div class="row mt-5">
                 <div class="col-lg-5 col-xl-4">
                     <h2 class="main-head text-red">Best In Skin Products</h2>
                 </div>
