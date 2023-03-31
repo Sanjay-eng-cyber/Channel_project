@@ -1076,6 +1076,17 @@ a:hover {
 
 /*end organic product */
 
+
+/* not found product content */
+.not-found .not-found-desc {
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.50);
+
+    }
+/* end not found product content */
+
 @media screen and (max-width: 1400px) {
     /* organic-product */
     .og-main .og-main-part-1 .og-main-img-first {
