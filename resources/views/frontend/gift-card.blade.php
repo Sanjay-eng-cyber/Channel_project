@@ -5,7 +5,7 @@
 @endsection
 @section('content')
     <main id="mt-main">
-        <!-- Mt Product detial of the Page -->
+
         <section class="mt-product-detial wow fadeInUp mt-4 " data-wow-delay="0.4s">
             <div class="container">
                 <div class="row">
@@ -58,11 +58,8 @@
                                 </div>
                             </div>
 
-
-                            <!-- Pagg Slider of the Page end -->
                         </div>
-                        <!-- Slider of the Page end -->
-                        <!-- detial Holder of the Page -->
+
                         <div class="detial-holder gift-card-holder">
                             <h5 class="font-body py-3">
                                 2. Enter Your Gift Card Details
@@ -372,7 +369,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row pb-4" style="padding-top:70px;">
+                <div class="row pb-4" style="padding-top:50px;">
                     <div class="col-lg-12 col-xl-6 or-secondpage-scard">
                         <div class="p-4 or-secondpage-scard">
 
