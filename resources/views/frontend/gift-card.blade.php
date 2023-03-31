@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
+
     <main id="mt-main">
 
         <section class="mt-product-detial wow fadeInUp mt-4 " data-wow-delay="0.4s">
@@ -349,10 +350,10 @@
                             Narrow Reviews By
                         </h4>
                         <div class="row row-cols-1 row-cols-sm-2 ">
-                            <div class="col __1nw-rv my-2 my-sm-3">
+                            <div class="col __1nw-rv pt-2 pt-sm-3 pb-2">
                                 <div class="fw-bold text-red bg-lightpink p-2 text-center">Recent</div>
                             </div>
-                            <div class="col  __1nw-rv my-2 my-sm-3">
+                            <div class="col  __1nw-rv pt-2 pt-sm-3 pb-2">
                                 <div class="fw-bold text-red bg-lightpink p-2 text-center">By Certified Buyer</div>
                             </div>
                             <div class="col  __1nw-rv my-2 my-sm-2">

@@ -853,6 +853,13 @@ color: #EC268F;
     width: 100%;
 }
 }
+
+.__1nw-rv div:hover{
+    background-color: rgba(236, 38, 143, 1);
+    transition: 0.6s ease-in-out;
+    color: white;
+}
+
 /* end gift card */
 
 
