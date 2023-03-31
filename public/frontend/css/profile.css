@@ -854,3 +854,78 @@ color: #EC268F;
 }
 }
 /* end gift card */
+
+
+
+/* write a review */
+
+    .write-review-fw {
+        font-weight: 500;
+        font-size: 1.15rem;
+        line-height: 1.2;
+    }
+
+    .write-review-fw-subhead {
+        font-weight: 500;
+    }
+
+    .review-star-color {
+        color: rgba(30, 186, 17, 1);
+        width: 29px;
+        height: 24px;
+    }
+
+    .write-review-textarea {
+        background: #FAF8F8;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+    .write-review-textarea::placeholder {
+        text-align: start;
+        padding: 10px;
+    }
+
+    .review-guid-line {
+        background: #FAF8F8;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        padding: 20px;
+    }
+
+    .review-guid-line-heading {
+        font-weight: 500;
+    }
+
+    .write-review-bdr-one {
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .write-review-bdr-all {
+        background: #FFFFFF;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        padding: 22px;
+
+    }
+
+    @media screen and (max-width:580px) {
+        .write-review-bdr-all {
+            background: #FFFFFF;
+            border: 0px solid rgba(0, 0, 0, 0.2);
+            border-radius: 0px;
+            padding: 0px;
+        }
+    }
+
+    @media screen and (max-width:992px) {
+        .write-review-bdr-one {
+            border-right: 0px solid rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+    }
+
+
+
+/*end  write a review */
+
