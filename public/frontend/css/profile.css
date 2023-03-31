@@ -909,7 +909,7 @@ color: #EC268F;
 
     }
 
-    @media screen and (max-width:580px) {
+    @media screen and (max-width:576px) {
         .write-review-bdr-all {
             background: #FFFFFF;
             border: 0px solid rgba(0, 0, 0, 0.2);
@@ -928,4 +928,23 @@ color: #EC268F;
 
 
 /*end  write a review */
+/* gift cand review */
+.gift-card-review-img{
+    width: 80%;
+    background: #C4C4C4;
+border: 0.646341px solid rgba(236, 38, 143, 0.6);
+border-radius: 9.69512px;
+padding: 40px;
+}
+.gift-card-review-img img{
+    width:400px;
+}
 
+@media screen and (max-width:576px) {
+    .gift-card-review-img{
+    width: 100%;
+    padding: 25px;
+}
+}
+
+/* end gift card review */

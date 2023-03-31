@@ -13,15 +13,14 @@
 
                 <div class="col-12 col-lg-6 write-review-bdr-one">
                     <div class="p-0 p-sm-3">
-                        <div>
-                            <img src="frontend/images/products/skin/sk1.png" alt=""
-                                class="img-fluid img-border m-auto m-lg-0" style="width:425px">
+                        <div class="gift-card-review-img">
+                            <img src="https://via.placeholder.com/600" alt=""
+                                class="img-fluid img-border m-auto m-lg-0">
                         </div>
 
                         <div>
-                            <div class="write-review-fw main-head pt-4 pb-2">Essence Long Lasting Eye Pencil</div>
-                            <div>essence Long Lasting Eye Pencil is a creamy and pigmented eye pencil that brightens and
-                                accentuates your eye more....</div>
+                            <div class="write-review-fw main-head pt-4 pb-2">Amazon Pay EGift Card</div>
+                            <div>Hope you enjoy this Amazon Pay Gift Card!</div>
                         </div>
 
                         <hr>
