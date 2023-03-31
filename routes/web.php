@@ -85,6 +85,9 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.review-show');
     })->name('review-show');
 
+     Route::get('/gift-card', function () {
+        return view('frontend.gift-card');
+    })->name('gift-card');
 
     Route::get('/about-us', function () {
         return view('frontend/layouts/about-us');
