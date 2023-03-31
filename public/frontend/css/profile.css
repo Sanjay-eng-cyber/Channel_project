@@ -781,3 +781,76 @@ color: #EC268F;
 /* product skin */
 
 /* end product page */
+
+/* gift card */
+
+.gift-card-sidebar {
+    background-color: #C4C4C4;
+    padding: 40px 30px 40px 30px;
+}
+
+.gift-card-amount{
+    gap: 3.5rem;
+}
+.gift-card-qty{
+    gap: 3.2rem;
+}
+.gift-card-delivery{
+    gap: 3.5rem;
+}
+.gift-card-to{
+    gap:6.2rem;
+}
+
+.gift-card-from{
+    gap: 5rem;
+}
+
+.gift-card-msg{
+    gap:3rem
+}
+
+.gift-card-ddate{
+    gap:1rem;
+}
+.gift-card-ddate input{
+    width: 70%;
+}
+.mt-product-detial  .gift-card-holder{
+    padding-top:65px;
+}
+
+.__1nw-rv div{
+    border-radius: 30px;
+}
+@media screen and (max-width:576px){
+
+.gift-card-amount{
+    gap: 0.5rem;
+}
+.gift-card-qty{
+    gap: 0.5rem;
+}
+.gift-card-delivery{
+    gap: 0.5rem;
+}
+.gift-card-to{
+    gap: 0.5rem;
+}
+
+.gift-card-from{
+    gap: 0.5rem;
+}
+
+.gift-card-msg{
+    gap: 0.5rem;
+}
+
+.gift-card-ddate{
+    gap: 0.5rem;
+}
+.gift-card-ddate input{
+    width: 100%;
+}
+}
+/* end gift card */
