@@ -1,325 +1,334 @@
 @livewireScripts
 <!-- footer of the Page -->
- <footer id="mt-footer" class="style2 wow fadeInUp custome-footer position-relative" data-wow-delay="0.6s">
-     <img src="{{ url('frontend/images/footer/ft-1.png') }}" alt="" class="footer-absolute-img1">
-     <img src="{{ url('frontend/images/footer/ft-2.png') }}" alt="" class="footer-absolute-img2">
+<footer id="mt-footer" class="style2 wow fadeInUp custome-footer position-relative" data-wow-delay="0.6s">
+    <img src="{{ url('frontend/images/footer/ft-1.png') }}" alt="" class="footer-absolute-img1">
+    <img src="{{ url('frontend/images/footer/ft-2.png') }}" alt="" class="footer-absolute-img2">
 
-     {{-- <img src="" alt=""> --}}
+    {{-- <img src="" alt=""> --}}
 
-     <!-- F Promo Box of the Page end -->
-     <!-- Footer Holder of the Page -->
-     <div class="footer-holder dark mt-paddingbottomxs-hide-holder ">
-         <div class="container">
-             <div class="row">
-                 <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
-                     <!-- F Widget About of the Page -->
-                     <div class="f-widget-about">
-                         <div class="logo">
-                             <a href="frontend/#">
+    <!-- F Promo Box of the Page end -->
+    <!-- Footer Holder of the Page -->
+    <div class="footer-holder dark mt-paddingbottomxs-hide-holder ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
+                    <!-- F Widget About of the Page -->
+                    <div class="f-widget-about">
+                        <div class="logo">
+                            <a href="frontend/#">
                                 <img src="{{ url('frontend/images/channel-logo.svg') }}" height="30"
-                                     alt="Channel"></a>
-                         </div>
-                         <p>Exercitation ullamco laboris nisi ut aliquip ex<br> commodo consequat. Duis aute
-                             irure</p>
-                         <ul class="list-unstyled d-flex gap-2 p-0">
-                             <li>
-                                 <i class="fas fa-map-marker-alt text-red"></i>
-                             </li>
-                             <li>
-                                 Exercitation ullamco laboris nisi ut aliquip excommodo consequat. Duis aute irure
-                             </li>
-                         </ul>
-                         <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
-                             <li>
-                                 <i class="fas fa-phone  text-red"></i>
-                             </li>
-                             <li>
-                                 Exercitation ullamco laboris
-                             </li>
-                         </ul>
-                         <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
-                             <li>
-                                 <i class="fas fa-envelope  text-red"></i>
-                             </li>
-                             <li>
-                                 Exercitation ullamco laboris
-                             </li>
-                         </ul>
+                                    alt="Channel"></a>
+                        </div>
+                        <p>Exercitation ullamco laboris nisi ut aliquip ex<br> commodo consequat. Duis aute
+                            irure</p>
+                        <ul class="list-unstyled d-flex gap-2 p-0">
+                            <li>
+                                <i class="fas fa-map-marker-alt text-red"></i>
+                            </li>
+                            <li>
+                                Exercitation ullamco laboris nisi ut aliquip excommodo consequat. Duis aute irure
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
+                            <li>
+                                <i class="fas fa-phone  text-red"></i>
+                            </li>
+                            <li>
+                                Exercitation ullamco laboris
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
+                            <li>
+                                <i class="fas fa-envelope  text-red"></i>
+                            </li>
+                            <li>
+                                Exercitation ullamco laboris
+                            </li>
+                        </ul>
 
-                         <ul class="list-unstyled contact-mobile-version">
-                             <li class="gap-2 d-flex align-items-center">
-                                 <i class="fas fa-phone  text-red"></i>
-                                 12345678910
-                             </li>
+                        <ul class="list-unstyled contact-mobile-version">
+                            <li class="gap-2 d-flex align-items-center">
+                                <i class="fas fa-phone  text-red"></i>
+                                12345678910
+                            </li>
 
-                             <li class="gap-2 d-flex align-items-center">
-                                 <i class="fas fa-envelope  text-red"></i>
-                                 channel@gmail.com
-                             </li>
-                         </ul>
-
-
-
-                     </div>
-                     <!-- F Widget About of the Page -->
-                 </div>
+                            <li class="gap-2 d-flex align-items-center">
+                                <i class="fas fa-envelope  text-red"></i>
+                                channel@gmail.com
+                            </li>
+                        </ul>
 
 
-                 <div class="container category-mobile-version">
-                     <h3 class="f-widget-heading text-red ct-f-heading mt-4">Categories</h3>
 
-                     <div class="row row-cols-3">
-
-                         <div class="col">
-                             <ul>
-                                 <li><a href="">Skin</a></li>
-                             </ul>
-                         </div>
-                         <div class="col">
-                             <ul>
-                                 <li><a href="">Fragrances</a></li>
-                             </ul>
-                         </div>
-                         <div class="col">
-                             <ul>
-                                 <li><a href="">Haircare</a></li>
-                             </ul>
-                         </div>
-                         <div class="col">
-                             <ul>
-                                 <li><a href="">Personal Care</a></li>
-                             </ul>
-                         </div>
-                         <div class="col">
-                             <ul>
-                                 <li><a href="">Home Decore </a></li>
-                             </ul>
-                         </div>
-                         <div class="col">
-                             <ul>
-                                 <li><a href="">gift</a></li>
-                             </ul>
-                         </div>
-                     </div>
-                 </div>
+                    </div>
+                    <!-- F Widget About of the Page -->
+                </div>
 
 
-                 <nav
-                     class="col-xs-12 col-sm-7 col-md-8 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
+                <div class="container category-mobile-version">
+                    <h3 class="f-widget-heading text-red ct-f-heading mt-4">Categories</h3>
+
+                    <div class="row row-cols-3">
+
+                        <div class="col">
+                            <ul>
+                                <li><a href="">Skin</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li><a href="">Fragrances</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li><a href="">Haircare</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li><a href="">Personal Care</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li><a href="">Home Decore </a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li><a href="">gift</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
 
-                     <!-- Footer Nav of the Page -->
-                     <div class="nav-widget-1 cainco-breackpoint-category">
-                         <h3 class="f-widget-heading text-red ct-f-heading">Categories</h3>
-                         <ul class="list-unstyled f-widget-nav">
-                             <li><a href="">Skin</a></li>
-                             <li><a href="">Fragrances</a></li>
-                             <li><a href="">Haircare</a></li>
-                             <li><a href="">Personal Care</a></li>
-                             <li><a href="">Home Decore </a></li>
-                             <li><a href="">gift</a></li>
-                         </ul>
-                     </div>
-                     <!-- Footer Nav of the Page end -->
-                     <!-- Footer Nav of the Page -->
-                     <div class="nav-widget-1 cainco-breackpoint-info">
-                         <h3 class="f-widget-heading info-f-heading">Information</h3>
-                         <ul class="list-unstyled f-widget-nav info-f-list">
-                             <li><a href="{{ route('about') }}">FAQ</a></li>
-                             <li><a href="{{ route('contact') }}">BLOG</a></li>
-                             <li><a href="">Support</a></li>
+                <nav
+                    class="col-xs-12 col-sm-7 col-md-8 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
 
-                         </ul>
-                     </div>
-                     <!-- Footer Nav of the Page end -->
-                     <!-- Footer Nav of the Page -->
-                     <div class="nav-widget-1 cainco-breackpoint-company">
-                         <h3 class="f-widget-heading c-f-heading">Company</h3>
-                         <ul class="list-unstyled f-widget-nav  c-f-list">
-                             <li><a href="">About Us</a></li>
-                             <li><a href="">Careers</a></li>
-                             <li><a href="">Contact Us</a></li>
 
-                         </ul>
-                     </div>
-                     <!-- Footer Nav of the Page end -->
-                 </nav>
-                 <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
-                     <!-- F Widget Newsletter of the Page -->
-                     <div class="f-widget-newsletter f-widget-news-custome">
-                         <h3 class="f-widget-heading" style="line-height:0px">Subscribe</h3>
-                         <div class="holder">
-                             <form class="newsletter-form form2" action="#" style="padding:6px">
+                    <!-- Footer Nav of the Page -->
+                    <div class="nav-widget-1 cainco-breackpoint-category">
+                        <h3 class="f-widget-heading text-red ct-f-heading">Categories</h3>
+                        <ul class="list-unstyled f-widget-nav">
+                            <li><a href="">Skin</a></li>
+                            <li><a href="">Fragrances</a></li>
+                            <li><a href="">Haircare</a></li>
+                            <li><a href="">Personal Care</a></li>
+                            <li><a href="">Home Decore </a></li>
+                            <li><a href="">gift</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Nav of the Page end -->
+                    <!-- Footer Nav of the Page -->
+                    <div class="nav-widget-1 cainco-breackpoint-info">
+                        <h3 class="f-widget-heading info-f-heading">Information</h3>
+                        <ul class="list-unstyled f-widget-nav info-f-list">
+                            <li><a href="{{ route('about') }}">FAQ</a></li>
+                            <li><a href="{{ route('contact') }}">BLOG</a></li>
+                            <li><a href="">Support</a></li>
 
-                                 <input type="email" class="form-control" placeholder="Your e-mail"
-                                     style="border-radius:0px">
-                                 <button type="submit">
-                                     <i class="fas fa-arrow-right"></i>
-                                 </button>
+                        </ul>
+                    </div>
+                    <!-- Footer Nav of the Page end -->
+                    <!-- Footer Nav of the Page -->
+                    <div class="nav-widget-1 cainco-breackpoint-company">
+                        <h3 class="f-widget-heading c-f-heading">Company</h3>
+                        <ul class="list-unstyled f-widget-nav  c-f-list">
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Careers</a></li>
+                            <li><a href="">Contact Us</a></li>
 
-                             </form>
-                         </div>
-                         <p class="text-red">
-                             Hello, we are Lift Media. Our goal is to translate the positive effects from
-                             revolutionizing how companies engage with their clients & their team.
-                         </p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!-- Footer Holder of the Page end -->
-     <!-- Footer Area of the Page -->
+                        </ul>
+                    </div>
+                    <!-- Footer Nav of the Page end -->
+                </nav>
+                <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
+                    <!-- F Widget Newsletter of the Page -->
+                    <div class="f-widget-newsletter f-widget-news-custome">
+                        <h3 class="f-widget-heading" style="line-height:0px">Subscribe</h3>
+                        <div class="holder">
+                            <form class="newsletter-form form2" action="#" style="padding:6px">
 
-     <div class="footer-area p-0">
-         <hr>
+                                <input type="email" class="form-control" placeholder="Your e-mail"
+                                    style="border-radius:0px">
+                                <button type="submit">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
 
-         <div class="container py-4">
-             <div class="row">
-                 <div class="col-6 col-sm-7 footer-tpc">
-                     <ul class="gap-2 gap-sm-4  p-0  footer-tpc-ul">
-                         <a href="" class="fw-bolder">
-                             Terms
-                         </a>
-                         <a href="" class="fw-bolder">
-                             Privacy
-                         </a>
-                         <a href="" class="fw-bolder">
-                             Cookies
-                         </a>
-                     </ul>
-
-                 </div>
-
-                 <div class="col-5 col-sm-5 footer-lifinsta">
-                     <ul class="gap-2 gap-sm-4 footer-lifinsta-ul">
-                         <li class="footer-lifinsta-tag-1">
-                             <a href="https://www.linkedin.com/">
-                                 <i class="fa-brands fa-linkedin-in text-red"></i>
-                             </a>
-                         </li>
-
-                         <li class="footer-lifinsta-tag-2">
-
-                             <a href="https://www.linkedin.com/">
-                                 <i class="fa-brands fa-facebook-f text-red"></i>
-                             </a>
-                         </li>
-
-                         <li class="footer-lifinsta-tag-3">
-
-                             <a href="https://www.linkedin.com/">
-                                 <i class="fa-brands fa-twitter text-red"></i>
-                             </a>
-                         </li>
-
-                     </ul>
-                 </div>
-             </div>
-
-         </div>
-
-         <div class="container pb-3">
-             <div class="row">
-                 <div class="col-xs-12 col-sm-6 right_reserved">
-                     <p class="footer-custome-c"> © 2023 channel. All Rights Reserved.</p>
-                 </div>
-                 <div class="col-xs-12 col-sm-6 text-end">
-
-                        <p class="footer-custome-c">
-                            Designed & Developed by
-                            <a href="http://" class="underline footer-custome-c">Acetrot</a>
+                            </form>
+                        </div>
+                        <p class="text-red">
+                            Hello, we are Lift Media. Our goal is to translate the positive effects from
+                            revolutionizing how companies engage with their clients & their team.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Holder of the Page end -->
+    <!-- Footer Area of the Page -->
 
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!-- Footer Area of the Page end -->
- </footer>
- <!-- footer of the Page end -->
- <div class="py-5 phone-fixed-bottom-menu-gap"></div>
- <div class="conatiner-fluid phone-fixed-bottom-menu" style="background: white">
-     <div class="row row-cols-4 ">
-         <div class="col">
-             <ul class="gap-2 d-flex flex-column align-items-center">
-                 <li>
-                     <img src="{{ url('frontend/images/svg/footer/home.svg') }}" alt="">
-                 </li>
-                 <li>home</li>
-             </ul>
-         </div>
+    <div class="footer-area p-0">
+        <hr>
 
-         <div class="col">
-             <ul class="gap-2 d-flex flex-column align-items-center">
-                 <li>
-                     <img src="{{ url('frontend/images/svg/footer/search.svg') }}" alt="">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-6 col-sm-7 footer-tpc">
+                    <ul class="gap-2 gap-sm-4  p-0  footer-tpc-ul">
+                        <a href="" class="fw-bolder">
+                            Terms
+                        </a>
+                        <a href="" class="fw-bolder">
+                            Privacy
+                        </a>
+                        <a href="" class="fw-bolder">
+                            Cookies
+                        </a>
+                    </ul>
 
-                 </li>
-                 <li>Search</li>
-             </ul>
-         </div>
+                </div>
 
-         <div class="col">
-             <ul class="gap-2 d-flex flex-column align-items-center">
-                 <li>
-                     <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
+                <div class="col-5 col-sm-5 footer-lifinsta">
+                    <ul class="gap-2 gap-sm-4 footer-lifinsta-ul">
+                        <li class="footer-lifinsta-tag-1">
+                            <a href="https://www.linkedin.com/">
+                                <i class="fa-brands fa-linkedin-in text-red"></i>
+                            </a>
+                        </li>
 
-                 </li>
-                 <li>Account</li>
-             </ul>
-         </div>
+                        <li class="footer-lifinsta-tag-2">
 
-         <div class="col">
-             <ul class="gap-2 d-flex flex-column align-items-center">
-                 <li>
-                     <img src="{{ url('frontend/images/svg/footer/cart.svg') }}" alt="">
+                            <a href="https://www.linkedin.com/">
+                                <i class="fa-brands fa-facebook-f text-red"></i>
+                            </a>
+                        </li>
 
-                 </li>
-                 <li>Cart</li>
-             </ul>
-         </div>
+                        <li class="footer-lifinsta-tag-3">
 
-     </div>
- </div>
+                            <a href="https://www.linkedin.com/">
+                                <i class="fa-brands fa-twitter text-red"></i>
+                            </a>
+                        </li>
 
- <script src="{{asset('plugins/notification/snackbar/snackbar.min.js')}}"></script>
- <script>
-     @if (Session::get('alert-type') == 'success')
-         @if (Session::has('message'))
-             Snackbar.show({
-                 text: "{{ Session::get('message') }}",
-                 pos: 'top-right',
-                 actionTextColor: '#fff',
-                 backgroundColor: '#1abc9c'
-             });
-         @endif
-     @elseif (Session::get('alert-type') == 'info')
-         @if (Session::has('message'))
-             Snackbar.show({
-                 text: "{{ Session::get('message') }}",
-                 pos: 'top-right',
-                 actionTextColor: '#fff',
-                 backgroundColor: '#2196f3'
-             });
-         @endif
-     @elseif (Session::get('alert-type') == 'error')
-         @if (Session::has('message'))
-             Snackbar.show({
-                 text: "{{ Session::get('message') }}",
-                 pos: 'top-right',
-                 actionTextColor: '#fff',
-                 backgroundColor: '#e7515a'
-             });
-         @endif
-     @else
-         @if (Session::has('message'))
-             Snackbar.show({
-                 text: "{{ Session::get('message') }}",
-                 pos: 'top-right',
-                 actionTextColor: '#fff',
-                 backgroundColor: '#3b3f5c'
-             });
-         @endif
-     @endif
- </script>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container pb-3">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 right_reserved">
+                    <p class="footer-custome-c"> © 2023 channel. All Rights Reserved.</p>
+                </div>
+                <div class="col-xs-12 col-sm-6 text-end">
+
+                    <p class="footer-custome-c">
+                        Designed & Developed by
+                        <a href="http://" class="underline footer-custome-c">Acetrot</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Area of the Page end -->
+</footer>
+<!-- footer of the Page end -->
+<div class="py-5 phone-fixed-bottom-menu-gap"></div>
+<div class="conatiner-fluid phone-fixed-bottom-menu" style="background: white">
+    <div class="row row-cols-4 ">
+        <div class="col">
+            <ul class="gap-2 d-flex flex-column align-items-center">
+                <li>
+                    <img src="{{ url('frontend/images/svg/footer/home.svg') }}" alt="">
+                </li>
+                <li>home</li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <ul class="gap-2 d-flex flex-column align-items-center">
+                <li>
+                    <img src="{{ url('frontend/images/svg/footer/search.svg') }}" alt="">
+
+                </li>
+                <li>Search</li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <ul class="gap-2 d-flex flex-column align-items-center">
+                <li>
+                    <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
+
+                </li>
+                <li>Account</li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <ul class="gap-2 d-flex flex-column align-items-center">
+                <li>
+                    <img src="{{ url('frontend/images/svg/footer/cart.svg') }}" alt="">
+
+                </li>
+                <li>Cart</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
+<script src="js/jquery.min.js"></script>
+<script>
+    @if (Session::get('alert-type') == 'success')
+        @if (Session::has('message'))
+            Snackbar.show({
+                text: "{{ Session::get('message') }}",
+                pos: 'top-right',
+                actionTextColor: '#fff',
+                backgroundColor: '#1abc9c'
+            });
+        @endif
+    @elseif (Session::get('alert-type') == 'info')
+        @if (Session::has('message'))
+            Snackbar.show({
+                text: "{{ Session::get('message') }}",
+                pos: 'top-right',
+                actionTextColor: '#fff',
+                backgroundColor: '#2196f3'
+            });
+        @endif
+    @elseif (Session::get('alert-type') == 'error')
+        @if (Session::has('message'))
+            Snackbar.show({
+                text: "{{ Session::get('message') }}",
+                pos: 'top-right',
+                actionTextColor: '#fff',
+                backgroundColor: '#e7515a'
+            });
+        @endif
+    @else
+        @if (Session::has('message'))
+            Snackbar.show({
+                text: "{{ Session::get('message') }}",
+                pos: 'top-right',
+                actionTextColor: '#fff',
+                backgroundColor: '#3b3f5c'
+            });
+        @endif
+    @endif
+</script>
+
+<script>
+    $(document).ready(function() {
+        @if (session()->has('login_redirect') == true)
+            $('#loginPopup').modal('show')
+        @endif
+    });
+</script>

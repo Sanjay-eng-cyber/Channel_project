@@ -18,6 +18,9 @@ class Authenticate extends Middleware
     {
         if (!$request->expectsJson()) {
             if (Arr::first($this->guards) === 'web') {
+                session()->flash('alert-type', 'info');
+                session()->flash('message', 'Log In');
+                session()->flash('login_redirect', true);
                 return route('index');
             }
         }

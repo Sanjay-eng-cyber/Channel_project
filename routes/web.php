@@ -20,9 +20,13 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.index');
     })->name('index');
 
-    Route::get('/profile', function () {
-        return view('frontend.profile');
-    })->name('profile');
+    Route::group(['middleware' => 'auth:web'], function () {
+
+        Route::get('/profile', function () {
+            return view('frontend.profile');
+        })->name('profile');
+    });
+
 
     Route::get('/wishlist', function () {
         return view('frontend.wishlist');
