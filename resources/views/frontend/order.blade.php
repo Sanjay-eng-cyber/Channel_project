@@ -172,5 +172,8 @@
 
         </div>
     </section>
+
+    @include('frontend.not-found')
+
 @endsection
 
