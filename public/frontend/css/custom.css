@@ -142,6 +142,9 @@ a:hover {
     border: 0.646341px solid rgba(236, 38, 143, 0.6);
     border-radius: 9.69512px;
 }
+.bg-lightpink{
+    background: rgba(236, 38, 143, 0.1);
+}
 
 .cc-border {
     background: #ffffff;
@@ -1165,6 +1168,17 @@ a:hover {
 }
 
 /*end organic product */
+
+
+/* not found product content */
+.not-found .not-found-desc {
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.50);
+
+    }
+/* end not found product content */
 
 @media screen and (max-width: 1400px) {
     /* organic-product */

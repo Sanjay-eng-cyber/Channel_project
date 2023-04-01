@@ -25,10 +25,10 @@
                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
                                    </li>
                                    <li class="nav-item">
-                                       <a class="nav-link" href="#">Features</a>
+                                        <a href="{{ route('skin') }}">Skin</a>
                                    </li>
                                    <li class="nav-item">
-                                       <a class="nav-link" href="#">fragrances</a>
+                                       <a class="nav-link" href="{{ route('fragrances') }}">fragrances</a>
                                    </li>
                                    <li class="nav-item">
                                        <a class="nav-link" href="#">Haircare</a>
@@ -113,8 +113,8 @@
                        <nav id="nav" class="navbar hide-navbar">
                            <ul style="margin-right: 0px">
                                <li><a href="{{ route('index') }}">Home</a></li>
-                               <li><a href="{{ route('products') }}">Skin</a></li>
-                               <li><a href="{{ route('about') }}">fragrances</a></li>
+                               <li><a href="{{ route('skin') }}">Skin</a></li>
+                               <li><a href="{{ route('fragrances') }}">fragrances</a></li>
                                <li><a href="{{ route('about') }}">Haircare</a></li>
                                <li><a href="{{ route('about') }}">PersonalCare</a></li>
                                <li><a href="{{ route('about') }}">Home Decor</a></li>

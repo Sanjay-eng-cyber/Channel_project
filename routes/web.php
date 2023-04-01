@@ -20,13 +20,17 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.index');
     })->name('index');
 
-    Route::get('/profile', function () {
-        return view('frontend.profile');
-    })->name('profile');
-    
     Route::get('/checkout', function () {
         return view('frontend.checkout');
     })->name('checkout');
+
+    Route::group(['middleware' => 'auth:web'], function () {
+
+        Route::get('/profile', function () {
+            return view('frontend.profile');
+        })->name('profile');
+    });
+
 
     Route::get('/wishlist', function () {
         return view('frontend.wishlist');
@@ -85,6 +89,13 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.review-show');
     })->name('review-show');
 
+    Route::get('/gift-card', function () {
+        return view('frontend.gift-card');
+    })->name('gift-card');
+
+    Route::get('/gift-card-review', function () {
+        return view('frontend.gift-card-review');
+    })->name('gift-card-review');
 
     Route::get('/about-us', function () {
         return view('frontend/layouts/about-us');
@@ -95,9 +106,13 @@ Route::domain(config('app.web_domain'))->group(function () {
     })->name('contact');
 
     // Product page
-    Route::get('/product-grid', function () {
-        return view('frontend.product.product-grid');
-    })->name('product-grid');
+    Route::get('/skin', function () {
+        return view('frontend.product.skin-care.index');
+    })->name('skin');
+
+    Route::get('/fragrances', function () {
+        return view('frontend.product.fragrances.index');
+    })->name('fragrances');
 
     // end product page
     Route::get('/products', function () {
