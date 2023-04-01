@@ -1,4 +1,4 @@
-<link rel="icon" type="image/x-icon" href="backend/assets/img/favicon.svg" />
+<link rel="shortcut icon" href="{{ asset('backend/images/favicon.png') }}" type="image/x-icon">
 <link href="backend/assets/css/loader.css" rel="stylesheet" type="text/css" />
 <script src="backend/assets/js/loader.js"></script>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
@@ -18,7 +18,6 @@
 <link href="backend/assets/css/elements/breadcrumb.css" rel="stylesheet" type="text/css" />
 
 <link href="{{ asset('backend/plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
-
 <link href="{{ asset('backend/plugins/select2/select2.min.css') }}" rel="stylesheet" />
 
 <link rel="stylesheet" href="{{ asset('backend/css/cms.css') }}">

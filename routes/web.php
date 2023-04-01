@@ -20,6 +20,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.index');
     })->name('index');
 
+    Route::get('/checkout', function () {
+        return view('frontend.checkout');
+    })->name('checkout');
+
     Route::group(['middleware' => 'auth:web'], function () {
 
         Route::get('/profile', function () {
@@ -85,7 +89,7 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.review-show');
     })->name('review-show');
 
-     Route::get('/gift-card', function () {
+    Route::get('/gift-card', function () {
         return view('frontend.gift-card');
     })->name('gift-card');
 
