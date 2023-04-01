@@ -24,8 +24,6 @@ class OrderSeeder extends Seeder
                 DB::table('orders')->insert([
                     "user_id" => $user,
                     "api_order_id" => 'api_order_id_' . $i,
-                    "delivery_api_id" => 'delivery_api_id_' . $i,
-                    "delivery_type" => $faker->randomElement(['Home Delivery']),
                     "sub_total" => 1392.8,
                     "discount_amount" => 90,
                     "total_amount" => 1302.8,
