@@ -12,13 +12,11 @@
       <header class="header navbar navbar-expand-sm">
 
           <ul class="navbar-nav theme-brand flex-row  text-center">
-              <li class="nav-item theme-logo">
-                  <a href="/">
-                      <img src="assets/img/90x90.svg" class="navbar-logo" alt="logo">
-                  </a>
-              </li>
+
               <li class="nav-item theme-text w-auto">
-                  <a href="/" class="nav-link"> Channel </a>
+                  <a href="/" class="nav-link">
+                  <img src="{{asset('backend/images/channel-logo.svg')}}" class="navbar-logo img-fluid" alt="logo" style="width: 150px">
+                </a>
               </li>
               <li class="nav-item toggle-sidebar">
                   <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
