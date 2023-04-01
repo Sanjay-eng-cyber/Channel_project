@@ -1,100 +1,100 @@
 @extends('frontend.layouts.app')
 @section('title')
 @section('content')
-
     {{-- first slider slider --}}
     <section>
-      <div class="container">
-        <div class="row main-group-card">
-            <h2 class="text-red main-head" style="padding: 30px 0px 25px 0px">#Bestseller of channel</h2>
+        <div class="container">
+            <div class="row main-group-card">
+                <h2 class="text-red main-head" style="padding: 30px 0px 25px 0px">#Bestseller of channel</h2>
 
-            <div class="col-sm-7 col-md-7 col-lg-6 group-card-1">
-                <div class="card first-group-card">
-                    <img src="frontend/images/banner/ix1.png" class="first-group-img" alt="image description"
-                           >
-                    <div class="card-body text-center first-group-card-body"
-                           >
-                      <h3 class="card-title text-center font-head">Love Your Skin </h3>
-                      <p class="card-text text-center group-card-text-color">Treat Yourself With The Best In Skincare </p>
+                <div class="col-sm-12 col-md-7 col-lg-8 col-xl-6">
 
-                      <button type="button" class="text-center group-buutton-bg-disable">
-                        <a class=" d-flex gap-2" href="">
-                            <span class="group-card-shop-btn">Shop Now</span>
-                             <i class="fa fa-angle-right group-button-arrow"></i>
-                        </a>
-                     </button>
+                    <div class="frontend-top-slider">
+                        @for ($i = 0; $i < 4; $i++)
+                        <div class="slide" style="padding:0px 10px 0px 10px">
+                            <img src="https://via.placeholder.com/516x665" class="img-fluid" alt="image description " style="">
+                            <div class="slide-content" >
+                                <div class="slide-content-desc">
+                                    <h3 class="">Love Your Skin </h3>
+                                    <p class="">Treat Yourself With The Best In Skincare </p>
+                                    <a class="d-flex gap-2 justify-content-center" href="">
+                                        <span class="group-card-shop-btn">Shop Now</span>
+                                        <i class="fa fa-angle-right group-button-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
+
 
                     </div>
-                  </div>
 
 
                 </div>
-            <div class="col-sm-5 col-md-5 col-lg-3 group-card-2">
-                <div class="card second-group-card" >
-                    <img src="frontend/images/banner/ix2.png" class="card-img-top m-0 card second-group-img" alt="...">
-                    <div class="card-body text-center  second-group-card-body">
+                <div class="col-sm-12 col-md-5 col-lg-4  col-xl-3 group-card-2">
+                    <div class="card second-group-card">
+                        <img src="frontend/images/banner/ix2.png" class="card-img-top m-0 card second-group-img"
+                            alt="...">
+                        <div class="card-body text-center  second-group-card-body">
                             <h4 class="card-title text-center font-head ">Love Your Hair</h4>
                             <p class="card-text group-card-text-color">
                                 treat yourself with the best in haircare
                             </p>
 
-                        <button type="button" class="text-center group-buutton-bg-disable">
-                            <a class=" d-flex gap-2" href="">
-                                <span class="group-card-shop-btn">Shop Now</span>
-                                <i class="fa fa-angle-right group-button-arrow"></i>
-                            </a>
-                        </button>
+                            <button type="button" class="text-center group-buutton-bg-disable">
+                                <a class=" d-flex gap-2" href="">
+                                    <span class="group-card-shop-btn">Shop Now</span>
+                                    <i class="fa fa-angle-right group-button-arrow"></i>
+                                </a>
+                            </button>
+                        </div>
                     </div>
-                  </div>
-            </div>
-            <div class="col-md-12 col-md-12  col-lg-3 group-card-3 gap-3 ">
-                <div class="card third-group-card">
-                    <img src="frontend/images/banner/ix3.jpg" class="card-img-top third-group-card-img" alt="...">
-                    <div class="card-body text-center third-group-card-body"
+                </div>
+                <div class="col-md-12 col-md-12  col-lg-12 col-xl-3 group-card-3 gap-3 ">
+                    <div class="card third-group-card">
+                        <img src="frontend/images/banner/ix3.jpg" class="card-img-top third-group-card-img" alt="...">
+                        <div class="card-body text-center third-group-card-body">
+                            <h4 class="card-title text-center font-head">Luxe Fragrances</h4>
 
-                    >
-                    <h4 class="card-title text-center font-head">Luxe Fragrances</h4>
-
-                        <p class="card-text group-card-text-color">
-                            indulge in premium perfumes
-                      </p>
+                            <p class="card-text group-card-text-color">
+                                indulge in premium perfumes
+                            </p>
 
 
-                      <button type="button" class="text-center group-buutton-bg-disable">
-                        <a class=" d-flex gap-2" href="">
-                            <span class="group-card-shop-btn">Shop Now</span>
-                             <i class="fa fa-angle-right group-button-arrow"></i>
-                        </a>
-                     </button>
+                            <button type="button" class="text-center group-buutton-bg-disable">
+                                <a class=" d-flex gap-2" href="">
+                                    <span class="group-card-shop-btn">Shop Now</span>
+                                    <i class="fa fa-angle-right group-button-arrow"></i>
+                                </a>
+                            </button>
 
+                        </div>
+                    </div>
+
+                    <div class="card fourth-group-card">
+                        <img src="frontend/images/banner/ix4.jpg" class="card-img-top fourth-group-img" alt="..."
+                            style="border-radius: 26.6782px 26.6782px 0px 0px;">
+                        <div class="card-body text-center fourth-group-card-body">
+                            <h4 class="card-title text-center font-head">Home Decor</h4>
+
+
+                            <p class="card-text group-card-text-color">
+                                indulge in premium perfumes
+                            </p>
+
+                            <button type="button" class="text-center group-buutton-bg-disable">
+                                <a class=" d-flex gap-2" href="">
+                                    <span class="group-card-shop-btn">Shop Now</span>
+                                    <i class="fa fa-angle-right group-button-arrow"></i>
+                                </a>
+                            </button>
+
+                        </div>
                     </div>
                 </div>
 
-                <div class="card fourth-group-card">
-                    <img src="frontend/images/banner/ix4.jpg" class="card-img-top fourth-group-img" alt="..."
-                                        style="border-radius: 26.6782px 26.6782px 0px 0px;">
-                    <div class="card-body text-center fourth-group-card-body"
-                   >
-                   <h4 class="card-title text-center font-head">Home Decor</h4>
-
-
-                        <p class="card-text group-card-text-color">
-                            indulge in premium perfumes
-                      </p>
-
-                      <button type="button" class="text-center group-buutton-bg-disable">
-                        <a class=" d-flex gap-2" href="">
-                            <span class="group-card-shop-btn">Shop Now</span>
-                             <i class="fa fa-angle-right group-button-arrow"></i>
-                        </a>
-                     </button>
-
-                    </div>
-                </div>
             </div>
-
         </div>
-      </div>
     </section>
 
     {{-- skin slider with latest & best seller --}}
@@ -117,50 +117,48 @@
                         <div id="skincare">
                             <!-- tabs slider start here -->
                             <div class="skin-sliderlg">
-                            @for ($i = 1; $i < 7; $i++)
+                                @for ($i = 1; $i < 7; $i++)
+                                    <!-- slide start here -->
+                                    <div class="slide  skin-slide">
+                                        <!-- mt product1 large start here -->
+                                        <div class="mt-product1 large mt-skin-product1">
+                                            <div class="box skin-box">
+                                                <div class="b1">
+                                                    <div class="b2">
+                                                        <a href="{{ route('products.show', 'product-name') }}"><img
+                                                                src="frontend/images/products/skin/sk2.png"
+                                                                alt="image description"></a>
 
-                                <!-- slide start here -->
-                                <div class="slide  skin-slide">
-                                    <!-- mt product1 large start here -->
-                                    <div class="mt-product1 large mt-skin-product1">
-                                        <div class="box skin-box">
-                                            <div class="b1">
-                                                <div class="b2">
-                                                    <a href="{{route('products.show','product-name')}}"><img
-                                                            src="frontend/images/products/skin/sk2.png"
-                                                            alt="image description"></a>
+                                                        <button type="button" class="like-btn-skin btn">
+                                                            <i class="far fa-heart"></i>
+                                                        </button>
 
-                                                            <button type="button" class="like-btn-skin btn">
-                                                                <i class="far fa-heart"></i>
+                                                        <ul class="links skin-text-desc py-2 px-3">
+                                                            <div class="card-title  m-0 text-center pro-head ">
+                                                                <h4 class=""> Zara Best Perfumes</h4>
+                                                            </div>
+                                                            <p class="card-text text-center">
+                                                                treat yourself with the best in skincare
+                                                            </p>
+
+
+                                                            <button type="button" class="btn btn-light sk-btn">
+                                                                <a href="" class="p-0  text-black">
+                                                                    Shop Nov
+                                                                </a>
                                                             </button>
 
-                                                            <ul class="links skin-text-desc py-2 px-3">
-                                                                <div class="card-title  m-0 text-center pro-head ">
-                                                                    <h4 class=""> Zara Best Perfumes</h4>
-                                                                </div>
-                                                                   <p class="card-text text-center">
-                                                                    treat yourself with the best in skincare
-                                                                   </p>
 
+                                                            </a>
+                                                        </ul>
 
-                                                                   <button type="button" class="btn btn-light sk-btn">
-                                                                  <a href="" class="p-0  text-black">
-                                                                    Shop Nov
-                                                                  </a>
-                                                                  </button>
-
-
-                                                               </a>
-                                                            </ul>
-
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                    </div><!-- mt product1 center end here -->
-                                </div>
-
-                            @endfor
+                                        </div><!-- mt product1 center end here -->
+                                    </div>
+                                @endfor
                             </div>
                             <!-- tabs slider end here -->
                         </div>
@@ -180,28 +178,28 @@
                                                                 src="frontend/images/products/skin/sk1.png"
                                                                 alt="image description"></a>
 
-                                                                <button type="button" class="like-btn-skin btn">
-                                                                    <i class="far fa-heart"></i>
-                                                                </button>
+                                                        <button type="button" class="like-btn-skin btn">
+                                                            <i class="far fa-heart"></i>
+                                                        </button>
 
-                                                                <ul class="links skin-text-desc py-2 px-3">
-                                                                    <div class="card-title  m-0 text-center pro-head ">
-                                                                        <h4 class=""> Zara Best Perfumes</h4>
-                                                                    </div>
-                                                                       <p class="card-text text-center">
-                                                                        treat yourself with the best in skincare
-                                                                       </p>
-
-
-                                                                       <button type="button" class="btn btn-light sk-btn">
-                                                                      <a href="" class="p-0  text-black">
-                                                                        Shop Nov
-                                                                      </a>
-                                                                      </button>
+                                                        <ul class="links skin-text-desc py-2 px-3">
+                                                            <div class="card-title  m-0 text-center pro-head ">
+                                                                <h4 class=""> Zara Best Perfumes</h4>
+                                                            </div>
+                                                            <p class="card-text text-center">
+                                                                treat yourself with the best in skincare
+                                                            </p>
 
 
-                                                                   </a>
-                                                                </ul>
+                                                            <button type="button" class="btn btn-light sk-btn">
+                                                                <a href="" class="p-0  text-black">
+                                                                    Shop Nov
+                                                                </a>
+                                                            </button>
+
+
+                                                            </a>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
@@ -229,28 +227,28 @@
                                                                 src="frontend/images/products/skin/sk2.png"
                                                                 alt="image description"></a>
 
-                                                                <button type="button" class="like-btn-skin btn">
-                                                                    <i class="far fa-heart"></i>
-                                                                </button>
+                                                        <button type="button" class="like-btn-skin btn">
+                                                            <i class="far fa-heart"></i>
+                                                        </button>
 
-                                                                <ul class="links skin-text-desc py-2 px-3">
-                                                                    <div class="card-title  m-0 text-center pro-head ">
-                                                                        <h4 class=""> Zara Best Perfumes</h4>
-                                                                    </div>
-                                                                       <p class="card-text text-center">
-                                                                        treat yourself with the best in skincare
-                                                                       </p>
-
-
-                                                                       <button type="button" class="btn btn-light sk-btn">
-                                                                      <a href="" class="p-0  text-black">
-                                                                        Shop Nov
-                                                                      </a>
-                                                                      </button>
+                                                        <ul class="links skin-text-desc py-2 px-3">
+                                                            <div class="card-title  m-0 text-center pro-head ">
+                                                                <h4 class=""> Zara Best Perfumes</h4>
+                                                            </div>
+                                                            <p class="card-text text-center">
+                                                                treat yourself with the best in skincare
+                                                            </p>
 
 
-                                                                   </a>
-                                                                </ul>
+                                                            <button type="button" class="btn btn-light sk-btn">
+                                                                <a href="" class="p-0  text-black">
+                                                                    Shop Nov
+                                                                </a>
+                                                            </button>
+
+
+                                                            </a>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
@@ -461,7 +459,8 @@
         <div class="container og-main" style="">
             <div class="row">
                 <div class="col-md-12 col-lg-6 og-main-part-1">
-                    <h3 class="text-red card-text-heading" style="padding:40px 0px 40px 0px">#look for personal care too..</h3>
+                    <h3 class="text-red card-text-heading" style="padding:40px 0px 40px 0px">#look for personal care too..
+                    </h3>
 
                     <img src="frontend/images/organic-product/og-1.png" alt="" class="og-main-img-first">
                     <img src="frontend/images/organic-product/og-2.png" alt="" class="og-main-img-second">
@@ -469,26 +468,26 @@
                     <img src="frontend/images/organic-product/og-5.png" alt="" class="og-main-img-fourth">
                     <img src="frontend/images/organic-product/og-3.png" alt="" class="og-main-img-fifth">
 
-                    <div class="organic-product-slider raeesh2 og-main-card">
-                            <div class="text og-main-text" >
-                                <div class="og-main-sy">
-                                    <h3 class="pro-head">Pure And Organic Products </h3>
+                    <div class="organic-product-slider og-main-card">
+                        <div class="text og-main-text">
+                            <div class="og-main-sy">
+                                <h3 class="pro-head">Pure And Organic Products </h3>
 
-                                    <p style="font-weight: 300;">
-                                        Enhance your self-care routine with<br/>
-                                        our premium personal care products.
-                                    </p>
-
-                                </div>
-                                <div class="og-main-button">
-                                    <button type="button" class="oganic-button" >
-                                        <a href="">
-                                            Shop Now
-                                        </a>
-                                    </button>
-                                </div>
+                                <p style="font-weight: 300;">
+                                    Enhance your self-care routine with<br />
+                                    our premium personal care products.
+                                </p>
 
                             </div>
+                            <div class="og-main-button">
+                                <button type="button" class="oganic-button">
+                                    <a href="">
+                                        Shop Now
+                                    </a>
+                                </button>
+                            </div>
+
+                        </div>
 
                     </div>
                 </div>
@@ -502,70 +501,71 @@
     </section>
 
 
-  <!-- F Promo Box of the Page -->
-<section>
-  <aside class="f-promo-box dark">
-    <div class="container divider">
-        <div class="row row-cols-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 ">
-            <div class="col mt-paddingbottomsm ft-svg-class-1">
-                <!-- F Widget Item of the Page -->
-                <div class="f-widget-item ft-svg-sub-class-1">
-                    <span class="widget-icon ft-svg-child-1">
-                        <img src="{{ asset('frontend/images/products/footer-icon/free-shipping.svg') }}"
-                            alt="">
+    <!-- F Promo Box of the Page -->
+    <section>
+        <aside class="f-promo-box dark">
+            <div class="container divider">
+                <div class="row row-cols-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 ">
+                    <div class="col mt-paddingbottomsm ft-svg-class-1">
+                        <!-- F Widget Item of the Page -->
+                        <div class="f-widget-item ft-svg-sub-class-1">
+                            <span class="widget-icon ft-svg-child-1">
+                                <img src="{{ asset('frontend/images/products/footer-icon/free-shipping.svg') }}"
+                                    alt="">
 
-                    </span>
-                    <div class="txt-holder  ft-svg-child-2">
-                        <h1 class="f-promo-box-heading">FREE SHIPPING</h1>
-                        <p>Free shipping on all US order</p>
+                            </span>
+                            <div class="txt-holder  ft-svg-child-2">
+                                <h1 class="f-promo-box-heading">FREE SHIPPING</h1>
+                                <p>Free shipping on all US order</p>
+                            </div>
+                        </div>
+                        <!-- F Widget Item of the Page end -->
+                    </div>
+                    <div class="col mt-paddingbottomsm ft-svg-class-2">
+                        <!-- F Widget Item of the Page -->
+                        <div class="f-widget-item ft-svg-sub-class-2">
+                            <span class="widget-icon ft-svg-child-1">
+                                <img src="{{ asset('frontend/images/products/footer-icon/support.svg') }}" alt="">
+                            </span>
+                            <div class="txt-holder ft-svg-child-2">
+                                <h1 class="f-promo-box-heading">SUPPORT 24/7</h1>
+                                <p>We support 24 hours a day</p>
+                            </div>
+                        </div>
+                        <!-- F Widget Item of the Page -->
+                    </div>
+                    <div class="col mt-paddingbottomxs ft-svg-class-3">
+                        <!-- F Widget Item of the Page -->
+                        <div class="f-widget-item ft-svg-sub-class-3">
+                            <span class="widget-icon ft-svg-child-1">
+                                <img src="{{ asset('frontend/images/products/footer-icon/gift-card.svg') }}"
+                                    alt="">
+                            </span>
+                            <div class="txt-holder ft-svg-child-2">
+                                <h1 class="f-promo-box-heading">GIFT CARDS</h1>
+                                <p>Give perfect gift</p>
+                            </div>
+                        </div>
+                        <!-- F Widget Item of the Page -->
+                    </div>
+                    <div class="col">
+                        <!-- F Widget Item of the Page -->
+                        <div class="f-widget-item ft-svg-class-4">
+                            <span class="widget-icon ft-svg-child-1">
+                                <img src="{{ asset('frontend/images/products/footer-icon/payment.svg') }}"
+                                    alt="">
+                            </span>
+                            <div class="txt-holder ft-svg-child-2">
+                                <h1 class="f-promo-box-heading">PAYMENT 100% SECURE</h1>
+                                <p>Payment 100% secure</p>
+                            </div>
+                        </div>
+                        <!-- F Widget Item of the Page -->
                     </div>
                 </div>
-                <!-- F Widget Item of the Page end -->
             </div>
-            <div class="col mt-paddingbottomsm ft-svg-class-2">
-                <!-- F Widget Item of the Page -->
-                <div class="f-widget-item ft-svg-sub-class-2">
-                    <span class="widget-icon ft-svg-child-1">
-                        <img src="{{ asset('frontend/images/products/footer-icon/support.svg') }}" alt="">
-                    </span>
-                    <div class="txt-holder ft-svg-child-2">
-                        <h1 class="f-promo-box-heading">SUPPORT 24/7</h1>
-                        <p>We support 24 hours a day</p>
-                    </div>
-                </div>
-                <!-- F Widget Item of the Page -->
-            </div>
-            <div class="col mt-paddingbottomxs ft-svg-class-3">
-                <!-- F Widget Item of the Page -->
-                <div class="f-widget-item ft-svg-sub-class-3">
-                    <span class="widget-icon ft-svg-child-1">
-                        <img src="{{ asset('frontend/images/products/footer-icon/gift-card.svg') }}"
-                            alt="">
-                    </span>
-                    <div class="txt-holder ft-svg-child-2">
-                        <h1 class="f-promo-box-heading">GIFT CARDS</h1>
-                        <p>Give perfect gift</p>
-                    </div>
-                </div>
-                <!-- F Widget Item of the Page -->
-            </div>
-            <div class="col">
-                <!-- F Widget Item of the Page -->
-                <div class="f-widget-item ft-svg-class-4">
-                    <span class="widget-icon ft-svg-child-1">
-                        <img src="{{ asset('frontend/images/products/footer-icon/payment.svg') }}" alt="">
-                    </span>
-                    <div class="txt-holder ft-svg-child-2">
-                        <h1 class="f-promo-box-heading">PAYMENT 100% SECURE</h1>
-                        <p>Payment 100% secure</p>
-                    </div>
-                </div>
-                <!-- F Widget Item of the Page -->
-            </div>
-        </div>
-    </div>
- </aside>
-</section>
+        </aside>
+    </section>
 
 @endsection
 @section('js')
@@ -595,5 +595,18 @@
                 }
             ]
         });
+    </script>
+
+    <script>
+        window.onload = function() {
+            $('.frontend-top-slider').slick({
+                autoplay:true,
+                autoplaySpeed: 1000,
+                arrows: false,
+                centerMode: true,
+                slidesToShow: 1,
+                slidesToScroll: 2
+            });
+        };
     </script>
 @endsection
