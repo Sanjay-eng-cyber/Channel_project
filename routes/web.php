@@ -23,6 +23,10 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/profile', function () {
         return view('frontend.profile');
     })->name('profile');
+    
+    Route::get('/checkout', function () {
+        return view('frontend.checkout');
+    })->name('checkout');
 
     Route::get('/wishlist', function () {
         return view('frontend.wishlist');
