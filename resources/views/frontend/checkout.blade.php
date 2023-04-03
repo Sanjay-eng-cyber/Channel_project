@@ -167,6 +167,55 @@
                         </div>
                     </div>
 
+                    {{-- credit card\debit card --}}
+                    <div class="py-3"></div>
+                    <div class="cc-border p-3">
+                        <h5  class="h5 main-head">Credit Card\Debit Card</h5>
+                        <form action="" method="post" class="py-4 __checkout-card-info">
+                            <div class="row">
+
+                                <div class="col-sm-8 py-2 __name-card">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name-on-card" placeholder="Name On Card">
+                                      </div>
+                                </div>
+
+                                  <div class="col-sm-8 py-2 __card-num">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="card-number" placeholder="Card Number">
+                                      </div>
+                                  </div>
+
+
+                                  <div class="py-2 __cvv-mm-yy">
+                                    <div class="form-group  __cvv">
+                                        <input type="text" class="form-control __cvv-input" id="cvv" placeholder="CVV">
+                                        <i class="fa-regular fa-credit-card __cvv-info"></i>
+                                    </div>
+
+                                    <div class="form-group __ex-mm">
+                                        <input type="text" class="form-control" id="expiry-month" placeholder="Expiry MM">
+                                    </div>
+
+                                    <div class="form-group __ex-yy">
+                                        <input type="text" class="form-control" id="expiry-year" placeholder="Expiry YY">
+                                    </div>
+
+                                  </div>
+
+                                  <div class="form-group form-check py-3" style="padding-left:35px">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1" style="font-size:11px">Save Card For Future Use</label>
+                                  </div>
+
+
+                            </div>
+
+                            <button type="submit" class="btn btn-pink px-4">Pay ₹145.55</button>
+                        </form>
+
+                    </div>
+
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="d-flex justify-content-between align-items-center">

@@ -1256,6 +1256,56 @@ a:hover {
 
 
 /*end checkout continue login */
+
+/* credit and debit card form in checkoutform */
+    .__checkout-card-info .__cvv-mm-yy{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .__checkout-card-info
+    .__name-card input[type="text"]::placeholder {
+         text-align: start;
+}
+
+.__checkout-card-info
+.__card-num input[type="text"]::placeholder {
+         text-align: start;
+}
+
+.__checkout-card-info
+.__cvv-mm-yy input[type="text"]::placeholder {
+         text-align: start;
+}
+
+.__checkout-card-info
+.__cvv-mm-yy  .__cvv{
+    position: relative;
+    isolation: isolate;
+}
+
+.__checkout-card-info
+.__cvv-mm-yy .__cvv-input{
+    position: relative;
+}
+
+.__checkout-card-info
+.__cvv-mm-yy .__cvv-info{
+    position: absolute;
+    right: 11px;
+    bottom: 11px;
+
+}
+
+@media screen  and (max-width:576px){
+    .__checkout-card-info .__cvv-mm-yy{
+        display: flex;
+        flex-direction:column;
+        gap: 1rem;
+    }
+}
+/*end credit and debit card form in checkoutform */
+
 @media screen and (max-width: 1400px) {
     /* organic-product */
     .og-main .og-main-part-1 .og-main-img-first {
