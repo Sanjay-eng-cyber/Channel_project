@@ -461,11 +461,18 @@ a:hover {
 
 .group-card-3 .third-group-card .third-group-card-img {
     width: 100%;
+    border-radius: 26.6782px 26.6782px 0px 0px;
+
 }
 
 .group-card-3 .third-group-card .third-group-card-body {
     background: rgba(241, 210, 173, 1);
     border-radius: 0px 0px 27px 27px;
+}
+
+
+.group-card-3 .third-group-card .third-group-card-body p{
+   font-size: 14px;
 }
 
 .group-card-3 .fourth-group-card {
@@ -480,6 +487,10 @@ a:hover {
 .group-card-3 .fourth-group-card .fourth-group-card-body {
     background: rgba(235, 181, 121, 1);
     border-radius: 0px 0px 27px 27px;
+}
+
+.group-card-3 .fourth-group-card .fourth-group-card-body p{
+ font-size: 14px;
 }
 /* end first four card */
 
@@ -1322,9 +1333,9 @@ a:hover {
     .group-card-1 {
         display: flex;
     }
-    .group-card-3 {
+    /* .group-card-3 {
         padding-top: 50px;
-    }
+    } */
     /* organic-product */
     .og-main .og-main-part-1 .og-main-img-first {
         position: absolute;

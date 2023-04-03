@@ -7,12 +7,12 @@
             <div class="row main-group-card">
                 <h2 class="text-red main-head" style="padding: 30px 0px 25px 0px">#Bestseller of channel</h2>
 
-                <div class="col-sm-12 col-md-7 col-lg-8 col-xl-6">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
 
                     <div class="frontend-top-slider">
                         @for ($i = 0; $i < 4; $i++)
                         <div class="slide" style="padding:0px 10px 0px 10px">
-                            <img src="https://via.placeholder.com/516x665" class="img-fluid" alt="image description " style="">
+                            <img src="https://via.placeholder.com/500x700" class="img-fluid" alt="image description " style="">
                             <div class="slide-content" >
                                 <div class="slide-content-desc">
                                     <h3 class="">Love Your Skin </h3>
@@ -31,10 +31,9 @@
 
 
                 </div>
-                <div class="col-sm-12 col-md-5 col-lg-4  col-xl-3 group-card-2">
+                <div class="col-sm-6 col-md-6  col-lg-6 col-lg-6  col-xl-3 group-card-2 d-flex align-items-center py-3 py-xl-0">
                     <div class="card second-group-card">
-                        <img src="frontend/images/banner/ix2.png" class="card-img-top m-0 card second-group-img"
-                            alt="...">
+                        <img src="https://via.placeholder.com/200x300" class="img-fluid second-group-img" alt="...">
                         <div class="card-body text-center  second-group-card-body">
                             <h4 class="card-title text-center font-head ">Love Your Hair</h4>
                             <p class="card-text group-card-text-color">
@@ -50,44 +49,45 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-md-12  col-lg-12 col-xl-3 group-card-3 gap-3 ">
+                <div class="col-sm-6 col-md-6 col-lg-6  col-lg-6 col-xl-3 group-card-3 gap-3 gap-lg-5 gap-xl-3 gap-xxl-4
+                    d-flex flex-column justify-content-center py-3 py-xl-0 ">
                     <div class="card third-group-card">
-                        <img src="frontend/images/banner/ix3.jpg" class="card-img-top third-group-card-img" alt="...">
+                        <img src="https://via.placeholder.com/250x150" class="card-img-top third-group-card-img" alt="...">
                         <div class="card-body text-center third-group-card-body">
-                            <h4 class="card-title text-center font-head">Luxe Fragrances</h4>
+                            <h4 class="card-title text-center font-head m-0">Luxe Fragrances</h4>
 
-                            <p class="card-text group-card-text-color">
+                            <p class="card-text group-card-text-color  m-0">
                                 indulge in premium perfumes
                             </p>
 
 
-                            <button type="button" class="text-center group-buutton-bg-disable">
-                                <a class=" d-flex gap-2" href="">
+
+                                <a class=" d-flex justify-content-center gap-2 text-center group-buutton-bg-disable" href="">
                                     <span class="group-card-shop-btn">Shop Now</span>
                                     <i class="fa fa-angle-right group-button-arrow"></i>
                                 </a>
-                            </button>
+
 
                         </div>
                     </div>
 
                     <div class="card fourth-group-card">
-                        <img src="frontend/images/banner/ix4.jpg" class="card-img-top fourth-group-img" alt="..."
+                        <img src="https://via.placeholder.com/250x150" class="card-img-top fourth-group-img" alt="..."
                             style="border-radius: 26.6782px 26.6782px 0px 0px;">
                         <div class="card-body text-center fourth-group-card-body">
-                            <h4 class="card-title text-center font-head">Home Decor</h4>
+                            <h4 class="card-title text-center font-head m-0">Home Decor</h4>
 
 
-                            <p class="card-text group-card-text-color">
+                            <p class="card-text group-card-text-color m-0">
                                 indulge in premium perfumes
                             </p>
 
-                            <button type="button" class="text-center group-buutton-bg-disable">
-                                <a class=" d-flex gap-2" href="">
+
+                                <a class=" d-flex  justify-content-center gap-2 text-center group-buutton-bg-disable" href="">
                                     <span class="group-card-shop-btn">Shop Now</span>
                                     <i class="fa fa-angle-right group-button-arrow"></i>
                                 </a>
-                            </button>
+
 
                         </div>
                     </div>
