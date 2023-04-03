@@ -1,5 +1,8 @@
 @extends('frontend.layouts.app')
 @section('title', 'About-Us |')
+@section('cdn')
+    <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
+@endsection
 @section('content')
 
     <section class="my-5">
@@ -74,6 +77,88 @@
                             +Add address
                         </button>
                     </div>
+
+
+
+
+                        <div class="py-3"></div>
+
+                        <div class="p-4 profile-form-border">
+                            <form class="">
+
+                                <h5 class="main-head text-red">Enter Your Address</h5>
+
+                                <div class="form-group profile-form-group-star-name py-2">
+                                    <input type="text" class="profile-form-input-custome" placeholder="Name*">
+
+                                </div>
+
+
+                                <div class="form-group  profile-form-group-star-pin-code py-2">
+                                    <input type="text" class="profile-form-input-custome" placeholder="Pin Code*">
+                                </div>
+
+                                <div class="form-group py-2">
+                                    <input type="text" class=" profile-form-input-custome" placeholder="Enter name">
+                                </div>
+
+                                <div class="form-group py-2">
+                                    <input type="text" class=" profile-form-input-custome" placeholder="Address*">
+                                </div>
+
+                                <div class="pt-5 pb-3">
+                                    <hr class="m-0">
+                                </div>
+
+
+
+                                <div class="form-group py-2">
+                                    <input type="text" class=" profile-form-input-custome" placeholder="Landmark">
+                                </div>
+
+                                <div class="form-group py-2">
+                                    <input type="text" class=" profile-form-input-custome" placeholder="City">
+                                </div>
+
+                                <div class="form-group py-2">
+                                    <input type="text" class=" profile-form-input-custome" placeholder="State">
+                                </div>
+
+                                <div class="form-group py-2">
+                                    <input type="text" class=" profile-form-input-custome" placeholder="Country">
+                                </div>
+
+                                <div class="form-group py-2">
+                                    <input type="text" class=" profile-form-input-custome" placeholder="Mobile No*">
+
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-sm-6 py-2">
+
+                                        <label for="" class="profile-f-l-color"> Address Type</label>
+
+                                    </div>
+                                    <div class="col-sm-6 py-2 profile-form-label-color">
+                                        <select class="form-select-lg mb-3 profile-form-input-custome profile-f-l-color"
+                                            aria-label=".form-select-lg example">
+                                            <option selected class="profile-f-l-color border-0">Home</option>
+                                            <option value="1" class="profile-f-l-color">Office</option>
+                                            <option value="2" class="profile-f-l-color">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-12 pt-4">
+                                    <button type="submit" class="btn profile-btn-color">Save Address</button>
+                                </div>
+
+                            </form>
+                        </div>
+                   
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="d-flex justify-content-between align-items-center">
@@ -150,6 +235,8 @@
 
                     <hr class="my-1">
                 </div>
+
+
             </div>
         </div>
     </section>
