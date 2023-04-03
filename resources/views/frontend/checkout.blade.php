@@ -77,13 +77,9 @@
                             +Add address
                         </button>
                     </div>
-
-
-
-
+                    {{-- form --}}
                         <div class="py-3"></div>
-
-                        <div class="p-4 profile-form-border">
+                        <div class="p-3 profile-form-border">
                             <form class="">
 
                                 <h5 class="main-head text-red">Enter Your Address</h5>
@@ -158,7 +154,19 @@
 
                             </form>
                         </div>
-                   
+                    {{-- continue to login --}}
+                    <div class="py-3"></div>
+                    <div class="cc-border p-3 checkout-login-ctn">
+                        <h5  class="h5 main-head text-red">Log In To Continue</h5>
+                        <div class="py-3 checkout-login-ccolor">Signed As nishchayluthra@gmail.com</div>
+                        <p class="p-3">please note that upon clicking "sign out" you will loose the item in your cart and will be direct home page of channel</p>
+                        <div class="d-flex align-items-center gap-2 checkout-login-dbtn">
+                            <a href="" class="btn btn-pink">Sign Out</a>
+                            <div class="checkout-login-ccolor">or</div>
+                            <a href="" class="checkout-login-ccolor">continue with checkout</a>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="d-flex justify-content-between align-items-center">
