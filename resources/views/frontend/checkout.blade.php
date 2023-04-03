@@ -216,6 +216,46 @@
 
                     </div>
 
+                    {{-- net banking --}}
+                    <div class="py-3"></div>
+                    <div class="cc-border p-3">
+                        <h5  class="h5 main-head">Net Banking</h5>
+                        <div class="d-flex gap-3 my-3">
+                                @for ($i=0; $i<=4;$i++)
+
+
+                                    <div class="">
+                                        <img src="https://via.placeholder.com/77x77" alt="" class="img-fluid" style="width:77px;border-radius:50%">
+                                        <div class="text-center" style="font-size:10px">Bank</div>
+                                    </div>
+                                @endfor
+
+
+
+                        </div>
+
+                        <div>
+                          <div class="row">
+                            <div class="col-sm-8">
+                                <form action="" method="post">
+                                    <div class="form-group my-2">
+                                        <select class="form-select" id="bank-select" name="bank">
+                                          <option selected disabled>Choose a Bank</option>
+                                          <option value="axis">Exis Bank</option>
+                                          <option value="hdfc">HDFC Bank</option>
+                                          <option value="icici">ICICI Bank</option>
+                                          <option value="sbi">State Bank of India</option>
+                                          <option value="kotak">Kotak Bank</option>
+                                        </select>
+                                    </div>
+                                      <button type="submit" class="btn btn-pink px-4 my-2">Pay ₹145.55</button>
+                                </form>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="d-flex justify-content-between align-items-center">
