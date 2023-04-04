@@ -98,6 +98,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.inside-profile-payment-method');
     })->name('profile-payment-method');
 
+    Route::get('/cart', function () {
+        return view('frontend.cart');
+    })->name('cart');
+
     Route::get('/gift-card-review', function () {
         return view('frontend.gift-card-review');
     })->name('gift-card-review');
