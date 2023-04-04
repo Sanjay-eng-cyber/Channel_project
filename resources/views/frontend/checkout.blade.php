@@ -279,6 +279,30 @@
                             </div>
                     </div>
 
+                {{-- cash on delevery --}}
+                <div class="py-3"></div>
+                <div class="cc-border p-3">
+                    <h5  class="h5 main-head">Cash On Delivery</h5>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                    <form action="" method="post">
+
+                                        <div class="form-group cc-border py-2 px-3 my-2 ck-wallet">
+
+                                                <div class="form-check d-flex gap-4 ck-wallet-grp">
+                                                    <input class="form-check-input ck-wallet-fi" type="radio" name="gender" id="male" value="male" checked>
+                                                    <label class="form-check-label" for="male">Pay On Delivery</label>
+                                                </div>
+
+                                        </div>
+                                        <button type="submit" class="btn btn-pink px-4 my-2">Pay ₹145.55</button>
+
+                                    </form>
+                            </div>
+
+                        </div>
+                </div>
+
 
 
                 </div>
