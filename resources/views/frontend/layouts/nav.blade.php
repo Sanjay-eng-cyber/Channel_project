@@ -25,7 +25,7 @@
                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
                                    </li>
                                    <li class="nav-item">
-                                        <a href="{{ route('skin') }}">Skin</a>
+                                       <a href="{{ route('skin') }}">Skin</a>
                                    </li>
                                    <li class="nav-item">
                                        <a class="nav-link" href="{{ route('fragrances') }}">fragrances</a>
@@ -59,23 +59,27 @@
                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99
                                    <span class="visually-hidden">unread messages</span></span>
                            </li>
-                           <li class="text-end text-red">
-                               <i class="fas fa-user top-nav-usericon"></i>
-                           </li>
-                           <li class="text-end ">
-                               @auth
+                           @auth
+                               <li class="text-end text-red">
+                                   <a href="{{ route('frontend.profile') }}">
+                                       <i class="fas fa-user top-nav-usericon"></i>
+                                   </a>
+                               </li>
+                               <li class="text-end ">
                                    <form action="{{ route('frontend.logout') }}" method="POST">
                                        @csrf
                                        <button class="btn text-pink p-0 m-0" type="submit">
                                            LOGOUT
                                        </button>
                                    </form>
-                               @else
+                               </li>
+                           @else
+                               <li class="text-end ">
                                    <a href="http://" data-bs-toggle="modal" data-bs-target="#loginPopup">
                                        LOGIN
                                    </a>
-                               @endauth
-                           </li>
+                               </li>
+                           @endauth
                        </ul>
                    </div>
                </div>
@@ -360,7 +364,7 @@
                    }
                },
                created() {
-                //    console.log(this.timer) // 30
+                   //    console.log(this.timer) // 30
                }
            }).mount('#login_div')
        </script>

@@ -28,7 +28,7 @@ Route::domain(config('app.web_domain'))->group(function () {
 
         Route::get('/profile', function () {
             return view('frontend.profile');
-        })->name('profile');
+        })->name('frontend.profile');
     });
 
 
