@@ -19,7 +19,7 @@ class ProfileController extends Controller
             'gender' => 'required|string|in:male,female',
         ]);
 
-        $profile = new User();
+        $profile = auth()->user();
         $profile->first_name = $request->first_name;
         $profile->last_name = $request->last_name;
         $profile->email = $request->email;

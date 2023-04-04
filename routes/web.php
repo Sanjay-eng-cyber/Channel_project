@@ -29,6 +29,7 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::get('/profile', function () {
             return view('frontend.profile');
         })->name('frontend.profile');
+        Route::post('/profile/update', 'App\Http\Controllers\frontend\ProfileController@update')->name('frontend.profile.update');
     });
 
 
@@ -128,6 +129,5 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::post('verify-otp', 'App\Http\Controllers\frontend\LoginController@verifyOtp')->name('frontend.verify-otp');
 
     Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
-    Route::post('/profile/update', 'App\Http\Controllers\frontend\ProfileController@update')->name('frontend.profile.update');
 
 });

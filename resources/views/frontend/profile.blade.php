@@ -17,14 +17,14 @@
                         <div class="row">
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="first_name" class=" profile-form-input-custome"
-                                    placeholder="First Name" min="3" max="30" required>
+                                    placeholder="First Name" minlength="3" maxlength="30" value="{{ old('first_name') }}" required>
                                     @if ($errors->has('first_name'))
                                             <div id="first_name-error" class="text-primary">{{ $errors->first('first_name') }}</div>
                                         @endif
                             </div>
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="last_name" class=" profile-form-input-custome"
-                                    placeholder="Last Name" min="3" max="30" required>
+                                    placeholder="Last Name" minlength="3" maxlength="30" required value="{{old('last_name')}}">
                                     @if ($errors->has('last_name'))
                                             <div id="last_name-error" class="text-primary">{{ $errors->first('last_name') }}</div>
                                         @endif
@@ -33,7 +33,7 @@
                         <div class="row">
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="phone" class=" profile-form-input-custome"
-                                    placeholder="Mobile" required min="10" max="10">
+                                    placeholder="Mobile" required minlength="10" maxlength="10" phone>
                                     @if ($errors->has('phone'))
                                             <div id="phone-error" class="text-primary">{{ $errors->first('phone') }}</div>
                                         @endif
@@ -41,7 +41,7 @@
 
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="email" class=" profile-form-input-custome"
-                                    placeholder="Email" min="5" max="40" required>
+                                    placeholder="Email" minlength="5" maxlength="40" required value="{{old('email')}}">
                                     @if ($errors->has('email'))
                                             <div id="email-error" class="text-primary">{{ $errors->first('email') }}</div>
                                         @endif
