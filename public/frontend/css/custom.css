@@ -1331,6 +1331,30 @@ a:hover {
 /* end checkout wallet */
 
 
+/* pfofile payment method */
+
+   .py-ck-wallet
+.py-ck-wallet-grp
+.py-ck-wallet-fi:checked[type=radio] {
+    background-image: url("/frontend/images/right-check.png");
+    background-size: 55% 35%;
+
+}
+.py-ck-wallet
+.py-ck-wallet-grp
+.py-ck-wallet-fi:checked {
+    background-color: #1EBA11;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.py-ck-wallet
+.py-ck-wallet-grp
+.py-ck-wallet-fi{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+
+/* end pfofile payment method */
 
 @media screen and (max-width: 1400px) {
     /* organic-product */
