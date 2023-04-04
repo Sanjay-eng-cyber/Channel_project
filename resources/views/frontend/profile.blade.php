@@ -11,23 +11,40 @@
         <div class="container">
             <div class="row py-5 d-flex justify-content-center">
                 <div class="col-12 col-lg-6 ">
-                    <form class="p-4 profile-form-border" action="" method="post">
+                    <form class="p-4 profile-form-border" action="{{ route('frontend.profile.update') }}" method="post">
                         <h5 class="main-head text-red">Personal Information</h5>
+                        @csrf
                         <div class="row">
                             <div class="col-sm-6 py-2">
-                                <input type="text" class=" profile-form-input-custome" placeholder="First Name">
+                                <input type="text" name="first_name" class=" profile-form-input-custome"
+                                    placeholder="First Name" min="3" max="30" required>
+                                    @if ($errors->has('first_name'))
+                                            <div id="first_name-error" class="text-primary">{{ $errors->first('first_name') }}</div>
+                                        @endif
                             </div>
                             <div class="col-sm-6 py-2">
-                                <input type="text" class=" profile-form-input-custome" placeholder="Last Name">
+                                <input type="text" name="last_name" class=" profile-form-input-custome"
+                                    placeholder="Last Name" min="3" max="30" required>
+                                    @if ($errors->has('last_name'))
+                                            <div id="last_name-error" class="text-primary">{{ $errors->first('last_name') }}</div>
+                                        @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6 py-2">
-                                <input type="text" class=" profile-form-input-custome" placeholder="Mobile">
+                                <input type="text" name="phone" class=" profile-form-input-custome"
+                                    placeholder="Mobile" required min="10" max="10">
+                                    @if ($errors->has('phone'))
+                                            <div id="phone-error" class="text-primary">{{ $errors->first('phone') }}</div>
+                                        @endif
                             </div>
 
                             <div class="col-sm-6 py-2">
-                                <input type="text" class=" profile-form-input-custome" placeholder="Email">
+                                <input type="text" name="email" class=" profile-form-input-custome"
+                                    placeholder="Email" min="5" max="40" required>
+                                    @if ($errors->has('email'))
+                                            <div id="email-error" class="text-primary">{{ $errors->first('email') }}</div>
+                                        @endif
                             </div>
 
                         </div>
@@ -35,8 +52,8 @@
                         <div class="row">
 
                             <div class="col-sm-6 py-2">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                    value="option1" checked placeholder="male">
+                                <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
+                                    value="male" checked placeholder="male" required>
                                 <label class="form-check-label profile-f-l-color" for="exampleRadios1">
                                     Male
                                 </label>
@@ -44,12 +61,15 @@
 
 
                             <div class="col-sm-6 py-2">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                    value="option1" checked>
+                                <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
+                                    value="female" checked required>
                                 <label class="form-check-label profile-f-l-color" for="exampleRadios1">
                                     Female
                                 </label>
                             </div>
+                            @if ($errors->has('gender'))
+                                            <div id="gender-error" class="text-primary">{{ $errors->first('gender') }}</div>
+                                        @endif
                         </div>
                         <div class="col-sm-12 pt-4 text-end">
                             <button type="submit" class="btn profile-btn-color">Update profile</button>
