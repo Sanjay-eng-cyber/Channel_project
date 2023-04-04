@@ -199,7 +199,7 @@
                                <h4 class="text-pink  font-body my-4">
                                    Welcome
                                </h4>
-                               <p class="text-muted text-start">@{{ otpSendMsg }}
+                               <p class="text-muted text-start">OTP Has Been Sent To Your Registered Mobile Number  @{{ mobile_no }}
                                </p>
                                <form v-on:submit="verifyOtp">
                                    <div class="input-group phone-number-arrow mb-2">
@@ -247,7 +247,6 @@
                        countDown: null,
                        error: false,
                        errorTexts: '',
-                       otpSendMsg: '',
                        timer: 30,
                    }
                },
@@ -270,8 +269,6 @@
                                        backgroundColor: '#1abc9c'
                                    });
                                    this.requested = true;
-                                   this.otpSendMsg = "OTP Has Been Sent To Your Registered Mobile Number " + this
-                                       .mobile_no;
                                    this.beginTimer();
                                }
                                if (!res.data.success) {
@@ -359,8 +356,12 @@
                        this.sendOtp();
                    },
                    back() {
-                       this.clearErrorMessage();
                        this.requested = false;
+                       this.showTimer = false;
+                       this.showResend = false;
+                       this.timer = 30;
+                       this.clearErrorMessage();
+                       clearTimeout(this.countDown);
                    }
                },
                created() {
