@@ -1306,6 +1306,32 @@ a:hover {
 }
 /*end credit and debit card form in checkoutform */
 
+/* checkout wallet */
+
+   .ck-wallet
+.ck-wallet-grp
+.ck-wallet-fi:checked[type=radio] {
+    background-image: url("/frontend/images/right-check.png");
+    background-size: 55% 35%;
+
+}
+.ck-wallet
+.ck-wallet-grp
+.ck-wallet-fi:checked {
+    background-color:#EC268F;;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.ck-wallet
+.ck-wallet-grp
+.ck-wallet-fi{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+/* end checkout wallet */
+
+
+
 @media screen and (max-width: 1400px) {
     /* organic-product */
     .og-main .og-main-part-1 .og-main-img-first {

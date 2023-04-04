@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
-
     <section class="my-5">
         <div class="container">
             <div class="row">
@@ -234,7 +233,7 @@
 
                         </div>
 
-                        <div>
+
                           <div class="row">
                             <div class="col-sm-8">
                                 <form action="" method="post">
@@ -252,8 +251,34 @@
                                 </form>
                             </div>
                           </div>
-                        </div>
+
                     </div>
+
+                    {{-- wallet --}}
+                    <div class="py-3"></div>
+                    <div class="cc-border p-3">
+                        <h5  class="h5 main-head">Wallets</h5>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                        <form action="" method="post">
+                                            @for ($i=0; $i<=2;$i++)
+                                            <div class="form-group cc-border py-2 px-3 my-2 ck-wallet">
+
+                                                    <div class="form-check d-flex gap-4 ck-wallet-grp">
+                                                        <input class="form-check-input ck-wallet-fi" type="radio" name="gender" id="male" value="male" checked>
+                                                        <img src="https://via.placeholder.com/50x25" alt="" class="img-fluid" style="width:50px">
+                                                        <label class="form-check-label" for="male">Paytm Wallet</label>
+                                                    </div>
+
+                                            </div>
+                                            <button type="submit" class="btn btn-pink px-4 my-2">Pay ₹145.55</button>
+                                            @endfor
+                                        </form>
+                                </div>
+
+                            </div>
+                    </div>
+
 
 
                 </div>
