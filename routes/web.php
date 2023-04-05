@@ -24,6 +24,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.checkout');
     })->name('checkout');
 
+
+    Route::post('send-otp', 'App\Http\Controllers\frontend\LoginController@sendOtp')->name('frontend.send-otp');
+    Route::post('verify-otp', 'App\Http\Controllers\frontend\LoginController@verifyOtp')->name('frontend.verify-otp');
+
     Route::group(['middleware' => 'auth:web'], function () {
 
         // Route::get('/profile', function () {
@@ -31,6 +35,8 @@ Route::domain(config('app.web_domain'))->group(function () {
         // })->name('frontend.profile');
         Route::get('/profile', 'App\Http\Controllers\frontend\ProfileController@edit')->name('frontend.profile');
         Route::post('/profile/update', 'App\Http\Controllers\frontend\ProfileController@update')->name('frontend.profile.update');
+
+        Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
     });
 
 
@@ -132,11 +138,4 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/products/{slug}', function () {
         return view('frontend/product/show');
     })->name('products.show');
-
-
-    Route::post('send-otp', 'App\Http\Controllers\frontend\LoginController@sendOtp')->name('frontend.send-otp');
-    Route::post('verify-otp', 'App\Http\Controllers\frontend\LoginController@verifyOtp')->name('frontend.verify-otp');
-
-    Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
-
 });
