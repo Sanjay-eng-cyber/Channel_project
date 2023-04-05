@@ -8,14 +8,17 @@
                     <img src="{{ url('frontend/images/icons/icon-camera.svg') }}" alt="">
                 </button>
             </div>
-            <form action="" class="user-name-section">
+            <div class="user-name-section">
+                <p class="name-input">{{ $name }}</p>
+            </div>
+            {{-- <form action="" class="user-name-section">
                 <div class="input-group">
                     <input type="text" class="form-control name-input" value=" {{ $name }}">
                     <button class="btn input-group-append">
                         <img src="{{ url('frontend/images/icons/icon-edit.svg') }}" alt="">
                     </button>
                 </div>
-            </form>
+            </form> --}}
         </div>
         <div class="profile-menu">
             <a href="javascript:;" class="btn active">

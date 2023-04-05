@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 
-    <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
+    <x-frontend.profile-nav image="https://via.placeholder.com/300" name="{{ $user->first_name }}" />
 
     <section>
         <div class="container">
@@ -33,7 +33,7 @@
                         <div class="row">
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="phone" class=" profile-form-input-custome"
-                                    placeholder="Mobile" required minlength="10" maxlength="10" value="{{old('phone') ?? $user->phone}}">
+                                    placeholder="Mobile" required minlength="10" maxlength="10" value="{{old('phone') ?? $user->phone}}" disabled>
                                     @if ($errors->has('phone'))
                                             <div id="phone-error" class="text-primary">{{ $errors->first('phone') }}</div>
                                         @endif
@@ -78,7 +78,7 @@
                     </form>
                     <div class="py-3">
                     </div>
-                    <form class="p-4 profile-form-border" action="" method="post">
+                    {{-- <form class="p-4 profile-form-border" action="" method="post">
                         <h5 class="main-head text-red">Change Password</h5>
                         <div class="row">
                             <div class="col-sm-6 py-2">
@@ -106,7 +106,7 @@
                         </div>
 
 
-                    </form>
+                    </form> --}}
                 </div>
 
                 <div class="col-12 col-lg-4 py-5 py-lg-0 py-xl-0 py-xxl-0">
