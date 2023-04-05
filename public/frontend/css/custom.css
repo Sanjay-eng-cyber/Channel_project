@@ -1356,6 +1356,124 @@ a:hover {
 
 /* end pfofile payment method */
 
+/* review index page inside the profile */
+
+.review-center-switch h5 {
+  color:rgba(57, 53, 53, 0.34);
+
+}
+
+.review-center-switch h5:active {
+  color:rgba(236, 38, 143, 1);
+}
+
+.review-old-cl{
+    color: rgba(57, 53, 53, 0.34);
+}
+
+.review-slash{
+    color: rgba(57, 53, 53, 0.34);
+}
+ .review-old-cl:active{
+    color:black;
+}
+    .review-main-switch{
+        isolation: isolate;
+        position: relative;
+    }
+
+   .review-main-switch .review-side-switch {
+           position: absolute;
+                    right: 0px;
+                    bottom: 8px;
+                    z-index: 10;
+
+    }
+
+.review-sub-textarea::placeholder {
+        text-align: start;
+
+}
+
+.review-sub-headline::placeholder {
+        text-align: start;
+
+    }
+
+.review-main-section .review-subsection{
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   border-radius: 8px;
+   padding: 1.5rem;
+}
+.review-first-section
+.review-first-subsection-img img{
+    width:370px
+}
+
+.review-first-subsection .review-first-subsection-desc .review-status{
+     display: flex;
+     gap:3rem;
+     align-items: center;
+
+}
+
+.review-first-subsection-desc .review-status .review-price{
+    font-weight: 600;
+}
+.review-first-subsection-desc .review-status .review-delivered button{
+    background: rgba(235, 181, 121, 0.51);
+    color:black;
+}
+
+
+
+@media screen and (max-width:992px){
+    .review-first-section
+    .review-first-subsection-img img{
+    width:194px;
+    margin: 10px auto 10px auto;
+
+}
+}
+
+
+
+
+@media screen and (max-width:768px){
+    .review-main-switch .review-side-switch {
+    position: absolute;
+    right: 0px;
+    bottom: 8px;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
+}
+
+
+@media screen and (max-width:576px){
+    .review-main-section .review-subsection{
+   border: 0px solid rgba(0, 0, 0, 0.2);
+   border-radius: 0px;
+   padding: 0rem;
+    }
+}
+
+/*end review index page inside the profile */
+
+
+@media screen and (max-width:480px){
+.review-first-subsection .review-first-subsection-desc .review-status{
+     display: flex;
+    justify-content: space-between;
+    flex-direction:column;
+    gap:1rem;
+}
+
+}
+
+
+
 @media screen and (max-width: 1400px) {
     /* organic-product */
     .og-main .og-main-part-1 .og-main-img-first {
