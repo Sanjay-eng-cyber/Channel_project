@@ -44,7 +44,7 @@
 
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="email" class=" profile-form-input-custome" placeholder="Email"
-                                    minlength="5" maxlength="40" required value="{{ old('email') ?? $user->email }}">
+                                    minlength="5" maxlength="50" value="{{ old('email') ?? $user->email }}">
                                 @if ($errors->has('email'))
                                     <div id="email-error" class="text-primary">{{ $errors->first('email') }}</div>
                                 @endif

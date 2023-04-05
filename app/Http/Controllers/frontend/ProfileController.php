@@ -19,8 +19,8 @@ class ProfileController extends Controller
         $request->validate([
             'first_name' => 'required|string|min:3|max:30',
             'last_name' => 'required|string|min:3|max:30',
-            'phone' => 'required|string|digits:10',
-            'email' => 'required|string|email:rfc,dns|min:5|max:40',
+            //'phone' => 'required|string|digits:10',
+            'email' => 'nullable|string|email:rfc,dns|min:5|max:50',
             'gender' => 'required|string|in:male,female',
         ]);
 
@@ -28,7 +28,7 @@ class ProfileController extends Controller
         $profile->first_name = $request->first_name;
         $profile->last_name = $request->last_name;
         $profile->email = $request->email;
-        $profile->phone = $request->phone;
+        //$profile->phone = $request->phone;
         $profile->gender = $request->gender;
         if ($profile->save()) {
                 return redirect()->back()->with([
