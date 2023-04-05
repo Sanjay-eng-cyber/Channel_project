@@ -17,14 +17,14 @@
                         <div class="row">
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="first_name" class=" profile-form-input-custome"
-                                    placeholder="First Name" minlength="3" maxlength="30" value="{{ old('first_name') }}" required>
+                                    placeholder="First Name" minlength="3" maxlength="30" value="{{ old('first_name') ?? $user->first_name }}" required>
                                     @if ($errors->has('first_name'))
                                             <div id="first_name-error" class="text-primary">{{ $errors->first('first_name') }}</div>
                                         @endif
                             </div>
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="last_name" class=" profile-form-input-custome"
-                                    placeholder="Last Name" minlength="3" maxlength="30" required value="{{old('last_name')}}">
+                                    placeholder="Last Name" minlength="3" maxlength="30" required value="{{old('last_name') ?? $user->last_name}}">
                                     @if ($errors->has('last_name'))
                                             <div id="last_name-error" class="text-primary">{{ $errors->first('last_name') }}</div>
                                         @endif
@@ -33,7 +33,7 @@
                         <div class="row">
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="phone" class=" profile-form-input-custome"
-                                    placeholder="Mobile" required minlength="10" maxlength="10" phone>
+                                    placeholder="Mobile" required minlength="10" maxlength="10" value="{{old('phone') ?? $user->phone}}">
                                     @if ($errors->has('phone'))
                                             <div id="phone-error" class="text-primary">{{ $errors->first('phone') }}</div>
                                         @endif
@@ -41,7 +41,7 @@
 
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="email" class=" profile-form-input-custome"
-                                    placeholder="Email" minlength="5" maxlength="40" required value="{{old('email')}}">
+                                    placeholder="Email" minlength="5" maxlength="40" required value="{{old('email') ?? $user->email}}">
                                     @if ($errors->has('email'))
                                             <div id="email-error" class="text-primary">{{ $errors->first('email') }}</div>
                                         @endif
@@ -53,7 +53,7 @@
 
                             <div class="col-sm-6 py-2">
                                 <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
-                                    value="male" checked placeholder="male" required>
+                                    value="male" @if($user->gender == 'male') {{'checked'}} @endif placeholder="male" required>
                                 <label class="form-check-label profile-f-l-color" for="exampleRadios1">
                                     Male
                                 </label>
@@ -62,7 +62,7 @@
 
                             <div class="col-sm-6 py-2">
                                 <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
-                                    value="female" checked required>
+                                    value="female" @if ($user->gender == 'female') {{'checked'}} @endif required>
                                 <label class="form-check-label profile-f-l-color" for="exampleRadios1">
                                     Female
                                 </label>

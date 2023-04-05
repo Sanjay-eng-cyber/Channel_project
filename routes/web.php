@@ -26,9 +26,10 @@ Route::domain(config('app.web_domain'))->group(function () {
 
     Route::group(['middleware' => 'auth:web'], function () {
 
-        Route::get('/profile', function () {
-            return view('frontend.profile');
-        })->name('frontend.profile');
+        // Route::get('/profile', function () {
+        //     return view('frontend.profile');
+        // })->name('frontend.profile');
+        Route::get('/profile', 'App\Http\Controllers\frontend\ProfileController@edit')->name('frontend.profile');
         Route::post('/profile/update', 'App\Http\Controllers\frontend\ProfileController@update')->name('frontend.profile.update');
     });
 
