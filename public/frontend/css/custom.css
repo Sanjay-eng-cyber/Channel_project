@@ -1462,6 +1462,52 @@ a:hover {
 /*end review index page inside the profile */
 
 
+/* cart page */
+    .__cart-ui-f .__cart-ui-nav .__cart-ui-nav-heading {
+        text-transform: capitalize;
+        color: #6C6C6C
+    }
+
+    .__cart-ui-f .__cart-ui-nav .__cart-ui-nav-heading .__cart-ui-nav-des {
+        background: rgba(251, 249, 249, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+    .__cart-ui-pra {
+        font-size: 12.9268px;
+        color: rgba(0, 0, 0, 0.7);
+    }
+    .__cart-ui-card{
+        position: relative;
+        isolation: isolate;
+    }
+    .__cart-ui-card
+    .__cart-ui-close-btn{
+        position: absolute;
+    top: 0px;
+    padding: 15px;
+    right: -94%;
+
+    }
+
+    @media screen and (max-width:992px){
+        .__cart-ui-card
+    .__cart-ui-close-btn{
+        position: absolute;
+    top: -8px;
+    padding: 15px;
+    right: -90%;
+
+
+    }
+    }
+
+/* end cart page */
+
+
+
+
 @media screen and (max-width:480px){
 .review-first-subsection .review-first-subsection-desc .review-status{
      display: flex;
