@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function edit(){
+    public function index()
+    {
         $user = auth()->user();
+        $userAddresses = $user->userAddress()->orderBy('type', 'asc');
         //dd($user);
-        return view('frontend.profile', compact('user') );
+        return view('frontend.profile', compact('user', 'userAddresses'));
     }
 
     public function update(Request $request)
@@ -31,17 +33,14 @@ class ProfileController extends Controller
         //$profile->phone = $request->phone;
         $profile->gender = $request->gender;
         if ($profile->save()) {
-                return redirect()->back()->with([
-                    "message" => "Profile Updated Successfully",
-                    "alert-type" => "success"
-                ]);
+            return redirect()->back()->with([
+                "message" => "Profile Updated Successfully",
+                "alert-type" => "success"
+            ]);
         }
         return redirect()->back()->with([
             "message" => "Something went wrong.",
             "alert-type" => "error"
         ]);
     }
-
-
-
 }

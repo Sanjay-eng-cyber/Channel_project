@@ -11,6 +11,7 @@ class AddressController extends Controller
     public function update(Request $request)
     {
         $request->validate([
+            'name' => 'required|string|min:3|max:20',
             'street_address' => 'required|string|min:5|max:120',
             'city' => 'required|string|min:3|max:40',
             'state' => 'required|string|min:3|max:40',
@@ -23,8 +24,9 @@ class AddressController extends Controller
             return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Maximum 3 address allow for one user.']);
         }
         $address = new UserAddress;
-        $address->type = $userAddressCount ? 'primary' : 'secondary';
+        $address->type = $userAddressCount ? 'secondary' : 'primary';
         $address->user_id = auth()->user()->id;
+        $address->name = $request->name;
         $address->street_address = $request->street_address;
         $address->city = $request->city;
         $address->state = $request->state;

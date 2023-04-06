@@ -115,91 +115,107 @@
 
                 <div class="col-12 col-lg-4 py-5 py-lg-0 py-xl-0 py-xxl-0">
 
-                    <div class="profile-form-border p-4">
-                        <div class="row display: flex; align-items: center">
-
-                            <div class="col-6 py-2">
-                                <h5 class="main-head text-red">Address 1</h5>
-                            </div>
-
-                            <div class="col-6 py-2">
-                                <ul class="d-flex gap-4 list-unstyled justify-content-end">
-                                    <li>
-                                        <button type="button" class="btn btn-primary position-relative profile-s-bg-color">
-                                            Home
-                                            <span
-                                                class="position-absolute top-0 start-100 translate-middle  bg-success border border-light rounded-circle profile-alert-icon">
-                                                <i class="fas fa-check" style="color:white"></i>
-                                                <span class="visually-hidden">New alerts</span>
-                                            </span>
-                                        </button>
-
-                                    </li>
-                                    <li>
-                                        <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
-                                        <!-- alternate trash icon with red background color and circle border radius -->
-                                    </li>
-
-                                </ul>
-                            </div>
-
-                            <div class="col-12">
-                                <h6 class="main-head">User name</h6>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto facere quaerat eaque
-                                    pariatur aliquam a expedita illum aliquid cumque quae!
-                                </p>
+                    @forelse($userAddresses->get() as $key => $userAddress)
+                        <div class="profile-form-border p-4 mb-3">
+                            <div class="row display: flex; align-items: center">
+                                <div class="col-6 py-2">
+                                    <h5 class="main-head text-red">Address {{ $key + 1 }}</h5>
+                                </div>
+                                <div class="col-6 py-2">
+                                    <ul class="d-flex gap-4 list-unstyled justify-content-end">
+                                        @if ($userAddress->type == 'primary')
+                                            <li>
+                                                <button type="button"
+                                                    class="btn btn-primary position-relative profile-s-bg-color">
+                                                    {{ ucfirst($userAddress->type) }}
+                                                    <span
+                                                        class="position-absolute top-0 start-100 translate-middle  bg-success border border-light rounded-circle profile-alert-icon">
+                                                        <i class="fas fa-check" style="color:white"></i>
+                                                        <span class="visually-hidden">New alerts</span>
+                                                    </span>
+                                                </button>
+                                            </li>
+                                        @endif
+                                        @if ($userAddress->type != 'primary')
+                                            <li>
+                                                <a href="">
+                                                    <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
+                                                </a>
+                                            </li>
+                                        @endif
+                                    </ul>
+                                </div>
+                                <div class="col-12">
+                                    <h6 class="main-head">{{ $userAddress->name }}</h6>
+                                    <span>{{ $userAddress->street_address }} <br>
+                                        {{ $userAddress->city }}
+                                        {{ $userAddress->state }} <br>
+                                        {{ $userAddress->country }} - {{ $userAddress->postal_code }}
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @empty
+                    @endforelse
 
-                    <div class="py-3"></div>
+                    @if ($userAddresses->count() < 3)
+                        <div class="p-4 profile-form-border ">
+                            <form class="" action="{{ route('frontend.address.update') }}" method="post">
+                                @csrf
+                                <h5 class="main-head text-red">Add Address</h5>
 
-                    <div class="p-4 profile-form-border ">
-                        <form class="" action="{{ route('frontend.address.update') }}" method="post">
-                            @csrf
-                            <h5 class="main-head text-red">Add Address</h5>
-
-                            <div class="form-group py-2">
-                                <input type="text" name="street_address" class=" profile-form-input-custome"
-                                    placeholder="Street Address*" required minlength="5" maxlength="80">
+                                <div class="form-group py-2">
+                                    <input type="text" name="name" class=" profile-form-input-custome"
+                                        placeholder="Name*" required minlength="3" maxlength="20" required>
+                                    @if ($errors->has('name'))
+                                        <div id="name-error" class="text-primary">
+                                            {{ $errors->first('name') }}</div>
+                                    @endif
+                                </div>
+                                <div class="form-group py-2">
+                                    <input type="text" name="street_address" class=" profile-form-input-custome"
+                                        placeholder="Street Address*" required minlength="5" maxlength="80" required>
                                     @if ($errors->has('street_address'))
-                                    <div id="street_address-error" class="text-primary">{{ $errors->first('street_address') }}</div>
-                                @endif
-                            </div>
+                                        <div id="street_address-error" class="text-primary">
+                                            {{ $errors->first('street_address') }}</div>
+                                    @endif
+                                </div>
 
-                            <div class="form-group py-2">
-                                <input type="text" name="city" class=" profile-form-input-custome"
-                                    placeholder="City" minlength="3" maxlength="20" required>
+                                <div class="form-group py-2">
+                                    <input type="text" name="city" class=" profile-form-input-custome"
+                                        placeholder="City" minlength="3" maxlength="20" required>
                                     @if ($errors->has('city'))
-                                    <div id="city-error" class="text-primary">{{ $errors->first('city') }}</div>
-                                @endif
-                            </div>
+                                        <div id="city-error" class="text-primary">{{ $errors->first('city') }}</div>
+                                    @endif
+                                </div>
 
-                            <div class="form-group py-2">
-                                <input type="text" name="state" class=" profile-form-input-custome"
-                                    placeholder="State" minlength="3" maxlength="50" required>
+                                <div class="form-group py-2">
+                                    <input type="text" name="state" class=" profile-form-input-custome"
+                                        placeholder="State" minlength="3" maxlength="50" required>
                                     @if ($errors->has('state'))
-                                    <div id="state-error" class="text-primary">{{ $errors->first('state') }}</div>
-                                @endif
-                            </div>
+                                        <div id="state-error" class="text-primary">{{ $errors->first('state') }}</div>
+                                    @endif
+                                </div>
 
-                            <div class="form-group py-2">
-                                <input type="text" name="country" class=" profile-form-input-custome"
-                                    placeholder="Country" minlength="3" maxlength="50" required>
+                                <div class="form-group py-2">
+                                    <input type="text" name="country" class=" profile-form-input-custome"
+                                        placeholder="Country" minlength="3" maxlength="50" required>
                                     @if ($errors->has('country'))
-                                    <div id="country-error" class="text-primary">{{ $errors->first('country') }}</div>
-                                @endif
-                            </div>
-                            <div class="form-group  profile-form-group-star-pin-code py-2">
-                                <input type="text" name="postal_code" class="profile-form-input-custome"
-                                    placeholder="Pin Code*" minlength="3" maxlength="20" required>
+                                        <div id="country-error" class="text-primary">{{ $errors->first('country') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="form-group  profile-form-group-star-pin-code py-2">
+                                    <input type="text" name="postal_code" class="profile-form-input-custome"
+                                        placeholder="Pin Code*" minlength="3" maxlength="20" required>
                                     @if ($errors->has('postal_code'))
-                                    <div id="postal_code-error" class="text-primary">{{ $errors->first('postal_code') }}</div>
-                                @endif
-                            </div>
+                                        <div id="postal_code-error" class="text-primary">
+                                            {{ $errors->first('postal_code') }}
+                                        </div>
+                                    @endif
+                                </div>
 
-                            {{-- <div class="row">
+                                {{-- <div class="row">
                                 <div class="col-sm-6 py-2">
 
                                     <label for="" class="profile-f-l-color"> Address Type</label>
@@ -216,20 +232,20 @@
                             </div> --}}
 
 
-                            <div class="col-sm-12 pt-4">
-                                <button type="submit" class="btn profile-btn-color">Save</button>
-                            </div>
+                                <div class="col-sm-12 pt-4">
+                                    <button type="submit" class="btn profile-btn-color">Save</button>
+                                </div>
 
-                        </form>
-                    </div>
-                    <div class="row">
+                            </form>
+                        </div>
+                    @endif
+                    {{-- <div class="row">
                         <div class="col-sm-12 py-5 text-center">
                             <button type="submit" class="btn profile-btn-color">
                                 + Add Address
                             </button>
                         </div>
-
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
