@@ -35,7 +35,7 @@ Route::domain(config('app.web_domain'))->group(function () {
         // })->name('frontend.profile');
         Route::get('/profile', 'App\Http\Controllers\frontend\ProfileController@edit')->name('frontend.profile');
         Route::post('/profile/update', 'App\Http\Controllers\frontend\ProfileController@update')->name('frontend.profile.update');
-
+        Route::post('/address/update', 'App\Http\Controllers\frontend\AddressController@update')->name('frontend.address.update');
         Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
     });
 

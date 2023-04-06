@@ -156,27 +156,47 @@
                     <div class="py-3"></div>
 
                     <div class="p-4 profile-form-border ">
-                        <form class="">
-
+                        <form class="" action="{{ route('frontend.address.update') }}" method="post">
+                            @csrf
                             <h5 class="main-head text-red">Add Address</h5>
 
                             <div class="form-group py-2">
-                                <input type="text" class=" profile-form-input-custome" placeholder="Street Address*">
+                                <input type="text" name="street_address" class=" profile-form-input-custome"
+                                    placeholder="Street Address*" required minlength="5" maxlength="80">
+                                    @if ($errors->has('street_address'))
+                                    <div id="street_address-error" class="text-primary">{{ $errors->first('street_address') }}</div>
+                                @endif
                             </div>
 
                             <div class="form-group py-2">
-                                <input type="text" class=" profile-form-input-custome" placeholder="City">
+                                <input type="text" name="city" class=" profile-form-input-custome"
+                                    placeholder="City" minlength="3" maxlength="20" required>
+                                    @if ($errors->has('city'))
+                                    <div id="city-error" class="text-primary">{{ $errors->first('city') }}</div>
+                                @endif
                             </div>
 
                             <div class="form-group py-2">
-                                <input type="text" class=" profile-form-input-custome" placeholder="State">
+                                <input type="text" name="state" class=" profile-form-input-custome"
+                                    placeholder="State" minlength="3" maxlength="50" required>
+                                    @if ($errors->has('state'))
+                                    <div id="state-error" class="text-primary">{{ $errors->first('state') }}</div>
+                                @endif
                             </div>
 
                             <div class="form-group py-2">
-                                <input type="text" class=" profile-form-input-custome" placeholder="Country">
+                                <input type="text" name="country" class=" profile-form-input-custome"
+                                    placeholder="Country" minlength="3" maxlength="50" required>
+                                    @if ($errors->has('country'))
+                                    <div id="country-error" class="text-primary">{{ $errors->first('country') }}</div>
+                                @endif
                             </div>
                             <div class="form-group  profile-form-group-star-pin-code py-2">
-                                <input type="text" class="profile-form-input-custome" placeholder="Pin Code*">
+                                <input type="text" name="postal_code" class="profile-form-input-custome"
+                                    placeholder="Pin Code*" minlength="3" maxlength="20" required>
+                                    @if ($errors->has('postal_code'))
+                                    <div id="postal_code-error" class="text-primary">{{ $errors->first('postal_code') }}</div>
+                                @endif
                             </div>
 
                             {{-- <div class="row">
