@@ -43,4 +43,14 @@ class AddressController extends Controller
             "alert-type" => "error"
         ]);
     }
+
+    public function destroy()
+    {
+        $userAddress = auth()->user()->userAddress()->where('type','secondary')->first();
+        // dd($userAddress);
+        if ($userAddress->delete()) {
+            return redirect()->back()->with(['alert-type' => 'success', 'message' => 'Address Deleted Successfully']);
+        }
+        return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
+    }
 }

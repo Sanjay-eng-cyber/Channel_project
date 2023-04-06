@@ -138,7 +138,7 @@
                                         @endif
                                         @if ($userAddress->type != 'primary')
                                             <li>
-                                                <a href="">
+                                                <a href="{{route('frontend.address.delete')}}">
                                                     <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
                                                 </a>
                                             </li>
