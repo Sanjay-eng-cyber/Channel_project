@@ -97,5 +97,13 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         Route::get('/category/get/subcategory/{id}', 'App\Http\Controllers\cms\ProductController@getSubCategory')->name("cms.subcategory.get");
 
+        Route::get('sliders/', 'App\Http\Controllers\cms\SliderController@index')->name('backend.slider.index');
+        Route::get('/slider/show/{id}', 'App\Http\Controllers\cms\SliderController@show')->name("backend.slider.show");
+        Route::get('slider/create', 'App\Http\Controllers\cms\SliderController@create')->name('backend.slider.create');
+        Route::post('slider/store', 'App\Http\Controllers\cms\SliderController@store')->name('backend.slider.store');
+        Route::get('sliser/edit/{id}', 'App\Http\Controllers\cms\SliderController@edit')->name('backend.slider.edit');
+        Route::post('slider/update/{id}', 'App\Http\Controllers\cms\SliderController@update')->name('backend.slider.update');
+        Route::get('slider/delete/{id}', 'App\Http\Controllers\cms\SliderController@destroy')->name('backend.slider.destroy');
+
     });
 });
