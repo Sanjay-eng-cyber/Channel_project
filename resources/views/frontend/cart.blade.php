@@ -3,52 +3,50 @@
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
-<style>
-    .shop-cart-grid{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-</style>
 @section('content')
     <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
 
-    <section>
+    <section style="padding:40px 0px 65px 0px">
         <div class="container">
+            <h5 class="h5 main-head text-center text-red my-3">Your Paynent Method</h5>
             <div class="row">
-              <div class="col-sm-9">
-                    <div>
-                        <div class="row">
-                            <div class="col-sm-11 mx-auto">
-                               <div class="d-flex cc-border justify-content-between p-2">
-                                <div>Product</div>
-                                    <div>
-                                        <ul class="d-flex gap-4 list-unstyled">
-                                            <li>Price</li>
-                                            <li>Quantity</li>
-                                            <li>Total</li>
-                                        </ul>
-                                    </div>
-                               </div>
+                <div class="col-md-8 col-lg-9 __cart-ui-f">
+
+                    <div class="row d-flex justify-content-end __cart-ui-nav">
+                        <div class="col-sm-11">
+                            <h5 class="main-head __cart-ui-nav-heading">Deselect all items</h5>
+                            <div
+                                class="d-flex cc-border justify-content-between p-3 justify-content-between __cart-ui-nav-des">
+                                <div class="fw-bold">Product</div>
+                                <ul class="d-flex gap-4 list-unstyled p-0 m-0">
+                                    <li class="fw-bold">Price</li>
+                                    <li class="fw-bold">Quantity</li>
+                                    <li class="fw-bold">Total</li>
+                                </ul>
+
                             </div>
                         </div>
                     </div>
 
-                    <div class="row cc-border my-5" style="padding:15px">
+                    <div class="row cc-border my-3 __cart-ui-card" style="padding:15px">
+                        <div class="__cart-ui-close-btn"><button type="button" class="btn-close" aria-label="Close"></button>
+                        </div>
                         <div class=" col-md-4 col-lg-3">
                             <div class="d-flex align-items-center justify-content-center gap-1 ">
-                                        <div class="form-check">
-                                            <input class="form-check-input ck-wallet-fi" type="checkbox" name="gender" id="male" value="male" checked="">
-                                        </div>
-                                        <img src="https://via.placeholder.com/180x180" class="img-fluid img-border" alt="" >
+                                <div class="form-check">
+                                    <input class="form-check-input ck-wallet-fi" type="checkbox" name="gender"
+                                        id="male" value="male" checked="">
+                                </div>
+                                <img src="https://via.placeholder.com/180x180" class="img-fluid img-border" alt="">
                             </div>
                         </div>
 
                         <div class="col-md-8 col-lg-4   mt-3 mt-md-0 d-flex align-items-center">
                             <div class="">
                                 <h5 class="main-head">Essence Long Lasting Eye Pencil</h5>
-                                <p style="font-size: 12.9268px; color:rgba(0, 0, 0, 0.7); p-0">
-                                                essence Long Lasting Eye Pencil is a creamy and
-                                                pigmented eye pencil that brightens and accentuates your eye more....
+                                <p class="p-0 __cart-ui-pra">
+                                    essence Long Lasting Eye Pencil is a creamy and
+                                    pigmented eye pencil that brightens and accentuates your eye more....
                                 </p>
 
                             </div>
@@ -74,29 +72,57 @@
                         </div>
                     </div>
 
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="" style="padding: 50px 15px 15px 15px">
+                        <h5 class="main-head" >Order summary</h5>
+                        <hr style="border-bottom: 2px solid #000000;">
+                        <div class="d-flex justify-content-between my-3">
+                            <strong>Sub Total</strong>
+                            <strong> ₹145.55</strong>
+                        </div>
+                        <hr>
 
+                        <div class="my-2">
+                            <form action="" method="post">
+                                <label for="coupon-code-input my-3">Coupon</label>
 
-              </div>
-              <div class="col-sm-3">
-                    <div>
-                        <h5 class="main-head">Order summary</h5>
-
-                        <div class="d-flex gap-3">
-                            <div>sub total</div>
-                            <div> ₹145.55</div>
+                                <div class="input-group my-2">
+                                    <input type="text" class="form-control" id="coupon-code-input"
+                                        placeholder="Enter coupon code" aria-label="Coupon code"
+                                        aria-describedby="coupon-button">
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Enter coupon code" aria-label="Coupon code" aria-describedby="coupon-button">
-                            {{-- <button class="btn btn-primary" type="button" id="coupon-button">Apply</button> --}}
+                        <p class="m-0 p-0 my-2 __cart-ui-pra">coupon code will apply on checkout page</p>
 
+                        <div class="d-flex justify-content-between my-3">
+                            <strong>Total:</strong>
+                            <strong> ₹145.55</strong>
                         </div>
-                        <p class="m-0 p-0" style="font-size:12px;color:rgba(0, 0, 0, 0.7)">coupon code will apply on checkout page</p>
+                        <hr>
+                        <p class="m-0 p-0 my-2 __cart-ui-pra">coupon code will apply on checkout page</p>
+
+
+                        <a href="http://" class="my-2 text-white">
+                            <button type="button" class="btn btn-pink w-100">
+                                Proceed To Checkout
+                            </button>
+                        </a>
+
+                        <a href="http://" class="my-2 text-white">
+                            <button type="button" class="btn btn-orange w-100 my-2">
+                                Proceed To Checkout
+                            </button>
+                        </a>
 
                     </div>
 
-              </div>
+                </div>
             </div>
+
+
         </div>
 
     </section>
