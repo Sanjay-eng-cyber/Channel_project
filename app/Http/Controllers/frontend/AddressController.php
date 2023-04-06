@@ -44,9 +44,9 @@ class AddressController extends Controller
         ]);
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-        $userAddress = auth()->user()->userAddress()->where('type','secondary')->first();
+        $userAddress = auth()->user()->userAddress()->where('type','secondary')->find($id);
         // dd($userAddress);
         if ($userAddress->delete()) {
             return redirect()->back()->with(['alert-type' => 'success', 'message' => 'Address Deleted Successfully']);
