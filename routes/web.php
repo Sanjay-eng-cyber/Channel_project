@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::domain(config('app.web_domain'))->group(function () {
 
-    Route::get('/', function () {
-        return view('frontend.index');
-    })->name('index');
-
+    // Route::get('/', function () {
+    //     return view('frontend.index');
+    // })->name('index');
+    Route::get('/', 'App\Http\Controllers\frontend\HomeController@index')->name('index');
     Route::get('/checkout', function () {
         return view('frontend.checkout');
     })->name('checkout');

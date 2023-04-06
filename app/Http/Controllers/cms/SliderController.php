@@ -113,17 +113,17 @@ class SliderController extends Controller
 
         if ($request->type == 'middle slider') {
             $request->validate([
-                'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=200,height=300',
+                'image' => 'nullable|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=200,height=300',
             ]);
         }
         if ($request->type == 'right slider') {
             $request->validate([
-                'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=250,height=150',
+                'image' => 'nullable|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=250,height=150',
             ]);
         }
         if ($request->type == 'left slider') {
             $request->validate([
-                'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=500,height=700',
+                'image' => 'nullable|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=500,height=700',
             ]);
         }
 

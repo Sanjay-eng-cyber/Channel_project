@@ -10,51 +10,57 @@
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
 
                     <div class="frontend-top-slider">
-                        @for ($i = 0; $i < 4; $i++)
-                        <div class="slide" style="padding:0px 10px 0px 10px">
-                            <img src="https://via.placeholder.com/500x700" class="img-fluid" alt="image description " style="">
-                            <div class="slide-content" >
-                                <div class="slide-content-desc">
-                                    <h3 class="">Love Your Skin </h3>
-                                    <p class="">Treat Yourself With The Best In Skincare </p>
-                                    <a class="d-flex gap-2 justify-content-center" href="">
+                        @forelse ($leftSliders as $leftslider)
+                            <div class="slide" style="padding:0px 10px 0px 10px">
+                                <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}" class="img-fluid"
+                                    alt="image description " style="">
+                                <div class="slide-content">
+                                    <div class="slide-content-desc">
+                                        <h3 class="">{{ $leftslider->title }}</h3>
+                                        <p class="">{{ $leftslider->descriptions }} </p>
+                                        <a class="d-flex gap-2 justify-content-center" href="{{$leftslider->link}}">
+                                            <span class="group-card-shop-btn">Shop Now</span>
+                                            <i class="fa fa-angle-right group-button-arrow"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
+                        @endforelse
+                    </div>
+
+
+                </div>
+                @if ($middleSlider)
+                    <div
+                        class="col-sm-6 col-md-6  col-lg-6 col-lg-6  col-xl-3 group-card-2 d-flex align-items-center py-3 py-xl-0">
+                        <div class="card second-group-card">
+                            <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}"
+                                class="img-fluid second-group-img" alt="...">
+                            <div class="card-body text-center  second-group-card-body">
+                                <h4 class="card-title text-center font-head ">{{ $middleSlider->title }}</h4>
+                                <p class="card-text group-card-text-color">
+                                    {{ $middleSlider->descriptions }}
+                                </p>
+
+                                <button type="button" class="text-center group-buutton-bg-disable">
+                                    <a class=" d-flex gap-2" href="{{$middleSlider->link}}">
                                         <span class="group-card-shop-btn">Shop Now</span>
                                         <i class="fa fa-angle-right group-button-arrow"></i>
                                     </a>
-                                </div>
+                                </button>
                             </div>
                         </div>
-                    @endfor
-
-
                     </div>
-
-
-                </div>
-                <div class="col-sm-6 col-md-6  col-lg-6 col-lg-6  col-xl-3 group-card-2 d-flex align-items-center py-3 py-xl-0">
-                    <div class="card second-group-card">
-                        <img src="https://via.placeholder.com/200x300" class="img-fluid second-group-img" alt="...">
-                        <div class="card-body text-center  second-group-card-body">
-                            <h4 class="card-title text-center font-head ">Love Your Hair</h4>
-                            <p class="card-text group-card-text-color">
-                                treat yourself with the best in haircare
-                            </p>
-
-                            <button type="button" class="text-center group-buutton-bg-disable">
-                                <a class=" d-flex gap-2" href="">
-                                    <span class="group-card-shop-btn">Shop Now</span>
-                                    <i class="fa fa-angle-right group-button-arrow"></i>
-                                </a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-6  col-lg-6 col-xl-3 group-card-3 gap-3 gap-lg-5 gap-xl-3 gap-xxl-4
+                @endif
+                <div
+                    class="col-sm-6 col-md-6 col-lg-6  col-lg-6 col-xl-3 group-card-3 gap-3 gap-lg-5 gap-xl-3 gap-xxl-4
                     d-flex flex-column justify-content-center py-3 py-xl-0 ">
-                    <div class="card third-group-card">
-                        <img src="https://via.placeholder.com/250x150" class="card-img-top third-group-card-img" alt="...">
+                    {{-- <div class="card third-group-card">
+                        <img src="" class="card-img-top third-group-card-img"
+                            alt="...">
                         <div class="card-body text-center third-group-card-body">
-                            <h4 class="card-title text-center font-head m-0">Luxe Fragrances</h4>
+                            <h4 class="card-title text-center font-head m-0">{{$rightSliders->title}}</h4>
 
                             <p class="card-text group-card-text-color  m-0">
                                 indulge in premium perfumes
@@ -62,35 +68,39 @@
 
 
 
-                                <a class=" d-flex justify-content-center gap-2 text-center group-buutton-bg-disable" href="">
+                            <a class=" d-flex justify-content-center gap-2 text-center group-buutton-bg-disable"
+                                href="">
+                                <span class="group-card-shop-btn">Shop Now</span>
+                                <i class="fa fa-angle-right group-button-arrow"></i>
+                            </a>
+
+
+                        </div>
+                    </div> --}}
+                    @forelse ($rightSliders as $rigslider)
+                        <div class="card fourth-group-card">
+                            <img src="{{asset('storage/images/sliders/' .$rigslider->image)}}" class="card-img-top fourth-group-img"
+                                alt="..." style="border-radius: 26.6782px 26.6782px 0px 0px;">
+                            <div class="card-body text-center fourth-group-card-body">
+                                <h4 class="card-title text-center font-head m-0">{{$rigslider->title}}</h4>
+
+
+                                <p class="card-text group-card-text-color m-0">
+                                    {{$rigslider->descriptions}}
+                                </p>
+
+
+                                <a class=" d-flex  justify-content-center gap-2 text-center group-buutton-bg-disable"
+                                    href="{{$rigslider->link}}">
                                     <span class="group-card-shop-btn">Shop Now</span>
                                     <i class="fa fa-angle-right group-button-arrow"></i>
                                 </a>
 
 
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="card fourth-group-card">
-                        <img src="https://via.placeholder.com/250x150" class="card-img-top fourth-group-img" alt="..."
-                            style="border-radius: 26.6782px 26.6782px 0px 0px;">
-                        <div class="card-body text-center fourth-group-card-body">
-                            <h4 class="card-title text-center font-head m-0">Home Decor</h4>
-
-
-                            <p class="card-text group-card-text-color m-0">
-                                indulge in premium perfumes
-                            </p>
-
-
-                                <a class=" d-flex  justify-content-center gap-2 text-center group-buutton-bg-disable" href="">
-                                    <span class="group-card-shop-btn">Shop Now</span>
-                                    <i class="fa fa-angle-right group-button-arrow"></i>
-                                </a>
-
-
-                        </div>
-                    </div>
+                    @empty
+                    @endforelse
                 </div>
 
             </div>
@@ -525,7 +535,8 @@
                         <!-- F Widget Item of the Page -->
                         <div class="f-widget-item ft-svg-sub-class-2">
                             <span class="widget-icon ft-svg-child-1">
-                                <img src="{{ asset('frontend/images/products/footer-icon/support.svg') }}" alt="">
+                                <img src="{{ asset('frontend/images/products/footer-icon/support.svg') }}"
+                                    alt="">
                             </span>
                             <div class="txt-holder ft-svg-child-2">
                                 <h1 class="f-promo-box-heading">SUPPORT 24/7</h1>
@@ -600,7 +611,7 @@
     <script>
         window.onload = function() {
             $('.frontend-top-slider').slick({
-                autoplay:true,
+                autoplay: true,
                 autoplaySpeed: 1000,
                 arrows: false,
                 centerMode: true,
