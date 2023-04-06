@@ -1,6 +1,22 @@
 @extends('frontend.layouts.app')
 @section('title', 'Wishlist |')
 @section('cdn')
+
+<style>
+@media screen and (max-width:768px){
+    .__cart-ui-img-in{
+        padding-right: 28px;
+    }
+}
+
+@media screen and (max-width: 480px){
+.__cart-ui-card .__cart-ui-close-btn {
+    position: absolute;
+    top: -13px;
+    padding: 15px;
+    right: -86%;
+}}
+</style>
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
@@ -9,7 +25,8 @@
     <section style="padding:40px 0px 65px 0px">
         <div class="container">
             <h5 class="h5 main-head text-center text-red my-3">Your Paynent Method</h5>
-            <div class="row">
+            <div class="row d-flex
+            flex-column-reverse flex-md-row">
                 <div class="col-md-8 col-lg-9 __cart-ui-f">
 
                     <div class="row d-flex justify-content-end __cart-ui-nav">
@@ -32,7 +49,7 @@
                         <div class="__cart-ui-close-btn"><button type="button" class="btn-close" aria-label="Close"></button>
                         </div>
                         <div class=" col-md-4 col-lg-3">
-                            <div class="d-flex align-items-center justify-content-center gap-1 ">
+                            <div class="d-flex align-items-center justify-content-center gap-1 __cart-ui-img-in">
                                 <div class="form-check">
                                     <input class="form-check-input ck-wallet-fi" type="checkbox" name="gender"
                                         id="male" value="male" checked="">
@@ -64,7 +81,7 @@
                                 <span class="input-group-text">+</span>
                             </div>
 
-                            <div>
+                            <div class="d-none d-md-inline">
                                 ₹145.55
                             </div>
 
@@ -104,18 +121,20 @@
                         <hr>
                         <p class="m-0 p-0 my-2 __cart-ui-pra">coupon code will apply on checkout page</p>
 
+                        <div>
+                                <a href="http://" class="my-2 text-white">
+                                    <button type="button" class="btn btn-outline-pink-hover w-100">
+                                        Proceed To Checkout
+                                    </button>
+                                </a>
 
-                        <a href="http://" class="my-2 text-white">
-                            <button type="button" class="btn btn-pink w-100">
-                                Proceed To Checkout
-                            </button>
-                        </a>
+                                <a href="http://" class="my-2 text-white">
+                                    <button type="button" class="btn btn-orange-outline-hover w-100 my-2">
+                                        Proceed To Checkout
+                                    </button>
+                                </a>
+                        </div>
 
-                        <a href="http://" class="my-2 text-white">
-                            <button type="button" class="btn btn-orange w-100 my-2">
-                                Proceed To Checkout
-                            </button>
-                        </a>
 
                     </div>
 
