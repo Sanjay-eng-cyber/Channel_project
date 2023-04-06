@@ -1299,6 +1299,18 @@ a:hover {
   margin-top: 20px;
 }
 
+
+    .icon-of-the {
+        bottom: 15px;
+        position: absolute;
+        bottom: 0;
+        top: -158px;
+        left: 47px;
+
+    }
+
+
+
 /* end top header slider */
 
 /* checkout continue login */
