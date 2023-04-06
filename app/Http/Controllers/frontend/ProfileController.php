@@ -32,12 +32,12 @@ class ProfileController extends Controller
         $profile->gender = $request->gender;
         if ($profile->save()) {
                 return redirect()->back()->with([
-                    "message" => "Message Sent Successfully",
+                    "message" => "Profile Updated Successfully",
                     "alert-type" => "success"
                 ]);
         }
         return redirect()->back()->with([
-            "message" => "Something went wrong. Please contact us via email or phone.",
+            "message" => "Something went wrong.",
             "alert-type" => "error"
         ]);
     }
