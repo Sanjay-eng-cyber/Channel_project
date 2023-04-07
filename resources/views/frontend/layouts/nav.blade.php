@@ -47,7 +47,7 @@
                        </nav>
                    </div>
                    <div class="col header-sub-2">
-                       <a href="frontend/#">
+                       <a href="">
                            <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}" alt="schon">
                        </a>
                    </div>
