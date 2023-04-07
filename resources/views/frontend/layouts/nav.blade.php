@@ -1,195 +1,108 @@
    <!-- mt header style3 start here -->
-
-
    <header id="mt-header" class="style3">
        <!-- mt top bar start here -->
        <div class="mt-top-bar" style="background-color: white;color:black">
-
-        <div class="container my-2">
-            <div class="row">
-             <nav class="navbar navbar-expand-lg bg-body-tertiary">
-               <div class="container-fluid  d-flex flex-row-reverse">
-                 <a class="navbar-brand d-inline d-lg-none" href="#" style="">
-                    <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}" alt="channel" class="img-fluid" style="width:130px">
-                </a>
-                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-                   <span class="navbar-toggler-icon"></span>
-                 </button>
-                 <div class="navbar-collapse collapse  justify-content-between flex-row-reverse" id="navbarSupportedContent" style="">
-                   <ul class="navbar-nav d-none d-lg-flex gap-3 align-items-center">
-
-                     {{-- <li class="nav-item text-red position-relative">
-                        <i class="fas fa-cart-plus top-nav-carticon"></i>
-                        <span
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99
-                        <span class="visually-hidden">unread messages</span></span>
-                    </li> --}}
-
-                    <li class="nav-item text-red">
-                        <a class="nav-link fw-bold nn-top-cart" href="#" >
-                          <i class="fas fa-cart-plus  nn-top-cart-icon"></i>
-                        </a>
-                    </li>
-
-                    <li class="nav-item text-red">
-                        <a class="nav-link fw-bold nn-top-cart" href="#">
-                          <i class="fas fa-user nn-top-cart-icon"></i>
-                        </a>
-                    </li>
-
-                    @auth
-                    <li class="text-end text-red">
-                        <a href="{{ route('frontend.profile') }}">
-                            <i class="fas fa-user top-nav-usericon"></i>
-                        </a>
-                    </li>
-                    <li class="text-end ">
-                        <form action="{{ route('frontend.logout') }}" method="POST">
-                            @csrf
-                            <button class="btn text-pink p-0 m-0" type="submit">
-                                LOGOUT
-                            </button>
-                        </form>
-                    </li>
-                @else
-                    <li class="text-end ">
-                        <a href="http://" data-bs-toggle="modal" data-bs-target="#loginPopup">
-                            <span class="text-red fw-bold">Profile</span>
-                        </a>
-                    </li>
-                @endauth
-
-                   </ul>
-
-
-
-                   <ul class="navbar-nav d-inline d-lg-none text-center">
-                     <li class="nav-item">
-                       <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                     </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="#">SKIN</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">FRAGRANCES</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">HAIRCARE</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">PERSONALCARE</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#"> HOME DECOR </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">GIFT</a>
-                      </li>
-
-                   </ul>
-
-
-
-                   <ul class="nav navbar-nav d-none d-lg-inline">
-                        <a href="frontend/#">
-                            <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}" alt="schon" class="">
-                        </a>
-                   </ul>
-                    <div class="header-sub-1 header-top-search-icon d-none d-lg-inline">
-                        <form action="" method="post" class="">
-                            @csrf
-                            <i class="fas fa-search fa-fw header-seach-icon" style="color:#EC268F"></i>
-                            <input type="text" class="form-control" placeholder="Search Product" aria-label="Search"
-                                aria-describedby="basic-addon1">
-                        </form>
-                    </div>
-                 </div>
-           <div class="container">
-               <div class="row row-cols-3 py-4">
-                   <div class="col header-sub-1 header-top-search-icon">
-                       <form action="" method="post" class="">
-                           @csrf
-                           <i class="fas fa-search fa-fw header-seach-icon" style="color:#EC268F"></i>
-                           <input type="text" class="form-control" placeholder="Search Product" aria-label="Search"
-                               aria-describedby="basic-addon1">
-                       </form>
-                   </div>
-                   <div class="col hide-nav-top nav-custom-width p-0">
-                       <nav class="navbar navbar-expand-lg">
+           <div class="container py-4">
+               <div class="row">
+                   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                       <div class="container-fluid  d-flex flex-row-reverse">
+                           <a class="navbar-brand d-inline d-lg-none" href="#" style="">
+                               <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}" alt="channel"
+                                   class="img-fluid" style="width:130px">
+                           </a>
                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                               data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                               aria-label="Toggle navigation">
+                               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                               aria-expanded="true" aria-label="Toggle navigation">
                                <span class="navbar-toggler-icon"></span>
                            </button>
-                           <div class="collapse navbar-collapse" id="navbarNav">
-                               <ul class="navbar-nav">
-                                   <li class="nav-item">
-                                       <a class="nav-link active" aria-current="page" href="#">Home</a>
+                           <div class="navbar-collapse collapse  justify-content-between flex-row-reverse"
+                               id="navbarSupportedContent" style="">
+                               <ul class="navbar-nav d-none d-lg-flex gap-3 align-items-center">
+
+                                   {{-- <li class="nav-item text-red position-relative">
+                           <i class="fas fa-cart-plus top-nav-carticon"></i>
+                           <span
+                               class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99
+                           <span class="visually-hidden">unread messages</span></span>
+                       </li> --}}
+
+                                   <li class="nav-item text-red">
+                                       <a class="nav-link fw-bold nn-top-cart" href="#">
+                                           <i class="fas fa-cart-plus  nn-top-cart-icon"></i>
+                                       </a>
                                    </li>
-                                   <li class="nav-item">
-                                       <a href="{{ route('skin') }}">Skin</a>
-                                   </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link" href="{{ route('fragrances') }}">fragrances</a>
-                                   </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link" href="#">Haircare</a>
-                                   </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link" href="#">PersonalCare</a>
-                                   </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link" href="#">Home Decor</a>
-                                   </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link" href="#">Gift</a>
-                                   </li>
+
+                                   @auth
+                                       <li class="nav-item text-red">
+                                           <a class="nav-link fw-bold nn-top-cart" href="{{ route('frontend.profile') }}">
+                                               <i class="fas fa-user nn-top-cart-icon"></i>
+                                           </a>
+                                       </li>
+                                       <li class="text-end ">
+                                           <form action="{{ route('frontend.logout') }}" method="POST">
+                                               @csrf
+                                               <button class="btn text-pink p-0 m-0" type="submit">
+                                                   LOGOUT
+                                               </button>
+                                           </form>
+                                       </li>
+                                   @else
+                                       <li class="text-end ">
+                                           <a href="#" data-bs-toggle="modal" data-bs-target="#loginPopup">
+                                               <span class="text-red fw-bold">Login</span>
+                                           </a>
+                                       </li>
+                                   @endauth
+
                                </ul>
-                           </div>
-                       </nav>
-                   </div>
-                   <div class="col header-sub-2">
-                       <a href="">
-                           <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}" alt="schon">
-                       </a>
-                   </div>
-                   <div class="col header-sub-3">
-                       <ul class="gap-4">
-                           <li class="text-end text-red position-relative">
-                               <i class="fas fa-cart-plus top-nav-carticon"></i>
-                               <span
-                                   class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99
-                                   <span class="visually-hidden">unread messages</span></span>
-                           </li>
-                           @auth
-                               <li class="text-end text-red">
-                                   <a href="{{ route('frontend.profile') }}">
-                                       <i class="fas fa-user top-nav-usericon"></i>
+
+
+
+                               <ul class="navbar-nav d-inline d-lg-none text-center">
+                                   <li class="nav-item">
+                                       <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                                   </li>
+                                   <li class="nav-item">
+                                       <a class="nav-link" href="#">SKIN</a>
+                                   </li>
+                                   <li class="nav-item">
+                                       <a class="nav-link" href="#">FRAGRANCES</a>
+                                   </li>
+                                   <li class="nav-item">
+                                       <a class="nav-link" href="#">HAIRCARE</a>
+                                   </li>
+                                   <li class="nav-item">
+                                       <a class="nav-link" href="#">PERSONALCARE</a>
+                                   </li>
+                                   <li class="nav-item">
+                                       <a class="nav-link" href="#"> HOME DECOR </a>
+                                   </li>
+                                   <li class="nav-item">
+                                       <a class="nav-link" href="#">GIFT</a>
+                                   </li>
+
+                               </ul>
+
+
+
+                               <ul class="nav navbar-nav d-none d-lg-inline">
+                                   <a href="frontend/#">
+                                       <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}"
+                                           alt="schon" class="">
                                    </a>
-                               </li>
-                               <li class="text-end ">
-                                   <form action="{{ route('frontend.logout') }}" method="POST">
+                               </ul>
+                               <div class="header-sub-1 header-top-search-icon d-none d-lg-inline">
+                                   <form action="" method="post" class="">
                                        @csrf
-                                       <button class="btn text-pink p-0 m-0" type="submit">
-                                           LOGOUT
-                                       </button>
+                                       <i class="fas fa-search fa-fw header-seach-icon" style="color:#EC268F"></i>
+                                       <input type="text" class="form-control" placeholder="Search Product"
+                                           aria-label="Search" aria-describedby="basic-addon1">
                                    </form>
-                               </li>
-                           @else
-                               <li class="text-end ">
-                                   <a href="http://" data-bs-toggle="modal" data-bs-target="#loginPopup">
-                                       LOGIN
-                                   </a>
-                               </li>
-                           @endauth
-                       </ul>
-                   </div>
+                               </div>
+                           </div>
+                   </nav>
                </div>
-             </nav>
-            </div>
-         </div>
-
-
+           </div>
        </div>
        <!-- mt top bar end here -->
        <!-- mt bottom bar start here -->
@@ -259,7 +172,7 @@
    </div><!-- mt search popup end here -->
    <!-- mt main start here -->
    {{-- <li><a href="{{route('about')}}">About</a></li>
-                            <li><a href="{{route('contact')}}">Contact</a></li> --}}
+                         <li><a href="{{route('contact')}}">Contact</a></li> --}}
 
    @guest('web')
        {{-- <livewire:log-in /> --}}
@@ -305,7 +218,8 @@
                                <h4 class="text-pink  font-body my-4">
                                    Welcome
                                </h4>
-                               <p class="text-muted text-start">OTP Has Been Sent To Your Registered Mobile Number  @{{ mobile_no }}
+                               <p class="text-muted text-start">OTP Has Been Sent To Your Registered Mobile Number
+                                   @{{ mobile_no }}
                                </p>
                                <form v-on:submit="verifyOtp">
                                    <div class="input-group phone-number-arrow mb-2">
