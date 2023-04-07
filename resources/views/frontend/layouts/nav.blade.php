@@ -1,5 +1,8 @@
    <!-- mt header style3 start here -->
-   <header id="mt-header" class="style3">
+   <header id="mt-header" class="style3 position-relative ">
+
+            <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute" style="width: 300px;right:0; top:0">
+
        <!-- mt top bar start here -->
        <div class="mt-top-bar" style="background-color: white;color:black">
            <div class="container py-4">
