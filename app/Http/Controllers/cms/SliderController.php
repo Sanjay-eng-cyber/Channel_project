@@ -38,38 +38,35 @@ class SliderController extends Controller
             // 'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf',
 
         ]);
-        $rightSliderCount = Slider::where('type', 'right slider')->count();
-        $middleSliderCount = Slider::where('type', 'middle slider')->count();
-        $leftSliderCount = Slider::where('type', 'left slider')->count();
         //dd($rightSliderCount);
-        if ($request->type == 'middle slider') {
-            $request->validate([
-                'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=200,height=300',
-            ]);
-        }
-        if ($request->type == 'right slider') {
-            $request->validate([
-                'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=250,height=150',
-            ]);
-        }
         if ($request->type == 'left slider') {
             $request->validate([
-                'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=500,height=700',
+                'image' => 'required|max:1024|mimes:jpeg,png,jpg|dimensions:width=500,height=700',
             ]);
-        }
-        if ($request->type == 'right slider') {
-            if ($rightSliderCount >= 2) {
-                return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Maximum 2 right Slider allow.']);
+            $leftSliderCount = Slider::where('type', 'left slider')->count();
+            if ($leftSliderCount >= 5) {
+                return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Maximum 5 Left Slider allowed.']);
             }
-        } elseif ($request->type == 'middle slider') {
+        }
+        if ($request->type == 'middle slider') {
+            $request->validate([
+                'image' => 'required|max:1024|mimes:jpeg,png,jpg|dimensions:width=200,height=300',
+            ]);
+            $middleSliderCount = Slider::where('type', 'middle slider')->count();
             if ($middleSliderCount >= 1) {
                 return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Please Edit Middle slider.']);
             }
-        } else {
-            if ($leftSliderCount >= 5) {
-                return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Maximum 5 Left Slider allow.']);
+        }
+        if ($request->type == 'right slider') {
+            $request->validate([
+                'image' => 'required|max:1024|mimes:jpeg,png,jpg|dimensions:width=250,height=150',
+            ]);
+            $rightSliderCount = Slider::where('type', 'right slider')->count();
+            if ($rightSliderCount >= 2) {
+                return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Maximum 2 right Slider allowed.']);
             }
         }
+
         $fileWithExtension = $request->file('image');
         // dd($fileWithExtension);
         if ($fileWithExtension) {

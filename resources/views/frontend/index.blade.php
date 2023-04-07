@@ -7,30 +7,30 @@
             <div class="row main-group-card">
                 <h2 class="text-red main-head" style="padding: 30px 0px 25px 0px">#Bestseller of channel</h2>
 
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                @if ($leftSliders->count())
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
 
-                    <div class="frontend-top-slider">
-                        @forelse ($leftSliders as $leftslider)
-                            <div class="slide" style="padding:0px 10px 0px 10px">
-                                <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}" class="img-fluid"
-                                    alt="image description " style="">
-                                <div class="slide-content">
-                                    <div class="slide-content-desc">
-                                        <h3 class="">{{ $leftslider->title }}</h3>
-                                        <p class="">{{ $leftslider->descriptions }} </p>
-                                        <a class="d-flex gap-2 justify-content-center" href="{{$leftslider->link}}">
-                                            <span class="group-card-shop-btn">Shop Now</span>
-                                            <i class="fa fa-angle-right group-button-arrow"></i>
-                                        </a>
+                        <div class="frontend-top-slider">
+                            @forelse ($leftSliders as $leftslider)
+                                <div class="slide" style="padding:0px 10px 0px 10px">
+                                    <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}" class="img-fluid"
+                                        alt="image description " style="">
+                                    <div class="slide-content">
+                                        <div class="slide-content-desc">
+                                            <h3 class="">{{ $leftslider->title }}</h3>
+                                            <p class="">{{ $leftslider->descriptions }} </p>
+                                            <a class="d-flex gap-2 justify-content-center" href="{{ $leftslider->link }}">
+                                                <span class="group-card-shop-btn">Shop Now</span>
+                                                <i class="fa fa-angle-right group-button-arrow"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @empty
-                        @endforelse
+                            @empty
+                            @endforelse
+                        </div>
                     </div>
-
-
-                </div>
+                @endif
                 @if ($middleSlider)
                     <div
                         class="col-sm-6 col-md-6  col-lg-6 col-lg-6  col-xl-3 group-card-2 d-flex align-items-center py-3 py-xl-0">
@@ -44,7 +44,7 @@
                                 </p>
 
                                 <button type="button" class="text-center group-buutton-bg-disable">
-                                    <a class=" d-flex gap-2" href="{{$middleSlider->link}}">
+                                    <a class=" d-flex gap-2" href="{{ $middleSlider->link }}">
                                         <span class="group-card-shop-btn">Shop Now</span>
                                         <i class="fa fa-angle-right group-button-arrow"></i>
                                     </a>
@@ -53,10 +53,11 @@
                         </div>
                     </div>
                 @endif
-                <div
-                    class="col-sm-6 col-md-6 col-lg-6  col-lg-6 col-xl-3 group-card-3 gap-3 gap-lg-5 gap-xl-3 gap-xxl-4
+                @if ($rightSliders->count())
+                    <div
+                        class="col-sm-6 col-md-6 col-lg-6  col-lg-6 col-xl-3 group-card-3 gap-3 gap-lg-5 gap-xl-3 gap-xxl-4
                     d-flex flex-column justify-content-center py-3 py-xl-0 ">
-                    {{-- <div class="card third-group-card">
+                        {{-- <div class="card third-group-card">
                         <img src="" class="card-img-top third-group-card-img"
                             alt="...">
                         <div class="card-body text-center third-group-card-body">
@@ -77,31 +78,33 @@
 
                         </div>
                     </div> --}}
-                    @forelse ($rightSliders as $rigslider)
-                        <div class="card fourth-group-card">
-                            <img src="{{asset('storage/images/sliders/' .$rigslider->image)}}" class="card-img-top fourth-group-img"
-                                alt="..." style="border-radius: 26.6782px 26.6782px 0px 0px;">
-                            <div class="card-body text-center fourth-group-card-body">
-                                <h4 class="card-title text-center font-head m-0">{{$rigslider->title}}</h4>
+                        @forelse ($rightSliders as $rigslider)
+                            <div class="card fourth-group-card">
+                                <img src="{{ asset('storage/images/sliders/' . $rigslider->image) }}"
+                                    class="card-img-top fourth-group-img" alt="..."
+                                    style="border-radius: 26.6782px 26.6782px 0px 0px;">
+                                <div class="card-body text-center fourth-group-card-body">
+                                    <h4 class="card-title text-center font-head m-0">{{ $rigslider->title }}</h4>
 
 
-                                <p class="card-text group-card-text-color m-0">
-                                    {{$rigslider->descriptions}}
-                                </p>
+                                    <p class="card-text group-card-text-color m-0">
+                                        {{ $rigslider->descriptions }}
+                                    </p>
 
 
-                                <a class=" d-flex  justify-content-center gap-2 text-center group-buutton-bg-disable"
-                                    href="{{$rigslider->link}}">
-                                    <span class="group-card-shop-btn">Shop Now</span>
-                                    <i class="fa fa-angle-right group-button-arrow"></i>
-                                </a>
+                                    <a class=" d-flex  justify-content-center gap-2 text-center group-buutton-bg-disable"
+                                        href="{{ $rigslider->link }}">
+                                        <span class="group-card-shop-btn">Shop Now</span>
+                                        <i class="fa fa-angle-right group-button-arrow"></i>
+                                    </a>
 
 
+                                </div>
                             </div>
-                        </div>
-                    @empty
-                    @endforelse
-                </div>
+                        @empty
+                        @endforelse
+                    </div>
+                @endif
 
             </div>
         </div>
