@@ -1,9 +1,9 @@
    <!-- mt header style3 start here -->
    <header id="mt-header" class="style3 position-relative ">
 
-            <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute" style="width: 300px;right:0; top:0">
+        <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute" style="width: 300px;right:0; top:0">
 
-       <!-- mt top bar start here -->
+        {{-- navbar header --}}
        <div class="mt-top-bar" style="background-color: white;color:black">
            <div class="container py-4">
                <div class="row">
@@ -107,10 +107,55 @@
                </div>
            </div>
        </div>
-       <!-- mt top bar end here -->
-       <!-- mt bottom bar start here -->
+
+       {{-- navbar --}}
        <div class="mt-bottom-bar py-2">
-           <div class="container">
+            <div class="conatiner-fluid d-inline d-lg-none ">
+                <div class="row row-cols-4 ">
+                    <div class="col">
+                        <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
+                            <li>
+                                <img src="http://channel.test/frontend/images/svg/footer/home.svg" alt="">
+                            </li>
+                            <li>home</li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
+                            <li>
+                                <img src="http://channel.test/frontend/images/svg/footer/search.svg" alt="">
+
+                            </li>
+                            <li>Search</li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
+                            <li>
+                                <img src="http://channel.test/frontend/images/svg/footer/account.svg" alt="">
+
+                            </li>
+                            <li>Account</li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
+                            <li>
+                                <img src="http://channel.test/frontend/images/svg/footer/cart.svg" alt="">
+
+                            </li>
+                            <li>Cart</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+
+           <div class="container d-none d-lg-block">
                <div class="row">
                    <div class="col-xs-12">
                        <ul class="mt-icon-list pt-2 pt-md-0 pt-lg-2 pt-xl-0 pt-xxl-0">
@@ -148,18 +193,16 @@
                            </ul>
                        </nav>
 
-                       <!-- mt icon list end here -->
-
                    </div>
                </div>
            </div>
 
        </div>
-       <!-- mt bottom bar end here -->
-       <span class="mt-side-over"></span>
-   </header><!-- mt header end here -->
+   </header>
+
+   <!-- mt header end here -->
    <!-- mt search popup start here -->
-   <div class="mt-search-popup">
+   {{-- <div class="mt-search-popup">
        <div class="mt-holder">
            <a href="" class="search-close"><span></span><span></span></a>
            <div class="mt-frame">
@@ -172,7 +215,9 @@
                </form>
            </div>
        </div>
-   </div><!-- mt search popup end here -->
+   </div> --}}
+
+   <!-- mt search popup end here -->
    <!-- mt main start here -->
    {{-- <li><a href="{{route('about')}}">About</a></li>
                          <li><a href="{{route('contact')}}">Contact</a></li> --}}
