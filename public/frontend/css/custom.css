@@ -1594,6 +1594,21 @@ a:hover {
 /* end cart page */
 
 
+/* breadcrum */
+
+.bread-crum{
+    color: rgba(0, 0, 0, 0.5);
+    font-size:17px;
+}
+.bread-crum:hover{
+    color: rgba(0, 0, 0, 0.5);
+}
+/*
+.bread-crum-section{
+    margin:16px ;
+} */
+/*end of  breadcrum */
+
 
 
 @media screen and (max-width:480px){

@@ -7,6 +7,17 @@
 
     <x-frontend.profile-nav image="https://via.placeholder.com/300" name="{{ $user->first_name }}" />
 
+    <section class="my-1">
+            <div class="container">
+              <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" class="bread-/a></li>
+                    <li class="breadcrumb-item bread-crum" aria-current="page">My Profile</li>
+                  </ol>
+                </nav>
+            </div>
+    </section>
+
     <section>
         <div class="container">
             <div class="row py-5 d-flex justify-content-center">
