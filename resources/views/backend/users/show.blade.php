@@ -58,21 +58,21 @@
                                         @if ($userPrimaryAddress)
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="degree3" class="cust-title"
-                                                        class="label-title">Primary Address</label><br>
+                                                    <label for="degree3" class="cust-title" class="label-title">Primary
+                                                        Address</label><br>
                                                     <p class="label-title">{{ $userPrimaryAddress->street_address }}</p>
                                                 </div>
                                             </div>
                                         @endif
-                                     {{-- @dd($userOtherAddress->street_address) --}}
+                                        {{-- @dd($userOtherAddress->street_address) --}}
                                         @if ($userOtherAddress)
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="degree3" class="cust-title"
-                                                        class="label-title">Other Address</label><br>
-                                                        @foreach ($userOtherAddress as $address )
+                                                    <label for="degree3" class="cust-title" class="label-title">Other
+                                                        Address</label><br>
+                                                    @foreach ($userOtherAddress as $address)
                                                         <p class="label-title">{{ $address->street_address }}</p>
-                                                        @endforeach
+                                                    @endforeach
 
                                                 </div>
                                             </div>
@@ -92,6 +92,10 @@
                     <li class="nav-item">
                         <a class="nav-link" id="orders-tab" data-toggle="tab" href="#orders" role="tab"
                             aria-controls="orders" aria-selected="true">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="wishlist-tab" data-toggle="tab" href="#wishlist" role="tab"
+                            aria-controls="wishlist" aria-selected="true">Wishlists</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="simpletabContent">
@@ -134,10 +138,14 @@
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                             height="24" viewBox="0 0 24 24" fill="none"
                                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                            <circle cx="12" cy="12" r="1"></circle>
-                                                            <circle cx="19" cy="12" r="1"></circle>
-                                                            <circle cx="5" cy="12" r="1"></circle>
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-more-horizontal">
+                                                            <circle cx="12" cy="12" r="1">
+                                                            </circle>
+                                                            <circle cx="19" cy="12" r="1">
+                                                            </circle>
+                                                            <circle cx="5" cy="12" r="1">
+                                                            </circle>
                                                         </svg>
                                                     </a>
 
@@ -171,6 +179,44 @@
                             @endif
                         </div>
                     </div>
+                    <div class="tab-pane fade p-0" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
+                        <div class="table-responsive wishlist-table min-height-20em">
+                            <table class="table mb-4">
+                                <thead>
+                                    <tr>
+                                        <th>Sr no.</th>
+                                        <th>Product</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse($wishlists as $wishlist)
+                                        {{-- @dd($wishlist->products()) --}}
+                                        <tr>
+                                            <td>{{ tableRowSrNo($loop->index, $wishlists) }}</td>
+                                            <td>
+                                                <a href="{{ route('backend.product.show', $wishlist->product_id) }}">
+                                                    {{ $wishlist->product->name }}
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="4">No Records Found</td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                            @if ($wishlists)
+                                <div class="pagination col-lg-12 mt-4">
+                                    <div class="col-md-12 text-center align-self-center">
+                                        <ul class="pagination text-center">
+                                            {{ $wishlists->withQueryString()->links('pagination::bootstrap-4') }}
+                                        </ul>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -193,7 +239,8 @@
     </script>
     <link type=" text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css" />
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}"></script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}">
+    </script>
     <script src="{{ asset('js/lg-zoom.min.js') }}"></script>
     {{-- <link rel="stylesheet" type=" text/css" href="{{ asset('css/lightgallery.css') }}">
         <script src="{{ asset('js/lightgallery.js') }}"></script> --}}

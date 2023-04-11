@@ -38,6 +38,7 @@ class UserController extends Controller
                 orWhere('email', 'LIKE', '%' . $search . '%')->
                 orWhere('phone', 'LIKE', '%' . $search . '%');
             });
+
         }
         return $users;
     }
@@ -48,7 +49,9 @@ class UserController extends Controller
         $userPrimaryAddress =  $user->userAddress->where('type','primary')->first();
         $userOtherAddress =  $user->userAddress()->where('type','!=','primary')->get();
         $orders = $user->orders()->latest()->paginate(10, ['*'], 'orders');
+        $wishlists = $user->wishlist()->latest()->paginate(10, ['*'], 'wishlists');
+        // dd($user->wishlist()->first()->product()->first());
       // dd($userOtherAddress);
-        return view('backend.users.show', compact('user','userPrimaryAddress','userOtherAddress','orders'));
+        return view('backend.users.show', compact('user','userPrimaryAddress','userOtherAddress','orders','wishlists'));
     }
 }
