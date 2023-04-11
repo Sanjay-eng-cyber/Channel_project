@@ -1,5 +1,8 @@
 @extends('frontend.layouts.app')
 @section('title', 'About-Us |')
+@section('cdn')
+    <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
+@endsection
 @section('content')
 
     <main id="mt-main">
@@ -217,7 +220,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-lg-8 col-md-12">
+                    <div class="col-lg-7 col-md-12">
                         <div class="container">
                             <h4 class="font-body mb-3">
                                 Customer reviews
@@ -309,6 +312,62 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-5 col-md-12">
+                        <h4 class="font-body mb-3">
+                            Narrow Reviews By
+                        </h4>
+                        <div class="row row-cols-1 row-cols-sm-2 ">
+                            <div class="col __1nw-rv pt-2 pt-sm-3 pb-2">
+                                <div class="fw-bold text-red bg-lightpink p-2 text-center">Recent</div>
+                            </div>
+                            <div class="col  __1nw-rv pt-2 pt-sm-3 pb-2">
+                                <div class="fw-bold text-red bg-lightpink p-2 text-center">By Certified Buyer</div>
+                            </div>
+                            <div class="col  __1nw-rv my-2 my-sm-2">
+                                <div class="fw-bold text-red bg-lightpink p-2 text-center">By Positive </div>
+                            </div>
+                            <div class="col __1nw-rv my-2 my-sm-2">
+                                <div class="fw-bold text-red bg-lightpink p-2 text-center">Most Helpful</div>
+                            </div>
+                            <div class="col  __1nw-rv my-2 my-sm-2">
+                                <div class="fw-bold text-red bg-lightpink p-2 text-center">By Negative </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr>
+                <div class="row pb-4" style="padding-top:50px;">
+                    <div class="col-lg-12 col-xl-6 or-secondpage-scard">
+                        <div class="p-4 or-secondpage-scard">
+
+                            <h5 class="main-head py-3 or-secondpage-scard-fhead">Recommended based on your purchase</h5>
+                            <div class="row pt-3 pb-3 or-secondpage-scard-card">
+                                <div class="col-sm-4 or-secondpage-scard-card-img" style="">
+                                    <img src="{{asset('frontend/images/products/skin/sk1.png')}}" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-sm-8 or-secondpage-scard-card-des pt-4 pt-sm-0 pt-md-0">
+                                    <h4 class="main-head">Essence Long Lasting Eye Pencil</h4>
+                                    <p>
+                                        essence Long Lasting Eye Pencil is a creamy and pigmented eye pencil that brightens
+                                        and
+                                        accentuates your eye more....
+                                    </p>
+                                    <ul class="d-flex gap-5 p-0">
+                                        <li class="no-bullet fw-bolder">
+                                            From ₹145.55
+                                        </li>
+                                        <li>13 March 2023</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <button type="button" class="btn btn-orange or-secondpage-lbtn mt-4">Continue
+                                Shopping</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

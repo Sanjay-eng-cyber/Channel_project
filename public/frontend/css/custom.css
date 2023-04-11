@@ -1299,6 +1299,18 @@ a:hover {
   margin-top: 20px;
 }
 
+
+    .icon-of-the {
+        bottom: 15px;
+        position: absolute;
+        bottom: 0;
+        top: -158px;
+        left: 47px;
+
+    }
+
+
+
 /* end top header slider */
 
 /* checkout continue login */
@@ -1415,6 +1427,22 @@ a:hover {
 
 
 /* end pfofile payment method */
+
+.nn-top-cart{
+    display: flex;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 6.63636px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+}
+.nn-top-cart-icon{
+    color: #EC268F;
+    font-size: 0.8rem;
+
+}
 
 /* review index page inside the profile */
 
@@ -1565,6 +1593,21 @@ a:hover {
 
 /* end cart page */
 
+
+/* breadcrum */
+
+.bread-crum{
+    color: rgba(0, 0, 0, 0.5);
+    font-size:17px;
+}
+.bread-crum:hover{
+    color: rgba(0, 0, 0, 0.5);
+}
+/*
+.bread-crum-section{
+    margin:16px ;
+} */
+/*end of  breadcrum */
 
 
 
@@ -2318,6 +2361,16 @@ a:hover {
 @media (max-width: 992px) {
     .auth-popup-body {
         padding: 2em 1em;
+    }
+    .navdrop-style{
+        background: rgba(217, 217, 217, 0.6);
+        border: 0.3px solid rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 7px;
+        margin-top: 15px;
+    }
+    .nav-dd-color .dd-cl:hover{
+        background-color: white;
     }
 }
 

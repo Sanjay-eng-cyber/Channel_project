@@ -33,12 +33,18 @@
                             <div class="form-group mb-4 row">
                                 <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput" class="">Type</label>
-                                  <select name="type" class="form-control" id="formGroupExampleInput" required>
-                                    <option value="">Select Any</option>
-                                    <option value="right slider">Right Slider</option>
-                                    <option value="left slider">Left Slider</option>
-                                    <option value="middle slider">Middle Slider</option>
-                                  </select>
+                                    <select name="type" class="form-control" id="formGroupExampleInput" required>
+                                        <option value="">Select Any</option>
+                                        <option value="left slider"
+                                            @if (old('type') == 'left slider') {{ 'selected' }} @endif>Left Slider
+                                        </option>
+                                        <option value="middle slider"
+                                            @if (old('type') == 'middle slider') {{ 'selected' }} @endif>Middle Slider
+                                        </option>
+                                        <option value="right slider"
+                                            @if (old('type') == 'right slider') {{ 'selected' }} @endif>Right Slider
+                                        </option>
+                                    </select>
                                     @if ($errors->has('type'))
                                         <div class="text-danger" role="alert">{{ $errors->first('type') }}</div>
                                     @endif
@@ -46,7 +52,8 @@
                                 <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-2">
                                     <label for="formGroupExampleInput" class="">Title</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Title" minlength="3" maxlength="60" required name="title" value="{{ old('title') }}">
+                                        placeholder="Enter Title" minlength="3" maxlength="60" required name="title"
+                                        value="{{ old('title') }}">
                                     @if ($errors->has('title'))
                                         <div class="text-danger" role="alert">{{ $errors->first('title') }}</div>
                                     @endif
@@ -54,7 +61,8 @@
                                 <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput" class="">Link</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter link" minlength="3" maxlength="120" required name="link" value="{{ old('link') }}">
+                                        placeholder="Enter link" minlength="3" maxlength="120" required name="link"
+                                        value="{{ old('link') }}">
                                     @if ($errors->has('link'))
                                         <div class="text-danger" role="alert">{{ $errors->first('link') }}</div>
                                     @endif
