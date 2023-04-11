@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\cms;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
@@ -34,7 +35,7 @@ class UserController extends Controller
             //     ->orWhere('email', 'LIKE', '%' . $search . '%');
 
             $users = $users->where(function ($query) use ($search) {
-                $query->where('name', 'LIKE', '%' . $search . '%')->
+                $query->where(DB::raw("concat(first_name, ' ', last_name)"), 'LIKE', '%' . $search . '%')->
                 orWhere('email', 'LIKE', '%' . $search . '%')->
                 orWhere('phone', 'LIKE', '%' . $search . '%');
             });
