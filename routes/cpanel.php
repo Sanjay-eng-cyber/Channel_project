@@ -84,7 +84,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('product/review/show/{product_id}/{review_id}', 'App\Http\Controllers\cms\ProductController@reviewShow')->name('backend.product.review.show');
         Route::get('product/review/edit/{product_id}/{review_id}', 'App\Http\Controllers\cms\ProductController@reviewEdit')->name('backend.product.review.edit');
         Route::post('product/review/update/{product_id}/{review_id}', 'App\Http\Controllers\cms\ProductController@reviewUpdate')->name('backend.product.review.update');
-        Route::get('product/review/delete/{product_id}/{review_id}', 'App\Http\Controllers\cms\ProductController@reviewDestroy')->name('backend.product.review.delete');
+        // Route::get('product/review/delete/{product_id}/{review_id}', 'App\Http\Controllers\cms\ProductController@reviewDestroy')->name('backend.product.review.delete');
 
         Route::get('showcases/', 'App\Http\Controllers\cms\ShowcaseController@index')->name('backend.showcase.index');
         Route::get('/showcase/show/{id}', 'App\Http\Controllers\cms\ShowcaseController@show')->name("backend.showcase.show");

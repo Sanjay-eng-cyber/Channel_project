@@ -293,13 +293,13 @@ class ProductController extends Controller
         return redirect()->route('backend.product.review', $product_id)->with(['alert-type' => 'success', 'message' => 'Review Updated Successfully']);
     }
 
-    public function reviewDestroy($product_id, $review_id)
-    {
-        $products = Product::findOrFail($product_id);
-        $reviews = $products->review()->findOrFail($review_id);
-        if ($reviews->delete()) {
-            return redirect()->route('backend.product.review', $product_id)->with(['alert-type' => 'success', 'message' => 'Review Deleted Successfully']);
-        }
-        return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
-    }
+    // public function reviewDestroy($product_id, $review_id)
+    // {
+    //     $products = Product::findOrFail($product_id);
+    //     $reviews = $products->review()->findOrFail($review_id);
+    //     if ($reviews->delete()) {
+    //         return redirect()->route('backend.product.review', $product_id)->with(['alert-type' => 'success', 'message' => 'Review Deleted Successfully']);
+    //     }
+    //     return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
+    // }
 }

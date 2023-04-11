@@ -98,8 +98,8 @@
                                                             href="{{ route('backend.product.review.show', ['product_id' => $products->id, 'review_id' => $re->id]) }}">View</a>
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.product.review.edit', ['product_id' => $products->id, 'review_id' => $re->id]) }}">Edit</a>
-                                                            <a class="dropdown-item"
-                                                            href="{{ route('backend.product.review.delete', ['product_id' => $products->id, 'review_id' => $re->id]) }}">Delete</a>
+                                                            {{-- <a class="dropdown-item"
+                                                            href="{{ route('backend.product.review.delete', ['product_id' => $products->id, 'review_id' => $re->id]) }}">Delete</a> --}}
                                                     </div>
                                                 </div>
 
