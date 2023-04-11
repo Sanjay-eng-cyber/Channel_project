@@ -46,8 +46,7 @@ class ProductController extends Controller
             //     ->orWhere('email', 'LIKE', '%' . $search . '%');
 
             $products = $products->where(function ($query) use ($search) {
-                $query->where('name', 'LIKE', '%' . $search . '%')->
-                orWhere('sku', 'LIKE', '%' . $search . '%');
+                $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('sku', 'LIKE', '%' . $search . '%');
             });
         }
         return $products;
@@ -58,8 +57,8 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product_showcases = $product->showcaseProducts()->get();
         $product_attributes = $product->ProductAttribute()->latest()->get();
-       //  dd( $product_attribute_values);
-        return view('backend.product.show', compact('product','product_showcases','product_attributes'));
+        //  dd( $product_attribute_values);
+        return view('backend.product.show', compact('product', 'product_showcases', 'product_attributes'));
     }
 
     public function create()
@@ -69,7 +68,7 @@ class ProductController extends Controller
         $showcases = Showcase::all();
         $attributes = Attribute::all();
         // dd($showcases);
-        return view('backend.product.create', compact('categorys', 'brands', 'showcases','attributes'));
+        return view('backend.product.create', compact('categorys', 'brands', 'showcases', 'attributes'));
     }
 
 
@@ -151,7 +150,7 @@ class ProductController extends Controller
         $product_attribute = $product->ProductAttribute()->pluck('product_attribute_value_id')->toArray();
         $product_showcases = $product->showcaseProducts()->exists() ? $product->showcaseProducts()->pluck('showcase_id')->toArray() : [];
         //  dd($product_attribute);
-        return view('backend.product.edit', compact('product', 'categorys', 'brands', 'showcases', 'product_showcases','attributes','product_attribute'));
+        return view('backend.product.edit', compact('product', 'categorys', 'brands', 'showcases', 'product_showcases', 'attributes', 'product_attribute'));
     }
 
     public function update(Request $request, $id)
@@ -254,6 +253,52 @@ class ProductController extends Controller
         // }
         if ($product->delete()) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Deleted Successfully']);
+        }
+        return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
+    }
+
+    public function reviewIndex(Request $request, $id)
+    {
+        $products = Product::findOrFail($id);
+        $reviews = $products->review()->latest()->paginate(10);
+        return view('backend.review.index', compact('reviews', 'products'));
+    }
+
+    public function reviewShow(Request $request, $product_id,$review_id)
+    {
+        $products = Product::findOrFail($product_id);
+        $reviews = $products->review()->findOrFail($review_id);
+        return view('backend.review.show', compact('reviews', 'products'));
+    }
+
+    public function reviewEdit($product_id, $review_id)
+    {
+        $products = Product::findOrFail($product_id);
+        $reviews = $products->review()->findOrFail($review_id);
+        // dd($medias);
+        return view('backend.review.edit', compact('products', 'reviews'));
+    }
+
+    public function reviewUpdate(Request $request, $product_id, $review_id)
+    {
+        $products = Product::findOrFail($product_id);
+        $reviews = $products->review()->findOrFail($review_id);
+        $request->validate([
+            'body' => 'required',
+            'rating' => 'required|min:5|max:120',
+        ]);
+        $reviews->rating = $request->rating;
+        $reviews->body = $request->body;
+        $reviews->save();
+        return redirect()->route('backend.product.review', $product_id)->with(['alert-type' => 'success', 'message' => 'Review Updated Successfully']);
+    }
+
+    public function reviewDestroy($product_id, $review_id)
+    {
+        $products = Product::findOrFail($product_id);
+        $reviews = $products->review()->findOrFail($review_id);
+        if ($reviews->delete()) {
+            return redirect()->route('backend.product.review', $product_id)->with(['alert-type' => 'success', 'message' => 'Review Deleted Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
     }

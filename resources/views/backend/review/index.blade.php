@@ -9,7 +9,7 @@
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-lg-4 col-md-12 col-sm-12">
                             <legend class="h4">
-                                Products
+                                Reviews
                             </legend>
                         </div>
 
@@ -18,7 +18,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Products</a></li>
+                                            href="javascript:void(0);">Reviews</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -27,27 +27,30 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 mt-2">
-                            <form class="form-inline row app_form" action="{{ route('backend.product.index') }}"
-                                method="GET">
-                                <input class="form-control form-control-sm app_form_input" type="text"
-                                    placeholder="Name/Sku" name="q" value="{{ request('q') ?? '' }}" minlength="3"
-                                    maxlength="40">
-                                <input type="submit" value="Search"
-                                    class="btn btn-success ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
-                            </form>
-                            @if ($errors->has('q'))
-                                <div class="text-danger" role="alert">{{ $errors->first('q') }}
-                                </div>
-                            @endif
+                        {{-- <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12 mb-2">
+                            <div class="">
+                                <form class="form-inline row px-4 pa_form_responsive" action="{{ route('backend.category.index') }}" method="GET">
+                                    <input class="form-control form-control-sm pa_form_input" type="text"
+                                        placeholder="Search By MRD/Name/Mobile" name="q"
+                                        value="{{ request('q') ?? '' }}" minlength="3" maxlength="40">
+                                    <input type="submit" value="Search" class="btn btn-success  ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn_size pa_search_btn">
+                                </form>
+                                @if ($errors->has('q'))
+                                    <div class="text-danger" role="alert">{{ $errors->first('q') }}
+                                    </div>
+                                @endif
+                            </div>
+                        </div> --}}
+                        <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12 mb-2">
                         </div>
-                        <div
-                            class="align-items-center col-xl-5 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
-                            <a href="{{ route('backend.product.create') }}" name="txt"
+
+                        {{-- <div class="align-items-center col-xl-5 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
+                            <a href="{{ route('backend.category.create') }}" name="txt"
                                 class="btn btn-primary mt-2 ml-3 ">
-                                Add Product
+                                Add New Category
                             </a>
-                        </div>
+                        </div> --}}
+
                     </div>
                 </div>
             </div>
@@ -60,21 +63,21 @@
                                 <thead>
                                     <tr>
                                         <th>Sr no.</th>
-                                        <th>Name</th>
-                                        <th>Brand</th>
-                                        <th>Category</th>
-                                        <th>Sub Category</th>
+                                        <th>Descriptions</th>
+                                        <th>Rating</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($products as $product)
+                                    @forelse($reviews as $re)
                                         <tr>
-                                            <td>{{ tableRowSrNo($loop->index, $products) }}</td>
-                                            <td>{{ $product->name }}</td>
-                                            <td>{{ $product->brand ? $product->brand->name : '---' }}</td>
-                                            <td>{{ $product->category->name }}</td>
-                                            <td>{{ $product->subCategory ? $product->subCategory->name : '---' }}</td>
+                                            <td>{{ tableRowSrNo($loop->index, $reviews) }}</td>
+                                            <td>{{ $re->body }}</td>
+                                            <td>{{ $re->rating }}</td>
+                                            {{-- <td>
+                                                <img src="{{ asset('storage/images/categories/' . $category->image) }}"
+                                                height="150px" width="150px" alt="">
+                                            </td> --}}
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"
@@ -92,13 +95,11 @@
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                         <a class="dropdown-item"
-                                                            href="{{ route('backend.product.review', $product->id) }}">Product Review</a>
+                                                            href="{{ route('backend.product.review.show', ['product_id' => $products->id, 'review_id' => $re->id]) }}">View</a>
                                                         <a class="dropdown-item"
-                                                            href="{{ route('backend.product.show', $product->id) }}">View</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.product.edit', $product->id) }}">Edit</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.product.destroy', $product->id) }}">Delete</a>
+                                                            href="{{ route('backend.product.review.edit', ['product_id' => $products->id, 'review_id' => $re->id]) }}">Edit</a>
+                                                            <a class="dropdown-item"
+                                                            href="{{ route('backend.product.review.delete', ['product_id' => $products->id, 'review_id' => $re->id]) }}">Delete</a>
                                                     </div>
                                                 </div>
 
@@ -106,7 +107,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="5">No Records Found</td>
+                                            <td colspan="4">No Records Found</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -115,7 +116,7 @@
                         <div class="pagination col-lg-12">
                             <div class="col-md-12 text-center align-self-center">
                                 <ul class="pagination text-center">
-                                    {{ $products->appends(Request::all())->links('pagination::bootstrap-4') }}
+                                    {{ $reviews->appends(Request::all())->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
                         </div>
@@ -126,7 +127,7 @@
         </div>
     </div>
 
-@endsection
-@section('js')
+        @endsection
+        @section('js')
 
-@endsection
+        @endsection

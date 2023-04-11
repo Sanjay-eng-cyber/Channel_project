@@ -37,6 +37,11 @@ class Product extends Model
         return $this->hasMany(ProductAttribute::class);
     }
 
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
+
     public function storeProductAttributes($attributes, $values, $product)
     {
         foreach($attributes as $key => $item)
