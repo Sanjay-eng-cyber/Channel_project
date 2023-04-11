@@ -18,7 +18,7 @@
                                aria-expanded="true" aria-label="Toggle navigation">
                                <span class="navbar-toggler-icon"></span>
                            </button>
-                           <div class="navbar-collapse collapse  justify-content-between flex-row-reverse"
+                           <div class="navbar-collapse collapse  justify-content-between flex-row-reverse navdrop-style"
                                id="navbarSupportedContent" style="">
                                <ul class="navbar-nav d-none d-lg-flex gap-3 align-items-center">
 
@@ -60,31 +60,33 @@
                                </ul>
 
 
+                               <div class="navbar-nav d-inline d-lg-none text-start">
+                                <ul class="list-unstyled nav-dd-color">
+                                    <li class="nav-item dd-cl mt-3">
+                                        <a class="nav-link px-4" aria-current="page" href="#">HOME</a>
+                                    </li>
+                                    <li class="nav-item dd-cl">
+                                        <a class="nav-link px-4" href="#">SKIN</a>
+                                    </li>
+                                    <li class="nav-item dd-cl">
+                                        <a class="nav-link px-4" href="#">FRAGRANCES</a>
+                                    </li>
+                                    <li class="nav-item dd-cl">
+                                        <a class="nav-link px-4" href="#">HAIRCARE</a>
+                                    </li>
+                                    <li class="nav-item dd-cl">
+                                        <a class="nav-link px-4" href="#">PERSONALCARE</a>
+                                    </li>
+                                    <li class="nav-item dd-cl">
+                                        <a class="nav-link px-4" href="#"> HOME DECOR </a>
+                                    </li>
+                                    <li class="nav-item dd-cl">
+                                        <a class="nav-link px-4" href="#">GIFT</a>
+                                    </li>
 
-                               <ul class="navbar-nav d-inline d-lg-none text-center">
-                                   <li class="nav-item">
-                                       <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                                   </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link" href="#">SKIN</a>
-                                   </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link" href="#">FRAGRANCES</a>
-                                   </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link" href="#">HAIRCARE</a>
-                                   </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link" href="#">PERSONALCARE</a>
-                                   </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link" href="#"> HOME DECOR </a>
-                                   </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link" href="#">GIFT</a>
-                                   </li>
+                                </ul>
 
-                               </ul>
+                               </div>
 
 
 

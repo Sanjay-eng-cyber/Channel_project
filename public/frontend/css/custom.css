@@ -2362,6 +2362,16 @@ a:hover {
     .auth-popup-body {
         padding: 2em 1em;
     }
+    .navdrop-style{
+        background: rgba(217, 217, 217, 0.6);
+        border: 0.3px solid rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 7px;
+        margin-top: 15px;
+    }
+    .nav-dd-color .dd-cl:hover{
+        background-color: white;
+    }
 }
 
 .social-button img {
