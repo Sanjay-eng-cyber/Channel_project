@@ -1,7 +1,7 @@
    <!-- mt header style3 start here -->
    <header id="mt-header" class="style3 position-relative ">
 
-        <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute" style="width: 300px;right:0; top:0">
+        <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute" style="width: 110px;right:0; top:0">
 
         {{-- navbar header --}}
        <div class="mt-top-bar" style="background-color: white;color:black">
