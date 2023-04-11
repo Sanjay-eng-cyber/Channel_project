@@ -14,13 +14,17 @@
 
                         <!-- Slider of the Page -->
                         <div class="slider">
-                            <div>
-                                <h4 class="main-head my-2 text-center">
-                                    Amazon Pay EGift Card
-                                </h4>
+
+                               <div class="gift-card-top-heading">
+                                    <h4 class="main-head my-2 text-start">
+                                        Amazon Pay EGift Card
+                                    </h4>
+                               </div>
                                 <hr>
-                                <h5 class="main-head my-4 text-center">1. Select a style for your Gift Card</h5>
-                                <ul class="list-unstyled slick-slider pagg-slider">
+                                <div class="gift-card-top-heading">
+                                    <h5 class="main-head my-4 text-start">1. Select a style for your Gift Card</h5>
+                                </div>
+                                <ul class="list-unstyled slick-slider pagg-slider p-0">
                                     <li>
                                         <div class="img">
                                             <img src="https://via.placeholder.com/600" alt="image description">
@@ -43,7 +47,7 @@
                                     </li>
 
                                 </ul>
-                            </div>
+
                             <div class="product-slider gift-card-sidebar mt-4">
                                 <div class="slide">
                                     <img src="https://via.placeholder.com/600" alt="image description">

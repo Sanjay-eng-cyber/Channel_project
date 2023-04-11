@@ -936,6 +936,10 @@ color: #EC268F;
 
 /*end  write a review */
 /* gift cand review */
+.gift-card-top-heading{
+    max-width:510px;
+    margin:auto;
+}
 .gift-card-review-img{
     width: 80%;
     background: #C4C4C4;
