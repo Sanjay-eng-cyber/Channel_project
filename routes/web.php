@@ -139,6 +139,6 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/products/{slug}', function () {
         return view('frontend/product/show');
     })->name('products.show');
-    Route::get('/cat','App\Http\Controllers\frontend\CategoryController@index')->name('frontend.cat.index');
-    Route::get('/cat/{slug}','App\Http\Controllers\frontend\CategoryController@show')->name('frontend.cat.show');
+
+    Route::get('/c/{slug}', 'App\Http\Controllers\frontend\CategoryController@show')->name('frontend.cat.show');
 });

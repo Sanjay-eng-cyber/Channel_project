@@ -91,7 +91,7 @@
 
 
                                <ul class="nav navbar-nav d-none d-lg-inline">
-                                   <a href="frontend/#">
+                                   <a href="/">
                                        <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}"
                                            alt="schon" class="">
                                    </a>

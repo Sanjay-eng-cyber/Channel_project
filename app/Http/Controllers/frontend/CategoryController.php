@@ -16,7 +16,9 @@ class CategoryController extends Controller
 
     public function show($catSlug)
     {
-        $categories = Category::where('slug', $catSlug)->firstOrFail();
-        dd($categories);
+        $category = Category::where('slug', $catSlug)->firstOrFail();
+        $products = $category->products();
+        $products = $products->get();
+        dd($products);
     }
 }
