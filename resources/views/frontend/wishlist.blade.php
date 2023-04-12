@@ -22,13 +22,15 @@
             <div class="row d-flex justify-content-center">
                 <h4 class="main-head text-red text-center py-3">Wishes Do Come True </h4>
                 <div class="col-sm-9">
-                    <div class="input-group py-3">
-                        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username"
-                            aria-describedby="basic-addon2">
-                        <span class="input-group-text" id="basic-addon2" style="background-color: rgba(236, 38, 143, 0.4);">
-                            <i class="fas fa-search fa-fw text-red"></i>
-                        </span>
-                    </div>
+                    <form action="" method="post">
+                        <div class="input-group py-3">
+                            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username"
+                                aria-describedby="basic-addon2">
+                                <button type="submit" class="search-icon-dd" >
+                                      <i class="fas fa-search fa-fw text-red"></i>
+                                </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -53,7 +55,10 @@
                             </div>
                             <div class="col-sm-12  col-md-12 col-lg-12 col-xl-3 py-3 py-xl-0 py-xxl-0 wishlist-main-in-btn"
                               >
-                                <button type="submit" class="btn profile-btn-color add-p-btn">Add To Cart</button>
+                                <a href="http://">
+                                    <button type="button" class="btn profile-btn-color add-p-btn">Add To Cart</button>
+
+                                </a>
 
                                     <a href="" style="font-size:12px" class="py-1 text-red">
                                         Remove item from Wishlist
@@ -87,14 +92,16 @@
 
                             </div>
                             <div class="col-sm-12  col-md-12 col-lg-12 col-xl-3 py-3 py-xl-0 py-xxl-0 wishlist-main-in-btn">
-                                <button type="submit" class="btn btn-outline-danger add-pd-btn">
-                                   {{-- <img src="{{asset('frontend/images/icons/icon-right-arrow.svg')}}" alt="" width="22px" height="15px"> --}}
-                                   <i class="fas fa-check text-red"></i>
+                                <a href="http://">
+                                    <button type="button" class="btn btn-outline-danger add-pd-btn">
+                                        <i class="fas fa-check text-red"></i>
+                                        Added
+                                    </button>
+                                </a>
 
-                                    Added</button>
-                                    <a href="" style="font-size:12px" class="py-1 text-red">
+                                <a href="" style="font-size:12px" class="py-1 text-red">
                                         Remove item from Wishlist
-                                    </a>
+                                </a>
 
                             </div>
                         </div>
