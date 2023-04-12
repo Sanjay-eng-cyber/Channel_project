@@ -248,7 +248,7 @@
 
 .wishlist-main .wishlist-main-out {
     background: #ffffff;
-    box-shadow: 3.23171px 5.81707px 9.69512px rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 9.69512px;
     padding: 15px 25px 12px 25px;
 }

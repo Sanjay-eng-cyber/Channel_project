@@ -1609,7 +1609,11 @@ a:hover {
 } */
 /*end of  breadcrum */
 
-
+.search-icon-dd{
+   background-color: rgba(236, 38, 143, 0.4);
+   border: 1px solid #ced4da;
+   padding: 0px 20px 0px 20px;
+}
 
 @media screen and (max-width:480px){
 .review-first-subsection .review-first-subsection-desc .review-status{
