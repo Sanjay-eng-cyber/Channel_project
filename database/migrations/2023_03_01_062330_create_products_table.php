@@ -21,10 +21,11 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->text('descriptions')->nullable();
+            $table->string('thumbnail_image')->nullable();
             $table->float('mrp');
             $table->float('final_price');
             $table->bigInteger('stock');
-            $table->string('sku')->unique();
+            $table->string('sku')->unique()->nullable();
             $table->timestamps();
         });
     }
