@@ -213,6 +213,9 @@ a:hover {
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 }
+.serch-border{
+    border: 0.688636px solid rgba(0, 0, 0, 0.6);
+}
 
 .text-blue {
     color: rgba(0, 175, 239, 1);
@@ -1613,8 +1616,8 @@ a:hover {
 
 .search-icon-dd{
    background-color: rgba(236, 38, 143, 0.4);
-   border: 1px solid #ced4da;
    padding: 0px 20px 0px 20px;
+   border-radius: 0px 8px 8px;
 }
 
 @media screen and (max-width:480px){
