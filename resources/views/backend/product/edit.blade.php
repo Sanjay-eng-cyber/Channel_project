@@ -135,6 +135,13 @@
                                             <div class="text-danger" role="alert">{{ $errors->first('sku') }}</div>
                                         @endif
                                     </div>
+                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                        <label for="formGroupExampleInput" class="">Short Descriptions</label>
+                                       <textarea name="short_descriptions" rows="5" cols="50" class="form-control" minlength="3" maxlength="120" required>{{$product->short_descriptions}}</textarea>
+                                        @if ($errors->has('short_descriptions'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('short_descriptions') }}</div>
+                                        @endif
+                                    </div>
                                     @foreach ($attributes as $attribute)
                                         <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                             <input hidden name="attributeKeys[]" value="{{ $attribute->id }}">
@@ -201,6 +208,17 @@
                                         @endif
                                         @if ($errors->has('image.*'))
                                             <div class="text-danger" role="alert">{{ $errors->first('image.*') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                        <label for="degree2">Thumbnail Image</label><br>
+                                        <img class="m-2 border"
+                                                    src="{{ asset('storage/images/products/' . $product->thumbnail_image) }}"
+                                                    height="150px" width="150px" alt="">
+                                        <input class="form-control" name="thumbnail_image" type="file" id="image">
+                                        @if ($errors->has('thumbnail_image'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('thumbnail_image') }}
                                             </div>
                                         @endif
                                     </div>

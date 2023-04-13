@@ -6,15 +6,16 @@ use App\Models\Brand;
 use App\Models\Media;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Showcase;
+use App\Models\Attribute;
 use App\Models\SubCategory;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
-use App\Http\Controllers\Controller;
-use App\Models\Showcase;
+use Intervention\Image\Facades\Image;
 use App\Models\ShowcaseProduct;
-use App\Models\Attribute;
+use Illuminate\Validation\Rule;
 use App\Models\ProductAttribute;
+use App\Http\Controllers\Controller;
 use App\Models\ProductAttributeValue;
 use Illuminate\Support\Facades\Storage;
 
@@ -95,12 +96,26 @@ class ProductController extends Controller
             'brand_id' => ['nullable', Rule::in($brands)],
             'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
             'image' => 'required|max:10',
-            'image.*' => 'mimes:png,jpg,jpeg|max:1024',
+            'image.*' => 'mimes:png,jpg,jpeg|max:1024|dimensions:width=250,height=250',
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
+            'thumbnail_image' => 'required|dimensions:width=300,height=300|mimes:png,jpg,jpeg|max:1024',
+            'short_descriptions' => 'required|min:3|max:120',
             // 'attribute_id' => ['nullable',Rule::in($attribute)],
             // 'product_attribute_value_id' => ['nullable',Rule::in($productAttributeValues)],
         ]);
+
+        $fileWithExtension = $request->file('thumbnail_image');
+        // dd($fileWithExtension);
+         if ($fileWithExtension) {
+              $filename = now()->format('dmy-his') . '-' . rand(1, 99) . '.' . $fileWithExtension->clientExtension();
+              $destinationPath = storage_path('app/public/images/products/');
+                $img = Image::make($fileWithExtension->getRealPath())->resize(200, 200, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upSize();
+                });
+              $img->save($destinationPath . $filename, 85);
+         }
 
         $product = new Product();
         $product->name = $request->name;
@@ -113,6 +128,8 @@ class ProductController extends Controller
         $product->stock = $request->stock;
         $product->sku = $request->sku;
         $product->descriptions = $request->descriptions;
+        $product->short_descriptions = $request->short_descriptions;
+        $product->thumbnail_image = $filename;
 
 
         if ($product->save()) {
@@ -172,10 +189,27 @@ class ProductController extends Controller
             'brand_id' => ['nullable', Rule::in($brands)],
             'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
             'image' => 'nullable|max:10',
-            'image.*' => 'mimes:png,jpg,jpeg|max:1024',
+            'image.*' => 'mimes:png,jpg,jpeg|max:1024|dimensions:width=250,height=250',
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
+            'thumbnail_image' => 'nullable|dimensions:width=300,height=300|mimes:png,jpg,jpeg|max:1024',
+            'short_descriptions' => 'required|min:3|max:120',
         ]);
+
+        $fileWithExtension = $request->file('thumbnail_image');
+        if ($request->has('thumbnail_image')) {
+            $filename = now()->format('dmy-his') . '-' . rand(1, 99) . '.' . $fileWithExtension->clientExtension();
+            $destinationPath = storage_path('app/public/images/products/');
+            $img = Image::make($fileWithExtension->getRealPath())->resize(200, 200, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upSize();
+            });
+            $img->save($destinationPath . $filename, 85);
+            if ($product->thumbnail_image) {
+                Storage::disk('public')->delete('images/products/' . $product->thumbnail_image);
+            }
+            $product->thumbnail_image = $filename;
+        }
 
         $product->name = $request->name;
         $product->slug = Str::slug($request->name);
@@ -187,6 +221,7 @@ class ProductController extends Controller
         $product->stock = $request->stock;
         $product->sku = $request->sku;
         $product->descriptions = $request->descriptions;
+        $product->short_descriptions = $request->short_descriptions;
 
         if ($request->file('image')) {
             $medias = Media::where('model_id', $id)->where('model_type', Product::class)->get();
@@ -251,7 +286,7 @@ class ProductController extends Controller
         // foreach ($showcase_products as $showcase_product) {
         //     $showcase_product->delete();
         // }
-        if ($product->delete()) {
+        if ($product->delete()&& Storage::disk('public')->delete('images/products/' . $product->thumbnail_image)) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Deleted Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);

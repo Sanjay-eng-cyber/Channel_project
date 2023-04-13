@@ -94,6 +94,14 @@
                                     @endif
                                 </div>
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <label for="degree2">Thumbnail Image</label>
+                                    <input class="form-control" name="thumbnail_image" type="file" id="image" required>
+                                    @if ($errors->has('thumbnail_image'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('thumbnail_image') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="formGroupExampleInput" class="">MRP</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Mrp" required name="mrp" value="{{ old('mrp') }}">
@@ -124,6 +132,14 @@
                                         placeholder="Enter SKU" required name="sku" value="{{ old('sku') }}">
                                     @if ($errors->has('sku'))
                                         <div class="text-danger" role="alert">{{ $errors->first('sku') }}</div>
+                                    @endif
+                                </div>
+
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <label for="formGroupExampleInput" class="">Short Descriptions</label>
+                                   <textarea name="short_descriptions" rows="5" cols="50" class="form-control"minlength="3" maxlength="120" required>{{old('short_descriptions')}}</textarea>
+                                    @if ($errors->has('short_descriptions'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('short_descriptions') }}</div>
                                     @endif
                                 </div>
 
@@ -189,7 +205,7 @@
                                 </div>
                                 <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 mb-3">
                                     <label for="descriptions">Description</label>
-                                    <textarea id="team-about" name="descriptions">{{ old('descriptions') }}</textarea>
+                                    <textarea id="team-about" name="descriptions" >{{ old('descriptions') }}</textarea>
                                     @if ($errors->has('descriptions'))
                                         <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
                                         </div>
