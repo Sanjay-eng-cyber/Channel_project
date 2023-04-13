@@ -20,10 +20,10 @@
         <div class="container">
 
             <div class="row d-flex justify-content-center">
-                <h4 class="main-head text-red text-center py-3">Wishes Do Come True </h4>
+                <h4 class="main-head text-red text-center py-2">Wishes Do Come True </h4>
                 <div class="col-sm-9">
                     <form action="" method="post">
-                        <div class="input-group py-3">
+                        <div class="input-group py-1">
                             <input type="text" class="form-control serch-border" placeholder="" aria-label="Recipient's username"
                                 aria-describedby="basic-addon2">
                                 <button type="submit" class="search-icon-dd serch-border">
@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <div class="row py-4">
+            <div class="row py-3">
                 <div class="d-flex justify-content-center wishlist-main">
                     <div class="col-sm-8 wishlist-main-out">
                         <div class="row wishlist-main-in">
@@ -72,7 +72,7 @@
             </div>
 
 
-            <div class="row py-4">
+            <div class="row py-3">
                 <div class="d-flex justify-content-center wishlist-main">
                     <div class="col-sm-8 wishlist-main-out">
                         <div class="row wishlist-main-in">

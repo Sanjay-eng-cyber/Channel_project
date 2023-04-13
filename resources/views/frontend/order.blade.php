@@ -16,7 +16,7 @@
         </nav>
     </div>
 </section>
-    <section style="padding:30px 0px 50px 0px">
+    <section style="padding:0px 0px 50px 0px">
         <div class="container">
             <div class="row d-flex justify-content-center">
 
