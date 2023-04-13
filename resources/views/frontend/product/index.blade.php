@@ -32,7 +32,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="d-flex gap-3 align-items-baseline">
+                        {{-- <div class="d-flex gap-3 align-items-baseline">
                             <div>For</div>
                             <div class="pro-radio-btn">
                                 <input type="radio" class="btn-check" name="options" id="option01" autocomplete="off">
@@ -43,7 +43,7 @@
                                 <label class="btn" for="option02">Her</label>
                             </div>
 
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 

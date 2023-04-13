@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('sub_category_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('slug');
+            $table->text('short_descriptions')->nullable();
             $table->text('descriptions')->nullable();
             $table->string('thumbnail_image')->nullable();
             $table->float('mrp');
