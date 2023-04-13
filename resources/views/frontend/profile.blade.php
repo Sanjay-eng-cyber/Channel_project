@@ -7,20 +7,19 @@
 
     <x-frontend.profile-nav image="https://via.placeholder.com/300" name="{{ $user->first_name }}" />
 
-    <section class="my-1">
+        <section class="my-1">
             <div class="container">
-              <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" class="bread-/a></li>
-                    <li class="breadcrumb-item bread-crum" aria-current="page">My Profile</li>
-                  </ol>
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" class="bread-crum">Profile</a></li>
+                    <li class="breadcrumb-item bread-crum" aria-current="page">My profile</li>
+                </ol>
                 </nav>
             </div>
-    </section>
-
+        </section>
     <section>
         <div class="container">
-            <div class="row py-5 d-flex justify-content-center">
+            <div class="row py-2 d-flex justify-content-center">
                 <div class="col-12 col-lg-6 ">
                     <form class="p-4 profile-form-border" action="{{ route('frontend.profile.update') }}" method="post">
                         <h5 class="main-head text-red">Personal Information</h5>
@@ -124,11 +123,12 @@
                     </form> --}}
                 </div>
 
-                <div class="col-12 col-lg-4 py-5 py-lg-0 py-xl-0 py-xxl-0">
+                <div class="col-12 col-lg-4">
 
                     @forelse($userAddresses->get() as $key => $userAddress)
                         <div class="profile-form-border p-4 mb-3">
-                            <div class="row display: flex; align-items: center">
+                            <div class="row">
+
                                 <div class="col-6 py-2">
                                     <h5 class="main-head text-red">Address {{ $key + 1 }}</h5>
                                 </div>
@@ -164,6 +164,7 @@
                                         {{ $userAddress->country }} - {{ $userAddress->postal_code }}
                                     </span>
                                 </div>
+
                             </div>
                         </div>
                     @empty
