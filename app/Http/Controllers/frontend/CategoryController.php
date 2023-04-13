@@ -18,7 +18,7 @@ class CategoryController extends Controller
     {
         $category = Category::where('slug', $catSlug)->firstOrFail();
         $products = $category->products();
-        $products = $products->get();
-        dd($products);
+        $products = $products->latest()->paginate(10);
+        return view('frontend.product.index',compact('products','category'));
     }
 }

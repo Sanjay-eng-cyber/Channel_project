@@ -100,7 +100,7 @@
 
                             <div class="product-show-grid">
 
-                                @for ($i = 0; $i <= 10; $i++)
+                                @forelse ($products as $pro)
                                     <div class=" product-show-grid-card ">
                                         <div class="product-card-img">
                                             <button class="btn wishlist">
@@ -111,17 +111,18 @@
                                                     <span class="tool-tip-text">Add to wishlist</span>
                                                 </span>
                                             </button>
-                                            <img src="https://via.placeholder.com/300" alt="...">
+                                            <img src="{{ asset('storage/images/products/' . $pro->thumbnail_image) }}"
+                                                alt="...">
                                         </div>
                                         <div class="card-body">
                                             <h4 class="card-title font-head fw-bold">
-                                                Essence Long Lasting Eye care Pencil
+                                                {{ $pro->name }}
                                             </h4>
                                             <small class="text-muted">
-                                                Intense & Long-lasting
+                                                {{ $pro->short_descriptions }}
                                             </small>
                                             <div class="price">
-                                                ₹2,707 <s class="text-danger">₹4,509</s>
+                                                {{ $pro->mrp }} <s class="text-danger">{{ $pro->final_price }}</s>
                                             </div>
                                             <div class="buttons">
                                                 <a href="#" class="btn btn-orange">
@@ -133,46 +134,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class=" product-show-grid-card ">
-                                        <div class="product-card-img">
-                                            <button class="btn wishlist">
-                                                <span class="has-tool-tip">
-                                                    <span class="icon">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                    </span>
-                                                    <span class="tool-tip-text">Add to wishlist</span>
-                                                </span>
-                                            </button>
-                                            <img src="https://via.placeholder.com/300" alt="...">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title font-head fw-bold">
-                                                Essence Long Lasting Eye care Pencil
-                                            </h4>
-                                            <small class="text-muted">
-                                                Intense & Long-lasting
-                                            </small>
-                                            <div class="price">
-                                                ₹2,707 <s class="text-danger">₹4,509</s>
-                                            </div>
-                                            <div class="buttons">
-                                                <a href="#" class="btn btn-orange">
-                                                    Shop now
-                                                </a>
-                                                <a href="javascript:void(0)" class="btn btn-outline-pink ">
-                                                    <i class="fa-solid fa-check"></i> Added
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endfor
 
+                                @empty
+                                @endforelse
+                            </div>
+                            <div class="d-flex justify-content-center mt-4">
+                                {{ $products->onEachSide(1)->links('pagination::bootstrap-4') }}
                             </div>
 
 
                         </div>
 
-                        <div id="__skinlatest">
+                        {{-- <div id="__skinlatest">
                             <div class="product-show-grid">
 
                                 @for ($i = 0; $i <= 10; $i++)
@@ -244,10 +217,10 @@
 
                             </div>
 
-                        </div>
+                        </div> --}}
 
 
-                        <div id="__skinbestseller">
+                        {{-- <div id="__skinbestseller">
                             <div class="product-show-grid">
 
                                 @for ($i = 0; $i <= 10; $i++)
@@ -319,7 +292,7 @@
 
                             </div>
 
-                        </div>
+                        </div> --}}
 
 
 
