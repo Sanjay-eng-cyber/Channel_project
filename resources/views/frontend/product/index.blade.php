@@ -68,11 +68,10 @@
                             <select class="form-select form-select-lg mb-3 top-product-des"
                                 aria-label=".form-select-lg example" style="font-size: 16px">
                                 <option selected class="top-product-text">Featured</option>
-                                <option value="1" class="top-product-text">Best selling</option>
-                                <option value="2" class="top-product-text">A to A</option>
-                                <option value="3" class="top-product-text">under 100</option>
-                                <option value="3" class="top-product-text">under 200</option>
-                                <option value="3" class="top-product-text">under 300</option>
+                                <option value="1" class="top-product-text">Price: Low to High</option>
+                                <option value="2" class="top-product-text">Price: High to Low</option>
+                                <option value="3" class="top-product-text">Avg. Customer Review</option>
+                                <option value="3" class="top-product-text">Newest Arrivals</option>
                             </select>
                         </div>
                     </div>
@@ -86,14 +85,14 @@
             <div class="row">
                 <div class="col-sm-12">
 
-                    <div class="mt-producttabs style2 wow fadeInUp p-0" data-wow-delay="0.6s">
+                    {{-- <div class="mt-producttabs style2 wow fadeInUp p-0" data-wow-delay="0.6s">
 
                         <ul class="producttabs pro-slidetab">
                             <li><a href="#__skincare" class="active">Skin Care</a></li>
                             <li><a href="#__skinlatest">Latest</a></li>
                             <li><a href="#__skinbestseller">Best Seller</a></li>
                         </ul>
-                    </div>
+                    </div> --}}
 
                     <div class="tab-content">
 
