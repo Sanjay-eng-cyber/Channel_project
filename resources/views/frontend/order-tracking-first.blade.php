@@ -20,7 +20,7 @@
 
     <section>
         <div class="container">
-            <div class="row py-5 ">
+            <div class="row py-3">
                 <div class="col-12 col-lg-6">
                     <div class="order-track-border Scriptcontent p-4 ">
 
@@ -139,32 +139,36 @@
 
                     <div class="py-3"></div>
 
-                    <div class="profile-form-border ship-channel p-4">
-                        <div class="row row-cols-sm-3 row-cols-1">
-                            <div class="col fw-bolder d-flex justify-content-center justify-content-sm-start py-3 py-sm-0"
-                                style="font-size: 15px">
-                                Shipped With<br />
-                                Channel
 
-                            </div>
 
-                            <div class="col fw-bolder d-flex justify-content-center py-3 py-sm-0" style="font-size: 15px">
-                                Tracking ID:<br />
+                    <div class="ship-channel-grid profile-form-border p-3">
+                        <div class="ship-tab1">
+                           <strong>
+                            Shipped With
+                            Channel
+                           </strong>
+                        </div>
+                        <div>
+                            |
+                        </div>
+                        <div class="ship-tab1">
+                            <strong>
+                                Tracking ID:
                                 323021498947
-
-                            </div>
-
-                            <div class="col fw-bolder d-flex justify-content-center justify-content-sm-end py-3 py-sm-0"
-                                style="font-size: 15px">
-                                <a href="http://" class="">
-                                    Request
-                                    Cancelation
-                                </a>
-                            </div>
-
-
+                            </strong>
+                        </div>
+                        <div>
+                            |
+                        </div>
+                        <div class="ship-tab1">
+                          <strong>
+                            Request
+                            Cancelation
+                          </strong>
                         </div>
                     </div>
+
+
 
                     <div class="py-3"></div>
 

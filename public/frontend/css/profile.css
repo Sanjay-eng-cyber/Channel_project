@@ -333,6 +333,13 @@
 /* end wishlist  page */
 
 /* order page  */
+.ship-channel-grid{
+    display: flex;
+    justify-content: space-between;
+}
+.ship-tab1 strong{
+    font-size: 14px;
+}
 
 .grid-tab-order{
     display: grid;
