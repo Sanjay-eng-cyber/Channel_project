@@ -130,7 +130,8 @@
                         <div id="skincare">
                             <!-- tabs slider start here -->
                             <div class="skin-sliderlg">
-                                @for ($i = 1; $i < 7; $i++)
+                                {{-- @for ($i = 1; $i < 7; $i++) --}}
+                                @foreach ($skinProducts as $p)
                                     <!-- slide start here -->
                                     <div class="slide  skin-slide">
                                         <!-- mt product1 large start here -->
@@ -138,30 +139,26 @@
                                             <div class="box skin-box">
                                                 <div class="b1">
                                                     <div class="b2">
-                                                        <a href="{{ route('products.show', 'product-name') }}"><img
+                                                        <a href="{{ route('products.show', $p->slug) }}"><img
                                                                 src="frontend/images/products/skin/sk2.png"
                                                                 alt="image description"></a>
 
                                                         <button type="button" class="like-btn-skin btn">
                                                             <i class="far fa-heart"></i>
                                                         </button>
-
                                                         <ul class="links skin-text-desc py-2 px-3">
                                                             <div class="card-title  m-0 text-center pro-head ">
-                                                                <h4 class=""> Zara Best Perfumes</h4>
+                                                                <h4 class="">{{ $p->name }}</h4>
                                                             </div>
-                                                            <p class="card-text text-center">
-                                                                treat yourself with the best in skincare
+                                                            <p class="card-text text-center">{{ $p->short_decriptions }}
                                                             </p>
 
 
                                                             <button type="button" class="btn btn-light sk-btn">
                                                                 <a href="" class="p-0  text-black">
-                                                                    Shop Nov
+                                                                    Shop Now
                                                                 </a>
                                                             </button>
-
-
                                                             </a>
                                                         </ul>
 
@@ -171,7 +168,8 @@
 
                                         </div><!-- mt product1 center end here -->
                                     </div>
-                                @endfor
+                                @endforeach
+                                {{-- @endfor --}}
                             </div>
                             <!-- tabs slider end here -->
                         </div>
@@ -179,7 +177,8 @@
                         <div id="skinlatest">
                             <!-- tabs slider start here -->
                             <div class="skin-sliderlg">
-                                @for ($i = 1; $i < 7; $i++)
+                                {{-- @for ($i = 1; $i < 7; $i++) --}}
+                                @foreach ($latestSkinProducts as $p)
                                     <!-- slide start here -->
                                     <div class="slide skin-slide">
                                         <!-- mt product1 large start here -->
@@ -190,20 +189,15 @@
                                                         <a href="{{ route('products.show', 'product-name') }}"><img
                                                                 src="frontend/images/products/skin/sk1.png"
                                                                 alt="image description"></a>
-
                                                         <button type="button" class="like-btn-skin btn">
                                                             <i class="far fa-heart"></i>
                                                         </button>
-
                                                         <ul class="links skin-text-desc py-2 px-3">
                                                             <div class="card-title  m-0 text-center pro-head ">
-                                                                <h4 class=""> Zara Best Perfumes</h4>
+                                                                <h4 class="">{{ $p->name }}</h4>
                                                             </div>
-                                                            <p class="card-text text-center">
-                                                                treat yourself with the best in skincare
+                                                            <p class="card-text text-center">{{ $p->short_description }}
                                                             </p>
-
-
                                                             <button type="button" class="btn btn-light sk-btn">
                                                                 <a href="" class="p-0  text-black">
                                                                     Shop Nov
@@ -219,7 +213,8 @@
 
                                         </div><!-- mt product1 center end here -->
                                     </div>
-                                @endfor
+                                    {{-- @endfor --}}
+                                @endforeach
                             </div>
                             <!-- tabs slider end here -->
                         </div>
@@ -272,13 +267,7 @@
                             </div>
                             <!-- tabs slider end here -->
                         </div>
-
-
-
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -303,7 +292,8 @@
                             <div id="fragrances">
                                 <!-- tabs slider start here -->
                                 <div class="fragrances">
-                                    @for ($i = 1; $i < 6; $i++)
+                                    {{-- @for ($i = 1; $i < 6; $i++) --}}
+                                    @foreach ($fragrancesProducts as $p)
                                         <!-- slide start here -->
                                         <div class="slide fragrances-slide">
                                             <!-- mt product1 large start here -->
@@ -314,29 +304,26 @@
                                                             <a href="{{ route('products.show', 'product-name') }}"><img
                                                                     src="frontend/images/products/fragrances/fg.png"
                                                                     class="img-slider" alt="image description"></a>
-
                                                             <ul class="links fragrances-text-desc">
                                                                 <div
                                                                     class="card-title card-text-heading m-0 text-center pro-head ">
-                                                                    Zara BEST PERFUMES
+                                                                    {{ $p->name }}
                                                                 </div>
                                                                 <p class="card-text text-center">
-                                                                    treat yourself with the best
-                                                                </p>
+                                                                    {{ $p->short_descriptions }}</p>
                                                                 <h5 class="text-center">
                                                                     <a href="#" class="p-0 main-head text-black">
                                                                         Shop Nov
                                                                     </a>
-
                                                                 </h5>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div><!-- mt product1 center end here -->
                                         </div>
-                                    @endfor
+                                    @endforeach
+                                    {{-- @endfor --}}
                                 </div>
                                 <!-- tabs slider end here -->
                             </div>
@@ -344,7 +331,8 @@
                             <div id="fragranceslatest">
                                 <!-- tabs slider start here -->
                                 <div class="fragrances ">
-                                    @for ($i = 1; $i < 6; $i++)
+                                    {{-- @for ($i = 1; $i < 6; $i++) --}}
+                                    @foreach ($latestFragrancesProducts as $p)
                                         <!-- slide start here -->
                                         <div class="slide fragrances-slide">
                                             <!-- mt product1 large start here -->
@@ -359,16 +347,15 @@
                                                             <ul class="links fragrances-text-desc">
                                                                 <div
                                                                     class="card-title card-text-heading m-0 text-center pro-head ">
-                                                                    Zara BEST PERFUMES
+                                                                    {{ $p->name }}
                                                                 </div>
                                                                 <p class="card-text text-center">
-                                                                    treat yourself with the best
+                                                                    {{ $p->short_descriptions }}
                                                                 </p>
                                                                 <h5 class="text-center">
                                                                     <a href="#" class="p-0 main-head text-black">
                                                                         Shop Nov
                                                                     </a>
-
                                                                 </h5>
                                                             </ul>
                                                         </div>
@@ -377,7 +364,8 @@
 
                                             </div><!-- mt product1 center end here -->
                                         </div>
-                                    @endfor
+                                    @endforeach
+                                    {{-- @endfor --}}
                                 </div>
                                 <!-- tabs slider end here -->
                             </div>
