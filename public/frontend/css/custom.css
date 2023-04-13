@@ -51,7 +51,9 @@ a:hover {
 .text-green {
     color: #1eba11;
 }
-
+.text-soft-green{
+    color: rgba(30, 186, 17, 1);
+}
 .btn-black {
     --bs-btn-color: #fff;
     --bs-btn-bg: #000;
@@ -210,6 +212,9 @@ a:hover {
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+}
+.serch-border{
+    border: 0.688636px solid rgba(0, 0, 0, 0.6);
 }
 
 .text-blue {
@@ -1611,8 +1616,8 @@ a:hover {
 
 .search-icon-dd{
    background-color: rgba(236, 38, 143, 0.4);
-   border: 1px solid #ced4da;
    padding: 0px 20px 0px 20px;
+   border-radius: 0px 8px 8px;
 }
 
 @media screen and (max-width:480px){
