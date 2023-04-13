@@ -16,7 +16,7 @@
     </div>
 </section>
 
-<section style="padding:20px 0px 65px 0px">
+<section style="padding:0px 0px 65px 0px">
     <div class="container">
         <div class="row d-flex justify-content-center">
 
