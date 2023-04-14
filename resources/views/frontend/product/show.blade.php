@@ -57,16 +57,14 @@
                         <!-- detial Holder of the Page -->
                         <div class="detial-holder">
                             <h1 class="h3 font-body">
-                                essence Long Lasting Eye Pencil
+                                {{$product->name}}
                             </h1>
                             <hr>
                             <p class="text-muted">
-                                essence Long Lasting Eye Pencil is a creamy and pigmented eye pencil that brightens and
-                                accentuates your eyes. It is easy to apply and provides a smooth feel thanks to its
-                                formulation. It is time to get creative with this retractable and long-lasting eye pencil!
+                                {{$product->short_descriptions}}
                             </p>
                             <h3 class="h5 font-body">
-                                From ₹145.55
+                                From {{$product->final_price}}
                             </h3>
                             <h4 class="font-body h5 text-green">
                                 <i class="fa-regular fa-circle-check"></i> in stock
@@ -80,6 +78,9 @@
                                         <select class="form-select" name="color-option" id="color-option" id="">
                                             <option value="choose an option" disabled selected> choose an option
                                             </option>
+                                            <option>Red</option>
+                                            <option>Green</option>
+                                            <option>Blue</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
@@ -110,26 +111,33 @@
                                         </a>
                                     </div>
                                     <h6 class="h5 font-body">
+                                        Description
+                                    </h6>
+                                    <ul class="ms-3 text-muted">
+                                        <li>
+                                           {{$product->descriptions}}
+                                        </li>
+                                    </ul>
+                                    {{-- <h6 class="h5 font-body">
                                         Main Ingredients
                                     </h6>
                                     <ul class="ms-3 text-muted">
                                         <li>
-                                            Tocopherol, also known as vitamin E, contributes to eyelash development;
+                                           dfskjsk k k fgkjfsg dfk fkj df sfj sd
                                         </li>
                                         <li>
-                                            Cyclopentasiloxane is a silicone that provides a smooth feel and comfortable
-                                            wear;
-                                        </li>
-                                        <li>
-                                            Lecithin moisturizes and protects the skin.
-                                        </li>
-                                    </ul>
-                                    <h6 class="h5 font-body">
+                                            dfskjsk k k fgkjfsg dfk fkj df sfj sd
+                                         </li>
+                                         <li>
+                                            dfskjsk k k fgkjfsg dfk fkj df sfj sd
+                                         </li>
+                                    </ul> --}}
+                                    {{-- <h6 class="h5 font-body">
                                         How to use
                                     </h6>
                                     <p class="text-muted">
                                         Apply essence Long Lasting Eye Pencil directly to the lash and waterline of the eye.
-                                    </p>
+                                    </p> --}}
                                 </div>
                             </form>
                             <div class="rating-holder">
@@ -345,7 +353,8 @@
                             <h5 class="main-head py-3 or-secondpage-scard-fhead">Recommended based on your purchase</h5>
                             <div class="row pt-3 pb-3 or-secondpage-scard-card">
                                 <div class="col-sm-4 or-secondpage-scard-card-img" style="">
-                                    <img src="{{asset('frontend/images/products/skin/sk1.png')}}" alt="" class="img-fluid">
+                                    <img src="{{ asset('frontend/images/products/skin/sk1.png') }}" alt=""
+                                        class="img-fluid">
                                 </div>
                                 <div class="col-sm-8 or-secondpage-scard-card-des pt-4 pt-sm-0 pt-md-0">
                                     <h4 class="main-head">Essence Long Lasting Eye Pencil</h4>
@@ -367,7 +376,6 @@
                                 Shopping</button>
                         </div>
                     </div>
-
                 </div>
             </div>
 

@@ -25,10 +25,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($productSlug)
     {
-        $product = Product::findOrFail($id);
-        dd( $product);
+        $product = Product::where('slug',$productSlug)->firstOrFail();
+        return view('frontend.product.show',compact('product'));
     }
 
     /**

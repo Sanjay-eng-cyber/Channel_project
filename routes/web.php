@@ -141,4 +141,5 @@ Route::domain(config('app.web_domain'))->group(function () {
     })->name('products.show');
 
     Route::get('/c/{slug}', 'App\Http\Controllers\frontend\CategoryController@show')->name('frontend.cat.show');
+    Route::get('/p/{slug}', 'App\Http\Controllers\frontend\ProductController@show')->name('frontend.p.show');
 });

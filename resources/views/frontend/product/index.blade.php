@@ -130,7 +130,7 @@
                                                 {{ $pro->mrp }} <s class="text-danger">{{ $pro->final_price }}</s>
                                             </div>
                                             <div class="buttons">
-                                                <a href="#" class="btn btn-orange">
+                                                <a href="{{route('frontend.p.show', $pro->slug)}}" class="btn btn-orange">
                                                     Shop now
                                                 </a>
                                                 <a href="#" class="btn btn-pink ">
