@@ -1022,3 +1022,48 @@ padding: 40px;
 }
 
 /* end gift card review */
+
+/* reviw show page inside profile */
+    .review-popup-ui{
+        position: relative;
+        isolation: isolate;
+    }
+    .review-popup-btn{
+        position: absolute;
+        right: 18px;
+         top: 10px;
+    }
+    .rv-show-section{
+        background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+}
+
+.rv-show-switch{
+        isolation: isolate;
+        position: relative;
+    }
+
+   .rv-show-switch .rv-show-side-switch {
+           position: absolute;
+                    right: 0px;
+                    bottom: 8px;
+                    z-index: 10;
+
+    }
+
+
+
+@media screen and (max-width:768px){
+    .rv-show-switch .rv-show-side-switch {
+    position: absolute;
+    right: 0px;
+    bottom: 8px;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
+}
+/* end reviw show page inside profile */
+

@@ -44,9 +44,9 @@
         </div>
 
         <div class="row d-flex justify-content-center rv-show-main">
-            {{-- <button type="button" class="btn-close" aria-label="Close"></button> --}}
 
-            <div class="col-sm-10">
+            <div class="col-sm-10 review-popup-ui">
+                <button type="button" class="btn-close review-popup-btn" aria-label="Close" data-bs-toggle="modal" data-bs-target="#review-popup"></button>
                 <div class="row rv-show-section p-3">
                   <div class="col-12 col-xl-3 rv-show-img">
                         <div class="review-first-subsection-img">
@@ -96,39 +96,27 @@
 
 @include('frontend.not-found')
 
+<div class="modal fade auth-popup" id="review-popup" tabindex="-1" aria-labelledby="loginPopupLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
 
+                <div class="modal-body" style="overflow:hidden;">
+                    <button class="auth-popup-close-button mb-4" type="button" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <img src="{{ url('frontend/images/icons/icon-close.svg') }}" style="width: 51px;"
+                            alt="">
+                    </button>
+
+                    <div class="auth-popup-body" v-if="!requested">
+                       <img src="{{asset('frontend/images/popup/review-show.png')}}" class="img-fluid m-auto" alt="" srcset="" style="width:210px">
+                        <h4 class="dispaly-6 main-head text-black mt-3 mb-2">Are You Sure!</h4>
+                        <div class="d-flex justify-content-evenly my-4">
+                            <button type="button" class="btn btn-lightpink px-4 btn-lg">Yes</button>
+                            <button type="button" class="btn btn-pink px-4 btn-lg">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
 @endsection
-<style>
-    .rv-show-section{
-        background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-
-}
-
-.rv-show-switch{
-        isolation: isolate;
-        position: relative;
-    }
-
-   .rv-show-switch .rv-show-side-switch {
-           position: absolute;
-                    right: 0px;
-                    bottom: 8px;
-                    z-index: 10;
-
-    }
-
-
-
-@media screen and (max-width:768px){
-    .rv-show-switch .rv-show-side-switch {
-    position: absolute;
-    right: 0px;
-    bottom: 8px;
-    z-index: 10;
-    transform: translate(-50%, -50%);
-}
-
-}
-</style>
