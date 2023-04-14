@@ -149,7 +149,7 @@
                                         @endif
                                         @if ($userAddress->type != 'primary')
                                             <li>
-                                                <a href="{{route('frontend.address.delete',$userAddress->id)}}">
+                                                <a href="{{route('frontend.address.delete',$userAddress->id)}}" data-bs-toggle="modal" data-bs-target="#trashbtn">
                                                     <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
                                                 </a>
                                             </li>
@@ -265,4 +265,28 @@
 
 
     </section>
+
+    <div class="modal fade auth-popup" id="trashbtn" tabindex="-1" aria-labelledby="loginPopupLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+
+                    <div class="modal-body" style="overflow:hidden;">
+                        <button class="auth-popup-close-button mb-4" type="button" data-bs-dismiss="modal"
+                            aria-label="Close">
+                            <img src="{{ url('frontend/images/icons/icon-close.svg') }}" style="width: 51px;"
+                                alt="">
+                        </button>
+
+                        <div class="auth-popup-body" v-if="!requested">
+                           <img src="{{asset('frontend/images/popup/popup-sure.png')}}" class="img-fluid m-auto" alt="" srcset="" style="width:267px">
+                            <h4 class="dispaly-6 main-head text-black mt-3 mb-2">Are You Sure !</h4>
+                            <div class="d-flex justify-content-evenly my-4">
+                                <button type="button" class="btn btn-lightpink px-4 btn-lg">Yes</button>
+                                <button type="button" class="btn btn-pink px-4 btn-lg">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
 @endsection
