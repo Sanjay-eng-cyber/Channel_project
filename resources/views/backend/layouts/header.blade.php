@@ -1,4 +1,8 @@
-<link rel="shortcut icon" href="{{ asset('backend/images/favicon.png') }}" type="image/x-icon">
+<link href="{{ url('frontend/images/favicon.png') }}" rel="shortcut icon" type="image/x-icon">
+<link href="{{ url('frontend/images/favicon.png') }}" rel="apple-touch-icon" sizes="144x144">
+<link href="{{ url('frontend/images/favicon.png') }}" rel="apple-touch-icon" sizes="114x114">
+<link href="{{ url('frontend/images/favicon.png') }}" rel="apple-touch-icon" sizes="72x72">
+<link href="{{ url('frontend/images/favicon.png') }}" rel="apple-touch-icon">
 <link href="backend/assets/css/loader.css" rel="stylesheet" type="text/css" />
 <script src="backend/assets/js/loader.js"></script>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
