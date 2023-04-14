@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.svg" />
     <title>Login - {{ config('app.name') }}</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="backend/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -25,7 +24,6 @@
         .body-bg {
             background: linear-gradient(180deg, rgba(0, 175, 239, 0.0145) 0%, rgba(0, 175, 239, 0.29) 100%);
             background-repeat: no-repeat;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -37,10 +35,12 @@
             background-color: #EC268F;
             border-radius: 12.666px;
             color: white;
-            transition: none; /* Remove default transition effect */
+            transition: none;
+            /* Remove default transition effect */
 
         }
-        .bg-pink-color:hover{
+
+        .bg-pink-color:hover {
             background-color: transparent;
             color: #EC268F;
             border: 2px solid #EC268F;
@@ -59,8 +59,8 @@
     <div class="container ">
 
         <div class="auth-form px-2 mx-auto" style="max-width:550px;">
-            <img class="d-block mx-auto " style="max-width:47%"
-                src="{{ asset('backend/images/channel-logo.svg') }}" alt="">
+            <img class="d-block mx-auto " style="max-width:47%" src="{{ asset('backend/images/channel-logo.svg') }}"
+                alt="">
             <h1 class="text-center h2 mt-5 auth-text-primary cubold text-cl">Login</h1>
             <form method="POST" action="{{ route('cms.login.submit') }}">
                 @csrf
