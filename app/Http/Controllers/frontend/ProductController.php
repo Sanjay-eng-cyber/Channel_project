@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Review;
 
 class ProductController extends Controller
 {
@@ -28,7 +29,8 @@ class ProductController extends Controller
     public function show($productSlug)
     {
         $product = Product::where('slug',$productSlug)->firstOrFail();
-        return view('frontend.product.show',compact('product'));
+        $reviews = $product->review()->latest()->paginate(5);
+        return view('frontend.product.show',compact('product','reviews'));
     }
 
     /**

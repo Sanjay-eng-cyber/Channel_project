@@ -57,14 +57,14 @@
                         <!-- detial Holder of the Page -->
                         <div class="detial-holder">
                             <h1 class="h3 font-body">
-                                {{$product->name}}
+                                {{ $product->name }}
                             </h1>
                             <hr>
                             <p class="text-muted">
-                                {{$product->short_descriptions}}
+                                {{ $product->short_descriptions }}
                             </p>
                             <h3 class="h5 font-body">
-                                From {{$product->final_price}}
+                                From {{ $product->final_price }}
                             </h3>
                             <h4 class="font-body h5 text-green">
                                 <i class="fa-regular fa-circle-check"></i> in stock
@@ -74,7 +74,7 @@
                                     Select a color * :
                                 </label>
                                 <div class="row">
-                                    <div class="col-12 col-md-6 mb-3">
+                                    {{-- <div class="col-12 col-md-6 mb-3">
                                         <select class="form-select" name="color-option" id="color-option" id="">
                                             <option value="choose an option" disabled selected> choose an option
                                             </option>
@@ -82,8 +82,8 @@
                                             <option>Green</option>
                                             <option>Blue</option>
                                         </select>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-3">
+                                    </div> --}}
+                                    {{-- <div class="col-12 col-md-6 mb-3">
                                         <div class="qty-counter">
                                             <label for="qty">
                                                 qty
@@ -94,20 +94,20 @@
                                                 <span class="input-group-text">+</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="d-flex justify-content-around flex-wrap my-3">
                                         <button class="btn btn-primary btn-pink">
-                                            add to cart
+                                            Add To Cart
                                         </button>
 
                                         <button class="btn btn-primary btn-black">
-                                            buy now
+                                            Buy Now
                                         </button>
 
                                         <a class="btn text-red">
 
                                             <i class="fa-regular fa-heart"></i>
-                                            add to Wishlist
+                                            Add To Wishlist
                                         </a>
                                     </div>
                                     <h6 class="h5 font-body">
@@ -115,7 +115,7 @@
                                     </h6>
                                     <ul class="ms-3 text-muted">
                                         <li>
-                                           {{$product->descriptions}}
+                                            {{ $product->descriptions }}
                                         </li>
                                     </ul>
                                     {{-- <h6 class="h5 font-body">
@@ -233,91 +233,83 @@
                             <h4 class="font-body mb-3">
                                 Customer reviews
                             </h4>
-                            <div class="review-area">
-                                <div class="review-card ">
-                                    <div class="d-flex align-items-center">
+                            @forelse ($reviews as $re)
+                                <div class="review-area">
+                                    <div class="review-card ">
+                                        <div class="d-flex align-items-center">
 
-                                        <div class="review-user">
-                                            <img src="https://via.placeholder.com/150" alt="">
-                                        </div>
-                                        <div class="">
-                                            <div class="d-flex review-head">
-                                                <div class="five-stars text-green d-flex">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-regular fa-star"></i>
+                                            <div class="review-user">
+                                                <img src="https://via.placeholder.com/150" alt="">
+                                            </div>
+                                            <div class="">
+                                                <div class="d-flex review-head">
+                                                    <div class="five-stars text-green d-flex">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                    </div>
+                                                    <div class="review-title">
+                                                        <h5 class="font-body">
+                                                           {{$re->title}}
+                                                        </h5>
+                                                    </div>
                                                 </div>
-                                                <div class="review-title">
-                                                    <h5 class="font-body">
-                                                        very good purchase
-                                                    </h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="review-content">
+
+                                            <div class="review-text">
+                                                <p>
+                                                   {{$re->body}}
+                                                </p>
+                                            </div>
+                                            <div class="review-gallery d-flex">
+                                                <div class="review-gallery-item me-2">
+                                                    <img src="https://via.placeholder.com/600" class="rounded-4"
+                                                        alt="">
+                                                </div>
+                                                <div class="review-gallery-item me-2">
+                                                    <img src="https://via.placeholder.com/600" class="rounded-4"
+                                                        alt="">
+                                                </div>
+                                                <div class="review-gallery-item me-2">
+                                                    <img src="https://via.placeholder.com/600" class="rounded-4"
+                                                        alt="">
+                                                </div>
+                                                <div class="review-gallery-item me-2">
+                                                    <img src="https://via.placeholder.com/600" class="rounded-4"
+                                                        alt="">
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="review-content">
-
-                                        <div class="review-text">
-                                            <p>
-                                                I use this long stay intense kajal first time, it is very good black preal
-                                                kajal,
-                                                it's
-                                                water proof, smudge proof
-                                                long lasting, and dark shiny black. It's made by sunflower seeds oil and
-                                                vitamin
-                                                E,
-                                                I'm very happy after using
-                                                this product.
-                                            </p>
-                                            <p>
-                                                It gives bold look in eyes and make eyes more beautiful. Totally satisfied
-                                                with
-                                                this
-                                                eyes friendly product
-                                            </p>
-                                        </div>
-                                        <div class="review-gallery d-flex">
-                                            <div class="review-gallery-item me-2">
-                                                <img src="https://via.placeholder.com/600" class="rounded-4"
-                                                    alt="">
-                                            </div>
-                                            <div class="review-gallery-item me-2">
-                                                <img src="https://via.placeholder.com/600" class="rounded-4"
-                                                    alt="">
-                                            </div>
-                                            <div class="review-gallery-item me-2">
-                                                <img src="https://via.placeholder.com/600" class="rounded-4"
-                                                    alt="">
-                                            </div>
-                                            <div class="review-gallery-item me-2">
-                                                <img src="https://via.placeholder.com/600" class="rounded-4"
-                                                    alt="">
-                                            </div>
-                                        </div>
-                                        <div class="review-info text-muted d-flex flex-wrap justify-content-between">
-                                            <div class="py-2">
-                                                Kiran22
-                                                <i class="fa-solid fa-star text-warning"></i>
-                                                | June 2020
-                                            </div>
-                                            <div class="py-2">
-                                                <button class="text-muted p-0 btn">
-                                                    <i class="fa-solid fa-thumbs-up"></i>
-                                                    200
-                                                </button>
-                                                |
-                                                <button class="text-muted p-0 btn">
-                                                    <i class="fa-solid fa-thumbs-down"></i>
-                                                    10
-                                                </button>
+                                            <div class="review-info text-muted d-flex flex-wrap justify-content-between">
+                                                <div class="py-2">
+                                                    Kiran22
+                                                    <i class="fa-solid fa-star text-warning"></i>
+                                                    | June 2020
+                                                </div>
+                                                <div class="py-2">
+                                                    <button class="text-muted p-0 btn">
+                                                        <i class="fa-solid fa-thumbs-up"></i>
+                                                        200
+                                                    </button>
+                                                    |
+                                                    <button class="text-muted p-0 btn">
+                                                        <i class="fa-solid fa-thumbs-down"></i>
+                                                        10
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @empty
+                            @endforelse
+                        </div>
+                        <div class="d-flex justify-content-center mt-4">
+                            {{ $reviews->onEachSide(1)->links('pagination::bootstrap-4') }}
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-12">
