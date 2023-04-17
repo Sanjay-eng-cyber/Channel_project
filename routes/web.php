@@ -98,9 +98,14 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.review-show');
     })->name('review-show');
 
+
     Route::get('/gift-card', function () {
         return view('frontend.gift-card');
     })->name('gift-card');
+
+    Route::get('/gift-card-index', function () {
+        return view('frontend.gift-card-index');
+    })->name('gift-card-index');
 
     Route::get('/profile-payment-method', function () {
         return view('frontend.inside-profile-payment-method');
