@@ -26,7 +26,7 @@
                                 <i class="fas fa-map-marker-alt text-red"></i>
                             </li>
                             <li>
-                                Exercitation ullamco laboris nisi ut aliquip excommodo consequat. Duis aute irure
+                                    Shop No. 5 & 6, Sunview Apartment, Tilak Nagar, Chembur (West), Mumbai - 400089.
                             </li>
                         </ul>
                         <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
@@ -34,7 +34,7 @@
                                 <i class="fas fa-phone  text-red"></i>
                             </li>
                             <li>
-                                Exercitation ullamco laboris
+                                <a href="tel:+917710062724">+91-7710062724</a>
                             </li>
                         </ul>
                         <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
@@ -49,7 +49,7 @@
                         <ul class="list-unstyled contact-mobile-version">
                             <li class="gap-2 d-flex align-items-center">
                                 <i class="fas fa-phone  text-red"></i>
-                                12345678910
+                                <a href="tel:+917710062724">+91-7710062724</a>
                             </li>
 
                             <li class="gap-2 d-flex align-items-center">
