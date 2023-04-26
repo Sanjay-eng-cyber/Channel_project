@@ -168,7 +168,7 @@ code {
   max-width: 58.333333%;
   margin-left: 80px; }
 
-/* 
+/*
 =====================
     Navigation Bar
 =====================
@@ -786,7 +786,7 @@ code {
       color: #56478e;
       fill: rgba(86, 71, 142, 0.34); }
 
-/* 
+/*
 ===============
     Sidebar
 ===============
@@ -970,11 +970,11 @@ code {
     width: 24px;
     height: 24px;
     stroke-width: 1px;
-    fill: rgba(172, 176, 195, 0.25);
+    fill:#888ea8;
     transition: all .2s ease-in-out; }
   #sidebar ul.menu-categories li.menu > .dropdown-toggle[aria-expanded="true"] svg {
     color: #fff;
-    fill: rgba(136, 142, 168, 0.278431);
+    fill: #fff;
     stroke-width: 2px; }
   #sidebar ul.menu-categories li.menu > .dropdown-toggle[aria-expanded="true"] span {
     color: #fff;
@@ -1206,7 +1206,7 @@ code {
   -webkit-animation-name: e-fadeInUp;
   animation-name: e-fadeInUp; }
 
-/*  
+/*
     ======================
         Footer-wrapper
     ======================
@@ -1240,7 +1240,7 @@ code {
   height: 15px;
   vertical-align: text-top; }
 
-/*  
+/*
     ======================
         MEDIA QUERIES
     ======================
