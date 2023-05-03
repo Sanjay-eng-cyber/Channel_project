@@ -139,7 +139,7 @@
                                             <div class="box skin-box">
                                                 <div class="b1">
                                                     <div class="b2">
-                                                        <a href="{{ route('products.show', $p->slug) }}"><img
+                                                        <a href="{{ route('frontend.p.show', $p->slug) }}"><img
                                                                 src="frontend/images/products/skin/sk2.png"
                                                                 alt="image description"></a>
 
@@ -186,7 +186,7 @@
                                             <div class="box skin-box">
                                                 <div class="b1">
                                                     <div class="b2">
-                                                        <a href="{{ route('products.show', 'product-name') }}"><img
+                                                        <a href="{{ route('frontend.p.show', 'product-name') }}"><img
                                                                 src="frontend/images/products/skin/sk1.png"
                                                                 alt="image description"></a>
                                                         <button type="button" class="like-btn-skin btn">
@@ -231,7 +231,7 @@
                                             <div class="box skin-box">
                                                 <div class="b1">
                                                     <div class="b2">
-                                                        <a href="{{ route('products.show', 'product-name') }}"><img
+                                                        <a href="{{ route('frontend.p.show', 'product-name') }}"><img
                                                                 src="frontend/images/products/skin/sk2.png"
                                                                 alt="image description"></a>
 
@@ -301,7 +301,7 @@
                                                 <div class="box fragrances-box">
                                                     <div class="b1">
                                                         <div class="b2">
-                                                            <a href="{{ route('products.show', 'product-name') }}"><img
+                                                            <a href="{{ route('frontend.p.show', 'product-name') }}"><img
                                                                     src="frontend/images/products/fragrances/fg.png"
                                                                     class="img-slider" alt="image description"></a>
                                                             <ul class="links fragrances-text-desc">
@@ -340,7 +340,7 @@
                                                 <div class="box fragrances-box">
                                                     <div class="b1">
                                                         <div class="b2">
-                                                            <a href="{{ route('products.show', 'product-name') }}"><img
+                                                            <a href="{{ route('frontend.p.show', 'product-name') }}"><img
                                                                     src="frontend/images/products/fragrances/fg.png"
                                                                     class="img-slider" alt="image description"></a>
 
@@ -381,7 +381,7 @@
                                                 <div class="box fragrances-box">
                                                     <div class="b1">
                                                         <div class="b2">
-                                                            <a href="{{ route('products.show', 'product-name') }}"><img
+                                                            <a href="{{ route('frontend.p.show', 'product-name') }}"><img
                                                                     src="frontend/images/products/fragrances/fg.png"
                                                                     class="img-slider" alt="image description"></a>
 

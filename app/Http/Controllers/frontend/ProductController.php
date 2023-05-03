@@ -28,9 +28,10 @@ class ProductController extends Controller
      */
     public function show($productSlug)
     {
-        $product = Product::where('slug',$productSlug)->firstOrFail();
+        $product = Product::where('slug', $productSlug)->firstOrFail();
         $reviews = $product->review()->latest()->paginate(5);
-        return view('frontend.product.show',compact('product','reviews'));
+        // dd($product);
+        return view('frontend.product.show', compact('product', 'reviews'));
     }
 
     /**
