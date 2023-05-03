@@ -13,7 +13,7 @@
         <div class="container mb-5">
             <div class="row mt-5">
                 <div class="col-lg-5 col-xl-4">
-                    <h2 class="main-head text-red">Best In Skin Products</h2>
+                    <h2 class="main-head text-red">Best In {{ $category->name }} Products</h2>
                 </div>
                 <div class="col-lg-7 col-xl-5 ">
                     <div class="d-flex gap-4 justify-content-between flex-column flex-sm-row my-4 my-lg-0">
@@ -130,7 +130,7 @@
                                                 {{ $pro->mrp }} <s class="text-danger">{{ $pro->final_price }}</s>
                                             </div>
                                             <div class="buttons">
-                                                <a href="{{route('frontend.p.show', $pro->slug)}}" class="btn btn-orange">
+                                                <a href="{{ route('frontend.p.show', $pro->slug) }}" class="btn btn-orange">
                                                     Shop now
                                                 </a>
                                                 <a href="#" class="btn btn-pink ">

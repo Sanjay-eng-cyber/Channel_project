@@ -1,9 +1,10 @@
    <!-- mt header style3 start here -->
    <header id="mt-header" class="style3 position-relative ">
 
-        <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute" style="width: 110px;right:0; top:0">
+       <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute"
+           style="width: 110px;right:0; top:0">
 
-        {{-- navbar header --}}
+       {{-- navbar header --}}
        <div class="mt-top-bar" style="background-color: white;color:black">
            <div class="container py-4">
                <div class="row">
@@ -61,30 +62,30 @@
 
 
                                <div class="navbar-nav d-inline d-lg-none text-start">
-                                <ul class="list-unstyled nav-dd-color">
-                                    <li class="nav-item dd-cl mt-3">
-                                        <a class="nav-link px-4" aria-current="page" href="#">HOME</a>
-                                    </li>
-                                    <li class="nav-item dd-cl">
-                                        <a class="nav-link px-4" href="#">SKIN</a>
-                                    </li>
-                                    <li class="nav-item dd-cl">
-                                        <a class="nav-link px-4" href="#">FRAGRANCES</a>
-                                    </li>
-                                    <li class="nav-item dd-cl">
-                                        <a class="nav-link px-4" href="#">HAIRCARE</a>
-                                    </li>
-                                    <li class="nav-item dd-cl">
-                                        <a class="nav-link px-4" href="#">PERSONALCARE</a>
-                                    </li>
-                                    <li class="nav-item dd-cl">
-                                        <a class="nav-link px-4" href="#"> HOME DECOR </a>
-                                    </li>
-                                    <li class="nav-item dd-cl">
-                                        <a class="nav-link px-4" href="#">GIFT</a>
-                                    </li>
+                                   <ul class="list-unstyled nav-dd-color">
+                                       <li class="nav-item dd-cl mt-3">
+                                           <a class="nav-link px-4" aria-current="page" href="#">HOME</a>
+                                       </li>
+                                       <li class="nav-item dd-cl">
+                                           <a class="nav-link px-4" href="#">SKIN</a>
+                                       </li>
+                                       <li class="nav-item dd-cl">
+                                           <a class="nav-link px-4" href="#">FRAGRANCES</a>
+                                       </li>
+                                       <li class="nav-item dd-cl">
+                                           <a class="nav-link px-4" href="#">HAIRCARE</a>
+                                       </li>
+                                       <li class="nav-item dd-cl">
+                                           <a class="nav-link px-4" href="#">PERSONALCARE</a>
+                                       </li>
+                                       <li class="nav-item dd-cl">
+                                           <a class="nav-link px-4" href="#"> HOME DECOR </a>
+                                       </li>
+                                       <li class="nav-item dd-cl">
+                                           <a class="nav-link px-4" href="#">GIFT</a>
+                                       </li>
 
-                                </ul>
+                                   </ul>
 
                                </div>
 
@@ -112,49 +113,49 @@
 
        {{-- navbar --}}
        <div class="mt-bottom-bar py-2">
-            <div class="conatiner-fluid d-inline d-lg-none ">
-                <div class="row row-cols-4 ">
-                    <div class="col">
-                        <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                            <li>
-                                <img src="http://channel.test/frontend/images/svg/footer/home.svg" alt="">
-                            </li>
-                            <li>home</li>
-                        </ul>
-                    </div>
+           <div class="conatiner-fluid d-inline d-lg-none ">
+               <div class="row row-cols-4 ">
+                   <div class="col">
+                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
+                           <li>
+                               <img src="http://channel.test/frontend/images/svg/footer/home.svg" alt="">
+                           </li>
+                           <li>Home</li>
+                       </ul>
+                   </div>
 
-                    <div class="col">
-                        <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                            <li>
-                                <img src="http://channel.test/frontend/images/svg/footer/search.svg" alt="">
+                   <div class="col">
+                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
+                           <li>
+                               <img src="http://channel.test/frontend/images/svg/footer/search.svg" alt="">
 
-                            </li>
-                            <li>Search</li>
-                        </ul>
-                    </div>
+                           </li>
+                           <li>Search</li>
+                       </ul>
+                   </div>
 
-                    <div class="col">
-                        <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                            <li>
-                                <img src="http://channel.test/frontend/images/svg/footer/account.svg" alt="">
+                   <div class="col">
+                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
+                           <li>
+                               <img src="http://channel.test/frontend/images/svg/footer/account.svg" alt="">
 
-                            </li>
-                            <li>Account</li>
-                        </ul>
-                    </div>
+                           </li>
+                           <li>Account</li>
+                       </ul>
+                   </div>
 
-                    <div class="col">
-                        <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                            <li>
-                                <img src="http://channel.test/frontend/images/svg/footer/cart.svg" alt="">
+                   <div class="col">
+                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
+                           <li>
+                               <img src="http://channel.test/frontend/images/svg/footer/cart.svg" alt="">
 
-                            </li>
-                            <li>Cart</li>
-                        </ul>
-                    </div>
+                           </li>
+                           <li>Cart</li>
+                       </ul>
+                   </div>
 
-                </div>
-            </div>
+               </div>
+           </div>
 
 
            <div class="container d-none d-lg-block">
@@ -186,12 +187,12 @@
                        <nav id="nav" class="navbar hide-navbar">
                            <ul style="margin-right: 0px">
                                <li><a href="{{ route('index') }}">Home</a></li>
-                               <li><a href="{{ route('skin') }}">Skin</a></li>
-                               <li><a href="{{ route('fragrances') }}">fragrances</a></li>
-                               <li><a href="{{ route('about') }}">Haircare</a></li>
-                               <li><a href="{{ route('about') }}">PersonalCare</a></li>
-                               <li><a href="{{ route('about') }}">Home Decor</a></li>
-                               <li><a href="{{ route('contact') }}">gift</a></li>
+                               <li><a href="{{ route('frontend.cat.show', 'skin') }}">Skin</a></li>
+                               <li><a href="{{ route('frontend.cat.show', 'fragrances') }}">Fragrances</a></li>
+                               <li><a href="{{ route('frontend.cat.show', 'hair') }}">Haircare</a></li>
+                               <li><a href="{{ route('frontend.cat.show', 'personal-care') }}">PersonalCare</a></li>
+                               <li><a href="{{ route('frontend.cat.show', 'home-decor') }}">Home Decor</a></li>
+                               <li><a href="{{ route('frontend.cat.show', 'gift') }}">Gift</a></li>
                            </ul>
                        </nav>
 

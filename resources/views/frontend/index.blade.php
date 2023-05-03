@@ -155,7 +155,7 @@
 
 
                                                             <button type="button" class="btn btn-light sk-btn">
-                                                                <a href="" class="p-0  text-black">
+                                                                <a href="{{ route('frontend.p.show', $p->slug) }}" class="p-0  text-black">
                                                                     Shop Now
                                                                 </a>
                                                             </button>
@@ -199,8 +199,8 @@
                                                             <p class="card-text text-center">{{ $p->short_description }}
                                                             </p>
                                                             <button type="button" class="btn btn-light sk-btn">
-                                                                <a href="" class="p-0  text-black">
-                                                                    Shop Nov
+                                                                <a href="{{ route('frontend.p.show', $p->slug) }}" class="p-0  text-black">
+                                                                    Shop Now
                                                                 </a>
                                                             </button>
 
@@ -250,7 +250,7 @@
 
                                                             <button type="button" class="btn btn-light sk-btn">
                                                                 <a href="" class="p-0  text-black">
-                                                                    Shop Nov
+                                                                    Shop Now
                                                                 </a>
                                                             </button>
 
@@ -313,7 +313,7 @@
                                                                     {{ $p->short_descriptions }}</p>
                                                                 <h5 class="text-center">
                                                                     <a href="#" class="p-0 main-head text-black">
-                                                                        Shop Nov
+                                                                        Shop Now
                                                                     </a>
                                                                 </h5>
                                                             </ul>
@@ -354,7 +354,7 @@
                                                                 </p>
                                                                 <h5 class="text-center">
                                                                     <a href="#" class="p-0 main-head text-black">
-                                                                        Shop Nov
+                                                                        Shop Now
                                                                     </a>
                                                                 </h5>
                                                             </ul>
@@ -395,7 +395,7 @@
                                                                 </p>
                                                                 <h5 class="text-center">
                                                                     <a href="#" class="p-0 main-head text-black">
-                                                                        Shop Nov
+                                                                        Shop Now
                                                                     </a>
 
                                                                 </h5>
