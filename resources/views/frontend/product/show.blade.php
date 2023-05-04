@@ -96,7 +96,8 @@
                                         </div>
                                     </div> --}}
                                     <div class="d-flex justify-content-around flex-wrap my-3">
-                                        <button class="btn btn-primary btn-pink">
+                                        <button class="btn btn-primary btn-pink add-to-cart"
+                                            data-p-id="{{ $p->id }}">
                                             Add To Cart
                                         </button>
 
@@ -252,7 +253,7 @@
                                                     </div>
                                                     <div class="review-title">
                                                         <h5 class="font-body">
-                                                           {{$re->title}}
+                                                            {{ $re->title }}
                                                         </h5>
                                                     </div>
                                                 </div>
@@ -263,7 +264,7 @@
 
                                             <div class="review-text">
                                                 <p>
-                                                   {{$re->body}}
+                                                    {{ $re->body }}
                                                 </p>
                                             </div>
                                             <div class="review-gallery d-flex">

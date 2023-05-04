@@ -133,8 +133,9 @@
                                                 <a href="{{ route('frontend.p.show', $pro->slug) }}" class="btn btn-orange">
                                                     Shop now
                                                 </a>
-                                                <a href="#" class="btn btn-pink ">
-                                                    Add ToCart
+                                                <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
+                                                    data-p-id="{{ $pro->id }}">
+                                                    Add To Cart
                                                 </a>
                                             </div>
                                         </div>
@@ -150,161 +151,7 @@
 
                         </div>
 
-                        {{-- <div id="__skinlatest">
-                            <div class="product-show-grid">
-
-                                @for ($i = 0; $i <= 10; $i++)
-                                    <div class=" product-show-grid-card ">
-                                        <div class="product-card-img">
-                                            <button class="btn wishlist">
-                                                <span class="has-tool-tip">
-                                                    <span class="icon">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                    </span>
-                                                    <span class="tool-tip-text">Add to wishlist</span>
-                                                </span>
-                                            </button>
-                                            <img src="https://via.placeholder.com/300" alt="...">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title font-head fw-bold">
-                                                Essence Long Lasting Eye care Pencil
-                                            </h4>
-                                            <small class="text-muted">
-                                                Intense & Long-lasting
-                                            </small>
-                                            <div class="price">
-                                                ₹2,707 <s class="text-danger">₹4,509</s>
-                                            </div>
-                                            <div class="buttons">
-                                                <a href="#" class="btn btn-orange">
-                                                    Shop now
-                                                </a>
-                                                <a href="#" class="btn btn-pink ">
-                                                    Add ToCart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class=" product-show-grid-card ">
-                                        <div class="product-card-img">
-                                            <button class="btn wishlist">
-                                                <span class="has-tool-tip">
-                                                    <span class="icon">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                    </span>
-                                                    <span class="tool-tip-text">Add to wishlist</span>
-                                                </span>
-                                            </button>
-                                            <img src="https://via.placeholder.com/300" alt="...">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title font-head fw-bold">
-                                                Essence Long Lasting Eye care Pencil
-                                            </h4>
-                                            <small class="text-muted">
-                                                Intense & Long-lasting
-                                            </small>
-                                            <div class="price">
-                                                ₹2,707 <s class="text-danger">₹4,509</s>
-                                            </div>
-                                            <div class="buttons">
-                                                <a href="#" class="btn btn-orange">
-                                                    Shop now
-                                                </a>
-                                                <a href="javascript:void(0)" class="btn btn-outline-pink ">
-                                                    <i class="fa-solid fa-check"></i> Added
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endfor
-
-                            </div>
-
-                        </div> --}}
-
-
-                        {{-- <div id="__skinbestseller">
-                            <div class="product-show-grid">
-
-                                @for ($i = 0; $i <= 10; $i++)
-                                    <div class=" product-show-grid-card ">
-                                        <div class="product-card-img">
-                                            <button class="btn wishlist">
-                                                <span class="has-tool-tip">
-                                                    <span class="icon">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                    </span>
-                                                    <span class="tool-tip-text">Add to wishlist</span>
-                                                </span>
-                                            </button>
-                                            <img src="https://via.placeholder.com/300" alt="...">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title font-head fw-bold">
-                                                Essence Long Lasting Eye care Pencil
-                                            </h4>
-                                            <small class="text-muted">
-                                                Intense & Long-lasting
-                                            </small>
-                                            <div class="price">
-                                                ₹2,707 <s class="text-danger">₹4,509</s>
-                                            </div>
-                                            <div class="buttons">
-                                                <a href="#" class="btn btn-orange">
-                                                    Shop now
-                                                </a>
-                                                <a href="#" class="btn btn-pink ">
-                                                    Add ToCart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class=" product-show-grid-card ">
-                                        <div class="product-card-img">
-                                            <button class="btn wishlist">
-                                                <span class="has-tool-tip">
-                                                    <span class="icon">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                    </span>
-                                                    <span class="tool-tip-text">Add to wishlist</span>
-                                                </span>
-                                            </button>
-                                            <img src="https://via.placeholder.com/300" alt="...">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title font-head fw-bold">
-                                                Essence Long Lasting Eye care Pencil
-                                            </h4>
-                                            <small class="text-muted">
-                                                Intense & Long-lasting
-                                            </small>
-                                            <div class="price">
-                                                ₹2,707 <s class="text-danger">₹4,509</s>
-                                            </div>
-                                            <div class="buttons">
-                                                <a href="#" class="btn btn-orange">
-                                                    Shop now
-                                                </a>
-                                                <a href="javascript:void(0)" class="btn btn-outline-pink ">
-                                                    <i class="fa-solid fa-check"></i> Added
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endfor
-
-                            </div>
-
-                        </div> --}}
-
-
-
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -314,4 +161,54 @@
 
     </section>
 
+@endsection
+@section('js')
+    <script src="{{ asset('js/axios.min.js') }}"></script>
+    <script>
+        $('a.add-to-cart').click(function() {
+            if ($(this).attr("data-p-id")) {
+                // console.log(this);
+                var btn = $(this);
+                axios.post('{{ route('frontend.p.addToCart') }}', {
+                        product_id: $(this).attr("data-p-id")
+                    })
+                    .then(function(res) {
+                        console.log(btn);
+                        // console.log(res.data);
+                        // return 0;
+                        if (res.data.status) {
+                            if (res.data.addToCart) {
+
+                                btn[0].classList.add('btn-outline-pink');
+                                btn[0].innerHTML =`<svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Added`;
+                            } else {
+                                btn[0].classList.remove('btn-outline-pink');
+                                btn[0].innerHTML =`Add To Cart`;
+                            }
+                            Snackbar.show({
+                                text: res.data.message,
+                                pos: 'top-right',
+                                actionTextColor: '#fff',
+                                backgroundColor: '#1abc9c'
+                            });
+                        } else {
+                            Snackbar.show({
+                                text: 'Something Went Wrong',
+                                pos: 'top-right',
+                                actionTextColor: '#fff',
+                                backgroundColor: '#e7515a'
+                            });
+                        }
+                    })
+                    .catch(function(error) {
+                        Snackbar.show({
+                            text: "Something Went Wrong",
+                            pos: 'top-right',
+                            actionTextColor: '#fff',
+                            backgroundColor: '#e7515a'
+                        });
+                    });
+            }
+        });
+    </script>
 @endsection

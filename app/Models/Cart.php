@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
+
+    protected $guarded = ['id'];
+
     use HasFactory;
+
+    public function items()
+    {
+        $this->hasMany(CartItem::class);
+    }
 }
