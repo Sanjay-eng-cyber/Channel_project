@@ -105,9 +105,13 @@
                                         <div class="product-card-img">
                                             <button class="btn wishlist">
                                                 <span class="has-tool-tip">
-                                                    <span class="icon">
+                                                    {{-- <span class="icon">
                                                         <i class="fa-regular fa-heart"></i>
-                                                    </span>
+                                                    </span> --}}
+                                                    <a href="javascript:void(0)" class="add-to-wish"
+                                                        data-p-id="{{ $pro->id }}">
+                                                        <i class="fa-regular fa-heart"></i>
+                                                    </a>
                                                     <span class="tool-tip-text">Add to wishlist</span>
                                                 </span>
                                             </button>
@@ -180,11 +184,60 @@
                             if (res.data.addToCart) {
 
                                 btn[0].classList.add('btn-outline-pink');
-                                btn[0].innerHTML =`<svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Added`;
+                                btn[0].innerHTML =
+                                    `<svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Added`;
                             } else {
                                 btn[0].classList.remove('btn-outline-pink');
-                                btn[0].innerHTML =`Add To Cart`;
+                                btn[0].innerHTML = `Add To Cart`;
                             }
+                            Snackbar.show({
+                                text: res.data.message,
+                                pos: 'top-right',
+                                actionTextColor: '#fff',
+                                backgroundColor: '#1abc9c'
+                            });
+                        } else {
+                            Snackbar.show({
+                                text: 'Something Went Wrong',
+                                pos: 'top-right',
+                                actionTextColor: '#fff',
+                                backgroundColor: '#e7515a'
+                            });
+                        }
+                    })
+                    .catch(function(error) {
+                        Snackbar.show({
+                            text: "Something Went Wrong",
+                            pos: 'top-right',
+                            actionTextColor: '#fff',
+                            backgroundColor: '#e7515a'
+                        });
+                    });
+            }
+        });
+    </script>
+    <script>
+        $('a.add-to-wish').click(function() {
+            if ($(this).attr("data-p-id")) {
+                //console.log(this);
+                var btn = $(this);
+                axios.post('{{ route('frontend.p.addToWishlist') }}', {
+                        product_id: $(this).attr("data-p-id")
+                    })
+                    .then(function(res) {
+                        console.log(btn);
+                        // console.log(res.data);
+                        // return 0;
+                        if (res.data.status) {
+                            // if (res.data.addToWishlist) {
+
+                            //     btn[0].classList.add('btn-outline-pink');
+                            //     btn[0].innerHTML =
+                            //         `<svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Added`;
+                            // } else {
+                            //     btn[0].classList.remove('btn-outline-pink');
+                            //     btn[0].innerHTML = `Add To Cart`;
+                            // }
                             Snackbar.show({
                                 text: res.data.message,
                                 pos: 'top-right',

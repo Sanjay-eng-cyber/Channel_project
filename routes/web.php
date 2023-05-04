@@ -150,4 +150,5 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::post('/p/review/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.p.store');
 
     Route::post('/p/addToCart', 'App\Http\Controllers\frontend\CartController@addToCart')->name('frontend.p.addToCart');
+    Route::post('/p/addToWishlist', 'App\Http\Controllers\frontend\ProductController@addToWishlist')->name('frontend.p.addToWishlist');
 });
