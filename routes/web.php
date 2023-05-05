@@ -39,6 +39,7 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::get('/address/delete/{id}', 'App\Http\Controllers\frontend\AddressController@destroy')->name('frontend.address.delete');
 
         Route::get('/wishlist', 'App\Http\Controllers\frontend\WishlistController@index')->name('frontend.wishlist.index');
+        Route::get('/cart', 'App\Http\Controllers\frontend\CartController@index')->name('frontend.cart.index');
 
         Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
     });
@@ -109,9 +110,9 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.inside-profile-payment-method');
     })->name('profile-payment-method');
 
-    Route::get('/cart', function () {
-        return view('frontend.cart');
-    })->name('cart');
+    // Route::get('/cart', function () {
+    //     return view('frontend.cart');
+    // })->name('cart');
 
     Route::get('/gift-card-review', function () {
         return view('frontend.gift-card-review');

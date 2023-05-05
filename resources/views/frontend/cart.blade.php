@@ -2,36 +2,36 @@
 @section('title', 'Wishlist |')
 @section('cdn')
 
-<style>
-@media screen and (max-width:768px){
-    .__cart-ui-img-in{
-        padding-right: 28px;
-    }
-}
+    <style>
+        @media screen and (max-width:768px) {
+            .__cart-ui-img-in {
+                padding-right: 28px;
+            }
+        }
 
-@media screen and (max-width: 480px){
-.__cart-ui-card .__cart-ui-close-btn {
-    position: absolute;
-    top: -13px;
-    padding: 15px;
-    right: -86%;
-}}
-
-</style>
+        @media screen and (max-width: 480px) {
+            .__cart-ui-card .__cart-ui-close-btn {
+                position: absolute;
+                top: -13px;
+                padding: 15px;
+                right: -86%;
+            }
+        }
+    </style>
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
     <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
 
     <section class="my-1">
-      <div class="container">
-        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#" class="bread-crum">Profile</a></li>
-              <li class="breadcrumb-item bread-crum" aria-current="page">Cart</li>
-            </ol>
-          </nav>
-      </div>
+        <div class="container">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" class="bread-crum">Profile</a></li>
+                    <li class="breadcrumb-item bread-crum" aria-current="page">Cart</li>
+                </ol>
+            </nav>
+        </div>
     </section>
 
     <section style="padding:40px 0px 65px 0px">
@@ -56,55 +56,61 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="row cc-border my-3 __cart-ui-card" style="padding:15px">
-                        <div class="__cart-ui-close-btn"><button type="button" class="btn-close" aria-label="Close"></button>
-                        </div>
-                        <div class=" col-md-4 col-lg-3">
-                            <div class="d-flex align-items-center justify-content-center gap-1 __cart-ui-img-in">
-                                <div class="form-check">
-                                    <input class="form-check-input ck-wallet-fi" type="checkbox" name="gender"
-                                        id="male" value="male" checked="">
+                    @forelse ($cartItems as $c)
+                        <div class="row cc-border my-3 __cart-ui-card" style="padding:15px">
+                            <div class="__cart-ui-close-btn"><button type="button" class="btn-close"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class=" col-md-4 col-lg-3">
+                                <div class="d-flex align-items-center justify-content-center gap-1 __cart-ui-img-in">
+                                    <div class="form-check">
+                                        <input class="form-check-input ck-wallet-fi" type="checkbox" name="gender"
+                                            id="male" value="male" checked="">
+                                    </div>
+                                    <img src="https://via.placeholder.com/180x180" class="img-fluid img-border"
+                                        alt="">
                                 </div>
-                                <img src="https://via.placeholder.com/180x180" class="img-fluid img-border" alt="">
+                            </div>
+
+                            <div class="col-md-8 col-lg-4   mt-3 mt-md-0 d-flex align-items-center">
+                                <div class="">
+                                    <h5 class="main-head">{{ $c->product->name }}</h5>
+                                    <p class="p-0 __cart-ui-pra">
+                                        {{ $c->product->short_descriptions }}
+                                    </p>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="col-md-12 col-lg-5 d-flex justify-content-center align-items-center justify-content-between flex-row flex-lg-column flex-xl-row my-3 my-lg-0">
+                                <ul class="p-0 m-0">
+                                    <li class="no-bullet "><s class="text-muted">{{ $c->product->mrp }}</s></li>
+                                    <li class="no-bullet  "><strong>{{ $c->product->final_price }}</strong></li>
+                                    @if ($c->product->stock)
+                                        <li class="no-bullet text-green">In Stock</li>
+                                    @endif
+                                </ul>
+                                <div class="input-group align-items-center" style="width:124px;">
+                                    <span class="input-group-text">-</span>
+                                    <input type="number" id="qty" class="form-control text-center" value="1">
+                                    <span class="input-group-text">+</span>
+                                </div>
+
+                                <div class="d-none d-md-inline">
+                                    ₹145.55
+                                </div>
+
+
                             </div>
                         </div>
-
-                        <div class="col-md-8 col-lg-4   mt-3 mt-md-0 d-flex align-items-center">
-                            <div class="">
-                                <h5 class="main-head">Essence Long Lasting Eye Pencil</h5>
-                                <p class="p-0 __cart-ui-pra">
-                                    essence Long Lasting Eye Pencil is a creamy and
-                                    pigmented eye pencil that brightens and accentuates your eye more....
-                                </p>
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-12 col-lg-5 d-flex justify-content-center align-items-center justify-content-between flex-row flex-lg-column flex-xl-row my-3 my-lg-0">
-                            <ul class="p-0 m-0">
-                                <li class="no-bullet "><s class="text-muted">From ₹145.55</s></li>
-                                <li class="no-bullet  "><strong>From ₹145.55</strong></li>
-                                <li class="no-bullet text-green">In Stock</li>
-                            </ul>
-                            <div class="input-group align-items-center" style="width:124px;">
-                                <span class="input-group-text">-</span>
-                                <input type="number" id="qty" class="form-control text-center" value="1">
-                                <span class="input-group-text">+</span>
-                            </div>
-
-                            <div class="d-none d-md-inline">
-                                ₹145.55
-                            </div>
-
-
-                        </div>
-                    </div>
+                    @empty
+                    @endforelse
 
                 </div>
                 <div class="col-md-4 col-lg-3">
                     <div class="" style="padding: 50px 15px 15px 15px">
-                        <h5 class="main-head" >Order summary</h5>
+                        <h5 class="main-head">Order summary</h5>
                         <hr style="border-bottom: 2px solid #000000;">
                         <div class="d-flex justify-content-between my-3">
                             <strong>Sub Total</strong>
@@ -134,17 +140,17 @@
                         <p class="m-0 p-0 my-2 __cart-ui-pra">coupon code will apply on checkout page</p>
 
                         <div>
-                                <a href="http://" class="my-2 text-white">
-                                    <button type="button" class="btn btn-outline-pink-hover w-100">
-                                        Proceed To Checkout
-                                    </button>
-                                </a>
+                            <a href="http://" class="my-2 text-white">
+                                <button type="button" class="btn btn-outline-pink-hover w-100">
+                                    Proceed To Checkout
+                                </button>
+                            </a>
 
-                                <a href="http://" class="my-2 text-white">
-                                    <button type="button" class="btn btn-orange-outline-hover w-100 my-2">
-                                        Proceed To Checkout
-                                    </button>
-                                </a>
+                            <a href="http://" class="my-2 text-white">
+                                <button type="button" class="btn btn-orange-outline-hover w-100 my-2">
+                                    Proceed To Checkout
+                                </button>
+                            </a>
                         </div>
 
 
