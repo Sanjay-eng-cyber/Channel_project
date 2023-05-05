@@ -307,6 +307,7 @@
                                     </div>
                                 </div>
                             @empty
+                                <p class="text-center">No Reviews</p>
                             @endforelse
                         </div>
                         <div class="d-flex justify-content-center mt-4">
