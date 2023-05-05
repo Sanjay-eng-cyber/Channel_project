@@ -443,7 +443,13 @@ a:hover {
     color: #ec268f;
     --bs-btn-color: #ec268f;
 }
+.product-show-grid .product-show-grid-card .product-card-img .wishlist.active {
+    background-color: #ec268f;
 
+}
+.product-show-grid .product-show-grid-card .product-card-img .wishlist.active svg path{
+    fill:#fff;
+}
 .has-tool-tip {
     position: relative;
 }
