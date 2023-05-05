@@ -70,9 +70,9 @@
                                 <i class="fa-regular fa-circle-check"></i> in stock
                             </h4>
                             <form action="">
-                                <label for="color-option">
+                                {{-- <label for="color-option">
                                     Select a color * :
-                                </label>
+                                </label> --}}
                                 <div class="row">
                                     {{-- <div class="col-12 col-md-6 mb-3">
                                         <select class="form-select" name="color-option" id="color-option" id="">
@@ -97,7 +97,7 @@
                                     </div> --}}
                                     <div class="d-flex justify-content-around flex-wrap my-3">
                                         <button class="btn btn-primary btn-pink add-to-cart"
-                                            data-p-id="{{ $p->id }}">
+                                            data-p-id="{{ $product->id }}">
                                             Add To Cart
                                         </button>
 
