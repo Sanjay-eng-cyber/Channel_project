@@ -13,7 +13,13 @@ class CartController extends Controller
 
     public function index(Request $request)
     {
-        // dd($request);
+        $user = auth()->user();
+        if ($user) {
+            $cart = $user->cart;
+            // dd($cart);
+            $cartItems = $cart->items()->get();
+            return view('frontend.cart', compact('cart', 'cartItems'));
+        }
     }
 
     public function addToCart(Request $request)
