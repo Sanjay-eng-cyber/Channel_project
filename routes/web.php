@@ -37,13 +37,11 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::post('/profile/update', 'App\Http\Controllers\frontend\ProfileController@update')->name('frontend.profile.update');
         Route::post('/address/update', 'App\Http\Controllers\frontend\AddressController@update')->name('frontend.address.update');
         Route::get('/address/delete/{id}', 'App\Http\Controllers\frontend\AddressController@destroy')->name('frontend.address.delete');
+
+        Route::get('/wishlist', 'App\Http\Controllers\frontend\WishlistController@index')->name('frontend.wishlist.index');
+
         Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
     });
-
-
-    Route::get('/wishlist', function () {
-        return view('frontend.wishlist');
-    })->name('wishlist');
 
     Route::get('/order', function () {
         return view('frontend.order');
@@ -150,5 +148,5 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::post('/p/review/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.p.store');
 
     Route::post('/p/addToCart', 'App\Http\Controllers\frontend\CartController@addToCart')->name('frontend.p.addToCart');
-    Route::post('/p/addToWishlist', 'App\Http\Controllers\frontend\ProductController@addToWishlist')->name('frontend.p.addToWishlist');
+    Route::post('/p/addToWishlist', 'App\Http\Controllers\frontend\WishlistController@addToWishlist')->name('frontend.p.addToWishlist');
 });
