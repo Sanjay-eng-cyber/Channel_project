@@ -30,7 +30,23 @@
                         <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 mt-2">
                             <form class="form-inline row app_form" action="{{ route('backend.product.index') }}"
                                 method="GET">
-                                <input class="form-control form-control-sm app_form_input" type="text"
+                                <select class="form-control form-control-sm app_form_input col-3" name="brand">
+                                    <option value="">Select Brand</option>
+                                    @foreach ($brands as $b)
+                                        <option value="{{ $b->slug }}"
+                                            {{ request('brand') && request('brand') == $b->name ? 'selected' : '' }}>
+                                            {{ $b->name }}</option>
+                                    @endforeach
+                                </select>
+                                <select class="form-control form-control-sm app_form_input col-3" name="category">
+                                    <option value="">Select Category</option>
+                                    @foreach ($categories as $c)
+                                        <option value="{{ $c->slug }}"
+                                            {{ request('category') && request('category') == $c->name ? 'selected' : '' }}>
+                                            {{ $c->name }}</option>
+                                    @endforeach
+                                </select>
+                                <input class="form-control form-control-sm app_form_input col-2" type="text"
                                     placeholder="Name/Sku" name="q" value="{{ request('q') ?? '' }}" minlength="3"
                                     maxlength="40">
                                 <input type="submit" value="Search"
@@ -92,7 +108,8 @@
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                         <a class="dropdown-item"
-                                                            href="{{ route('backend.product.review', $product->id) }}">Product Review</a>
+                                                            href="{{ route('backend.product.review', $product->id) }}">Product
+                                                            Review</a>
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.product.show', $product->id) }}">View</a>
                                                         <a class="dropdown-item"

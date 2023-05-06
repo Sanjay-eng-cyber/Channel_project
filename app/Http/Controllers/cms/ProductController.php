@@ -26,7 +26,9 @@ class ProductController extends Controller
         $products = Product::latest();
         $products = $this->filterResults($request, $products);
         $products = $products->paginate(10);
-        return view('backend.product.index', compact('products'));
+        $brands = Brand::get();
+        $categories = Category::get();
+        return view('backend.product.index', compact('products', 'brands', 'categories'));
     }
 
     protected function filterResults($request, $products)
@@ -41,14 +43,21 @@ class ProductController extends Controller
 
         if ($request !== null && $request->has('q') && $request['q'] !== '') {
             $search = $request['q'];
-
-            // $temp_appointment = $temp_appointment->where('mobile', 'LIKE', '%' . $search . '%')
-            //     ->orWhere('name', 'LIKE', '%' . $search . '%')
-            //     ->orWhere('email', 'LIKE', '%' . $search . '%');
-
             $products = $products->where(function ($query) use ($search) {
                 $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('sku', 'LIKE', '%' . $search . '%');
             });
+        }
+        if ($request !== null && $request->has('brand') && $request->brand != '') {
+            $brand = Brand::whereSlug($request->brand)->first();
+            if($brand) {
+                $products = $products->where('brand_id',$brand->id);
+            }
+        }
+        if ($request !== null && $request->has('category') && $request->category != '') {
+            $category = Category::whereSlug($request->category)->first();
+            if($category) {
+                $products = $products->where('category_id',$category->id);
+            }
         }
         return $products;
     }
@@ -107,15 +116,15 @@ class ProductController extends Controller
 
         $fileWithExtension = $request->file('thumbnail_image');
         // dd($fileWithExtension);
-         if ($fileWithExtension) {
-              $filename = now()->format('dmy-his') . '-' . rand(1, 99) . '.' . $fileWithExtension->clientExtension();
-              $destinationPath = storage_path('app/public/images/products/');
-                $img = Image::make($fileWithExtension->getRealPath())->resize(200, 200, function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upSize();
-                });
-              $img->save($destinationPath . $filename, 85);
-         }
+        if ($fileWithExtension) {
+            $filename = now()->format('dmy-his') . '-' . rand(1, 99) . '.' . $fileWithExtension->clientExtension();
+            $destinationPath = storage_path('app/public/images/products/');
+            $img = Image::make($fileWithExtension->getRealPath())->resize(200, 200, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upSize();
+            });
+            $img->save($destinationPath . $filename, 85);
+        }
 
         $product = new Product();
         $product->name = $request->name;
@@ -286,7 +295,7 @@ class ProductController extends Controller
         // foreach ($showcase_products as $showcase_product) {
         //     $showcase_product->delete();
         // }
-        if ($product->delete()&& Storage::disk('public')->delete('images/products/' . $product->thumbnail_image)) {
+        if ($product->delete() && Storage::disk('public')->delete('images/products/' . $product->thumbnail_image)) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Deleted Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
@@ -299,7 +308,7 @@ class ProductController extends Controller
         return view('backend.review.index', compact('reviews', 'products'));
     }
 
-    public function reviewShow(Request $request, $product_id,$review_id)
+    public function reviewShow(Request $request, $product_id, $review_id)
     {
         $products = Product::findOrFail($product_id);
         $reviews = $products->review()->findOrFail($review_id);
