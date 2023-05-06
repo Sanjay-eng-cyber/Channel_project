@@ -39,7 +39,6 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::get('/address/delete/{id}', 'App\Http\Controllers\frontend\AddressController@destroy')->name('frontend.address.delete');
 
         Route::get('/wishlist', 'App\Http\Controllers\frontend\WishlistController@index')->name('frontend.wishlist.index');
-        Route::get('/cart', 'App\Http\Controllers\frontend\CartController@index')->name('frontend.cart.index');
 
         Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
     });
@@ -150,4 +149,6 @@ Route::domain(config('app.web_domain'))->group(function () {
 
     Route::post('/p/addToCart', 'App\Http\Controllers\frontend\CartController@addToCart')->name('frontend.p.addToCart');
     Route::post('/p/addToWishlist', 'App\Http\Controllers\frontend\WishlistController@addToWishlist')->name('frontend.p.addToWishlist');
+
+    Route::get('/cart', 'App\Http\Controllers\frontend\CartController@index')->name('frontend.cart.index');
 });

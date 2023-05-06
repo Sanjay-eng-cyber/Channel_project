@@ -17,9 +17,12 @@ class CartController extends Controller
         if ($user) {
             $cart = $user->cart;
             // dd($cart);
-            $cartItems = $cart->items()->get();
-            return view('frontend.cart', compact('cart', 'cartItems'));
+        } else {
+            $cart_session_id = session()->get('cart_session_id');
+            $cart = Cart::where('session_id', $cart_session_id)->first();
         }
+        $cartItems = $cart ? $cart->items()->get() : [];
+        return view('frontend.cart', compact('cart', 'cartItems'));
     }
 
     public function addToCart(Request $request)
