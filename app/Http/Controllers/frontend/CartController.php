@@ -22,9 +22,9 @@ class CartController extends Controller
             $cart = Cart::where('session_id', $cart_session_id)->first();
         }
         $cartItems = $cart ? $cart->items()->get() : [];
-        $total = 0;
+        $subTotal = 0;
         foreach ($cartItems as $cart) {
-            $subTotal = $total += $cart->product->final_price;
+            $subTotal = $subTotal += $cart->product->final_price;
         }
         //dd($subTotal);
         return view('frontend.cart', compact('cart', 'cartItems','subTotal'));
