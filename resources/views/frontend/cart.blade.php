@@ -114,7 +114,7 @@
                         <hr style="border-bottom: 2px solid #000000;">
                         <div class="d-flex justify-content-between my-3">
                             <strong>Sub Total</strong>
-                            <strong> ₹145.55</strong>
+                            <strong> {{ $subTotal }}</strong>
                         </div>
                         <hr>
 
@@ -134,7 +134,7 @@
 
                         <div class="d-flex justify-content-between my-3">
                             <strong>Total:</strong>
-                            <strong> ₹145.55</strong>
+                            <strong>{{ $subTotal }}</strong>
                         </div>
                         <hr>
                         <p class="m-0 p-0 my-2 __cart-ui-pra">coupon code will apply on checkout page</p>

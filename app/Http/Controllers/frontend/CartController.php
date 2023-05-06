@@ -22,7 +22,12 @@ class CartController extends Controller
             $cart = Cart::where('session_id', $cart_session_id)->first();
         }
         $cartItems = $cart ? $cart->items()->get() : [];
-        return view('frontend.cart', compact('cart', 'cartItems'));
+        $total = 0;
+        foreach ($cartItems as $cart) {
+            $subTotal = $total += $cart->product->final_price;
+        }
+        //dd($subTotal);
+        return view('frontend.cart', compact('cart', 'cartItems','subTotal'));
     }
 
     public function addToCart(Request $request)
