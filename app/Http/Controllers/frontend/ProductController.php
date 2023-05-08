@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\Models\Review;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
@@ -32,4 +34,18 @@ class ProductController extends Controller
         return view('frontend.product.show', compact('product', 'reviews'));
     }
 
+    public function storeReview(Request $request, $product_slug)
+    {
+        $product = Product::where('slug', $product_slug)->firstOrFail();
+
+        $review = new Review();
+        $review->user_id = auth()->user()->id;
+        $review->product_id = $product->id;
+        $review->title = $request->title;
+        $review->body = $request->body;
+        if ($review->save()) {
+            return redirect()->back()->with(toast('Review Added Successfully', 'success'));
+        }
+        return redirect()->back()->with(toast('Something Went Wrong', 'error'))->withInput();
+    }
 }

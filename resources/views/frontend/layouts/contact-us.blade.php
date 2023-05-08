@@ -12,7 +12,7 @@
           <h1>CONTACT</h1>
           <nav class="breadcrumbs">
             <ul class="list-unstyled">
-              <li><a href="{{route('index')}}">Home <i class="fa fa-angle-right"></i></a></li>
+              <li><a href="{{route('frontend.index')}}">Home <i class="fa fa-angle-right"></i></a></li>
               <li>Contact Us</li>
             </ul>
           </nav>

@@ -31,7 +31,8 @@
                        </li> --}}
 
                                    <li class="nav-item text-red">
-                                       <a class="nav-link fw-bold nn-top-cart" href="{{route('frontend.cart.index')}}">
+                                       <a class="nav-link fw-bold nn-top-cart"
+                                           href="{{ route('frontend.cart.index') }}">
                                            <i class="fas fa-cart-plus  nn-top-cart-icon"></i>
                                        </a>
                                    </li>
@@ -186,7 +187,7 @@
                        </div>
                        <nav id="nav" class="navbar hide-navbar">
                            <ul style="margin-right: 0px">
-                               <li><a href="{{ route('index') }}">Home</a></li>
+                               <li><a href="{{ route('frontend.index') }}">Home</a></li>
                                <li><a href="{{ route('frontend.cat.show', 'skin') }}">Skin</a></li>
                                <li><a href="{{ route('frontend.cat.show', 'fragrances') }}">Fragrances</a></li>
                                <li><a href="{{ route('frontend.cat.show', 'hair') }}">Haircare</a></li>
@@ -376,7 +377,7 @@
                                        backgroundColor: '#1abc9c'
                                    });
                                    setTimeout(() => {
-                                       window.location.href = '/';
+                                       window.location.href = res.data.redirect_url ?? '/';
                                    }, 1000);
                                } else {
                                    Snackbar.show({

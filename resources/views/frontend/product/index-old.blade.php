@@ -12,7 +12,7 @@
                     <!-- Breadcrumbs of the Page -->
                     <nav class="breadcrumbs">
                         <ul class="list-unstyled">
-                            <li><a href="{{route('index')}}">Home <i class="fa fa-angle-right"></i></a></li>
+                            <li><a href="{{route('frontend.index')}}">Home <i class="fa fa-angle-right"></i></a></li>
                             <li><a href="{{route('products')}}">Products <i class="fa fa-angle-right"></i></a></li>
                             <li>Chairs</li>
                         </ul>

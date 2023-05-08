@@ -61,7 +61,8 @@ class LoginController extends Controller
             );
             if ($user) {
                 Auth::guard('web')->login($user);
-                return response()->json(['success' => true, 'message' => 'OTP Verified']);
+                $redirect_url = session()->get('url.intended') ?? route('frontend.index');
+                return response()->json(['success' => true, 'message' => 'OTP Verified', 'redirect_url' => $redirect_url]);
             }
             return response()->json(['success' => false, 'message' => 'Something Went Wrong']);
         }

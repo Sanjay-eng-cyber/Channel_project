@@ -19,7 +19,7 @@ class CreateReviewsTable extends Migration
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->string('title')->nullable();
             $table->string('body')->nullable();
-            $table->string('rating');
+            $table->string('rating')->nullable();
             $table->timestamps();
         });
     }

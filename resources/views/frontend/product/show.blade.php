@@ -231,21 +231,22 @@
                     <div class="col-lg-7 col-md-12 product-showpagepills">
                         <ul class="nav nav-pills justify-content-between prdct-pills-tab p-0" id="myTab" role="tablist">
                             <li class="nav-item prdct-pills-f1">
-                                <a class="nav-link active p-0" id="home-tab" data-bs-toggle="pill" href="#home" role="tab" aria-controls="home"
-                                    aria-selected="true">
+                                <a class="nav-link active p-0" id="home-tab" data-bs-toggle="pill" href="#home"
+                                    role="tab" aria-controls="home" aria-selected="true">
                                     <h5 class="main-head tab-fs">Customer reviews</h5>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link p-0" id="profile-tab" data-bs-toggle="pill" href="#profile" role="tab"
-                                    aria-controls="profile" aria-selected="false">
+                                <a class="nav-link p-0" id="profile-tab" data-bs-toggle="pill" href="#profile"
+                                    role="tab" aria-controls="profile" aria-selected="false">
                                     <h5 class="main-head">Write A Review</h5>
                                 </a>
                             </li>
                         </ul>
                         <hr>
                         <div class="tab-content mt-3" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                aria-labelledby="home-tab">
                                 <div class="container">
                                     @forelse ($reviews as $re)
                                         <div class="review-area">
@@ -298,7 +299,8 @@
                                                                 alt="">
                                                         </div>
                                                     </div>
-                                                    <div class="review-info text-muted d-flex flex-wrap justify-content-between">
+                                                    <div
+                                                        class="review-info text-muted d-flex flex-wrap justify-content-between">
                                                         <div class="py-2">
                                                             Kiran22
                                                             <i class="fa-solid fa-star text-warning"></i>
@@ -329,7 +331,8 @@
                             </div>
 
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <form action="" method="post">
+                                <form action="{{ route('frontend.review.store', $product->slug) }}" method="POST">
+                                    @csrf
                                     <div class="d-flex justify-content-between flex-column flex-sm-row gap-1">
                                         <div>Give Your Rating</div>
                                         <div class="rating d-flex flex-row justify-contend-end gap-2 text-green">
@@ -342,10 +345,11 @@
                                     </div>
 
                                     <div class="py-4">
-                                        <input type="text" class="form-control my-2 review-sub-headline review-input-bg" placeholder="Headline">
-
-                                        <textarea name="" id="" cols="10" rows="2" class="mt-3 form-control w-100  review-sub-textarea review-input-bg"
-                                            placeholder="Enter Your Text"></textarea>
+                                        <input type="text"
+                                            class="form-control my-2 review-sub-headline review-input-bg"
+                                            placeholder="Enter Title" name="title" required>
+                                        <textarea name="body" id="body" cols="10" rows="3"
+                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review">{{ old('body') }}</textarea>
                                     </div>
                                     <div class="text-end">
                                         <button type="submit" class="btn btn-pink">Post Your Review</button>

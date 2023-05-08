@@ -21,7 +21,7 @@ class Authenticate extends Middleware
                 session()->flash('alert-type', 'info');
                 session()->flash('message', 'Log In');
                 session()->flash('login_redirect', true);
-                return route('index');
+                return route('frontend.index');
             }
         }
         if (!$request->expectsJson()) {

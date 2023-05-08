@@ -13,7 +13,7 @@
                 <h1>ABOUT US</h1>
                 <nav class="breadcrumbs">
                   <ul class="list-unstyled">
-                    <li><a href="{{route('index')}}">home <i class="fa fa-angle-right"></i></a></li>
+                    <li><a href="{{route('frontend.index')}}">home <i class="fa fa-angle-right"></i></a></li>
                     <li>About Us</li>
                   </ul>
                 </nav>
