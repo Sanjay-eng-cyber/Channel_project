@@ -2589,3 +2589,24 @@ a:hover {
         margin-top: 0;
     }
 }
+
+/* product showpage tab pills */
+
+.product-showpagepills{
+
+}
+
+.prdct-pills-tab{
+
+}
+.product-showpagepills
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color:black;
+    background-color:white;
+}
+
+.product-showpagepills
+.nav-link {
+    color: black;
+}
+
