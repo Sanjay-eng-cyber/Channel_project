@@ -34,7 +34,7 @@
                                     <option value="">Select Brand</option>
                                     @foreach ($brands as $b)
                                         <option value="{{ $b->slug }}"
-                                            {{ request('brand') && request('brand') == $b->name ? 'selected' : '' }}>
+                                            {{ request('brand') && request('brand') == $b->slug ? 'selected' : '' }}>
                                             {{ $b->name }}</option>
                                     @endforeach
                                 </select>
@@ -42,7 +42,7 @@
                                     <option value="">Select Category</option>
                                     @foreach ($categories as $c)
                                         <option value="{{ $c->slug }}"
-                                            {{ request('category') && request('category') == $c->name ? 'selected' : '' }}>
+                                            {{ request('category') && request('category') == $c->slug ? 'selected' : '' }}>
                                             {{ $c->name }}</option>
                                     @endforeach
                                 </select>
