@@ -65,25 +65,25 @@
                                <div class="navbar-nav d-inline d-lg-none text-start">
                                    <ul class="list-unstyled nav-dd-color">
                                        <li class="nav-item dd-cl mt-3">
-                                           <a class="nav-link px-4" aria-current="page" href="#">HOME</a>
+                                           <a class="nav-link px-4" aria-current="page" href="{{ route('frontend.index') }}">HOME</a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4" href="#">SKIN</a>
+                                           <a class="nav-link px-4" href="{{ route('frontend.cat.show', 'skin') }}">SKIN</a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4" href="#">FRAGRANCES</a>
+                                           <a class="nav-link px-4" href="{{ route('frontend.cat.show', 'fragrances') }}">FRAGRANCES</a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4" href="#">HAIRCARE</a>
+                                           <a class="nav-link px-4" href="{{ route('frontend.cat.show', 'hair-care') }}">HAIR CARE</a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4" href="#">PERSONALCARE</a>
+                                           <a class="nav-link px-4" href="{{ route('frontend.cat.show', 'personal-care') }}">PERSONAL CARE</a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4" href="#"> HOME DECOR </a>
+                                           <a class="nav-link px-4" href="{{ route('frontend.cat.show', 'home-decor') }}"> HOME DECOR </a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4" href="#">GIFT</a>
+                                           <a class="nav-link px-4" href="{{ route('frontend.cat.show', 'gift') }}">GIFT</a>
                                        </li>
 
                                    </ul>
@@ -190,8 +190,8 @@
                                <li><a href="{{ route('frontend.index') }}">Home</a></li>
                                <li><a href="{{ route('frontend.cat.show', 'skin') }}">Skin</a></li>
                                <li><a href="{{ route('frontend.cat.show', 'fragrances') }}">Fragrances</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'hair') }}">Haircare</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'personal-care') }}">PersonalCare</a></li>
+                               <li><a href="{{ route('frontend.cat.show', 'hair-care') }}">Hair Care</a></li>
+                               <li><a href="{{ route('frontend.cat.show', 'personal-care') }}">Personal Care</a></li>
                                <li><a href="{{ route('frontend.cat.show', 'home-decor') }}">Home Decor</a></li>
                                <li><a href="{{ route('frontend.cat.show', 'gift') }}">Gift</a></li>
                            </ul>
