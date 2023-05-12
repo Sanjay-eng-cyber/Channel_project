@@ -149,6 +149,9 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.shipping-policy');
     })->name('shipping-policy');
 
+    Route::get('/returns-and-refunds-policy', function () {
+        return view('frontend.returns-and-refunds-policy');
+    })->name('returns-and-refunds-policy');
     // Route::get('/products/{slug}', function () {
     //     return view('frontend/product/show');
     // })->name('products.show');
