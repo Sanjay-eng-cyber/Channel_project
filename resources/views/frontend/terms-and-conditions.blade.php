@@ -2,7 +2,7 @@
 @section('title')
 @section('content')
     {{-- first slider slider --}}
-    <section>
+    <section class="pb-3">
         <div class="container">
             <div class="row main-group-card">
                 <h2 class="text-red main-head text-center my-5">Terms & Conditions</h2>
