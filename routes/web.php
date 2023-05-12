@@ -141,6 +141,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend/product/index');
     })->name('products');
 
+    Route::get('/terms-and-conditions', function () {
+        return view('frontend.terms-and-conditions');
+    })->name('terms-and-conditions');
+
     // Route::get('/products/{slug}', function () {
     //     return view('frontend/product/show');
     // })->name('products.show');
