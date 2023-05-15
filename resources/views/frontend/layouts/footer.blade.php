@@ -30,6 +30,12 @@
                             </li>
                         </ul>
                         <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
+                            <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
+                                <i class="fas fa-clock  text-red"></i>
+                                <span>Mon-Sat 10:00am to 6.00pm</span>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
                             <li>
                                 <i class="fas fa-phone  text-red"></i>
                             </li>
@@ -44,10 +50,15 @@
                             <li>
                                 <a href="mailto:channeltheshop@yahoo.co.in ">channeltheshop@yahoo.co.in </a>
                             </li>
+
                         </ul>
 
                         <ul class="list-unstyled contact-mobile-version d-sm-none d-block">
-                            <li class="gap-2 d-flex align-items-center">
+                            <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
+                                <i class="fas fa-clock  text-red"></i>
+                                <span>Mon-Sat 10:00am to 6.00pm</span>
+                            </li>
+                            <li class="gap-2 d-flex align-items-center mt-sm-0 mt-3">
                                 <i class="fas fa-phone  text-red"></i>
                                 <a href="tel:+917710062724" class="footer-links-hover">+91-7710062724</a>
                             </li>
@@ -56,6 +67,9 @@
                                 <i class="fas fa-envelope  text-red"></i>
                                 <a href="mailto:channeltheshop@yahoo.co.in ">channeltheshop@yahoo.co.in </a>
                             </li>
+
+
+
                         </ul>
 
 
@@ -165,16 +179,7 @@
                                     <li><a href="{{route('frontend.shipping-policy')}}">Shipping Policy</a></li>
                                 </ul>
                             </div>
-                            <div class="col">
-                                <ul>
-                                    <li><a href="{{route('frontend.terms-and-conditions')}}">Terms & Conditions</a></li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <ul>
-                                    <li><a href="{{route('frontend.privacy-policy')}}">Privacy Policy</a></li>
-                                </ul>
-                            </div>
+                       
 
                         </div>
                     </div>
