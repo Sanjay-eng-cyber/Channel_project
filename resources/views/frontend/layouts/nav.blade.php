@@ -7,12 +7,12 @@
        {{-- navbar header --}}
        <div class="mt-top-bar" style="background-color: white;color:black">
            <div class="container py-4">
-               <div class="row">
+               <div class="row ">
                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                       <div class="container-fluid  d-flex flex-row-reverse">
+                       <div class="container-fluid  d-flex flex-row-reverse ">
                            <a class="navbar-brand d-inline d-lg-none" href="#" style="">
                                <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}" alt="channel"
-                                   class="img-fluid" style="width:130px">
+                                   class="img-fluid " style="width:130px">
                            </a>
                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -159,7 +159,7 @@
            </div>
 
 
-           <div class="container d-none d-lg-block">
+           <div class="container d-none d-lg-block px-0">
                <div class="row">
                    <div class="col-xs-12">
                        <ul class="mt-icon-list pt-2 pt-md-0 pt-lg-2 pt-xl-0 pt-xxl-0">
