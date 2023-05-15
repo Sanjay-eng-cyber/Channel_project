@@ -11,9 +11,9 @@
     {{-- first slider slider --}}
     <section class="pb-3">
         <div class="container">
-            <div class="row justify-content-center my-5">
+            <div class="row justify-content-center my-5 px-sm-0 px-2">
 
-                <div class="col-md-12 p-md-5 p-4 contact-border">
+                <div class="col-md-12 p-md-5 p-4 contact-border ">
                     <h2 class="text-red main-head text-center mb-3">Contact US</h2>
                     <div class="row main-group-card pt-5 mx-md-4 mb-md-4 contact-img">
                         <h3 class="text-center text-white">Contact Information</h3>
@@ -49,10 +49,10 @@
                         </div>
                         <div class="col-lg-5 py-5">
                             <div class="card py-5">
-                                <i class="fas fa-clock  text-red d-block  f-s-50"></i>
-                                <p class="text-red text-center mt-3">Timings</p>
+                                <i class="fa-regular fa-clock  text-red d-block  f-s-50"></i>
+                                <p class="text-red text-center mt-3 m-0 p-0 mb-2">Timings</p>
                                 <hr class="text-red w-50 mx-auto py-0 my-0">
-                                <p class="text-center text-red py-0 my-0 mt-3">Mon-Sat</p>
+                                <p class="text-center text-red py-0 my-0 mt-2">Mon-Sat</p>
                                 <p class="text-center text-red py-0 my-0">
                                     10:00am to 6.00pm</p>
 

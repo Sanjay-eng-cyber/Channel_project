@@ -10,7 +10,7 @@
                <div class="row ">
                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
                        <div class="container-fluid  d-flex flex-row-reverse ">
-                           <a class="navbar-brand d-inline d-lg-none mx-auto" href="#" style="">
+                           <a class="navbar-brand d-inline d-lg-none mx-auto" href="{{url('/')}}" style="">
                                <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}" alt="channel"
                                    class="img-fluid " style="width:130px">
                            </a>
