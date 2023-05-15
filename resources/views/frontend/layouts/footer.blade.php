@@ -40,7 +40,7 @@
                                 <i class="fas fa-phone  text-red"></i>
                             </li>
                             <li>
-                                <a href="tel:+917710062724">+91-7710062724</a>
+                                <a href="tel:+917710062724" class="footer-info">+91-7710062724</a>
                             </li>
                         </ul>
                         <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
@@ -48,7 +48,7 @@
                                 <i class="fas fa-envelope  text-red"></i>
                             </li>
                             <li>
-                                <a href="mailto:channeltheshop@yahoo.co.in ">channeltheshop@yahoo.co.in </a>
+                                <a href="mailto:channeltheshop@yahoo.co.in " class="footer-info">channeltheshop@yahoo.co.in </a>
                             </li>
 
                         </ul>
