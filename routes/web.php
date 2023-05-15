@@ -156,6 +156,8 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/privacy-policy', function () {
         return view('frontend.privacy-policy');
     })->name('privacy-policy');
+
+    
     // Route::get('/products/{slug}', function () {
     //     return view('frontend/product/show');
     // })->name('products.show');
