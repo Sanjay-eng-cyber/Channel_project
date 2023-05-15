@@ -140,8 +140,7 @@
                             <li><a href="{{route('frontend.returns-and-refunds-policy')}}">Returns & Refunds Policy</a></li>
 
                             <li><a href="{{route('frontend.shipping-policy')}}">Shipping Policy</a></li>
-                            <li><a href="{{route('frontend.terms-and-conditions')}}">Terms & Conditions</a></li>
-                            <li><a href="{{route('frontend.privacy-policy')}}">Privacy Policy</a></li>
+
 
                         </ul>
                     </div>
@@ -215,10 +214,10 @@
             <div class="row">
                 <div class="col-6 col-sm-7 footer-tpc">
                     <ul class="gap-2 gap-sm-4  p-0  footer-tpc-ul">
-                        <a href="" class="fw-bolder">
+                        <a href="{{route('frontend.terms-and-conditions')}}" class="fw-bolder">
                             Terms
                         </a>
-                        <a href="" class="fw-bolder">
+                        <a href="{{route('frontend.privacy-policy')}}" class="fw-bolder">
                             Privacy
                         </a>
                         <a href="" class="fw-bolder">
@@ -265,7 +264,7 @@
 
                     <p class="footer-custome-c">
                         Designed & Developed by
-                        <a href="http://" class="underline footer-custome-c">Acetrot</a>
+                        <a href="{{url('https://www.acetrot.com/')}}" class="underline footer-custome-c" target="_blank">Acetrot</a>
                     </p>
 
                 </div>
