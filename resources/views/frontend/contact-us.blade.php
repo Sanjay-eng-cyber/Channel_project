@@ -24,13 +24,13 @@
 
                                 <li class="gap-2 d-flex align-items-center mt-sm-4 mt-3">
                                     <i class="fas fa-phone  text-white"></i>
-                                    <a href="tel:+917710062724" class="footer-links-hover text-white">+91-7710062724</a>
+                                    <a href="tel:+917710062724" class="contact-us-link footer-links-hover text-white">+91-7710062724</a>
                                 </li>
 
                                 <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-4 mt-3">
                                     <i class="fas fa-envelope text-white"></i>
                                     <a href="mailto:channeltheshop@yahoo.co.in "
-                                        class="text-white">channeltheshop@yahoo.co.in </a>
+                                        class="text-white contact-us-link">channeltheshop@yahoo.co.in </a>
                                 </li>
 
 

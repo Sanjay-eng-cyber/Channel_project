@@ -2624,3 +2624,6 @@ a:hover {
     font-size:50px;
 }
 
+.contact-us-link:hover{
+    color:black !important;
+}
