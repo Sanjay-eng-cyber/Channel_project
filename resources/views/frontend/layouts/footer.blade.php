@@ -15,7 +15,7 @@
                     <!-- F Widget About of the Page -->
                     <div class="f-widget-about">
                         <div class="logo">
-                            <a href="frontend/#">
+                            <a href="{{url("/")}}">
                                 <img src="{{ url('frontend/images/channel-logo.svg') }}" height="30"
                                     alt="Channel"></a>
                         </div>
@@ -46,15 +46,15 @@
                             </li>
                         </ul>
 
-                        <ul class="list-unstyled contact-mobile-version">
+                        <ul class="list-unstyled contact-mobile-version d-sm-none d-block">
                             <li class="gap-2 d-flex align-items-center">
                                 <i class="fas fa-phone  text-red"></i>
-                                <a href="tel:+917710062724">+91-7710062724</a>
+                                <a href="tel:+917710062724" class="footer-links-hover">+91-7710062724</a>
                             </li>
 
-                            <li class="gap-2 d-flex align-items-center">
+                            <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
                                 <i class="fas fa-envelope  text-red"></i>
-                                channel@gmail.com
+                                <a href="mailto:channeltheshop@yahoo.co.in ">channeltheshop@yahoo.co.in </a>
                             </li>
                         </ul>
 
@@ -122,7 +122,7 @@
                     </div>
                     <!-- Footer Nav of the Page end -->
                     <!-- Footer Nav of the Page -->
-                    <div class="nav-widget-1 cainco-breackpoint-info">
+                    <div class="nav-widget-1 cainco-breackpoint-info d-sm-block d-none">
                         <h3 class="f-widget-heading info-f-heading">Information</h3>
                         <ul class="list-unstyled f-widget-nav info-f-list">
                             <li><a href="{{ route('frontend.about') }}">FAQ</a></li>
@@ -133,7 +133,7 @@
                     </div>
                     <!-- Footer Nav of the Page end -->
                     <!-- Footer Nav of the Page -->
-                    <div class="nav-widget-1 cainco-breackpoint-company">
+                    <div class="nav-widget-1 cainco-breackpoint-company d-sm-block d-none">
                         <h3 class="f-widget-heading c-f-heading">Company</h3>
                         <ul class="list-unstyled f-widget-nav  c-f-list">
                             <li><a href="{{route('frontend.about')}}">About Us</a></li>
@@ -144,6 +144,40 @@
                             <li><a href="{{route('frontend.privacy-policy')}}">Privacy Policy</a></li>
 
                         </ul>
+                    </div>
+
+                    <div class="container category-mobile-version">
+                        <h3 class="f-widget-heading text-red ct-f-heading mt-4">Company</h3>
+
+                        <div class="row row-cols-3">
+
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{route('frontend.about')}}">About Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{route('frontend.returns-and-refunds-policy')}}">Returns & Refunds Policy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{route('frontend.shipping-policy')}}">Shipping Policy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{route('frontend.terms-and-conditions')}}">Terms & Conditions</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{route('frontend.privacy-policy')}}">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
                     </div>
                     <!-- Footer Nav of the Page end -->
                 </nav>
