@@ -125,7 +125,7 @@
                     <div class="nav-widget-1 cainco-breackpoint-info">
                         <h3 class="f-widget-heading info-f-heading">Information</h3>
                         <ul class="list-unstyled f-widget-nav info-f-list">
-                            <li><a href="{{ route('about') }}">FAQ</a></li>
+                            <li><a href="{{ route('frontend.about') }}">FAQ</a></li>
                             <li><a href="{{ route('contact') }}">BLOG</a></li>
                             <li><a href="">Support</a></li>
 
@@ -136,9 +136,12 @@
                     <div class="nav-widget-1 cainco-breackpoint-company">
                         <h3 class="f-widget-heading c-f-heading">Company</h3>
                         <ul class="list-unstyled f-widget-nav  c-f-list">
-                            <li><a href="">About Us</a></li>
-                            <li><a href="">Careers</a></li>
-                            <li><a href="">Contact Us</a></li>
+                            <li><a href="{{route('frontend.about')}}">About Us</a></li>
+                            <li><a href="{{route('frontend.returns-and-refunds-policy')}}">Returns & Refunds Policy</a></li>
+
+                            <li><a href="{{route('frontend.shipping-policy')}}">Shipping Policy</a></li>
+                            <li><a href="{{route('frontend.terms-and-conditions')}}">Terms & Conditions</a></li>
+                            <li><a href="{{route('frontend.privacy-policy')}}">Privacy Policy</a></li>
 
                         </ul>
                     </div>

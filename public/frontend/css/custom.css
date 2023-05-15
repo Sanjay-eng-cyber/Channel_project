@@ -2610,3 +2610,8 @@ a:hover {
     color: black;
 }
 
+@media screen and (max-width: 576px){
+#mt-footer .nav-widget-1 .c-f-list li:nth-child(2), #mt-footer .nav-widget-1 .c-f-list li:nth-child(3) {
+    display: block !important;
+}
+}
