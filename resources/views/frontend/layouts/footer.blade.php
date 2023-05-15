@@ -42,7 +42,7 @@
                                 <i class="fas fa-envelope  text-red"></i>
                             </li>
                             <li>
-                                Exercitation ullamco laboris
+                                <a href="mailto:channeltheshop@yahoo.co.in ">channeltheshop@yahoo.co.in </a>
                             </li>
                         </ul>
 
