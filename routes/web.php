@@ -121,9 +121,9 @@ Route::domain(config('app.web_domain'))->group(function () {
 
 
 
-    Route::get('/contact-us', function () {
+    /*Route::get('/contact-us', function () {
         return view('frontend/layouts/contact-us');
-    })->name('contact');
+    })->name('contact');*/
 
     // Product page
     Route::get('/skin', function () {
@@ -158,6 +158,9 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/about-us', function () {
         return view('frontend.about');
     })->name('frontend.about');
+    Route::get('/contact-us', function () {
+        return view('frontend.contact-us');
+    })->name('frontend.contact-us');
 
 
     // Route::get('/products/{slug}', function () {

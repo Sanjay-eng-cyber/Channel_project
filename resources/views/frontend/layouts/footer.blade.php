@@ -140,7 +140,7 @@
                         <h3 class="f-widget-heading info-f-heading">Information</h3>
                         <ul class="list-unstyled f-widget-nav info-f-list">
                             <li><a href="{{ route('frontend.about') }}">FAQ</a></li>
-                            <li><a href="{{ route('contact') }}">BLOG</a></li>
+                            <li><a href="{{ route('frontend.contact-us') }}">BLOG</a></li>
                             <li><a href="">Support</a></li>
 
                         </ul>
@@ -154,6 +154,7 @@
                             <li><a href="{{route('frontend.returns-and-refunds-policy')}}">Returns & Refunds Policy</a></li>
 
                             <li><a href="{{route('frontend.shipping-policy')}}">Shipping Policy</a></li>
+                            <li><a href="{{route('frontend.contact-us')}}">Contact Us</a></li>
 
 
                         </ul>
@@ -179,7 +180,12 @@
                                     <li><a href="{{route('frontend.shipping-policy')}}">Shipping Policy</a></li>
                                 </ul>
                             </div>
-                       
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{route('frontend.contact-us')}}">Contact Us</a></li>
+                                </ul>
+                            </div>
+
 
                         </div>
                     </div>
