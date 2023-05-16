@@ -2687,3 +2687,8 @@ a:hover {
 .social-icons:hover .fa-twitter{
     color:white !important;
 }
+.profile-breadcrumb .container {
+    /* z-index: 9; */
+    z-index: 0 !important;
+    position: relative;
+}
