@@ -284,6 +284,9 @@
     </div>
     <!-- Footer Area of the Page end -->
 </footer>
+<a href="#" class="scroll-top">
+    <i class="fa fa-arrow-up"></i>
+</a>
 <!-- footer of the Page end -->
 <div class="py-5 phone-fixed-bottom-menu-gap"></div>
 <div class="conatiner-fluid phone-fixed-bottom-menu" style="background: white">
@@ -474,4 +477,31 @@
             }
         });
     </script>
+
+
+    <script>
+        window.onscroll = function() {
+        var header_navbar = document.querySelector(".navbar-area");
+        var sticky = header_navbar.offsetTop;
+
+
+        // show or hide the back-top-top button
+        var backToTo = document.querySelector(".scroll-top");
+        if (document.body.scrollTop >1000 || document.documentElement.scrollTop >1000) {
+            backToTo.style.display = "flex";
+        } else {
+            backToTo.style.display = "none";
+        };
+
+        if (window.pageYOffset > sticky) {
+            header_navbar.classList.add("sticky");
+        } else {
+            header_navbar.classList.remove("sticky");
+        }
+
+    };
+
+
+    
+        </script>
 @endsection
