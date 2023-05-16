@@ -25,7 +25,7 @@ jQuery(window).on('load', function() {
 
 // PreLoader init
 /*function initCountDown() {
-	jQuery("#countdown").countdown({ 
+	jQuery("#countdown").countdown({
 		date: "10 december 2017 12:00:00",
 		format: "on"
     });
@@ -264,7 +264,7 @@ function initSlickSlider() {
 		}
 		]
 	});
-} 
+}
 
 // fancybox modal popup init
 function initLightbox() {
@@ -309,14 +309,14 @@ function initbackTop() {
 function initIsoTop() {
 	var isotopeHolder = jQuery('#product-masonry .masonry-list'),
 		win = jQuery(window);
-		
+
 	isotopeHolder.isotope({transitionDuration: '0.75s'});
 	setTimeout(function() {
 		isotopeHolder.isotope('layout');
 	}, 100);
 	jQuery('#product-filter a').click(function(e){
 		e.preventDefault();
-		
+
 		jQuery('#product-filter li').removeClass('active');
 		jQuery(this).parent('li').addClass('active');
 		var selector = jQuery(this).attr('data-filter');
@@ -370,7 +370,7 @@ function initStickyHeader() {
 
 	jQuery('#mt-header').each(function() {
 		var header = jQuery(this);
-		var headerOffset = header.offset().top || 400;
+		var headerOffset = header.offset().top || 180; // sticky was on 400
 		var flag = true;
 
 
@@ -545,7 +545,7 @@ ResponsiveHelper = (function($){
 			mediaQueryString += '(min-width: ' + r1 + 'px)';
 		}
 		if(r2 < Infinity) {
-			mediaQueryString += (mediaQueryString ? ' and ' : '') + '(max-width: ' + r2 + 'px)';	
+			mediaQueryString += (mediaQueryString ? ' and ' : '') + '(max-width: ' + r2 + 'px)';
 		}
 		return matchQuery(mediaQueryString, r1, r2);
 	}
