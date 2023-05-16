@@ -79,22 +79,22 @@
                         <form class="text-left" method="POST" action="{{ route('password.email') }}">
                             @csrf
                             <div class="form">
-                                <div id="email-field" class="field-wrapper input">
+                                <div id="email-field" class="field-wrapper input ">
                                     {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign">
                                         <circle cx="12" cy="12" r="4"></circle>
                                         <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
                                     </svg> --}}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"
+                                        fill="currentColor" class="bi bi-envelope-fill mx-1" viewBox="0 0 16 16"
                                         style="fill: #6c86f8">
                                         <path
                                             d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z">
                                         </path>
                                     </svg>
-                                    <span><i class="bi bi-envelope-fill"></i></span>
+                                    <span><i class="bi bi-envelope-fill "></i></span>
                                     <input id="email" name="email" type="email" value=""
                                         placeholder="Email" minlength="8" maxlength="30" required
-                                        data-custom-attribute="channels-login">
+                                        data-custom-attribute="channels-login" class=" py-0 ">
                                     @if ($errors->has('email'))
                                         <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
                                     @endif
