@@ -162,6 +162,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.contact-us');
     })->name('frontend.contact-us');
 
+    Route::get('/payment', function () {
+        return view('frontend.payment');
+    })->name('frontend.payment');
+
 
     // Route::get('/products/{slug}', function () {
     //     return view('frontend/product/show');
