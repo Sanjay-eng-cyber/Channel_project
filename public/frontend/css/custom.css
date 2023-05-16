@@ -246,6 +246,11 @@ a:hover {
 .text-red {
     color: #ec268f;
 }
+
+.text-red-fill {
+    fill:#ec268f !important;
+}
+
 .bg-red {
     background-color: #ec268f;
 }

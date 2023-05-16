@@ -21,7 +21,7 @@
             </form> --}}
         </div>
         <div class="profile-menu">
-            <a href="{{ route('frontend.profile') }}" class="btn active">
+            <a href="{{ route('frontend.profile') }}" class="btn {{URL::current()==route('frontend.profile')? 'active':''}}">
                 <span class="menu-icon">
                     <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@
                 </span>
                 My Profile
             </a>
-            <a href="{{ route('frontend.wishlist.index') }}" class="btn">
+            <a href="{{ route('frontend.wishlist.index') }}" class="btn {{URL::current()==route('frontend.wishlist.index')? 'active':''}}">
                 <span class="menu-icon">
                     <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@
                 </span>
                 My Wishlist
             </a>
-            <a href="javascript:;" class="btn">
+            <a href="javascript:;" class="btn ">
                 <span class="menu-icon">
                     <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
