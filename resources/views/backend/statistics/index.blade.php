@@ -14,7 +14,7 @@
                                 Dashboard
                             </legend>
                         </div>
-                        <div class="col-12 col-sm-6  d-flex justify-content-end align-it ">
+                        <div class="col-12 col-md-6  d-flex justify-content-end align-it ">
                             <nav class="breadcrumb-two" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
                                     <h4 class="text-center">Brands</h4>
@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
                                     <h4 class="text-center">Total Categories</h4>
@@ -121,7 +121,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
                                     <h4 class="text-center">Total Sub Categories</h4>
@@ -141,7 +141,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
                                     <h4 class="text-center">Total Product</h4>
