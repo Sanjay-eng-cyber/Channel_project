@@ -2674,3 +2674,16 @@ a:hover {
     bottom:110px !important;
 }
 }
+
+.social-icons:hover {
+    background: #000000 !important;
+}
+.social-icons:hover .fa-facebook-f{
+    color:white !important;
+}
+.social-icons:hover .fa-linkedin-in{
+    color:white !important;
+}
+.social-icons:hover .fa-twitter{
+    color:white !important;
+}

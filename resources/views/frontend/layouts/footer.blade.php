@@ -241,21 +241,21 @@
                 <div class="col-5 col-sm-5 footer-lifinsta">
                     <ul class="gap-2 gap-sm-4 footer-lifinsta-ul">
                         <li class="footer-lifinsta-tag-1">
-                            <a href="https://www.linkedin.com/">
+                            <a href="https://www.linkedin.com/" class="social-icons">
                                 <i class="fa-brands fa-linkedin-in text-red"></i>
                             </a>
                         </li>
 
                         <li class="footer-lifinsta-tag-2">
 
-                            <a href="https://www.linkedin.com/">
+                            <a href="https://www.linkedin.com/" class="social-icons">
                                 <i class="fa-brands fa-facebook-f text-red"></i>
                             </a>
                         </li>
 
                         <li class="footer-lifinsta-tag-3">
 
-                            <a href="https://www.linkedin.com/">
+                            <a href="https://www.linkedin.com/" class="social-icons">
                                 <i class="fa-brands fa-twitter text-red"></i>
                             </a>
                         </li>
@@ -502,6 +502,6 @@
     };
 
 
-    
+
         </script>
 @endsection
