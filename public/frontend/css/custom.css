@@ -2632,6 +2632,9 @@ a:hover {
 .footer-info:hover{
     color:#f64d4d !important;
 }
+.active-red{
+    color:#f64d4d !important;
+}
 .form-control:focus {
     border-color:rgba(0, 175, 239, 0.29) !important;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 175, 239, 0.29);;
