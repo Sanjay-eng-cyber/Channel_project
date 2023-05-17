@@ -2892,3 +2892,12 @@ a:hover {
     left: 0;
     opacity: 0;
   }
+.cart-has-item-icon{
+    width:7px;
+    height:7px;
+     border-radius:100%;
+     background:#EC268F;
+     position: absolute;
+     top:15px;
+    right:78px;
+}

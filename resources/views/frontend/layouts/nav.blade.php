@@ -33,7 +33,7 @@
                                    <li class="nav-item text-red">
                                        <a class="nav-link fw-bold nn-top-cart"
                                            href="{{ route('frontend.cart.index') }}">
-                                           <i class="fas fa-cart-plus  nn-top-cart-icon"></i>
+                                           <i class="fas fa-cart-plus  nn-top-cart-icon">  </i><span class="cart-has-item-icon"></span>
                                        </a>
                                    </li>
 
