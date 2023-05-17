@@ -11,7 +11,7 @@
     <div class="footer-holder dark mt-paddingbottomxs-hide-holder ">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
+                <div class="col-xs-12  col-md-12 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
                     <!-- F Widget About of the Page -->
                     <div class="f-widget-about">
                         <div class="logo">
@@ -119,7 +119,7 @@
 
 
                 <nav
-                    class="col-xs-12 col-sm-7 col-md-8 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
+                    class="col-xs-12 justify-content-start col-md-12 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
 
 
                     <!-- Footer Nav of the Page -->
