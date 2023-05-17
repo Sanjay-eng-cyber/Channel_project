@@ -9,7 +9,9 @@
                 </button>
             </div>
             <div class="user-name-section">
-                <p class="name-input">{{ $name }}</p>
+                <p class="name-input text-center mt-2">{{ $name }} <i class="fa fa-pencil text-white "></i></p>
+
+                <hr class="name-border mx-auto">
             </div>
             {{-- <form action="" class="user-name-section">
                 <div class="input-group">

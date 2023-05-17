@@ -2865,3 +2865,19 @@ a:hover {
 .span-w-90-per {
     width: 90% !important;
 }
+.name-input {
+    background: none;
+    border: none;
+    border-bottom: none !important;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+.name-border{
+    border:none;
+    border-bottom: 2px solid white;
+    border-color:white;
+    width:50%;
+
+}
