@@ -20,7 +20,7 @@
                         <div>
                             <form action="" method="post" class="m-0">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder=""
+                                    <input type="text" class="form-control" placeholder="Serach Order"
                                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                                     <span class="input-group-text" id="basic-addon2"
                                         style="background: rgba(251, 140, 165, 0.2);">
@@ -32,7 +32,8 @@
                                 </div>
                             </form>
                         </div>
-                        {{-- <div class="d-flex gap-3 align-items-baseline">
+
+                         <div class="d-flex gap-3 align-items-baseline">
                             <div>For</div>
                             <div class="pro-radio-btn">
                                 <input type="radio" class="btn-check" name="options" id="option01" autocomplete="off">
@@ -43,7 +44,8 @@
                                 <label class="btn" for="option02">Her</label>
                             </div>
 
-                        </div> --}}
+                        </div>
+
                     </div>
                 </div>
 
