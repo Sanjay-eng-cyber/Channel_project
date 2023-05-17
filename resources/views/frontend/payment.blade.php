@@ -2,7 +2,6 @@
 @section('title', 'Payment |')
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
-
 @endsection
 @section('content')
     <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
@@ -29,10 +28,12 @@
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item border ">
                             <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                <button class="accordion-button collapsed w-100" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
-                                    Cash On Delivery
+                                    <span class="span-w-90-per">Cash On Delivery</span> <img
+                                        src="{{ url('frontend/images/icons/green-check.png') }}" alt=""
+                                        class="img-w-20">
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
@@ -44,10 +45,12 @@
                         </div>
                         <div class="accordion-item border mt-2">
                             <h2 class="accordion-header" id="flush-headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                <button class="accordion-button collapsed w-100" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                     aria-controls="flush-collapseTwo">
-                                    UPI Payments
+                                    <span class="span-w-90-per"> UPI Payments</span> <img
+                                        src="{{ url('frontend/images/icons/green-check.png') }}" alt=""
+                                        class="img-w-20">
                                 </button>
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
@@ -59,10 +62,12 @@
                         </div>
                         <div class="accordion-item border mt-2">
                             <h2 class="accordion-header" id="flush-headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                <button class="accordion-button collapsed w-100" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseThree" aria-expanded="false"
                                     aria-controls="flush-collapseThree">
-                                    Net Banking
+                                    <span class="span-w-90-per"> Net Banking</span> <img
+                                        src="{{ url('frontend/images/icons/green-check.png') }}" alt=""
+                                        class="img-w-20">
                                 </button>
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
@@ -77,10 +82,12 @@
 
                         <div class="accordion-item border mt-2">
                             <h2 class="accordion-header" id="flush-headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                <button class="accordion-button collapsed w-100" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseFour" aria-expanded="false"
                                     aria-controls="flush-collapseFour">
-                                    Credit / Debit Card
+                                    <span class="span-w-90-per"> Credit / Debit Card</span> <img
+                                        src="{{ url('frontend/images/icons/green-check.png') }}" alt=""
+                                        class="img-w-20">
                                 </button>
                             </h2>
                             <div id="flush-collapseFour" class="accordion-collapse collapse"

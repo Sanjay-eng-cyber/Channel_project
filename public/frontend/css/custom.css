@@ -2845,3 +2845,23 @@ a:hover {
 .accordion-button {
     opacity: 0.3;
 }
+
+.accordion-button::after {
+    flex-shrink: 0;
+    width: var(--bs-accordion-btn-icon-width);
+    height: var(--bs-accordion-btn-icon-width);
+    margin-left: auto;
+    content: none !important;
+    background-image: var(--bs-accordion-btn-icon);
+    background-repeat: no-repeat;
+    background-size: var(--bs-accordion-btn-icon-width);
+    transition: var(--bs-accordion-btn-icon-transition);
+}
+
+.img-w-20 {
+    width: 20px;
+}
+
+.span-w-90-per {
+    width: 90% !important;
+}
