@@ -41,7 +41,7 @@
             flex-column-reverse flex-md-row">
                 <div class="col-md-8 col-lg-9 __cart-ui-f">
 
-                    <div class="row d-flex justify-content-end __cart-ui-nav">
+                    <div class="row d-flex justify-content-center justify-content-lg-end __cart-ui-nav">
                         <div class="col-sm-11">
                             <h5 class="main-head __cart-ui-nav-heading">Deselect all items</h5>
                             <div
