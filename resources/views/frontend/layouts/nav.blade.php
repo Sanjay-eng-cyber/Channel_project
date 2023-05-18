@@ -262,6 +262,16 @@
                                            <span class="text-danger" v-text='allErrors'></span>
                                        </div>
                                    </div>
+                                <div class="row justify-content-center mx-auto">
+                                    <p class="text-center">Or Connect With</p>
+                                    <div class="col-6 text-center">
+                                        <button class="border-0 d-flex pt-2 links-btns mx-auto" ><img src="frontend/images/icons/icon-fb.png" alt=""  class="mx-2 icon-img-size"> Facebook</button>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <button class="border-0 d-flex pt-2 links-btns mx-auto" ><img src="frontend/images/icons/icon-google.png" alt=""  class="mx-2 icon-img-size"> Google</button>
+                                    </div>
+                                </div>
                                </form>
                            </div>
                            {{-- @elseif($step == 2) --}}
