@@ -225,13 +225,13 @@
             <div class="row">
                 <div class="col-6 col-sm-7 footer-tpc">
                     <ul class="gap-2 gap-sm-4  p-0  footer-tpc-ul">
-                        <a href="{{route('frontend.terms-and-conditions')}}" class="fw-bolder">
+                        <a href="{{route('frontend.terms-and-conditions')}}" class="fw-bolder footer-links-hover-bottom">
                             Terms
                         </a>
-                        <a href="{{route('frontend.privacy-policy')}}" class="fw-bolder">
+                        <a href="{{route('frontend.privacy-policy')}}" class="fw-bolder footer-links-hover-bottom">
                             Privacy
                         </a>
-                        <a href="" class="fw-bolder">
+                        <a href="" class="fw-bolder footer-links-hover-bottom">
                             Cookies
                         </a>
                     </ul>

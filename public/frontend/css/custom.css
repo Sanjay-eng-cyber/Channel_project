@@ -2919,3 +2919,6 @@ input[type="text"]::placeholder {
     /* Firefox, Chrome, Opera */
     text-align: left;
 }
+.footer-links-hover-bottom:hover{
+    color:#f58634 !important;
+}
