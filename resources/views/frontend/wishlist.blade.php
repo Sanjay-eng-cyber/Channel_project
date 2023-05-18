@@ -63,7 +63,7 @@
                                         class="add-to-cart-btn btn profile-btn-color add-p-btn btn-pink add-to-cart"
                                         data-p-id="{{ $w->product->id }}">Add To
                                         Cart</a>
-                                    <a href="" style="font-size:12px" class="py-1 text-red" data-bs-toggle="modal"
+                                    <a href="" style="font-size:12px" class="py-1 text-red mt-md-1 mt-2" data-bs-toggle="modal"
                                         data-bs-target="#wishlist-popup">
                                         Remove item from Wishlist
                                     </a>

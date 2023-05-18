@@ -90,6 +90,53 @@
                         </div>
 
                     </form>
+
+
+                    <form class="p-4 profile-form-border mt-3" action="" method="post">
+                        <h5 class="main-head text-red text-start">Change Password</h5>
+                        @csrf
+                        <div class="row">
+                            <div class="col-sm-6 py-2">
+                                <input type="text" name="c-password" class=" profile-form-input-custome"
+                                    placeholder="Current Password" minlength="3" maxlength="30"
+                                    value="" required>
+                                {{--@if ($errors->has('first_name'))
+                                    <div id="first_name-error" class="text-primary">{{ $errors->first('first_name') }}</div>
+                                @endif--}}
+                            </div>
+                            <div class="col-sm-6 py-2">
+                                <input type="text" name="n-password" class=" profile-form-input-custome"
+                                    placeholder="New Password" minlength="3" maxlength="30" required
+                                    value="">
+                                {{--@if ($errors->has('last_name'))
+                                    <div id="last_name-error" class="text-primary">{{ $errors->first('last_name') }}</div>
+                                @endif--}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 pt-0 d-sm-block d-none">
+                              <img src="frontend/images/icons/lock-icon.png" alt="" class="p-0 m-0 ">
+                            </div>
+
+                            <div class="col-sm-6 py-2">
+                                <input type="text" name="c-n-password" class=" profile-form-input-custome" placeholder="Confirm New Password"
+                                    minlength="5" maxlength="50" value="">
+                                {{--@if ($errors->has('email'))
+                                    <div id="email-error" class="text-primary">{{ $errors->first('email') }}</div>
+                                @endif--}}
+                                <div class="col-sm-12  text-end mt-5">
+                                    <button type="submit" class="btn profile-btn-color">Update Password</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </form>
+
+
                     <div class="py-3">
                     </div>
                     {{-- <form class="p-4 profile-form-border" action="" method="post">
