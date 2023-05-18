@@ -2809,11 +2809,11 @@ a:hover {
 }
 
 .social-icons:hover {
-    background: #000000 !important;
+    background:#ec268f !important;
 }
 
 .social-icons:hover .fa-facebook-f {
-    color: white !important;
+    color:white !important;
 }
 
 .social-icons:hover .fa-linkedin-in {
