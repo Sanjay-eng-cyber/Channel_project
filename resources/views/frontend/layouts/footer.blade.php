@@ -504,4 +504,11 @@
 
 
         </script>
+
+        <script>
+            $(".add-to-cart-btn").click(function(){
+  $(this).toggleClass("btn-outline-pink");
+  $(this).toggleClass("profile-btn-color");
+});
+        </script>
 @endsection

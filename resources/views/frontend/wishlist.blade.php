@@ -60,7 +60,7 @@
                                 <div
                                     class="col-sm-12  col-md-12 col-lg-12 col-xl-3 py-3 py-xl-0 py-xxl-0 wishlist-main-in-btn">
                                     <a href="javascript:void(0)"
-                                        class="btn profile-btn-color add-p-btn btn-pink add-to-cart"
+                                        class="add-to-cart-btn btn profile-btn-color add-p-btn btn-pink add-to-cart"
                                         data-p-id="{{ $w->product->id }}">Add To
                                         Cart</a>
                                     <a href="" style="font-size:12px" class="py-1 text-red" data-bs-toggle="modal"
