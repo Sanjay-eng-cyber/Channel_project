@@ -2914,3 +2914,8 @@ width: 130.89px;
 height: 40.67px;
 vertical-align:center;
 }
+input[type="text"]::placeholder {
+
+    /* Firefox, Chrome, Opera */
+    text-align: left;
+}
