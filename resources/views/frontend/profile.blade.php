@@ -2,6 +2,7 @@
 @section('title', 'Profile')
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
+
 @endsection
 @section('content')
 
@@ -223,7 +224,7 @@
                                 @csrf
                                 <h5 class="main-head text-red">Add Address</h5>
 
-                                <div class="form-group py-2">
+                                <div class="form-group py-2 ">
                                     <input type="text" name="name" class=" profile-form-input-custome"
                                         placeholder="Name*" required minlength="3" maxlength="20" required>
                                     @if ($errors->has('name'))
@@ -274,6 +275,27 @@
                                     @endif
                                 </div>
 
+                                <div class="form-group   py-2">
+
+                                    <div class="row">
+                                        <div class="col-6 pt-2">
+                                            <label for="" class="form-check-label gray-new">Address Type</label>
+                                        </div>
+                                        <div class="col-6 dropdown-add">
+                                            <select name="" id="" class="profile-form-input-custome gray-new" placeholder="Address Type" >
+                                                <option value="">Select</option>
+                                                <option value="" >Home</option>
+                                                <option value="">Office</option>
+
+                                                <option value="">Other</option>
+                                                   </select>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
                                 {{-- <div class="row">
                                 <div class="col-sm-6 py-2">
 
@@ -292,7 +314,7 @@
 
 
                                 <div class="col-sm-12 pt-4">
-                                    <button type="submit" class="btn profile-btn-color">Save</button>
+                                    <button type="submit" class="btn profile-btn-color">Save Address</button>
                                 </div>
 
                             </form>

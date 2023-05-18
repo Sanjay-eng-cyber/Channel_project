@@ -2922,3 +2922,8 @@ input[type="text"]::placeholder {
 .footer-links-hover-bottom:hover{
     color:#f58634 !important;
 }
+.gray-new{
+    color:rgba(57, 53, 53, 0.34);
+}
+
+

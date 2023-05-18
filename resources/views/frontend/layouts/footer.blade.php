@@ -511,4 +511,6 @@
   $(this).toggleClass("profile-btn-color");
 });
         </script>
+
+    
 @endsection
