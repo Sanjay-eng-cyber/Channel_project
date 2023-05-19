@@ -3007,3 +3007,6 @@ input[type="text"]::placeholder {
     border:1px solid #CED4DA ;
     background:#FFFFFF;
 }
+.w-15{
+    width: 15px;
+}

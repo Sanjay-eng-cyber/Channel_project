@@ -77,15 +77,15 @@
                                     <div class="row">
                                         <h3 class="panel-title display-td text-center">Choose An Option</h3>
                                         <div class="form-group">
-                                            <input type="radio" class="form-check-input phone-pe" name="upi"> <label
-                                                for="">PhonePe</label>
+                                            <input type="radio" class="form-check-radio phone-pe" name="upi"
+                                                id="phonepe"> <label for="phonepe">PhonePe</label>
                                         </div>
                                         <button
                                             class="btn btn- btn-lg btn-block mx-auto text-center mt-3 pay-now phone-pe-btn w-25">Continue
                                         </button>
                                         <div class="form-group mt-3">
-                                            <input type="radio" class="form-check-input upi-btn" name="upi"> <label
-                                                for="">Your UPI ID</label>
+                                            <input type="radio" class="form-check-radio upi-btn" name="upi"
+                                                id="upiid"> <label for="upiid">Your UPI ID</label>
                                         </div>
 
                                         <div class="row mt-3 upi-id">
@@ -120,11 +120,62 @@
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion
-                                    body. Nothing more exciting happening here in terms of content, but just filling up the
-                                    space to make it look, at least at first glance, a bit more representative of how this
-                                    would look in a real-world application.</div>
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <h3 class="panel-title display-td text-center">Popular Banks</h3>
+                                        <div class="col-md-6 text-center text-md-start">
+                                            <div class="form-group d-inline">
+                                                <input type="radio" name="bank" class="form-check-radio"
+                                                    id="hdfc"> <img src="frontend/images/icons/hdfc.png"
+                                                    alt="" class="d-inline w-15 pb-1"> <label for="hdfc"
+                                                    class="d-inline"> HDFC Bank</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mt-md-0 mt-3 text-center text-md-start">
+                                            <div class="form-group d-inline">
+                                                <input type="radio" name="bank" class="form-check-radio"
+                                                    id="sbi"> <img src="frontend/images/icons/sbi.svg"
+                                                    alt="" class="d-inline w-15 pb-1"> <label for="sbi"
+                                                    class="d-inline"> State Bank Of India</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3 ">
+
+                                        <div class="col-md-6 text-center text-md-start">
+                                            <div class="form-group d-inline">
+                                                <input type="radio" name="bank" class="form-check-radio"
+                                                    id="axis"> <img src="frontend/images/icons/axis.png"
+                                                    alt="" class="d-inline w-15 pb-1"> <label for="axis"
+                                                    class="d-inline">Axis Bank</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mt-md-0 mt-3 text-center text-md-start">
+                                            <div class="form-group d-inline">
+                                                <input type="radio" name="bank" class="form-check-radio"
+                                                    id="icici"> <img src="frontend/images/icons/icici.png"
+                                                    alt="" class="d-inline w-15 pb-1"> <label for="icici"
+                                                    class="d-inline"> ICICI Bank</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-6">
+                                            <h4 class="textmd-start text-center">Other Banks</h4>
+                                            <select class="form-control">
+                                                <option value="">Select Bank</option>
+                                                <option value="">Kotak</option>
+                                                <option value="">Punjab</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit"
+                                            class="btn btn- btn-lg btn-block mx-auto text-center  pay-now mb-2 py-1 mt-3">Pay
+                                            <i class="fa fa-inr"></i> 199</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -145,7 +196,7 @@
                                     <div class="container">
                                         <div class="row">
                                             <!-- You can make it whatever width you want. I'm making it full width
-                                                    on <= small devices and 4/12 page width on >= medium devices -->
+                                                        on <= small devices and 4/12 page width on >= medium devices -->
                                             <div class="col-xs-12 col">
 
 
