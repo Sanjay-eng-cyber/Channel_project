@@ -42,12 +42,12 @@
                 <div class="col-md-8 col-lg-9 __cart-ui-f">
 
                     <div class="row d-flex justify-content-center justify-content-lg-end __cart-ui-nav">
-                        <div class="col-sm-11">
+                        <div class="col-sm-12 px-0">
                             <h5 class="main-head __cart-ui-nav-heading">Deselect all items</h5>
                             <div
                                 class="d-flex cc-border justify-content-between p-3 justify-content-between __cart-ui-nav-des">
                                 <div class="fw-bold">Product</div>
-                                <ul class="d-flex gap-4 list-unstyled p-0 m-0">
+                                <ul class="d-flex gap-5 list-unstyled p-0 m-0">
                                     <li class="fw-bold">Price</li>
                                     <li class="fw-bold">Quantity</li>
                                     <li class="fw-bold">Total</li>
