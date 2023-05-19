@@ -119,9 +119,9 @@
                     <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
                         <!-- producttabs start here -->
                         <ul class="producttabs">
-                            <li><a href="#skincare" class="active">Skin Care</a></li>
-                            <li><a href="#skinlatest">Latest</a></li>
-                            <li><a href="#skinbestseller">Best Seller</a></li>
+                            <li><a href="#skincare" class="active text-capitalize ">Skin Care</a></li>
+                            <li><a href="#skinlatest" class="text-capitalize">Latest</a></li>
+                            <li><a href="#skinbestseller" class="text-capitalize">Best Seller</a></li>
                         </ul>
                     </div>
 
@@ -282,9 +282,9 @@
                     <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
                         <!-- producttabs start here -->
                         <ul class="producttabs">
-                            <li><a href="#fragrances" class="active">Fragrances</a></li>
-                            <li><a href="#fragranceslatest">Latest</a></li>
-                            <li><a href="#fragrancesbestseller">Best Seller</a></li>
+                            <li><a href="#fragrances" class="active text-capitalize">Fragrances</a></li>
+                            <li><a href="#fragranceslatest" class="text-capitalize">Latest</a></li>
+                            <li><a href="#fragrancesbestseller" class="text-capitalize">Best Seller</a></li>
                         </ul>
 
                         <div class="tab-content">
