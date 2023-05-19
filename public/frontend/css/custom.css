@@ -2927,3 +2927,7 @@ input[type="text"]::placeholder {
 }
 
 
+.breadcrumb-hover:hover
+{
+    color:#EC268F;
+}

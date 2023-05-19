@@ -12,7 +12,7 @@
             <div class="container">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" class="bread-crum">Profile</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="bread-crum breadcrumb-hover">Profile</a></li>
                     <li class="breadcrumb-item bread-crum" aria-current="page">My profile</li>
                 </ol>
                 </nav>
