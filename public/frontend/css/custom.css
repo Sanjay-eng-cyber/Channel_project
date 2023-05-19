@@ -2942,3 +2942,11 @@ input[type="text"]::placeholder {
 .active-link{
     border-bottom:3px solid #00a2ff !important;
 }
+.form-control-login:focus {
+    outline: none !important;
+    border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+
+}

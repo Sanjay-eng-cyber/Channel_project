@@ -251,7 +251,7 @@
                                </h4>
                                <form v-on:submit="submitMobileNo">
                                    <div class="input-group phone-number-arrow mb-3">
-                                       <input type="text" class="form-control px-0" placeholder="Enter Your Mobile Number"
+                                       <input type="text" class="form-control form-control-login px-0" placeholder="Enter Your Mobile Number"
                                            required minlength="10" maxlength="10" v-model="mobile_no">
                                        <button class="input-group-text" type="submit">
                                            <i class="fas fa-arrow-right"></i>
@@ -285,7 +285,7 @@
                                </p>
                                <form v-on:submit="verifyOtp">
                                    <div class="input-group phone-number-arrow mb-2">
-                                       <input type="text" class="form-control px-0" placeholder="Please Enter OTP" required
+                                       <input type="text" class="form-control px-0 form-control-login" placeholder="Please Enter OTP" required
                                            id="otpNew" v-model="otp">
                                    </div>
                                    @if ($errors->has('otp'))
