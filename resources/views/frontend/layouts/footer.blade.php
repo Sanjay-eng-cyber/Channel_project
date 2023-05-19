@@ -512,5 +512,20 @@
 });
         </script>
 
-    
+    <script>
+          $(".phone-pe-btn").hide();
+            $(".phone-pe").click(function(){
+                $(".upi-id").hide();
+  $(".phone-pe-btn").toggleClass("d-block");
+
+});
+    </script>
+        <script>
+$(".upi-id").hide();
+              $(".upi-btn").click(function(){
+                $(".phone-pe-btn").removeClass("d-block");
+    $(".upi-id").show();
+
+  });
+      </script>
 @endsection

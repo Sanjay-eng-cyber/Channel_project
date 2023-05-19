@@ -55,9 +55,39 @@
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion
-                                    body. Let's imagine this being filled with some actual content.</div>
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <h3 class="panel-title display-td text-center">Choose An Option</h3>
+                                        <div class="form-group">
+                                            <input type="radio" class="form-check-input phone-pe" name="upi"> <label
+                                                for="">PhonePe</label>
+                                        </div>
+                                        <button
+                                            class="btn btn- btn-lg btn-block mx-auto text-center mt-3 pay-now phone-pe-btn w-25">Continue
+                                        </button>
+                                        <div class="form-group mt-3">
+                                            <input type="radio" class="form-check-input upi-btn" name="upi"> <label
+                                                for="">Your UPI ID</label>
+                                        </div>
+
+                                        <div class="row mt-3 upi-id">
+
+
+                                            <div class="col-6">
+
+                                                <input type="text" class="form-control" id=""
+                                                    placeholder="Enter UPI ID">
+                                            </div>
+                                            <div class="col-6">
+                                                <button type="submit"
+                                                    class="btn btn- btn-lg btn-block mx-auto text-center  pay-now mb-2 py-1">Pay
+                                                    <i class="fa fa-inr"></i> 199</button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="accordion-item border mt-2">
@@ -97,7 +127,7 @@
                                     <div class="container">
                                         <div class="row">
                                             <!-- You can make it whatever width you want. I'm making it full width
-                                            on <= small devices and 4/12 page width on >= medium devices -->
+                                                on <= small devices and 4/12 page width on >= medium devices -->
                                             <div class="col-xs-12 col">
 
 
