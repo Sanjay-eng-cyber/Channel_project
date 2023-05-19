@@ -38,9 +38,27 @@
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion
-                                    body.</div>
+                                <div class="accordion-body">
+                                    <div class="row mt-3 justify-content-center">
+                                        <div class="col-md-2 px-md-0  text-center">
+                                            <div class="p-0 m-0 rounded captcha">
+                                                <h3 class="d-inline text-success">777</h3>
+                                                <p class="d-inline"> <i class="fa fa-refresh text-red"></i></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6  mt-md-0 mt-3  text-center">
+
+                                            <input type="text" class="form-control " id=""
+                                                placeholder="Enter The Characters">
+                                        </div>
+                                        <div class="col-md-4 px-0  mt-md-0 mt-3  text-center">
+                                            <button type="submit"
+                                                class="btn mx-auto text-center  pay-now mb-2 py-1">Confirm Order</button>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="accordion-item border mt-2">
@@ -127,7 +145,7 @@
                                     <div class="container">
                                         <div class="row">
                                             <!-- You can make it whatever width you want. I'm making it full width
-                                                on <= small devices and 4/12 page width on >= medium devices -->
+                                                    on <= small devices and 4/12 page width on >= medium devices -->
                                             <div class="col-xs-12 col">
 
 

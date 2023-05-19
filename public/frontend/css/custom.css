@@ -3002,3 +3002,8 @@ input[type="text"]::placeholder {
 {
     background:#ebb579 ;
 }
+.captcha
+{
+    border:1px solid #CED4DA ;
+    background:#FFFFFF;
+}
