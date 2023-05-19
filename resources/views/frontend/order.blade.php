@@ -52,7 +52,7 @@
                         {{-- for small screen --}}
                         <div class="grid-tab-order  d-grid d-xl-none">
 
-                            <div class="o-tab1 or-cm text-center">
+                            <div class="o-tab1 or-cm text-center ">
                                 <a href="#home">
                                     My Order
                                 </a>

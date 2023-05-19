@@ -2608,6 +2608,14 @@ a:hover {
     .mt-product-detial .slider {
         padding-right: 0;
     }
+    .or-cm {
+        background: rgba(236, 38, 143, 0.1);
+        border-radius: 30px;
+        padding: 3px !important;
+    }
+    .or-cm a{
+      font-size: 13px !important;
+    }
 }
 
 .mt-product-detial .pagg-slider {
