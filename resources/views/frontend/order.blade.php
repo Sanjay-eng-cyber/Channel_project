@@ -33,8 +33,8 @@
                 <div class="col-lg-9 col-xl-6 col-xxl-5 order-main">
                     {{-- for large screen --}}
                       <ul class="list-unstyled order-main-li-section d-none d-xl-flex">
-                            <li class="cmc wishlist-order ">
-                                <a href="#home">
+                            <li class="cmc wishlist-order {{ URL::current() == url('/order') ? 'active-link' : '' }}">
+                                <a href="#home" class="">
                                     My Order
                                 </a>
                             </li>
