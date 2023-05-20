@@ -3036,3 +3036,13 @@ border:1px solid #EC268F !important;
 {
     border:1px solid #1EBA11 !important;
 }
+.or-secondpage-fscard-imgTop .or-secondpage-fscard-head{
+    text-transform:capitalize !important;
+}
+@media screen and (min-width:280px) {
+    .or-secondpage-fscard-imgTop .or-secondpage-fscard-head {
+        text-transform:capitalize !important;
+    }
+}
+
+
