@@ -3021,3 +3021,11 @@ input[type="text"]::placeholder {
 {
     width: 40px;
 }
+.shop-now-btn:hover{
+color:#EC268F !important;
+border:1px solid #EC268F !important;
+}
+.shop-now-btn:hover a{
+    color:#EC268F !important;
+
+    }

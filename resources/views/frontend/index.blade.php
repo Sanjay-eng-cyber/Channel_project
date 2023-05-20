@@ -19,8 +19,8 @@
                                         <div class="slide-content-desc">
                                             <h3 class="">{{ $leftslider->title }}</h3>
                                             <p class="">{{ $leftslider->descriptions }} </p>
-                                            <a class="d-flex gap-2 justify-content-center" href="{{ $leftslider->link }}">
-                                                <span class="group-card-shop-btn">Shop Now</span>
+                                            <a class="d-flex gap-2 justify-content-center " href="{{ $leftslider->link }}">
+                                                <span class="group-card-shop-btn ">Shop Now</span>
                                                 <i class="fa fa-angle-right group-button-arrow"></i>
                                             </a>
                                         </div>
@@ -45,7 +45,7 @@
 
                                 <button type="button" class="text-center group-buutton-bg-disable">
                                     <a class=" d-flex gap-2" href="{{ $middleSlider->link }}">
-                                        <span class="group-card-shop-btn">Shop Now</span>
+                                        <span class="group-card-shop-btn ">Shop Now</span>
                                         <i class="fa fa-angle-right group-button-arrow"></i>
                                     </a>
                                 </button>
@@ -94,7 +94,7 @@
 
                                     <a class=" d-flex  justify-content-center gap-2 text-center group-buutton-bg-disable"
                                         href="{{ $rigslider->link }}">
-                                        <span class="group-card-shop-btn">Shop Now</span>
+                                        <span class="group-card-shop-btn ">Shop Now</span>
                                         <i class="fa fa-angle-right group-button-arrow"></i>
                                     </a>
 
@@ -154,7 +154,7 @@
                                                             </p>
 
 
-                                                            <button type="button" class="btn btn-light sk-btn">
+                                                            <button type="button" class="btn btn-light sk-btn shop-now-btn">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}" class="p-0  text-black">
                                                                     Shop Now
                                                                 </a>
@@ -198,7 +198,7 @@
                                                             </div>
                                                             <p class="card-text text-center">{{ $p->short_description }}
                                                             </p>
-                                                            <button type="button" class="btn btn-light sk-btn">
+                                                            <button type="button" class="btn btn-light sk-btn shop-now-btn">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}" class="p-0  text-black">
                                                                     Shop Now
                                                                 </a>
@@ -248,7 +248,7 @@
                                                             </p>
 
 
-                                                            <button type="button" class="btn btn-light sk-btn">
+                                                            <button type="button" class="btn btn-light sk-btn shop-now-btn">
                                                                 <a href="" class="p-0  text-black">
                                                                     Shop Now
                                                                 </a>
