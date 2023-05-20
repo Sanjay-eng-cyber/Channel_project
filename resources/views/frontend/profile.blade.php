@@ -45,7 +45,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6 py-2">
-                                <input type="text" name="phone" class=" profile-form-input-custome bg-white"
+                                <input type="text" name="phone" class=" profile-form-input-custome"
                                     placeholder="Mobile" required minlength="10" maxlength="10"
                                     value="{{ old('phone') ?? $user->phone }}" disabled>
                                 @if ($errors->has('phone'))

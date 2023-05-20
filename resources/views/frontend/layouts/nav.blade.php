@@ -46,7 +46,7 @@
                                        <li class="text-end ">
                                            <form action="{{ route('frontend.logout') }}" method="POST">
                                                @csrf
-                                               <button class="btn text-pink p-0 m-0" type="submit">
+                                               <button class="btn text-pink p-0 m-0 fw-bold" type="submit">
                                                    LOGOUT
                                                </button>
                                            </form>
