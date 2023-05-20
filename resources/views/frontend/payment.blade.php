@@ -44,7 +44,7 @@
                                     <div class="row mt-3 justify-content-center">
                                         <div class="col-md-2 px-md-0  text-center">
                                             <div class="p-0 m-0 rounded captcha">
-                                                <h3 class="d-inline text-success"><p id="area" class="d-inline"><span id="display2">2</span><span id="display3">3</span><span id="display4">4</span></p></h3>
+                                                <h3 class="d-inline text-success"><p id="area" class="d-inline"><span id="display2"></span><span id="display3"></span><span id="display4"></span></p></h3>
                                                 <p class="d-inline"> <i class="fa fa-refresh text-red" onclick="Generate()"></i></p>
                                             </div>
                                         </div>
