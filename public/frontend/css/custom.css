@@ -2901,13 +2901,17 @@ a:hover {
     opacity: 0;
   }
 .cart-has-item-icon{
-    width:7px;
-    height:7px;
+    width:12px;
+    height:12px;
      border-radius:100%;
      background:#EC268F;
      position: absolute;
-     top:5px;
-     right:6px
+     top:3px;
+     right:3px;
+     font-size:10px;
+     color:white;
+     text-align: center !important;
+     padding-bottom:15px !important;
 
 }
 .icon-img-size
