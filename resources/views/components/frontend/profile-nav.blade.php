@@ -14,7 +14,7 @@
                             <path d="M0 0h24v24h-24z" fill="none"/>
                           </svg>
                         </span>
-                        <input name="Select File" type="file" />
+                        <input class="w-40" name="Select File" type="file" />
                       </div>
                 </button>
             </div>
