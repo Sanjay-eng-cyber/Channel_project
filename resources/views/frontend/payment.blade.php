@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
 
-                <h2 class="text-center text-red">Your Payment Method</h2>
+                <h2 class="text-center text-red mb-4">Your Payment Method</h2>
 
 
 
@@ -124,7 +124,7 @@
                                 aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
                                     <div class="row">
-                                        <h3 class="panel-title display-td text-center">Popular Banks</h3>
+                                        <h3 class="panel-title display-td text-center mb-4">Popular Banks</h3>
                                         <div class="col-md-6 text-center text-md-start">
                                             <div class="form-group d-inline">
                                                 <input type="radio" name="bank" class="form-check-radio"
