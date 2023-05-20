@@ -22,7 +22,7 @@
 
                 <div class="col-lg-9 col-xl-4 col-xxl-5">
                     <div class="input-group py-3">
-                        <input type="text" class="form-control serch-border" placeholder="" aria-label="Recipient's username"
+                        <input type="text" class="form-control serch-border" placeholder="Search Order" aria-label="Recipient's username"
                             aria-describedby="basic-addon2">
                         <span class="input-group-text serch-border" id="basic-addon2" style="background-color: rgba(236, 38, 143, 0.4);">
                             <i class="fas fa-search fa-fw text-red"></i>
@@ -118,14 +118,14 @@
 
 
                                    </li>
-                                    <li class="status">
+                                    <li class="status ">
                                         <ul class="gap-2 d-flex flex-row flex-lg-column flex-xl-column  gap-lg-2 justify-content-between" style="padding: 0px 0px 0px 17px;">
-                                            <li class="return-order">
-                                                <a href="http://" class="text-soft-green">
+                                            <li class="return-order light-sky">
+                                                <a href="http://" class="light-sky">
                                                     Return Order
                                                 </a>
                                             </li>
-                                            <li class="cancel-order ">
+                                            <li class="cancel-order text-red">
                                                 <a href="http://" class="text-red">
                                                     Cancel Order
                                                 </a>
@@ -179,12 +179,12 @@
                                    </li>
                                     <li class="status">
                                         <ul class="gap-2 d-flex flex-row flex-lg-column flex-xl-column  gap-lg-2 justify-content-between" style="padding: 0px 0px 0px 17px;">
-                                            <li class="return-order">
-                                                <a href="http://" class="text-soft-green">
+                                            <li class="return-order light-sky">
+                                                <a href="http://" class="light-sky">
                                                     Return Order
                                                 </a>
                                             </li>
-                                            <li class="cancel-order ">
+                                            <li class="cancel-order text-red">
                                                 <a href="http://" class="text-red">
                                                     Cancel Order
                                                 </a>
@@ -234,12 +234,12 @@
                                    </li>
                                     <li class="status">
                                         <ul class="gap-2 d-flex flex-row flex-lg-column flex-xl-column  gap-lg-2 justify-content-between" style="padding: 0px 0px 0px 17px;">
-                                            <li class="return-order">
-                                                <a href="http://" class="text-soft-green">
+                                            <li class="return-order light-sky">
+                                                <a href="http://" class="light-sky">
                                                     Return Order
                                                 </a>
                                             </li>
-                                            <li class="cancel-order ">
+                                            <li class="cancel-order text-red">
                                                 <a href="http://" class="text-red">
                                                     Cancel Order
                                                 </a>
