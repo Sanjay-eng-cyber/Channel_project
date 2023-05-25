@@ -38,8 +38,8 @@
 
 
                     </div>
-                    <div class="d-flex flex-column justify-content-end align-items-end or-secondpage-fcard-bottom py-3 py-sm-0">
-                        <button type="button" class="btn  mb-1 or-sp-first-btn px-xl-2">Request Summited</button>
+                    <div class="d-flex flex-column justify-content-end align-items-sm-end or-secondpage-fcard-bottom py-3 py-sm-0">
+                        <button type="button" class="btn  mb-1 or-sp-first-btn px-xl-2 px-2">Request Summited</button>
                         <button type="button" class="btn  mt-2 or-sp-second-btn">Cancel</button>
                     </div>
 
@@ -98,9 +98,9 @@
                             </div>
                     </div>
 
-                    <div class=" or-secondpage-fscard-bottom">
+                    <div class=" or-secondpage-fscard-bottom text-sm-start text-center">
                         <label for="" class="fw-bold">Your Number</label>
-                        <input type="text" class="form-control mt-2 return-order-custome-input border-green" id="return-order-custome-input" placeholder="Enter Number">
+                        <input type="text" class="form-control mt-2 mx-sm-0 mx-auto return-order-custome-input border-green" id="return-order-custome-input" placeholder="Enter Number">
 
                         <button type="button" class="btn  my-2 btn-green text-white px-5" style="border: 1px solid #F58634;">
                             Call Me Now
@@ -141,7 +141,9 @@
                         </div>
 
                     </div>
-                    <button type="button" class="btn btn-orange or-secondpage-lbtn mt-4">Continue Shopping</button>
+                   <div class="p-0 m-0 text-sm-start text-center">
+                    <button type="button" class="btn btn-orange or-secondpage-lbtn mt-4 ">Continue Shopping</button>
+                   </div>
                 </div>
             </div>
 
