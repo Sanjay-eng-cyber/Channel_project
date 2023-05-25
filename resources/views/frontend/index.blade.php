@@ -5,7 +5,7 @@
     <section>
         <div class="container">
             <div class="row main-group-card">
-                <h2 class="text-red main-head" style="padding: 30px 0px 25px 0px">#Bestseller of channel</h2>
+                <h2 class="text-red main-head text-capitalize" style="padding: 30px 0px 25px 0px">#Bestseller of channel</h2>
 
                 @if ($leftSliders->count())
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
@@ -241,9 +241,9 @@
 
                                                         <ul class="links skin-text-desc py-2 px-3">
                                                             <div class="card-title  m-0 text-center pro-head ">
-                                                                <h4 class=""> Zara Best Perfumes</h4>
+                                                                <h4 class="text-capitalize"> Zara Best Perfumes</h4>
                                                             </div>
-                                                            <p class="card-text text-center">
+                                                            <p class="card-text text-center text-capitalize">
                                                                 treat yourself with the best in skincare
                                                             </p>
 
@@ -387,10 +387,10 @@
 
                                                             <ul class="links fragrances-text-desc">
                                                                 <div
-                                                                    class="card-title card-text-heading m-0 text-center pro-head ">
+                                                                    class="card-title text-capitalize card-text-heading m-0 text-center pro-head ">
                                                                     Zara BEST PERFUMES
                                                                 </div>
-                                                                <p class="card-text text-center">
+                                                                <p class="card-text text-center text-capitalize">
                                                                     treat yourself with the best
                                                                 </p>
                                                                 <h5 class="text-center">
@@ -424,7 +424,7 @@
 
     <section>
         <div class="container">
-            <h2 class="text-orange text-center">
+            <h2 class="text-orange text-center text-capitalize">
                 Transform your living space into a cozy
                 <br> sanctuary with unique <span class="text-pink"> home decor</span> accents
             </h2>
@@ -435,7 +435,7 @@
                         <img class="product" src="{{ url('frontend/images/chair.png') }}" alt="">
                         <div class="text ">
                             <div>
-                                <h4>
+                                <h4 class="text-capitalize">
                                     handmade work chair
                                 </h4>
                                 ₹2,707 <s class="text-muted">₹4,509</s>
@@ -460,7 +460,7 @@
         <div class="container og-main" style="">
             <div class="row">
                 <div class="col-md-12 col-lg-6 og-main-part-1">
-                    <h3 class="text-red card-text-heading" style="padding:40px 0px 40px 0px">#look for personal care too..
+                    <h3 class="text-red card-text-heading text-capitalize" style="padding:40px 0px 40px 0px">#look for personal care too..
                     </h3>
 
                     <img src="frontend/images/organic-product/og-1.png" alt="" class="og-main-img-first">
@@ -474,7 +474,7 @@
                             <div class="og-main-sy">
                                 <h3 class="pro-head">Pure And Organic Products </h3>
 
-                                <p style="font-weight: 300;">
+                                <p style="font-weight: 300;" class="text-capitalize">
                                     Enhance your self-care routine with<br />
                                     our premium personal care products.
                                 </p>

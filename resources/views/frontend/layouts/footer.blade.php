@@ -14,7 +14,7 @@
                 <div class="col-xs-12  col-md-12 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
                     <!-- F Widget About of the Page -->
                     <div class="f-widget-about">
-                        <div class="logo pt-md-0 pt-3">
+                        <div class="logo pt-md-0 pt-3 ">
                             <a href="{{url("/")}}">
                                 <img src="{{ url('frontend/images/channel-logo.svg') }}" height="30"
                                     alt="Channel"></a>

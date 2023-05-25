@@ -3091,4 +3091,12 @@ border:1px solid #EC268F !important;
 
     align-items: baseline !important;
 }
+#mt-footer.style2 .f-widget-about p {
+    text-align: left !important;
+    padding:20px 0px !important;
+}
+
+#mt-footer .logo {
+display: flex !important;
+}
 }
