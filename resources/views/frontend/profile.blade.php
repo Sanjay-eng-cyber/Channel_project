@@ -18,7 +18,7 @@
                 </nav>
             </div>
         </section>
-    <section>
+    <section class="pb-4">
         <div class="container">
             <div class="row py-2 d-flex justify-content-center">
                 <div class="col-12 col-lg-6 ">
