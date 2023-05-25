@@ -263,7 +263,7 @@
                                        </div>
                                    </div>
                                 <div class="row justify-content-center mx-auto">
-                                    <p class="text-center">Or Connect With</p>
+                                    <p class="text-center text-black h6 py-3">Or Connect With</p>
                                     <div class="col-6 text-center">
                                         <button class="border-0 d-flex pt-2 links-btns mx-auto" ><img src="frontend/images/icons/icon-fb.png" alt=""  class="mx-2 icon-img-size"> Facebook</button>
                                     </div>
@@ -291,11 +291,11 @@
                                    @if ($errors->has('otp'))
                                        <span class="text-danger">{{ $errors->first('otp') }}</span>
                                    @endif
-                                   <div class="d-flex justify-content-between mb-2 flex-row-reverse">
-                                       <button type="button" class="btn text-pink p-0 m-0 border-0" id="resend-otp-btn"
-                                           id="resendOtpBtn" v-if="showResend" @click="resend">Resend
+                                   <div class=" justify-content-between mb-2 d-inline">
+                                       <button  type="button" class="f-left btn d-inline text-pink p-0 m-0 border-0" id="resend-otp-btn"
+                                           id="resendOtpBtn" v-if="showResend" @click="resend">Resend OTP
                                        </button>
-                                       <span class="text-muted m-0" id="otp-timer" v-if="showTimer"></span>
+                                       <span  class="text-muted m-0 f-right" id="otp-timer" v-if="showTimer"></span>
                                    </div>
                                    <div class="mb-3">
                                        <button type="submit" class="btn btn-pink w-100 mt-4">Verify OTP</button>
