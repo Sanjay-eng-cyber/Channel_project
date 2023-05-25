@@ -63,7 +63,7 @@
                                 <thead>
                                     <tr>
                                         <th>Sr no.</th>
-                                        <th>Descriptions</th>
+                                        <th>Title</th>
                                         <th>Rating</th>
                                         <th class="text-center">Action</th>
                                     </tr>
@@ -72,7 +72,7 @@
                                     @forelse($reviews as $re)
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $reviews) }}</td>
-                                            <td>{{ $re->body }}</td>
+                                            <td>{{ $re->title }}</td>
                                             <td>{{ $re->rating }}</td>
                                             {{-- <td>
                                                 <img src="{{ asset('storage/images/categories/' . $category->image) }}"
@@ -98,8 +98,8 @@
                                                             href="{{ route('backend.product.review.show', ['product_id' => $products->id, 'review_id' => $re->id]) }}">View</a>
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.product.review.edit', ['product_id' => $products->id, 'review_id' => $re->id]) }}">Edit</a>
-                                                            {{-- <a class="dropdown-item"
-                                                            href="{{ route('backend.product.review.delete', ['product_id' => $products->id, 'review_id' => $re->id]) }}">Delete</a> --}}
+                                                            <a class="dropdown-item"
+                                                            href="{{ route('backend.product.review.delete', ['product_id' => $products->id, 'review_id' => $re->id]) }}">Delete</a>
                                                     </div>
                                                 </div>
 

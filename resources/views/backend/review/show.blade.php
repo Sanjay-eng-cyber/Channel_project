@@ -36,6 +36,12 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">title</label><br>
+                                                <p class="label-title">{{ $reviews->title }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Rating</label><br>
                                                 <p class="label-title">{{ $reviews->rating }}</p>
                                             </div>
