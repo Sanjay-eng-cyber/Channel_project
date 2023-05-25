@@ -119,13 +119,11 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.gift-card-review');
     })->name('gift-card-review');
 
-    Route::get('/about-us', function () {
-        return view('frontend/layouts/about-us');
-    })->name('about');
 
-    Route::get('/contact-us', function () {
+
+    /*Route::get('/contact-us', function () {
         return view('frontend/layouts/contact-us');
-    })->name('contact');
+    })->name('contact');*/
 
     // Product page
     Route::get('/skin', function () {
@@ -140,6 +138,34 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/products', function () {
         return view('frontend/product/index');
     })->name('products');
+
+    Route::get('/terms-and-conditions', function () {
+        return view('frontend.terms-and-conditions');
+    })->name('frontend.terms-and-conditions');
+
+    Route::get('/shipping-policy', function () {
+        return view('frontend.shipping-policy');
+    })->name('frontend.shipping-policy');
+
+    Route::get('/returns-and-refunds-policy', function () {
+        return view('frontend.returns-and-refunds-policy');
+    })->name('frontend.returns-and-refunds-policy');
+
+    Route::get('/privacy-policy', function () {
+        return view('frontend.privacy-policy');
+    })->name('frontend.privacy-policy');
+
+    Route::get('/about-us', function () {
+        return view('frontend.about');
+    })->name('frontend.about');
+    Route::get('/contact-us', function () {
+        return view('frontend.contact-us');
+    })->name('frontend.contact-us');
+
+    Route::get('/payment', function () {
+        return view('frontend.payment');
+    })->name('frontend.payment');
+
 
     // Route::get('/products/{slug}', function () {
     //     return view('frontend/product/show');

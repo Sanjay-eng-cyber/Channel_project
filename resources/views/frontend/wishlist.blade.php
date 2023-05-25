@@ -9,7 +9,7 @@
         <div class="container">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" class="bread-crum">Profile</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="bread-crum breadcrumb-hover">Profile</a></li>
                     <li class="breadcrumb-item bread-crum" aria-current="page">My Wishlist </li>
                 </ol>
             </nav>
@@ -60,10 +60,10 @@
                                 <div
                                     class="col-sm-12  col-md-12 col-lg-12 col-xl-3 py-3 py-xl-0 py-xxl-0 wishlist-main-in-btn">
                                     <a href="javascript:void(0)"
-                                        class="btn profile-btn-color add-p-btn btn-pink add-to-cart"
+                                        class="add-to-cart-btn btn profile-btn-color add-p-btn btn-pink add-to-cart"
                                         data-p-id="{{ $w->product->id }}">Add To
                                         Cart</a>
-                                    <a href="" style="font-size:12px" class="py-1 text-red" data-bs-toggle="modal"
+                                    <a href="" style="font-size:12px" class="py-1 text-red mt-md-1 mt-2" data-bs-toggle="modal"
                                         data-bs-target="#wishlist-popup">
                                         Remove item from Wishlist
                                     </a>

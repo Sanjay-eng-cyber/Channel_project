@@ -19,8 +19,8 @@
                     <div class="d-flex gap-4 justify-content-between flex-column flex-sm-row my-4 my-lg-0">
                         <div>
                             <form action="" method="post" class="m-0">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder=""
+                                {{--<div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Serach Order"
                                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                                     <span class="input-group-text" id="basic-addon2"
                                         style="background: rgba(251, 140, 165, 0.2);">
@@ -29,10 +29,18 @@
                                                 class="fas fa-search fa-fw text-red"></i></button>
                                     </span>
 
+                                </div>--}}
+                                <div class="input-group ">
+                                    <input type="text" class="form-control serch-border" placeholder="Serach Order" aria-label="Recipient's username"
+                                        aria-describedby="basic-addon2">
+                                    <span class="input-group-text serch-border" id="basic-addon2" style="background-color: rgba(236, 38, 143, 0.4);">
+                                        <i class="fas fa-search fa-fw text-red"></i>
+                                    </span>
                                 </div>
                             </form>
                         </div>
-                        {{-- <div class="d-flex gap-3 align-items-baseline">
+
+                         <div class="d-flex gap-3 align-items-baseline">
                             <div>For</div>
                             <div class="pro-radio-btn">
                                 <input type="radio" class="btn-check" name="options" id="option01" autocomplete="off">
@@ -43,7 +51,8 @@
                                 <label class="btn" for="option02">Her</label>
                             </div>
 
-                        </div> --}}
+                        </div>
+
                     </div>
                 </div>
 

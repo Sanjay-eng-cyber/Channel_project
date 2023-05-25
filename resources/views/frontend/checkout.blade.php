@@ -15,7 +15,7 @@
                                 <i class="fas fa-check "></i>
                             </span>
                             <small class="text">
-                                log in details
+                                Log In Details
                             </small>
                         </span>
                         <span class="step active">
@@ -23,7 +23,7 @@
                                 2
                             </span>
                             <small class="text">
-                                delivery address
+                                Delivery Address
                             </small>
                         </span>
                         <span class="step">
@@ -31,14 +31,14 @@
                                 3
                             </span>
                             <small class="text">
-                                payment method
+                                Payment Method
                             </small>
                         </span>
                     </div>
 
                     <div class="border-1 border rounded-1 gray-border p-3">
                         <h3 class="h5 font-body">
-                            Select a delivery address
+                            Select A Delivery Address
                         </h3>
                         <div class="row my-3">
                             <div class="col-md-6">
@@ -56,14 +56,14 @@
                                         </button>
                                     </div>
 
-                                    <h6 class="h6 font-body">
+                                    <h6 class="h6 font-body text-capitalize">
                                         nishchay luthra
                                     </h6>
-                                    <p>
+                                    <p class="tex-capitalize">
                                         Rajat tower, near Jaswant inox, Kamptee Rd, Near Indora Chowk, Nagpur, Maharashtra
                                         440017
                                     </p>
-                                    <a href="" class="btn btn-link text-pink px-0">
+                                    <a href="" class="btn btn-link text-pink px-0 text-capitalize">
                                         <strong>
                                             deliver to this address
                                         </strong>
@@ -73,7 +73,7 @@
                             </div>
                         </div>
                         <button class="btn btn-pink">
-                            +Add address
+                            +Add Address
                         </button>
                     </div>
                     {{-- form --}}
@@ -162,7 +162,7 @@
                         <div class="d-flex align-items-center gap-2 checkout-login-dbtn">
                             <a href="" class="btn btn-pink">Sign Out</a>
                             <div class="checkout-login-ccolor">or</div>
-                            <a href="" class="checkout-login-ccolor">continue with checkout</a>
+                            <a href="" class="checkout-login-ccolor ">continue with checkout</a>
                         </div>
                     </div>
 
@@ -308,27 +308,27 @@
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="d-flex justify-content-between align-items-center">
-                        <span class="h5 m-0 p-0 font-body">
+                        <span class="h5 m-0 p-0 font-body text-capitalize">
                             log in details
                         </span>
 
-                        <a href="" class="btn m-0 p-0 border-0 text-pink">change</a>
+                        <a href="" class="btn m-0 p-0 border-0 text-pink">Change</a>
                     </div>
                     <hr class="mb-1">
-                    <div class="text-muted">
+                    <div class="text-muted text-capitalize">
                         nishchay luthra
                     </div>
                     <div class="text-muted">
                         nishchayluthra@gmail.com
                     </div>
                     <hr class="mt-1">
-                    <span class="h5  font-body">
+                    <span class="h5  font-body text-capitalize">
                         estimated delivery
                     </span>
                     <div class="d-flex justify-content-between align-items-center text-muted">
                         <span>
                             <span class="me-2">
-                                29 march
+                                29 March
                             </span>
                             <span>
                                 Wednesday
@@ -341,13 +341,13 @@
                     <img src="https://via.placeholder.com/100" class="w-auto my-2 rounded-2 border border-1 pink-border"
                         alt="">
                     <hr>
-                    <span class="h5  font-body">
+                    <span class="h5  font-body text-capitalize">
 
                         price details
                     </span>
                     <div class="d-flex justify-content-between align-items-center text-muted my-1">
                         <span>
-                            total mRP:
+                            Total MRP:
                         </span>
                         <span>
                             ₹145.55
@@ -355,7 +355,7 @@
                     </div>
                     <div class="d-flex justify-content-between align-items-center text-muted my-1">
                         <span>
-                            subtotal:
+                            Sub-total:
 
                         </span>
                         <span>
@@ -364,7 +364,7 @@
                     </div>
                     <div class="d-flex justify-content-between align-items-center text-muted my-1">
                         <span>
-                            shipping charges:
+                            Shipping Charges:
                         </span>
                         <span>
                             ₹145.55
@@ -372,7 +372,7 @@
                     </div>
                     <div class="d-flex justify-content-between align-items-center text-muted my-3">
                         <strong class="text-black">
-                            order total:
+                            Order Total:
                         </strong>
                         <span>
                             ₹145.55

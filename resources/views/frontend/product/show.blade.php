@@ -94,17 +94,17 @@
                                             </div>
                                         </div>
                                     </div> --}}
-                                    <div class="d-flex justify-content-around flex-wrap my-3">
-                                        <button class="btn btn-primary btn-pink add-to-cart"
+                                    <div class="d-flex justify-content-around flex-wrap my-3 ">
+                                        <button class="btn btn-primary btn-pink add-to-cart "
                                             data-p-id="{{ $product->id }}">
                                             Add To Cart
                                         </button>
 
-                                        <button class="btn btn-primary btn-black">
+                                        <button class="btn btn-primary btn-black ">
                                             Buy Now
                                         </button>
 
-                                        <a class="btn text-red">
+                                        <a class="btn text-red mt-sm-0 mt-3">
 
                                             <i class="fa-regular fa-heart"></i>
                                             Add To Wishlist

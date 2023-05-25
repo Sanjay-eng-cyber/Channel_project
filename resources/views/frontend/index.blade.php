@@ -19,8 +19,8 @@
                                         <div class="slide-content-desc">
                                             <h3 class="">{{ $leftslider->title }}</h3>
                                             <p class="">{{ $leftslider->descriptions }} </p>
-                                            <a class="d-flex gap-2 justify-content-center" href="{{ $leftslider->link }}">
-                                                <span class="group-card-shop-btn">Shop Now</span>
+                                            <a class="d-flex gap-2 justify-content-center " href="{{ $leftslider->link }}">
+                                                <span class="group-card-shop-btn ">Shop Now</span>
                                                 <i class="fa fa-angle-right group-button-arrow"></i>
                                             </a>
                                         </div>
@@ -45,7 +45,7 @@
 
                                 <button type="button" class="text-center group-buutton-bg-disable">
                                     <a class=" d-flex gap-2" href="{{ $middleSlider->link }}">
-                                        <span class="group-card-shop-btn">Shop Now</span>
+                                        <span class="group-card-shop-btn ">Shop Now</span>
                                         <i class="fa fa-angle-right group-button-arrow"></i>
                                     </a>
                                 </button>
@@ -94,7 +94,7 @@
 
                                     <a class=" d-flex  justify-content-center gap-2 text-center group-buutton-bg-disable"
                                         href="{{ $rigslider->link }}">
-                                        <span class="group-card-shop-btn">Shop Now</span>
+                                        <span class="group-card-shop-btn ">Shop Now</span>
                                         <i class="fa fa-angle-right group-button-arrow"></i>
                                     </a>
 
@@ -119,9 +119,9 @@
                     <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
                         <!-- producttabs start here -->
                         <ul class="producttabs">
-                            <li><a href="#skincare" class="active">Skin Care</a></li>
-                            <li><a href="#skinlatest">Latest</a></li>
-                            <li><a href="#skinbestseller">Best Seller</a></li>
+                            <li><a href="#skincare" class="active text-capitalize ">Skin Care</a></li>
+                            <li><a href="#skinlatest" class="text-capitalize">Latest</a></li>
+                            <li><a href="#skinbestseller" class="text-capitalize">Best Seller</a></li>
                         </ul>
                     </div>
 
@@ -154,7 +154,7 @@
                                                             </p>
 
 
-                                                            <button type="button" class="btn btn-light sk-btn">
+                                                            <button type="button" class="btn btn-light sk-btn shop-now-btn">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}" class="p-0  text-black">
                                                                     Shop Now
                                                                 </a>
@@ -198,7 +198,7 @@
                                                             </div>
                                                             <p class="card-text text-center">{{ $p->short_description }}
                                                             </p>
-                                                            <button type="button" class="btn btn-light sk-btn">
+                                                            <button type="button" class="btn btn-light sk-btn shop-now-btn">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}" class="p-0  text-black">
                                                                     Shop Now
                                                                 </a>
@@ -248,7 +248,7 @@
                                                             </p>
 
 
-                                                            <button type="button" class="btn btn-light sk-btn">
+                                                            <button type="button" class="btn btn-light sk-btn shop-now-btn">
                                                                 <a href="" class="p-0  text-black">
                                                                     Shop Now
                                                                 </a>
@@ -282,9 +282,9 @@
                     <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
                         <!-- producttabs start here -->
                         <ul class="producttabs">
-                            <li><a href="#fragrances" class="active">Fragrances</a></li>
-                            <li><a href="#fragranceslatest">Latest</a></li>
-                            <li><a href="#fragrancesbestseller">Best Seller</a></li>
+                            <li><a href="#fragrances" class="active text-capitalize">Fragrances</a></li>
+                            <li><a href="#fragranceslatest" class="text-capitalize">Latest</a></li>
+                            <li><a href="#fragrancesbestseller" class="text-capitalize">Best Seller</a></li>
                         </ul>
 
                         <div class="tab-content">

@@ -11,11 +11,11 @@
     <div class="footer-holder dark mt-paddingbottomxs-hide-holder ">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
+                <div class="col-xs-12  col-md-12 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
                     <!-- F Widget About of the Page -->
                     <div class="f-widget-about">
-                        <div class="logo">
-                            <a href="frontend/#">
+                        <div class="logo pt-md-0 pt-3">
+                            <a href="{{url("/")}}">
                                 <img src="{{ url('frontend/images/channel-logo.svg') }}" height="30"
                                     alt="Channel"></a>
                         </div>
@@ -30,11 +30,17 @@
                             </li>
                         </ul>
                         <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
+                            <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
+                                <i class="fas fa-clock  text-red"></i>
+                                <span>Mon-Sat 10:00am to 6.00pm</span>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
                             <li>
                                 <i class="fas fa-phone  text-red"></i>
                             </li>
                             <li>
-                                <a href="tel:+917710062724">+91-7710062724</a>
+                                <a href="tel:+917710062724" class="footer-info">+91-7710062724</a>
                             </li>
                         </ul>
                         <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
@@ -42,20 +48,28 @@
                                 <i class="fas fa-envelope  text-red"></i>
                             </li>
                             <li>
-                                Exercitation ullamco laboris
+                                <a href="mailto:channeltheshop@yahoo.co.in " class="footer-info">channeltheshop@yahoo.co.in </a>
                             </li>
+
                         </ul>
 
-                        <ul class="list-unstyled contact-mobile-version">
-                            <li class="gap-2 d-flex align-items-center">
+                        <ul class="list-unstyled contact-mobile-version d-sm-none d-block">
+                            <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
+                                <i class="fas fa-clock  text-red"></i>
+                                <span>Mon-Sat 10:00am to 6.00pm</span>
+                            </li>
+                            <li class="gap-2 d-flex align-items-center mt-sm-0 mt-3">
                                 <i class="fas fa-phone  text-red"></i>
-                                <a href="tel:+917710062724">+91-7710062724</a>
+                                <a href="tel:+917710062724" class="footer-links-hover">+91-7710062724</a>
                             </li>
 
-                            <li class="gap-2 d-flex align-items-center">
+                            <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
                                 <i class="fas fa-envelope  text-red"></i>
-                                channel@gmail.com
+                                <a href="mailto:channeltheshop@yahoo.co.in ">channeltheshop@yahoo.co.in </a>
                             </li>
+
+
+
                         </ul>
 
 
@@ -105,7 +119,7 @@
 
 
                 <nav
-                    class="col-xs-12 col-sm-7 col-md-8 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
+                    class="col-xs-12 mt-xl-0 mt-md-2 px-4 justify-content-start col-md-12 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
 
 
                     <!-- Footer Nav of the Page -->
@@ -122,32 +136,65 @@
                     </div>
                     <!-- Footer Nav of the Page end -->
                     <!-- Footer Nav of the Page -->
-                    <div class="nav-widget-1 cainco-breackpoint-info">
+                    <div class="nav-widget-1 cainco-breackpoint-info d-sm-block">
                         <h3 class="f-widget-heading info-f-heading">Information</h3>
-                        <ul class="list-unstyled f-widget-nav info-f-list">
-                            <li><a href="{{ route('about') }}">FAQ</a></li>
-                            <li><a href="{{ route('contact') }}">BLOG</a></li>
-                            <li><a href="">Support</a></li>
+                        <ul class="list-unstyled f-widget-nav info-f-list text-start">
+                            <li class="d-block"><a href="{{ route('frontend.about') }}">FAQ</a></li>
+                            <li class="d-block"><a href="{{ route('frontend.contact-us') }}">BLOG</a></li>
+                            <li class="d-block"><a href="">Support</a></li>
 
                         </ul>
                     </div>
                     <!-- Footer Nav of the Page end -->
                     <!-- Footer Nav of the Page -->
-                    <div class="nav-widget-1 cainco-breackpoint-company">
+                    <div class="nav-widget-1 cainco-breackpoint-company d-sm-block ">
                         <h3 class="f-widget-heading c-f-heading">Company</h3>
                         <ul class="list-unstyled f-widget-nav  c-f-list">
-                            <li><a href="">About Us</a></li>
-                            <li><a href="">Careers</a></li>
-                            <li><a href="">Contact Us</a></li>
+                            <li><a href="{{route('frontend.about')}}">About Us</a></li>
+                            <li><a href="{{route('frontend.returns-and-refunds-policy')}}">Returns & Refunds Policy</a></li>
+
+                            <li><a href="{{route('frontend.shipping-policy')}}">Shipping Policy</a></li>
+                            <li><a href="{{route('frontend.contact-us')}}">Contact Us</a></li>
+
 
                         </ul>
+                    </div>
+
+                    <div class="container category-mobile-version d-none">
+                        <h3 class="f-widget-heading text-red ct-f-heading mt-4">Company</h3>
+
+                        <div class="row row-cols-3">
+
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{route('frontend.about')}}">About Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{route('frontend.returns-and-refunds-policy')}}">Returns & Refunds Policy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{route('frontend.shipping-policy')}}">Shipping Policy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{route('frontend.contact-us')}}">Contact Us</a></li>
+                                </ul>
+                            </div>
+
+
+                        </div>
                     </div>
                     <!-- Footer Nav of the Page end -->
                 </nav>
                 <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
                     <!-- F Widget Newsletter of the Page -->
                     <div class="f-widget-newsletter f-widget-news-custome">
-                        <h3 class="f-widget-heading" style="line-height:0px">Subscribe</h3>
+                        <h3 class="f-widget-heading f-widget-heading-sub" style="line-height:0px">Subscribe</h3>
                         <div class="holder">
                             <form class="newsletter-form form2" action="#" style="padding:6px">
 
@@ -178,13 +225,13 @@
             <div class="row">
                 <div class="col-6 col-sm-7 footer-tpc">
                     <ul class="gap-2 gap-sm-4  p-0  footer-tpc-ul">
-                        <a href="" class="fw-bolder">
+                        <a href="{{route('frontend.terms-and-conditions')}}" class="fw-bolder footer-links-hover-bottom">
                             Terms
                         </a>
-                        <a href="" class="fw-bolder">
+                        <a href="{{route('frontend.privacy-policy')}}" class="fw-bolder footer-links-hover-bottom">
                             Privacy
                         </a>
-                        <a href="" class="fw-bolder">
+                        <a href="" class="fw-bolder footer-links-hover-bottom">
                             Cookies
                         </a>
                     </ul>
@@ -194,21 +241,21 @@
                 <div class="col-5 col-sm-5 footer-lifinsta">
                     <ul class="gap-2 gap-sm-4 footer-lifinsta-ul">
                         <li class="footer-lifinsta-tag-1">
-                            <a href="https://www.linkedin.com/">
+                            <a href="https://www.linkedin.com/" class="social-icons">
                                 <i class="fa-brands fa-linkedin-in text-red"></i>
                             </a>
                         </li>
 
                         <li class="footer-lifinsta-tag-2">
 
-                            <a href="https://www.linkedin.com/">
+                            <a href="https://www.linkedin.com/" class="social-icons">
                                 <i class="fa-brands fa-facebook-f text-red"></i>
                             </a>
                         </li>
 
                         <li class="footer-lifinsta-tag-3">
 
-                            <a href="https://www.linkedin.com/">
+                            <a href="https://www.linkedin.com/" class="social-icons">
                                 <i class="fa-brands fa-twitter text-red"></i>
                             </a>
                         </li>
@@ -228,7 +275,7 @@
 
                     <p class="footer-custome-c">
                         Designed & Developed by
-                        <a href="http://" class="underline footer-custome-c">Acetrot</a>
+                        <a href="{{url('https://www.acetrot.com/')}}" class="underline footer-custome-c" target="_blank">Acetrot</a>
                     </p>
 
                 </div>
@@ -237,6 +284,9 @@
     </div>
     <!-- Footer Area of the Page end -->
 </footer>
+<a href="#" class="scroll-top">
+    <i class="fa fa-arrow-up"></i>
+</a>
 <!-- footer of the Page end -->
 <div class="py-5 phone-fixed-bottom-menu-gap"></div>
 <div class="conatiner-fluid phone-fixed-bottom-menu" style="background: white">
@@ -427,4 +477,78 @@
             }
         });
     </script>
+
+
+    <script>
+        window.onscroll = function() {
+        var header_navbar = document.querySelector(".navbar-area");
+        var sticky = header_navbar.offsetTop;
+
+
+        // show or hide the back-top-top button
+        var backToTo = document.querySelector(".scroll-top");
+        if (document.body.scrollTop >1000 || document.documentElement.scrollTop >1000) {
+            backToTo.style.display = "flex";
+        } else {
+            backToTo.style.display = "none";
+        };
+
+        if (window.pageYOffset > sticky) {
+            header_navbar.classList.add("sticky");
+        } else {
+            header_navbar.classList.remove("sticky");
+        }
+
+    };
+
+
+
+        </script>
+
+        <script>
+            $(".add-to-cart-btn").click(function(){
+  $(this).toggleClass("btn-outline-pink");
+  $(this).toggleClass("profile-btn-color");
+});
+        </script>
+
+    <script>
+          $(".phone-pe-btn").hide();
+            $(".phone-pe").click(function(){
+                $(".upi-id").hide();
+  $(".phone-pe-btn").toggleClass("d-block");
+
+});
+    </script>
+        <script>
+$(".upi-id").hide();
+              $(".upi-btn").click(function(){
+                $(".phone-pe-btn").removeClass("d-block");
+    $(".upi-id").show();
+
+  });
+      </script>
+
+      <script>
+        var no2 = Math.floor((Math.random()*9)+1);
+				var no3 = Math.floor((Math.random()*9)+1);
+				var no4 = Math.floor((Math.random()*9)+1);
+
+
+				document.getElementById("display2").innerHTML=no2;
+				document.getElementById("display3").innerHTML=no3;
+				document.getElementById("display4").innerHTML=no4;
+        function Generate(){
+
+				var no2 = Math.floor((Math.random()*9)+1);
+				var no3 = Math.floor((Math.random()*9)+1);
+				var no4 = Math.floor((Math.random()*9)+1);
+
+
+				document.getElementById("display2").innerHTML=no2;
+				document.getElementById("display3").innerHTML=no3;
+				document.getElementById("display4").innerHTML=no4;
+
+			}
+      </script>
 @endsection

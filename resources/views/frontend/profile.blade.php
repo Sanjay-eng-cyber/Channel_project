@@ -2,6 +2,7 @@
 @section('title', 'Profile')
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
+
 @endsection
 @section('content')
 
@@ -11,13 +12,13 @@
             <div class="container">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" class="bread-crum">Profile</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="bread-crum breadcrumb-hover">Profile</a></li>
                     <li class="breadcrumb-item bread-crum" aria-current="page">My profile</li>
                 </ol>
                 </nav>
             </div>
         </section>
-    <section>
+    <section class="pb-4">
         <div class="container">
             <div class="row py-2 d-flex justify-content-center">
                 <div class="col-12 col-lg-6 ">
@@ -90,6 +91,53 @@
                         </div>
 
                     </form>
+
+
+                    <form class="p-4 profile-form-border mt-3" action="" method="post">
+                        <h5 class="main-head text-red text-start">Change Password</h5>
+                        @csrf
+                        <div class="row">
+                            <div class="col-sm-6 py-2">
+                                <input type="text" name="c-password" class=" profile-form-input-custome"
+                                    placeholder="Current Password" minlength="3" maxlength="30"
+                                    value="" required>
+                                {{--@if ($errors->has('first_name'))
+                                    <div id="first_name-error" class="text-primary">{{ $errors->first('first_name') }}</div>
+                                @endif--}}
+                            </div>
+                            <div class="col-sm-6 py-2">
+                                <input type="text" name="n-password" class=" profile-form-input-custome"
+                                    placeholder="New Password" minlength="3" maxlength="30" required
+                                    value="">
+                                {{--@if ($errors->has('last_name'))
+                                    <div id="last_name-error" class="text-primary">{{ $errors->first('last_name') }}</div>
+                                @endif--}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 pt-0 d-sm-block d-none">
+                              <img src="frontend/images/icons/lock-icon.png" alt="" class="p-0 m-0 ">
+                            </div>
+
+                            <div class="col-sm-6 py-2">
+                                <input type="text" name="c-n-password" class=" profile-form-input-custome" placeholder="Confirm New Password"
+                                    minlength="5" maxlength="50" value="">
+                                {{--@if ($errors->has('email'))
+                                    <div id="email-error" class="text-primary">{{ $errors->first('email') }}</div>
+                                @endif--}}
+                                <div class="col-sm-12  text-end mt-5">
+                                    <button type="submit" class="btn profile-btn-color">Update Password</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </form>
+
+
                     <div class="py-3">
                     </div>
                     {{-- <form class="p-4 profile-form-border" action="" method="post">
@@ -176,7 +224,7 @@
                                 @csrf
                                 <h5 class="main-head text-red">Add Address</h5>
 
-                                <div class="form-group py-2">
+                                <div class="form-group py-2 ">
                                     <input type="text" name="name" class=" profile-form-input-custome"
                                         placeholder="Name*" required minlength="3" maxlength="20" required>
                                     @if ($errors->has('name'))
@@ -227,6 +275,27 @@
                                     @endif
                                 </div>
 
+                                <div class="form-group   py-2">
+
+                                    <div class="row">
+                                        <div class="col-6 pt-2">
+                                            <label for="" class="form-check-label gray-new">Address Type</label>
+                                        </div>
+                                        <div class="col-6 dropdown-add">
+                                            <select name="" id="" class="profile-form-input-custome gray-new" placeholder="Address Type" >
+                                                <option value="">Select</option>
+                                                <option value="" >Home</option>
+                                                <option value="">Office</option>
+
+                                                <option value="">Other</option>
+                                                   </select>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
                                 {{-- <div class="row">
                                 <div class="col-sm-6 py-2">
 
@@ -245,7 +314,7 @@
 
 
                                 <div class="col-sm-12 pt-4">
-                                    <button type="submit" class="btn profile-btn-color">Save</button>
+                                    <button type="submit" class="btn profile-btn-color">Save Address</button>
                                 </div>
 
                             </form>

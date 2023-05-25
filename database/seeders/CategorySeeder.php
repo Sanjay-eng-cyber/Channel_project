@@ -18,7 +18,7 @@ class CategorySeeder extends Seeder
     {
         $faker = Faker::create();
 
-        $categories = ['Skin', 'Personal Care', 'Hair', 'Fragrances', 'Gift', 'Home Decor', 'Occasion'];
+        $categories = ['Skin', 'Personal Care', 'Hair Care', 'Fragrances', 'Gift', 'Home Decor', 'Occasion'];
 
         for ($i = 0; $i < count($categories); $i++) {
             DB::table('categories')->insert([

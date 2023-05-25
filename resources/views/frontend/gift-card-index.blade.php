@@ -4,10 +4,20 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
+<section class="my-2 pt-2">
+    <div class="container">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#" class="bread-crum breadcrumb-hover">Gift</a></li>
 
+            <li class="breadcrumb-item bread-crum" aria-current="page">Gift Card</li>
+        </ol>
+        </nav>
+    </div>
+</section>
     <main id="mt-main">
 
-        <section class="mt-product-detial wow fadeInUp mt-4 " data-wow-delay="0.4s">
+        <section class="mt-product-detial wow fadeInUp  " data-wow-delay="0.4s">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -22,7 +32,7 @@
                                </div>
                                 <hr>
                                 <div class="gift-card-top-heading">
-                                    <h5 class="main-head my-4 text-start">1. Select a style for your Gift Card</h5>
+                                    <h5 class="main-head my-4 text-start text-capitalize">1. Select a style for your Gift Card</h5>
                                 </div>
                                 <ul class="list-unstyled slick-slider pagg-slider p-0">
                                     <li>
@@ -170,17 +180,17 @@
 
                             <div class="d-flex justify-content-around flex-wrap my-5">
                                 <button class="btn btn-primary btn-pink">
-                                    add to cart
+                                    Add To Cart
                                 </button>
 
                                 <button class="btn btn-primary btn-black">
-                                    buy now
+                                    Buy Now
                                 </button>
 
                                 <a class="btn text-red">
 
                                     <i class="fa-regular fa-heart"></i>
-                                    add to Wishlist
+                                    Add To Wishlist
                                 </a>
                             </div>
 
@@ -417,14 +427,14 @@
                     <div class="col-lg-12 col-xl-6 or-secondpage-scard">
                         <div class="p-4 or-secondpage-scard">
 
-                            <h5 class="main-head py-3 or-secondpage-scard-fhead">Recommended based on your purchase</h5>
+                            <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">Recommended based on your purchase</h5>
                             <div class="row pt-3 pb-3 or-secondpage-scard-card">
                                 <div class="col-sm-4 or-secondpage-scard-card-img" style="">
                                     <img src="frontend/images/products/skin/sk1.png" alt="" class="img-fluid">
                                 </div>
                                 <div class="col-sm-8 or-secondpage-scard-card-des pt-4 pt-sm-0 pt-md-0">
                                     <h4 class="main-head">Essence Long Lasting Eye Pencil</h4>
-                                    <p>
+                                    <p class="text-capitalize">
                                         essence Long Lasting Eye Pencil is a creamy and pigmented eye pencil that brightens
                                         and
                                         accentuates your eye more....
