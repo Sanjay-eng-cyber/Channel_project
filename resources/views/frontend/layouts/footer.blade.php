@@ -119,7 +119,7 @@
 
 
                 <nav
-                    class="col-xs-12 justify-content-start col-md-12 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
+                    class="col-xs-12 mt-xl-0 mt-md-2 justify-content-start col-md-12 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
 
 
                     <!-- Footer Nav of the Page -->
@@ -138,7 +138,7 @@
                     <!-- Footer Nav of the Page -->
                     <div class="nav-widget-1 cainco-breackpoint-info d-sm-block d-none">
                         <h3 class="f-widget-heading info-f-heading">Information</h3>
-                        <ul class="list-unstyled f-widget-nav info-f-list">
+                        <ul class="list-unstyled f-widget-nav info-f-list ">
                             <li><a href="{{ route('frontend.about') }}">FAQ</a></li>
                             <li><a href="{{ route('frontend.contact-us') }}">BLOG</a></li>
                             <li><a href="">Support</a></li>
@@ -194,7 +194,7 @@
                 <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
                     <!-- F Widget Newsletter of the Page -->
                     <div class="f-widget-newsletter f-widget-news-custome">
-                        <h3 class="f-widget-heading" style="line-height:0px">Subscribe</h3>
+                        <h3 class="f-widget-heading f-widget-heading-sub" style="line-height:0px">Subscribe</h3>
                         <div class="holder">
                             <form class="newsletter-form form2" action="#" style="padding:6px">
 

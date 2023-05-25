@@ -3045,4 +3045,32 @@ border:1px solid #EC268F !important;
     }
 }
 
+@media screen and (max-width: 992px){
+.cainco-breackpoint-info ul {
+    text-align:left !important;
+}
+.cainco-breackpoint-category ul {
+    text-align:left !important;
+}
+.cainco-breackpoint-company ul {
+    text-align: left !important;
+}
+.cainco-breackpoint-category {
+    display: block !important;
 
+}
+#mt-footer .footer-holder .f-widget-heading {
+    text-align: left !important;
+}
+#mt-footer .footer-holder .f-widget-heading-sub.f-widget-heading {
+    text-align: center  !important;
+}
+}
+ @media screen and (max-width:576px) {
+
+        .cainco-breackpoint-category {
+            display: none !important;
+
+        }
+
+    }
