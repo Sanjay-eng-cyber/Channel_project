@@ -3080,3 +3080,15 @@ border:1px solid #EC268F !important;
 .f-right{
     float:right;
 }
+@media screen and (max-width: 576px){
+#mt-footer .nav-widget-1 .c-f-list li {
+     text-align:left !important;
+}
+#mt-footer .nav-widget-1 .info-f-list li {
+    text-align:left !important;
+}
+.cainco-breackpoint-company {
+
+    align-items: baseline !important;
+}
+}
