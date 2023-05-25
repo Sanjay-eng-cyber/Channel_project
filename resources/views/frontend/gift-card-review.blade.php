@@ -4,8 +4,18 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
-
-    <section class="py-5">
+<section class="my-2 py-2">
+    <div class="container">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#" class="bread-crum breadcrumb-hover">Gift</a></li>
+            <li class="breadcrumb-item bread-crum" aria-current="page "><a href="#" class="bread-crum breadcrumb-hover">Gift-card</a></li>
+            <li class="breadcrumb-item bread-crum" aria-current="page">Write A Review</li>
+        </ol>
+        </nav>
+    </div>
+</section>
+    <section class="pb-5">
 
         <div class="container">
             <div class="row write-review-bdr-all">
@@ -14,13 +24,13 @@
                 <div class="col-12 col-lg-6 write-review-bdr-one">
                     <div class="p-0 p-sm-3">
                         <div class="gift-card-review-img">
-                            <img src="https://via.placeholder.com/600" alt=""
+                            <img src="{{--https://via.placeholder.com/600--}} {{url('frontend/images/festive.png')}}" alt=""
                                 class="img-fluid img-border m-auto m-lg-0">
                         </div>
 
                         <div>
                             <div class="write-review-fw main-head pt-4 pb-2">Amazon Pay EGift Card</div>
-                            <div>Hope you enjoy this Amazon Pay Gift Card!</div>
+                            <div class="text-capitalize">Hope you enjoy this Amazon Pay Gift Card!</div>
                         </div>
 
                         <hr>
@@ -45,7 +55,7 @@
                         <div class="pb-2">
                             <form action="" method="post">
                                 <div class="d-flex justify-content-between flex-column flex-sm-row gap-1">
-                                    <div>Give Your Rating</div>
+                                    <div class="text-black">Give Your Rating</div>
                                     <div class="rating d-flex flex-row justify-contend-end gap-3">
                                         <span class="far fa-star review-star-color" data-value="1"></span>
                                         <span class="far fa-star review-star-color" data-value="2"></span>
@@ -67,14 +77,14 @@
 
                         <div class="review-guid-line my-2">
                             <div class="review-guid-line-heading">Review Guidelines</div>
-                            <p>Once written and submitted, reviews are the sole property of channel. and channel reserves
+                            <p class="text-capitalize">Once written and submitted, reviews are the sole property of channel. and channel reserves
                                 the right to refuse
                                 and remove any review/rating.
                                 channel will not be held responsible or accept any liability of reviews posted for any
                                 product/brand.
                                 The opinions expressed in reviews are those of channel users and not of channel.</p>
                             <div class="review-guid-line-heading">Disclaimer</div>
-                            <p>Once written and submitted, reviews are the sole property of channel. and channel reserves
+                            <p class="text-capitalize">Once written and submitted, reviews are the sole property of channel. and channel reserves
                                 the right to refuse
                                 and remove any review/rating.
                                 channel will not be held responsible or accept any liability of reviews posted for any
@@ -107,14 +117,14 @@
             <div class="col-lg-12 col-xl-6 or-secondpage-scard">
                 <div class="p-4 or-secondpage-scard">
 
-                    <h5 class="main-head py-3 or-secondpage-scard-fhead">Recommended based on your purchase</h5>
+                    <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">Recommended based on your purchase</h5>
                     <div class="row pt-3 pb-3 or-secondpage-scard-card">
                         <div class="col-sm-4 or-secondpage-scard-card-img" style="">
                             <img src="frontend/images/products/skin/sk1.png" alt="" class="img-fluid">
                         </div>
                         <div class="col-sm-8 or-secondpage-scard-card-des pt-4 pt-sm-0 pt-md-0">
                             <h4 class="main-head">Essence Long Lasting Eye Pencil</h4>
-                            <p>
+                            <p class="text-capitalize">
                                 essence Long Lasting Eye Pencil is a creamy and pigmented eye pencil that brightens
                                 and
                                 accentuates your eye more....
