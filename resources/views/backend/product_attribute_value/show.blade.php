@@ -6,13 +6,13 @@
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center mb-1 ">
-                        <div class="col-lg-4 col-md-6 col-sm-6 mt-2 mb-1">
+                        <div class="col-xl-4 col-md-6  mt-2 mb-1">
                             <legend class="h4">
                                 Product Attribute Value Details
                             </legend>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 col-sm-6 mb-2 d-flex justify-content-end align-it mt-2 ">
+                        <div class="col-xl-4 col-md-6  mb-2 d-flex justify-content-end align-it mt-2 ">
                             <nav class="breadcrumb-two" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>

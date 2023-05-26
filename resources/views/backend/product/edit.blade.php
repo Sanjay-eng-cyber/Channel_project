@@ -17,7 +17,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Product</a></li>
+                                            href="javascript:void(0);">Edit Product</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -32,7 +32,7 @@
                             @csrf
                             <div class="form-group mb-3 row">
                                 <div class="form-group mb-3 row">
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                    <div class="col-xl-6  col-md-6 col-sm-12">
                                         <label for="formGroupExampleInput" class="">Name</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
@@ -41,7 +41,7 @@
                                             <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                    <div class="col-xl-6  col-md-6 col-sm-12">
                                         <label for="degree2">Brand</label>
                                         <select class="form-control mb-4" name="brand_id">
                                             <option value="">Select Any Brand</option>
@@ -64,7 +64,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                    <div class="col-xl-6 col-md-6 col-sm-12">
                                         <label for="degree2">Category</label>
                                         <select class="form-control mb-4" name="category_id" id="sel1"
                                             onchange="getValues()" required>
@@ -88,7 +88,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                    <div class="col-xl-6  col-md-6 col-sm-12">
                                         <label for="degree2">Sub Category</label>
                                         <select class="form-control mb-4" name="sub_category_id" id="sub">
                                             <option value="">Select Any Sub Category</option>
@@ -98,7 +98,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                    <div class="col-xl-6 col-md-6 col-sm-12">
                                         <label for="formGroupExampleInput" class="">MRP</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Mrp" minlength="3" maxlength="40" required name="mrp"
@@ -107,7 +107,7 @@
                                             <div class="text-danger" role="alert">{{ $errors->first('mrp') }}</div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                    <div class="col-xl-6  col-md-6 col-sm-12">
                                         <label for="formGroupExampleInput" class="">Final Price</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Final Price" minlength="3" maxlength="40" required
@@ -117,7 +117,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
+                                    <div class="col-xl-6  col-md-6 col-sm-12 py-3">
                                         <label for="formGroupExampleInput" class="">Stock</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Stock" minlength="3" maxlength="40" required
@@ -126,7 +126,7 @@
                                             <div class="text-danger" role="alert">{{ $errors->first('stock') }}</div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-3">
+                                    <div class="col-xl-6  col-md-6 col-sm-12 py-3">
                                         <label for="formGroupExampleInput" class="">SKU</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter SKU" required name="sku"
@@ -135,7 +135,7 @@
                                             <div class="text-danger" role="alert">{{ $errors->first('sku') }}</div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <div class="col-xl-6  col-md-6 col-sm-12 mb-3">
                                         <label for="formGroupExampleInput" class="">Short Descriptions</label>
                                        <textarea name="short_descriptions" rows="5" cols="50" class="form-control" minlength="3" maxlength="120" required>{{$product->short_descriptions}}</textarea>
                                         @if ($errors->has('short_descriptions'))
@@ -143,7 +143,7 @@
                                         @endif
                                     </div>
                                     @foreach ($attributes as $attribute)
-                                        <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                        <div class="col-xl-6  col-md-6 col-sm-12 mb-3">
                                             <input hidden name="attributeKeys[]" value="{{ $attribute->id }}">
                                             <label for="degree2">{{ $attribute->name }}</label>
                                             <select class="form-control" name="values[]">
@@ -164,7 +164,7 @@
                                             </select>
                                         </div>
                                     @endforeach
-                                    <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
+                                    <div class="col-xl-12  col-md-6 col-sm-12 py-1">
                                         <label for="descriptions">Showcase</label><br>
                                         @if (old('showcases'))
                                             @foreach ($showcases as $showcase)
@@ -189,7 +189,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
+                                    <div class="col-xl-6  col-md-6 col-sm-12">
                                         <label for="degree2">Image</label>
                                         <div class="d-flex flex-wrap">
                                             @forelse ($product->medias()->get() as $media)
@@ -211,7 +211,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <div class="col-xl-6  col-md-6 col-sm-12 mb-3">
                                         <label for="degree2">Thumbnail Image</label><br>
                                         <img class="m-2 border"
                                                     src="{{ asset('storage/images/products/' . $product->thumbnail_image) }}"
@@ -222,7 +222,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-1">
+                                    <div class="col-xl-12  col-sm-12 py-1">
                                         <label for="descriptions">Description</label>
                                         <textarea id="team-about" name="descriptions">{{ old('descriptions') ?? $product->descriptions }}</textarea>
                                         @if ($errors->has('body'))

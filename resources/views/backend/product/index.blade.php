@@ -27,10 +27,10 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 mt-2">
+                        <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 mt-2 px-xl-0">
                             <form class="form-inline row app_form" action="{{ route('backend.product.index') }}"
                                 method="GET">
-                                <select class="form-control form-control-sm app_form_input col-3" name="brand">
+                                <select class="form-control form-control-sm app_form_input col-md-3 mt-md-0 mt-3" name="brand">
                                     <option value="">Select Brand</option>
                                     @foreach ($brands as $b)
                                         <option value="{{ $b->slug }}"
@@ -38,7 +38,7 @@
                                             {{ $b->name }}</option>
                                     @endforeach
                                 </select>
-                                <select class="form-control form-control-sm app_form_input col-3" name="category">
+                                <select class="form-control form-control-sm app_form_input col-md-3 mt-md-0 mt-3" name="category">
                                     <option value="">Select Category</option>
                                     @foreach ($categories as $c)
                                         <option value="{{ $c->slug }}"
@@ -46,11 +46,11 @@
                                             {{ $c->name }}</option>
                                     @endforeach
                                 </select>
-                                <input class="form-control form-control-sm app_form_input col-2" type="text"
+                                <input class="form-control form-control-sm app_form_input col-md-2 mt-md-0 mt-3" type="text"
                                     placeholder="Name/Sku" name="q" value="{{ request('q') ?? '' }}" minlength="3"
                                     maxlength="40">
                                 <input type="submit" value="Search"
-                                    class="btn btn-success ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
+                                    class="btn btn-success mt-md-0 mt-3 ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
                             </form>
                             @if ($errors->has('q'))
                                 <div class="text-danger" role="alert">{{ $errors->first('q') }}

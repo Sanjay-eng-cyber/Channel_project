@@ -117,7 +117,7 @@
                 </div>
                 <div class="col-md-4 col-lg-3">
                     <div class="" style="padding: 50px 15px 15px 15px">
-                        <h5 class="main-head">Order summary</h5>
+                        <h5 class="main-head">Order Summary</h5>
                         <hr style="border-bottom: 2px solid #000000;">
                         <div class="d-flex justify-content-between my-3">
                             <strong>Sub Total</strong>
@@ -137,14 +137,14 @@
                             </form>
                         </div>
 
-                        <p class="m-0 p-0 my-2 __cart-ui-pra">coupon code will apply on checkout page</p>
+                        <p class="m-0 p-0 my-2 __cart-ui-pra text-capitalize">coupon code will apply on checkout page</p>
 
                         <div class="d-flex justify-content-between my-3">
                             <strong>Total:</strong>
                             <strong>{{ $subTotal }}</strong>
                         </div>
                         <hr>
-                        <p class="m-0 p-0 my-2 __cart-ui-pra">coupon code will apply on checkout page</p>
+                        <p class="m-0 p-0 my-2 __cart-ui-pra text-capitalize">coupon code will apply on checkout page</p>
 
                         <div>
                             <a href="http://" class="my-2 text-white">
