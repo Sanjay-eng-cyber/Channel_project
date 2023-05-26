@@ -16,7 +16,7 @@
                             <nav class="breadcrumb-two" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">Product Attribute Value</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">Edit Product Attribute Value</a></li>
                                 </ol>
                             </nav>
                         </div>

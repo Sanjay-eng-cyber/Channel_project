@@ -111,7 +111,7 @@
                 Payment
             </a>
 
-            <a href="javascript:;" class="btn">
+            <a href="{{ route('frontend.cart.index') }}" class="btn {{URL::current()==route('frontend.cart.index')? 'active':''}}">
                 <span class="menu-icon">
                     <svg width="65" height="65" viewBox="0 0 48 48" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
