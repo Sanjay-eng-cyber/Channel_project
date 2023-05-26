@@ -24,14 +24,14 @@
                     </div>
                 </div>
             </div>
-            <div class="statbox widget box box-shadow temp-a col-xl-6">
+            <div class="statbox widget box box-shadow temp-a col-md-6">
                 <div class="row m-0">
                     <div class="col-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.product_attribute_value.store') }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
-                                <div class="col-xl-12  col-md-6 col-sm-12">
+                                <div class="col-xl-12  col-sm-12">
                                     <label for="formGroupExampleInput" class="">Name</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
@@ -40,7 +40,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12  col-md-6 col-sm-12 py-lg-0 py-2 py-xl-2">
+                                <div class="col-xl-12   col-sm-12 py-lg-0 py-2 py-xl-2">
                                     <label for="degree2">Attribute</label>
                                     <select class="form-control mb-4" name="attribute_id" required>
                                         <option value="">Select Any Attribute</option>
