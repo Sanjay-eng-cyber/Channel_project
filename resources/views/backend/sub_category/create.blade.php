@@ -16,7 +16,7 @@
                             <nav class="breadcrumb-two" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">Sub
+                                    <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0);">Create Sub
                                             Category</a></li>
                                 </ol>
                             </nav>
