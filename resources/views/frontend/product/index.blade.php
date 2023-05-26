@@ -19,7 +19,7 @@
                     <div class="d-flex gap-4 justify-content-between flex-column flex-sm-row my-4 my-lg-0">
                         <div>
                             <form action="" method="post" class="m-0">
-                                {{--<div class="input-group">
+                                {{-- <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Serach Order"
                                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                                     <span class="input-group-text" id="basic-addon2"
@@ -29,18 +29,19 @@
                                                 class="fas fa-search fa-fw text-red"></i></button>
                                     </span>
 
-                                </div>--}}
+                                </div> --}}
                                 <div class="input-group ">
-                                    <input type="text" class="form-control serch-border" placeholder="Serach Order" aria-label="Recipient's username"
-                                        aria-describedby="basic-addon2">
-                                    <span class="input-group-text serch-border" id="basic-addon2" style="background-color: rgba(236, 38, 143, 0.4);">
+                                    <input type="text" class="form-control serch-border" placeholder="Serach Order"
+                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <span class="input-group-text serch-border" id="basic-addon2"
+                                        style="background-color: rgba(236, 38, 143, 0.4);">
                                         <i class="fas fa-search fa-fw text-red"></i>
                                     </span>
                                 </div>
                             </form>
                         </div>
 
-                         <div class="d-flex gap-3 align-items-baseline">
+                        <div class="d-flex gap-3 align-items-baseline">
                             <div>For</div>
                             <div class="pro-radio-btn">
                                 <input type="radio" class="btn-check" name="options" id="option01" autocomplete="off">
@@ -140,10 +141,24 @@
                                                 <a href="{{ route('frontend.p.show', $pro->slug) }}" class="btn btn-orange">
                                                     Shop now
                                                 </a>
-                                                <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
-                                                    data-p-id="{{ $pro->id }}">
-                                                    Add To Cart
-                                                </a>
+                                                @if ($pro->isInCart())
+                                                    <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
+                                                        data-p-id="{{ $pro->id }}">
+                                                        <svg class="svg-inline--fa fa-check" aria-hidden="true"
+                                                            focusable="false" data-prefix="fas" data-icon="check"
+                                                            role="img" xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 512 512" data-fa-i2svg="">
+                                                            <path fill="currentColor"
+                                                                d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            </path>
+                                                        </svg> Added
+                                                    </a>
+                                                @else
+                                                    <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
+                                                        data-p-id="{{ $pro->id }}">
+                                                        Add To Cart
+                                                    </a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -169,4 +184,3 @@
     </section>
 
 @endsection
-

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Cart;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -35,7 +36,7 @@ class Product extends Model
         return $this->hasMany(ShowcaseProduct::class);
     }
 
-     public function ProductAttribute()
+    public function ProductAttribute()
     {
         return $this->hasMany(ProductAttribute::class);
     }
@@ -47,8 +48,7 @@ class Product extends Model
 
     public function storeProductAttributes($attributes, $values, $product)
     {
-        foreach($attributes as $key => $item)
-        {
+        foreach ($attributes as $key => $item) {
             ProductAttribute::create([
                 'product_id' => $product,
                 'attribute_id' => $item,
@@ -59,22 +59,33 @@ class Product extends Model
 
     public function updateProductAttributes($attributes, $values, $product)
     {
-        foreach($attributes as $key => $item)
-        {
-           $attribute = ProductAttribute::where('product_id', $product)->where('attribute_id', $item)->first();
-          if($attribute == null){
-            ProductAttribute::create([
-                'product_id' => $product,
-                'attribute_id' => $item,
-                'product_attribute_value_id' => $values[$key],
-            ]);
-          } else {
-            $attribute->update([
-                'product_attribute_value_id' => $values[$key],
-            ]);
-          }
-
+        foreach ($attributes as $key => $item) {
+            $attribute = ProductAttribute::where('product_id', $product)->where('attribute_id', $item)->first();
+            if ($attribute == null) {
+                ProductAttribute::create([
+                    'product_id' => $product,
+                    'attribute_id' => $item,
+                    'product_attribute_value_id' => $values[$key],
+                ]);
+            } else {
+                $attribute->update([
+                    'product_attribute_value_id' => $values[$key],
+                ]);
+            }
         }
+    }
 
+    public function isInCart()
+    {
+        $user = auth()->user();
+        // dd($user);
+        if ($user) {
+            $cart = $user->cart;
+        } else {
+            $cart_session_id = session()->get('cart_session_id');
+            $cart = Cart::where('session_id', $cart_session_id)->first();
+        }
+        // dd($cart);
+        return $cart ? $cart->items()->where('product_id', $this->id)->exists() : false;
     }
 }
