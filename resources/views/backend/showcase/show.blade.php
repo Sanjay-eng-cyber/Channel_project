@@ -8,7 +8,7 @@
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-lg-4 col-md-6 col-sm-6 mt-2 mb-1">
                             <legend class="h4">
-                                Showcase Deatails
+                                Showcase Details
                             </legend>
                         </div>
 
