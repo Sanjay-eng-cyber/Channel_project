@@ -27,7 +27,7 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 mt-2">
+                        <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 mt-2 px-xl-0">
                             <form class="form-inline row app_form" action="{{ route('backend.product.index') }}"
                                 method="GET">
                                 <select class="form-control form-control-sm app_form_input col-md-3 mt-md-0 mt-3" name="brand">

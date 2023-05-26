@@ -31,7 +31,7 @@
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
-                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-xl-12  col-sm-12">
                                     <label for="formGroupExampleInput" class="">Name</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
@@ -40,7 +40,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-2">
+                                <div class="col-xl-12   col-sm-12 py-lg-0 py-2 py-xl-2">
                                     <label for="degree2">Attribute</label>
                                     <select class="form-control mb-4" name="attribute_id" required>
                                         <option value="">Select Any Attribute</option>
