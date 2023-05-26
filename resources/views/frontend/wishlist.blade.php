@@ -19,7 +19,7 @@
     <section style="padding:0px 0px 50px 0px">
         <div class="container">
 
-            <div class="row d-flex justify-content-center">
+            {{-- <div class="row d-flex justify-content-center">
                 <h4 class="main-head text-red text-center py-2">Wishes Do Come True </h4>
                 <div class="col-sm-9">
                     <form action="" method="post">
@@ -32,7 +32,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> --}}
 
 
             @forelse($wishlists as $w)
@@ -47,7 +47,8 @@
                                 <div class="col-sm-12  col-md-8 col-lg-8 col-xl-6 wishlist-main-desc">
 
                                     <h5 class="main-head">{{ $w->product->name }}</h5>
-                                    <p style="font-size: 14px;opacity: 0.6;">{{ $w->product->short_descriptions }}</p>
+                                    <p style="font-size: 14px;opacity: 0.6;">{{ $w->product->short_descriptions }}
+                                    </p>
 
                                     <ul class="list-unstyled d-flex gap-3">
                                         <li class="price">From ₹ {{ $w->product->final_price }}</li>
@@ -63,8 +64,8 @@
                                         class="add-to-cart-btn btn profile-btn-color add-p-btn btn-pink add-to-cart"
                                         data-p-id="{{ $w->product->id }}">Add To
                                         Cart</a>
-                                    <a href="" style="font-size:12px" class="py-1 text-red mt-md-1 mt-2" data-bs-toggle="modal"
-                                        data-bs-target="#wishlist-popup">
+                                    <a href="" style="font-size:12px" class="py-1 text-red mt-md-1 mt-2"
+                                        data-bs-toggle="modal" data-bs-target="#wishlist-popup">
                                         Remove item from Wishlist
                                     </a>
                                 </div>
@@ -75,8 +76,18 @@
             @empty
                 @include('frontend.not-found')
             @endforelse
+            <div class="pagination col-lg-12">
+                <div class="col-md-12 text-center align-self-center">
+                    <ul class="pagination text-center">
+                        {{ $wishlists->appends(Request::all())->links('pagination::bootstrap-4') }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            {{-- <div class="row py-3">
+
+    {{-- <div class="row py-3">
                 <div class="d-flex justify-content-center wishlist-main">
                     <div class="col-sm-8 wishlist-main-out">
                         <div class="row wishlist-main-in">
@@ -113,7 +124,7 @@
             </div> --}}
 
 
-            {{-- <div class="row py-3">
+    {{-- <div class="row py-3">
                 <div class="d-flex justify-content-center wishlist-main">
                     <div class="col-sm-8 wishlist-main-out">
                         <div class="row wishlist-main-in">
@@ -150,8 +161,6 @@
                 </div>
             </div> --}}
 
-        </div>
-    </section>
 
 
 

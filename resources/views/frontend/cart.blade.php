@@ -106,6 +106,13 @@
                         </div>
                     @empty
                     @endforelse
+                    <div class="pagination col-lg-12">
+                        <div class="col-md-12 text-center align-self-center">
+                            <ul class="pagination text-center">
+                                {{ $cartItems->appends(Request::all())->links('pagination::bootstrap-4') }}
+                            </ul>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="col-md-4 col-lg-3">

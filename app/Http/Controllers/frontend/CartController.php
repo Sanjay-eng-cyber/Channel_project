@@ -21,7 +21,7 @@ class CartController extends Controller
             $cart_session_id = session()->get('cart_session_id');
             $cart = Cart::where('session_id', $cart_session_id)->first();
         }
-        $cartItems = $cart ? $cart->items()->get() : [];
+        $cartItems = $cart ? $cart->items()->paginate(10) : [];
         $subTotal = 0;
         foreach ($cartItems as $cart) {
             $subTotal = $subTotal += $cart->product->final_price;
