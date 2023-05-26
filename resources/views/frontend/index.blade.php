@@ -143,7 +143,7 @@
                                                                 src="frontend/images/products/skin/sk2.png"
                                                                 alt="image description"></a>
 
-                                                        <button type="button" class="like-btn-skin btn">
+                                                        <button class="like-btn-skin btn add-to-wish" data-p-id="{{ $p->id }}">
                                                             <i class="far fa-heart"></i>
                                                         </button>
                                                         <ul class="links skin-text-desc py-2 px-3">
@@ -189,7 +189,7 @@
                                                         <a href="{{ route('frontend.p.show', 'product-name') }}"><img
                                                                 src="frontend/images/products/skin/sk1.png"
                                                                 alt="image description"></a>
-                                                        <button type="button" class="like-btn-skin btn">
+                                                        <button type="button" class="like-btn-skin btn add-to-wish" data-p-id="{{ $p->id }}">
                                                             <i class="far fa-heart"></i>
                                                         </button>
                                                         <ul class="links skin-text-desc py-2 px-3">
@@ -235,7 +235,7 @@
                                                                 src="frontend/images/products/skin/sk2.png"
                                                                 alt="image description"></a>
 
-                                                        <button type="button" class="like-btn-skin btn">
+                                                        <button type="button" class="like-btn-skin btn add-to-wish" data-p-id="{{ $p->id }}">
                                                             <i class="far fa-heart"></i>
                                                         </button>
 

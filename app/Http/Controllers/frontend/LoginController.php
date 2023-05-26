@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\Models\Cart;
 use App\Models\User;
 use App\Lib\MSG91\MSG91;
 use App\Lib\MSG91\SMSCode;
@@ -62,6 +63,15 @@ class LoginController extends Controller
             if ($user) {
                 Auth::guard('web')->login($user);
                 $redirect_url = session()->get('url.intended') ?? route('frontend.index');
+                if (session()->get('cart_session_id')) {
+                    $cart = Cart::updateOrCreate([
+                        'session_id' => session()->get('cart_session_id'),
+                    ], [
+                        'session_id' => null,
+                        'user_id' => $user->id
+                    ]);
+                    session()->forget('cart_session_id');
+                }
                 return response()->json(['success' => true, 'message' => 'OTP Verified', 'redirect_url' => $redirect_url]);
             }
             return response()->json(['success' => false, 'message' => 'Something Went Wrong']);

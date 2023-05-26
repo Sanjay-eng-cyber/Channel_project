@@ -1,4 +1,3 @@
-@livewireScripts
 <!-- footer of the Page -->
 <footer id="mt-footer" class="style2 wow fadeInUp custome-footer position-relative" data-wow-delay="0.6s">
     <img src="{{ url('frontend/images/footer/ft-1.png') }}" alt="" class="footer-absolute-img1">
@@ -15,7 +14,7 @@
                     <!-- F Widget About of the Page -->
                     <div class="f-widget-about">
                         <div class="logo pt-md-0 pt-3 ">
-                            <a href="{{url("/")}}">
+                            <a href="{{ url('/') }}">
                                 <img src="{{ url('frontend/images/channel-logo.svg') }}" height="30"
                                     alt="Channel"></a>
                         </div>
@@ -48,7 +47,8 @@
                                 <i class="fas fa-envelope  text-red"></i>
                             </li>
                             <li>
-                                <a href="mailto:channeltheshop@yahoo.co.in " class="footer-info">channeltheshop@yahoo.co.in </a>
+                                <a href="mailto:channeltheshop@yahoo.co.in "
+                                    class="footer-info">channeltheshop@yahoo.co.in </a>
                             </li>
 
                         </ul>
@@ -150,11 +150,12 @@
                     <div class="nav-widget-1 cainco-breackpoint-company d-sm-block ">
                         <h3 class="f-widget-heading c-f-heading">Company</h3>
                         <ul class="list-unstyled f-widget-nav  c-f-list">
-                            <li><a href="{{route('frontend.about')}}">About Us</a></li>
-                            <li><a href="{{route('frontend.returns-and-refunds-policy')}}">Returns & Refunds Policy</a></li>
+                            <li><a href="{{ route('frontend.about') }}">About Us</a></li>
+                            <li><a href="{{ route('frontend.returns-and-refunds-policy') }}">Returns & Refunds
+                                    Policy</a></li>
 
-                            <li><a href="{{route('frontend.shipping-policy')}}">Shipping Policy</a></li>
-                            <li><a href="{{route('frontend.contact-us')}}">Contact Us</a></li>
+                            <li><a href="{{ route('frontend.shipping-policy') }}">Shipping Policy</a></li>
+                            <li><a href="{{ route('frontend.contact-us') }}">Contact Us</a></li>
 
 
                         </ul>
@@ -167,22 +168,23 @@
 
                             <div class="col">
                                 <ul>
-                                    <li><a href="{{route('frontend.about')}}">About Us</a></li>
+                                    <li><a href="{{ route('frontend.about') }}">About Us</a></li>
                                 </ul>
                             </div>
                             <div class="col">
                                 <ul>
-                                    <li><a href="{{route('frontend.returns-and-refunds-policy')}}">Returns & Refunds Policy</a></li>
+                                    <li><a href="{{ route('frontend.returns-and-refunds-policy') }}">Returns & Refunds
+                                            Policy</a></li>
                                 </ul>
                             </div>
                             <div class="col">
                                 <ul>
-                                    <li><a href="{{route('frontend.shipping-policy')}}">Shipping Policy</a></li>
+                                    <li><a href="{{ route('frontend.shipping-policy') }}">Shipping Policy</a></li>
                                 </ul>
                             </div>
                             <div class="col">
                                 <ul>
-                                    <li><a href="{{route('frontend.contact-us')}}">Contact Us</a></li>
+                                    <li><a href="{{ route('frontend.contact-us') }}">Contact Us</a></li>
                                 </ul>
                             </div>
 
@@ -225,10 +227,11 @@
             <div class="row">
                 <div class="col-6 col-sm-7 footer-tpc">
                     <ul class="gap-2 gap-sm-4  p-0  footer-tpc-ul">
-                        <a href="{{route('frontend.terms-and-conditions')}}" class="fw-bolder footer-links-hover-bottom">
+                        <a href="{{ route('frontend.terms-and-conditions') }}"
+                            class="fw-bolder footer-links-hover-bottom">
                             Terms
                         </a>
-                        <a href="{{route('frontend.privacy-policy')}}" class="fw-bolder footer-links-hover-bottom">
+                        <a href="{{ route('frontend.privacy-policy') }}" class="fw-bolder footer-links-hover-bottom">
                             Privacy
                         </a>
                         <a href="" class="fw-bolder footer-links-hover-bottom">
@@ -275,7 +278,8 @@
 
                     <p class="footer-custome-c">
                         Designed & Developed by
-                        <a href="{{url('https://www.acetrot.com/')}}" class="underline footer-custome-c" target="_blank">Acetrot</a>
+                        <a href="{{ url('https://www.acetrot.com/') }}" class="underline footer-custome-c"
+                            target="_blank">Acetrot</a>
                     </p>
 
                 </div>
@@ -332,58 +336,58 @@
 
     </div>
 </div>
-
-<script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
-<script src="js/jquery.min.js"></script>
-<script>
-    @if (Session::get('alert-type') == 'success')
-        @if (Session::has('message'))
-            Snackbar.show({
-                text: "{{ Session::get('message') }}",
-                pos: 'top-right',
-                actionTextColor: '#fff',
-                backgroundColor: '#1abc9c'
-            });
-        @endif
-    @elseif (Session::get('alert-type') == 'info')
-        @if (Session::has('message'))
-            Snackbar.show({
-                text: "{{ Session::get('message') }}",
-                pos: 'top-right',
-                actionTextColor: '#fff',
-                backgroundColor: '#2196f3'
-            });
-        @endif
-    @elseif (Session::get('alert-type') == 'error')
-        @if (Session::has('message'))
-            Snackbar.show({
-                text: "{{ Session::get('message') }}",
-                pos: 'top-right',
-                actionTextColor: '#fff',
-                backgroundColor: '#e7515a'
-            });
-        @endif
-    @else
-        @if (Session::has('message'))
-            Snackbar.show({
-                text: "{{ Session::get('message') }}",
-                pos: 'top-right',
-                actionTextColor: '#fff',
-                backgroundColor: '#3b3f5c'
-            });
-        @endif
-    @endif
-</script>
-
-<script>
-    $(document).ready(function() {
-        @if (session()->has('login_redirect') == true)
-            $('#loginPopup').modal('show')
-        @endif
-    });
-</script>
-
 @section('js')
+    <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        @if (Session::get('alert-type') == 'success')
+            @if (Session::has('message'))
+                Snackbar.show({
+                    text: "{{ Session::get('message') }}",
+                    pos: 'top-right',
+                    actionTextColor: '#fff',
+                    backgroundColor: '#1abc9c'
+                });
+            @endif
+        @elseif (Session::get('alert-type') == 'info')
+            @if (Session::has('message'))
+                Snackbar.show({
+                    text: "{{ Session::get('message') }}",
+                    pos: 'top-right',
+                    actionTextColor: '#fff',
+                    backgroundColor: '#2196f3'
+                });
+            @endif
+        @elseif (Session::get('alert-type') == 'error')
+            @if (Session::has('message'))
+                Snackbar.show({
+                    text: "{{ Session::get('message') }}",
+                    pos: 'top-right',
+                    actionTextColor: '#fff',
+                    backgroundColor: '#e7515a'
+                });
+            @endif
+        @else
+            @if (Session::has('message'))
+                Snackbar.show({
+                    text: "{{ Session::get('message') }}",
+                    pos: 'top-right',
+                    actionTextColor: '#fff',
+                    backgroundColor: '#3b3f5c'
+                });
+            @endif
+        @endif
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            @if (session()->has('login_redirect') == true)
+                $('#loginPopup').modal('show')
+            @endif
+        });
+    </script>
+
+
     <script src="{{ asset('js/axios.min.js') }}"></script>
     <script>
         $('a.add-to-cart').click(function() {
@@ -394,7 +398,7 @@
                         product_id: $(this).attr("data-p-id")
                     })
                     .then(function(res) {
-                        console.log(btn);
+                        // console.log(btn);
                         // console.log(res.data);
                         if (res.data.status) {
                             if (res.data.addToCart) {
@@ -406,6 +410,7 @@
                                 btn[0].classList.remove('btn-outline-pink');
                                 btn[0].innerHTML = `Add To Cart`;
                             }
+                            $('.cart-count')[0].innerHTML = res.data.count;
                             Snackbar.show({
                                 text: res.data.message,
                                 pos: 'top-right',
@@ -481,74 +486,72 @@
 
     <script>
         window.onscroll = function() {
-        var header_navbar = document.querySelector(".navbar-area");
-        var sticky = header_navbar.offsetTop;
+            var header_navbar = document.querySelector(".navbar-area");
+            var sticky = header_navbar.offsetTop;
 
 
-        // show or hide the back-top-top button
-        var backToTo = document.querySelector(".scroll-top");
-        if (document.body.scrollTop >1000 || document.documentElement.scrollTop >1000) {
-            backToTo.style.display = "flex";
-        } else {
-            backToTo.style.display = "none";
+            // show or hide the back-top-top button
+            var backToTo = document.querySelector(".scroll-top");
+            if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+                backToTo.style.display = "flex";
+            } else {
+                backToTo.style.display = "none";
+            };
+
+            if (window.pageYOffset > sticky) {
+                header_navbar.classList.add("sticky");
+            } else {
+                header_navbar.classList.remove("sticky");
+            }
+
         };
-
-        if (window.pageYOffset > sticky) {
-            header_navbar.classList.add("sticky");
-        } else {
-            header_navbar.classList.remove("sticky");
-        }
-
-    };
-
-
-
-        </script>
-
-        <script>
-            $(".add-to-cart-btn").click(function(){
-  $(this).toggleClass("btn-outline-pink");
-  $(this).toggleClass("profile-btn-color");
-});
-        </script>
+    </script>
 
     <script>
-          $(".phone-pe-btn").hide();
-            $(".phone-pe").click(function(){
-                $(".upi-id").hide();
-  $(".phone-pe-btn").toggleClass("d-block");
-
-});
+        $(".add-to-cart-btn").click(function() {
+            $(this).toggleClass("btn-outline-pink");
+            $(this).toggleClass("profile-btn-color");
+        });
     </script>
-        <script>
-$(".upi-id").hide();
-              $(".upi-btn").click(function(){
-                $(".phone-pe-btn").removeClass("d-block");
-    $(".upi-id").show();
 
-  });
-      </script>
+    <script>
+        $(".phone-pe-btn").hide();
+        $(".phone-pe").click(function() {
+            $(".upi-id").hide();
+            $(".phone-pe-btn").toggleClass("d-block");
 
-      <script>
-        var no2 = Math.floor((Math.random()*9)+1);
-				var no3 = Math.floor((Math.random()*9)+1);
-				var no4 = Math.floor((Math.random()*9)+1);
+        });
+    </script>
+    <script>
+        $(".upi-id").hide();
+        $(".upi-btn").click(function() {
+            $(".phone-pe-btn").removeClass("d-block");
+            $(".upi-id").show();
+
+        });
+    </script>
+
+    <script>
+        var no2 = Math.floor((Math.random() * 9) + 1);
+        var no3 = Math.floor((Math.random() * 9) + 1);
+        var no4 = Math.floor((Math.random() * 9) + 1);
 
 
-				document.getElementById("display2").innerHTML=no2;
-				document.getElementById("display3").innerHTML=no3;
-				document.getElementById("display4").innerHTML=no4;
-        function Generate(){
+        document.getElementById("display2").innerHTML = no2;
+        document.getElementById("display3").innerHTML = no3;
+        document.getElementById("display4").innerHTML = no4;
 
-				var no2 = Math.floor((Math.random()*9)+1);
-				var no3 = Math.floor((Math.random()*9)+1);
-				var no4 = Math.floor((Math.random()*9)+1);
+        function Generate() {
+
+            var no2 = Math.floor((Math.random() * 9) + 1);
+            var no3 = Math.floor((Math.random() * 9) + 1);
+            var no4 = Math.floor((Math.random() * 9) + 1);
 
 
-				document.getElementById("display2").innerHTML=no2;
-				document.getElementById("display3").innerHTML=no3;
-				document.getElementById("display4").innerHTML=no4;
+            document.getElementById("display2").innerHTML = no2;
+            document.getElementById("display3").innerHTML = no3;
+            document.getElementById("display4").innerHTML = no4;
 
-			}
-      </script>
+        }
+    </script>
 @endsection

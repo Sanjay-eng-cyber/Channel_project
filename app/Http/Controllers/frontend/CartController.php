@@ -27,7 +27,7 @@ class CartController extends Controller
             $subTotal = $subTotal += $cart->product->final_price;
         }
         //dd($subTotal);
-        return view('frontend.cart', compact('cart', 'cartItems','subTotal'));
+        return view('frontend.cart', compact('cart', 'cartItems', 'subTotal'));
     }
 
     public function addToCart(Request $request)
@@ -54,13 +54,13 @@ class CartController extends Controller
         $productInCart = CartItem::where('cart_id', $cart->id)->where('product_id', $product->id)->first();
         if ($productInCart) {
             $productInCart->delete();
-            return response()->json(['status' => true, 'addToCart' => 0, 'message' => 'Product Removed from Cart']);
+            return response()->json(['status' => true, 'addToCart' => 0, 'count' => $cart->items()->count(), 'message' => 'Product Removed from Cart']);
         } else {
             CartItem::create([
                 'cart_id' => $cart->id,
                 'product_id' => $product->id
             ]);
-            return response()->json(['status' => true, 'addToCart' => 1, 'message' => 'Product Added to Cart']);
+            return response()->json(['status' => true, 'addToCart' => 1, 'count' => $cart->items()->count(), 'message' => 'Product Added to Cart']);
         }
     }
 }

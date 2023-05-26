@@ -10,7 +10,7 @@
                <div class="row ">
                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
                        <div class="container-fluid  d-flex flex-row-reverse ">
-                           <a class="navbar-brand d-inline d-lg-none mx-auto" href="{{url('/')}}" style="">
+                           <a class="navbar-brand d-inline d-lg-none mx-auto" href="{{ url('/') }}" style="">
                                <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}" alt="channel"
                                    class="img-fluid " style="width:130px">
                            </a>
@@ -30,10 +30,21 @@
                            <span class="visually-hidden">unread messages</span></span>
                        </li> --}}
 
+                                   @php
+                                       $user = auth()->user();
+                                       if ($user) {
+                                           $cart = $user->cart;
+                                       } else {
+                                           $cart_session_id = session()->get('cart_session_id');
+                                           $cart = App\Models\Cart::where('session_id', $cart_session_id)->first();
+                                       }
+                                       $cartItemsCount = $cart ? $cart->items()->count() : '';
+                                   @endphp
                                    <li class="nav-item text-red position-relative">
                                        <a class="nav-link fw-bold nn-top-cart"
                                            href="{{ route('frontend.cart.index') }}">
-                                           <i class="fas fa-cart-plus  nn-top-cart-icon">  </i><span class="cart-has-item-icon"> 2</span>
+                                           <i class="fas fa-cart-plus  nn-top-cart-icon"> </i><span
+                                               class="cart-has-item-icon cart-count"> {{ $cartItemsCount }}</span>
                                        </a>
                                    </li>
 
@@ -65,25 +76,33 @@
                                <div class="navbar-nav d-inline d-lg-none text-start">
                                    <ul class="list-unstyled nav-dd-color">
                                        <li class="nav-item dd-cl mt-3">
-                                           <a class="nav-link px-4  {{ URL::current() == route('frontend.index') ? 'active-red' : '' }} " aria-current="page" href="{{ route('frontend.index') }}">Home</a>
+                                           <a class="nav-link px-4  {{ URL::current() == route('frontend.index') ? 'active-red' : '' }} "
+                                               aria-current="page" href="{{ route('frontend.index') }}">Home</a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }}" href="{{ route('frontend.cat.show', 'skin') }}">Skin</a>
+                                           <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }}"
+                                               href="{{ route('frontend.cat.show', 'skin') }}">Skin</a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4 {{URL::current()==route('frontend.cat.show', 'fragrances') ? 'active-red': ''}}" href="{{ route('frontend.cat.show', 'fragrances') }}">Fragrances</a>
+                                           <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'fragrances') ? 'active-red' : '' }}"
+                                               href="{{ route('frontend.cat.show', 'fragrances') }}">Fragrances</a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4 {{URL::current()==route('frontend.cat.show', 'hair-care')? 'active-red':''}}" href="{{ route('frontend.cat.show', 'hair-care') }}"> Hair Care</a>
+                                           <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'hair-care') ? 'active-red' : '' }}"
+                                               href="{{ route('frontend.cat.show', 'hair-care') }}"> Hair Care</a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4 {{URL::current()==route('frontend.cat.show', 'personal-care')? 'active-red':''}}" href="{{ route('frontend.cat.show', 'personal-care') }}"> Personal Care</a>
+                                           <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'personal-care') ? 'active-red' : '' }}"
+                                               href="{{ route('frontend.cat.show', 'personal-care') }}"> Personal
+                                               Care</a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4 {{URL::current()==route('frontend.cat.show', 'home-decor')? 'active-red':''}}" href="{{ route('frontend.cat.show', 'home-decor') }}"> Home Decor</a>
+                                           <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'home-decor') ? 'active-red' : '' }}"
+                                               href="{{ route('frontend.cat.show', 'home-decor') }}"> Home Decor</a>
                                        </li>
                                        <li class="nav-item dd-cl">
-                                           <a class="nav-link px-4 {{URL::current()==route('frontend.cat.show', 'gift')? 'active-red':''}}" href="{{ route('frontend.cat.show', 'gift') }}">Gift</a>
+                                           <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'gift') ? 'active-red' : '' }}"
+                                               href="{{ route('frontend.cat.show', 'gift') }}">Gift</a>
                                        </li>
 
                                    </ul>
@@ -187,13 +206,27 @@
                        </div>
                        <nav id="nav" class="navbar hide-navbar">
                            <ul style="margin-right: 0px">
-                               <li><a href="{{ route('frontend.index') }} " class=" {{ URL::current() == route('frontend.index') ? 'active-red' : '' }} text-capitalize">Home</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'skin') }}" class="{{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }} text-capitalize">Skin</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'fragrances') }}" class="{{ URL::current() == route('frontend.cat.show', 'fragrances') ? 'active-red' : '' }} text-capitalize">Fragrances</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'hair-care') }}" class="{{ URL::current() == route('frontend.cat.show', 'hair-care') ? 'active-red' : '' }} text-capitalize">Hair Care</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'personal-care') }}" class="{{ URL::current() == route('frontend.cat.show', 'personal-care') ? 'active-red' : '' }} text-capitalize">Personal Care</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'home-decor') }}" class="{{ URL::current() == route('frontend.cat.show', 'home-decor') ? 'active-red' : '' }} text-capitalize">Home Decor</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'gift') }}" class="{{ URL::current() == route('frontend.cat.show', 'gift') ? 'active-red' : '' }} text-capitalize">Gift</a></li>
+                               <li><a href="{{ route('frontend.index') }} "
+                                       class=" {{ URL::current() == route('frontend.index') ? 'active-red' : '' }} text-capitalize">Home</a>
+                               </li>
+                               <li><a href="{{ route('frontend.cat.show', 'skin') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }} text-capitalize">Skin</a>
+                               </li>
+                               <li><a href="{{ route('frontend.cat.show', 'fragrances') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'fragrances') ? 'active-red' : '' }} text-capitalize">Fragrances</a>
+                               </li>
+                               <li><a href="{{ route('frontend.cat.show', 'hair-care') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'hair-care') ? 'active-red' : '' }} text-capitalize">Hair
+                                       Care</a></li>
+                               <li><a href="{{ route('frontend.cat.show', 'personal-care') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'personal-care') ? 'active-red' : '' }} text-capitalize">Personal
+                                       Care</a></li>
+                               <li><a href="{{ route('frontend.cat.show', 'home-decor') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'home-decor') ? 'active-red' : '' }} text-capitalize">Home
+                                       Decor</a></li>
+                               <li><a href="{{ route('frontend.cat.show', 'gift') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'gift') ? 'active-red' : '' }} text-capitalize">Gift</a>
+                               </li>
                            </ul>
                        </nav>
 
@@ -251,8 +284,9 @@
                                </h4>
                                <form v-on:submit="submitMobileNo">
                                    <div class="input-group phone-number-arrow mb-3">
-                                       <input type="text" class="form-control form-control-login px-0" placeholder="Enter Your Mobile Number"
-                                           required minlength="10" maxlength="10" v-model="mobile_no">
+                                       <input type="text" class="form-control form-control-login px-0"
+                                           placeholder="Enter Your Mobile Number" required minlength="10" maxlength="10"
+                                           v-model="mobile_no">
                                        <button class="input-group-text" type="submit">
                                            <i class="fas fa-arrow-right"></i>
                                        </button>
@@ -262,16 +296,20 @@
                                            <span class="text-danger" v-text='allErrors'></span>
                                        </div>
                                    </div>
-                                <div class="row justify-content-center mx-auto">
-                                    <p class="text-center text-black h6 py-3">Or Connect With</p>
-                                    <div class="col-6 text-center">
-                                        <button class="border-0 d-flex pt-2 links-btns mx-auto" ><img src="frontend/images/icons/icon-fb.png" alt=""  class="mx-2 icon-img-size"> Facebook</button>
-                                    </div>
+                                   <div class="row justify-content-center mx-auto">
+                                       <p class="text-center text-black h6 py-3">Or Connect With</p>
+                                       <div class="col-6 text-center">
+                                           <button class="border-0 d-flex pt-2 links-btns mx-auto"><img
+                                                   src="frontend/images/icons/icon-fb.png" alt=""
+                                                   class="mx-2 icon-img-size"> Facebook</button>
+                                       </div>
 
-                                    <div class="col-6">
-                                        <button class="border-0 d-flex pt-2 links-btns mx-auto" ><img src="frontend/images/icons/icon-google.png" alt=""  class="mx-2 icon-img-size"> Google</button>
-                                    </div>
-                                </div>
+                                       <div class="col-6">
+                                           <button class="border-0 d-flex pt-2 links-btns mx-auto"><img
+                                                   src="frontend/images/icons/icon-google.png" alt=""
+                                                   class="mx-2 icon-img-size"> Google</button>
+                                       </div>
+                                   </div>
                                </form>
                            </div>
                            {{-- @elseif($step == 2) --}}
@@ -285,17 +323,18 @@
                                </p>
                                <form v-on:submit="verifyOtp">
                                    <div class="input-group phone-number-arrow mb-2">
-                                       <input type="text" class="form-control px-0 form-control-login" placeholder="Please Enter OTP" required
-                                           id="otpNew" v-model="otp">
+                                       <input type="text" class="form-control px-0 form-control-login"
+                                           placeholder="Please Enter OTP" required id="otpNew" v-model="otp">
                                    </div>
                                    @if ($errors->has('otp'))
                                        <span class="text-danger">{{ $errors->first('otp') }}</span>
                                    @endif
                                    <div class=" justify-content-between mb-2 d-inline">
-                                       <button  type="button" class="f-left btn d-inline text-pink p-0 m-0 border-0" id="resend-otp-btn"
-                                           id="resendOtpBtn" v-if="showResend" @click="resend">Resend OTP
+                                       <button type="button" class="f-left btn d-inline text-pink p-0 m-0 border-0"
+                                           id="resend-otp-btn" id="resendOtpBtn" v-if="showResend"
+                                           @click="resend">Resend OTP
                                        </button>
-                                       <span  class="text-muted m-0 f-right" id="otp-timer" v-if="showTimer"></span>
+                                       <span class="text-muted m-0 f-right" id="otp-timer" v-if="showTimer"></span>
                                    </div>
                                    <div class="mb-3">
                                        <button type="submit" class="btn btn-pink w-100 mt-4">Verify OTP</button>
