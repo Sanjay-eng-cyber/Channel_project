@@ -46,6 +46,11 @@ class Product extends Model
         return $this->hasMany(Review::class);
     }
 
+    public function wishlist()
+    {
+        return $this->hasMany(Wishlist::class);
+    }
+
     public function storeProductAttributes($attributes, $values, $product)
     {
         foreach ($attributes as $key => $item) {
@@ -78,14 +83,18 @@ class Product extends Model
     public function isInCart()
     {
         $user = auth()->user();
-        // dd($user);
         if ($user) {
             $cart = $user->cart;
         } else {
             $cart_session_id = session()->get('cart_session_id');
             $cart = Cart::where('session_id', $cart_session_id)->first();
         }
-        // dd($cart);
         return $cart ? $cart->items()->where('product_id', $this->id)->exists() : false;
+    }
+
+    public function isInWishlist()
+    {
+        $user = auth()->user();
+        return $user ? $user->wishlist()->where('product_id', $this->id)->exists() : false;
     }
 }

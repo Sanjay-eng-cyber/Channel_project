@@ -113,12 +113,22 @@
                                 @forelse ($products as $pro)
                                     <div class=" product-show-grid-card ">
                                         <div class="product-card-img">
-                                            <button class="btn wishlist add-to-wish" data-p-id="{{ $pro->id }}">
-                                                <span class="has-tool-tip">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                    <span class="tool-tip-text">Add to wishlist</span>
-                                                </span>
-                                            </button>
+                                            @if ($pro->isInWishlist())
+                                                <button class="btn wishlist add-to-wish active"
+                                                    data-p-id="{{ $pro->id }}">
+                                                    <span class="has-tool-tip">
+                                                        <i class="fa-regular fa-heart"></i>
+                                                        <span class="tool-tip-text">Remove From Wishlist</span>
+                                                    </span>
+                                                </button>
+                                            @else
+                                                <button class="btn wishlist add-to-wish" data-p-id="{{ $pro->id }}">
+                                                    <span class="has-tool-tip">
+                                                        <i class="fa-regular fa-heart"></i>
+                                                        <span class="tool-tip-text">Add to Wishlist</span>
+                                                    </span>
+                                                </button>
+                                            @endif
                                             @if ($pro->thumbnail_image)
                                                 <img src="{{ asset('storage/images/products/' . $pro->thumbnail_image) }}"
                                                     alt="...">
@@ -142,7 +152,8 @@
                                                     Shop now
                                                 </a>
                                                 @if ($pro->isInCart())
-                                                    <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
+                                                    <a href="javascript:void(0)"
+                                                        class="btn btn-pink add-to-cart btn-outline-pink"
                                                         data-p-id="{{ $pro->id }}">
                                                         <svg class="svg-inline--fa fa-check" aria-hidden="true"
                                                             focusable="false" data-prefix="fas" data-icon="check"
