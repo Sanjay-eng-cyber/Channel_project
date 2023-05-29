@@ -38,8 +38,7 @@
         <section style="padding:40px 0px 65px 0px">
             <div class="container">
                 <h5 class="h5 main-head text-center text-red my-3">Your Paynent Method</h5>
-                <div class="row d-flex
-            flex-column-reverse flex-md-row">
+                <div class="row d-flex flex-column-reverse flex-md-row">
                     <div class="col-md-8 col-lg-9 __cart-ui-f">
 
                         <div class="row d-flex justify-content-center justify-content-lg-end __cart-ui-nav">
@@ -58,11 +57,11 @@
                             </div>
                         </div>
                         @forelse ($cartItems as $c)
-                            <div class="row cc-border my-3 __cart-ui-card" style="padding:15px">
-                                <a href="{{route('frontend.cart.delete', $c->id)}}">
-                                    <div class="__cart-ui-close-btn"><button type="button" class="btn-close"
-                                            aria-label="Close"></button>
-</a>
+                                <div class="row cc-border my-3 __cart-ui-card" style="padding:15px">
+                                    <a href="{{route('frontend.cart.delete', $c->id)}}">
+                                        <div class="__cart-ui-close-btn"><button type="button" class="btn-close"
+                                                aria-label="Close"></button>
+                                    </a>
                                 </div>
                                 <div class=" col-md-4 col-lg-3">
                                     <div class="d-flex align-items-center justify-content-center gap-1 __cart-ui-img-in">
@@ -111,12 +110,10 @@
                         @empty
                         @endforelse
 
-                        <div class="pagination col-lg-12">
-                            <div class="col-md-12 text-center align-self-center">
+                        <div class="pagination d-flex justify-content-center py-2">
                                 <ul class="pagination text-center">
                                     {{ $cartItems->appends(Request::all())->links('pagination::bootstrap-4') }}
                                 </ul>
-                            </div>
                         </div>
 
                     </div>
