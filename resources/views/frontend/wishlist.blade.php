@@ -90,11 +90,13 @@
             @empty
                 @include('frontend.not-found')
             @endforelse
-            <div class="pagination col-lg-12">
-                <div class="col-md-12 text-center align-self-center">
-                    <ul class="pagination text-center">
-                        {{ $wishlists->appends(Request::all())->links('pagination::bootstrap-4') }}
-                    </ul>
+            <div class="row">
+                <div class="col-12">
+                    <div class="pagination justify-content-center py-2">
+                        <ul class="pagination text-center">
+                            {{ $wishlists->appends(Request::all())->links('pagination::bootstrap-4') }}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
