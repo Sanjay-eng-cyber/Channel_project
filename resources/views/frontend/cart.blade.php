@@ -59,8 +59,10 @@
                         </div>
                         @forelse ($cartItems as $c)
                             <div class="row cc-border my-3 __cart-ui-card" style="padding:15px">
-                                <div class="__cart-ui-close-btn"><button type="button" class="btn-close"
-                                        aria-label="Close"></button>
+                                <a href="{{route('frontend.cart.delete', $c->id)}}">
+                                    <div class="__cart-ui-close-btn"><button type="button" class="btn-close"
+                                            aria-label="Close"></button>
+</a>
                                 </div>
                                 <div class=" col-md-4 col-lg-3">
                                     <div class="d-flex align-items-center justify-content-center gap-1 __cart-ui-img-in">

@@ -63,4 +63,15 @@ class CartController extends Controller
             return response()->json(['status' => true, 'addToCart' => 1, 'count' => $cart->items()->count(), 'message' => 'Product Added to Cart']);
         }
     }
+
+    public function delete($id)
+    {
+        //$user = auth()->user();
+        $cart = CartItem::findOrFail($id);
+        //dd($cart);
+        if ($cart->delete()) {
+            return redirect()->route('frontend.cart.index')->with(['alert-type' => 'success', 'message' => 'Cart Deleted Successfully']);
+        }
+        return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
+    }
 }

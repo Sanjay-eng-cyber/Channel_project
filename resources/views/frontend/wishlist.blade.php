@@ -78,8 +78,8 @@
                                             Cart</a>
                                     @endif
 
-                                    <a href="" style="font-size:12px" class="py-1 text-red mt-md-1 mt-2"
-                                        data-bs-toggle="modal" data-bs-target="#wishlist-popup">
+                                    <a href="{{route('frontend.wishlist.delete', $w->id)}}" style="font-size:12px" class="py-1 text-red mt-md-1 mt-2"
+                                        data-bs-toggle="" data-bs-target="">
                                         Remove item from Wishlist
                                     </a>
                                 </div>
@@ -196,8 +196,13 @@
                             alt="" srcset="" style="width:210px">
                         <h4 class="dispaly-6 main-head text-black mt-3 mb-2">Are You Sure!</h4>
                         <div class="d-flex justify-content-evenly my-4">
-                            <button type="button" class="btn btn-lightpink px-4 btn-lg">Yes</button>
-                            <button type="button" class="btn btn-pink px-4 btn-lg">No</button>
+                            <a href="">
+                                <button type="button" class="btn btn-lightpink px-4 btn-lg">Yes</button>
+                            </a>
+                            <a href="">
+                                <button type="button" class="btn btn-pink px-4 btn-lg">No</button>
+                            </a>
+
                         </div>
                     </div>
                 </div>
