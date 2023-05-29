@@ -95,10 +95,24 @@
                                         </div>
                                     </div> --}}
                                     <div class="d-flex justify-content-around flex-wrap my-3 ">
-                                        <button class="btn btn-primary btn-pink add-to-cart "
-                                            data-p-id="{{ $product->id }}">
-                                            Add To Cart
-                                        </button>
+                                        @if ($product->isInCart())
+                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
+                                                data-p-id="{{ $product->id }}">
+                                                <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"
+                                                    data-prefix="fas" data-icon="check" role="img"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                                    data-fa-i2svg="">
+                                                    <path fill="currentColor"
+                                                        d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                    </path>
+                                                </svg> Added
+                                            </a>
+                                        @else
+                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
+                                                data-p-id="{{ $product->id }}">
+                                                Add To Cart
+                                            </a>
+                                        @endif
 
                                         <button class="btn btn-primary btn-black ">
                                             Buy Now
@@ -229,7 +243,8 @@
 
                 <div class="row">
                     <div class="col-lg-7 col-md-12 product-showpagepills">
-                        <ul class="nav nav-pills justify-content-between prdct-pills-tab p-0" id="myTab" role="tablist">
+                        <ul class="nav nav-pills justify-content-between prdct-pills-tab p-0" id="myTab"
+                            role="tablist">
                             <li class="nav-item prdct-pills-f1">
                                 <a class="nav-link active p-0" id="home-tab" data-bs-toggle="pill" href="#home"
                                     role="tab" aria-controls="home" aria-selected="true">
