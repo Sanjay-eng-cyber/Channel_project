@@ -292,3 +292,7 @@ select.form-control {
 .auth-bg-primary{
     background-color: #2D358B !important;
 }
+.header-container .navbar-nav.theme-brand {
+
+    background: #445ede !important;
+}
