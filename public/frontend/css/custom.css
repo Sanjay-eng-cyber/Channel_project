@@ -738,19 +738,30 @@ a:hover {
 }
 
 .mt-product1 .like-btn-skin {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
     visibility: hidden;
-    position: absolute;
     right: 17px;
     top: 17px;
     background-color: white;
+    color: #ec268f;
     border-radius: 3em;
     width: 2.3em;
     height: 2.3em;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
+}
+
+.mt-product1 .like-btn-skin.active {
+    background-color: #ec268f;
+
+}
+.mt-product1 .like-btn-skin.active svg path {
+    fill: #fff;
 }
 
 .skin-slide:hover .mt-product1 .like-btn-skin {

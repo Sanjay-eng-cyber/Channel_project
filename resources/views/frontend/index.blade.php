@@ -145,14 +145,14 @@
 
                                                         @if ($p->isInWishlist())
                                                             <button
-                                                                class="like-btn-skin btn btn wishlist add-to-wish active"
+                                                                class="btn like-btn-skin active"
                                                                 data-p-id="{{ $p->id }}">
                                                                 <span class="has-tool-tip">
                                                                     <i class="fa-regular fa-heart"></i>
                                                                 </span>
                                                             </button>
                                                         @else
-                                                            <button class="like-btn-skin btn btn wishlist add-to-wish"
+                                                            <button class="btn like-btn-skin"
                                                                 data-p-id="{{ $p->id }}">
                                                                 <span class="has-tool-tip">
                                                                     <i class="fa-regular fa-heart"></i>
@@ -174,8 +174,8 @@
                                                                     Shop Now
                                                                 </a>
                                                             </button>
-                                                            </a>
                                                         </ul>
+                                                        </a>
 
                                                     </div>
                                                 </div>
@@ -213,7 +213,7 @@
                                                                 </span>
                                                             </button>
                                                         @else
-                                                            <button class="like-btn-skin btn btn wishlist add-to-wish"
+                                                            <button class="btn like-btn-skin"
                                                                 data-p-id="{{ $p->id }}">
                                                                 <span class="has-tool-tip">
                                                                     <i class="fa-regular fa-heart"></i>
@@ -267,14 +267,14 @@
 
                                                         @if ($p->isInWishlist())
                                                             <button
-                                                                class="like-btn-skin btn btn wishlist add-to-wish active"
+                                                                class="like-btn-skin btn active"
                                                                 data-p-id="{{ $p->id }}">
                                                                 <span class="has-tool-tip">
                                                                     <i class="fa-regular fa-heart"></i>
                                                                 </span>
                                                             </button>
                                                         @else
-                                                            <button class="like-btn-skin btn btn wishlist add-to-wish"
+                                                            <button class="like-btn-skin btn "
                                                                 data-p-id="{{ $p->id }}">
                                                                 <span class="has-tool-tip">
                                                                     <i class="fa-regular fa-heart"></i>
