@@ -511,6 +511,19 @@
         }
 
     };
+
+    $('.scroll-top').hide();
+    $(window).scroll(function() {
+
+if ($(this).scrollTop()>120)
+ {
+    $('.scroll-top').fadeIn();
+ }
+else
+ {
+  $('.scroll-top').fadeOut();
+ }
+});
 </script>
 
 <script>
