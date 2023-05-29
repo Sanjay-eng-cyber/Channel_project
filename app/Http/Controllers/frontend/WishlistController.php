@@ -40,4 +40,15 @@ class WishlistController extends Controller
         }
         return response()->json(['status' => false, 'message' => 'Please Login']);
     }
+
+    public function delete($id)
+    {
+        //$user = auth()->user();
+        $wishlist = Wishlist::findOrFail($id);
+        //dd($cart);
+        if ($wishlist->delete()) {
+            return redirect()->route('frontend.wishlist.index')->with(['alert-type' => 'success', 'message' => 'Wishlist Deleted Successfully']);
+        }
+        return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
+    }
 }

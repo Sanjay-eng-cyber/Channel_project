@@ -8,7 +8,7 @@
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-lg-4 col-md-6 col-sm-6 mt-2 mb-1">
                             <legend class="h4">
-                                Attribute Deatails
+                                Attribute Details
                             </legend>
                         </div>
 
@@ -17,7 +17,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Attribute</a></li>
+                                            href="javascript:void(0);">Attribute Details</a></li>
                                 </ol>
                             </nav>
                         </div>
