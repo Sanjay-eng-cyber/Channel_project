@@ -114,8 +114,8 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="pagination col-lg-12">
-                            <div class="col-md-12 text-center align-self-center">
+                        <div class="pagination col-lg-12 mt-3">
+                            <div class=" text-center mx-auto">
                                 <ul class="pagination text-center">
                                     {{ $sub_categories->appends(Request::all())->links('pagination::bootstrap-4') }}
                                 </ul>
