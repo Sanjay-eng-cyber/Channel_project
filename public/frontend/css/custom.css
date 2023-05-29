@@ -3116,7 +3116,9 @@ display: flex !important;
 .add-to-wish.active svg path {
     fill: #fff;
 }
-
+.pink-icon-clr{
+    fill:#ec268f !important;
+}
 a.add-to-cart:focus {
     border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
 }
