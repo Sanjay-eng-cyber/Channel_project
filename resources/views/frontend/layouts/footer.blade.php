@@ -337,201 +337,218 @@
     </div>
 </div>
 {{-- @section('js') --}}
-    <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
-    <script src="/js/jquery.min.js"></script>
-    <script>
-        @if (Session::get('alert-type') == 'success')
-            @if (Session::has('message'))
-                Snackbar.show({
-                    text: "{{ Session::get('message') }}",
-                    pos: 'top-right',
-                    actionTextColor: '#fff',
-                    backgroundColor: '#1abc9c'
-                });
-            @endif
-        @elseif (Session::get('alert-type') == 'info')
-            @if (Session::has('message'))
-                Snackbar.show({
-                    text: "{{ Session::get('message') }}",
-                    pos: 'top-right',
-                    actionTextColor: '#fff',
-                    backgroundColor: '#2196f3'
-                });
-            @endif
-        @elseif (Session::get('alert-type') == 'error')
-            @if (Session::has('message'))
-                Snackbar.show({
-                    text: "{{ Session::get('message') }}",
-                    pos: 'top-right',
-                    actionTextColor: '#fff',
-                    backgroundColor: '#e7515a'
-                });
-            @endif
-        @else
-            @if (Session::has('message'))
-                Snackbar.show({
-                    text: "{{ Session::get('message') }}",
-                    pos: 'top-right',
-                    actionTextColor: '#fff',
-                    backgroundColor: '#3b3f5c'
-                });
-            @endif
+<script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
+<script src="/js/jquery.min.js"></script>
+<script>
+    @if (Session::get('alert-type') == 'success')
+        @if (Session::has('message'))
+            Snackbar.show({
+                text: "{{ Session::get('message') }}",
+                pos: 'top-right',
+                actionTextColor: '#fff',
+                backgroundColor: '#1abc9c'
+            });
         @endif
-    </script>
+    @elseif (Session::get('alert-type') == 'info')
+        @if (Session::has('message'))
+            Snackbar.show({
+                text: "{{ Session::get('message') }}",
+                pos: 'top-right',
+                actionTextColor: '#fff',
+                backgroundColor: '#2196f3'
+            });
+        @endif
+    @elseif (Session::get('alert-type') == 'error')
+        @if (Session::has('message'))
+            Snackbar.show({
+                text: "{{ Session::get('message') }}",
+                pos: 'top-right',
+                actionTextColor: '#fff',
+                backgroundColor: '#e7515a'
+            });
+        @endif
+    @else
+        @if (Session::has('message'))
+            Snackbar.show({
+                text: "{{ Session::get('message') }}",
+                pos: 'top-right',
+                actionTextColor: '#fff',
+                backgroundColor: '#3b3f5c'
+            });
+        @endif
+    @endif
+</script>
 
-    <script>
-        $(document).ready(function() {
-            @if (session()->has('login_redirect') == true)
-                $('#loginPopup').modal('show')
-            @endif
-        });
-    </script>
+<script>
+    $(document).ready(function() {
+        @if (session()->has('login_redirect') == true)
+            $('#loginPopup').modal('show')
+        @endif
+    });
+</script>
 
 
-    <script src="{{ asset('js/axios.min.js') }}"></script>
-    <script>
-        $('a.add-to-cart').click(function() {
-            if ($(this).attr("data-p-id")) {
-                // console.log(this);
-                var btn = $(this);
-                axios.post('{{ route('frontend.p.addToCart') }}', {
-                        product_id: $(this).attr("data-p-id")
-                    })
-                    .then(function(res) {
-                        // console.log(btn);
-                        // console.log(res.data);
-                        if (res.data.status) {
-                            if (res.data.addToCart) {
+<script src="{{ asset('js/axios.min.js') }}"></script>
+<script>
+    $('a.add-to-cart').click(function() {
+        if ($(this).attr("data-p-id")) {
+            // console.log(this);
+            var btn = $(this);
+            axios.post('{{ route('frontend.p.addToCart') }}', {
+                    product_id: $(this).attr("data-p-id")
+                })
+                .then(function(res) {
+                    console.log(btn);
+                    console.log(res.data);
+                    if (res.data.status) {
+                        if (res.data.addToCart) {
 
-                                btn[0].classList.add('btn-outline-pink');
-                                btn[0].innerHTML =
-                                    `<svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Added`;
-                            } else {
-                                btn[0].classList.remove('btn-outline-pink');
-                                btn[0].innerHTML = `Add To Cart`;
-                            }
-                            $('.cart-count')[0].innerHTML = res.data.count;
-                            Snackbar.show({
-                                text: res.data.message,
-                                pos: 'top-right',
-                                actionTextColor: '#fff',
-                                backgroundColor: '#1abc9c'
-                            });
+                            btn[0].classList.add('btn-outline-pink');
+                            btn[0].innerHTML =
+                                `<svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Added`;
                         } else {
-                            Snackbar.show({
-                                text: 'Something Went Wrong',
-                                pos: 'top-right',
-                                actionTextColor: '#fff',
-                                backgroundColor: '#e7515a'
-                            });
+                            btn[0].classList.remove('btn-outline-pink');
+                            btn[0].innerHTML = `Add To Cart`;
                         }
-                    })
-                    .catch(function(error) {
+                        $('.cart-count')[0].innerHTML = res.data.count;
                         Snackbar.show({
-                            text: "Something Went Wrong",
+                            text: res.data.message,
+                            pos: 'top-right',
+                            actionTextColor: '#fff',
+                            backgroundColor: '#1abc9c'
+                        });
+                    } else {
+                        Snackbar.show({
+                            text: 'Something Went Wrong',
                             pos: 'top-right',
                             actionTextColor: '#fff',
                             backgroundColor: '#e7515a'
                         });
+                    }
+                })
+                .catch(function(error) {
+                    Snackbar.show({
+                        text: "Something Went Wrong",
+                        pos: 'top-right',
+                        actionTextColor: '#fff',
+                        backgroundColor: '#e7515a'
                     });
-            }
-        });
-    </script>
-    <script>
-        $('button.add-to-wish').click(function() {
-            if ($(this).attr("data-p-id")) {
-                // console.log(this);
-                var btn = $(this);
-                axios.post('{{ route('frontend.p.addToWishlist') }}', {
-                        product_id: $(this).attr("data-p-id")
-                    })
-                    .then(function(res) {
-                        // console.log(btn);
-                        // console.log(res.data);
-                        if (res.data.status) {
-                            if (res.data.addToWishlist) {
-                                btn[0].classList.add('active');
+                });
+        }
+    });
+</script>
+<script>
+    $('button.add-to-wish').click(function() {
+        if ($(this).attr("data-p-id")) {
+            // console.log(this);
+            var btn = $(this);
+            axios.post('{{ route('frontend.p.addToWishlist') }}', {
+                    product_id: $(this).attr("data-p-id")
+                })
+                .then(function(res) {
+                    // console.log(btn);
+                    // console.log(res.data);
+                    // console.log(btn.find(".tool-tip-text").length);
+                    if (res.data.status) {
+                        if (res.data.addToWishlist) {
+                            btn[0].classList.add('active');
+                            if (btn.find(".tool-tip-text").length) {
                                 btn.find(".tool-tip-text")[0].innerHTML = "Remove From Wishlist";
-                            } else {
-                                btn[0].classList.remove('active');
+                            }
+                        } else {
+                            btn[0].classList.remove('active');
+                            if (btn.find(".tool-tip-text").length) {
                                 btn.find(".tool-tip-text")[0].innerHTML = "Add to Wishlist";
                             }
-                            Snackbar.show({
-                                text: res.data.message,
-                                pos: 'top-right',
-                                actionTextColor: '#fff',
-                                backgroundColor: '#1abc9c'
-                            });
-                        } else {
-                            Snackbar.show({
-                                text: res.data.message ?? 'Something Went Wrong',
-                                pos: 'top-right',
-                                actionTextColor: '#fff',
-                                backgroundColor: '#2196f3'
-                            });
                         }
-                    })
-                    .catch(function(error) {
                         Snackbar.show({
-                            text: "Something Went Wrong",
+                            text: res.data.message,
                             pos: 'top-right',
                             actionTextColor: '#fff',
-                            backgroundColor: '#e7515a'
+                            backgroundColor: '#1abc9c'
                         });
+                    } else {
+                        Snackbar.show({
+                            text: res.data.message ?? 'Something Went Wrong',
+                            pos: 'top-right',
+                            actionTextColor: '#fff',
+                            backgroundColor: '#2196f3'
+                        });
+                    }
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    Snackbar.show({
+                        text: "Something Went Wrong",
+                        pos: 'top-right',
+                        actionTextColor: '#fff',
+                        backgroundColor: '#e7515a'
                     });
-            }
-        });
-    </script>
+                });
+        }
+    });
+</script>
 
 
-    <script>
-        window.onscroll = function() {
-            var header_navbar = document.querySelector(".navbar-area");
-            var sticky = header_navbar.offsetTop;
+<script>
+    window.onscroll = function() {
+        var header_navbar = document.querySelector(".navbar-area");
+        var sticky = header_navbar.offsetTop;
 
 
-            // show or hide the back-top-top button
-            var backToTo = document.querySelector(".scroll-top");
-            if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
-                backToTo.style.display = "flex";
-            } else {
-                backToTo.style.display = "none";
-            };
-
-            if (window.pageYOffset > sticky) {
-                header_navbar.classList.add("sticky");
-            } else {
-                header_navbar.classList.remove("sticky");
-            }
-
+        // show or hide the back-top-top button
+        var backToTo = document.querySelector(".scroll-top");
+        if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+            backToTo.style.display = "flex";
+        } else {
+            backToTo.style.display = "none";
         };
-    </script>
 
-    <script>
-        $(".add-to-cart-btn").click(function() {
-            $(this).toggleClass("btn-outline-pink");
-            $(this).toggleClass("profile-btn-color");
-        });
-    </script>
+        if (window.pageYOffset > sticky) {
+            header_navbar.classList.add("sticky");
+        } else {
+            header_navbar.classList.remove("sticky");
+        }
 
-    <script>
-        $(".phone-pe-btn").hide();
-        $(".phone-pe").click(function() {
-            $(".upi-id").hide();
-            $(".phone-pe-btn").toggleClass("d-block");
+    };
+</script>
 
-        });
-    </script>
-    <script>
+<script>
+    $(".add-to-cart-btn").click(function() {
+        $(this).toggleClass("btn-outline-pink");
+        $(this).toggleClass("profile-btn-color");
+    });
+</script>
+
+<script>
+    $(".phone-pe-btn").hide();
+    $(".phone-pe").click(function() {
         $(".upi-id").hide();
-        $(".upi-btn").click(function() {
-            $(".phone-pe-btn").removeClass("d-block");
-            $(".upi-id").show();
+        $(".phone-pe-btn").toggleClass("d-block");
 
-        });
-    </script>
+    });
+</script>
+<script>
+    $(".upi-id").hide();
+    $(".upi-btn").click(function() {
+        $(".phone-pe-btn").removeClass("d-block");
+        $(".upi-id").show();
 
-    <script>
+    });
+</script>
+
+<script>
+    var no2 = Math.floor((Math.random() * 9) + 1);
+    var no3 = Math.floor((Math.random() * 9) + 1);
+    var no4 = Math.floor((Math.random() * 9) + 1);
+
+
+    document.getElementById("display2").innerHTML = no2;
+    document.getElementById("display3").innerHTML = no3;
+    document.getElementById("display4").innerHTML = no4;
+
+    function Generate() {
+
         var no2 = Math.floor((Math.random() * 9) + 1);
         var no3 = Math.floor((Math.random() * 9) + 1);
         var no4 = Math.floor((Math.random() * 9) + 1);
@@ -541,17 +558,6 @@
         document.getElementById("display3").innerHTML = no3;
         document.getElementById("display4").innerHTML = no4;
 
-        function Generate() {
-
-            var no2 = Math.floor((Math.random() * 9) + 1);
-            var no3 = Math.floor((Math.random() * 9) + 1);
-            var no4 = Math.floor((Math.random() * 9) + 1);
-
-
-            document.getElementById("display2").innerHTML = no2;
-            document.getElementById("display3").innerHTML = no3;
-            document.getElementById("display4").innerHTML = no4;
-
-        }
-    </script>
+    }
+</script>
 {{-- @endsection --}}

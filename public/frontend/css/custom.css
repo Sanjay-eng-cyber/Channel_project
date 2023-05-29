@@ -3100,3 +3100,12 @@ border:1px solid #EC268F !important;
 display: flex !important;
 }
 }
+
+.add-to-wish.active {
+    background-color: #ec268f !important;
+    color: #ec268f;
+}
+
+.add-to-wish.active svg path {
+    fill: #fff;
+}

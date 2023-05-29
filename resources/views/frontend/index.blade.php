@@ -143,9 +143,22 @@
                                                                 src="frontend/images/products/skin/sk2.png"
                                                                 alt="image description"></a>
 
-                                                        <button class="like-btn-skin btn btn wishlist add-to-wish active add-to-wish" data-p-id="{{ $p->id }}">
-                                                            <i class="far fa-heart"></i>
-                                                        </button>
+                                                        @if ($p->isInWishlist())
+                                                            <button
+                                                                class="like-btn-skin btn btn wishlist add-to-wish active"
+                                                                data-p-id="{{ $p->id }}">
+                                                                <span class="has-tool-tip">
+                                                                    <i class="fa-regular fa-heart"></i>
+                                                                </span>
+                                                            </button>
+                                                        @else
+                                                            <button class="like-btn-skin btn btn wishlist add-to-wish"
+                                                                data-p-id="{{ $p->id }}">
+                                                                <span class="has-tool-tip">
+                                                                    <i class="fa-regular fa-heart"></i>
+                                                                </span>
+                                                            </button>
+                                                        @endif
                                                         <ul class="links skin-text-desc py-2 px-3">
                                                             <div class="card-title  m-0 text-center pro-head ">
                                                                 <h4 class="">{{ $p->name }}</h4>
@@ -154,8 +167,10 @@
                                                             </p>
 
 
-                                                            <button type="button" class="btn btn-light sk-btn shop-now-btn">
-                                                                <a href="{{ route('frontend.p.show', $p->slug) }}" class="p-0  text-black">
+                                                            <button type="button"
+                                                                class="btn btn-light sk-btn shop-now-btn">
+                                                                <a href="{{ route('frontend.p.show', $p->slug) }}"
+                                                                    class="p-0  text-black">
                                                                     Shop Now
                                                                 </a>
                                                             </button>
@@ -189,17 +204,32 @@
                                                         <a href="{{ route('frontend.p.show', 'product-name') }}"><img
                                                                 src="frontend/images/products/skin/sk1.png"
                                                                 alt="image description"></a>
-                                                        <button type="button" class="like-btn-skin btn add-to-wish" data-p-id="{{ $p->id }}">
-                                                            <i class="far fa-heart"></i>
-                                                        </button>
+                                                        @if ($p->isInWishlist())
+                                                            <button
+                                                                class="like-btn-skin btn btn wishlist add-to-wish active"
+                                                                data-p-id="{{ $p->id }}">
+                                                                <span class="has-tool-tip">
+                                                                    <i class="fa-regular fa-heart"></i>
+                                                                </span>
+                                                            </button>
+                                                        @else
+                                                            <button class="like-btn-skin btn btn wishlist add-to-wish"
+                                                                data-p-id="{{ $p->id }}">
+                                                                <span class="has-tool-tip">
+                                                                    <i class="fa-regular fa-heart"></i>
+                                                                </span>
+                                                            </button>
+                                                        @endif
                                                         <ul class="links skin-text-desc py-2 px-3">
                                                             <div class="card-title  m-0 text-center pro-head ">
                                                                 <h4 class="">{{ $p->name }}</h4>
                                                             </div>
                                                             <p class="card-text text-center">{{ $p->short_description }}
                                                             </p>
-                                                            <button type="button" class="btn btn-light sk-btn shop-now-btn">
-                                                                <a href="{{ route('frontend.p.show', $p->slug) }}" class="p-0  text-black">
+                                                            <button type="button"
+                                                                class="btn btn-light sk-btn shop-now-btn">
+                                                                <a href="{{ route('frontend.p.show', $p->slug) }}"
+                                                                    class="p-0  text-black">
                                                                     Shop Now
                                                                 </a>
                                                             </button>
@@ -235,9 +265,22 @@
                                                                 src="frontend/images/products/skin/sk2.png"
                                                                 alt="image description"></a>
 
-                                                        <button type="button" class="like-btn-skin btn add-to-wish" data-p-id="{{ $p->id }}">
-                                                            <i class="far fa-heart"></i>
-                                                        </button>
+                                                        @if ($p->isInWishlist())
+                                                            <button
+                                                                class="like-btn-skin btn btn wishlist add-to-wish active"
+                                                                data-p-id="{{ $p->id }}">
+                                                                <span class="has-tool-tip">
+                                                                    <i class="fa-regular fa-heart"></i>
+                                                                </span>
+                                                            </button>
+                                                        @else
+                                                            <button class="like-btn-skin btn btn wishlist add-to-wish"
+                                                                data-p-id="{{ $p->id }}">
+                                                                <span class="has-tool-tip">
+                                                                    <i class="fa-regular fa-heart"></i>
+                                                                </span>
+                                                            </button>
+                                                        @endif
 
                                                         <ul class="links skin-text-desc py-2 px-3">
                                                             <div class="card-title  m-0 text-center pro-head ">
@@ -248,7 +291,8 @@
                                                             </p>
 
 
-                                                            <button type="button" class="btn btn-light sk-btn shop-now-btn">
+                                                            <button type="button"
+                                                                class="btn btn-light sk-btn shop-now-btn">
                                                                 <a href="" class="p-0  text-black">
                                                                     Shop Now
                                                                 </a>
@@ -441,9 +485,22 @@
                                 ₹2,707 <s class="text-muted">₹4,509</s>
                             </div>
                             <div>
-                                <button type="button" class="like-btn btn">
-                                    <i class="far fa-heart"></i>
-                                </button>
+                                {{-- @if ($p->isInWishlist()) --}}
+                                    <button class="like-btn btn btn wishlist add-to-wish active"
+                                        {{-- data-p-id="{{ $p->id }}" --}}
+                                        >
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                {{-- @else
+                                    <button class="like-btn btn btn wishlist add-to-wish"
+                                        data-p-id="{{ $p->id }}">
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                @endif --}}
                             </div>
                         </div>
                     </div>
@@ -460,7 +517,8 @@
         <div class="container og-main" style="">
             <div class="row">
                 <div class="col-md-12 col-lg-6 og-main-part-1">
-                    <h3 class="text-red card-text-heading text-capitalize" style="padding:40px 0px 40px 0px">#look for personal care too..
+                    <h3 class="text-red card-text-heading text-capitalize" style="padding:40px 0px 40px 0px">#look for
+                        personal care too..
                     </h3>
 
                     <img src="frontend/images/organic-product/og-1.png" alt="" class="og-main-img-first">
