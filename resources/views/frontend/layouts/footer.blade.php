@@ -336,9 +336,9 @@
 
     </div>
 </div>
-@section('js')
+{{-- @section('js') --}}
     <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
-    <script src="js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
     <script>
         @if (Session::get('alert-type') == 'success')
             @if (Session::has('message'))
@@ -554,4 +554,4 @@
 
         }
     </script>
-@endsection
+{{-- @endsection --}}
