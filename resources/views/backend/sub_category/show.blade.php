@@ -17,7 +17,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Sub Category</a></li>
+                                            href="javascript:void(0);">Sub Category Details</a></li>
                                 </ol>
                             </nav>
                         </div>

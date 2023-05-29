@@ -46,7 +46,7 @@
 
                         <div class="align-items-center col-xl-5 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
                             <a href="{{ route('backend.product_attribute_value.create') }}" name="txt"
-                                class="btn btn-primary mt-2 ml-3 ">
+                                class="btn btn-primary mt-2 ml-3 p-2">
                                 Add Product Attribute Value
                             </a>
                         </div>
