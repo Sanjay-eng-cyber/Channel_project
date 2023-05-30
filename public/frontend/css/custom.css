@@ -2949,6 +2949,11 @@ width: 130.89px;
 height: 40.67px;
 vertical-align:center;
 }
+
+.links-btns:hover{
+    border:1px solid #ec268f !important;
+   border-radius: 5px !important;
+}
 input[type="text"]::placeholder {
 
     /* Firefox, Chrome, Opera */

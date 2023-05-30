@@ -300,13 +300,13 @@
                                        <p class="text-center text-black h6 py-3">Or Connect With</p>
                                        <div class="col-6 text-center">
                                            <button class="border-0 d-flex pt-2 links-btns mx-auto"><img
-                                                   src="frontend/images/icons/icon-fb.png" alt=""
+                                                   src="{{url('frontend/images/icons/icon-fb.png')}}" alt=""
                                                    class="mx-2 icon-img-size"> Facebook</button>
                                        </div>
 
                                        <div class="col-6">
                                            <button class="border-0 d-flex pt-2 links-btns mx-auto"><img
-                                                   src="frontend/images/icons/icon-google.png" alt=""
+                                                   src="{{url('frontend/images/icons/icon-google.png')}}" alt=""
                                                    class="mx-2 icon-img-size"> Google</button>
                                        </div>
                                    </div>
