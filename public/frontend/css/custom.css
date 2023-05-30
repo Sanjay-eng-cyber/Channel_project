@@ -3139,3 +3139,19 @@ a.add-to-cart:focus {
 .service-box-bg{
 background: #F8FDFF;
 }
+.btn-parrot
+{
+    background:#15A708;
+    color:white;
+}
+.btn-parrot:hover{
+    background: #ec268f;
+    color:white;
+}
+::-webkit-input-placeholder {
+    text-align:left;
+  }
+.card-bg
+{
+    background: #FAFAFA;
+}
