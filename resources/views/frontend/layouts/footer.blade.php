@@ -436,6 +436,22 @@
                 });
         }
     });
+
+    document.querySelectorAll('.counter').forEach(item => {
+        item.querySelector('.decrease-quantity').addEventListener('click', event => {
+            var inputEl = item.querySelector('.quantity-input');
+            var value = parseInt(inputEl.value);
+            if (value > 1) {
+                inputEl.value = value - 1;
+            }
+        });
+        item.querySelector('.increase-quantity').addEventListener('click', event => {
+            var inputEl = item.querySelector('.quantity-input');
+            var value = parseInt(inputEl.value);
+            inputEl.value = value + 1;
+        });
+    });
+
 </script>
 <script>
     $('button.add-to-wish').click(function() {

@@ -94,12 +94,13 @@
                                                 Quantity
                                             </label>
                                             <div class="input-group flex-nowrap counter" >
-                                                <span class="input-group-text decrease-quantity">-</span>
-                                                <input type="number" id="qty" name="quantity" class="form-control quantity-input" value="1">
-                                                <span class="input-group-text increase-quantity">+</span>
+                                                <button type="button" class="input-group-text decrease-quantity">-</button>
+                                                <input type="number"  name="quantity" class="form-control quantity-input" value="1">
+                                                <button type="button" class="input-group-text increase-quantity">+</button>
                                             </div>
                                         </div>
                                     </div>
+                             
                                     <div class="d-flex justify-content-around flex-wrap my-3 ">
                                         @if ($product->isInCart())
                                             <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"

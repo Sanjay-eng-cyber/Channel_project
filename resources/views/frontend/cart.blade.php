@@ -93,13 +93,12 @@
                                             <li class="no-bullet text-green">In Stock</li>
                                         @endif
                                     </ul>
-                                    <div class="input-group align-items-center" style="width:124px;">
-                                        <span class="input-group-text">-</span>
-                                        <input type="number" id="qty" class="form-control text-center"
+                                    <div class="input-group align-items-center counter" style="width:124px;">
+                                        <button type="button" class="input-group-text decrease-quantity">-</button>
+                                        <input type="number" id="qty" class="form-control text-center quantity-input"
                                             value="1">
-                                        <span class="input-group-text">+</span>
+                                        <button type="button" class="input-group-text increase-quantity">+</button>
                                     </div>
-
                                     <div class="d-none d-md-inline">
                                         ₹145.55
                                     </div>
