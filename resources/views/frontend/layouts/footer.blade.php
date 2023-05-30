@@ -221,7 +221,7 @@
     <!-- Footer Area of the Page -->
 
     <div class="footer-area p-0">
-        <hr>
+        <hr class="d-md-block d-none">
 
         <div class="container py-4">
             <div class="row">
@@ -268,7 +268,7 @@
             </div>
 
         </div>
-
+        <hr class="d-md-none d-block">
         <div class="container pb-3">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 right_reserved">
