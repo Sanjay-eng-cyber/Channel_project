@@ -3117,6 +3117,9 @@ border:1px solid #EC268F !important;
 #mt-footer .logo {
 display: flex !important;
 }
+.service-box-bg{
+    background: none !important;
+    }
 }
 
 .add-to-wish.active {
@@ -3132,4 +3135,7 @@ display: flex !important;
 }
 a.add-to-cart:focus {
     border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+}
+.service-box-bg{
+background: #F8FDFF;
 }
