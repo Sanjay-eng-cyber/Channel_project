@@ -100,7 +100,7 @@
                                             </div>
                                         </div>
                                     </div>
-                             
+
                                     <div class="d-flex justify-content-around flex-wrap my-3 ">
                                         @if ($product->isInCart())
                                             <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"

@@ -95,7 +95,7 @@
                                     </ul>
                                     <div class="input-group align-items-center counter" style="width:124px;">
                                         <button type="button" class="input-group-text decrease-quantity">-</button>
-                                        <input type="number" id="qty" class="form-control text-center quantity-input"
+                                        <input type="number" id="qty" class="form-control text-center quantity-input px-0"
                                             value="1">
                                         <button type="button" class="input-group-text increase-quantity">+</button>
                                     </div>
