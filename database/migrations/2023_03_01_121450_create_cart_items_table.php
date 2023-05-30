@@ -17,6 +17,7 @@ class CreateCartItemsTable extends Migration
             $table->id();
             $table->foreignId('cart_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->integer('quantity')->nullable()->default(1);
             $table->timestamps();
         });
     }
