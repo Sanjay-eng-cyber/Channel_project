@@ -2634,6 +2634,11 @@ a:hover {
     .or-cm a{
       font-size: 13px !important;
     }
+    .wishlist-main .wishlist-main-out .wishlist-main-in .wishlist-main-in-btn {
+
+        align-items: center !important;
+
+    }
 }
 
 .mt-product-detial .pagg-slider {
