@@ -65,9 +65,15 @@
                             <h3 class="h5 font-body">
                                 From {{ $product->final_price }}
                             </h3>
-                            <h4 class="font-body h5 text-green">
-                                <i class="fa-regular fa-circle-check"></i> in stock
-                            </h4>
+                            @if ($product->stock)
+                                <h4 class="font-body h5 text-green">
+                                    <i class="fa-regular fa-circle-check"></i> In Stock
+                                </h4>
+                            @else
+                                <h4 class="font-body h5 text-red">
+                                    <i class="fa-regular fa-circle-xmark"></i> Out of Stock
+                                </h4>
+                            @endif
                             <form action="">
                                 {{-- <label for="color-option">
                                     Select a color * :
@@ -82,18 +88,18 @@
                                             <option>Blue</option>
                                         </select>
                                     </div> --}}
-                                    {{-- <div class="col-12 col-md-6 mb-3">
+                                    <div class="col-12 col-md-6 mb-3">
                                         <div class="qty-counter">
                                             <label for="qty">
-                                                qty
+                                                Quantity
                                             </label>
-                                            <div class="input-group flex-nowrap">
-                                                <span class="input-group-text">-</span>
-                                                <input type="number" id="qty" class="form-control" value="1">
-                                                <span class="input-group-text">+</span>
+                                            <div class="input-group flex-nowrap counter" >
+                                                <span class="input-group-text decrease-quantity">-</span>
+                                                <input type="number" id="qty" name="quantity" class="form-control quantity-input" value="1">
+                                                <span class="input-group-text increase-quantity">+</span>
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                     <div class="d-flex justify-content-around flex-wrap my-3 ">
                                         @if ($product->isInCart())
                                             <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
@@ -119,7 +125,6 @@
                                         </button>
 
                                         <a class="btn text-red mt-sm-0 mt-3">
-
                                             <i class="fa-regular fa-heart"></i>
                                             Add To Wishlist
                                         </a>
