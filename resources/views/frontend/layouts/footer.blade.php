@@ -28,12 +28,12 @@
                                 Shop No. 5 & 6, Sunview Apartment, Tilak Nagar, Chembur (West), Mumbai - 400089.
                             </li>
                         </ul>
-                        <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
+                        {{--<ul class="list-unstyled  gap-2 p-0 contact-pc-version">
                             <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
                                 <i class="fas fa-clock  text-red"></i>
                                 <span>Mon-Sat 10:00am to 6.00pm</span>
                             </li>
-                        </ul>
+                        </ul>--}}
                         <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
                             <li>
                                 <i class="fas fa-phone  text-red"></i>
@@ -54,10 +54,10 @@
                         </ul>
 
                         <ul class="list-unstyled contact-mobile-version d-sm-none d-block">
-                            <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
+                            {{--<li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
                                 <i class="fas fa-clock  text-red"></i>
                                 <span>Mon-Sat 10:00am to 6.00pm</span>
-                            </li>
+                            </li>--}}
                             <li class="gap-2 d-flex align-items-center mt-sm-0 mt-3">
                                 <i class="fas fa-phone  text-red"></i>
                                 <a href="tel:+917710062724" class="footer-links-hover">+91-7710062724</a>
@@ -221,7 +221,7 @@
     <!-- Footer Area of the Page -->
 
     <div class="footer-area p-0">
-        <hr>
+        <hr class="d-md-block d-none">
 
         <div class="container py-4">
             <div class="row">
@@ -268,7 +268,7 @@
             </div>
 
         </div>
-
+        <hr class="d-md-none d-block">
         <div class="container pb-3">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 right_reserved">

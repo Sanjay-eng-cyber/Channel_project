@@ -74,7 +74,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-8 col-lg-4   mt-3 mt-md-0 d-flex align-items-center">
+                                <div class="col-md-8 col-lg-4  justify-content-md-start justify-content-center mt-3 mt-md-0 d-flex align-items-center">
                                     <div class="">
                                         <h5 class="main-head">{{ $c->product->name }}</h5>
                                         <p class="p-0 __cart-ui-pra">

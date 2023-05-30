@@ -44,13 +44,13 @@
                                     class="col-sm-12 col-md-4 col-lg-4 col-xl-3 d-flex justify-content-center flex-column wishlist-main-in-img">
                                     <img src="frontend/images/products/skin/sk1.png" class="img-fluid" alt="">
                                 </div>
-                                <div class="col-sm-12  col-md-8 col-lg-8 col-xl-6 wishlist-main-desc">
+                                <div class="col-sm-12 text-md-start text-center  col-md-8 col-lg-8 col-xl-6 wishlist-main-desc">
 
                                     <h5 class="main-head">{{ $w->product->name }}</h5>
                                     <p style="font-size: 14px;opacity: 0.6;">{{ $w->product->short_descriptions }}
                                     </p>
 
-                                    <ul class="list-unstyled d-flex gap-3">
+                                    <ul class="list-unstyled d-flex gap-3 justify-content-md-start justify-content-center">
                                         <li class="price">From ₹ {{ $w->product->final_price }}</li>
                                         @if ($w->product->stock)
                                             <li class="status">In Stock</li>
