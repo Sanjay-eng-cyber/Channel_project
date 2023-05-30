@@ -3169,3 +3169,11 @@ background: #F8FDFF;
     width: 6ch !important;
     text-align: center !important;
 }
+.padding-order-summary{
+    padding: 50px 0px 15px 15px;
+}
+@media screen and (max-width:1115px) {
+    .padding-order-summary{
+        padding: 50px 0px 15px 0px;
+    }
+}

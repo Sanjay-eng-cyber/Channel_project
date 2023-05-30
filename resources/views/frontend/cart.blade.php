@@ -117,7 +117,7 @@
 
                     </div>
                     <div class="col-md-4 col-lg-3">
-                        <div class="" style="padding: 50px 15px 15px 15px">
+                        <div class="padding-order-summary" >
                             <h5 class="main-head">Order Summary</h5>
                             <hr style="border-bottom: 2px solid #000000;">
                             <div class="d-flex justify-content-between my-3">
