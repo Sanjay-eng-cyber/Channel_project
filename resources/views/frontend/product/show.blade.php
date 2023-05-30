@@ -93,14 +93,15 @@
                                             <label for="qty">
                                                 Quantity
                                             </label>
-                                            <div class="input-group flex-nowrap counter" >
+                                            <div class="input-group flex-nowrap counter">
                                                 <button type="button" class="input-group-text decrease-quantity">-</button>
-                                                <input type="number"  name="quantity" class="form-control quantity-input" value="1">
+                                                <input type="number" name="quantity" class="form-control quantity-input"
+                                                    value="1">
                                                 <button type="button" class="input-group-text increase-quantity">+</button>
                                             </div>
                                         </div>
                                     </div>
-                             
+
                                     <div class="d-flex justify-content-around flex-wrap my-3 ">
                                         @if ($product->isInCart())
                                             <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
@@ -125,10 +126,23 @@
                                             Buy Now
                                         </button>
 
-                                        <a class="btn text-red mt-sm-0 mt-3">
-                                            <i class="fa-regular fa-heart"></i>
-                                            Add To Wishlist
-                                        </a>
+                                        @if ($product->isInWishlist())
+                                            <button type="button" class="btn mt-sm-0 mt-3 p-show add-to-wish active"
+                                                data-p-id="{{ $product->id }}">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="tool-tip-text">
+                                                    Remove From Wishlist
+                                                </span>
+                                            </button>
+                                        @else
+                                            <button type="button" class="btn mt-sm-0 mt-3 p-show add-to-wish"
+                                                data-p-id="{{ $product->id }}">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="tool-tip-text">
+                                                    Add To Wishlist
+                                                </span>
+                                            </button>
+                                        @endif
                                     </div>
                                     <h6 class="h5 font-body">
                                         Description
@@ -441,4 +455,19 @@
 
         </section>
     </main>
+
+    <style>
+        .p-show.add-to-wish {
+            border: 0;
+        }
+
+        .p-show.add-to-wish.active {
+            background: #fff !important;
+            color: #ec268f !important;
+        }
+
+        .p-show.add-to-wish.active svg path {
+            fill: #ec268f;
+        }
+    </style>
 @endsection
