@@ -3160,3 +3160,7 @@ background: #F8FDFF;
 {
     background: #FAFAFA;
 }
+.mt-product-detial .qty-counter input {
+    width: 6ch !important;
+    text-align: center !important;
+}
