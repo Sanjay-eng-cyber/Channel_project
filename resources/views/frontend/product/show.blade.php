@@ -90,7 +90,7 @@
                                     </div> --}}
                                     <div class="col-12 col-md-6 mb-3">
                                         <div class="qty-counter">
-                                            <label for="qty">
+                                            <label for="qty" class="px-md-2">
                                                 Quantity
                                             </label>
                                             <div class="input-group flex-nowrap counter">
@@ -148,7 +148,7 @@
                                         Description
                                     </h6>
                                     <ul class="ms-3 text-muted">
-                                        <li>
+                                        <li class="text-capitalize">
                                             {{ $product->descriptions }}
                                         </li>
                                     </ul>
@@ -199,7 +199,7 @@
                                                     <i class="fa-solid fa-star text-green"></i>
                                                 </div>
                                                 <div class="rating-count text-muted">
-                                                    based on Verified Buyers 1k
+                                                    Based On Verified Buyers 1k
                                                 </div>
                                             </div>
                                         </div>
@@ -268,7 +268,7 @@
                             <li class="nav-item prdct-pills-f1">
                                 <a class="nav-link active p-0" id="home-tab" data-bs-toggle="pill" href="#home"
                                     role="tab" aria-controls="home" aria-selected="true">
-                                    <h5 class="main-head tab-fs">Customer reviews</h5>
+                                    <h5 class="main-head tab-fs">Customer Reviews</h5>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -424,15 +424,15 @@
                     <div class="col-lg-12 col-xl-6 or-secondpage-scard">
                         <div class="p-4 or-secondpage-scard">
 
-                            <h5 class="main-head py-3 or-secondpage-scard-fhead">Recommended based on your purchase</h5>
+                            <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">Recommended based on your purchase</h5>
                             <div class="row pt-3 pb-3 or-secondpage-scard-card">
                                 <div class="col-sm-4 or-secondpage-scard-card-img" style="">
                                     <img src="{{ asset('frontend/images/products/skin/sk1.png') }}" alt=""
                                         class="img-fluid">
                                 </div>
                                 <div class="col-sm-8 or-secondpage-scard-card-des pt-4 pt-sm-0 pt-md-0">
-                                    <h4 class="main-head">Essence Long Lasting Eye Pencil</h4>
-                                    <p>
+                                    <h4 class="main-head text-capitalize">Essence Long Lasting Eye Pencil</h4>
+                                    <p class="text-capitalize">
                                         essence Long Lasting Eye Pencil is a creamy and pigmented eye pencil that brightens
                                         and
                                         accentuates your eye more....
