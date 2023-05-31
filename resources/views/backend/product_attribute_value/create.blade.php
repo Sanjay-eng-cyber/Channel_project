@@ -6,13 +6,13 @@
             <div class="statbox widget box box-shadow my-1">
                 <div class="widget-header">
                     <div class="row justify-content-between align-items-center ">
-                        <div class="col-xl-5  col-md-6  mt-2 mb-2 ">
+                        <div class="col-xl-5    mt-2 mb-2 ">
                             <legend class="h4">
                                 Create Product Attribute Value
                             </legend>
                         </div>
 
-                        <div class="col-xl-4  col-md-6  mb-2 d-flex justify-content-end align-it mt-2">
+                        <div class="col-xl-4   mb-2 d-flex justify-content-end align-it mt-2">
                             <nav class="breadcrumb-two" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -40,7 +40,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12   col-sm-12 py-lg-0 py-2 py-xl-2">
+                                <div class="col-xl-12   col-sm-12 py-lg-2 py-2 py-xl-2 ">
                                     <label for="degree2">Attribute</label>
                                     <select class="form-control mb-4" name="attribute_id" required>
                                         <option value="">Select Any Attribute</option>
