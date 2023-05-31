@@ -65,7 +65,7 @@
 
                         <div class="row">
 
-                            <div class="col-sm-6 py-2">
+                            <div class="col-6 py-2">
                                 <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
                                     value="male" @if ($user->gender == 'male') {{ 'checked' }} @endif
                                     placeholder="male" required>
@@ -75,7 +75,7 @@
                             </div>
 
 
-                            <div class="col-sm-6 py-2">
+                            <div class="col-6 py-2">
                                 <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
                                     value="female" @if ($user->gender == 'female') {{ 'checked' }} @endif required>
                                 <label class="form-check-label profile-f-l-color" for="exampleRadios1">
