@@ -64,7 +64,7 @@
                         <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
-                                    <h4 class="text-center">Users</h4>
+                                    <h4 class="text-center">Total Users</h4>
                                     <div class="w-title justify-content-center align-items-center">
                                         <div class="w-icon">
                                             <i class="far fa-chart-bar big-font-icon"> </i>
@@ -84,7 +84,7 @@
                         <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing mt-sm-0 mt-3">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
-                                    <h4 class="text-center">Brands</h4>
+                                    <h4 class="text-center">Total Brands</h4>
                                     <div class="w-title justify-content-center align-items-center">
                                         <div class="w-icon">
                                             <i class="far fa-chart-bar big-font-icon"> </i>
