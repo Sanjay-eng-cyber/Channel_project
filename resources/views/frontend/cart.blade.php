@@ -157,7 +157,7 @@
                                 </a>
 
                                 <a href="http://" class="my-2 text-white">
-                                    <button type="button" class="btn btn-orange-outline-hover w-100 my-2  p-1 p-xl-2">
+                                    <button type="button" class="btn mt-3 btn-orange-outline-hover w-100 my-2  p-1 p-xl-2">
                                         Proceed To Checkout
                                     </button>
                                 </a>

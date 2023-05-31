@@ -74,7 +74,7 @@
                                         <h6 class="main-head">"Heading here "</h6>
                                     </div>
                                     <div class="col-12 col-md-9 my-3 my-md-0">
-                                        <p class="">
+                                        <p class="text-capitalize">
                                             I use this long stay intense kajal first time, it is very good black preal kajal, it's water proof, smudge proof long lasting, and dark shiny black. It's made by sunflower seeds oil and vitamin E, I'm very happy after using this product.
                                                 It gives bold look in eyes and make eyes more beautiful. Totally satisfied with this eyes friendly product
                                             lorem
