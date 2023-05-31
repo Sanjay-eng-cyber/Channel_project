@@ -6,12 +6,23 @@
 @section('content')
 <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
 
+
+<section class="my-1">
+    <div class="container">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" class="bread-crum breadcrumb-hover">Profile</a></li>
+                <li class="breadcrumb-item bread-crum" aria-current="page">My Order</li>
+            </ol>
+        </nav>
+    </div>
+</section>
 <section style="padding:30px 0px 50px 0px">
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-lg-9 col-xl-4 col-xxl-5">
                 <div class="input-group py-3">
-                    <input type="text" class="form-control" placeholder="" aria-label="Recipient's username"
+                    <input type="text" class="form-control" placeholder="Search Order" aria-label="Recipient's username"
                         aria-describedby="basic-addon2">
                     <span class="input-group-text" id="basic-addon2" style="background-color: rgba(236, 38, 143, 0.4);">
                         <i class="fas fa-search fa-fw text-red"></i>

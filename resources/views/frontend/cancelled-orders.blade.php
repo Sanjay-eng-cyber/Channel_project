@@ -6,7 +6,16 @@
 @section('content')
 <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
 
-
+<section class="my-1">
+    <div class="container">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" class="bread-crum breadcrumb-hover">Profile</a></li>
+                <li class="breadcrumb-item bread-crum" aria-current="page">My Order</li>
+            </ol>
+        </nav>
+    </div>
+</section>
 
 <section style="padding:30px 0px 50px 0px">
     <div class="container">
