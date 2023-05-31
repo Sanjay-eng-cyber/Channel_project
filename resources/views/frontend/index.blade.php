@@ -57,27 +57,6 @@
                     <div
                         class="col-sm-6 col-md-6 col-lg-6  col-lg-6 col-xl-3 group-card-3 gap-3 gap-lg-5 gap-xl-3 gap-xxl-4
                     d-flex flex-column justify-content-center py-3 py-xl-0 ">
-                        {{-- <div class="card third-group-card">
-                        <img src="" class="card-img-top third-group-card-img"
-                            alt="...">
-                        <div class="card-body text-center third-group-card-body">
-                            <h4 class="card-title text-center font-head m-0">{{$rightSliders->title}}</h4>
-
-                            <p class="card-text group-card-text-color  m-0">
-                                indulge in premium perfumes
-                            </p>
-
-
-
-                            <a class=" d-flex justify-content-center gap-2 text-center group-buutton-bg-disable"
-                                href="">
-                                <span class="group-card-shop-btn">Shop Now</span>
-                                <i class="fa fa-angle-right group-button-arrow"></i>
-                            </a>
-
-
-                        </div>
-                    </div> --}}
                         @forelse ($rightSliders as $rigslider)
                             <div class="card fourth-group-card">
                                 <img src="{{ asset('storage/images/sliders/' . $rigslider->image) }}"
@@ -144,15 +123,14 @@
                                                                 alt="image description"></a>
 
                                                         @if ($p->isInWishlist())
-                                                            <button
-                                                                class="btn like-btn-skin active"
+                                                            <button class="btn like-btn-skin add-to-wish active"
                                                                 data-p-id="{{ $p->id }}">
                                                                 <span class="has-tool-tip">
                                                                     <i class="fa-regular fa-heart"></i>
                                                                 </span>
                                                             </button>
                                                         @else
-                                                            <button class="btn like-btn-skin"
+                                                            <button class="btn like-btn-skin add-to-wish"
                                                                 data-p-id="{{ $p->id }}">
                                                                 <span class="has-tool-tip">
                                                                     <i class="fa-regular fa-heart"></i>
@@ -205,15 +183,14 @@
                                                                 src="frontend/images/products/skin/sk1.png"
                                                                 alt="image description"></a>
                                                         @if ($p->isInWishlist())
-                                                            <button
-                                                                class="like-btn-skin btn btn wishlist add-to-wish active"
+                                                            <button class="btn like-btn-skin add-to-wish active"
                                                                 data-p-id="{{ $p->id }}">
                                                                 <span class="has-tool-tip">
                                                                     <i class="fa-regular fa-heart"></i>
                                                                 </span>
                                                             </button>
                                                         @else
-                                                            <button class="btn like-btn-skin"
+                                                            <button class="btn like-btn-skin add-to-wish"
                                                                 data-p-id="{{ $p->id }}">
                                                                 <span class="has-tool-tip">
                                                                     <i class="fa-regular fa-heart"></i>
@@ -266,15 +243,14 @@
                                                                 alt="image description"></a>
 
                                                         @if ($p->isInWishlist())
-                                                            <button
-                                                                class="like-btn-skin btn active"
+                                                            <button class="btn like-btn-skin add-to-wish active"
                                                                 data-p-id="{{ $p->id }}">
                                                                 <span class="has-tool-tip">
                                                                     <i class="fa-regular fa-heart"></i>
                                                                 </span>
                                                             </button>
                                                         @else
-                                                            <button class="like-btn-skin btn "
+                                                            <button class="btn like-btn-skin add-to-wish"
                                                                 data-p-id="{{ $p->id }}">
                                                                 <span class="has-tool-tip">
                                                                     <i class="fa-regular fa-heart"></i>
@@ -486,13 +462,11 @@
                             </div>
                             <div>
                                 {{-- @if ($p->isInWishlist()) --}}
-                                    <button class="like-btn btn btn wishlist add-to-wish active"
-                                        {{-- data-p-id="{{ $p->id }}" --}}
-                                        >
-                                        <span class="has-tool-tip">
-                                            <i class="fa-regular fa-heart"></i>
-                                        </span>
-                                    </button>
+                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                    <span class="has-tool-tip">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </span>
+                                </button>
                                 {{-- @else
                                     <button class="like-btn btn btn wishlist add-to-wish"
                                         data-p-id="{{ $p->id }}">
@@ -561,7 +535,7 @@
 
 
     <!-- F Promo Box of the Page -->
-    <section  class="pb-0 mb-0 service-box-bg">
+    <section class="pb-0 mb-0 service-box-bg">
         <aside class="f-promo-box dark">
             <div class="container divider">
                 <div class="row row-cols-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 ">
