@@ -19,7 +19,7 @@
     <section>
         <div class="container">
             <div class="row d-flex justify-content-center gap-3">
-                <div class="col-lg-12 col-xl-5">
+                <div class="col-lg-10 col-xl-5">
                     <div class="p-4 order-return-first-main">
                         <div class="order-return-first-search">
                             <h6 class="main-head py-3 or-first-card-color text-capitalize">What is the issue with the item?</h6>
@@ -65,7 +65,7 @@
 
                 </div>
 
-                <div class="col-lg-12 col-xl-6 or-firstpage-scard">
+                <div class="col-lg-10 col-xl-6 or-firstpage-scard">
                     <div class="p-4 or-firstpage-scard">
 
                             <h6 class="main-head py-3 or-firstpage-scard-fhead text-capitalize">What is the issue with the item?</h6>

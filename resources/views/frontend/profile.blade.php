@@ -219,22 +219,22 @@
                     @endforelse
 
                     @if ($userAddresses->count() < 3)
-                        <div class="p-4 profile-form-border ">
+                        <div class="p-4 profile-form-border " style="position: relative;">
                             <form class="" action="{{ route('frontend.address.update') }}" method="post">
                                 @csrf
                                 <h5 class="main-head text-red">Add Address</h5>
 
-                                <div class="form-group py-2 ">
-                                    <input type="text" name="name" class=" profile-form-input-custome"
-                                        placeholder="Name*" required minlength="3" maxlength="20" required>
+                                <div class="form-group py-2 req-input">
+                                    <input type="text" name="name" class=" profile-form-input-custome "
+                                        placeholder="Name" required minlength="3" maxlength="20" required>
                                     @if ($errors->has('name'))
                                         <div id="name-error" class="text-primary">
                                             {{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
-                                <div class="form-group py-2">
+                                <div class="form-group py-2 req-input-2">
                                     <input type="text" name="street_address" class=" profile-form-input-custome"
-                                        placeholder="Street Address*" required minlength="5" maxlength="80" required>
+                                        placeholder="Street Address" required minlength="5" maxlength="80" required>
                                     @if ($errors->has('street_address'))
                                         <div id="street_address-error" class="text-primary">
                                             {{ $errors->first('street_address') }}</div>
@@ -267,7 +267,7 @@
                                 </div>
                                 <div class="form-group  profile-form-group-star-pin-code py-2">
                                     <input type="text" name="postal_code" class="profile-form-input-custome"
-                                        placeholder="Pin Code*" minlength="3" maxlength="20" required>
+                                        placeholder="Pin Code" minlength="3" maxlength="20" required>
                                     @if ($errors->has('postal_code'))
                                         <div id="postal_code-error" class="text-primary">
                                             {{ $errors->first('postal_code') }}

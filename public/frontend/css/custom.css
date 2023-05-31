@@ -3180,3 +3180,20 @@ background: #F8FDFF;
         padding: 50px 0px 15px 0px;
     }
 }
+.profile-form-border .req-input::after {
+    content: "*" !important;
+    position: absolute !important;
+    top: 70px !important;
+    left: 72px !important;
+    color: rgba(241, 0, 0, 0.7) !important;
+
+}
+
+.profile-form-border .req-input-2::after {
+    content: "*" !important;
+    position: absolute !important;
+    top: 127px !important;
+    left: 140px !important;
+    color: rgba(241, 0, 0, 0.7) !important;
+
+}
