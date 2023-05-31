@@ -5,6 +5,8 @@
             background: url('frontend/images/banner/contact-bg.png') !important;
             background-repeat: no-repeat !important;
             background-size: cover !important;
+            border-radius: 10px;
+
         }
     </style>
 @section('content')
@@ -13,12 +15,13 @@
         <div class="container">
             <div class="row justify-content-center my-5 px-sm-0 px-2">
 
-                <div class="col-md-12 p-md-5 p-4 contact-border ">
+                <div class="col-md-12 p-md-5 p-4 contact-border " >
                     <h2 class="text-red main-head text-center mb-3">Contact US</h2>
-                    <div class="row main-group-card pt-5 mx-md-4 mb-md-4 contact-img">
+                  <div class="card pt-md-4">
+                    <div class="row main-group-card pt-5 mx-md-4 mb-md-4 contact-img ">
                         <h3 class="text-center text-white">Contact Information</h3>
                         <p class="text-white text-center">Get In Touch</p>
-                        <div class="col-lg-6 px-md-5 py-5">
+                        <div class="col-lg-6 px-md-5 py-md-5">
 
                             <ul class="list-unstyled mt-sm-4 mt-3">
 
@@ -75,6 +78,7 @@
                         </div>
 
                     </div>
+                  </div>
                 </div>
             </div>
         </div>
