@@ -19,9 +19,9 @@
 
     <section style="padding: 0px 0px 100px 0px">
         <div class="container">
-            <div class="row ">
+            <div class="row justify-content-center">
 
-                <div class="col-lg-12 col-xl-6">
+                <div class="col-lg-10 col-xl-6">
 
 
                     <div class="p-4  or-secondpage-fcard">
@@ -41,9 +41,9 @@
 
                         </div>
                         <div
-                            class="d-flex flex-column justify-content-end align-items-end or-secondpage-fcard-bottom py-3 py-sm-0">
-                            <button type="button" class="btn  mb-1 or-sp-first-btn">Request Summited</button>
-                            <button type="button" class="btn  mt-2 or-sp-second-btn">Cancel</button>
+                            class="d-flex flex-column  justify-content-end align-items-end or-secondpage-fcard-bottom py-3 py-sm-0">
+                            <button type="button" class="btn  mb-1 or-sp-first-btn ">Request Summited</button>
+                            <button type="button" class="btn  mt-2 or-sp-second-btn ">Cancel</button>
                         </div>
 
                     </div>
@@ -128,7 +128,7 @@
 
 
 
-                <div class="col-lg-12 col-xl-6 or-secondpage-scard">
+                <div class="col-lg-10 col-xl-6 or-secondpage-scard">
                     <div class="p-4 or-secondpage-scard">
 
                         <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">Recommended based on your
