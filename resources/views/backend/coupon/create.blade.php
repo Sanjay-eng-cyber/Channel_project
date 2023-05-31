@@ -12,7 +12,7 @@
                             </legend>
                         </div>
 
-                        <div class="col-xl-4 col-md-6 col-sm-6 mb-2 d-flex justify-content-end align-it mt-2">
+                        <div class="col-xl-4 col-md-6 mb-2 d-flex justify-content-end align-it mt-2">
                             <nav class="breadcrumb-two" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
