@@ -54,7 +54,7 @@
                 </span>
                 My Wishlist
             </a>
-            <a href="javascript:;" class="btn ">
+            <a href="{{url('/order')}}" class="btn {{URL::current()==url('/order')?'active':''}}">
                 <span class="menu-icon">
                     <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
@@ -88,7 +88,7 @@
                 </span>
                 My Orders
             </a>
-            <a href="javascript:;" class="btn">
+            <a href="{{url('/review-index')}}" class="btn {{URL::current()==url('/review-index')?'active':''}}">
                 <span class="menu-icon">
                     <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,7 @@
                 </span>
                 Reviews
             </a>
-            <a href="javascript:;" class="btn">
+            <a href="{{url('/payment')}}" class="btn {{URL::current()==url('/payment')?'active':''}}">
                 <span class="menu-icon">
                     <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
