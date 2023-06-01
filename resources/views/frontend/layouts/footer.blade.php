@@ -582,4 +582,29 @@
 
     }
 </script>
+
+<script>
+    //SHOW TARGET CONTENT
+jQuery(function(){
+ jQuery(document).ready(function() {
+   jQuery('.showSingle').first().addClass('active');
+   for (i = 2; i <= 4; i++) {
+     jQuery('#div'+i).hide();
+   }
+ });       jQuery('.showSingle').click(function(){
+              jQuery('.targetDiv').hide();
+              jQuery('#div'+$(this).attr('target')).show();
+        });
+});
+
+//ACTIVE STATE
+ $('button.showSingle').click(function(e) {
+        e.preventDefault();
+        $('button.showSingle').removeClass('active');
+        $(this).addClass('active');
+    });
+
+
+
+</script>
 {{-- @endsection --}}

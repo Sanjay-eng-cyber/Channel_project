@@ -165,6 +165,9 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/payment', function () {
         return view('frontend.payment');
     })->name('frontend.payment');
+    Route::get('/payment-process', function () {
+        return view('frontend.payment-process');
+    })->name('frontend.payment-process');
 
 
     // Route::get('/products/{slug}', function () {
