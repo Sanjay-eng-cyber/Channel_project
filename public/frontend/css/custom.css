@@ -3197,3 +3197,9 @@ background: #F8FDFF;
     color: rgba(241, 0, 0, 0.7) !important;
 
 }
+@media screen and (max-width: 576px){
+.footer-absolute-img1 {
+    bottom: -53px;
+    left: -34px ;
+}
+}
