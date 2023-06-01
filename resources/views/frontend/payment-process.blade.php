@@ -3,7 +3,7 @@
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 
-    
+
 @endsection
 @section('content')
     <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
@@ -20,11 +20,11 @@
     </section>
     <section style="padding:0px 0px 50px 0px">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-md-7">
                     <div class="row">
-                        <div class="col">
-                            <div class="progress-steps">
+                        <div class="col ">
+                            <div class="progress-steps ">
                                 <button class="showSingle" target="1" role="tab" tabindex="0"
                                     aria-controls="nils-tab" aria-label="Step 1"></button>
                                 <button class="showSingle" target="2" role="tab" tabindex="0"
@@ -42,11 +42,11 @@
                     </div>
 
 
-                    <section id="progress-content" class="hide">
-                        <div id="div1" class="targetDiv">
-                            <h4>Select A Delivery Address</h4>
+                    <section id="progress-content" class="hide ">
+                        <div id="div1" class="targetDiv profile-form-border col-10 p-md-5 p-2 mx-0">
+                            <h4 class="main-head">Select A Delivery Address</h4>
 
-                            <div class="col-lg-6 ">
+                            <div class="col-lg-8 ">
 
 
                                 <div class="profile-form-border p-4 mb-3">
@@ -88,6 +88,9 @@
                                 </div>
 
 
+                            </div>
+                            <div class="col-sm-12 pt-4">
+                                <button type="submit" class="btn profile-btn-color">+ Add Address</button>
                             </div>
                         </div>
 
@@ -203,48 +206,41 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="div3" class="targetDiv">
-                            <h3>Execution</h3>
-                            <div class="col-lg-6 ">
+                        <div id="div3" class="targetDiv ">
+
+                            <div class="col-lg-10 ">
 
 
                                 <div class="profile-form-border p-4 mb-3">
                                     <div class="row">
-
-
-                                        <div class=" py-2">
-                                            <ul class="d-flex gap-5 list-unstyled justify-content-start">
-
-                                                <li>
-                                                    <button type="button"
-                                                        class="btn btn-primary position-relative profile-s-bg-color">Home
-
-                                                        <span
-                                                            class="position-absolute top-0 start-100 translate-middle  bg-success border border-light rounded-circle profile-alert-icon">
-                                                            <i class="fas fa-check text-white"></i>
-                                                            <span class="visually-hidden">New alerts</span>
-                                                        </span>
-                                                    </button>
-                                                </li>
-
-
-                                                <li>
-                                                    <a
-                                                        href="'frontend.address.delete' data-bs-toggle='modal' data-bs-target='#trashbtn'">
-                                                        <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
-                                                    </a>
-                                                </li>
-
-                                            </ul>
-
+                                        <h3 class="main-head">Credit Card\Debit Card</h3>
+                                        <div class="col-md-8 mt-3">
+                                            <div class="frm-group">
+                                                <input type="text" class="form-control" placeholder="Name On Card">
+                                            </div>
+                                            <div class="frm-group mt-3">
+                                                <input type="text" class="form-control" placeholder="Card Number">
+                                            </div>
                                         </div>
-
-                                        <h5>Nishchay luthra</h5>
-                                        <p>Rajat tower, near Jaswant inox, Kamptee Rd, Near Indora Chowk, Nagpur,
-                                            Maharashtra 440017</p>
-                                        <a href="" class="text-red h6 text-decoration-underline">Deliver To This
-                                            Address</a>
+                                       </div>
+                                       <div class="row">
+                                        <div class="col-md-4 mt-3">
+                                            <input type="text" class="form-control" placeholder="CVV">
+                                        </div>
+                                        <div class="col-md-4 mt-3">
+                                            <input type="text" class="form-control" placeholder="Expiry MM">
+                                        </div>
+                                        <div class="col-md-4 mt-3">
+                                            <input type="text" class="form-control" placeholder="Expiry YY">
+                                        </div>
+                                       <div class="d-flex">
+                                        <input type="checkbox" class="d-block mt-3"> &nbsp;<small class="text-muted d-block mt-3"> Save Card For Future Use</small>
+                                       </div>
+                                       <div class="col-sm-12 pt-4">
+                                        <button type="submit" class="btn profile-btn-color">Pay <i class="fa fa-inr"></i>145.55</button>
                                     </div>
+                                       </div>
+
                                 </div>
 
 
