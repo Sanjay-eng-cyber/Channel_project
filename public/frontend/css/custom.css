@@ -3179,6 +3179,61 @@ background: #F8FDFF;
     .padding-order-summary{
         padding: 50px 0px 15px 0px;
     }
+    .card-cvv{
+
+    left:90px !important;
+
+}
+}
+
+@media screen and (max-width:991px) {
+
+    .card-cvv{
+
+    left:70px !important;
+
+}
+}
+
+@media screen and (max-width:767px) {
+
+    .card-cvv{
+
+    right:-300px !important;
+
+}
+}
+@media screen and (max-width:486px) {
+
+    .card-cvv{
+
+    right:-250px !important;
+
+}
+}
+@media screen and (max-width:440px) {
+
+    .card-cvv{
+
+    right:-200px !important;
+
+}
+}
+@media screen and (max-width:388px) {
+
+    .card-cvv{
+
+    right:-150px !important;
+
+}
+}
+@media screen and (max-width:340px) {
+
+    .card-cvv{
+
+    right:-100px !important;
+
+}
 }
 .profile-form-border .req-input::after {
     content: "*" !important;
@@ -3294,4 +3349,16 @@ background: #F8FDFF;
 }
 .w-40{
     width:40px;
+}
+.card-cvv
+{
+    position:absolute;
+    left:120px;
+    top:-28px;
+}
+.p-relative{
+    position: relative;
+}
+.text.cvv{
+    color:#E0E0E0 !important;
 }

@@ -3,12 +3,13 @@
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 
-<style>
-    html,body{
-        overflow-x: hidden;
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
 
-    }
-</style>
+        }
+    </style>
 @endsection
 @section('content')
     <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
@@ -130,7 +131,8 @@
                                             <input type="text" name="city" class=" profile-form-input-custome"
                                                 placeholder="City" minlength="3" maxlength="20" required>
                                             @if ($errors->has('city'))
-                                                <div id="city-error" class="text-primary">{{ $errors->first('city') }}</div>
+                                                <div id="city-error" class="text-primary">{{ $errors->first('city') }}
+                                                </div>
                                             @endif
                                         </div>
 
@@ -227,10 +229,14 @@
                                                 <input type="text" class="form-control" placeholder="Card Number">
                                             </div>
                                         </div>
-                                       </div>
-                                       <div class="row">
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-4 mt-3">
-                                            <input type="text" class="form-control" placeholder="CVV">
+                                            <input type="text" class="form-control " placeholder="CVV">
+                                            <div class="p-relative">
+                                                <span class="card-cvv text-cvv"><i
+                                                        class="fa fa-credit-card-alt "></i></span>
+                                            </div>
                                         </div>
                                         <div class="col-md-4 mt-3">
                                             <input type="text" class="form-control" placeholder="Expiry MM">
@@ -238,51 +244,59 @@
                                         <div class="col-md-4 mt-3">
                                             <input type="text" class="form-control" placeholder="Expiry YY">
                                         </div>
-                                       <div class="d-flex">
-                                        <input type="checkbox" class="d-block mt-3"> &nbsp;<small class="text-muted d-block mt-3"> Save Card For Future Use</small>
-                                       </div>
-                                       <div class="col-sm-12 pt-4">
-                                        <button type="submit" class="btn profile-btn-color">Pay <i class="fa fa-inr"></i>145.55</button>
+                                        <div class="d-flex">
+                                            <input type="checkbox" class="d-block mt-3"> &nbsp;<small
+                                                class="text-muted d-block mt-3"> Save Card For Future Use</small>
+                                        </div>
+                                        <div class="col-sm-12 pt-4">
+                                            <button type="submit" class="btn profile-btn-color">Pay <i
+                                                    class="fa fa-inr"></i>145.55</button>
+                                        </div>
                                     </div>
-                                       </div>
 
                                 </div>
                                 <div class="profile-form-border p-4 mb-3">
                                     <div class="row">
                                         <h3 class="main-head">Net Banking</h3>
                                         <div class="col-md-8 mt-3">
-                                           <div class="row justify-content-md-around">
-                                            <div class="col-md-2 col-4 ">
-                                                <img src="{{url('frontend/images/banks/axis.png')}}" alt="" class="w-60">
-                                            </div>
-                                            <div class="col-md-2 col-4">
-                                                <img src="{{url('frontend/images/banks/hdfc.png')}}" alt="" class="w-60">
-                                            </div>
-                                            <div class="col-md-2 col-4">
-                                                <img src="{{url('frontend/images/banks/icici.png')}}" alt="" class="w-60">
-                                            </div>
-                                            <div class="col-md-2 col-4 mt-md-0 mt-3">
-                                                <img src="{{url('frontend/images/banks/sbi.png')}}" alt="" class="w-60" >
-                                            </div>
-                                            <div class="col-md-2 col-4 mt-md-0 mt-3">
-                                                <img src="{{url('frontend/images/banks/kotak.png')}}" alt="" class="w-60">
-                                            </div>
+                                            <div class="row justify-content-md-around">
+                                                <div class="col-md-2 col-4 ">
+                                                    <img src="{{ url('frontend/images/banks/axis.png') }}" alt=""
+                                                        class="w-60">
+                                                </div>
+                                                <div class="col-md-2 col-4">
+                                                    <img src="{{ url('frontend/images/banks/hdfc.png') }}" alt=""
+                                                        class="w-60">
+                                                </div>
+                                                <div class="col-md-2 col-4">
+                                                    <img src="{{ url('frontend/images/banks/icici.png') }}"
+                                                        alt="" class="w-60">
+                                                </div>
+                                                <div class="col-md-2 col-4 mt-md-0 mt-3">
+                                                    <img src="{{ url('frontend/images/banks/sbi.png') }}" alt=""
+                                                        class="w-60">
+                                                </div>
+                                                <div class="col-md-2 col-4 mt-md-0 mt-3">
+                                                    <img src="{{ url('frontend/images/banks/kotak.png') }}"
+                                                        alt="" class="w-60">
+                                                </div>
 
 
 
 
 
-                                           </div>
+                                            </div>
                                         </div>
-                                       </div>
-                                       <div class="row mt-3">
+                                    </div>
+                                    <div class="row mt-3">
                                         <div class="col-md-6 mt-3">
-<select name="" id="" class="form-control" placeholder="Select Bank">
-    <option value="">Select Bank</option>
-</select>
+                                            <select name="" id="" class="form-control"
+                                                placeholder="Select Bank">
+                                                <option value="">Select Bank</option>
+                                            </select>
                                         </div>
 
-                                       </div>
+                                    </div>
 
                                 </div>
 
@@ -291,25 +305,32 @@
                                     <div class="row">
                                         <h3 class="main-head">Wallets</h3>
                                         <div class="col-md-9 mt-3">
-                                           <div class="d-flex profile-form-border p-2">
-                                            <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/paytm.png')}}" alt=""  class="mx-3 w-40"> <span>Paytm Wallet</span>
-                                           </div>
+                                            <div class="d-flex profile-form-border p-2">
+                                                <input type="radio" name="wallets" class="form-check-radio"> <img
+                                                    src="{{ url('frontend/images/banks/paytm.png') }}" alt=""
+                                                    class="mx-3 w-40"> <span>Paytm Wallet</span>
+                                            </div>
                                         </div>
 
                                         <div class="col-md-9 mt-3">
                                             <div class="d-flex profile-form-border p-1">
-                                             <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/ola.png')}}" alt=""  class="mx-md-3 w-40"> <span class="mt-1">Ola Money Postpaid-Wallets </span>
+                                                <input type="radio" name="wallets" class="form-check-radio"> <img
+                                                    src="{{ url('frontend/images/banks/ola.png') }}" alt=""
+                                                    class="mx-md-3 w-40"> <span class="mt-1">Ola Money Postpaid-Wallets
+                                                </span>
                                             </div>
-                                         </div>
+                                        </div>
 
-                                         <div class="col-md-9 mt-3">
+                                        <div class="col-md-9 mt-3">
                                             <div class="d-flex profile-form-border p-1">
-                                             <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/mobi.png')}}" alt=""  class="mx-3 w-40"> <span class="mt-1">Mobikwik</span>
+                                                <input type="radio" name="wallets" class="form-check-radio"> <img
+                                                    src="{{ url('frontend/images/banks/mobi.png') }}" alt=""
+                                                    class="mx-3 w-40"> <span class="mt-1">Mobikwik</span>
                                             </div>
-                                         </div>
+                                        </div>
 
 
-                                       </div>
+                                    </div>
 
 
                                 </div>
@@ -317,34 +338,42 @@
                                     <div class="row">
                                         <h3 class="main-head">UPI</h3>
                                         <div class="col-md-9 mt-3">
-                                           <div class="d-flex profile-form-border p-2">
-                                            <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/upi.png')}}" alt=""  class="mx-3 w-40"> <span>UPI</span>
-                                           </div>
+                                            <div class="d-flex profile-form-border p-2">
+                                                <input type="radio" name="wallets" class="form-check-radio"> <img
+                                                    src="{{ url('frontend/images/banks/upi.png') }}" alt=""
+                                                    class="mx-3 w-40"> <span>UPI</span>
+                                            </div>
                                         </div>
 
                                         <div class="col-md-9 mt-3">
                                             <div class="d-flex profile-form-border p-2">
-                                             <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/g-pay.png')}}" alt=""  class="mx-md-3 w-40"> <span>Google UPI </span>
+                                                <input type="radio" name="wallets" class="form-check-radio"> <img
+                                                    src="{{ url('frontend/images/banks/g-pay.png') }}" alt=""
+                                                    class="mx-md-3 w-40"> <span>Google UPI </span>
                                             </div>
-                                         </div>
+                                        </div>
 
-                                         <div class="col-md-9 mt-3">
+                                        <div class="col-md-9 mt-3">
                                             <div class="d-flex profile-form-border p-2">
-                                             <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/paytm.png')}}" alt=""  class="mx-3 w-40"> <span >Paytm UPI</span>
+                                                <input type="radio" name="wallets" class="form-check-radio"> <img
+                                                    src="{{ url('frontend/images/banks/paytm.png') }}" alt=""
+                                                    class="mx-3 w-40"> <span>Paytm UPI</span>
                                             </div>
-                                         </div>
+                                        </div>
 
 
-                                       </div>
+                                    </div>
 
 
-                                </div>                                   <div class="profile-form-border p-4 mb-3">
+                                </div>
+                                <div class="profile-form-border p-4 mb-3">
                                     <div class="row">
                                         <h3 class="main-head">Cash On Delivery</h3>
                                         <div class="col-md-9 mt-3">
-                                           <div class="d-flex profile-form-border p-2">
-                                            <input type="radio" name="wallets" class="form-check-radio"> <span class="mx-3">Pay On Delivery</span>
-                                           </div>
+                                            <div class="d-flex profile-form-border p-2">
+                                                <input type="radio" name="wallets" class="form-check-radio"> <span
+                                                    class="mx-3">Pay On Delivery</span>
+                                            </div>
                                         </div>
 
 
