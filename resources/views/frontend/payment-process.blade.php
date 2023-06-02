@@ -284,98 +284,71 @@
 
                                 <div class="profile-form-border p-4 mb-3">
                                     <div class="row">
-                                        <h3 class="main-head">Credit Card\Debit Card</h3>
-                                        <div class="col-md-8 mt-3">
-                                            <div class="frm-group">
-                                                <input type="text" class="form-control" placeholder="Name On Card">
+                                        <h3 class="main-head">Wallets</h3>
+                                        <div class="col-md-9 mt-3">
+                                           <div class="d-flex profile-form-border p-2">
+                                            <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/paytm.png')}}" alt=""  class="mx-3 w-40"> <span>Paytm Wallet</span>
+                                           </div>
+                                        </div>
+
+                                        <div class="col-md-9 mt-3">
+                                            <div class="d-flex profile-form-border p-1">
+                                             <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/ola.png')}}" alt=""  class="mx-md-3 w-40"> <span class="mt-1">Ola Money Postpaid-Wallets </span>
                                             </div>
-                                            <div class="frm-group mt-3">
-                                                <input type="text" class="form-control" placeholder="Card Number">
+                                         </div>
+
+                                         <div class="col-md-9 mt-3">
+                                            <div class="d-flex profile-form-border p-1">
+                                             <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/mobi.png')}}" alt=""  class="mx-3 w-40"> <span class="mt-1">Mobikwik</span>
                                             </div>
-                                        </div>
+                                         </div>
+
+
                                        </div>
-                                       <div class="row">
-                                        <div class="col-md-4 mt-3">
-                                            <input type="text" class="form-control" placeholder="CVV">
-                                        </div>
-                                        <div class="col-md-4 mt-3">
-                                            <input type="text" class="form-control" placeholder="Expiry MM">
-                                        </div>
-                                        <div class="col-md-4 mt-3">
-                                            <input type="text" class="form-control" placeholder="Expiry YY">
-                                        </div>
-                                       <div class="d-flex">
-                                        <input type="checkbox" class="d-block mt-3"> &nbsp;<small class="text-muted d-block mt-3"> Save Card For Future Use</small>
-                                       </div>
-                                       <div class="col-sm-12 pt-4">
-                                        <button type="submit" class="btn profile-btn-color">Pay <i class="fa fa-inr"></i>145.55</button>
-                                    </div>
-                                       </div>
+
 
                                 </div>
                                 <div class="profile-form-border p-4 mb-3">
                                     <div class="row">
-                                        <h3 class="main-head">Credit Card\Debit Card</h3>
-                                        <div class="col-md-8 mt-3">
-                                            <div class="frm-group">
-                                                <input type="text" class="form-control" placeholder="Name On Card">
+                                        <h3 class="main-head">UPI</h3>
+                                        <div class="col-md-9 mt-3">
+                                           <div class="d-flex profile-form-border p-2">
+                                            <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/upi.png')}}" alt=""  class="mx-3 w-40"> <span>UPI</span>
+                                           </div>
+                                        </div>
+
+                                        <div class="col-md-9 mt-3">
+                                            <div class="d-flex profile-form-border p-2">
+                                             <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/g-pay.png')}}" alt=""  class="mx-md-3 w-40"> <span>Google UPI </span>
                                             </div>
-                                            <div class="frm-group mt-3">
-                                                <input type="text" class="form-control" placeholder="Card Number">
+                                         </div>
+
+                                         <div class="col-md-9 mt-3">
+                                            <div class="d-flex profile-form-border p-2">
+                                             <input type="radio" name="wallets" class="form-check-radio"> <img src="{{url('frontend/images/banks/paytm.png')}}" alt=""  class="mx-3 w-40"> <span >Paytm UPI</span>
                                             </div>
-                                        </div>
-                                       </div>
-                                       <div class="row">
-                                        <div class="col-md-4 mt-3">
-                                            <input type="text" class="form-control" placeholder="CVV">
-                                        </div>
-                                        <div class="col-md-4 mt-3">
-                                            <input type="text" class="form-control" placeholder="Expiry MM">
-                                        </div>
-                                        <div class="col-md-4 mt-3">
-                                            <input type="text" class="form-control" placeholder="Expiry YY">
-                                        </div>
-                                       <div class="d-flex">
-                                        <input type="checkbox" class="d-block mt-3"> &nbsp;<small class="text-muted d-block mt-3"> Save Card For Future Use</small>
-                                       </div>
-                                       <div class="col-sm-12 pt-4">
-                                        <button type="submit" class="btn profile-btn-color">Pay <i class="fa fa-inr"></i>145.55</button>
-                                    </div>
+                                         </div>
+
+
                                        </div>
 
-                                </div>
-                                <div class="profile-form-border p-4 mb-3">
+
+                                </div>                                   <div class="profile-form-border p-4 mb-3">
                                     <div class="row">
-                                        <h3 class="main-head">Credit Card\Debit Card</h3>
-                                        <div class="col-md-8 mt-3">
-                                            <div class="frm-group">
-                                                <input type="text" class="form-control" placeholder="Name On Card">
-                                            </div>
-                                            <div class="frm-group mt-3">
-                                                <input type="text" class="form-control" placeholder="Card Number">
-                                            </div>
+                                        <h3 class="main-head">Cash On Delivery</h3>
+                                        <div class="col-md-9 mt-3">
+                                           <div class="d-flex profile-form-border p-2">
+                                            <input type="radio" name="wallets" class="form-check-radio"> <span class="mx-3">Pay On Delivery</span>
+                                           </div>
                                         </div>
-                                       </div>
-                                       <div class="row">
-                                        <div class="col-md-4 mt-3">
-                                            <input type="text" class="form-control" placeholder="CVV">
-                                        </div>
-                                        <div class="col-md-4 mt-3">
-                                            <input type="text" class="form-control" placeholder="Expiry MM">
-                                        </div>
-                                        <div class="col-md-4 mt-3">
-                                            <input type="text" class="form-control" placeholder="Expiry YY">
-                                        </div>
-                                       <div class="d-flex">
-                                        <input type="checkbox" class="d-block mt-3"> &nbsp;<small class="text-muted d-block mt-3"> Save Card For Future Use</small>
-                                       </div>
-                                       <div class="col-sm-12 pt-4">
-                                        <button type="submit" class="btn profile-btn-color">Pay <i class="fa fa-inr"></i>145.55</button>
+
+
+
+
                                     </div>
-                                       </div>
+
 
                                 </div>
-
                             </div>
                         </div>
 
