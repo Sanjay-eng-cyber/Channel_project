@@ -3,7 +3,12 @@
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 
+<style>
+    html,body{
+        overflow-x: hidden;
 
+    }
+</style>
 @endsection
 @section('content')
     <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
@@ -21,7 +26,7 @@
     <section style="padding:0px 0px 50px 0px">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-7">
+                <div class="col-md-7" style="text-align: -webkit-center;">
                     <div class="row">
                         <div class="col ">
                             <div class="progress-steps ">
@@ -33,7 +38,7 @@
                                     aria-controls="nils-tab" aria-label="Step 3"></button>
 
                             </div>
-                            <div class="progress-steps d-flex justify-content-center  text-center ">
+                            <div class="progress-steps d-flex justify-content-evenly  text-center ">
                                 <p class="">Log In Details</p>
                                 <p class="mx-xl-5 mx-md-3 mx-sm-3">Delivery Address</p>
                                 <p>Payment Method</p>
@@ -43,16 +48,16 @@
 
 
                     <section id="progress-content" class="hide ">
-                        <div id="div1" class="targetDiv profile-form-border col-10 p-md-5 p-2 mx-0">
+                        <div id="div1" class="targetDiv profile-form-border col-10 pt-md-3 p-2 mx-0 ">
                             <h4 class="main-head">Select A Delivery Address</h4>
 
-                            <div class="col-lg-8 ">
+                            <div class="col-lg-8 mt-3">
 
 
                                 <div class="profile-form-border p-4 mb-3">
-                                    <div class="row">
+                                    <div class="row text-md-start">
 
-                                        <div class=" py-2">
+                                        <div class=" py-2 ">
                                             <ul class="d-flex gap-5 list-unstyled justify-content-start">
 
                                                 <li>
