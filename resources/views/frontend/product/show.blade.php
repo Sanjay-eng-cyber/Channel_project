@@ -370,12 +370,23 @@
                                     @csrf
                                     <div class="d-flex justify-content-between flex-column flex-sm-row gap-1">
                                         <div>Give Your Rating</div>
-                                        <div class="rating d-flex flex-row justify-contend-end gap-2 text-green">
-                                            <span class="far fa-star review-star-color" data-value="1"></span>
-                                            <span class="far fa-star review-star-color" data-value="2"></span>
-                                            <span class="far fa-star review-star-color" data-value="3"></span>
-                                            <span class="far fa-star review-star-color" data-value="4"></span>
-                                            <span class="far fa-star review-star-color" data-value="5"></span>
+
+                                        <div class="rating-input">
+                                            <input type="radio" id="star5" name="rating" value="5" />
+                                            <label class="star" for="star5" title="Awesome"
+                                                aria-hidden="true"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" />
+                                            <label class="star" for="star4" title="Great"
+                                                aria-hidden="true"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" />
+                                            <label class="star" for="star3" title="Very good"
+                                                aria-hidden="true"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" />
+                                            <label class="star" for="star2" title="Good"
+                                                aria-hidden="true"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" />
+                                            <label class="star" for="star1" title="Bad"
+                                                aria-hidden="true"></label>
                                         </div>
                                     </div>
 
@@ -424,7 +435,8 @@
                     <div class="col-lg-12 col-xl-6 or-secondpage-scard">
                         <div class="p-4 or-secondpage-scard">
 
-                            <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">Recommended based on your purchase</h5>
+                            <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">Recommended based on your
+                                purchase</h5>
                             <div class="row pt-3 pb-3 or-secondpage-scard-card">
                                 <div class="col-sm-4 or-secondpage-scard-card-img" style="">
                                     <img src="{{ asset('frontend/images/products/skin/sk1.png') }}" alt=""

@@ -3362,3 +3362,39 @@ background: #F8FDFF;
 .text.cvv{
     color:#E0E0E0 !important;
 }
+
+.rating-input {
+    border: none;
+    float: left;
+  }
+
+  .rating-input > label {
+    color: #90A0A3;
+    float: right;
+    transition: color .4s;
+  }
+
+  .rating-input > label:before {
+    margin: 0;
+    font-size: 1.5em;
+    font-family: FontAwesome;
+    content: "\f005";
+    display: inline-block;
+  }
+
+  .rating-input > input {
+    display: none;
+  }
+
+  .rating-input > input:checked ~ label,
+  .rating-input:not(:checked) > label:hover,
+  .rating-input:not(:checked) > label:hover ~ label {
+      color: #1eba11;
+    }
+
+  .rating-input > input:checked + label:hover,
+  .rating-input > input:checked ~ label:hover,
+  .rating-input > label:hover ~ input:checked ~ label,
+  .rating-input > input:checked ~ label:hover ~ label {
+      color: #FECE31;
+  }
