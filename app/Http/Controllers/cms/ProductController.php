@@ -110,6 +110,7 @@ class ProductController extends Controller
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'required|dimensions:width=300,height=300|mimes:png,jpg,jpeg|max:1024',
             'short_descriptions' => 'required|min:3|max:120',
+            'connection_no' => 'required|min:3|max:20',
             // 'attribute_id' => ['nullable',Rule::in($attribute)],
             // 'product_attribute_value_id' => ['nullable',Rule::in($productAttributeValues)],
         ]);
@@ -131,6 +132,7 @@ class ProductController extends Controller
         $product->slug = Str::slug($request->name);
         $product->category_id = $request->category_id;
         $product->brand_id = $request->brand_id;
+        $product->connection_no = $request->connection_no;
         $product->sub_category_id = $request->sub_category_id;
         $product->mrp = $request->mrp;
         $product->final_price = $request->final_price;
@@ -203,6 +205,8 @@ class ProductController extends Controller
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'nullable|dimensions:width=300,height=300|mimes:png,jpg,jpeg|max:1024',
             'short_descriptions' => 'required|min:3|max:120',
+            'connection_no' => 'required|min:3|max:20',
+
         ]);
 
         $fileWithExtension = $request->file('thumbnail_image');
@@ -226,6 +230,7 @@ class ProductController extends Controller
         $product->brand_id = $request->brand_id;
         $product->sub_category_id = $request->sub_category_id;
         $product->mrp = $request->mrp;
+        $product->connection_no = $request->connection_no;
         $product->final_price = $request->final_price;
         $product->stock = $request->stock;
         $product->sku = $request->sku;
