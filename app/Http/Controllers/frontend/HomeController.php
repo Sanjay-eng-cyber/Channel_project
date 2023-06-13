@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Models\Slider;
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,9 @@ class HomeController extends Controller
         $home_decor = Category::where('slug', 'home-decor')->first();
         $homeDecorProducts = $home_decor ? $home_decor->products()->limit(16)->get() : [];
         $latestHomeDecorProducts = $home_decor ? $home_decor->products()->latest()->limit(16)->get() : [];
+
+        $cProduct = Product::where('connection_no', 457820)->get();
+       // dd($cProduct);
 
         // dd($latestSkinProducts, $latestFragrancesProducts, $latestHomeDecorProducts);
 
