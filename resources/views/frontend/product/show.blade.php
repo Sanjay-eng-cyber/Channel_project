@@ -194,7 +194,7 @@
                                             <div class="d-flex">
                                                 <div class="rating-total d-flex align-items-center me-3">
                                                     <h6 class="h2 text-muted font-body mb-0">
-                                                        4.3
+                                                    {{$reviewRatingAvg}}
                                                     </h6>
                                                     <i class="fa-solid fa-star text-green"></i>
                                                 </div>
