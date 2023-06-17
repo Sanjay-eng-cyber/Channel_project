@@ -122,9 +122,10 @@
                                             </a>
                                         @endif
 
-                                        <button class="btn btn-primary btn-black ">
+                                        <a class="btn btn-primary btn-black"
+                                            href="{{ route('frontend.p.checkout', $product->slug) }}">
                                             Buy Now
-                                        </button>
+                                        </a>
 
                                         @if ($product->isInWishlist())
                                             <button type="button" class="btn mt-sm-0 mt-3 p-show add-to-wish active"
@@ -434,7 +435,7 @@
                 <div class="row pb-4" style="padding-top:2px;">
                     <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">Recommended based on your
                         purchase</h5>
-                        @forelse ($cProducts as $cp)
+                    @forelse ($cProducts as $cp)
                         <div class="col-lg-12 col-xl-6 or-secondpage-scard">
                             <div class="p-4 or-secondpage-scard">
                                 <div class="row pt-3 pb-3 or-secondpage-scard-card">
@@ -461,9 +462,9 @@
 
                             </div>
                         </div>
-                        @empty
+                    @empty
                         <p class="text-center">No Recommended Products</p>
-                        @endforelse
+                    @endforelse
                 </div>
                 <div class="d-flex justify-content-center mt-4">
                     {{ $cProducts->onEachSide(1)->links('pagination::bootstrap-4') }}

@@ -172,6 +172,7 @@ return [
         /*
          * Package Service Providers...
          */
+        \App\Providers\RazorpayServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -28,22 +28,7 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::post('send-otp', 'App\Http\Controllers\frontend\LoginController@sendOtp')->name('frontend.send-otp');
     Route::post('verify-otp', 'App\Http\Controllers\frontend\LoginController@verifyOtp')->name('frontend.verify-otp');
 
-    Route::group(['middleware' => 'auth:web'], function () {
 
-        // Route::get('/profile', function () {
-        //     return view('frontend.profile');
-        // })->name('frontend.profile');
-        Route::get('/profile', 'App\Http\Controllers\frontend\ProfileController@index')->name('frontend.profile');
-        Route::post('/profile/update', 'App\Http\Controllers\frontend\ProfileController@update')->name('frontend.profile.update');
-        Route::post('/address/update', 'App\Http\Controllers\frontend\AddressController@update')->name('frontend.address.update');
-        Route::get('/address/delete/{id}', 'App\Http\Controllers\frontend\AddressController@destroy')->name('frontend.address.delete');
-
-        Route::get('/wishlist', 'App\Http\Controllers\frontend\WishlistController@index')->name('frontend.wishlist.index');
-
-        Route::post('/review/store/{product_slug}', 'App\Http\Controllers\frontend\ProductController@storeReview')->name('frontend.review.store');
-
-        Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
-    });
 
     Route::get('/order', function () {
         return view('frontend.order');
@@ -181,8 +166,28 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::post('/p/addToCart', 'App\Http\Controllers\frontend\CartController@addToCart')->name('frontend.p.addToCart');
     Route::post('/p/addToWishlist', 'App\Http\Controllers\frontend\WishlistController@addToWishlist')->name('frontend.p.addToWishlist');
 
+
+    Route::group(['middleware' => 'auth:web'], function () {
+
+        // Route::get('/profile', function () {
+        //     return view('frontend.profile');
+        // })->name('frontend.profile');
+        Route::get('/profile', 'App\Http\Controllers\frontend\ProfileController@index')->name('frontend.profile');
+        Route::post('/profile/update', 'App\Http\Controllers\frontend\ProfileController@update')->name('frontend.profile.update');
+        Route::post('/address/update', 'App\Http\Controllers\frontend\AddressController@update')->name('frontend.address.update');
+        Route::get('/address/delete/{id}', 'App\Http\Controllers\frontend\AddressController@destroy')->name('frontend.address.delete');
+
+        Route::get('/wishlist', 'App\Http\Controllers\frontend\WishlistController@index')->name('frontend.wishlist.index');
+        Route::post('/review/store/{product_slug}', 'App\Http\Controllers\frontend\ProductController@storeReview')->name('frontend.review.store');
+
+        Route::get('/checkout/p/{product_slug}', 'App\Http\Controllers\frontend\CheckoutController@index')->name('frontend.p.checkout');
+
+
+        Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
+    });
+
+
     Route::get('/cart', 'App\Http\Controllers\frontend\CartController@index')->name('frontend.cart.index');
     Route::get('/cart/delete/{id}', 'App\Http\Controllers\frontend\CartController@delete')->name('frontend.cart.delete');
     Route::get('/wishlist/delete/{id}', 'App\Http\Controllers\frontend\WishlistController@delete')->name('frontend.wishlist.delete');
-
 });
