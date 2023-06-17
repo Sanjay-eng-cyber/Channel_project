@@ -31,8 +31,9 @@ class ProductController extends Controller
         $product = Product::where('slug', $productSlug)->firstOrFail();
         $reviews = $product->review()->latest()->paginate(5);
         $cProducts = Product::Where('id', '!=', $product->id)->where('connection_no', $product->connection_no)->paginate(5);
-        //dd($cProducts);
-        return view('frontend.product.show', compact('product', 'reviews','cProducts'));
+        $reviewRatingAvg =sprintf('%0.1f', $reviews->avg('rating')) ;
+      // dd($reviewRatingAvg);
+        return view('frontend.product.show', compact('product', 'reviews', 'cProducts','reviewRatingAvg'));
     }
 
     public function storeReview(Request $request, $product_slug)
