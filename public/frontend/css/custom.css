@@ -3372,6 +3372,20 @@ background: #F8FDFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 1em;
 }
+.user-address-box-holder .user-address-box .name::after{
+    content: "select";
+    font-size: 1em;
+    background-color: #282828;
+    color: white;
+    padding: .1em 0.5em ;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3em;
+    transform: translateX(.5em);
+}
+
+
 .user-address-box-holder input:checked ~ .user-address-box{
     outline: 2px solid #EC268F;
 }
@@ -3382,11 +3396,12 @@ background: #F8FDFF;
     background-color: #1EBA11;
     color: white;
     position: absolute;
-    top: 0;
-    right: -2.3ch;
+    top: 50%;
+    right: 0;
     padding: 0;
     height: 2em;
     width: 2em;
+    transform: translateX(1em) translateY(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
