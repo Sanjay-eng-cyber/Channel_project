@@ -390,6 +390,10 @@
                                             <input type="radio" id="star1" name="rating" value="1" />
                                             <label class="star" for="star1" title="Bad"
                                                 aria-hidden="true"></label>
+                                            @if ($errors->has('rating'))
+                                                <div class="text-danger" role="alert">{{ $errors->first('rating') }}
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -397,8 +401,16 @@
                                         <input type="text"
                                             class="form-control my-2 review-sub-headline review-input-bg"
                                             placeholder="Enter Title" name="title" required>
+                                        @if ($errors->has('title'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('title') }}
+                                            </div>
+                                        @endif
                                         <textarea name="body" id="body" cols="10" rows="3"
-                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review">{{ old('body') }}</textarea>
+                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review" required>{{ old('body') }}</textarea>
+                                        @if ($errors->has('body'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('body') }}
+                                            </div>
+                                        @endif
                                     </div>
                                     <div class="text-end">
                                         <button type="submit" class="btn btn-pink">Post Your Review</button>
