@@ -194,7 +194,7 @@
                                             <div class="d-flex">
                                                 <div class="rating-total d-flex align-items-center me-3">
                                                     <h6 class="h2 text-muted font-body mb-0">
-                                                    {{$reviewRatingAvg}}
+                                                        {{ $reviewRatingAvg }}
                                                     </h6>
                                                     <i class="fa-solid fa-star text-green"></i>
                                                 </div>
@@ -387,6 +387,10 @@
                                             <input type="radio" id="star1" name="rating" value="1" />
                                             <label class="star" for="star1" title="Bad"
                                                 aria-hidden="true"></label>
+                                            @if ($errors->has('rating'))
+                                                <div class="text-danger" role="alert">{{ $errors->first('rating') }}
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -394,8 +398,16 @@
                                         <input type="text"
                                             class="form-control my-2 review-sub-headline review-input-bg"
                                             placeholder="Enter Title" name="title" required>
+                                        @if ($errors->has('title'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('title') }}
+                                            </div>
+                                        @endif
                                         <textarea name="body" id="body" cols="10" rows="3"
-                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review">{{ old('body') }}</textarea>
+                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review" required>{{ old('body') }}</textarea>
+                                        @if ($errors->has('body'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('body') }}
+                                            </div>
+                                        @endif
                                     </div>
                                     <div class="text-end">
                                         <button type="submit" class="btn btn-pink">Post Your Review</button>
@@ -434,7 +446,7 @@
                 <div class="row pb-4" style="padding-top:2px;">
                     <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">Recommended based on your
                         purchase</h5>
-                        @forelse ($cProducts as $cp)
+                    @forelse ($cProducts as $cp)
                         <div class="col-lg-12 col-xl-6 or-secondpage-scard">
                             <div class="p-4 or-secondpage-scard">
                                 <div class="row pt-3 pb-3 or-secondpage-scard-card">
@@ -461,9 +473,9 @@
 
                             </div>
                         </div>
-                        @empty
+                    @empty
                         <p class="text-center">No Recommended Products</p>
-                        @endforelse
+                    @endforelse
                 </div>
                 <div class="d-flex justify-content-center mt-4">
                     {{ $cProducts->onEachSide(1)->links('pagination::bootstrap-4') }}
