@@ -41,7 +41,7 @@ class Product extends Model
         return $this->hasMany(ProductAttribute::class);
     }
 
-    public function review()
+    public function reviews()
     {
         return $this->hasMany(Review::class);
     }

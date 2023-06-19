@@ -309,21 +309,21 @@ class ProductController extends Controller
     public function reviewIndex(Request $request, $id)
     {
         $products = Product::findOrFail($id);
-        $reviews = $products->review()->latest()->paginate(10);
+        $reviews = $products->reviews()->latest()->paginate(10);
         return view('backend.review.index', compact('reviews', 'products'));
     }
 
     public function reviewShow(Request $request, $product_id, $review_id)
     {
         $products = Product::findOrFail($product_id);
-        $reviews = $products->review()->findOrFail($review_id);
+        $reviews = $products->reviews()->findOrFail($review_id);
         return view('backend.review.show', compact('reviews', 'products'));
     }
 
     public function reviewEdit($product_id, $review_id)
     {
         $products = Product::findOrFail($product_id);
-        $reviews = $products->review()->findOrFail($review_id);
+        $reviews = $products->reviews()->findOrFail($review_id);
         // dd($medias);
         return view('backend.review.edit', compact('products', 'reviews'));
     }
@@ -331,7 +331,7 @@ class ProductController extends Controller
     public function reviewUpdate(Request $request, $product_id, $review_id)
     {
         $products = Product::findOrFail($product_id);
-        $reviews = $products->review()->findOrFail($review_id);
+        $reviews = $products->reviews()->findOrFail($review_id);
         $request->validate([
             'body' => 'required',
             'rating' => 'required|min:5|max:120',
@@ -345,7 +345,7 @@ class ProductController extends Controller
     public function reviewDestroy($product_id, $review_id)
     {
         $products = Product::findOrFail($product_id);
-        $reviews = $products->review()->findOrFail($review_id);
+        $reviews = $products->reviews()->findOrFail($review_id);
         if ($reviews->delete()) {
             return redirect()->route('backend.product.review', $product_id)->with(['alert-type' => 'success', 'message' => 'Review Deleted Successfully']);
         }

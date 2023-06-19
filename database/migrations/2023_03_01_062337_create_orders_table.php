@@ -20,7 +20,15 @@ class CreateOrdersTable extends Migration
             $table->decimal('sub_total');
             $table->float('discount_amount')->nullable();
             $table->decimal('total_amount');
-            $table->enum('status', ['initial','completed','failed']);
+            $table->enum('status', ['initial', 'completed', 'failed']);
+            $table->foreignId('user_address_id')->nullable()->constrained()->onDelete('cascade');
+            $table->string('name')->nullable();
+            $table->longText('street_address')->nullable();
+            $table->longText('landmark')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('country')->nullable();
+            $table->string('postal_code')->nullable();
             $table->timestamps();
         });
     }

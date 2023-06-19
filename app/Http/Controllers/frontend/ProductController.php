@@ -29,7 +29,7 @@ class ProductController extends Controller
     public function show($productSlug)
     {
         $product = Product::where('slug', $productSlug)->firstOrFail();
-        $reviews = $product->review()->latest()->paginate(5);
+        $reviews = $product->reviews()->latest()->paginate(5);
         $cProducts = Product::Where('id', '!=', $product->id)->where('connection_no', $product->connection_no)->paginate(5);
         $reviewRatingAvg =  number_format($reviews->avg('rating'), 2);
         //dd($reviewRatingAvg);
