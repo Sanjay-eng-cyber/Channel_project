@@ -41,34 +41,37 @@
                             Select A Delivery Address
                         </h3>
                         <div class="row my-3">
-                            <div class="col-md-6">
+                            <div class="col-12">
+                                <input type="radio" name="address" id="user-address-1" class="d-none">
+                                <label for="user-address-1">
+                                    <div class="border-1 border rounded-1 gray-border p-2">
 
-                                <div class="border-1 border rounded-1 gray-border p-2">
+                                        <div class="address-header">
+                                            <span class="name">
+                                                Home
+                                                <i class="fas fa-check selected"></i>
+                                            </span>
 
-                                    <div class="address-header">
-                                        <span class="name">
-                                            Home
-                                            <i class="fas fa-check selected"></i>
-                                        </span>
+                                            <button class="delete-address">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </div>
 
-                                        <button class="delete-address">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button>
+                                        <h6 class="h6 font-body text-capitalize">
+                                            nishchay luthra
+                                        </h6>
+                                        <p class="tex-capitalize">
+                                            Rajat tower, near Jaswant inox, Kamptee Rd, Near Indora Chowk, Nagpur,
+                                            Maharashtra
+                                            440017
+                                        </p>
+                                        <a href="" class="btn btn-link text-pink px-0 text-capitalize">
+                                            <strong>
+                                                deliver to this address
+                                            </strong>
+                                        </a>
                                     </div>
-
-                                    <h6 class="h6 font-body text-capitalize">
-                                        nishchay luthra
-                                    </h6>
-                                    <p class="tex-capitalize">
-                                        Rajat tower, near Jaswant inox, Kamptee Rd, Near Indora Chowk, Nagpur, Maharashtra
-                                        440017
-                                    </p>
-                                    <a href="" class="btn btn-link text-pink px-0 text-capitalize">
-                                        <strong>
-                                            deliver to this address
-                                        </strong>
-                                    </a>
-                                </div>
+                                </label>
 
                             </div>
                         </div>
@@ -77,7 +80,7 @@
                         </button>
                     </div>
                     {{-- form --}}
-                        <div class="py-3"></div>
+                    {{-- <div class="py-3"></div>
                         <div class="p-3 profile-form-border">
                             <form class="">
 
@@ -152,9 +155,9 @@
                                 </div>
 
                             </form>
-                        </div>
+                        </div> --}}
                     {{-- continue to login --}}
-                    <div class="py-3"></div>
+                    {{-- <div class="py-3"></div>
                     <div class="cc-border p-3 checkout-login-ctn">
                         <h5  class="h5 main-head text-red">Log In To Continue</h5>
                         <div class="py-3 checkout-login-ccolor">Signed As nishchayluthra@gmail.com</div>
@@ -164,10 +167,10 @@
                             <div class="checkout-login-ccolor">or</div>
                             <a href="" class="checkout-login-ccolor ">continue with checkout</a>
                         </div>
-                    </div>
+                    </div> --}}
 
                     {{-- credit card\debit card --}}
-                    <div class="py-3"></div>
+                    {{-- <div class="py-3"></div>
                     <div class="cc-border p-3">
                         <h5  class="h5 main-head">Credit Card\Debit Card</h5>
                         <form action="" method="post" class="py-4 __checkout-card-info">
@@ -213,14 +216,14 @@
                             <button type="submit" class="btn btn-pink px-4">Pay ₹145.55</button>
                         </form>
 
-                    </div>
+                    </div> --}}
 
                     {{-- net banking --}}
-                    <div class="py-3"></div>
+                    {{-- <div class="py-3"></div>
                     <div class="cc-border p-3">
                         <h5  class="h5 main-head">Net Banking</h5>
                         <div class="d-flex gap-3 my-3">
-                                @for ($i=0; $i<=4;$i++)
+                                @for ($i = 0; $i <= 4; $i++)
 
 
                                     <div class="">
@@ -252,16 +255,16 @@
                             </div>
                           </div>
 
-                    </div>
+                    </div> --}}
 
                     {{-- wallet --}}
-                    <div class="py-3"></div>
+                    {{-- <div class="py-3"></div>
                     <div class="cc-border p-3">
                         <h5  class="h5 main-head">Wallets</h5>
                             <div class="row">
                                 <div class="col-sm-8">
                                         <form action="" method="post">
-                                            @for ($i=0; $i<=2;$i++)
+                                            @for ($i = 0; $i <= 2; $i++)
                                             <div class="form-group cc-border py-2 px-3 my-2 ck-wallet">
 
                                                     <div class="form-check d-flex gap-4 ck-wallet-grp">
@@ -277,10 +280,10 @@
                                 </div>
 
                             </div>
-                    </div>
+                    </div> --}}
 
-                {{-- cash on delevery --}}
-                <div class="py-3"></div>
+                    {{-- cash on delevery --}}
+                    {{-- <div class="py-3"></div>
                 <div class="cc-border p-3">
                     <h5  class="h5 main-head">Cash On Delivery</h5>
                         <div class="row">
@@ -301,13 +304,13 @@
                             </div>
 
                         </div>
-                </div>
+                </div> --}}
 
 
 
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <div class="d-flex justify-content-between align-items-center">
+                    {{-- <div class="d-flex justify-content-between align-items-center">
                         <span class="h5 m-0 p-0 font-body text-capitalize">
                             log in details
                         </span>
@@ -321,7 +324,7 @@
                     <div class="text-muted">
                         nishchayluthra@gmail.com
                     </div>
-                    <hr class="mt-1">
+                    <hr class="mt-1"> --}}
                     <span class="h5  font-body text-capitalize">
                         estimated delivery
                     </span>
