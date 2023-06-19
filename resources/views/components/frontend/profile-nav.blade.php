@@ -54,6 +54,18 @@
                 </span>
                 My Wishlist
             </a>
+            <a href="{{ route('frontend.cart.index') }}" class="btn {{URL::current()==route('frontend.cart.index')? 'active':''}}">
+                <span class="menu-icon">
+                    <svg width="65" height="65" viewBox="0 0 48 48" fill="#00000063"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="{{URL::current()==route('frontend.cart.index')? 'pink-icon-clr':''}}"
+                            d="M34.283 26.3332C36.033 26.3332 37.573 25.3765 38.3663 23.9298L46.7197 8.7865C47.583 7.2465 46.463 5.33317 44.6897 5.33317H10.1563L7.96301 0.666504H0.333008V5.33317H4.99967L13.3997 23.0432L10.2497 28.7365C8.54634 31.8632 10.7863 35.6665 14.333 35.6665H42.333V30.9998H14.333L16.8997 26.3332H34.283ZM12.373 9.99984H40.723L34.283 21.6665H17.903L12.373 9.99984ZM14.333 37.9998C11.7663 37.9998 9.68968 40.0998 9.68968 42.6665C9.68968 45.2332 11.7663 47.3332 14.333 47.3332C16.8997 47.3332 18.9997 45.2332 18.9997 42.6665C18.9997 40.0998 16.8997 37.9998 14.333 37.9998ZM37.6663 37.9998C35.0997 37.9998 33.023 40.0998 33.023 42.6665C33.023 45.2332 35.0997 47.3332 37.6663 47.3332C40.233 47.3332 42.333 45.2332 42.333 42.6665C42.333 40.0998 40.233 37.9998 37.6663 37.9998Z"
+                            fill="black" fill-opacity="0.40" />
+                    </svg>
+
+                </span>
+                Cart
+            </a>
             <a href="{{url('/order')}}" class="btn {{URL::current()==url('/order')?'active':''}}">
                 <span class="menu-icon">
                     <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
@@ -88,7 +100,7 @@
                 </span>
                 My Orders
             </a>
-            <a href="{{url('/review-index')}}" class="btn {{URL::current()==url('/review-index')?'active':''}}">
+            {{-- <a href="{{url('/review-index')}}" class="btn {{URL::current()==url('/review-index')?'active':''}}">
                 <span class="menu-icon">
                     <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
@@ -98,8 +110,8 @@
 
                 </span>
                 Reviews
-            </a>
-            <a href="{{url('/payment')}}" class="btn {{URL::current()==url('/payment')?'active':''}}">
+            </a> --}}
+            {{-- <a href="{{url('/payment')}}" class="btn {{URL::current()==url('/payment')?'active':''}}">
                 <span class="menu-icon">
                     <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
@@ -109,20 +121,7 @@
 
                 </span>
                 Payment
-            </a>
-
-            <a href="{{ route('frontend.cart.index') }}" class="btn {{URL::current()==route('frontend.cart.index')? 'active':''}}">
-                <span class="menu-icon">
-                    <svg width="65" height="65" viewBox="0 0 48 48" fill="#00000063"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path class="{{URL::current()==route('frontend.cart.index')? 'pink-icon-clr':''}}"
-                            d="M34.283 26.3332C36.033 26.3332 37.573 25.3765 38.3663 23.9298L46.7197 8.7865C47.583 7.2465 46.463 5.33317 44.6897 5.33317H10.1563L7.96301 0.666504H0.333008V5.33317H4.99967L13.3997 23.0432L10.2497 28.7365C8.54634 31.8632 10.7863 35.6665 14.333 35.6665H42.333V30.9998H14.333L16.8997 26.3332H34.283ZM12.373 9.99984H40.723L34.283 21.6665H17.903L12.373 9.99984ZM14.333 37.9998C11.7663 37.9998 9.68968 40.0998 9.68968 42.6665C9.68968 45.2332 11.7663 47.3332 14.333 47.3332C16.8997 47.3332 18.9997 45.2332 18.9997 42.6665C18.9997 40.0998 16.8997 37.9998 14.333 37.9998ZM37.6663 37.9998C35.0997 37.9998 33.023 40.0998 33.023 42.6665C33.023 45.2332 35.0997 47.3332 37.6663 47.3332C40.233 47.3332 42.333 45.2332 42.333 42.6665C42.333 40.0998 40.233 37.9998 37.6663 37.9998Z"
-                            fill="black" fill-opacity="0.40" />
-                    </svg>
-
-                </span>
-                Cart
-            </a>
+            </a> --}}
 
         </div>
     </div>

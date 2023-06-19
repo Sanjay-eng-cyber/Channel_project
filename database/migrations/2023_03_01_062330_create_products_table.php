@@ -28,7 +28,7 @@ class CreateProductsTable extends Migration
             $table->float('final_price');
             $table->bigInteger('stock');
             $table->string('sku')->unique()->nullable();
-            $table->integer('rating')->nullable();
+            $table->float('rating')->nullable();
             $table->timestamps();
         });
     }
