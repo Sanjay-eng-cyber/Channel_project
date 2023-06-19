@@ -41,27 +41,31 @@
                             Select A Delivery Address
                         </h3>
                         <div class="row my-3">
-                            @for ($i = 1; $i <= 3; $i++)
+
+                            @forelse ($userAddresses as $address)
                                 <div class="col-12 user-address-box-holder">
-                                    <input type="radio" name="address" value="user-address-{{ $i }}" id="user-address-{{ $i }}" class="d-none">
-                                    <label for="user-address-{{ $i }}" class="user-address-box p-2">
+                                    <input type="radio" name="address" value="{{ $address->id }}"
+                                        id="user-address-{{ $address->id }}" class="d-none">
+                                    <label for="user-address-{{ $address->id }}" class="user-address-box w-100 p-2">
                                         <div class="address-header">
                                             <span class="name">
-                                                Home
+                                                {{ ucfirst($address->type) }}
                                             </span>
                                         </div>
-
                                         <h6 class="h6 font-body text-capitalize">
-                                            nishchay luthra
+                                            {{ $address->name }}
                                         </h6>
                                         <p class="tex-capitalize">
-                                            Rajat tower, near Jaswant inox, Kamptee Rd, Near Indora Chowk, Nagpur,
-                                            Maharashtra
-                                            440017
+                                            {{ $address->street_address . ', ' . $address->landmark }}
+                                            <br>
+                                            {{ $address->city . ', ' . $address->state }}
+                                            <br>
+                                            {{ $address->country . ', ' . $address->postal_code }}
                                         </p>
                                     </label>
                                 </div>
-                            @endfor
+                            @empty
+                            @endforelse
 
                         </div>
                         <button class="btn btn-pink">

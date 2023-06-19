@@ -32,8 +32,9 @@ class CheckoutController extends Controller
             // dd($this->calculated($product->final_price));
             // $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $products);
             // dd($order);
+            $userAddresses = auth()->user()->userAddresses()->get();
 
-            return view('frontend.checkout', compact('product', 'gst', 'subTotal', 'grandTotal', 'discount'));
+            return view('frontend.checkout', compact('userAddresses', 'product', 'gst', 'subTotal', 'grandTotal', 'discount'));
         }
         abort(404);
     }
