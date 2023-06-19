@@ -41,20 +41,14 @@
                             Select A Delivery Address
                         </h3>
                         <div class="row my-3">
-                            <div class="col-12">
-                                <input type="radio" name="address" id="user-address-1" class="d-none">
-                                <label for="user-address-1">
-                                    <div class="border-1 border rounded-1 gray-border p-2">
-
+                            @for ($i = 1; $i <= 3; $i++)
+                                <div class="col-12 user-address-box-holder">
+                                    <input type="radio" name="address" value="user-address-{{ $i }}" id="user-address-{{ $i }}" class="d-none">
+                                    <label for="user-address-{{ $i }}" class="user-address-box p-2">
                                         <div class="address-header">
                                             <span class="name">
                                                 Home
-                                                <i class="fas fa-check selected"></i>
                                             </span>
-
-                                            <button class="delete-address">
-                                                <i class="far fa-trash-alt"></i>
-                                            </button>
                                         </div>
 
                                         <h6 class="h6 font-body text-capitalize">
@@ -65,15 +59,10 @@
                                             Maharashtra
                                             440017
                                         </p>
-                                        <a href="" class="btn btn-link text-pink px-0 text-capitalize">
-                                            <strong>
-                                                deliver to this address
-                                            </strong>
-                                        </a>
-                                    </div>
-                                </label>
+                                    </label>
+                                </div>
+                            @endfor
 
-                            </div>
                         </div>
                         <button class="btn btn-pink">
                             +Add Address

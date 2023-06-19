@@ -3363,6 +3363,37 @@ background: #F8FDFF;
     color:#E0E0E0 !important;
 }
 
+.user-address-box{
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1em;
+}
+.user-address-box-holder input:checked ~ .user-address-box{
+    outline: 2px solid #EC268F;
+}
+.user-address-box-holder input:checked ~ .user-address-box .name::after{
+    content: "\f00c";
+    font-family: FontAwesome;
+    font-size: 0.7em;
+    background-color: #1EBA11;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: -2.3ch;
+    padding: 0;
+    height: 2em;
+    width: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3em;
+
+}
+
 .rating-input {
     border: none;
     float: left;

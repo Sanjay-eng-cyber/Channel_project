@@ -30,7 +30,7 @@ class CheckoutController extends Controller
             [$subTotal, $discount, $grandTotal, $gst] = $this->calculated($productsTotalAmount);
             // dd($api);
             // dd($this->calculated($product->final_price));
-            $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $products);
+            // $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $products);
             // dd($order);
 
             return view('frontend.checkout', compact('product', 'gst', 'subTotal', 'grandTotal', 'discount'));
