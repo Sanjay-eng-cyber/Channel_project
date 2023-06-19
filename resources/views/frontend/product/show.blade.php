@@ -122,9 +122,10 @@
                                             </a>
                                         @endif
 
-                                        <button class="btn btn-primary btn-black ">
+                                        <a class="btn btn-primary btn-black"
+                                            href="{{ route('frontend.p.checkout', $product->slug) }}">
                                             Buy Now
-                                        </button>
+                                        </a>
 
                                         @if ($product->isInWishlist())
                                             <button type="button" class="btn mt-sm-0 mt-3 p-show add-to-wish active"

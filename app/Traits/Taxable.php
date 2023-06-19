@@ -23,19 +23,18 @@ trait Taxable {
     {
         // $gst = gst($amount);
         // $subTotal = $amount - $gst['total'];
-        $promoDiscount = session()->get('discount') ?? 0.0;
-        $totalDiscount = $promoDiscount;
-        $subTotal = $amount - $totalDiscount;
-        $gst = gst($subTotal);
-        $grandTotal = $subTotal;
-        return array($subTotal, $promoDiscount, $grandTotal, $gst);
+        $totalDiscount = session()->get('discount') ?? 0.0;
+        $grandTotal = $amount - $totalDiscount;
+        $gst = gst($grandTotal);
+        $subTotal = $grandTotal - $gst['total'];
+        return array($subTotal, $totalDiscount, $grandTotal, $gst);
     }
 
     protected static function extracted($amount, $disc = 0): array
     {
         $gst = gst($amount);
-        $baseAmount = $amount - $gst['total'];
-        $taxable = $amount;
+        $taxable = $amount - $gst['total'];
+        $baseAmount = $amount;
 
         // if($disc>0){
         //     $baseAmount=$amount-$disc;
