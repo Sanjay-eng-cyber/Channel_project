@@ -193,7 +193,7 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::get('/address/delete/{id}', 'App\Http\Controllers\frontend\AddressController@destroy')->name('frontend.address.delete');
 
         Route::get('/wishlist', 'App\Http\Controllers\frontend\WishlistController@index')->name('frontend.wishlist.index');
-        Route::post('/review/store/{product_slug}', 'App\Http\Controllers\frontend\ProductController@storeReview')->name('frontend.review.store');
+        Route::post('/review/store/{product_slug}', 'App\Http\Controllers\frontend\RewiewController@store')->name('frontend.review.store');
 
         Route::post('/checkout/p/{product_slug}', 'App\Http\Controllers\frontend\CheckoutController@index')->name('frontend.p.checkout');
         Route::get('/checkout/cart', 'App\Http\Controllers\frontend\CheckoutController@index')->name('frontend.c.checkout');
