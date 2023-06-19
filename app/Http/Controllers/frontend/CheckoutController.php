@@ -13,20 +13,24 @@ class CheckoutController extends Controller
 {
     use Transactional, Taxable;
 
-    public function index($product_slug, Razorpay $api)
+    public function index(Request $request, $product_slug, Razorpay $api)
     {
+        // dd($request);
         $products = Product::whereSlug($product_slug)->get();
         // dd($product);
         if ($products) {
             $productsTotalAmount = 0;
             foreach ($products as $product) {
+                if ($request->quantity > $product->stock) {
+                    return redirect()->back('The given product quantity is not available. Please Try after some time.');
+                }
                 $productsTotalAmount += $product->final_price;
             }
             $user = auth()->user();
             [$subTotal, $discount, $grandTotal, $gst] = $this->calculated($productsTotalAmount);
             // dd($api);
             // dd($this->calculated($product->final_price));
-            $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $products);
+            // $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $products);
             // dd($order);
 
             return view('frontend.checkout', compact('product', 'gst', 'subTotal', 'grandTotal', 'order', 'discount'));

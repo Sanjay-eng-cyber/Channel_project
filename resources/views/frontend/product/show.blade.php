@@ -74,12 +74,11 @@
                                     <i class="fa-regular fa-circle-xmark"></i> Out of Stock
                                 </h4>
                             @endif
-                            <form action="">
-                                {{-- <label for="color-option">
+                            {{-- <label for="color-option">
                                     Select a color * :
                                 </label> --}}
-                                <div class="row">
-                                    {{-- <div class="col-12 col-md-6 mb-3">
+                            <div class="row">
+                                {{-- <div class="col-12 col-md-6 mb-3">
                                         <select class="form-select" name="color-option" id="color-option" id="">
                                             <option value="choose an option" disabled selected> choose an option
                                             </option>
@@ -88,6 +87,9 @@
                                             <option>Blue</option>
                                         </select>
                                     </div> --}}
+
+                                <form action="{{ route('frontend.p.checkout', $product->slug) }}" method="POST">
+                                    @csrf
                                     <div class="col-12 col-md-6 mb-3">
                                         <div class="qty-counter">
                                             <label for="qty" class="px-md-2">
@@ -122,10 +124,9 @@
                                             </a>
                                         @endif
 
-                                        <a class="btn btn-primary btn-black"
-                                            href="{{ route('frontend.p.checkout', $product->slug) }}">
+                                        <button class="btn btn-primary btn-black" type="submit">
                                             Buy Now
-                                        </a>
+                                        </button>
 
                                         @if ($product->isInWishlist())
                                             <button type="button" class="btn mt-sm-0 mt-3 p-show add-to-wish active"
@@ -145,15 +146,17 @@
                                             </button>
                                         @endif
                                     </div>
-                                    <h6 class="h5 font-body">
-                                        Description
-                                    </h6>
-                                    <ul class="ms-3 text-muted">
-                                        <li class="text-capitalize">
-                                            {{ $product->descriptions }}
-                                        </li>
-                                    </ul>
-                                    {{-- <h6 class="h5 font-body">
+                                </form>
+
+                                <h6 class="h5 font-body">
+                                    Description
+                                </h6>
+                                <ul class="ms-3 text-muted">
+                                    <li class="text-capitalize">
+                                        {{ $product->descriptions }}
+                                    </li>
+                                </ul>
+                                {{-- <h6 class="h5 font-body">
                                         Main Ingredients
                                     </h6>
                                     <ul class="ms-3 text-muted">
@@ -167,14 +170,13 @@
                                             dfskjsk k k fgkjfsg dfk fkj df sfj sd
                                          </li>
                                     </ul> --}}
-                                    {{-- <h6 class="h5 font-body">
+                                {{-- <h6 class="h5 font-body">
                                         How to use
                                     </h6>
                                     <p class="text-muted">
                                         Apply essence Long Lasting Eye Pencil directly to the lash and waterline of the eye.
                                     </p> --}}
-                                </div>
-                            </form>
+                            </div>
                             <div class="rating-holder">
                                 <div class="row">
                                     <div class="col-12 col-sm-6 p-0">
@@ -195,7 +197,7 @@
                                             <div class="d-flex">
                                                 <div class="rating-total d-flex align-items-center me-3">
                                                     <h6 class="h2 text-muted font-body mb-0">
-                                                    {{$reviewRatingAvg}}
+                                                        {{ $reviewRatingAvg }}
                                                     </h6>
                                                     <i class="fa-solid fa-star text-green"></i>
                                                 </div>
