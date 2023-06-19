@@ -25,6 +25,8 @@ class ReviewController extends Controller
         $review->body = $request->body;
         $review->rating = $request->rating;
         if ($review->save()) {
+            $avgRating = $product->reviews()->avg('rating');
+            $product->update(['rating' => $avgRating]);
             return redirect()->back()->with(toast('Review Added Successfully', 'success'));
         }
         return redirect()->back()->with(toast('Something Went Wrong', 'error'))->withInput();
