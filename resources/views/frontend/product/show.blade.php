@@ -88,8 +88,8 @@
                                         </select>
                                     </div> --}}
 
-                                <form action="{{ route('frontend.p.checkout', $product->slug) }}" method="POST">
-                                    @csrf
+                                <form action="{{ route('frontend.p.checkout', $product->slug) }}" method="GET">
+                                    {{-- @csrf --}}
                                     <div class="col-12 col-md-6 mb-3">
                                         <div class="qty-counter">
                                             <label for="qty" class="px-md-2">

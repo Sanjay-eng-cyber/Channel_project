@@ -13,6 +13,68 @@ class CheckoutController extends Controller
 {
     use Transactional, Taxable;
 
+    public function selectAddress(Request $request, $product_slug = null)
+    {
+        $user = auth()->user();
+        if ($product_slug) {
+            $products = Product::whereSlug($product_slug)->get();
+            $productsTotalAmount = 0;
+            foreach ($products as $product) {
+                if ($request->quantity > $product->stock) {
+                    return redirect()->back('The given product quantity is not available. Please Try after some time.');
+                }
+                $productsTotalAmount += $product->final_price;
+            }
+        } else {
+            $cartItems = $user->cart->items();
+            $productsTotalAmount = 0;
+            foreach ($cartItems as $item) {
+                if ($item->quantity > $item->product->stock) {
+                    return redirect()->back('The given product quantity is not available. Please Try after some time.');
+                }
+                $productsTotalAmount += $item->product->final_price;
+            }
+            $products = $cartItems->with('product')->get()->pluck('product');
+        }
+
+        if ($products) {
+            [$subTotal, $discount, $grandTotal, $gst] = $this->calculated($productsTotalAmount);
+            // dd($this->calculated($productsTotalAmount));
+            $userAddresses = $user->userAddresses()->get();
+            return view('frontend.checkout', compact('userAddresses', 'products', 'gst', 'subTotal', 'grandTotal', 'discount'));
+        }
+        abort(404);
+    }
+
+    public function showPaymentPage(Request $request, $product_slug, Razorpay $api)
+    {
+        // dd($request);
+        $user = auth()->user();
+        $selectedAddress = $user->userAddresses()->find($request->address);
+        if (!$selectedAddress) {
+            return redirect()->back()->with(toast('Selected Address is Invalid'));
+        }
+
+        $products = Product::whereSlug($product_slug)->get();
+        if ($products) {
+            $productsTotalAmount = 0;
+            foreach ($products as $product) {
+                if ($request->quantity > $product->stock) {
+                    return redirect()->back('The given product quantity is not available. Please Try after some time.');
+                }
+                $productsTotalAmount += $product->final_price;
+            }
+            [$subTotal, $discount, $grandTotal, $gst] = $this->calculated($productsTotalAmount);
+
+            $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $products);
+
+            return view('frontend.payment', compact('selectedAddress', 'products', 'gst', 'subTotal', 'grandTotal', 'discount'));
+        }
+        abort(404);
+    }
+
+
+
     public function index(Request $request, $product_slug, Razorpay $api)
     {
         // dd($request);

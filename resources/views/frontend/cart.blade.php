@@ -57,124 +57,124 @@
                             </div>
                         </div>
                         @forelse ($cartItems as $c)
-                                <div class="row cc-border my-3 __cart-ui-card" style="padding:15px">
-                                    <a href="{{route('frontend.cart.delete', $c->id)}}">
-                                        <div class="__cart-ui-close-btn"><button type="button" class="btn-close"
-                                                aria-label="Close"></button>
-                                    </a>
+                            <div class="row cc-border my-3 __cart-ui-card" style="padding:15px">
+                                <a href="{{ route('frontend.cart.delete', $c->id) }}">
+                                    <div class="__cart-ui-close-btn"><button type="button" class="btn-close"
+                                            aria-label="Close"></button>
+                                </a>
+                            </div>
+                            <div class=" col-md-4 col-lg-3">
+                                <div class="d-flex align-items-center justify-content-center gap-1 __cart-ui-img-in">
+                                    <div class="form-check">
+                                        <input class="form-check-input ck-wallet-fi" type="checkbox" name="gender"
+                                            id="male" value="male" checked="">
+                                    </div>
+                                    <img src="https://via.placeholder.com/180x180" class="img-fluid img-border"
+                                        alt="">
                                 </div>
-                                <div class=" col-md-4 col-lg-3">
-                                    <div class="d-flex align-items-center justify-content-center gap-1 __cart-ui-img-in">
-                                        <div class="form-check">
-                                            <input class="form-check-input ck-wallet-fi" type="checkbox" name="gender"
-                                                id="male" value="male" checked="">
-                                        </div>
-                                        <img src="https://via.placeholder.com/180x180" class="img-fluid img-border"
-                                            alt="">
-                                    </div>
-                                </div>
+                            </div>
 
-                                <div class="col-md-8 col-lg-4  justify-content-md-start justify-content-center mt-3 mt-md-0 d-flex align-items-center">
-                                    <div class="">
-                                        <h5 class="main-head">{{ $c->product->name }}</h5>
-                                        <p class="p-0 __cart-ui-pra">
-                                            {{ $c->product->short_descriptions }}
-                                        </p>
-
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="col-md-12 col-lg-5 d-flex justify-content-center align-items-center justify-content-between flex-row flex-lg-column flex-xl-row my-3 my-lg-0">
-                                    <ul class="p-0 m-0">
-                                        <li class="no-bullet "><s class="text-muted">{{ $c->product->mrp }}</s></li>
-                                        <li class="no-bullet  "><strong>{{ $c->product->final_price }}</strong></li>
-                                        @if ($c->product->stock)
-                                            <li class="no-bullet text-green">In Stock</li>
-                                        @endif
-                                    </ul>
-                                    <div class="input-group align-items-center counter" style="width:124px;">
-                                        <button type="button" class="input-group-text decrease-quantity">-</button>
-                                        <input type="number" id="qty" class="form-control text-center quantity-input px-0"
-                                            value="1">
-                                        <button type="button" class="input-group-text increase-quantity">+</button>
-                                    </div>
-                                    <div class="d-none d-md-inline">
-                                        ₹145.55
-                                    </div>
-
+                            <div
+                                class="col-md-8 col-lg-4  justify-content-md-start justify-content-center mt-3 mt-md-0 d-flex align-items-center">
+                                <div class="">
+                                    <h5 class="main-head">{{ $c->product->name }}</h5>
+                                    <p class="p-0 __cart-ui-pra">
+                                        {{ $c->product->short_descriptions }}
+                                    </p>
 
                                 </div>
                             </div>
-                        @empty
-                        @endforelse
 
-                        <div class="pagination d-flex justify-content-center py-2">
-                                <ul class="pagination text-center">
-                                    {{ $cartItems->appends(Request::all())->links('pagination::bootstrap-4') }}
+                            <div
+                                class="col-md-12 col-lg-5 d-flex justify-content-center align-items-center justify-content-between flex-row flex-lg-column flex-xl-row my-3 my-lg-0">
+                                <ul class="p-0 m-0">
+                                    <li class="no-bullet "><s class="text-muted">{{ $c->product->mrp }}</s></li>
+                                    <li class="no-bullet  "><strong>{{ $c->product->final_price }}</strong></li>
+                                    @if ($c->product->stock)
+                                        <li class="no-bullet text-green">In Stock</li>
+                                    @endif
                                 </ul>
-                        </div>
+                                <div class="input-group align-items-center counter" style="width:124px;">
+                                    <button type="button" class="input-group-text decrease-quantity">-</button>
+                                    <input type="number" id="qty"
+                                        class="form-control text-center quantity-input px-0" value="1">
+                                    <button type="button" class="input-group-text increase-quantity">+</button>
+                                </div>
+                                <div class="d-none d-md-inline">
+                                    ₹145.55
+                                </div>
 
+
+                            </div>
                     </div>
-                    <div class="col-md-4 col-lg-3">
-                        <div class="padding-order-summary" >
-                            <h5 class="main-head">Order Summary</h5>
-                            <hr style="border-bottom: 2px solid #000000;">
-                            <div class="d-flex justify-content-between my-3">
-                                <strong>Sub Total</strong>
-                                <strong> {{ $subTotal }}</strong>
-                            </div>
-                            <hr>
+                @empty
+    @endforelse
 
-                            <div class="my-2">
-                                <form action="" method="post">
-                                    <label for="coupon-code-input my-3">Coupon</label>
+    <div class="pagination d-flex justify-content-center py-2">
+        <ul class="pagination text-center">
+            {{ $cartItems->appends(Request::all())->links('pagination::bootstrap-4') }}
+        </ul>
+    </div>
 
-                                    <div class="input-group my-2">
-                                        <input type="text" class="form-control" id="coupon-code-input"
-                                            placeholder="Enter coupon code" aria-label="Coupon code"
-                                            aria-describedby="coupon-button">
-                                    </div>
-                                </form>
-                            </div>
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <div class="padding-order-summary">
+            <h5 class="main-head">Order Summary</h5>
+            <hr style="border-bottom: 2px solid #000000;">
+            <div class="d-flex justify-content-between my-3">
+                <strong>Sub Total</strong>
+                <strong> {{ $subTotal }}</strong>
+            </div>
+            <hr>
 
-                            <p class="m-0 p-0 my-2 __cart-ui-pra text-capitalize">coupon code will apply on checkout page
-                            </p>
+            <div class="my-2">
+                <form action="" method="post">
+                    <label for="coupon-code-input my-3">Coupon</label>
 
-                            <div class="d-flex justify-content-between my-3">
-                                <strong>Total:</strong>
-                                <strong>{{ $subTotal }}</strong>
-                            </div>
-                            <hr>
-                            <p class="m-0 p-0 my-2 __cart-ui-pra text-capitalize">coupon code will apply on checkout page
-                            </p>
-
-                            <div>
-                                <a href="http://" class="my-2 text-white">
-                                    <button type="button" class="btn btn-outline-pink-hover w-100 p-1 p-xl-2">
-                                        Proceed To Checkout
-                                    </button>
-                                </a>
-
-                                <a href="http://" class="my-2 text-white">
-                                    <button type="button" class="btn mt-3 btn-orange-outline-hover w-100 my-2  p-1 p-xl-2">
-                                        Proceed To Checkout
-                                    </button>
-                                </a>
-                            </div>
-
-
-                        </div>
-
+                    <div class="input-group my-2">
+                        <input type="text" class="form-control" id="coupon-code-input" placeholder="Enter coupon code"
+                            aria-label="Coupon code" aria-describedby="coupon-button">
                     </div>
-                </div>
-
-
+                </form>
             </div>
 
-        </section>
-    @else
-        @include('frontend.not-found')
+            <p class="m-0 p-0 my-2 __cart-ui-pra text-capitalize">coupon code will apply on checkout page
+            </p>
+
+            <div class="d-flex justify-content-between my-3">
+                <strong>Total:</strong>
+                <strong>{{ $subTotal }}</strong>
+            </div>
+            <hr>
+            <p class="m-0 p-0 my-2 __cart-ui-pra text-capitalize">coupon code will apply on checkout page
+            </p>
+
+            <div>
+                <a href="http://" class="my-2 text-white">
+                    <button type="button" class="btn btn-outline-pink-hover w-100 p-1 p-xl-2">
+                        Proceed To Checkout
+                    </button>
+                </a>
+                <form action="{{ route('frontend.p.checkout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn mt-3 btn-orange-outline-hover w-100 my-2  p-1 p-xl-2">
+                        Proceed To Checkout
+                    </button>
+                </form>
+            </div>
+
+
+        </div>
+
+    </div>
+    </div>
+
+
+    </div>
+
+    </section>
+@else
+    @include('frontend.not-found')
     @endif
 
 @endsection
