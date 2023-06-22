@@ -97,14 +97,12 @@
                                 <div class="input-group align-items-center counter" style="width:124px;">
                                     <button type="button" class="input-group-text decrease-quantity">-</button>
                                     <input type="number" id="qty"
-                                        class="form-control text-center quantity-input px-0" value="1">
+                                        class="form-control text-center quantity-input px-0" value="{{ $c->quantity }}">
                                     <button type="button" class="input-group-text increase-quantity">+</button>
                                 </div>
                                 <div class="d-none d-md-inline">
-                                    ₹145.55
+                                    ₹{{ $c->product->final_price * $c->quantity }}
                                 </div>
-
-
                             </div>
                     </div>
                 @empty
@@ -156,7 +154,6 @@
                     </button>
                 </a>
                 <form action="{{ route('frontend.p.checkout') }}" method="GET">
-                    @csrf
                     <button type="submit" class="btn mt-3 btn-orange-outline-hover w-100 my-2  p-1 p-xl-2">
                         Proceed To Checkout
                     </button>
