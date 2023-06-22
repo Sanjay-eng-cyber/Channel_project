@@ -169,7 +169,13 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.payment-process');
     })->name('frontend.payment-process');
 
+    Route::get('/payment-success', function () {
+        return view('frontend.payment-success');
+    })->name('frontend.payment-success');
 
+    Route::get('/payment-failed', function () {
+        return view('frontend.payment-failed');
+    })->name('frontend.payment-failed');
     // Route::get('/products/{slug}', function () {
     //     return view('frontend/product/show');
     // })->name('products.show');
