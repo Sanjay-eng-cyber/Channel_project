@@ -1,5 +1,5 @@
 
-    <section class="my-5">
+    <section class="">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">

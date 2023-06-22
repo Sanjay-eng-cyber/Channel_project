@@ -45,9 +45,9 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
     });
 
-    Route::get('/order', function () {
-        return view('frontend.order');
-    })->name('order');
+    // Route::get('/order', function () {
+    //     return view('frontend.order');
+    // })->name('order');
 
     Route::get('/not-yet-shipped', function () {
         return view('frontend.not-yet-shipped');
@@ -199,7 +199,7 @@ Route::domain(config('app.web_domain'))->group(function () {
 
         Route::post('/payment/{product_slug?}', 'App\Http\Controllers\frontend\CheckoutController@showPaymentPage')->name('frontend.p.payment');
 
-        // Route::get('/checkout/cart', 'App\Http\Controllers\frontend\CheckoutController@index')->name('frontend.c.checkout');
+        Route::get('/orders', 'App\Http\Controllers\frontend\OrderController@index')->name('frontend.order.index');
 
         Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
     });
