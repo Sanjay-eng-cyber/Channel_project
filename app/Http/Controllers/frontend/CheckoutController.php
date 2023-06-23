@@ -96,7 +96,7 @@ class CheckoutController extends Controller
 
         if ($products) {
             [$subTotal, $discount, $grandTotal, $gst] = $this->calculated($productsTotalAmount);
-            $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $products);
+            $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $products, $selectedAddress);
             // dd($grandTotal);
             return view('frontend.order.payment', compact('selectedAddress', 'products', 'order', 'gst', 'subTotal', 'grandTotal', 'discount'));
         }
@@ -120,14 +120,25 @@ class CheckoutController extends Controller
         return view('callback', compact('order'));
     }
 
-    protected function getOrderOrCreateNew($user, Razorpay $api, $subTotal, $discount, $grandTotal, $products)
+    protected function getOrderOrCreateNew($user, Razorpay $api, $subTotal, $discount, $grandTotal, $products, $selectedAddress)
     {
         // dd($user->orders()->whereStatus('initial')->latest()->first()->item);
         // dd($api);
         if ($user->orders()->whereStatus('initial')->exists()) {
             $order = $user->orders()->whereStatus('initial')->latest()->first();
             $apiOrder = $api->createOrder($grandTotal);
-            $order->update(['api_order_id' => $apiOrder['id'], 'sub_total' => $subTotal, 'total_amount' => $grandTotal, 'discount_amount' => $discount]);
+            $order->update([
+                'api_order_id' => $apiOrder['id'],
+                'sub_total' => $subTotal,
+                'total_amount' => $grandTotal,
+                'discount_amount' => $discount,
+                'street_address' => $selectedAddress->street_address,
+                'landmark' => $selectedAddress->landmark,
+                'city' => $selectedAddress->city,
+                'state' => $selectedAddress->state,
+                'country' => $selectedAddress->country,
+                'postal_code' => $selectedAddress->postal_code
+            ]);
             optional($order->item)->delete();
             self::createOrderItems($order, $products);
         } else {
@@ -135,7 +146,7 @@ class CheckoutController extends Controller
             $order = $this->createOrder($grandTotal, [
                 'api_order_id' => $apiOrder['id'],
                 'discount' => $discount
-            ]);
+            ], $selectedAddress);
             self::createOrderItems($order, $products);
         }
         return $order;
