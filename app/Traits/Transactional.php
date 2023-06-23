@@ -18,7 +18,7 @@ trait Transactional
      * @param array $options
      * @return Order
      */
-    public static function createOrder(float $amount, array $options = []): Order
+    public static function createOrder(float $amount, array $options = [], $selectedAddress): Order
     {
         $options['discount_amount'] = $options['discount_amount'] ?? 0;
 
@@ -29,6 +29,12 @@ trait Transactional
             'discount_amount' => $options['discount_amount'],
             'total_amount' => $amount - $options['discount_amount'],
             'status' => $options['status'] ?? 'initial',
+            'street_address' => $selectedAddress->street_address,
+            'landmark' => $selectedAddress->landmark,
+            'city' => $selectedAddress->city,
+            'state' => $selectedAddress->state,
+            'country' => $selectedAddress->country,
+            'postal_code' => $selectedAddress->postal_code,
         ]);
     }
 
