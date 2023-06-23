@@ -24,7 +24,7 @@ class CartController extends Controller
         $cartItems = $cart ? $cart->items()->paginate(10) : [];
         $subTotal = 0;
         foreach ($cartItems as $cart) {
-            $subTotal = $subTotal += $cart->product->final_price;
+            $subTotal = $subTotal += $cart->product->final_price * $cart->quantity;
         }
         //dd($subTotal);
         return view('frontend.cart', compact('cart', 'cartItems', 'subTotal'));

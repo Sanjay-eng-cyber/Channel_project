@@ -153,7 +153,7 @@
                         Proceed To Checkout
                     </button>
                 </a>
-                <form action="{{ route('frontend.p.checkout') }}" method="GET">
+                <form action="{{ route('frontend.cart.checkout') }}" method="GET">
                     <button type="submit" class="btn mt-3 btn-orange-outline-hover w-100 my-2  p-1 p-xl-2">
                         Proceed To Checkout
                     </button>

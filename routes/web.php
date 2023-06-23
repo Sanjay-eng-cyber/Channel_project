@@ -184,6 +184,8 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/p/{slug}', 'App\Http\Controllers\frontend\ProductController@show')->name('frontend.p.show');
     Route::post('/p/review/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.p.store');
 
+    Route::get('/checkout/p/{product_slug}', 'App\Http\Controllers\frontend\ProductController@checkout')->name('frontend.p.checkout');
+
     Route::post('/p/addToCart', 'App\Http\Controllers\frontend\CartController@addToCart')->name('frontend.p.addToCart');
     Route::post('/p/addToWishlist', 'App\Http\Controllers\frontend\WishlistController@addToWishlist')->name('frontend.p.addToWishlist');
 
@@ -201,9 +203,8 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::get('/wishlist', 'App\Http\Controllers\frontend\WishlistController@index')->name('frontend.wishlist.index');
         Route::post('/review/store/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.review.store');
 
-        Route::get('/checkout/{product_slug?}', 'App\Http\Controllers\frontend\CheckoutController@selectAddress')->name('frontend.p.checkout');
-
-        Route::post('/payment/{product_slug?}', 'App\Http\Controllers\frontend\CheckoutController@showPaymentPage')->name('frontend.p.payment');
+        Route::get('/checkout', 'App\Http\Controllers\frontend\CheckoutController@selectAddress')->name('frontend.cart.checkout');
+        Route::post('/payment', 'App\Http\Controllers\frontend\CheckoutController@showPaymentPage')->name('frontend.cart.payment');
 
         Route::get('/orders', 'App\Http\Controllers\frontend\OrderController@index')->name('frontend.order.index');
 

@@ -18,46 +18,31 @@ class CheckoutController extends Controller
     {
         // dd($product_slug);
         $user = auth()->user();
-        $productsArray = null;
-        if ($product_slug) {
-            $products = Product::whereSlug($product_slug)->get();
-            $productsTotalAmount = 0;
-            foreach ($products as $key => $product) {
-                if ($request->quantity > $product->stock) {
-                    return redirect()->back('The given product quantity is not available. Please Try after some time.');
-                }
-                $productsTotalAmount += $product->final_price * $request->quantity;
-                $productsArray[$key]['product'] = $product;
-                $productsArray[$key]['quantity'] = $request->quantity;
+        $cartItems = $user->cart->items()->with('product')->get();
+        $productsTotalAmount = 0;
+        // dd($cartItems->get());
+        foreach ($cartItems as $key => $item) {
+            if ($item->quantity > $item->product->stock) {
+                return redirect()->back('The given product quantity is not available. Please Try after some time.');
             }
-        } else {
-            $cartItems = $user->cart->items();
-            $productsTotalAmount = 0;
-            // dd($cartItems->get());
-            foreach ($cartItems->get() as $key => $item) {
-                if ($item->quantity > $item->product->stock) {
-                    return redirect()->back('The given product quantity is not available. Please Try after some time.');
-                }
-                $productsTotalAmount += $item->product->final_price * $item->quantity;
-                $productsArray[$key]['product'] = $item->product;
-                $productsArray[$key]['quantity'] = $item->quantity;
-                // dd($productsArray);
-            }
-            $products = $cartItems->with('product')->get()->pluck('product');
-        }
-
-        if ($products) {
-
-            [$subTotal, $discount, $grandTotal, $gst] = $this->calculated($productsTotalAmount);
-            // dd($this->calculated($productsTotalAmount));
-            $userAddresses = $user->userAddresses()->get();
+            $productsTotalAmount += $item->product->final_price * $item->quantity;
+            // $productsArray[$key]['product'] = $item->product;
+            // $productsArray[$key]['quantity'] = $item->quantity;
             // dd($productsArray);
-            return view('frontend.order.checkout', compact('userAddresses', 'productsArray', 'gst', 'subTotal', 'grandTotal', 'discount'));
+        }
+        // $products = $cartItems->with('product')->get()->pluck('product');
+
+        if ($cartItems) {
+            [$subTotal, $discount, $grandTotal, $gst] = $this->calculated($productsTotalAmount);
+            $userAddresses = $user->userAddresses()->get();
+            // dd($this->calculated($productsTotalAmount));
+            // dd($productsArray);
+            return view('frontend.order.checkout', compact('userAddresses', 'cartItems', 'gst', 'subTotal', 'grandTotal', 'discount'));
         }
         abort(404);
     }
 
-    public function showPaymentPage(Request $request, $product_slug = null, Razorpay $api)
+    public function showPaymentPage(Request $request, Razorpay $api)
     {
         // dd($request);
         $user = auth()->user();
@@ -67,38 +52,23 @@ class CheckoutController extends Controller
             return redirect()->back()->with(toast('Selected Address is Invalid'));
         }
 
-        if ($product_slug) {
-            $products = Product::whereSlug($product_slug)->get();
-            $productsTotalAmount = 0;
-            foreach ($products as $key => $product) {
-                if ($request->quantity > $product->stock) {
-                    return redirect()->back('The given product quantity is not available. Please Try after some time.');
-                }
-                $productsTotalAmount += $product->final_price * $request->quantity;
-                $productsArray[$key]['product'] = $product;
-                $productsArray[$key]['quantity'] = $request->quantity;
+        $cartItems = $user->cart->items()->with('product')->get();
+        $productsTotalAmount = 0;
+        // dd($cartItems->get());
+        foreach ($cartItems as $key => $item) {
+            if ($item->quantity > $item->product->stock) {
+                return redirect()->back('The given product quantity is not available. Please Try after some time.');
             }
-        } else {
-            $cartItems = $user->cart->items();
-            $productsTotalAmount = 0;
-            // dd($cartItems->get());
-            foreach ($cartItems->get() as $key => $item) {
-                if ($item->quantity > $item->product->stock) {
-                    return redirect()->back('The given product quantity is not available. Please Try after some time.');
-                }
-                $productsTotalAmount += $item->product->final_price * $item->quantity;
-                $productsArray[$key]['product'] = $item->product;
-                $productsArray[$key]['quantity'] = $item->quantity;
-                // dd($productsArray);
-            }
-            $products = $cartItems->with('product')->get()->pluck('product');
+            $productsTotalAmount += $item->product->final_price * $item->quantity;
+            // $productsArray[$key]['product'] = $item->product;
+            // $productsArray[$key]['quantity'] = $item->quantity;
+            // dd($productsArray);
         }
-
-        if ($products) {
+        if ($cartItems) {
             [$subTotal, $discount, $grandTotal, $gst] = $this->calculated($productsTotalAmount);
-            $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $products, $selectedAddress);
+            $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $cartItems, $selectedAddress);
             // dd($grandTotal);
-            return view('frontend.order.payment', compact('selectedAddress', 'products', 'order', 'gst', 'subTotal', 'grandTotal', 'discount'));
+            return view('frontend.order.payment', compact('selectedAddress', 'cartItems', 'order', 'gst', 'subTotal', 'grandTotal', 'discount'));
         }
         abort(404);
     }
@@ -120,7 +90,7 @@ class CheckoutController extends Controller
         return view('callback', compact('order'));
     }
 
-    protected function getOrderOrCreateNew($user, Razorpay $api, $subTotal, $discount, $grandTotal, $products, $selectedAddress)
+    protected function getOrderOrCreateNew($user, Razorpay $api, $subTotal, $discount, $grandTotal, $cartItems, $selectedAddress)
     {
         // dd($user->orders()->whereStatus('initial')->latest()->first()->item);
         // dd($api);
@@ -140,14 +110,14 @@ class CheckoutController extends Controller
                 'postal_code' => $selectedAddress->postal_code
             ]);
             optional($order->item)->delete();
-            self::createOrderItems($order, $products);
+            self::createOrderItems($order, $cartItems);
         } else {
             $apiOrder = $api->createOrder($grandTotal);
             $order = $this->createOrder($grandTotal, [
                 'api_order_id' => $apiOrder['id'],
                 'discount' => $discount
             ], $selectedAddress);
-            self::createOrderItems($order, $products);
+            self::createOrderItems($order, $cartItems);
         }
         return $order;
     }

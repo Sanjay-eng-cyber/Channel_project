@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title', 'About-Us |')
+@section('title', 'Payment |')
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
@@ -43,14 +43,15 @@
                         </h3>
                         <hr>
                         <div class="row my-3">
-                            @foreach ($products as $product)
+                            @foreach ($cartItems as $cartItem)
                                 <div class="col-12 d-flex">
                                     <img src="https://via.placeholder.com/100"
                                         class="w-auto my-2 rounded-2 border border-1 pink-border me-3" height="100px"
                                         width="100px" alt="">
                                     <div class="mt-1">
-                                        <p class="mb-1 text-black">{{ $product->name }}</p>
-                                        <span>Price: ₹{{ $product->final_price }}</span>
+                                        <p class="mb-1 text-black">{{ $cartItem->product->name }}</p>
+                                        <span>Price: ₹{{ $cartItem->product->final_price }}</span><br>
+                                        <span>Qty: {{ $cartItem->quantity }}</span>
                                     </div>
                                 </div>
                             @endforeach

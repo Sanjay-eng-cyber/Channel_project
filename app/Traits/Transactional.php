@@ -45,14 +45,14 @@ trait Transactional
      * @param float|int $disc
      * @return OrderItem
      */
-    public static function createOrderItems(Order $order, $products)
+    public static function createOrderItems(Order $order, $cartItems)
     {
         // dd($plan['id']);
-        foreach ($products as $product) {
-            [$gst, $baseAmount, $taxable] = self::extracted($product->final_price, $order->discount_amount);
+        foreach ($cartItems as $cartItem) {
+            [$gst, $baseAmount, $taxable] = self::extracted($cartItem->product->final_price, $order->discount_amount);
             OrderItem::create([
                 'order_id' => $order->id,
-                'product_id' => $product->id,
+                'product_id' => $cartItem->product->id,
                 'quantity' => 1,
                 'taxable_amount' => $taxable,
                 'cgst_percent' => config('app.cgst'),

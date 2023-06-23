@@ -1,12 +1,12 @@
 @extends('frontend.layouts.app')
-@section('title', 'About-Us |')
+@section('title', 'Checkout |')
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
     <section class="my-5">
         <div class="container">
-            <form action="{{ route('frontend.p.payment', request()->product_slug) }}" method="POST">
+            <form action="{{ route('frontend.cart.payment') }}" method="POST">
                 @csrf
                 <div class="row">
                     <div class="col-lg-6 mb-4">
@@ -97,15 +97,15 @@
 
                         <div class="row">
 
-                            @foreach ($productsArray as $product)
+                            @foreach ($cartItems as $cartItem)
                                 <div class="col-12 d-flex">
                                     <img src="https://via.placeholder.com/100"
                                         class="w-auto my-2 rounded-2 border border-1 pink-border me-3" height="100px"
                                         width="100px" alt="">
                                     <div class="mt-1">
-                                        <p class="mb-1 text-black">{{ $product['product']->name }}</p>
-                                        <span>Price: ₹{{ $product['product']->final_price }}</span><br>
-                                        <span>Qty: {{ $product['quantity'] }}</span>
+                                        <p class="mb-1 text-black">{{ $cartItem->product->name }}</p>
+                                        <span>Price: ₹{{ $cartItem->product->final_price }}</span><br>
+                                        <span>Qty: {{ $cartItem->quantity }}</span>
                                     </div>
                                 </div>
                             @endforeach
