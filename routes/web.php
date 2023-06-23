@@ -217,5 +217,5 @@ Route::domain(config('app.web_domain'))->group(function () {
 
     Route::get('/wishlist/delete/{id}', 'App\Http\Controllers\frontend\WishlistController@delete')->name('frontend.wishlist.delete');
 
-    Route::post('callback', 'App\Http\Controllers\frontend\WishlistController@handleCallback')->name('razorpay.callback');
+    Route::post('callback', 'App\Http\Controllers\frontend\CheckoutController@handleCallback')->name('razorpay.callback');
 });
