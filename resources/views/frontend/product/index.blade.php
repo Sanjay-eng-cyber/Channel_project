@@ -56,38 +56,42 @@
 
                     </div>
                 </div>
-
                 <div class="col-lg-12 col-xl-3">
-                    <div class="d-flex justify-content-end align-items-baseline gap-3 gap-xl-4 gap-xxl-5">
-                        <div>Items per page</div>
-                        <div style="width: 100px">
-                            <select class="form-select form-select-lg mb-3 top-product-des"
-                                aria-label=".form-select-lg example" style="font-size: 16px">
-                                <option selected class="top-product-text">10</option>
-                                <option value="1" class="top-product-text">20</option>
-                                <option value="2" class="top-product-text">30</option>
-                                <option value="3" class="top-product-text">40</option>
-                            </select>
+                    <form action="{{ route('frontend.cat.show', $category->slug) }}">
+                        <div class="d-flex justify-content-end align-items-baseline gap-3 gap-xl-4 gap-xxl-5">
+                            <div>Items per page</div>
+                            <div style="width: 100px">
+                                <select class="form-select form-select-lg mb-3 top-product-des"
+                                    aria-label=".form-select-lg example" style="font-size: 16px">
+                                    <option selected class="top-product-text">10</option>
+                                    <option value="1" class="top-product-text">20</option>
+                                    <option value="2" class="top-product-text">30</option>
+                                    <option value="3" class="top-product-text">40</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
 
-                    <div class="d-flex justify-content-end align-items-baseline gap-3 gap-xl-4 gap-xxl-5">
-                        <div>Sort By</div>
-                        <div style="width:160px">
-                            <select class="form-select form-select-lg mb-3 top-product-des"
-                                aria-label=".form-select-lg example" style="font-size: 16px">
-                                <option selected class="top-product-text">Featured</option>
-                                <option value="1" class="top-product-text">Price: Low to High</option>
-                                <option value="2" class="top-product-text">Price: High to Low</option>
-                                <option value="3" class="top-product-text">Avg. Customer Review</option>
-                                <option value="3" class="top-product-text">Newest Arrivals</option>
-                            </select>
+                        <div class="d-flex justify-content-end align-items-baseline gap-3 gap-xl-4 gap-xxl-5">
+                            <div>Sort By</div>
+                            <div style="width:160px">
+                                <select class="form-select form-select-lg mb-3 top-product-des"
+                                    aria-label=".form-select-lg example" style="font-size: 16px" name="q"
+                                    onchange="this.form.submit()">
+                                    <option class="top-product-text">Featured</option>
+                                    <option value="1" class="top-product-text">Price: Low to High</option>
+                                    <option value="2" class="top-product-text">Price: High to Low</option>
+                                    <option value="3" class="top-product-text">Avg. Customer Review</option>
+                                    <option value="3" class="top-product-text">Newest Arrivals</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-
-
+                    </form>
                 </div>
+                @if ($errors->has('q'))
+                    <div class="text-danger" role="alert">{{ $errors->first('q') }}
+                    </div>
+                @endif
 
 
             </div>
@@ -148,7 +152,8 @@
                                                 {{ $pro->mrp }} <s class="text-danger">{{ $pro->final_price }}</s>
                                             </div>
                                             <div class="buttons">
-                                                <a href="{{ route('frontend.p.show', $pro->slug) }}" class="btn btn-orange">
+                                                <a href="{{ route('frontend.p.show', $pro->slug) }}"
+                                                    class="btn btn-orange">
                                                     Shop now
                                                 </a>
                                                 @if ($pro->isInCart())
@@ -173,25 +178,23 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 @empty
                                 @endforelse
                             </div>
                             <div class="d-flex justify-content-center mt-4">
                                 {{ $products->onEachSide(1)->links('pagination::bootstrap-4') }}
                             </div>
-
-
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
     </section>
-
+@endsection
+@section('js')
+    <script>
+        $('form select').on('change', function() {
+            $(this).closest('form').submit();
+        });
+    </script>
 @endsection
