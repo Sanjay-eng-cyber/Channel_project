@@ -35,13 +35,13 @@ class CategoryController extends Controller
                 $request->validate(['q' => 'min:3']);
             }
         }
-        if ($request !== null && $request->has('q') && $request['q'] == 1) {
+        if ($request !== null && $request->has('q') && $request['q'] == 'low_to_high') {
             // dd('kddfk');
             $products = $products->orderBy('mrp', 'asc');
             //dd($products);
         }
         //dd($request->q);
-        if ($request !== null && $request->has('q') && $request['q'] == 2) {
+        if ($request !== null && $request->has('q') && $request['q'] == 'high_to_low') {
             $products = $products->orderBy('mrp', 'desc');
             //dd($products);
         }

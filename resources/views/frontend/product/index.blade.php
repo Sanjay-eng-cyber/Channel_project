@@ -78,11 +78,20 @@
                                 <select class="form-select form-select-lg mb-3 top-product-des"
                                     aria-label=".form-select-lg example" style="font-size: 16px" name="q"
                                     onchange="this.form.submit()">
-                                    <option class="top-product-text">Featured</option>
-                                    <option value="1" class="top-product-text">Price: Low to High</option>
-                                    <option value="2" class="top-product-text">Price: High to Low</option>
-                                    <option value="3" class="top-product-text">Avg. Customer Review</option>
-                                    <option value="3" class="top-product-text">Newest Arrivals</option>
+                                    <option value="new_arrival"
+                                        {{ request('q') && request('q') == 'new_arrival' ? 'selected' : '' }}
+                                        class="top-product-text">Newest Arrivals</option>
+                                    <option class="top-product-text" value="featured"
+                                        {{ request('q') && request('q') == 'featured' ? 'selected' : '' }}>Featured
+                                    </option>
+                                    <option value="low_to_high"
+                                        {{ request('q') && request('q') == 'low_to_high' ? 'selected' : '' }}
+                                        class="top-product-text">Price: Low to High</option>
+                                    <option value="high_to_low"
+                                        {{ request('q') && request('q') == 'high_to_low' ? 'selected' : '' }}
+                                        class="top-product-text">Price: High to Low</option>
+                                    <option value="3" {{ request('q') && request('q') == 3 ? 'selected' : '' }}
+                                        class="top-product-text">Avg. Customer Review</option>
                                 </select>
                             </div>
                         </div>
