@@ -87,7 +87,7 @@ class Product extends Model
             $cart = $user->cart;
         } else {
             $cart_session_id = session()->get('cart_session_id');
-            $cart = Cart::where('session_id', $cart_session_id)->first();
+            $cart = $cart_session_id ? Cart::where('session_id', $cart_session_id)->first() : null;
         }
         return $cart ? $cart->items()->where('product_id', $this->id)->exists() : false;
     }

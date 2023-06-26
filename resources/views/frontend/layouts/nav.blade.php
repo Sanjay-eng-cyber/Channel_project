@@ -38,7 +38,7 @@
                                            $cart_session_id = session()->get('cart_session_id');
                                            $cart = App\Models\Cart::where('session_id', $cart_session_id)->first();
                                        }
-                                       $cartItemsCount = $cart ? $cart->items()->count() : '';
+                                       $cartItemsCount = $cart ? $cart->items()->count() : 0;
                                    @endphp
                                    <li class="nav-item text-red position-relative">
                                        <a class="nav-link fw-bold nn-top-cart"

@@ -19,7 +19,8 @@ class CartController extends Controller
             // dd($cart);
         } else {
             $cart_session_id = session()->get('cart_session_id');
-            $cart = Cart::where('session_id', $cart_session_id)->first();
+            $cart = $cart_session_id ? Cart::where('session_id', $cart_session_id)->first() : null;
+            // dd($cart);
         }
         $cartItems = $cart ? $cart->items()->paginate(10) : [];
         $subTotal = 0;

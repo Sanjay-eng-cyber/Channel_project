@@ -63,13 +63,23 @@ class LoginController extends Controller
             if ($user) {
                 Auth::guard('web')->login($user);
                 $redirect_url = session()->get('url.intended') ?? route('frontend.index');
-                if (session()->get('cart_session_id')) {
+                $cartSessionId = session()->get('cart_session_id');
+                // dd($cartSessionId);
+                if ($cartSessionId) {
                     $cart = Cart::updateOrCreate([
-                        'session_id' => session()->get('cart_session_id'),
-                    ], [
-                        'session_id' => null,
                         'user_id' => $user->id
                     ]);
+
+                    $sessionCart = Cart::where('session_id', '!=', null)->where('session_id', $cartSessionId)->first();
+                    $sessionCartItems = $sessionCart ? $sessionCart->items()->get() : [];
+                    foreach ($sessionCartItems as $item) {
+                        if (!$cart->items()->where('product_id', $item->product_id)->exists()) {
+                            $item->update(['cart_id' => $cart->id]);
+                        } else {
+                            $item->delete();
+                        }
+                    }
+                    optional($sessionCart->delete());
                     session()->forget('cart_session_id');
                 }
                 return response()->json(['success' => true, 'message' => 'OTP Verified', 'redirect_url' => $redirect_url]);
