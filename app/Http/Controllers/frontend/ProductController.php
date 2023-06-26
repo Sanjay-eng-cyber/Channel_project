@@ -33,7 +33,7 @@ class ProductController extends Controller
         $product = Product::where('slug', $productSlug)->firstOrFail();
         $reviews = $product->reviews()->latest()->paginate(5);
         $cProducts = Product::Where('id', '!=', $product->id)->where('connection_no', $product->connection_no)->paginate(5);
-        $reviewRatingAvg =  number_format($reviews->avg('rating'), 2);
+        $reviewRatingAvg =  number_format($reviews->avg('rating'));
         //dd($reviewRatingAvg);
         return view('frontend.product.show', compact('product', 'reviews', 'cProducts', 'reviewRatingAvg'));
     }

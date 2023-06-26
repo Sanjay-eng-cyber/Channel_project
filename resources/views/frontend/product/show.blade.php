@@ -209,46 +209,32 @@
                                     </div>
                                     <div class="col-12 col-sm-6 p-0">
                                         <div class="rating-stats text-muted">
+                                            @for ($i = 1; $i <= $reviewRatingAvg; $i++)
+                                                <div class="rating-stat">
+                                                    <div>
+                                                        {{ $i }}
+                                                    </div>
+                                                    {{-- @if ($reviewRatingAvg) --}}
+                                                    <div class="review-bar">
+                                                        <div class="review-bar-value"
+                                                            style="width: {{ 20 * $i }}%;"></div>
+                                                    </div>
+                                                    {{-- @endif --}}
+                                                </div>
+                                            @endfor
+                                            @for ($j = $reviewRatingAvg + 1; $j <= 5; $j++)
                                             <div class="rating-stat">
                                                 <div>
-                                                    5
+                                                    {{ $j }}
                                                 </div>
+                                                {{-- @if ($reviewRatingAvg) --}}
                                                 <div class="review-bar">
-                                                    <div class="review-bar-value" style="width: 100%;"></div>
+                                                    <div class="review-bar-value"
+                                                        style="width:0%;"></div>
                                                 </div>
+                                                {{-- @endif --}}
                                             </div>
-                                            <div class="rating-stat">
-                                                <div>
-                                                    4
-                                                </div>
-                                                <div class="review-bar">
-                                                    <div class="review-bar-value" style="width: 80%;"></div>
-                                                </div>
-                                            </div>
-                                            <div class="rating-stat">
-                                                <div>
-                                                    3
-                                                </div>
-                                                <div class="review-bar">
-                                                    <div class="review-bar-value" style="width: 60%;"></div>
-                                                </div>
-                                            </div>
-                                            <div class="rating-stat">
-                                                <div>
-                                                    2
-                                                </div>
-                                                <div class="review-bar">
-                                                    <div class="review-bar-value" style="width: 40%;"></div>
-                                                </div>
-                                            </div>
-                                            <div class="rating-stat">
-                                                <div>
-                                                    1
-                                                </div>
-                                                <div class="review-bar">
-                                                    <div class="review-bar-value" style="width: 20%;"></div>
-                                                </div>
-                                            </div>
+                                        @endfor
 
                                         </div>
                                     </div>
