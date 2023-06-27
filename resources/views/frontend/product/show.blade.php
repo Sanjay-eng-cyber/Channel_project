@@ -209,32 +209,17 @@
                                     </div>
                                     <div class="col-12 col-sm-6 p-0">
                                         <div class="rating-stats text-muted">
-                                            @for ($i = 1; $i <= $reviewRatingAvg; $i++)
+
+                                            @for ($i = 5; $i >= 1; $i--)
                                                 <div class="rating-stat">
-                                                    <div>
-                                                        {{ $i }}
-                                                    </div>
-                                                    {{-- @if ($reviewRatingAvg) --}}
+                                                    <div>{{ $i }}</div>
                                                     <div class="review-bar">
                                                         <div class="review-bar-value"
-                                                            style="width: {{ 20 * $i }}%;"></div>
+                                                            style="width: {{ $ratingsArr[$i] }}%;">
+                                                        </div>
                                                     </div>
-                                                    {{-- @endif --}}
                                                 </div>
                                             @endfor
-                                            @for ($j = $reviewRatingAvg + 1; $j <= 5; $j++)
-                                            <div class="rating-stat">
-                                                <div>
-                                                    {{ $j }}
-                                                </div>
-                                                {{-- @if ($reviewRatingAvg) --}}
-                                                <div class="review-bar">
-                                                    <div class="review-bar-value"
-                                                        style="width:0%;"></div>
-                                                </div>
-                                                {{-- @endif --}}
-                                            </div>
-                                        @endfor
 
                                         </div>
                                     </div>

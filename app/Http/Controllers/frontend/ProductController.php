@@ -31,11 +31,27 @@ class ProductController extends Controller
     public function show($productSlug)
     {
         $product = Product::where('slug', $productSlug)->firstOrFail();
-        $reviews = $product->reviews()->latest()->paginate(5);
         $cProducts = Product::Where('id', '!=', $product->id)->where('connection_no', $product->connection_no)->paginate(5);
-        $reviewRatingAvg =  number_format($reviews->avg('rating'));
-        //dd($reviewRatingAvg);
-        return view('frontend.product.show', compact('product', 'reviews', 'cProducts', 'reviewRatingAvg'));
+        $reviews = $product->reviews()->latest();
+        $reviewsCount = $reviews->count();
+        $reviews = $reviews->paginate(5);
+
+        $reviewRatingAvg =  number_format($reviews->avg('rating'), 1);
+
+        $ratingsArray = $product->reviews()->select('rating', \DB::raw('count(id) as count'))
+            ->groupBy('rating')
+            ->get()->toArray();
+        foreach ($ratingsArray as $rA) {
+            $ratings[$rA['rating']] = $rA['count'];
+        }
+        $ratingsArr = [];
+        $ratingsArr[1] = isset($ratings[1]) ? (($ratings[1] / $reviewsCount) * 100) : 0;
+        $ratingsArr[2] = isset($ratings[2]) ? (($ratings[2] / $reviewsCount) * 100) : 0;
+        $ratingsArr[3] = isset($ratings[3]) ? (($ratings[3] / $reviewsCount) * 100) : 0;
+        $ratingsArr[4] = isset($ratings[4]) ? (($ratings[4] / $reviewsCount) * 100) : 0;
+        $ratingsArr[5] = isset($ratings[5]) ? (($ratings[5] / $reviewsCount) * 100) : 0;
+        // dd($ratings);
+        return view('frontend.product.show', compact('product', 'reviews', 'cProducts', 'reviewRatingAvg', 'ratingsArr'));
     }
 
     public function checkout(Request $request, $product_slug)
