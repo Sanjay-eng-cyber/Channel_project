@@ -183,13 +183,13 @@
                    <div class="col-xs-12">
                        <ul class="mt-icon-list pt-2 pt-md-0 pt-lg-2 pt-xl-0 pt-xxl-0">
 
-                           <li class="px-2 ">
+                           {{-- <li class="px-2 ">
                                <a href="http://" class="text-black">
                                    ORDER TRACK
                                </a>
-                           </li>
+                           </li> --}}
                            <li class="bg-red px-2 rounded">
-                               <a href="http://" class="text-white">
+                               <a href="{{ route('frontend.cart.checkout') }}" class="text-white">
                                    CHECKOUT
                                </a>
                            </li>
@@ -300,14 +300,14 @@
                                        <p class="text-center text-black h6 py-3">Or Connect With</p>
                                        <div class="col-6 text-center">
                                            <button class="border-0 d-flex pt-2 links-btns mx-auto"><img
-                                                   src="{{url('frontend/images/icons/icon-fb.png')}}" alt=""
+                                                   src="{{ url('frontend/images/icons/icon-fb.png') }}" alt=""
                                                    class="mx-2 icon-img-size"> Facebook</button>
                                        </div>
 
                                        <div class="col-6">
                                            <button class="border-0 d-flex pt-2 links-btns mx-auto"><img
-                                                   src="{{url('frontend/images/icons/icon-google.png')}}" alt=""
-                                                   class="mx-2 icon-img-size"> Google</button>
+                                                   src="{{ url('frontend/images/icons/icon-google.png') }}"
+                                                   alt="" class="mx-2 icon-img-size"> Google</button>
                                        </div>
                                    </div>
                                </form>

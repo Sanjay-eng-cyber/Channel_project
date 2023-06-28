@@ -18,7 +18,7 @@ class CheckoutController extends Controller
     {
         // dd($product_slug);
         $user = auth()->user();
-        $cartItems = $user->cart->items()->with('product')->get();
+        $cartItems = $user->cart ? $user->cart->items()->with('product')->get() : [];
         $productsTotalAmount = 0;
         // dd($cartItems->get());
         foreach ($cartItems as $key => $item) {
@@ -39,7 +39,8 @@ class CheckoutController extends Controller
             // dd($productsArray);
             return view('frontend.order.checkout', compact('userAddresses', 'cartItems', 'gst', 'subTotal', 'grandTotal', 'discount'));
         }
-        abort(404);
+        return redirect()->back()->with(toast('No Items in your cart to checkout', 'info'));
+        // abort(404);
     }
 
     public function showPaymentPage(Request $request, Razorpay $api)
@@ -70,7 +71,8 @@ class CheckoutController extends Controller
             // dd($grandTotal);
             return view('frontend.order.payment', compact('selectedAddress', 'cartItems', 'order', 'gst', 'subTotal', 'grandTotal', 'discount'));
         }
-        abort(404);
+        return redirect()->back()->with(toast('No Items in your cart to checkout', 'info'));
+        // abort(404);
     }
 
     public function handleCallback(Request $request)
