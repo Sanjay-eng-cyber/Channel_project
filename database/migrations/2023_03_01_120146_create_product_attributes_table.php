@@ -17,7 +17,7 @@ class CreateProductAttributesTable extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->foreignId('attribute_id')->constrained()->onDelete('cascade');
-            $table->foreignId('product_attribute_value_id')->constrained()->onDelete('cascade');
+            $table->foreignId('attribute_value_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
