@@ -6,8 +6,10 @@ use App\Models\Cart;
 use App\Models\Review;
 use App\Models\Product;
 use App\Models\CartItem;
+use App\Models\Attribute;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\ProductAttribute;
 
 class ProductController extends Controller
 {
@@ -31,7 +33,26 @@ class ProductController extends Controller
     public function show($productSlug)
     {
         $product = Product::where('slug', $productSlug)->firstOrFail();
-        $cProducts = Product::Where('id', '!=', $product->id)->where('connection_no', $product->connection_no)->paginate(5);
+        $cProducts = Product::where('id', '!=', $product->id)->where('connection_no', $product->connection_no)->get();
+        $variants = [];
+        $attributes = $product->attributes()->get();
+        // dd($attributes);
+        $similarProducts = Product::where('connection_no', $product->connection_no)->get();
+        // dd($similarProducts);
+        foreach ($attributes as $attribute) {
+            // echo $attribute->name . '<br>';
+            foreach ($similarProducts as $similarProduct) {
+                if ($similarProduct->values()->where('product_attributes.attribute_id', $attribute->id)->first()) {
+                    // echo $similarProduct->values()->where('product_attributes.attribute_id', $attribute->id)->first()->name . '<br>';
+                }
+                // dd($similarProduct->values()->where('product_attributes.attribute_id', $attribute->id)->first());
+            }
+        }
+
+        // $attributes = $product->attributes()->with('values')->get();
+        // dd('stop');
+        // dd($attributes);
+
         $reviews = $product->reviews()->latest();
         $reviewsCount = $reviews->count();
         $reviews = $reviews->paginate(5);
@@ -51,7 +72,7 @@ class ProductController extends Controller
         $ratingsArr[4] = isset($ratings[4]) ? (($ratings[4] / $reviewsCount) * 100) : 0;
         $ratingsArr[5] = isset($ratings[5]) ? (($ratings[5] / $reviewsCount) * 100) : 0;
         // dd($ratings);
-        return view('frontend.product.show', compact('product', 'reviews', 'cProducts', 'reviewRatingAvg', 'ratingsArr'));
+        return view('frontend.product.show', compact('product', 'reviews', 'cProducts', 'reviewRatingAvg', 'ratingsArr', 'attributes', 'similarProducts'));
     }
 
     public function checkout(Request $request, $product_slug)

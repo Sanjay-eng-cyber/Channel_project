@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ProductAttributeValueSeeder extends Seeder
+class AttributeValueSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -30,7 +30,7 @@ class ProductAttributeValueSeeder extends Seeder
 
         foreach ($prodAttributeValues as $p => $pav) {
             foreach ($pav as $pa => $pavs) {
-                DB::table('product_attribute_values')->insert([
+                DB::table('attribute_values')->insert([
                     "attribute_id" => $p,
                     "name" => $pavs,
                     "created_at" => now(),

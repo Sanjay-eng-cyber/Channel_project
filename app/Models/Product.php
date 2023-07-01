@@ -51,6 +51,16 @@ class Product extends Model
         return $this->hasMany(Wishlist::class);
     }
 
+    public function attributes()
+    {
+        return $this->belongsToMany(Attribute::class, 'product_attributes')->withPivot('attribute_value_id');
+    }
+
+    public function values()
+    {
+        return $this->belongsToMany(AttributeValue::class, 'product_attributes');
+    }
+
     public function storeProductAttributes($attributes, $values, $product)
     {
         foreach ($attributes as $key => $item) {

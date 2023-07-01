@@ -87,6 +87,23 @@
                                             <option>Blue</option>
                                         </select>
                                     </div> --}}
+                                {{-- <div class="col-12 mb-3">
+                                    @foreach ($attributes as $attribute)
+                                        <label for="">{{ $attribute->name }}</label>
+                                        @foreach ($similarProducts as $similarProduct)
+                                            @php
+                                                $similarProduct = $similarProduct
+                                                    ->values()
+                                                    ->where('product_attributes.attribute_id', $attribute->id)
+                                                    ->first();
+                                            @endphp
+                                            @if ($similarProduct)
+                                                <p>{{ $similarProduct->name }}
+                                                </p>
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                </div> --}}
 
                                 <form action="{{ route('frontend.p.checkout', $product->slug) }}" method="GET">
                                     {{-- @csrf --}}
@@ -420,7 +437,7 @@
                 <div class="row pb-4" style="padding-top:2px;">
                     <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">Recommended based on your
                         purchase</h5>
-                    @forelse ($cProducts as $cp)
+                    {{-- @forelse ($cProducts as $cp)
                         <div class="col-lg-12 col-xl-6 or-secondpage-scard">
                             <div class="p-4 or-secondpage-scard">
                                 <div class="row pt-3 pb-3 or-secondpage-scard-card">
@@ -449,11 +466,11 @@
                         </div>
                     @empty
                         <p class="text-center">No Recommended Products</p>
-                    @endforelse
+                    @endforelse --}}
                 </div>
-                <div class="d-flex justify-content-center mt-4">
+                {{-- <div class="d-flex justify-content-center mt-4">
                     {{ $cProducts->onEachSide(1)->links('pagination::bootstrap-4') }}
-                </div>
+                </div> --}}
             </div>
 
         </section>

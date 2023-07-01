@@ -25,6 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(OrderItemSeeder::class);
         $this->call(TransactionSeeder::class);
         $this->call(AttributeSeeder::class);
-        $this->call(ProductAttributeValueSeeder::class);
+        $this->call(AttributeValueSeeder::class);
     }
 }
