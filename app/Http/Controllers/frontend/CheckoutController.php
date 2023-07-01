@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Traits\Transactional;
 use App\Lib\Razorpay\Razorpay;
 use App\Http\Controllers\Controller;
+use App\Services\DelhiveryService;
 
 class CheckoutController extends Controller
 {
@@ -43,7 +44,7 @@ class CheckoutController extends Controller
         // abort(404);
     }
 
-    public function showPaymentPage(Request $request, Razorpay $api)
+    public function showPaymentPage(Request $request, Razorpay $api, DelhiveryService $delhivery)
     {
         // dd($request);
         $user = auth()->user();
@@ -51,6 +52,11 @@ class CheckoutController extends Controller
         $selectedAddress = $user->userAddresses()->find($request->address);
         if (!$selectedAddress) {
             return redirect()->back()->with(toast('Selected Address is Invalid'));
+        }
+        $pincodeStatus = $delhivery->checkPincodeAvailability($selectedAddress->postal_code);
+        // dd($pincodeStatus);
+        if (isset($pincodeStatus['status']) && $pincodeStatus['status'] == false) {
+            return redirect()->back()->with(toast($pincodeStatus['message'], 'info'));
         }
 
         $cartItems = $user->cart->items()->with('product')->get();
