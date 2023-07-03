@@ -209,18 +209,92 @@
                                <li><a href="{{ route('frontend.index') }} "
                                        class=" {{ URL::current() == route('frontend.index') ? 'active-red' : '' }} text-capitalize">Home</a>
                                </li>
-                               <li><a href="{{ route('frontend.cat.show', 'skin') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }} text-capitalize">Skin</a>
+
+                               <li class="nav-item dropdown">
+                                    <a href="{{ route('frontend.cat.show', 'skin') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }} nav-link text-capitalize"
+                                       id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                       >
+                                       Skin
+                                    </a>
+                                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                        <div class="text-capitalize p-2">
+                                                <a class="dropdown-item " href="#">Face wash</a>
+                                                <a class="dropdown-item" href="#">Face Scrub</a>
+                                                <a class="dropdown-item" href="#">Face Moisturiser</a>
+                                                <a class="dropdown-item" href="#">Sheet Mask</a>
+                                                <a class="dropdown-item" href="#">Face Serum</a>
+                                                <a class="dropdown-item" href="#">Suncreen</a>
+                                                <a class="dropdown-item" href="#">Face Mist</a>
+                                        </div>
+
+                                    </div>
                                </li>
-                               <li><a href="{{ route('frontend.cat.show', 'fragrances') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'fragrances') ? 'active-red' : '' }} text-capitalize">Fragrances</a>
+
+                               <li class="nav-item dropdown">
+                                    <a href="{{ route('frontend.cat.show', 'fragrances') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'fragrances') ? 'active-red' : '' }} nav-link text-capitalize"
+                                       id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                       >
+                                       Fragrances
+                                    </a>
+
+                                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                            <div class="text-capitalize">
+                                                <a class="dropdown-item " href="#">Men</a>
+                                                <a class="dropdown-item" href="#">Women</a>
+                                            </div>
+                                    </div>
+
                                </li>
-                               <li><a href="{{ route('frontend.cat.show', 'hair-care') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'hair-care') ? 'active-red' : '' }} text-capitalize">Hair
-                                       Care</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'personal-care') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'personal-care') ? 'active-red' : '' }} text-capitalize">Personal
-                                       Care</a></li>
+
+                               <li class="nav-item dropdown">
+                                    <a href="{{ route('frontend.cat.show', 'hair-care') }}"
+                                        class="{{ URL::current() == route('frontend.cat.show', 'hair-care') ? 'active-red' : '' }} nav-link text-capitalize"
+                                        id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Hair
+                                        Care
+                                    </a>
+
+                                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                        <div class="text-capitalize">
+                                            <a class="dropdown-item " href="#">Shampoo</a>
+                                            <a class="dropdown-item" href="#">Conditoner</a>
+                                            <a class="dropdown-item" href="#">Hair mask</a>
+                                            <a class="dropdown-item" href="#">Hair serum</a>
+                                            <a class="dropdown-item" href="#">Hair Oil</a>
+                                            <a class="dropdown-item" href="#">Straigthner</a>
+                                            <a class="dropdown-item" href="#">Dryer</a>
+                                            <a class="dropdown-item" href="#">Curler</a>
+                                            <a class="dropdown-item" href="#">Trimmers</a>
+                                        </div>
+                                    </div>
+
+                                </li>
+                               <li class="nav-item dropdown">
+                                    <a href="{{ route('frontend.cat.show', 'personal-care') }}"
+                                        class="{{ URL::current() == route('frontend.cat.show', 'personal-care') ? 'active-red' : '' }} nav-link text-capitalize"
+                                        id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        >
+                                        Personal
+                                        Care
+                                    </a>
+
+                                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                        <div class="text-capitalize">
+                                            <a class="dropdown-item " href="#">Shampoo</a>
+                                            <a class="dropdown-item" href="#">Conditoner</a>
+                                            <a class="dropdown-item" href="#">Hair mask</a>
+                                            <a class="dropdown-item" href="#">Hair serum</a>
+                                            <a class="dropdown-item" href="#">Hair Oil</a>
+                                            <a class="dropdown-item" href="#">Straigthner</a>
+                                            <a class="dropdown-item" href="#">Dryer</a>
+                                            <a class="dropdown-item" href="#">Curler</a>
+                                            <a class="dropdown-item" href="#">Trimmers</a>
+                                        </div>
+                                    </div>
+
+                                </li>
                                <li><a href="{{ route('frontend.cat.show', 'home-decor') }}"
                                        class="{{ URL::current() == route('frontend.cat.show', 'home-decor') ? 'active-red' : '' }} text-capitalize">Home
                                        Decor</a></li>
