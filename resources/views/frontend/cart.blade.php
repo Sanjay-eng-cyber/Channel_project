@@ -37,13 +37,12 @@
     @if ($cartItems)
         <section style="padding:40px 0px 65px 0px">
             <div class="container">
-                <h5 class="h5 main-head text-center text-red my-3">Your Paynent Method</h5>
+                <h5 class="h5 main-head text-center text-red my-3">Cart</h5>
                 <div class="row d-flex flex-column-reverse flex-md-row">
                     <div class="col-md-8 col-lg-9 __cart-ui-f">
 
                         <div class="row d-flex justify-content-center justify-content-lg-end __cart-ui-nav">
                             <div class="col-sm-12 px-0">
-                                <h5 class="main-head __cart-ui-nav-heading">Deselect all items</h5>
                                 <div
                                     class="d-flex cc-border justify-content-between p-3 justify-content-between __cart-ui-nav-des">
                                     <div class="fw-bold">Product</div>
