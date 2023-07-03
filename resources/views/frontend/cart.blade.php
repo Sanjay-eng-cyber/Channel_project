@@ -65,10 +65,10 @@
                             </div>
                             <div class=" col-md-4 col-lg-3">
                                 <div class="d-flex align-items-center justify-content-center gap-1 __cart-ui-img-in">
-                                    <div class="form-check">
+                                    {{-- <div class="form-check">
                                         <input class="form-check-input ck-wallet-fi" type="checkbox" name="gender"
                                             id="male" value="male" checked="">
-                                    </div>
+                                    </div> --}}
                                     <img src="https://via.placeholder.com/180x180" class="img-fluid img-border"
                                         alt="">
                                 </div>
