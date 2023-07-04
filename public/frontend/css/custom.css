@@ -7,6 +7,13 @@
     display: block;
 }
 
+.sib-card{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 6%;
+    
+}
+
 #subcategory-slider{
     isolation: isolate;
 }
@@ -41,6 +48,15 @@
     z-index: 1;
   }
 
+  
+  @media screen and (max-width:992px){
+        .sib-card{
+            display: grid;
+            grid-template-columns: 100%;
+            grid-column-gap:unset;
+            
+        }
+  }
   @media screen and (max-width:768px){
     #subcategory-slider
   svg.prev-arrow{
