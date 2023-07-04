@@ -175,7 +175,7 @@ class ProductController extends Controller
         $categorys = Category::all();
         $showcases = Showcase::all();
         $attributes = Attribute::all();
-        $product_attribute = $product->ProductAttribute()->pluck('product_attribute_value_id')->toArray();
+        $product_attribute = $product->ProductAttribute()->pluck('attribute_value_id')->toArray();
         $product_showcases = $product->showcaseProducts()->exists() ? $product->showcaseProducts()->pluck('showcase_id')->toArray() : [];
         //  dd($product_attribute);
         return view('backend.product.edit', compact('product', 'categorys', 'brands', 'showcases', 'product_showcases', 'attributes', 'product_attribute'));

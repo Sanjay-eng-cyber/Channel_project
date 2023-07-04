@@ -67,7 +67,7 @@ class Product extends Model
             ProductAttribute::create([
                 'product_id' => $product,
                 'attribute_id' => $item,
-                'product_attribute_value_id' => $values[$key],
+                'attribute_value_id' => $values[$key],
             ]);
         }
     }
@@ -80,11 +80,11 @@ class Product extends Model
                 ProductAttribute::create([
                     'product_id' => $product,
                     'attribute_id' => $item,
-                    'product_attribute_value_id' => $values[$key],
+                    'attribute_value_id' => $values[$key],
                 ]);
             } else {
                 $attribute->update([
-                    'product_attribute_value_id' => $values[$key],
+                    'attribute_value_id' => $values[$key],
                 ]);
             }
         }
