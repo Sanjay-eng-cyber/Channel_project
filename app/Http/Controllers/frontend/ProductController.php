@@ -72,7 +72,10 @@ class ProductController extends Controller
         $ratingsArr[4] = isset($ratings[4]) ? (($ratings[4] / $reviewsCount) * 100) : 0;
         $ratingsArr[5] = isset($ratings[5]) ? (($ratings[5] / $reviewsCount) * 100) : 0;
         // dd($ratings);
-        return view('frontend.product.show', compact('product', 'reviews', 'cProducts', 'reviewRatingAvg', 'ratingsArr', 'attributes', 'similarProducts'));
+
+        $relatedProducts = Product::where('id', '!=', $product->id)->where('category_id', $product->category_id)->latest()->limit(12)->get();
+        // dd($relatedProducts);
+        return view('frontend.product.show', compact('product', 'reviews', 'relatedProducts', 'cProducts', 'reviewRatingAvg', 'ratingsArr', 'attributes', 'similarProducts'));
     }
 
     public function checkout(Request $request, $product_slug)

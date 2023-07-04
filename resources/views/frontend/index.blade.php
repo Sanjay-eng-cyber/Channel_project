@@ -452,7 +452,7 @@
             <div class="rise-up-slider">
                 @for ($i = 0; $i < 5; $i++)
                     <div class="rise-up-slider-card">
-                        <img class="product" src="{{ url('frontend/images/chair.png') }}" alt="">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch1.png') }}" alt="">
                         <div class="text ">
                             <div>
                                 <h4 class="text-capitalize">
