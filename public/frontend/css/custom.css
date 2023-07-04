@@ -86,6 +86,7 @@
 
   }
 
+
 :root {}
 
 /* body{
@@ -2511,8 +2512,11 @@ a:hover {
     margin: 0 10px;
 }
 
+.rise-up-slider {
+    padding: 20px;
+}
 .rise-up-slider .rise-up-slider-card {
-    background: rgba(0, 175, 239, 0.29);
+    /* background: rgba(0, 175, 239, 0.29); */
     border-radius: 30px;
     transform: translateY(50px);
 }
@@ -2525,13 +2529,15 @@ a:hover {
 
 .rise-up-slider .rise-up-slider-card .product {
     display: block;
-    width: 85%;
+    width: 100%;
     margin: auto;
-    padding: 1em;
+    padding: 0em;
+    border-radius: 22px 22px 22px 22px;
 }
 
 .rise-up-slider .rise-up-slider-card.slick-current .product {
     margin-top: -100px;
+    border-radius: 22px 22px 0px 0px;
 }
 
 .rise-up-slider .rise-up-slider-card .text {
