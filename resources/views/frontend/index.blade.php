@@ -5,7 +5,7 @@
     <section>
         <div class="container">
             <div class="row main-group-card">
-                <h2 class="text-red main-head text-capitalize" style="padding: 30px 0px 25px 0px">#Bestseller of channel</h2>
+                <h2 class="text-red main-head text-capitalize mt-4 mb-3">#Bestseller of channel</h2>
 
                 @if ($leftSliders->count())
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
@@ -567,7 +567,7 @@
 
 
                     <div class="rise-up-slider-card">
-                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch1.png') }}" alt="" class="img-fluid w-100">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch5.png') }}" alt="" class="img-fluid w-100">
                         <div class="text ">
                             <div>
                                 <h4 class="text-capitalize">
