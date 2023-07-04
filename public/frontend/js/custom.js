@@ -159,6 +159,7 @@ $(function(){
       slidesToScroll: 1,
       prevArrow: '<svg class="slide-arrow prev-arrow" width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.2773 27.8846L0.930664 14.5001L14.2773 1.11548" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
       nextArrow: '<svg class="slide-arrow next-arrow" width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.72267 27.8846L15.0693 14.5001L1.72267 1.11548" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg',
+      infinite: false, // Disable looping
       responsive: [
         {
           breakpoint: 1401,
