@@ -7,6 +7,9 @@
     display: block;
 }
 
+#subcategory-slider{
+    isolation: isolate;
+}
 
 #subcategory-slider
   .slide-arrow {
@@ -30,10 +33,12 @@
 #subcategory-slider
   svg.prev-arrow{
     left: -40px;
+    z-index: 1;
   }
 #subcategory-slider
   svg.next-arrow{
     right: -50px;
+    z-index: 1;
   }
 
   @media screen and (max-width:768px){
@@ -58,6 +63,9 @@
 #subcategory-slider
   svg.next-arrow{
     right: 0px;
+  }
+  #subcategory-slider{
+    padding:0px;
   }
 
   }
