@@ -408,36 +408,14 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-5 col-md-12">
-                        <h4 class="font-body mb-3">
-                            Narrow Reviews By
-                        </h4>
-                        <div class="row row-cols-1 row-cols-sm-2 ">
-                            <div class="col __1nw-rv pt-2 pt-sm-3 pb-2">
-                                <div class="fw-bold text-red bg-lightpink p-2 text-center">Recent</div>
-                            </div>
-                            <div class="col  __1nw-rv pt-2 pt-sm-3 pb-2">
-                                <div class="fw-bold text-red bg-lightpink p-2 text-center">By Certified Buyer</div>
-                            </div>
-                            <div class="col  __1nw-rv my-2 my-sm-2">
-                                <div class="fw-bold text-red bg-lightpink p-2 text-center">By Positive </div>
-                            </div>
-                            <div class="col __1nw-rv my-2 my-sm-2">
-                                <div class="fw-bold text-red bg-lightpink p-2 text-center">Most Helpful</div>
-                            </div>
-                            <div class="col  __1nw-rv my-2 my-sm-2">
-                                <div class="fw-bold text-red bg-lightpink p-2 text-center">By Negative </div>
-                            </div>
-                        </div>
 
-                    </div>
                 </div>
 
                 <hr>
-                <div class="row pb-4" style="padding-top:2px;">
+                {{-- <div class="row pb-4" style="padding-top:2px;">
                     <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">Recommended based on your
                         purchase</h5>
-                    {{-- @forelse ($cProducts as $cp)
+                     @forelse ($cProducts as $cp)
                         <div class="col-lg-12 col-xl-6 or-secondpage-scard">
                             <div class="p-4 or-secondpage-scard">
                                 <div class="row pt-3 pb-3 or-secondpage-scard-card">
@@ -466,15 +444,74 @@
                         </div>
                     @empty
                         <p class="text-center">No Recommended Products</p>
-                    @endforelse --}}
-                </div>
+                    @endforelse 
+                </div> --}}
                 {{-- <div class="d-flex justify-content-center mt-4">
                     {{ $cProducts->onEachSide(1)->links('pagination::bootstrap-4') }}
                 </div> --}}
+
+
             </div>
+
 
         </section>
     </main>
+
+    <div class="container">
+        <div class="row">
+            <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">
+                Recommended Products
+            </h5>
+            <div class="col-sm-12">
+
+                    <ul id="subcategory-slider">
+
+                        @for ($i = 0; $i <= 10; $i++)
+                                <div class="product-show-grid">
+
+                                    <div class=" product-show-grid-card ">
+                                        <div class="product-card-img">
+                                            <button class="btn wishlist">
+                                                <span class="has-tool-tip">
+                                                    <span class="icon">
+                                                        <i class="fa-regular fa-heart"></i>
+                                                    </span>
+                                                    <span class="tool-tip-text">Add to wishlist</span>
+                                                </span>
+                                            </button>
+                                            <img src="https://via.placeholder.com/300" alt="...">
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title font-head fw-bold">
+                                                Essence Long Lasting Eye care Pencil
+                                            </h4>
+                                            <small class="text-muted">
+                                                Intense & Long-lasting
+                                            </small>
+                                            <div class="price">
+                                                ₹2,707 <s class="text-danger">₹4,509</s>
+                                            </div>
+                                            <div class="buttons">
+                                                <a href="#" class="btn btn-orange">
+                                                    Shop now
+                                                </a>
+                                                <a href="#" class="btn btn-pink ">
+                                                    Add ToCart
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                        @endfor
+
+
+                    </ul>
+
+
+            </div>
+        </div>
+    </div>
 
     <style>
         .p-show.add-to-wish {

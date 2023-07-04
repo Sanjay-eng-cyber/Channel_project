@@ -140,3 +140,51 @@ $('.home-decor-slider').slick({
     ]
   });
 
+//   $(document).ready(function() {
+//     $('.raeesh12').slick({
+//       slidesToShow: 6,
+//       slidesToScroll: 1,
+//       nav:true,
+//       prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+//       nextArrow: '<button class="slide-arrow next-arrow"></button>'
+
+//     });
+//   });
+
+
+$(function(){
+    $("#subcategory-slider").slick({
+      speed: 1000,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      prevArrow: '<svg class="slide-arrow prev-arrow" width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.2773 27.8846L0.930664 14.5001L14.2773 1.11548" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      nextArrow: '<svg class="slide-arrow next-arrow" width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.72267 27.8846L15.0693 14.5001L1.72267 1.11548" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg',
+      responsive: [
+        {
+          breakpoint: 1401,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 1399,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+  });
+  
