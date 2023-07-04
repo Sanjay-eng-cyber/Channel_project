@@ -444,7 +444,7 @@
                         </div>
                     @empty
                         <p class="text-center">No Recommended Products</p>
-                    @endforelse 
+                    @endforelse
                 </div> --}}
                 {{-- <div class="d-flex justify-content-center mt-4">
                     {{ $cProducts->onEachSide(1)->links('pagination::bootstrap-4') }}
@@ -464,49 +464,74 @@
             </h5>
             <div class="col-sm-12">
 
-                    <ul id="subcategory-slider">
+                <ul id="subcategory-slider">
 
-                        @for ($i = 0; $i <= 10; $i++)
-                                <div class="product-show-grid">
+                    @foreach ($relatedProducts as $rP)
+                        <div class="product-show-grid">
 
-                                    <div class=" product-show-grid-card ">
-                                        <div class="product-card-img">
-                                            <button class="btn wishlist">
-                                                <span class="has-tool-tip">
-                                                    <span class="icon">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                    </span>
-                                                    <span class="tool-tip-text">Add to wishlist</span>
-                                                </span>
-                                            </button>
-                                            <img src="https://via.placeholder.com/300" alt="...">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title font-head fw-bold">
-                                                Essence Long Lasting Eye care Pencil
-                                            </h4>
-                                            <small class="text-muted">
-                                                Intense & Long-lasting
-                                            </small>
-                                            <div class="price">
-                                                ₹2,707 <s class="text-danger">₹4,509</s>
-                                            </div>
-                                            <div class="buttons">
-                                                <a href="#" class="btn btn-orange">
-                                                    Shop now
-                                                </a>
-                                                <a href="#" class="btn btn-pink ">
-                                                    Add ToCart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                            <div class=" product-show-grid-card ">
+                                <div class="product-card-img">
+                                    @if ($rP->isInWishlist())
+                                        <button class="btn wishlist add-to-wish active" data-p-id="{{ $rP->id }}">
+                                            <span class="has-tool-tip">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="tool-tip-text">Remove From Wishlist</span>
+                                            </span>
+                                        </button>
+                                    @else
+                                        <button class="btn wishlist add-to-wish" data-p-id="{{ $rP->id }}">
+                                            <span class="has-tool-tip">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="tool-tip-text">Add to Wishlist</span>
+                                            </span>
+                                        </button>
+                                    @endif
+                                    @if ($rP->thumbnail_image)
+                                        <img src="{{ asset('storage/images/products/' . $rP->thumbnail_image) }}"
+                                            alt="...">
+                                    @else
+                                        <img src="/frontend/images/products/skin/sk2.png" class="img-slider"
+                                            alt="image description">
+                                    @endif
                                 </div>
-                        @endfor
+                                <div class="card-body">
+                                    <h4 class="card-title font-head fw-bold">
+                                        {{ $rP->name }}
+                                    </h4>
+                                    <div class="price">
+                                        ₹{{ $rP->final_price }} <s class="text-danger">₹{{ $rP->mrp }}</s>
+                                    </div>
+                                    <div class="buttons">
+                                        <a href="{{ route('frontend.p.show', $rP->slug) }}" class="btn btn-orange">
+                                            Shop now
+                                        </a>
+                                        @if ($rP->isInCart())
+                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
+                                                data-p-id="{{ $rP->id }}">
+                                                <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"
+                                                    data-prefix="fas" data-icon="check" role="img"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                                    data-fa-i2svg="">
+                                                    <path fill="currentColor"
+                                                        d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                    </path>
+                                                </svg> Added
+                                            </a>
+                                        @else
+                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
+                                                data-p-id="{{ $rP->id }}">
+                                                Add To Cart
+                                            </a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    @endforeach
 
 
-                    </ul>
+                </ul>
 
 
             </div>
