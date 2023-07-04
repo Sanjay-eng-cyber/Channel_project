@@ -1,5 +1,6 @@
 .dropdown-menu {
     display: none;
+    --bs-dropdown-link-active-bg:#cbeffc;
 }
 
 .nav-item:hover .dropdown-menu {

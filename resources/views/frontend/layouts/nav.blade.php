@@ -282,25 +282,57 @@
 
                                     <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                         <div class="text-capitalize">
-                                            <a class="dropdown-item " href="#">Shampoo</a>
-                                            <a class="dropdown-item" href="#">Conditoner</a>
-                                            <a class="dropdown-item" href="#">Hair mask</a>
-                                            <a class="dropdown-item" href="#">Hair serum</a>
+                                            <a class="dropdown-item " href="#">Shower Gel</a>
+                                            <a class="dropdown-item" href="#">Body Scrub</a>
+                                            <a class="dropdown-item" href="#">Body Lotion</a>
+                                            <a class="dropdown-item" href="#">Hand Cream</a>
                                             <a class="dropdown-item" href="#">Hair Oil</a>
-                                            <a class="dropdown-item" href="#">Straigthner</a>
-                                            <a class="dropdown-item" href="#">Dryer</a>
-                                            <a class="dropdown-item" href="#">Curler</a>
-                                            <a class="dropdown-item" href="#">Trimmers</a>
+                                            <a class="dropdown-item" href="#">Foot Cream</a>
+                                            <a class="dropdown-item" href="#">Body Butter</a>
+                                            <a class="dropdown-item" href="#">Soaps</a>
+                                            <a class="dropdown-item" href="#">Hand wash</a>
                                         </div>
                                     </div>
 
                                 </li>
-                               <li><a href="{{ route('frontend.cat.show', 'home-decor') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'home-decor') ? 'active-red' : '' }} text-capitalize">Home
-                                       Decor</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'gift') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'gift') ? 'active-red' : '' }} text-capitalize">Gift</a>
+                               <li class="nav-item dropdown">
+                                    <a href="{{ route('frontend.cat.show', 'home-decor') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'home-decor') ? 'active-red' : '' }} nav-link text-capitalize" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       Home Decor
+                                    </a>
+
+                                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                        <div class="text-capitalize">
+                                            <a class="dropdown-item " href="#">Windchime</a>
+                                            <a class="dropdown-item" href="#">Wall décor</a>
+                                            <a class="dropdown-item" href="#">Wall Clock</a>
+                                            <a class="dropdown-item" href="#">Table Piece</a>
+                                            <a class="dropdown-item" href="#">Table Clock</a>
+                                            <a class="dropdown-item" href="#">Planters</a>
+                                            <a class="dropdown-item" href="#">Key Holders</a>
+                                        </div>
+                                    </div>
+
+
+                                </li>
+
+                               <li class="nav-item dropdown">
+                                    <a href="{{ route('frontend.cat.show', 'gift') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'gift') ? 'active-red' : '' }} nav-link text-capitalize" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       Gift
+                                    </a>
+                                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                        <div class="text-capitalize">
+                                            <a class="dropdown-item " href="#">School Stationery</a>
+                                            <a class="dropdown-item" href="#">Bobble Heads</a>
+                                            <a class="dropdown-item" href="#">Action Figures</a>
+                                            <a class="dropdown-item" href="#">Keychains</a>
+                                           
+                                        </div>
+                                    </div>
                                </li>
+
+
                            </ul>
                        </nav>
 
