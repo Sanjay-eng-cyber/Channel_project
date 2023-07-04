@@ -133,51 +133,6 @@
 
        {{-- navbar --}}
        <div class="mt-bottom-bar py-2">
-           <div class="conatiner-fluid d-inline d-lg-none ">
-               <div class="row row-cols-4 ">
-                   <div class="col">
-                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                           <li>
-                               <img src="http://channel.test/frontend/images/svg/footer/home.svg" alt="">
-                           </li>
-                           <li>Home</li>
-                       </ul>
-                   </div>
-
-                   <div class="col">
-                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                           <li>
-                               <img src="http://channel.test/frontend/images/svg/footer/search.svg" alt="">
-
-                           </li>
-                           <li>Search</li>
-                       </ul>
-                   </div>
-
-                   <div class="col">
-                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                           <li>
-                               <img src="http://channel.test/frontend/images/svg/footer/account.svg" alt="">
-
-                           </li>
-                           <li>Account</li>
-                       </ul>
-                   </div>
-
-                   <div class="col">
-                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                           <li>
-                               <img src="http://channel.test/frontend/images/svg/footer/cart.svg" alt="">
-
-                           </li>
-                           <li>Cart</li>
-                       </ul>
-                   </div>
-
-               </div>
-           </div>
-
-
            <div class="container d-none d-lg-block px-0">
                <div class="row">
                    <div class="col-xs-12">
