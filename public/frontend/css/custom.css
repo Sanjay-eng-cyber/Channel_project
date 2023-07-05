@@ -1,4 +1,7 @@
 .dropdown-menu {
+    top: 2.9em;
+    left: 50%;
+    transform: translateX(-50%);
     display: none;
     --bs-dropdown-link-active-bg:#cbeffc;
 }
@@ -6,12 +9,15 @@
 .nav-item:hover .dropdown-menu {
     display: block;
 }
-
+#nav > ul > li{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
 .sib-card{
     display: grid;
     grid-template-columns: 50% 50%;
     grid-column-gap: 6%;
-    
+
 }
 
 #subcategory-slider{
@@ -48,13 +54,13 @@
     z-index: 1;
   }
 
-  
+
   @media screen and (max-width:992px){
         .sib-card{
             display: grid;
             grid-template-columns: 100%;
             grid-column-gap:unset;
-            
+
         }
   }
   @media screen and (max-width:768px){
@@ -70,7 +76,7 @@
   }
 
 
-  
+
   @media screen and (max-width:576px){
     #subcategory-slider
   svg.prev-arrow{

@@ -291,52 +291,7 @@
 <a href="#" class="scroll-top">
     <i class="fa fa-arrow-up"></i>
 </a>
-<!-- footer of the Page end -->
-<div class="py-5 phone-fixed-bottom-menu-gap"></div>
-<div class="conatiner-fluid phone-fixed-bottom-menu" style="background: white">
-    <div class="row row-cols-4 ">
-        <div class="col">
-            <ul class="gap-2 d-flex flex-column align-items-center">
-                <li>
-                    <img src="{{ url('frontend/images/svg/footer/home.svg') }}" alt="">
-                </li>
-                <li>home</li>
-            </ul>
-        </div>
-
-        <div class="col">
-            <ul class="gap-2 d-flex flex-column align-items-center">
-                <li>
-                    <img src="{{ url('frontend/images/svg/footer/search.svg') }}" alt="">
-
-                </li>
-                <li>Search</li>
-            </ul>
-        </div>
-
-        <div class="col">
-            <ul class="gap-2 d-flex flex-column align-items-center">
-                <li>
-                    <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
-
-                </li>
-                <li>Account</li>
-            </ul>
-        </div>
-
-        <div class="col">
-            <ul class="gap-2 d-flex flex-column align-items-center">
-                <li>
-                    <img src="{{ url('frontend/images/svg/footer/cart.svg') }}" alt="">
-
-                </li>
-                <li>Cart</li>
-            </ul>
-        </div>
-
-    </div>
-</div>
-{{-- @section('js') --}}
+ 
 <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
 <script src="/js/jquery.min.js"></script>
 <script>
