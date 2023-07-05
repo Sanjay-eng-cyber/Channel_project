@@ -36,10 +36,10 @@
                                            $cart = $user->cart;
                                        } else {
                                            $cart_session_id = session()->get('cart_session_id');
-                                           $cart = App\Models\Cart::where('session_id', $cart_session_id)->first();
+                                           $cart = $cart_session_id ? App\Models\Cart::where('session_id', $cart_session_id)->first() : null;
                                        }
                                        $cartItemsCount = $cart ? $cart->items()->count() : 0;
-                                   @endphp
+                                       @endphp
                                    <li class="nav-item text-red position-relative">
                                        <a class="nav-link fw-bold nn-top-cart"
                                            href="{{ route('frontend.cart.index') }}">
@@ -282,7 +282,7 @@
                                             <a class="dropdown-item" href="#">Bobble Heads</a>
                                             <a class="dropdown-item" href="#">Action Figures</a>
                                             <a class="dropdown-item" href="#">Keychains</a>
-                                           
+
                                         </div>
                                     </div>
                                </li>

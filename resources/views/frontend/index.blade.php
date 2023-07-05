@@ -5,7 +5,7 @@
     <section>
         <div class="container">
             <div class="row main-group-card">
-                <h2 class="text-red main-head text-capitalize" style="padding: 30px 0px 25px 0px">#Bestseller of channel</h2>
+                <h2 class="text-red main-head text-capitalize mt-4 mb-3">#Bestseller of channel</h2>
 
                 @if ($leftSliders->count())
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
@@ -450,9 +450,8 @@
             </h2>
 
             <div class="rise-up-slider">
-                @for ($i = 0; $i < 5; $i++)
                     <div class="rise-up-slider-card">
-                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch1.png') }}" alt="">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch1.png') }}" alt="" class="img-fluid w-100 ">
                         <div class="text ">
                             <div>
                                 <h4 class="text-capitalize">
@@ -478,7 +477,122 @@
                             </div>
                         </div>
                     </div>
-                @endfor
+
+                    <div class="rise-up-slider-card">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch2.png') }}" alt="" class="img-fluid w-100">
+                        <div class="text ">
+                            <div>
+                                <h4 class="text-capitalize">
+                                    handmade work chair
+                                </h4>
+                                ₹2,707 <s class="text-muted">₹4,509</s>
+                            </div>
+                            <div>
+                                {{-- @if ($p->isInWishlist()) --}}
+                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                    <span class="has-tool-tip">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </span>
+                                </button>
+                                {{-- @else
+                                    <button class="like-btn btn btn wishlist add-to-wish"
+                                        data-p-id="{{ $p->id }}">
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                @endif --}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="rise-up-slider-card">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch3.png') }}" alt="" class="img-fluid w-100">
+                        <div class="text ">
+                            <div>
+                                <h4 class="text-capitalize">
+                                    handmade work chair
+                                </h4>
+                                ₹2,707 <s class="text-muted">₹4,509</s>
+                            </div>
+                            <div>
+                                {{-- @if ($p->isInWishlist()) --}}
+                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                    <span class="has-tool-tip">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </span>
+                                </button>
+                                {{-- @else
+                                    <button class="like-btn btn btn wishlist add-to-wish"
+                                        data-p-id="{{ $p->id }}">
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                @endif --}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="rise-up-slider-card">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch4.png') }}" alt="" class="img-fluid w-100">
+                        <div class="text ">
+                            <div>
+                                <h4 class="text-capitalize">
+                                    handmade work chair
+                                </h4>
+                                ₹2,707 <s class="text-muted">₹4,509</s>
+                            </div>
+                            <div>
+                                {{-- @if ($p->isInWishlist()) --}}
+                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                    <span class="has-tool-tip">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </span>
+                                </button>
+                                {{-- @else
+                                    <button class="like-btn btn btn wishlist add-to-wish"
+                                        data-p-id="{{ $p->id }}">
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                @endif --}}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="rise-up-slider-card">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch5.png') }}" alt="" class="img-fluid w-100">
+                        <div class="text ">
+                            <div>
+                                <h4 class="text-capitalize">
+                                    handmade work chair
+                                </h4>
+                                ₹2,707 <s class="text-muted">₹4,509</s>
+                            </div>
+                            <div>
+                                {{-- @if ($p->isInWishlist()) --}}
+                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                    <span class="has-tool-tip">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </span>
+                                </button>
+                                {{-- @else
+                                    <button class="like-btn btn btn wishlist add-to-wish"
+                                        data-p-id="{{ $p->id }}">
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                @endif --}}
+                            </div>
+                        </div>
+                    </div>
             </div>
 
         </div>
@@ -488,9 +602,9 @@
     {{-- organic-product slider --}}
 
     <section class="og-main-section">
-        <div class="container og-main" style="">
-            <div class="row">
-                <div class="col-md-12 col-lg-6 og-main-part-1">
+        <div class="container og-main">
+            <div class="sib-card">
+                <div class="og-main-part-1">
                     <h3 class="text-red card-text-heading text-capitalize" style="padding:40px 0px 40px 0px">#look for
                         personal care too..
                     </h3>
@@ -504,7 +618,7 @@
                     <div class="organic-product-slider og-main-card">
                         <div class="text og-main-text">
                             <div class="og-main-sy">
-                                <h3 class="pro-head">Pure And Organic Products </h3>
+                                <h3 class="pro-head">Pure And Organic <br/>Products </h3>
 
                                 <p style="font-weight: 300;" class="text-capitalize">
                                     Enhance your self-care routine with<br />
@@ -525,9 +639,44 @@
                     </div>
                 </div>
 
-                <div class="col-md-12 col-lg-6" style="">
 
+                <div class=" og-main-part-1">
+                    <h3 class="text-red card-text-heading text-capitalize" style="padding:40px 0px 40px 0px">
+                        #best hair care product
+                    </h3>
+
+                    <img src="frontend/images/organic-product/og-1.png" alt="" class="og-main-img-first">
+                    <img src="frontend/images/organic-product/og-2.png" alt="" class="og-main-img-second">
+                    <img src="frontend/images/organic-product/og-4.png" alt="" class="og-main-img-third">
+                    <img src="frontend/images/organic-product/og-5.png" alt="" class="og-main-img-fourth">
+                    <img src="frontend/images/organic-product/og-3.png" alt="" class="og-main-img-fifth">
+
+                    <div class="organic-product-slider og-main-card">
+                        <div class="text og-main-text">
+                            <div class="og-main-sy">
+                                <h3 class="pro-head">Nourishing And<br/> Revitalizing Hair Products</h3>
+
+                                <p style="font-weight: 300;" class="text-capitalize">
+                                    Enhance your self-care routine with <br/>our premium personal care products.
+
+                                </p>
+
+                            </div>
+                            <div class="og-main-button">
+                                <button type="button" class="oganic-button">
+                                    <a href="">
+                                        Shop Now
+                                    </a>
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
+
+
+
             </div>
 
         </div>
