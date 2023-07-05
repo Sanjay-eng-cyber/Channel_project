@@ -18,12 +18,12 @@ class CreateOrderItemsTable extends Migration
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->integer('quantity')->nullable()->default(1);
-            $table->float('taxable_amount');
+            $table->decimal('taxable_amount');
             $table->float('cgst_percent');
             $table->float('cgst');
             $table->float('sgst_percent');
             $table->float('sgst');
-            $table->float('amount');
+            $table->decimal('amount');
             $table->timestamps();
         });
     }

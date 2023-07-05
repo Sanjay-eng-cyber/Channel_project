@@ -86,7 +86,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="my-2">
+                    {{-- <div class="my-2">
                         <form action="{{ route('apply-coupon') }}" method="POST">
                             <label for="coupon-code-input my-3">Coupon</label>
                             <div class="input-group my-2">
@@ -100,7 +100,7 @@
                             </div>
                         </form>
                     </div>
-                    <hr>
+                    <hr> --}}
 
                     {{-- <hr> --}}
                     <span class="h5  font-body text-capitalize">Price Details
@@ -160,14 +160,14 @@
     <script>
         var options = {
             "key": "{{ config('razorpay.id') }}", // Enter the Key ID generated from the Dashboard
-            "amount": "{{ number_format($grandTotal) }}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise "currency": "INR",
+            "amount": {{ intval(number_format($grandTotal, 2) * 100) }}, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise "currency": "INR",
             "name": "{{ config('app.name') }}",
             "description": "{{ config('app.env') }}",
             "image": "https://example.com/your_logo",
             "order_id": "{{ $order['api_order_id'] }}",
             "callback_url": "{{ route('razorpay.callback') }}",
             "prefill": {
-                "name": "Tirumani",
+                "name": "Tiru",
                 "email": "tiru@gmail.com",
                 "contact": "1234567890"
             },

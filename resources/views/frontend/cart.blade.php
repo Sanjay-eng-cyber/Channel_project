@@ -118,11 +118,11 @@
         <div class="padding-order-summary">
             <h5 class="main-head">Order Summary</h5>
             <hr style="border-bottom: 2px solid #000000;">
-            <div class="d-flex justify-content-between my-3">
+            {{-- <div class="d-flex justify-content-between my-3">
                 <strong>Sub Total</strong>
                 <strong> {{ $subTotal }}</strong>
-            </div>
-            <hr>
+            </div> --}}
+            {{-- <hr>
 
             <div class="my-2">
                 <form action="" method="post">
@@ -133,25 +133,20 @@
                             aria-label="Coupon code" aria-describedby="coupon-button">
                     </div>
                 </form>
-            </div>
-
-            <p class="m-0 p-0 my-2 __cart-ui-pra text-capitalize">coupon code will apply on checkout page
-            </p>
+            </div> --}}
 
             <div class="d-flex justify-content-between my-3">
                 <strong>Total:</strong>
                 <strong>{{ $subTotal }}</strong>
             </div>
-            <hr>
-            <p class="m-0 p-0 my-2 __cart-ui-pra text-capitalize">coupon code will apply on checkout page
-            </p>
+            {{-- <hr> --}}
 
             <div>
-                <a href="http://" class="my-2 text-white">
+                {{-- <a href="http://" class="my-2 text-white">
                     <button type="button" class="btn btn-outline-pink-hover w-100 p-1 p-xl-2">
                         Proceed To Checkout
                     </button>
-                </a>
+                </a> --}}
                 <form action="{{ route('frontend.cart.checkout') }}" method="GET">
                     <button type="submit" class="btn mt-3 btn-orange-outline-hover w-100 my-2  p-1 p-xl-2">
                         Proceed To Checkout

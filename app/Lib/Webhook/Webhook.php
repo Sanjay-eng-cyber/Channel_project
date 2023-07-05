@@ -29,14 +29,15 @@ class Webhook {
     public function manage($payload)
     {
         $status = $this->status;
-        if ($this->event === 'subscription.charged') {
-            $payload = $this->formatPayload($payload);
-            self::$plan = Plan::where('plan_id', $payload['subscription']['plan_id'])
-                ->first(['id', 'amount']);
-            return $this->getEntity()::$status($payload);
-        }
+        // if ($this->event === 'subscription.charged') {
+        //     $payload = $this->formatPayload($payload);
+        //     self::$plan = Plan::where('plan_id', $payload['subscription']['plan_id'])
+        //         ->first(['id', 'amount']);
+        //     return $this->getEntity()::$status($payload);
+        // }
 
-        $payload = isset($payload['subscription']) ? $payload['subscription']['entity'] : $payload['payment']['entity'];
+        // $payload = isset($payload['subscription']) ? $payload['subscription']['entity'] : $payload['payment']['entity'];
+        $payload = $payload['payment']['entity'];
         return $this->getEntity()::$status($payload)/* . '::'. $status()*/;
     }
 

@@ -21,7 +21,7 @@ class CreateTransactionsTable extends Migration
             $table->mediumText('pg_amount')->nullable();
             $table->string('pg_status')->nullable();
             $table->mediumText('payment_type')->nullable();
-            $table->float('amount');
+            $table->decimal('amount');
             $table->enum('status', ['initial', 'pending','completed', 'failed']);
             $table->dateTime('transaction_date')->useCurrent();
             $table->timestamps();

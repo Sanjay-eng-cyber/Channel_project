@@ -90,7 +90,7 @@ class CheckoutController extends Controller
         //     session()->forget('discount');
         // }
         $order->update(['status' => 'completed']);
-        return view('callback', compact('order'));
+        return view('frontend.payment-success', compact('order'));
     }
 
     public function applyCoupon(Request $request)
@@ -129,7 +129,7 @@ class CheckoutController extends Controller
         // dd($api);
         if ($user->orders()->whereStatus('initial')->exists()) {
             $order = $user->orders()->whereStatus('initial')->latest()->first();
-            $apiOrder = $api->createOrder($grandTotal);
+            $apiOrder = $api->createOrder(intval(number_format($grandTotal, 2) * 100));
             $order->update([
                 'api_order_id' => $apiOrder['id'],
                 'sub_total' => $subTotal,
@@ -145,7 +145,7 @@ class CheckoutController extends Controller
             optional($order->item)->delete();
             self::createOrderItems($order, $cartItems);
         } else {
-            $apiOrder = $api->createOrder($grandTotal);
+            $apiOrder = $api->createOrder(intval(number_format($grandTotal, 2) * 100));
             $order = $this->createOrder($grandTotal, [
                 'api_order_id' => $apiOrder['id'],
                 'discount' => $discount
