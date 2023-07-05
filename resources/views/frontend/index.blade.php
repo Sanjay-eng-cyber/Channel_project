@@ -5,7 +5,7 @@
     <section>
         <div class="container">
             <div class="row main-group-card">
-                <h2 class="text-red main-head text-capitalize" style="padding: 30px 0px 25px 0px">#Bestseller of channel</h2>
+                <h2 class="text-red main-head text-capitalize mt-4 mb-3">#Bestseller of channel</h2>
 
                 @if ($leftSliders->count())
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
@@ -450,9 +450,8 @@
             </h2>
 
             <div class="rise-up-slider">
-                @for ($i = 0; $i < 5; $i++)
                     <div class="rise-up-slider-card">
-                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch1.png') }}" alt="">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch1.png') }}" alt="" class="img-fluid w-100 ">
                         <div class="text ">
                             <div>
                                 <h4 class="text-capitalize">
@@ -478,7 +477,122 @@
                             </div>
                         </div>
                     </div>
-                @endfor
+
+                    <div class="rise-up-slider-card">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch2.png') }}" alt="" class="img-fluid w-100">
+                        <div class="text ">
+                            <div>
+                                <h4 class="text-capitalize">
+                                    handmade work chair
+                                </h4>
+                                ₹2,707 <s class="text-muted">₹4,509</s>
+                            </div>
+                            <div>
+                                {{-- @if ($p->isInWishlist()) --}}
+                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                    <span class="has-tool-tip">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </span>
+                                </button>
+                                {{-- @else
+                                    <button class="like-btn btn btn wishlist add-to-wish"
+                                        data-p-id="{{ $p->id }}">
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                @endif --}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="rise-up-slider-card">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch3.png') }}" alt="" class="img-fluid w-100">
+                        <div class="text ">
+                            <div>
+                                <h4 class="text-capitalize">
+                                    handmade work chair
+                                </h4>
+                                ₹2,707 <s class="text-muted">₹4,509</s>
+                            </div>
+                            <div>
+                                {{-- @if ($p->isInWishlist()) --}}
+                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                    <span class="has-tool-tip">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </span>
+                                </button>
+                                {{-- @else
+                                    <button class="like-btn btn btn wishlist add-to-wish"
+                                        data-p-id="{{ $p->id }}">
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                @endif --}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="rise-up-slider-card">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch4.png') }}" alt="" class="img-fluid w-100">
+                        <div class="text ">
+                            <div>
+                                <h4 class="text-capitalize">
+                                    handmade work chair
+                                </h4>
+                                ₹2,707 <s class="text-muted">₹4,509</s>
+                            </div>
+                            <div>
+                                {{-- @if ($p->isInWishlist()) --}}
+                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                    <span class="has-tool-tip">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </span>
+                                </button>
+                                {{-- @else
+                                    <button class="like-btn btn btn wishlist add-to-wish"
+                                        data-p-id="{{ $p->id }}">
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                @endif --}}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="rise-up-slider-card">
+                        <img class="product" src="{{ url('frontend/images/products/home-decor/ch5.png') }}" alt="" class="img-fluid w-100">
+                        <div class="text ">
+                            <div>
+                                <h4 class="text-capitalize">
+                                    handmade work chair
+                                </h4>
+                                ₹2,707 <s class="text-muted">₹4,509</s>
+                            </div>
+                            <div>
+                                {{-- @if ($p->isInWishlist()) --}}
+                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                    <span class="has-tool-tip">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </span>
+                                </button>
+                                {{-- @else
+                                    <button class="like-btn btn btn wishlist add-to-wish"
+                                        data-p-id="{{ $p->id }}">
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                @endif --}}
+                            </div>
+                        </div>
+                    </div>
             </div>
 
         </div>

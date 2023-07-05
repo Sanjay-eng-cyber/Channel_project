@@ -137,7 +137,7 @@
                                                             </p>
                                                         </div>
 
-                                                        @forelse ($product_attribute->values()->get() as $attVaule)
+                                                        @forelse ($product_attribute->value()->get() as $attVaule)
                                                             <p class="label-title">{{ $attVaule->name }}
                                                             </p>
                                                         @empty
