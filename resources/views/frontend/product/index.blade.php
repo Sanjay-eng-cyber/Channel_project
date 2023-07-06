@@ -120,76 +120,82 @@
                     <div class="tab-content">
 
                         <div id="__skincare">
+                            @if ($products->count())
+                                <div class="product-show-grid">
 
-                            <div class="product-show-grid">
-
-                                @forelse ($products as $pro)
-                                    <div class=" product-show-grid-card ">
-                                        <div class="product-card-img">
-                                            @if ($pro->isInWishlist())
-                                                <button class="btn wishlist add-to-wish active"
-                                                    data-p-id="{{ $pro->id }}">
-                                                    <span class="has-tool-tip">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                        <span class="tool-tip-text">Remove From Wishlist</span>
-                                                    </span>
-                                                </button>
-                                            @else
-                                                <button class="btn wishlist add-to-wish" data-p-id="{{ $pro->id }}">
-                                                    <span class="has-tool-tip">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                        <span class="tool-tip-text">Add to Wishlist</span>
-                                                    </span>
-                                                </button>
-                                            @endif
-                                            @if ($pro->thumbnail_image)
-                                                <img src="{{ asset('storage/images/products/' . $pro->thumbnail_image) }}"
-                                                    alt="...">
-                                            @else
-                                                <img src="/frontend/images/products/skin/sk2.png" class="img-slider"
-                                                    alt="image description">
-                                            @endif
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title font-head fw-bold">
-                                                {{ $pro->name }}
-                                            </h4>
-                                            <small class="text-muted">
-                                                {{ $pro->short_descriptions }}
-                                            </small>
-                                            <div class="price">
-                                                {{ $pro->mrp }} <s class="text-danger">{{ $pro->final_price }}</s>
-                                            </div>
-                                            <div class="buttons">
-                                                <a href="{{ route('frontend.p.show', $pro->slug) }}"
-                                                    class="btn btn-orange">
-                                                    Shop now
-                                                </a>
-                                                @if ($pro->isInCart())
-                                                    <a href="javascript:void(0)"
-                                                        class="btn btn-pink add-to-cart btn-outline-pink"
+                                    @forelse ($products as $pro)
+                                        <div class=" product-show-grid-card ">
+                                            <div class="product-card-img">
+                                                @if ($pro->isInWishlist())
+                                                    <button class="btn wishlist add-to-wish active"
                                                         data-p-id="{{ $pro->id }}">
-                                                        <svg class="svg-inline--fa fa-check" aria-hidden="true"
-                                                            focusable="false" data-prefix="fas" data-icon="check"
-                                                            role="img" xmlns="http://www.w3.org/2000/svg"
-                                                            viewBox="0 0 512 512" data-fa-i2svg="">
-                                                            <path fill="currentColor"
-                                                                d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                                                            </path>
-                                                        </svg> Added
-                                                    </a>
+                                                        <span class="has-tool-tip">
+                                                            <i class="fa-regular fa-heart"></i>
+                                                            <span class="tool-tip-text">Remove From Wishlist</span>
+                                                        </span>
+                                                    </button>
                                                 @else
-                                                    <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
+                                                    <button class="btn wishlist add-to-wish"
                                                         data-p-id="{{ $pro->id }}">
-                                                        Add To Cart
-                                                    </a>
+                                                        <span class="has-tool-tip">
+                                                            <i class="fa-regular fa-heart"></i>
+                                                            <span class="tool-tip-text">Add to Wishlist</span>
+                                                        </span>
+                                                    </button>
+                                                @endif
+                                                @if ($pro->thumbnail_image)
+                                                    <img src="{{ asset('storage/images/products/' . $pro->thumbnail_image) }}"
+                                                        alt="...">
+                                                @else
+                                                    <img src="/frontend/images/products/skin/sk2.png" class="img-slider"
+                                                        alt="image description">
                                                 @endif
                                             </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title font-head fw-bold">
+                                                    {{ $pro->name }}
+                                                </h4>
+                                                <small class="text-muted">
+                                                    {{ $pro->short_descriptions }}
+                                                </small>
+                                                <div class="price">
+                                                    {{ $pro->mrp }} <s class="text-danger">{{ $pro->final_price }}</s>
+                                                </div>
+                                                <div class="buttons">
+                                                    <a href="{{ route('frontend.p.show', $pro->slug) }}"
+                                                        class="btn btn-orange">
+                                                        Shop now
+                                                    </a>
+                                                    @if ($pro->isInCart())
+                                                        <a href="javascript:void(0)"
+                                                            class="btn btn-pink add-to-cart btn-outline-pink"
+                                                            data-p-id="{{ $pro->id }}">
+                                                            <svg class="svg-inline--fa fa-check" aria-hidden="true"
+                                                                focusable="false" data-prefix="fas" data-icon="check"
+                                                                role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512" data-fa-i2svg="">
+                                                                <path fill="currentColor"
+                                                                    d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                                </path>
+                                                            </svg> Added
+                                                        </a>
+                                                    @else
+                                                        <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
+                                                            data-p-id="{{ $pro->id }}">
+                                                            Add To Cart
+                                                        </a>
+                                                    @endif
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                @empty
-                                @endforelse
-                            </div>
+                                    @empty
+                                    @endforelse
+                                </div>
+                            @else
+                                <div class="text-center my-5">
+                                    <p>No Products Found</p>
+                                </div>
+                            @endif
                             <div class="d-flex justify-content-center mt-4">
                                 {{ $products->onEachSide(1)->links('pagination::bootstrap-4') }}
                             </div>
