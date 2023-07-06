@@ -34,7 +34,7 @@
                                 <div class="col-xl-12  col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput">Name</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
+                                        placeholder="Enter Name" minlength="3" maxlength="80" required name="name"
                                         value="{{ old('name') ?? $category->name }}">
                                     @if ($errors->has('name'))
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
