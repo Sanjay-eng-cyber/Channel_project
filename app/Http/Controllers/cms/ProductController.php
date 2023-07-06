@@ -95,7 +95,7 @@ class ProductController extends Controller
         // dd($request);
         // dd($showcases_id);
         $request->validate([
-            'name' => 'required|min:3|max:80|unique:products,name,',
+            'name' => 'required|min:3|max:250|unique:products,name,',
             'descriptions' => 'nullable|min:3|max:20000',
             'mrp' => 'required|numeric',
             'final_price' => 'required|numeric',
@@ -109,7 +109,7 @@ class ProductController extends Controller
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'required|mimes:png,jpg,jpeg|max:1024',
-            'short_descriptions' => 'required|min:3|max:3000',
+            'short_descriptions' => 'required|min:3|max:1000',
             'connection_no' => 'required|min:3|max:20',
             // 'attribute_id' => ['nullable',Rule::in($attribute)],
             // 'product_attribute_value_id' => ['nullable',Rule::in($productAttributeValues)],
@@ -190,7 +190,7 @@ class ProductController extends Controller
         $showcases_id = Showcase::pluck('id')->toArray();
         // dd($media);
         $request->validate([
-            'name' => 'required|min:3|max:80|unique:products,name,' . $id,
+            'name' => 'required|min:3|max:250|unique:products,name,' . $id,
             'descriptions' => 'nullable|min:3|max:20000',
             'mrp' => 'required|numeric',
             'final_price' => 'required|numeric',
@@ -204,7 +204,7 @@ class ProductController extends Controller
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'nullable|mimes:png,jpg,jpeg|max:1024',
-            'short_descriptions' => 'required|min:3|max:3000',
+            'short_descriptions' => 'required|min:3|max:1000',
             'connection_no' => 'required|min:3|max:20',
 
         ]);

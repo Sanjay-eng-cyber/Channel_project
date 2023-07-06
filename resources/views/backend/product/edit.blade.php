@@ -35,7 +35,7 @@
                                     <div class="col-xl-6  col-md-6 col-sm-12">
                                         <label for="formGroupExampleInput" class="">Name</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
-                                            placeholder="Enter Name" minlength="3" maxlength="40" required name="name"
+                                            placeholder="Enter Name" minlength="3" maxlength="250" required name="name"
                                             value="{{ old('name') ?? $product->name }}">
                                         @if ($errors->has('name'))
                                             <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
@@ -150,7 +150,7 @@
                                     <div class="col-xl-6  col-md-6 col-sm-12 mb-3">
                                         <label for="formGroupExampleInput" class="">Short Descriptions</label>
                                         <textarea name="short_descriptions" rows="5" cols="50" class="form-control" minlength="3"
-                                            maxlength="120" required>{{ $product->short_descriptions }}</textarea>
+                                            maxlength="1000" required>{{ $product->short_descriptions }}</textarea>
                                         @if ($errors->has('short_descriptions'))
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('short_descriptions') }}</div>
@@ -240,7 +240,7 @@
                                     </div>
                                     <div class="col-xl-12  col-sm-12 py-1">
                                         <label for="descriptions">Description</label>
-                                        <textarea id="team-about" name="descriptions">{{ old('descriptions') ?? $product->descriptions }}</textarea>
+                                        <textarea id="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') ?? $product->descriptions }}</textarea>
                                         @if ($errors->has('body'))
                                             <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
                                             </div>
