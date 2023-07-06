@@ -95,8 +95,8 @@ class ProductController extends Controller
         // dd($request);
         // dd($showcases_id);
         $request->validate([
-            'name' => 'required|min:3|max:40|unique:products,name,',
-            'descriptions' => 'nullable|min:3|max:250',
+            'name' => 'required|min:3|max:80|unique:products,name,',
+            'descriptions' => 'nullable|min:3|max:20000',
             'mrp' => 'required|numeric',
             'final_price' => 'required|numeric',
             'stock' => 'required|numeric',
@@ -105,18 +105,18 @@ class ProductController extends Controller
             'brand_id' => ['nullable', Rule::in($brands)],
             'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
             'image' => 'required|max:10',
-            'image.*' => 'mimes:png,jpg,jpeg|max:1024|dimensions:width=250,height=250',
+            'image.*' => 'mimes:png,jpg,jpeg|max:1024',
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
-            'thumbnail_image' => 'required|dimensions:width=300,height=300|mimes:png,jpg,jpeg|max:1024',
-            'short_descriptions' => 'required|min:3|max:120',
+            'thumbnail_image' => 'required|mimes:png,jpg,jpeg|max:1024',
+            'short_descriptions' => 'required|min:3|max:3000',
             'connection_no' => 'required|min:3|max:20',
             // 'attribute_id' => ['nullable',Rule::in($attribute)],
             // 'product_attribute_value_id' => ['nullable',Rule::in($productAttributeValues)],
         ]);
 
         $fileWithExtension = $request->file('thumbnail_image');
-        // dd($fileWithExtension);
+        dd($fileWithExtension);
         if ($fileWithExtension) {
             $filename = now()->format('dmy-his') . '-' . rand(1, 99) . '.' . $fileWithExtension->clientExtension();
             $destinationPath = storage_path('app/public/images/products/');
@@ -154,14 +154,14 @@ class ProductController extends Controller
                 $media->file_name = $file_details['filename'];
                 $media->save();
             }
-            $showcases = $request->showcases;
+            $showcases = $request->showcases ?? [];
             foreach ($showcases as $showcase) {
                 $showcase_product = new ShowcaseProduct();
                 $showcase_product->showcase_id = $showcase;
                 $showcase_product->product_id = $product->id;
                 $showcase_product->save();
             }
-            $product->storeProductAttributes($request->attributeKeys, $request->values, $product->id);
+            // $product->storeProductAttributes($request->attributeKeys, $request->values, $product->id);
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Stored Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
@@ -190,8 +190,8 @@ class ProductController extends Controller
         $showcases_id = Showcase::pluck('id')->toArray();
         // dd($media);
         $request->validate([
-            'name' => 'required|min:3|max:40|unique:products,name,' . $id,
-            'descriptions' => 'nullable|min:3|max:250',
+            'name' => 'required|min:3|max:80|unique:products,name,' . $id,
+            'descriptions' => 'nullable|min:3|max:20000',
             'mrp' => 'required|numeric',
             'final_price' => 'required|numeric',
             'stock' => 'required|numeric',
@@ -200,11 +200,11 @@ class ProductController extends Controller
             'brand_id' => ['nullable', Rule::in($brands)],
             'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
             'image' => 'nullable|max:10',
-            'image.*' => 'mimes:png,jpg,jpeg|max:1024|dimensions:width=250,height=250',
+            'image.*' => 'mimes:png,jpg,jpeg|max:1024',
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
-            'thumbnail_image' => 'nullable|dimensions:width=300,height=300|mimes:png,jpg,jpeg|max:1024',
-            'short_descriptions' => 'required|min:3|max:120',
+            'thumbnail_image' => 'nullable|mimes:png,jpg,jpeg|max:1024',
+            'short_descriptions' => 'required|min:3|max:3000',
             'connection_no' => 'required|min:3|max:20',
 
         ]);
@@ -256,7 +256,7 @@ class ProductController extends Controller
                 $media->save();
             }
         }
-        $showcases = $request->showcases;
+        $showcases = $request->showcases ?? [];
         if ($showcases) {
             $showcase_products = ShowcaseProduct::where('product_id', $id);
             optional($showcase_products->delete());
@@ -268,7 +268,7 @@ class ProductController extends Controller
                 $showcase_product->save();
             }
         }
-        $product->updateProductAttributes($request->attributeKeys, $request->values, $product->id);
+        // $product->updateProductAttributes($request->attributeKeys, $request->values, $product->id);
         if ($product->save()) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Update Successfully']);
         }
