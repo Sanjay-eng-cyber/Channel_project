@@ -68,8 +68,13 @@
                                         <input class="form-check-input ck-wallet-fi" type="checkbox" name="gender"
                                             id="male" value="male" checked="">
                                     </div> --}}
-                                    <img src="https://via.placeholder.com/180x180" class="img-fluid img-border"
-                                        alt="">
+                                    @if ($c->product->thumbnail_image)
+                                        <img src="{{ asset('storage/images/products/' . $c->product->thumbnail_image) }}"
+                                            alt="..." class="img-fluid img-border">
+                                    @else
+                                        <img src="/frontend/images/products/skin/sk2.png" class="img-fluid img-border"
+                                            alt="image description">
+                                    @endif
                                 </div>
                             </div>
 

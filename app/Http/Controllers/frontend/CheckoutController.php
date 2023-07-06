@@ -47,11 +47,12 @@ class CheckoutController extends Controller
     public function showPaymentPage(Request $request, Razorpay $api)
     {
         // dd($request);
+        return redirect()->back()->with(toast('Work in Progress', 'info'));
         $user = auth()->user();
         $productsArray = null;
         $selectedAddress = $user->userAddresses()->find($request->address);
         if (!$selectedAddress) {
-            return redirect()->back()->with(toast('Selected Address is Invalid'));
+            return redirect()->back()->with(toast('Selected Address is Invalid', 'info'));
         }
 
         $cartItems = $user->cart->items()->with('product')->get();
@@ -129,7 +130,7 @@ class CheckoutController extends Controller
         // dd($api);
         if ($user->orders()->whereStatus('initial')->exists()) {
             $order = $user->orders()->whereStatus('initial')->latest()->first();
-            $apiOrder = $api->createOrder(intval(number_format($grandTotal, 2) * 100));
+            $apiOrder = $api->createOrder((int)$grandTotal * 100);
             $order->update([
                 'api_order_id' => $apiOrder['id'],
                 'sub_total' => $subTotal,
@@ -145,7 +146,7 @@ class CheckoutController extends Controller
             optional($order->item)->delete();
             self::createOrderItems($order, $cartItems);
         } else {
-            $apiOrder = $api->createOrder(intval(number_format($grandTotal, 2) * 100));
+            $apiOrder = $api->createOrder((int)$grandTotal * 100);
             $order = $this->createOrder($grandTotal, [
                 'api_order_id' => $apiOrder['id'],
                 'discount' => $discount

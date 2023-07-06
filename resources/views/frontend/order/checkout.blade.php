@@ -99,9 +99,18 @@
 
                             @foreach ($cartItems as $cartItem)
                                 <div class="col-12 d-flex">
-                                    <img src="https://via.placeholder.com/100"
+                                    {{-- <img src="https://via.placeholder.com/100"
                                         class="w-auto my-2 rounded-2 border border-1 pink-border me-3" height="100px"
-                                        width="100px" alt="">
+                                        width="100px" alt=""> --}}
+                                    @if ($cartItem->product->thumbnail_image)
+                                        <img src="{{ asset('storage/images/products/' . $cartItem->product->thumbnail_image) }}"
+                                            alt="..." class="w-auto my-2 rounded-2 border border-1 pink-border me-3"
+                                            height="100px" width="100px">
+                                    @else
+                                        <img src="/frontend/images/products/skin/sk2.png"
+                                            class="w-auto my-2 rounded-2 border border-1 pink-border me-3"
+                                            alt="image description" height="100px" width="100px">
+                                    @endif
                                     <div class="mt-1">
                                         <p class="mb-1 text-black">{{ $cartItem->product->name }}</p>
                                         <span>Price: ₹{{ $cartItem->product->final_price }}</span><br>

@@ -218,7 +218,7 @@ class ProductSeeder extends Seeder
                 'mrp' => $product['mrp'],
                 'final_price' => $product['final_price'],
                 'stock' => $product['stock'],
-                'sku' => now()->format('dmy-his-dmy') . rand(1, 999),
+                'sku' => now()->format('dmy-his-dmy') . rand(1, 99) . rand(1, 99),
             ]);
             try {
                 File::copy(public_path('frontend/images/seeders/products/' . $product['thumbnail_image']), storage_path('app/public/images/products/' . $product['thumbnail_image']));

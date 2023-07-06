@@ -152,12 +152,14 @@
                                                 @endif
                                             </div>
                                             <div class="card-body">
-                                                <h4 class="card-title font-head fw-bold">
-                                                    {{ $pro->name }}
+                                                <h4 class="card-title font-head fw-bold"  title="{{ $pro->name }}">
+                                                    <a href="{{ route('frontend.p.show', $pro->slug) }}">
+                                                        {{ str_limit($pro->name, 50) }}
+                                                    </a>
                                                 </h4>
-                                                <small class="text-muted">
+                                                {{-- <small class="text-muted">
                                                     {{ $pro->short_descriptions }}
-                                                </small>
+                                                </small> --}}
                                                 <div class="price">
                                                     {{ $pro->mrp }} <s class="text-danger">{{ $pro->final_price }}</s>
                                                 </div>
