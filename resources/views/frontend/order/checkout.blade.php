@@ -48,7 +48,7 @@
                                     <div class="col-12 user-address-box-holder">
                                         <input type="radio" name="address" value="{{ $address->id }}"
                                             id="user-address-{{ $address->id }}" class="d-none" required>
-                                        <label for="user-address-{{ $address->id }}" class="user-address-box w-100 p-2">
+                                        <label for="user-address-{{ $address->id }}" class="user-address-box w-100 p-2 cur-pointer">
                                             <div class="address-header">
                                                 <span class="name">
                                                     {{ ucfirst($address->type) }}

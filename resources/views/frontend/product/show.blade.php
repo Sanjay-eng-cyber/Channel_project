@@ -14,6 +14,10 @@
                         <div class="slider">
                             <div class="product-slider">
                                 <div class="slide">
+                                    <img src="{{ asset('storage/images/products/' . $product->thumbnail_image) }}"
+                                        alt="image description">
+                                </div>
+                                {{-- <div class="slide">
                                     <img src="https://via.placeholder.com/600" alt="image description">
                                 </div>
                                 <div class="slide">
@@ -24,16 +28,17 @@
                                 </div>
                                 <div class="slide">
                                     <img src="https://via.placeholder.com/600" alt="image description">
-                                </div>
+                                </div> --}}
                             </div>
 
                             <ul class="list-unstyled slick-slider pagg-slider">
                                 <li>
                                     <div class="img">
-                                        <img src="https://via.placeholder.com/600" alt="image description">
+                                        <img src="{{ asset('storage/images/products/' . $product->thumbnail_image) }}"
+                                            alt="image description">
                                     </div>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <div class="img">
                                         <img src="https://via.placeholder.com/600" alt="image description">
                                     </div>
@@ -48,6 +53,11 @@
                                         <img src="https://via.placeholder.com/600" alt="image description">
                                     </div>
                                 </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="https://via.placeholder.com/600" alt="image description">
+                                    </div>
+                                </li> --}}
 
                             </ul>
                             <!-- Pagg Slider of the Page end -->
