@@ -21,8 +21,8 @@ class CreateProductsTable extends Migration
             $table->string('connection_no')->nullable();
             $table->string('name');
             $table->string('slug');
-            $table->text('short_descriptions')->nullable();
-            $table->text('descriptions')->nullable();
+            $table->longText('short_descriptions')->nullable();
+            $table->longText('descriptions')->nullable();
             $table->string('thumbnail_image')->nullable();
             $table->float('mrp');
             $table->float('final_price');
