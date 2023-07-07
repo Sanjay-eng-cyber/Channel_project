@@ -3,7 +3,7 @@
 @section('cdn')
 
     <style>
-        @media screen and (max-width:768px) {
+        /* @media screen and (max-width:768px) {
             .__cart-ui-img-in {
                 padding-right: 28px;
             }
@@ -16,7 +16,7 @@
                 padding: 15px;
                 right: -86%;
             }
-        }
+        } */
     </style>
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection

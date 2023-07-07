@@ -2545,6 +2545,9 @@ a:hover {
     margin: auto;
     padding: 0em;
     border-radius: 22px 22px 22px 22px;
+    height: 300px;
+    object-fit: contain;
+    background: white;
 }
 
 .rise-up-slider .rise-up-slider-card.slick-current .product {
@@ -3590,3 +3593,28 @@ opacity: 0.7;
 .cur-pointer {
     cursor: pointer;
 }
+
+.__cart-ui-img-in img {
+    height: 150px;
+    object-fit: contain;
+    background: white;
+}
+
+img.cart-p-img  {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    background: white;
+}
+
+@media (min-width: 992px){
+
+    .mt-product-detial .slider {
+        width: 46%;
+    }
+
+    .mt-product-detial .detial-holder {
+        width: 50%;
+    }
+}
+

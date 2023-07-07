@@ -49,8 +49,7 @@
                                         class="w-auto my-2 rounded-2 border border-1 pink-border me-3" height="100px"
                                         width="100px" alt=""> --}}
                                     <img src="{{ asset('storage/images/products/' . $cartItem->product->thumbnail_image) }}"
-                                        alt="..." class="w-auto my-2 rounded-2 border border-1 pink-border me-3"
-                                        height="100px" width="100px">
+                                        alt="..." class="my-2 rounded-2 border border-1 pink-border me-3 cart-p-img">
                                     <div class="mt-1">
                                         <p class="mb-1 text-black">{{ $cartItem->product->name }}</p>
                                         <span>Price: ₹{{ $cartItem->product->final_price }}</span><br>
@@ -89,7 +88,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="my-2">
+                    <div class="my-2">
                         <form action="{{ route('apply-coupon') }}" method="POST">
                             <label for="coupon-code-input my-3">Coupon</label>
                             <div class="input-group my-2">
@@ -103,7 +102,7 @@
                             </div>
                         </form>
                     </div>
-                    <hr> --}}
+                    <hr>
 
                     {{-- <hr> --}}
                     <span class="h5  font-body text-capitalize">Price Details

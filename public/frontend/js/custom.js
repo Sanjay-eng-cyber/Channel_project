@@ -54,13 +54,13 @@ jQuery('.skin-sliderlg').slick({
 
 // fragrances slider
 jQuery('.fragrances').slick({
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
         {
             breakpoint: 1200,
             settings: {
-              slidesToShow: 2,
+              slidesToShow: 3,
             }
           },
 
@@ -188,4 +188,3 @@ $(function(){
       ]
     });
   });
-  
