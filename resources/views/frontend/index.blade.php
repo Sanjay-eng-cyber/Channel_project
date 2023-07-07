@@ -168,7 +168,7 @@
                                     <!-- slide start here -->
                                     <div class="slide  skin-slide">
                                         <!-- mt product1 large start here -->
-                                        <div class="mt-product1 large mt-skin-product1">
+                                        <div class="mt-product1 large mt-skin-product1 w-100">
                                             <div class="box skin-box">
                                                 <div class="b1">
                                                     <div class="b2">

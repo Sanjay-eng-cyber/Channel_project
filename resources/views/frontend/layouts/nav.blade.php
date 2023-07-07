@@ -266,7 +266,7 @@
            </div>
        </div>
 
-       <div class="conatiner-fluid ">
+       {{-- <div class="conatiner-fluid ">
            <div class="row row-cols-4 ">
                <div class="col">
                    <a href="" class="gap-2 d-flex flex-column align-items-center">
@@ -301,7 +301,7 @@
                    </a>
                </div>
            </div>
-       </div>
+       </div> --}}
    </header>
 
 
