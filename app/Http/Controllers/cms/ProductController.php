@@ -109,14 +109,14 @@ class ProductController extends Controller
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'required|mimes:png,jpg,jpeg|max:1024',
-            'short_descriptions' => 'required|min:3|max:1000',
+            'short_descriptions' => 'required|min:3|max:5000',
             'connection_no' => 'required|min:3|max:20',
             // 'attribute_id' => ['nullable',Rule::in($attribute)],
             // 'product_attribute_value_id' => ['nullable',Rule::in($productAttributeValues)],
         ]);
 
         $fileWithExtension = $request->file('thumbnail_image');
-        dd($fileWithExtension);
+        //dd($fileWithExtension);
         if ($fileWithExtension) {
             $filename = now()->format('dmy-his') . '-' . rand(1, 99) . '.' . $fileWithExtension->clientExtension();
             $destinationPath = storage_path('app/public/images/products/');
@@ -204,7 +204,7 @@ class ProductController extends Controller
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'nullable|mimes:png,jpg,jpeg|max:1024',
-            'short_descriptions' => 'required|min:3|max:1000',
+            'short_descriptions' => 'required|min:3|max:5000',
             'connection_no' => 'required|min:3|max:20',
 
         ]);
@@ -268,7 +268,7 @@ class ProductController extends Controller
                 $showcase_product->save();
             }
         }
-        // $product->updateProductAttributes($request->attributeKeys, $request->values, $product->id);
+       // $product->updateProductAttributes($request->attributeKeys, $request->values, $product->id);
         if ($product->save()) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Update Successfully']);
         }
