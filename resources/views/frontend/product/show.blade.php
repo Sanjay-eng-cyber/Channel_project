@@ -496,13 +496,8 @@
                                             </span>
                                         </button>
                                     @endif
-                                    @if ($rP->thumbnail_image)
-                                        <img src="{{ asset('storage/images/products/' . $rP->thumbnail_image) }}"
-                                            alt="...">
-                                    @else
-                                        <img src="/frontend/images/products/skin/sk2.png" class="img-slider"
-                                            alt="image description">
-                                    @endif
+                                    <img src="{{ asset('storage/images/products/' . $rP->thumbnail_image) }}"
+                                        alt="...">
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title font-head fw-bold">

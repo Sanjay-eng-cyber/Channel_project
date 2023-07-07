@@ -210,7 +210,7 @@ class ProductSeeder extends Seeder
                 'brand_id' => null,
                 'category_id' => $product['category_id'],
                 'sub_category_id' => $product['sub_category_id'],
-                'name' => 'Product ' . $product['name'],
+                'name' => $product['name'],
                 'slug' => Str::slug($product['name']),
                 'short_descriptions' => $product['short_descriptions'],
                 'thumbnail_image' => $product['thumbnail_image'],

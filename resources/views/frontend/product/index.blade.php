@@ -143,13 +143,8 @@
                                                         </span>
                                                     </button>
                                                 @endif
-                                                @if ($pro->thumbnail_image)
                                                     <img src="{{ asset('storage/images/products/' . $pro->thumbnail_image) }}"
                                                         alt="...">
-                                                @else
-                                                    <img src="/frontend/images/products/skin/sk2.png" class="img-slider"
-                                                        alt="image description">
-                                                @endif
                                             </div>
                                             <div class="card-body">
                                                 <h4 class="card-title font-head fw-bold"  title="{{ $pro->name }}">
