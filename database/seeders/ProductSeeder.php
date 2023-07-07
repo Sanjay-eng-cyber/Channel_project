@@ -36,6 +36,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '485',
                 'final_price' => '305',
                 'stock' => '50',
+                'rating' => 4
             ],
             [
                 'category_id' => 1,
@@ -54,6 +55,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '299',
                 'final_price' => '199',
                 'stock' => '25',
+                'rating' => 5
             ],
             [
                 'category_id' => 2,
@@ -70,6 +72,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '220',
                 'final_price' => '200',
                 'stock' => '100',
+                'rating' => 4
             ],
             [
                 'category_id' => 2,
@@ -89,6 +92,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '399',
                 'final_price' => '215',
                 'stock' => '50',
+                'rating' => 5
             ],
             [
                 'category_id' => 3,
@@ -104,6 +108,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '890',
                 'final_price' => '671',
                 'stock' => '20',
+                'rating' => 3
             ],
             [
                 'category_id' => 3,
@@ -115,6 +120,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '1170',
                 'final_price' => '600',
                 'stock' => '20',
+                'rating' => 5
             ],
             [
                 'category_id' => 4,
@@ -126,6 +132,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '1500',
                 'final_price' => '600',
                 'stock' => '145',
+                'rating' => 2
             ],
             [
                 'category_id' => 4,
@@ -137,6 +144,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '900',
                 'final_price' => '550',
                 'stock' => '170',
+                'rating' => 4
             ],
             [
                 'category_id' => 5,
@@ -148,6 +156,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '400',
                 'final_price' => '250',
                 'stock' => '1000',
+                'rating' => 3
             ],
             [
                 'category_id' => 5,
@@ -159,6 +168,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '900',
                 'final_price' => '300',
                 'stock' => '50',
+                'rating' => 5
             ],
             [
                 'category_id' => 6,
@@ -170,6 +180,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '1500',
                 'final_price' => '900',
                 'stock' => '80',
+                'rating' => 3
             ],
             [
                 'category_id' => 6,
@@ -181,6 +192,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '1000',
                 'final_price' => '300',
                 'stock' => '20',
+                'rating' => 4
             ],
             [
                 'category_id' => 7,
@@ -192,6 +204,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '300',
                 'final_price' => '200',
                 'stock' => '45',
+                'rating' => 4
             ],
             [
                 'category_id' => 7,
@@ -203,6 +216,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '100',
                 'final_price' => '80',
                 'stock' => '120',
+                'rating' => 5
             ],
         ];
         foreach ($products as $product) {
@@ -219,6 +233,7 @@ class ProductSeeder extends Seeder
                 'final_price' => $product['final_price'],
                 'stock' => $product['stock'],
                 'sku' => now()->format('dmy-his-dmy') . rand(1, 99) . rand(1, 99),
+                'rating' => $product['rating'],
             ]);
             try {
                 File::copy(public_path('frontend/images/seeders/products/' . $product['thumbnail_image']), storage_path('app/public/images/products/' . $product['thumbnail_image']));
