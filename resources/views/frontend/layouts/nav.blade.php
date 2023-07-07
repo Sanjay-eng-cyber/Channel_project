@@ -1,7 +1,7 @@
    <!-- mt header style3 start here -->
    <header id="mt-header" class="style3 position-relative ">
 
-       <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute"
+       <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute" draggable="false"
            style="width: 110px;right:0; top:0">
 
        {{-- navbar header --}}
@@ -9,8 +9,8 @@
            <div class="container py-4">
                <div class="row ">
                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                       <div class="container-fluid  d-flex flex-row-reverse ">
-                           <a class="navbar-brand d-inline d-lg-none mx-auto" href="{{ url('/') }}" style="">
+                       <div class="container-fluid  d-flex flex-row">
+                           <a class="navbar-brand d-inline d-lg-none  " href="{{ url('/') }}" style="">
                                <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}" alt="channel"
                                    class="img-fluid " style="width:130px">
                            </a>
@@ -23,12 +23,12 @@
                                id="navbarSupportedContent" style="">
                                <ul class="navbar-nav d-none d-lg-flex gap-3 align-items-center">
 
-                                   {{-- <li class="nav-item text-red position-relative">
-                           <i class="fas fa-cart-plus top-nav-carticon"></i>
-                           <span
-                               class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99
-                           <span class="visually-hidden">unread messages</span></span>
-                       </li> --}}
+                                   <li class="nav-item text-red position-relative">
+                                       <i class="fas fa-cart-plus top-nav-carticon"></i>
+                                       <span
+                                           class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99
+                                           <span class="visually-hidden">unread messages</span></span>
+                                   </li>
 
                                    @php
                                        $user = auth()->user();
@@ -71,8 +71,6 @@
                                    @endauth
 
                                </ul>
-
-
                                <div class="navbar-nav d-inline d-lg-none text-start">
                                    <ul class="list-unstyled nav-dd-color">
                                        <li class="nav-item dd-cl mt-3">
@@ -108,9 +106,6 @@
                                    </ul>
 
                                </div>
-
-
-
                                <ul class="nav navbar-nav d-none d-lg-inline">
                                    <a href="/">
                                        <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}"
@@ -126,6 +121,7 @@
                                    </form>
                                </div>
                            </div>
+                       </div>
                    </nav>
                </div>
            </div>
@@ -269,29 +265,45 @@
                </div>
            </div>
        </div>
-   </header>
 
-   <!-- mt header end here -->
-   <!-- mt search popup start here -->
-   {{-- <div class="mt-search-popup">
-       <div class="mt-holder">
-           <a href="" class="search-close"><span></span><span></span></a>
-           <div class="mt-frame">
-               <form action="#">
-                   <fieldset>
-                       <input type="text" placeholder="Search...">
-                       <span class="icon-microphone"></span>
-                       <button class="icon-magnifier" type="submit"></button>
-                   </fieldset>
-               </form>
+       <div class="conatiner-fluid ">
+           <div class="row row-cols-4 ">
+               <div class="col">
+                   <a href="" class="gap-2 d-flex flex-column align-items-center">
+                       <span>
+                           <img src="{{ url('frontend/images/svg/footer/home.svg') }}" alt="">
+                       </span>
+                       <span>home</span>
+                   </a>
+               </div>
+               <div class="col">
+                   <a href="" class="gap-2 d-flex flex-column align-items-center">
+                       <span>
+                           <img src="{{ url('frontend/images/svg/footer/search.svg') }}" alt="">
+                       </span>
+                       <span>Search</span>
+                   </a>
+               </div>
+               <div class="col">
+                   <a href="" class="gap-2 d-flex flex-column align-items-center">
+                       <span>
+                           <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
+                       </span>
+                       <span>Account</span>
+                   </a>
+               </div>
+               <div class="col">
+                   <a href="" class="gap-2 d-flex flex-column align-items-center">
+                       <span>
+                           <img src="{{ url('frontend/images/svg/footer/cart.svg') }}" alt="">
+                       </span>
+                       <span>Cart</span>
+                   </a>
+               </div>
            </div>
        </div>
-   </div> --}}
+   </header>
 
-   <!-- mt search popup end here -->
-   <!-- mt main start here -->
-   {{-- <li><a href="{{route('about')}}">About</a></li>
-                         <li><a href="{{route('contact')}}">Contact</a></li> --}}
 
    @guest('web')
        {{-- <livewire:log-in /> --}}

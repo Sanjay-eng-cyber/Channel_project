@@ -772,6 +772,12 @@ a:hover {
 .mt-skin-product1 .product-desc .pra {
     margin: 0px;
 }
+.mt-skin-product  img,
+.mt-skin-product1  img{
+    height: 250px !important;
+    object-fit: contain !important;
+    background-color: white !important;
+}
 
 .mt-producttabs:after {
     right: 0;
@@ -3576,8 +3582,9 @@ opacity: 0.7;
 }
 
 .product-card-img img {
-    object-fit: cover;
+    object-fit: contain;
     height: 250px;
+    background: white;
 }
 
 .cur-pointer {
