@@ -22,14 +22,6 @@
                            <div class="navbar-collapse collapse  justify-content-between flex-row-reverse navdrop-style"
                                id="navbarSupportedContent" style="">
                                <ul class="navbar-nav d-none d-lg-flex gap-3 align-items-center">
-
-                                   <li class="nav-item text-red position-relative">
-                                       <i class="fas fa-cart-plus top-nav-carticon"></i>
-                                       <span
-                                           class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99
-                                           <span class="visually-hidden">unread messages</span></span>
-                                   </li>
-
                                    @php
                                        $user = auth()->user();
                                        if ($user) {
@@ -265,43 +257,44 @@
                </div>
            </div>
        </div>
-
-       {{-- <div class="conatiner-fluid ">
-           <div class="row row-cols-4 ">
-               <div class="col">
-                   <a href="" class="gap-2 d-flex flex-column align-items-center">
-                       <span>
-                           <img src="{{ url('frontend/images/svg/footer/home.svg') }}" alt="">
-                       </span>
-                       <span>home</span>
-                   </a>
-               </div>
-               <div class="col">
-                   <a href="" class="gap-2 d-flex flex-column align-items-center">
-                       <span>
-                           <img src="{{ url('frontend/images/svg/footer/search.svg') }}" alt="">
-                       </span>
-                       <span>Search</span>
-                   </a>
-               </div>
-               <div class="col">
-                   <a href="" class="gap-2 d-flex flex-column align-items-center">
-                       <span>
-                           <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
-                       </span>
-                       <span>Account</span>
-                   </a>
-               </div>
-               <div class="col">
-                   <a href="" class="gap-2 d-flex flex-column align-items-center">
-                       <span>
-                           <img src="{{ url('frontend/images/svg/footer/cart.svg') }}" alt="">
-                       </span>
-                       <span>Cart</span>
-                   </a>
+       <div class="d-lg-none d-block">
+           <div class="conatiner-fluid ">
+               <div class="row row-cols-4 ">
+                   <div class="col">
+                       <a href="" class="gap-2 d-flex flex-column align-items-center">
+                           <span>
+                               <img src="{{ url('frontend/images/svg/footer/home.svg') }}" alt="">
+                           </span>
+                           <span>home</span>
+                       </a>
+                   </div>
+                   <div class="col">
+                       <a href="" class="gap-2 d-flex flex-column align-items-center">
+                           <span>
+                               <img src="{{ url('frontend/images/svg/footer/search.svg') }}" alt="">
+                           </span>
+                           <span>Search</span>
+                       </a>
+                   </div>
+                   <div class="col">
+                       <a href="" class="gap-2 d-flex flex-column align-items-center">
+                           <span>
+                               <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
+                           </span>
+                           <span>Account</span>
+                       </a>
+                   </div>
+                   <div class="col">
+                       <a href="" class="gap-2 d-flex flex-column align-items-center">
+                           <span>
+                               <img src="{{ url('frontend/images/svg/footer/cart.svg') }}" alt="">
+                           </span>
+                           <span>Cart</span>
+                       </a>
+                   </div>
                </div>
            </div>
-       </div> --}}
+       </div>
    </header>
 
 
