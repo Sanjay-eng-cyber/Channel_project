@@ -215,7 +215,7 @@ $('.rise-up-slider').slick({
 });
 window.onload = function () {
     $('.frontend-top-slider').slick({
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 3000,
         arrows: false,
         centerMode: false,
