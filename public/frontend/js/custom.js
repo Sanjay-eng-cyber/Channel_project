@@ -218,9 +218,9 @@ window.onload = function () {
         autoplay: false,
         autoplaySpeed: 3000,
         arrows: false,
-        centerMode: true,
+        centerMode: false,
         slidesToShow: 1,
-        slidesToScroll: 2,
-        gap: 10,
+        slidesToScroll: 1,
+        gap: 0,
     });
 };
