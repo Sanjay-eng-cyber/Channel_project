@@ -94,9 +94,18 @@
                                            <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'gift') ? 'active-red' : '' }}"
                                                href="{{ route('frontend.cat.show', 'gift') }}">Gift</a>
                                        </li>
+                                       @auth
+                                           <li class="nav-item dd-cl">
+                                               <form action="{{ route('frontend.logout') }}" method="POST">
+                                                   @csrf
+                                                   <a class="nav-link px-4" href="!#"
+                                                       onclick="event.preventDefault();this.closest('form').submit();">
+                                                       LOGOUT</a>
 
+                                               </form>
+                                           </li>
+                                       @endauth
                                    </ul>
-
                                </div>
                                <ul class="nav navbar-nav d-none d-lg-inline">
                                    <a href="/">
@@ -107,9 +116,12 @@
                                <div class="header-sub-1 header-top-search-icon d-none d-lg-inline">
                                    <form action="" method="post" class="">
                                        @csrf
-                                       <i class="fas fa-search fa-fw header-seach-icon" style="color:#EC268F"></i>
-                                       <input type="text" class="form-control" placeholder="Search Product"
+                                       <input type="text" class="form-control px-4" placeholder="Search Product"
                                            aria-label="Search" aria-describedby="basic-addon1">
+                                       <button class="position-absolute top-0 end-0 border-0 bg-transparent"
+                                           type="submit">
+                                           <i class="fas fa-search fa-fw header-seach-icon" style="color:#EC268F"></i>
+                                       </button>
                                    </form>
                                </div>
                            </div>
@@ -257,11 +269,11 @@
                </div>
            </div>
        </div>
-       <div class="d-lg-none d-block">
-           <div class="conatiner-fluid ">
+       <div class="d-lg-none d-block bg-white pb-3">
+           <div class="container">
                <div class="row row-cols-4 ">
                    <div class="col">
-                       <a href="" class="gap-2 d-flex flex-column align-items-center">
+                       <a href="{{ route('frontend.index') }}" class="gap-2 d-flex flex-column align-items-center">
                            <span>
                                <img src="{{ url('frontend/images/svg/footer/home.svg') }}" alt="">
                            </span>
@@ -277,15 +289,28 @@
                        </a>
                    </div>
                    <div class="col">
-                       <a href="" class="gap-2 d-flex flex-column align-items-center">
-                           <span>
-                               <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
-                           </span>
-                           <span>Account</span>
-                       </a>
+                       @auth
+                           <a href="{{ route('frontend.profile') }}" class="gap-2 d-flex flex-column align-items-center">
+                               <span>
+                                   <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
+                               </span>
+                               <span>Account</span>
+
+                           </a>
+                       @else
+                           <a href="#" data-bs-toggle="modal" data-bs-target="#loginPopup"
+                               class="gap-2 d-flex flex-column align-items-center">
+                               <span>
+                                   <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
+                               </span>
+                               <span>Login</span>
+
+                           </a>
+                       @endauth
                    </div>
                    <div class="col">
-                       <a href="" class="gap-2 d-flex flex-column align-items-center">
+                       <a href="{{ route('frontend.cart.index') }}"
+                           class="gap-2 d-flex flex-column align-items-center">
                            <span>
                                <img src="{{ url('frontend/images/svg/footer/cart.svg') }}" alt="">
                            </span>
