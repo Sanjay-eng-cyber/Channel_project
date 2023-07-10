@@ -4,87 +4,251 @@
     {{-- first slider slider --}}
     <section>
         <div class="container">
-            <div class="row main-group-card">
-                <h2 class="text-red main-head text-capitalize mt-4 mb-3">#Bestseller of channel</h2>
-
-                @if ($leftSliders->count())
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
-
-                        <div class="frontend-top-slider">
-                            @forelse ($leftSliders as $leftslider)
-                                <div class="slide" style="padding:0px 10px 0px 10px">
-                                    <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}" class="img-fluid"
-                                        alt="image description " style="">
-                                    <div class="slide-content">
-                                        <div class="slide-content-desc">
-                                            <h3 class="">{{ $leftslider->title }}</h3>
-                                            <p class="">{{ $leftslider->descriptions }} </p>
-                                            <a class="d-flex gap-2 justify-content-center " href="{{ $leftslider->link }}">
+            <h2 class="text-red main-head text-capitalize mt-4 mb-3">#Bestseller of channel</h2>
+            <div class="d-none d-md-block">
+                <div class="row main-group-card">
+                    <div class="col-lg-4 col-md-6 mb-md-4 mb-lg-0">
+                        @if ($middleSlider)
+                            <div class="  group-card-2 min-height-500px ">
+                                <div class="card second-group-card">
+                                    <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}"
+                                        class="img-fluid second-group-img" alt="...">
+                                    <div class="card-body text-center bg-skin-color second-group-card-body">
+                                        <h4 class="card-title text-center font-head ">{{ $middleSlider->title }}</h4>
+                                        <p class="card-text group-card-text-color">
+                                            {{ $middleSlider->descriptions }}
+                                        </p>
+                                        <button type="button" class="text-center group-buutton-bg-disable">
+                                            <a class=" d-flex gap-2" href="{{ $middleSlider->link }}">
                                                 <span class="group-card-shop-btn ">Shop Now</span>
                                                 <i class="fa fa-angle-right group-button-arrow"></i>
                                             </a>
-                                        </div>
+                                        </button>
                                     </div>
                                 </div>
-                            @empty
-                            @endforelse
-                        </div>
-                    </div>
-                @endif
-                @if ($middleSlider)
-                    <div
-                        class="col-sm-6 col-md-6  col-lg-6 col-lg-6  col-xl-3 group-card-2 d-flex align-items-center py-3 py-xl-0">
-                        <div class="card second-group-card">
-                            <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}"
-                                class="img-fluid second-group-img" alt="...">
-                            <div class="card-body text-center  second-group-card-body">
-                                <h4 class="card-title text-center font-head ">{{ $middleSlider->title }}</h4>
-                                <p class="card-text group-card-text-color">
-                                    {{ $middleSlider->descriptions }}
-                                </p>
-
-                                <button type="button" class="text-center group-buutton-bg-disable">
-                                    <a class=" d-flex gap-2" href="{{ $middleSlider->link }}">
-                                        <span class="group-card-shop-btn ">Shop Now</span>
-                                        <i class="fa fa-angle-right group-button-arrow"></i>
-                                    </a>
-                                </button>
                             </div>
-                        </div>
+                        @endif
                     </div>
-                @endif
-                @if ($rightSliders->count())
-                    <div
-                        class="col-sm-6 col-md-6 col-lg-6  col-lg-6 col-xl-3 group-card-3 gap-3 gap-lg-5 gap-xl-3 gap-xxl-4
-                    d-flex flex-column justify-content-center py-3 py-xl-0 ">
-                        @forelse ($rightSliders as $rigslider)
-                            <div class="card fourth-group-card">
-                                <img src="{{ asset('storage/images/sliders/' . $rigslider->image) }}"
-                                    class="card-img-top fourth-group-img" alt="..."
-                                    style="border-radius: 26.6782px 26.6782px 0px 0px;">
-                                <div class="card-body text-center fourth-group-card-body">
-                                    <h4 class="card-title text-center font-head m-0">{{ $rigslider->title }}</h4>
+                    <div class="col-lg-4 col-md-6 mb-md-4 mb-lg-0">
+                        @if ($middleSlider)
+                            <div class="  group-card-2  min-height-500px">
+                                <div class="card second-group-card">
+                                    <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}"
+                                        class="img-fluid second-group-img" alt="...">
+                                    <div class="card-body text-center  second-group-card-body">
+                                        <h4 class="card-title text-center font-head ">{{ $middleSlider->title }}</h4>
+                                        <p class="card-text group-card-text-color">
+                                            {{ $middleSlider->descriptions }}
+                                        </p>
 
+                                        <button type="button" class="text-center group-buutton-bg-disable">
+                                            <a class=" d-flex gap-2" href="{{ $middleSlider->link }}">
+                                                <span class="group-card-shop-btn ">Shop Now</span>
+                                                <i class="fa fa-angle-right group-button-arrow"></i>
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        @if ($rightSliders->count())
+                            <div class="row">
+                                @forelse ($rightSliders as $rigslider)
+                                    <div class="col-lg-12 col-md-6 group-card-3 mb-md-0 mb-lg-4">
 
-                                    <p class="card-text group-card-text-color m-0">
-                                        {{ $rigslider->descriptions }}
-                                    </p>
+                                        <div class="card fourth-group-card">
+                                            <img src="{{ asset('storage/images/sliders/' . $rigslider->image) }}"
+                                                class="card-img-top fourth-group-img" alt="..."
+                                                style="border-radius: 26.6782px 26.6782px 0px 0px;">
+                                            <div class="card-body text-center fourth-group-card-body">
+                                                <h4 class="card-title text-center font-head m-0">{{ $rigslider->title }}
+                                                </h4>
+                                                <p class="card-text group-card-text-color m-0">
+                                                    {{ $rigslider->descriptions }}
+                                                </p>
+                                                <a class=" d-flex  justify-content-center gap-2 text-center group-buutton-bg-disable"
+                                                    href="{{ $rigslider->link }}">
+                                                    <span class="group-card-shop-btn ">Shop Now</span>
+                                                    <i class="fa fa-angle-right group-button-arrow"></i>
+                                                </a>
+                                            </div>
+                                        </div>
 
+                                    </div>
+                                @empty
+                                @endforelse
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="d-block d-md-none">
+                @if ($leftSliders->count())
 
-                                    <a class=" d-flex  justify-content-center gap-2 text-center group-buutton-bg-disable"
-                                        href="{{ $rigslider->link }}">
-                                        <span class="group-card-shop-btn ">Shop Now</span>
-                                        <i class="fa fa-angle-right group-button-arrow"></i>
-                                    </a>
-
-
+                    <div class="frontend-top-slider">
+                        @forelse ($leftSliders as $leftslider)
+                            <div class="slide min-height-500px" >
+                                <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}" class="img-fluid min-height-500px"
+                                    alt="image description " style="">
+                                <div class="slide-content">
+                                    <div class="slide-content-desc">
+                                        <h3 class="">{{ $leftslider->title }}</h3>
+                                        <p class="">{{ $leftslider->descriptions }} </p>
+                                        <a class="d-flex gap-2 justify-content-center " href="{{ $leftslider->link }}">
+                                            <span class="group-card-shop-btn ">Shop Now</span>
+                                            <i class="fa fa-angle-right group-button-arrow"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         @empty
                         @endforelse
                     </div>
-                @endif
 
+                @endif
+            </div>
+        </div>
+    </section>
+
+
+    {{-- skin slider with latest & best seller --}}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
+                        <!-- producttabs start here -->
+                        <ul class="producttabs">
+                            <li> Skin Care</li>
+                            <li><a href="#skinlatest" class="text-capitalize active">Latest</a></li>
+                            <li><a href="#skinpopular" class="text-capitalize">Popular</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+
+                        <div id="skinlatest">
+                            <!-- tabs slider start here -->
+                            <div class="skin-sliderlg">
+                                {{-- @for ($i = 1; $i < 7; $i++) --}}
+                                @foreach ($latestSkinProducts as $p)
+                                    <!-- slide start here -->
+                                    <div class="slide skin-slide">
+                                        <!-- mt product1 large start here -->
+                                        <div class="mt-product1 large mt-skin-product1 w-100">
+                                            <div class="box skin-box">
+                                                <a href="{{ route('frontend.p.show', $p->slug) }}">
+                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                        alt="image description">
+                                                </a>
+                                                @if ($p->isInWishlist())
+                                                    <button class="btn like-btn-skin add-to-wish active"
+                                                        data-p-id="{{ $p->id }}">
+                                                        <span class="has-tool-tip">
+                                                            <i class="fa-regular fa-heart"></i>
+                                                        </span>
+                                                    </button>
+                                                @else
+                                                    <button class="btn like-btn-skin add-to-wish"
+                                                        data-p-id="{{ $p->id }}">
+                                                        <span class="has-tool-tip">
+                                                            <i class="fa-regular fa-heart"></i>
+                                                        </span>
+                                                    </button>
+                                                @endif
+                                                <div class="links skin-text-desc py-2 px-3">
+                                                    <div class="card-title  m-0 text-center pro-head"
+                                                        title="{{ $p->name }}">
+                                                        <h4 class="">{{ str_limit($p->name, 50) }}</h4>
+                                                    </div>
+                                                    <p class="card-text text-center">{{ $p->short_description }}
+                                                    </p>
+                                                    <button type="button" class="btn btn-light sk-btn shop-now-btn"
+                                                        title="{{ $p->name }}">
+                                                        <a href="{{ route('frontend.p.show', $p->slug) }}"
+                                                            class="p-0  text-black">
+                                                            Shop Now
+                                                        </a>
+                                                    </button>
+
+                                                </div>
+                                            </div>
+                                        </div><!-- mt product1 center end here -->
+                                    </div>
+                                    {{-- @endfor --}}
+                                @endforeach
+                            </div>
+                            <!-- tabs slider end here -->
+                        </div>
+
+                        <div id="skinpopular">
+                            <!-- tabs slider start here -->
+                            <div class="skin-sliderlg">
+                                {{-- @for ($i = 1; $i < 7; $i++) --}}
+                                @foreach ($popularSkinProducts as $p)
+                                    <!-- slide start here -->
+                                    <div class="slide  skin-slide">
+                                        <!-- mt product1 large start here -->
+                                        <div class="mt-product1 large mt-skin-product1 w-100">
+                                            <div class="box skin-box">
+                                                <div class="b1">
+                                                    <div class="b2">
+                                                        <a href="{{ route('frontend.p.show', $p->slug) }}">
+                                                            <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                alt="image description">
+                                                        </a>
+
+                                                        @if ($p->isInWishlist())
+                                                            <button class="btn like-btn-skin add-to-wish active"
+                                                                data-p-id="{{ $p->id }}">
+                                                                <span class="has-tool-tip">
+                                                                    <i class="fa-regular fa-heart"></i>
+                                                                </span>
+                                                            </button>
+                                                        @else
+                                                            <button class="btn like-btn-skin add-to-wish"
+                                                                data-p-id="{{ $p->id }}">
+                                                                <span class="has-tool-tip">
+                                                                    <i class="fa-regular fa-heart"></i>
+                                                                </span>
+                                                            </button>
+                                                        @endif
+                                                        <ul class="links skin-text-desc py-2 px-3">
+                                                            <div class="card-title  m-0 text-center pro-head"
+                                                                title="{{ $p->name }}">
+                                                                <h4 class="">{{ str_limit($p->name, 50) }}</h4>
+                                                            </div>
+                                                            <p class="card-text text-center">{{ $p->short_decriptions }}
+                                                            </p>
+
+
+                                                            <button type="button"
+                                                                class="btn btn-light sk-btn shop-now-btn"
+                                                                title="{{ $p->name }}">
+                                                                <a href="{{ route('frontend.p.show', $p->slug) }}"
+                                                                    class="p-0  text-black">
+                                                                    Shop Now
+                                                                </a>
+                                                            </button>
+                                                        </ul>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div><!-- mt product1 center end here -->
+                                    </div>
+                                @endforeach
+                                {{-- @endfor --}}
+                            </div>
+                            <!-- tabs slider end here -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -569,47 +733,4 @@
             </div>
         </aside>
     </section>
-
-@endsection
-@section('js')
-    <script>
-        $('.rise-up-slider').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            centerMode: true,
-            arrows: false,
-            dots: false,
-            speed: 300,
-            centerPadding: '0px',
-            infinite: true,
-            autoplaySpeed: 2000,
-            autoplay: true,
-            responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    </script>
-
-    <script>
-        window.onload = function() {
-            $('.frontend-top-slider').slick({
-                autoplay: true,
-                autoplaySpeed: 1000,
-                arrows: false,
-                centerMode: true,
-                slidesToShow: 1,
-                slidesToScroll: 2
-            });
-        };
-    </script>
 @endsection
