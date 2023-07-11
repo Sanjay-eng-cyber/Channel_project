@@ -284,8 +284,8 @@
                                             <div class="mt-product1 large mt-fragrances">
                                                 <div class="box fragrances-box">
                                                     <a href="{{ route('frontend.p.show', $p->slug) }}">
-                                                        <img src="https://via.placeholder.com/1440x500"
-                                                            {{-- "{{ asset('storage/images/products/' . $p->thumbnail_image) }}" --}} alt="image description">
+                                                        <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                            alt="image description">
                                                     </a>
                                                     <div class="links fragrances-text-desc">
                                                         <div
