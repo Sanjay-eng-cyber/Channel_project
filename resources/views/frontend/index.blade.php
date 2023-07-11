@@ -362,34 +362,35 @@
 
 
 
-    <section>
-        <div class="container">
-            <h2 class="text-orange text-center text-capitalize">
-                Transform your living space into a cozy
-                <br> sanctuary with unique <span class="text-pink"> home decor</span> accents
-            </h2>
+    @if ($latestHomeDecorProducts->count())
+        <section>
+            <div class="container">
+                <h2 class="text-orange text-center text-capitalize">
+                    Transform your living space into a cozy
+                    <br> sanctuary with unique <span class="text-pink"> home decor</span> accents
+                </h2>
 
-            <div class="rise-up-slider">
+                <div class="rise-up-slider">
 
-                @foreach ($latestHomeDecorProducts as $p)
-                    <div class="rise-up-slider-card">
-                        <img class="product" src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
-                            alt="" class="img-fluid w-100">
-                        <div class="text">
-                            <div>
-                                <h4 class="text-capitalize" title="{{ $p->name }}">
-                                    {{ str_limit($p->name, 50) }}
-                                </h4>
-                                ₹{{ $p->final_price }} <s class="text-muted">₹{{ $p->mrp }}</s>
-                            </div>
-                            <div>
-                                {{-- @if ($p->isInWishlist()) --}}
-                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
-                                    <span class="has-tool-tip">
-                                        <i class="fa-regular fa-heart"></i>
-                                    </span>
-                                </button>
-                                {{-- @else
+                    @foreach ($latestHomeDecorProducts as $p)
+                        <div class="rise-up-slider-card">
+                            <img class="product" src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                alt="" class="img-fluid w-100">
+                            <div class="text">
+                                <div>
+                                    <h4 class="text-capitalize" title="{{ $p->name }}">
+                                        {{ str_limit($p->name, 50) }}
+                                    </h4>
+                                    ₹{{ $p->final_price }} <s class="text-muted">₹{{ $p->mrp }}</s>
+                                </div>
+                                <div>
+                                    {{-- @if ($p->isInWishlist()) --}}
+                                    <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                    {{-- @else
                                     <button class="like-btn btn btn wishlist add-to-wish"
                                         data-p-id="{{ $p->id }}">
                                         <span class="has-tool-tip">
@@ -397,29 +398,29 @@
                                         </span>
                                     </button>
                                 @endif --}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-                @foreach ($latestHomeDecorProducts as $p)
-                    <div class="rise-up-slider-card">
-                        <img class="product" src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
-                            alt="" class="img-fluid w-100">
-                        <div class="text">
-                            <div>
-                                <h4 class="text-capitalize" title="{{ $p->name }}">
-                                    {{ str_limit($p->name, 50) }}
-                                </h4>
-                                ₹{{ $p->final_price }} <s class="text-muted">₹{{ $p->mrp }}</s>
-                            </div>
-                            <div>
-                                {{-- @if ($p->isInWishlist()) --}}
-                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
-                                    <span class="has-tool-tip">
-                                        <i class="fa-regular fa-heart"></i>
-                                    </span>
-                                </button>
-                                {{-- @else
+                    @endforeach
+                    @foreach ($latestHomeDecorProducts as $p)
+                        <div class="rise-up-slider-card">
+                            <img class="product" src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                alt="" class="img-fluid w-100">
+                            <div class="text">
+                                <div>
+                                    <h4 class="text-capitalize" title="{{ $p->name }}">
+                                        {{ str_limit($p->name, 50) }}
+                                    </h4>
+                                    ₹{{ $p->final_price }} <s class="text-muted">₹{{ $p->mrp }}</s>
+                                </div>
+                                <div>
+                                    {{-- @if ($p->isInWishlist()) --}}
+                                    <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                    {{-- @else
                                 <button class="like-btn btn btn wishlist add-to-wish"
                                     data-p-id="{{ $p->id }}">
                                     <span class="has-tool-tip">
@@ -427,15 +428,16 @@
                                     </span>
                                 </button>
                             @endif --}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+
+                </div>
 
             </div>
-
-        </div>
-    </section>
+        </section>
+    @endif
 
 
     {{-- organic-product slider --}}

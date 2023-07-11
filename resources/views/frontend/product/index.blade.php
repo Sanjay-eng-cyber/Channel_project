@@ -156,7 +156,7 @@
                                                     {{ $pro->short_descriptions }}
                                                 </small> --}}
                                                 <div class="price">
-                                                    {{ $pro->final_price }} <s class="text-danger">{{ $pro->mrp }}</s>
+                                                    ₹{{ $pro->final_price }} <s class="text-danger">₹{{ $pro->mrp }}</s>
                                                 </div>
                                                 <div class="buttons">
                                                     <a href="{{ route('frontend.p.show', $pro->slug) }}"
