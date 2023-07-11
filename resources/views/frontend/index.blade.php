@@ -8,25 +8,28 @@
             <div class="d-none d-md-block">
                 <div class="row main-group-card">
                     <div class="col-lg-4 col-md-6 mb-md-4 mb-lg-0">
-                        @if ($middleSlider)
-                            <div class="  group-card-2 min-height-500px ">
-                                <div class="card second-group-card">
-                                    <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}"
-                                        class="img-fluid second-group-img" alt="...">
-                                    <div class="card-body text-center bg-skin-color second-group-card-body">
-                                        <h4 class="card-title text-center font-head ">{{ $middleSlider->title }}</h4>
-                                        <p class="card-text group-card-text-color">
-                                            {{ $middleSlider->descriptions }}
-                                        </p>
-                                        <button type="button" class="text-center group-buutton-bg-disable">
-                                            <a class=" d-flex gap-2" href="{{ $middleSlider->link }}">
-                                                <span class="group-card-shop-btn ">Shop Now</span>
-                                                <i class="fa fa-angle-right group-button-arrow"></i>
-                                            </a>
-                                        </button>
+                        @if ($leftSliders)
+                            @forelse ($leftSliders as $leftSlider)
+                                <div class="  group-card-2 min-height-500px ">
+                                    <div class="card second-group-card">
+                                        <img src="{{ asset('storage/images/sliders/' . $leftSlider->image) }}"
+                                            class="img-fluid second-group-img" alt="...">
+                                        <div class="card-body text-center bg-skin-color second-group-card-body">
+                                            <h4 class="card-title text-center font-head ">{{ $leftSlider->title }}</h4>
+                                            <p class="card-text group-card-text-color">
+                                                {{ $leftSlider->descriptions }}
+                                            </p>
+                                            <button type="button" class="text-center group-buutton-bg-disable">
+                                                <a class=" d-flex gap-2" href="{{ $leftSlider->link }}">
+                                                    <span class="group-card-shop-btn ">Shop Now</span>
+                                                    <i class="fa fa-angle-right group-button-arrow"></i>
+                                                </a>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @empty
+                            @endforelse
                         @endif
                     </div>
                     <div class="col-lg-4 col-md-6 mb-md-4 mb-lg-0">
@@ -282,8 +285,7 @@
                                                 <div class="box fragrances-box">
                                                     <a href="{{ route('frontend.p.show', $p->slug) }}">
                                                         <img src="https://via.placeholder.com/1440x500"
-                                                        {{-- "{{ asset('storage/images/products/' . $p->thumbnail_image) }}" --}}
-                                                            alt="image description">
+                                                            {{-- "{{ asset('storage/images/products/' . $p->thumbnail_image) }}" --}} alt="image description">
                                                     </a>
                                                     <div class="links fragrances-text-desc">
                                                         <div
