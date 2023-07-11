@@ -970,7 +970,12 @@ a:hover {
     align-items: center;
     justify-content: center;
 }
-
+.fragrances-slide .fragrances-box img{
+     aspect-ratio: 1/1;
+    height: 300px;
+    max-height: 300px;
+    object-fit: contain;
+}
 /*
 .fragrances{
     position: relative;

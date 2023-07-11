@@ -89,9 +89,9 @@
 
                     <div class="frontend-top-slider">
                         @forelse ($leftSliders as $leftslider)
-                            <div class="slide min-height-500px" >
-                                <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}" class="img-fluid min-height-500px"
-                                    alt="image description " style="">
+                            <div class="slide min-height-500px">
+                                <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}"
+                                    class="img-fluid min-height-500px" alt="image description " style="">
                                 <div class="slide-content">
                                     <div class="slide-content-desc">
                                         <h3 class="">{{ $leftslider->title }}</h3>
@@ -280,33 +280,25 @@
                                             <!-- mt product1 large start here -->
                                             <div class="mt-product1 large mt-fragrances">
                                                 <div class="box fragrances-box">
-                                                    <div class="b1">
-                                                        <div class="b2">
-                                                            <a href="{{ route('frontend.p.show', $p->slug) }}">
-                                                                <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
-                                                                    alt="image description">
-                                                            </a>
-
-                                                            <ul class="links fragrances-text-desc">
-                                                                <div
-                                                                    class="card-title card-text-heading m-0 text-center pro-head ">
-                                                                    {{ $p->name }}
-                                                                </div>
-                                                                {{-- <p class="card-text text-center">
-                                                                    {{ $p->short_descriptions }}
-                                                                </p> --}}
-                                                                <h5 class="text-center">
-                                                                    <a href="{{ route('frontend.p.show', $p->slug) }}"
-                                                                        class="p-0 main-head text-black"
-                                                                        title="{{ $p->name }}">
-                                                                        Shop Now
-                                                                    </a>
-                                                                </h5>
-                                                            </ul>
+                                                    <a href="{{ route('frontend.p.show', $p->slug) }}">
+                                                        <img src="https://via.placeholder.com/1440x500"
+                                                        {{-- "{{ asset('storage/images/products/' . $p->thumbnail_image) }}" --}}
+                                                            alt="image description">
+                                                    </a>
+                                                    <div class="links fragrances-text-desc">
+                                                        <div
+                                                            class="card-title card-text-heading m-0 text-center pro-head ">
+                                                            {{ $p->name }}
                                                         </div>
+                                                        <h5 class="text-center">
+                                                            <a href="{{ route('frontend.p.show', $p->slug) }}"
+                                                                class="p-0 main-head text-black"
+                                                                title="{{ $p->name }}">
+                                                                Shop Now
+                                                            </a>
+                                                        </h5>
                                                     </div>
                                                 </div>
-
                                             </div><!-- mt product1 center end here -->
                                         </div>
                                     @endforeach
