@@ -114,8 +114,7 @@
                                    </a>
                                </ul>
                                <div class="header-sub-1 header-top-search-icon d-none d-lg-inline">
-                                   <form action="" method="post" class="">
-                                       @csrf
+                                   <form action="" method="get" class="">
                                        <input type="text" class="form-control px-4" placeholder="Search Product"
                                            aria-label="Search" aria-describedby="basic-addon1">
                                        <button class="position-absolute top-0 end-0 border-0 bg-transparent"
@@ -281,7 +280,8 @@
                        </a>
                    </div>
                    <div class="col">
-                       <a href="" class="gap-2 d-flex flex-column align-items-center">
+                       <a class="gap-2 d-flex flex-column align-items-center toggle-display-trigger-by-id"
+                           data-target="phone-search" href="#">
                            <span>
                                <img src="{{ url('frontend/images/svg/footer/search.svg') }}" alt="">
                            </span>
@@ -318,10 +318,21 @@
                        </a>
                    </div>
                </div>
+
+               <div class="row" id="phone-search" style="display: none;">
+                   <div class="col-12">
+                       <div class="input-group mt-3">
+                           <input type="text" class="form-control" placeholder="Search for products"
+                               aria-label="Search for products" aria-describedby="button-addon2">
+                           <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                                   class="fas fa-search"></i></button>
+                       </div>
+                   </div>
+               </div>
            </div>
        </div>
    </header>
-
+   <script></script>
 
    @guest('web')
        {{-- <livewire:log-in /> --}}
