@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title', 'Skin |')
+@section('title', $category->name . ' |')
 
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">

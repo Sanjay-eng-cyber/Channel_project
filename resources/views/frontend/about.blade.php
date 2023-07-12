@@ -1,11 +1,11 @@
 @extends('frontend.layouts.app')
-@section('title')
+@section('title', 'About-Us |')
 @section('content')
     {{-- first slider slider --}}
     <section class="pb-3">
         <div class="container">
             <div class="row main-group-card">
-                <h2 class="text-red main-head text-center my-5">About US</h2>
+                <h2 class="text-red main-head text-center my-5">About Us</h2>
                 <p>Welcome to Channel, the ultimate destination for all your gifting needs! We have been in the
                     business since 2009 and have been serving the people of Chembur with our amazing range of gifts
                     for over 14 years now. We are proud to say that we are one of the most preferred gift stores in the

@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title')
+@section('title', 'Contact |')
     <style>
         .contact-border .contact-img {
             background: url('frontend/images/banner/contact-bg.png') !important;
@@ -87,4 +87,3 @@
 
 
 @endsection
- 
