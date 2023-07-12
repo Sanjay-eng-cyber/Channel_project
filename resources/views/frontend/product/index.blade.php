@@ -12,7 +12,7 @@
 
         <div class="container mb-5">
             <div class="row mt-5">
-                <div class="col-lg-5 col-xl-4">
+                <div class="col-lg-5 col-xl-4 col-xxl-4">
                     <h2 class="main-head text-red">Best In {{ $category->name }} Products</h2>
                     <div class="d-block d-sm-none">
                         <div class="my-3">Category</div>
@@ -29,7 +29,7 @@
 
 
                 </div>
-                <div class="col-lg-7 col-xl-5 ">
+                <div class="col-lg-7 col-xl-4 col-xxl-5">
                     <div class="d-flex gap-4 justify-content-between flex-column flex-sm-row my-4 my-lg-0">
                         <div>
                             <form action="" method="post" class="m-0">
@@ -70,9 +70,9 @@
 
                     </div>
                 </div>
-                <div class="col-lg-12 col-xl-3">
+                <div class="col-lg-12 col-xl-4 col-xxl-3">
                     <form action="{{ route('frontend.cat.show', $category->slug) }}">
-                        <div class="d-flex justify-content-end align-items-baseline gap-3 gap-xl-4 gap-xxl-5">
+                        <div class="d-flex justify-content-end align-items-baseline gap-3 gap-xl-4 gap-xxl-3">
                             <div>Items per page</div>
                             <div style="width: 100px">
                                 <select class="form-select form-select-lg mb-3 top-product-des"
@@ -86,9 +86,9 @@
                         </div>
 
 
-                        <div class="d-flex justify-content-end align-items-baseline gap-3 gap-xl-4 gap-xxl-5">
+                        <div class="d-flex justify-content-end align-items-baseline gap-3 gap-xl-4 gap-xxl-3">
                             <div>Sort By</div>
-                            <div style="width:160px">
+                            <div>
                                 <select class="form-select form-select-lg mb-3 top-product-des"
                                     aria-label=".form-select-lg example" style="font-size: 16px" name="q"
                                     onchange="this.form.submit()">
