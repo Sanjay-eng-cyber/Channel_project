@@ -14,6 +14,20 @@
             <div class="row mt-5">
                 <div class="col-lg-5 col-xl-4">
                     <h2 class="main-head text-red">Best In {{ $category->name }} Products</h2>
+                    <div class="d-block d-sm-none">
+                        <div class="my-3">Category</div>
+                        <select class="my-2 form-select  top-product-des" aria-label=".form-select-lg example">
+                            <option selected="" class="top-product-text"> Face Wash </option>
+                            <option value="1" class="top-product-text">   Face Scrub  </option>
+                            <option value="2" class="top-product-text">   Face Moisturiser  </option>
+                            <option value="3" class="top-product-text">   Sheet Mask  </option>
+                            <option value="4" class="top-product-text">   Face Serum  </option>
+                            <option value="5" class="top-product-text">   Suncreen  </option>
+                            <option value="6" class="top-product-text">   Face Mist  </option>
+                        </select>
+                    </div>
+
+
                 </div>
                 <div class="col-lg-7 col-xl-5 ">
                     <div class="d-flex gap-4 justify-content-between flex-column flex-sm-row my-4 my-lg-0">
