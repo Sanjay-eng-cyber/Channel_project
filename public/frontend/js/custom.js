@@ -67,12 +67,12 @@ jQuery('.fragrances').slick({
         {
             breakpoint: 768,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
             }
         },
 
         {
-            breakpoint: 320,
+            breakpoint: 480,
             settings: {
                 slidesToShow: 1,
             }
@@ -219,7 +219,7 @@ window.onload = function () {
         autoplaySpeed: 3000,
         arrows: false,
         centerMode: false,
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
         gap: 0,
     });
