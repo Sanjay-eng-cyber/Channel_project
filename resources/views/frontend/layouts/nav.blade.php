@@ -173,14 +173,14 @@
                                @foreach ($navCategories as $navCategory)
                                    <li class="nav-item dropdown">
                                        <a href="{{ route('frontend.cat.show', $navCategory->slug) }}"
-                                           class="{{ URL::current() == route('frontend.cat.show', $navCategory->slug) ? 'active-red' : '' }} nav-link text-capitalize">
+                                           class="{{ URL::current() == route('frontend.cat.show', $navCategory->slug, $navCategory->slug) ? 'active-red' : '' }} nav-link text-capitalize">
                                            {{ $navCategory->name }}
                                        </a>
                                        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                            <div class="text-capitalize p-2">
                                                @foreach ($navCategory->subCategories as $navSubCategory)
                                                    <a class="dropdown-item"
-                                                       href="{{ route('frontend.cat.show', $navSubCategory->slug) }}">{{ $navSubCategory->name }}</a>
+                                                       href="{{ route('frontend.sub-category.index', ['categorySlug' => $navCategory->slug, 'subCategorySlug' => $navSubCategory->slug]) }}">{{ $navSubCategory->name }}</a>
                                                @endforeach
                                                {{-- <a class="dropdown-item " href="#">Face wash</a>
                                                <a class="dropdown-item" href="#">Face Scrub</a>
@@ -339,7 +339,7 @@
                            <span>
                                <img src="{{ url('frontend/images/svg/footer/home.svg') }}" alt="">
                            </span>
-                           <span>home</span>
+                           <span>Home</span>
                        </a>
                    </div>
                    <div class="col">
