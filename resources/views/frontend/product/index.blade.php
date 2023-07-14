@@ -12,22 +12,25 @@
 
         <div class="container mb-5">
             <div class="row mt-5">
+
                 <div class="col-lg-5 col-xl-4 col-xxl-4">
                     <h2 class="main-head text-red">Best In {{ $category->name }} Products</h2>
-                    <div class="d-block d-sm-none">
-                        <div class="my-3">Category</div>
-                        <select class="my-2 form-select  top-product-des" aria-label=".form-select-lg example">
-                            <option selected="" class="top-product-text"> Face Wash </option>
-                            <option value="1" class="top-product-text">   Face Scrub  </option>
-                            <option value="2" class="top-product-text">   Face Moisturiser  </option>
-                            <option value="3" class="top-product-text">   Sheet Mask  </option>
-                            <option value="4" class="top-product-text">   Face Serum  </option>
-                            <option value="5" class="top-product-text">   Suncreen  </option>
-                            <option value="6" class="top-product-text">   Face Mist  </option>
-                        </select>
-                    </div>
-
-
+                    @if ($category->subCategories)
+                        <div class="d-block d-sm-none">
+                            <div class="my-3">More in {{ $category->name }}</div>
+                            <select class="my-2 form-select  top-product-des" aria-label=".form-select-lg example">
+                                @foreach ($category->subCategories as $subCat)
+                                    <option selected="" class="top-product-text">{{ $subCat->name }}</option>
+                                @endforeach
+                                {{-- <option value="1" class="top-product-text"> Face Scrub </option>
+                                <option value="2" class="top-product-text"> Face Moisturiser </option>
+                                <option value="3" class="top-product-text"> Sheet Mask </option>
+                                <option value="4" class="top-product-text"> Face Serum </option>
+                                <option value="5" class="top-product-text"> Suncreen </option>
+                                <option value="6" class="top-product-text"> Face Mist </option> --}}
+                            </select>
+                        </div>
+                    @endif
                 </div>
                 <div class="col-lg-7 col-xl-4 col-xxl-5">
                     <div class="d-flex gap-4 justify-content-between flex-column flex-sm-row my-4 my-lg-0">
@@ -157,11 +160,11 @@
                                                         </span>
                                                     </button>
                                                 @endif
-                                                    <img src="{{ asset('storage/images/products/' . $pro->thumbnail_image) }}"
-                                                        alt="...">
+                                                <img src="{{ asset('storage/images/products/' . $pro->thumbnail_image) }}"
+                                                    alt="...">
                                             </div>
                                             <div class="card-body">
-                                                <h4 class="card-title font-head fw-bold"  title="{{ $pro->name }}">
+                                                <h4 class="card-title font-head fw-bold" title="{{ $pro->name }}">
                                                     <a href="{{ route('frontend.p.show', $pro->slug) }}">
                                                         {{ str_limit($pro->name, 50) }}
                                                     </a>
@@ -170,7 +173,8 @@
                                                     {{ $pro->short_descriptions }}
                                                 </small> --}}
                                                 <div class="price">
-                                                    ₹{{ $pro->final_price }} <s class="text-danger">₹{{ $pro->mrp }}</s>
+                                                    ₹{{ $pro->final_price }} <s
+                                                        class="text-danger">₹{{ $pro->mrp }}</s>
                                                 </div>
                                                 <div class="buttons">
                                                     <a href="{{ route('frontend.p.show', $pro->slug) }}"
