@@ -170,13 +170,19 @@
                                    </a>
                                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                        <div class="text-capitalize p-2">
-                                           <a class="dropdown-item " href="#">Face wash</a>
-                                           <a class="dropdown-item" href="#">Face Scrub</a>
-                                           <a class="dropdown-item" href="#">Face Moisturiser</a>
-                                           <a class="dropdown-item" href="#">Sheet Mask</a>
-                                           <a class="dropdown-item" href="#">Face Serum</a>
-                                           <a class="dropdown-item" href="#">Suncreen</a>
-                                           <a class="dropdown-item" href="#">Face Mist</a>
+                                           <a class="dropdown-item " href="{{ url('sc/skin/face-wash') }}">Face
+                                               wash</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/face-scrub') }}">Face
+                                               Scrub</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/face-moisturiser') }}">Face
+                                               Moisturiser</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/sheet-mask') }}">Sheet
+                                               Mask</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/face-serum') }}">Face
+                                               Serum</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/suncreen') }}">Suncreen</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/face-mist') }}">Face
+                                               Mist</a>
                                        </div>
                                    </div>
                                </li>
@@ -187,8 +193,8 @@
                                    </a>
                                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                        <div class="text-capitalize">
-                                           <a class="dropdown-item " href="#">Men</a>
-                                           <a class="dropdown-item" href="#">Women</a>
+                                           <a class="dropdown-item " href="{{ url('sc/fragrances/men') }}">Men</a>
+                                           <a class="dropdown-item" href="{{ url('sc/fragrances/women') }}">Women</a>
                                        </div>
                                    </div>
                                </li>
@@ -200,15 +206,22 @@
                                    </a>
                                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                        <div class="text-capitalize">
-                                           <a class="dropdown-item " href="#">Shampoo</a>
-                                           <a class="dropdown-item" href="#">Conditoner</a>
-                                           <a class="dropdown-item" href="#">Hair mask</a>
-                                           <a class="dropdown-item" href="#">Hair serum</a>
-                                           <a class="dropdown-item" href="#">Hair Oil</a>
-                                           <a class="dropdown-item" href="#">Straigthner</a>
-                                           <a class="dropdown-item" href="#">Dryer</a>
-                                           <a class="dropdown-item" href="#">Curler</a>
-                                           <a class="dropdown-item" href="#">Trimmers</a>
+                                           <a class="dropdown-item "
+                                               href="{{ url('sc/hair-care/shampoo') }}">Shampoo</a>
+                                           <a class="dropdown-item"
+                                               href="{{ url('sc/hair-care/conditoner') }}">Conditoner</a>
+                                           <a class="dropdown-item" href="{{ url('sc/hair-care/hair-mask') }}">Hair
+                                               mask</a>
+                                           <a class="dropdown-item" href="{{ url('sc/hair-care/hair-serum') }}">Hair
+                                               serum</a>
+                                           <a class="dropdown-item" href="{{ url('sc/hair-care/hair-oil') }}">Hair
+                                               Oil</a>
+                                           <a class="dropdown-item"
+                                               href="{{ url('sc/hair-care/straigthner') }}">Straigthner</a>
+                                           <a class="dropdown-item" href="{{ url('sc/hair-care/dryer') }}">Dryer</a>
+                                           <a class="dropdown-item" href="{{ url('sc/hair-care/curler') }}">Curler</a>
+                                           <a class="dropdown-item"
+                                               href="{{ url('sc/hair-care/trimmers') }}">Trimmers</a>
                                        </div>
                                    </div>
                                </li>
@@ -219,15 +232,23 @@
                                    </a>
                                    <div class="dropdown-menu ">
                                        <div class="text-capitalize">
-                                           <a class="dropdown-item " href="#">Shower Gel</a>
-                                           <a class="dropdown-item" href="#">Body Scrub</a>
-                                           <a class="dropdown-item" href="#">Body Lotion</a>
-                                           <a class="dropdown-item" href="#">Hand Cream</a>
-                                           <a class="dropdown-item" href="#">Hair Oil</a>
-                                           <a class="dropdown-item" href="#">Foot Cream</a>
-                                           <a class="dropdown-item" href="#">Body Butter</a>
-                                           <a class="dropdown-item" href="#">Soaps</a>
-                                           <a class="dropdown-item" href="#">Hand wash</a>
+                                           <a class="dropdown-item " href="{{ url('sc/personal-care/shower-gel') }}">Shower
+                                               Gel</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/body-scrub') }}">Body
+                                               Scrub</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/body-lotion') }}">Body
+                                               Lotion</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/hand-cream') }}">Hand
+                                               Cream</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/hair-oil') }}">Hair
+                                               Oil</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/foot-cream') }}">Foot
+                                               Cream</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/body-butter') }}">Body
+                                               Butter</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/soaps') }}">Soaps</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/hand-wash') }}">Hand
+                                               wash</a>
                                        </div>
                                    </div>
 
@@ -239,13 +260,20 @@
                                    </a>
                                    <div class="dropdown-menu">
                                        <div class="text-capitalize">
-                                           <a class="dropdown-item " href="#">Windchime</a>
-                                           <a class="dropdown-item" href="#">Wall décor</a>
-                                           <a class="dropdown-item" href="#">Wall Clock</a>
-                                           <a class="dropdown-item" href="#">Table Piece</a>
-                                           <a class="dropdown-item" href="#">Table Clock</a>
-                                           <a class="dropdown-item" href="#">Planters</a>
-                                           <a class="dropdown-item" href="#">Key Holders</a>
+                                           <a class="dropdown-item "
+                                               href="{{ url('sc/home-decor/windchime') }}">Windchime</a>
+                                           <a class="dropdown-item" href="{{ url('sc/home-decor/wall-decor') }}">Wall
+                                               décor</a>
+                                           <a class="dropdown-item" href="{{ url('sc/home-decor/wall-clock') }}">Wall
+                                               Clock</a>
+                                           <a class="dropdown-item" href="{{ url('sc/home-decor/table-piece') }}">Table
+                                               Piece</a>
+                                           <a class="dropdown-item" href="{{ url('sc/home-decor/table-clock') }}">Table
+                                               Clock</a>
+                                           <a class="dropdown-item"
+                                               href="{{ url('sc/home-decor/planters') }}">Planters</a>
+                                           <a class="dropdown-item" href="{{ url('sc/home-decor/key-holders') }}">Key
+                                               Holders</a>
                                        </div>
                                    </div>
                                </li>
@@ -256,10 +284,14 @@
                                    </a>
                                    <div class="dropdown-menu">
                                        <div class="text-capitalize">
-                                           <a class="dropdown-item " href="#">School Stationery</a>
-                                           <a class="dropdown-item" href="#">Bobble Heads</a>
-                                           <a class="dropdown-item" href="#">Action Figures</a>
-                                           <a class="dropdown-item" href="#">Keychains</a>
+                                           <a class="dropdown-item " href="{{ url('sc/gift/school-stationery') }}">School
+                                               Stationery</a>
+                                           <a class="dropdown-item" href="{{ url('sc/gift/bobble-heads') }}">Bobble
+                                               Heads</a>
+                                           <a class="dropdown-item" href="{{ url('sc/gift/action-figures') }}">Action
+                                               Figures</a>
+                                           <a class="dropdown-item"
+                                               href="{{ url('sc/gift/keychains') }}">Keychains</a>
                                        </div>
                                    </div>
                                </li>
