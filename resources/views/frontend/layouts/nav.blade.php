@@ -31,6 +31,8 @@
                                            $cart = $cart_session_id ? App\Models\Cart::where('session_id', $cart_session_id)->first() : null;
                                        }
                                        $cartItemsCount = $cart ? $cart->items()->count() : 0;
+                                       $navCategories = App\Models\Category::with('subCategories')->get();
+                                       //    dd($navCategories);
                                    @endphp
                                    <li class="nav-item text-red position-relative">
                                        <a class="nav-link fw-bold nn-top-cart"
@@ -69,7 +71,13 @@
                                            <a class="nav-link px-4  {{ URL::current() == route('frontend.index') ? 'active-red' : '' }} "
                                                aria-current="page" href="{{ route('frontend.index') }}">Home</a>
                                        </li>
-                                       <li class="nav-item dd-cl">
+                                       @foreach ($navCategories as $navCategory)
+                                           <li class="nav-item dd-cl">
+                                               <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', $navCategory->slug) ? 'active-red' : '' }}"
+                                                   href="{{ route('frontend.cat.show', $navCategory->slug) }}">{{ $navCategory->name }}</a>
+                                           </li>
+                                       @endforeach
+                                       {{-- <li class="nav-item dd-cl">
                                            <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }}"
                                                href="{{ route('frontend.cat.show', 'skin') }}">Skin</a>
                                        </li>
@@ -93,7 +101,7 @@
                                        <li class="nav-item dd-cl">
                                            <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'gift') ? 'active-red' : '' }}"
                                                href="{{ route('frontend.cat.show', 'gift') }}">Gift</a>
-                                       </li>
+                                       </li> --}}
                                        @auth
                                            <li class="nav-item dd-cl">
                                                <form action="{{ route('frontend.logout') }}" method="POST">
@@ -114,8 +122,7 @@
                                    </a>
                                </ul>
                                <div class="header-sub-1 header-top-search-icon d-none d-lg-inline">
-                                   <form action="" method="post" class="">
-                                       @csrf
+                                   <form action="" method="get" class="">
                                        <input type="text" class="form-control px-4" placeholder="Search Product"
                                            aria-label="Search" aria-describedby="basic-addon1">
                                        <button class="position-absolute top-0 end-0 border-0 bg-transparent"
@@ -163,7 +170,30 @@
                                <li><a href="{{ route('frontend.index') }} "
                                        class=" {{ URL::current() == route('frontend.index') ? 'active-red' : '' }} text-capitalize">Home</a>
                                </li>
-                               <li class="nav-item dropdown">
+                               @foreach ($navCategories as $navCategory)
+                                   <li class="nav-item dropdown">
+                                       <a href="{{ route('frontend.cat.show', $navCategory->slug) }}"
+                                           class="{{ URL::current() == route('frontend.cat.show', $navCategory->slug) ? 'active-red' : '' }} nav-link text-capitalize">
+                                           {{ $navCategory->name }}
+                                       </a>
+                                       <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                           <div class="text-capitalize p-2">
+                                               @foreach ($navCategory->subCategories as $navSubCategory)
+                                                   <a class="dropdown-item"
+                                                       href="{{ route('frontend.cat.show', $navSubCategory->slug) }}">{{ $navSubCategory->name }}</a>
+                                               @endforeach
+                                               {{-- <a class="dropdown-item " href="#">Face wash</a>
+                                               <a class="dropdown-item" href="#">Face Scrub</a>
+                                               <a class="dropdown-item" href="#">Face Moisturiser</a>
+                                               <a class="dropdown-item" href="#">Sheet Mask</a>
+                                               <a class="dropdown-item" href="#">Face Serum</a>
+                                               <a class="dropdown-item" href="#">Suncreen</a>
+                                               <a class="dropdown-item" href="#">Face Mist</a> --}}
+                                           </div>
+                                       </div>
+                                   </li>
+                               @endforeach
+                               {{-- <li class="nav-item dropdown">
                                    <a href="{{ route('frontend.cat.show', 'skin') }}"
                                        class="{{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }} nav-link text-capitalize">
                                        Skin
@@ -294,7 +324,7 @@
                                                href="{{ url('sc/gift/keychains') }}">Keychains</a>
                                        </div>
                                    </div>
-                               </li>
+                               </li> --}}
                            </ul>
                        </nav>
                    </div>
@@ -313,7 +343,8 @@
                        </a>
                    </div>
                    <div class="col">
-                       <a href="" class="gap-2 d-flex flex-column align-items-center">
+                       <a class="gap-2 d-flex flex-column align-items-center toggle-display-trigger-by-id"
+                           data-target="phone-search" href="#">
                            <span>
                                <img src="{{ url('frontend/images/svg/footer/search.svg') }}" alt="">
                            </span>
@@ -350,10 +381,21 @@
                        </a>
                    </div>
                </div>
+
+               <div class="row" id="phone-search" style="display: none;">
+                   <div class="col-12">
+                       <div class="input-group mt-3">
+                           <input type="text" class="form-control" placeholder="Search for products"
+                               aria-label="Search for products" aria-describedby="button-addon2">
+                           <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                                   class="fas fa-search"></i></button>
+                       </div>
+                   </div>
+               </div>
            </div>
        </div>
    </header>
-
+   <script></script>
 
    @guest('web')
        {{-- <livewire:log-in /> --}}

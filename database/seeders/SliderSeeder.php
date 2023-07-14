@@ -55,7 +55,7 @@ class SliderSeeder extends Seeder
                 'image' => $slider['image'],
             ]);
             try {
-                File::copy(public_path('frontend/images/banner/' . $slider['image']), storage_path('app/public/images/sliders/' . $slider['image']));
+                File::copy(public_path('frontend/images/seeders/sliders/' . $slider['image']), storage_path('app/public/images/sliders/' . $slider['image']));
             } catch (\Throwable $th) {
                 //Log::info("file" . $eas->image);
             }

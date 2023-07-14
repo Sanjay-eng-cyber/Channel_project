@@ -52,7 +52,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '499',
                 'final_price' => '440',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 5
             ],
             [
                 'category_id' => 4,
@@ -64,7 +64,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '499',
                 'final_price' => '440',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 2
             ],
             [
                 'category_id' => 3,
@@ -76,7 +76,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '745',
                 'final_price' => '690',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 3
             ],
             [
                 'category_id' => 3,
@@ -88,7 +88,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '745',
                 'final_price' => '690',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 3.5
             ],
             [
                 'category_id' => 3,
@@ -100,7 +100,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '745',
                 'final_price' => '690',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 2.5
             ],
             [
                 'category_id' => 3,
@@ -112,7 +112,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '745',
                 'final_price' => '690',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 4.6
             ],
 
             [
@@ -130,7 +130,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '790',
                 'final_price' => '750',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 2
             ],
             [
                 'category_id' => 2,
@@ -142,7 +142,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '449',
                 'final_price' => '400',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 4.2
             ],
             [
                 'category_id' => 2,
@@ -164,7 +164,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '395',
                 'final_price' => '350',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 3.5
             ],
             [
                 'category_id' => 2,
@@ -184,7 +184,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '395',
                 'final_price' => '350',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 2.8
             ],
             [
                 'category_id' => 1,
@@ -196,7 +196,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '299',
                 'final_price' => '299',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 4.9
             ],
             [
                 'category_id' => 1,
@@ -208,7 +208,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '449',
                 'final_price' => '400',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 4.1
             ],
             [
                 'category_id' => 1,
@@ -221,7 +221,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '349',
                 'final_price' => '320',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 2.4
             ],
             [
                 'category_id' => 1,
@@ -233,7 +233,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '800',
                 'final_price' => '695',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 4.1
             ],
             [
                 'category_id' => 1,
@@ -245,7 +245,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '550',
                 'final_price' => '500',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 2.9
             ],
             [
                 'category_id' => 1,
@@ -263,7 +263,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '945',
                 'final_price' => '880',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 2.5
             ],
             [
                 'category_id' => 1,
@@ -281,7 +281,7 @@ class ProductSeeder extends Seeder
                 'mrp' => '745',
                 'final_price' => '700',
                 'stock' => 10,
-                'rating' => 4
+                'rating' => 3.7
             ],
         ];
 

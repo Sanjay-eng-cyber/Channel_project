@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title')
+@section('title', 'Shipping Policy |')
 @section('content')
     {{-- first slider slider --}}
     <section class="pb-3">
@@ -36,4 +36,4 @@
 
 
 
-@endsection 
+@endsection

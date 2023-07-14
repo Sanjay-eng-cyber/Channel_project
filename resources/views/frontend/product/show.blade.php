@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title', 'About-Us |')
+@section('title', $product->name . ' |')
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
@@ -73,7 +73,7 @@
                                 {{ $product->short_descriptions }}
                             </p>
                             <h3 class="h5 font-body">
-                                From ₹{{ $product->final_price }}
+                                From ₹{{ $product->final_price }} <s class="text-danger">₹{{ $product->mrp }}</s>
                             </h3>
                             @if ($product->stock)
                                 <h4 class="font-body h5 text-green">

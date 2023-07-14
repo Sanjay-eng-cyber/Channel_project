@@ -117,7 +117,7 @@
 
 
 
-    {{-- skin slider with latest & best seller --}}
+    {{-- FRAGRANCES slider --}}
     <section>
         <div class="container">
             <div class="row">
@@ -130,134 +130,144 @@
                             <li><a href="#skinlatest" class="text-capitalize active">Latest</a></li>
                             <li><a href="#skinpopular" class="text-capitalize">Popular</a></li>
                         </ul>
-                    </div>
 
-                    <div class="tab-content">
+                        <div class="tab-content">
 
-                        <div id="skinlatest">
-                            <!-- tabs slider start here -->
-                            <div class="skin-sliderlg">
-                                {{-- @for ($i = 1; $i < 7; $i++) --}}
-                                @foreach ($latestSkinProducts as $p)
-                                    <!-- slide start here -->
-                                    <div class="slide skin-slide">
-                                        <!-- mt product1 large start here -->
-                                        <div class="mt-product1 large mt-skin-product1 w-100">
-                                            <div class="box skin-box">
-                                                <a href="{{ route('frontend.p.show', $p->slug) }}">
-                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
-                                                        alt="image description">
-                                                </a>
-                                                @if ($p->isInWishlist())
-                                                    <button class="btn like-btn-skin add-to-wish active"
-                                                        data-p-id="{{ $p->id }}">
-                                                        <span class="has-tool-tip">
-                                                            <i class="fa-regular fa-heart"></i>
-                                                        </span>
-                                                    </button>
-                                                @else
-                                                    <button class="btn like-btn-skin add-to-wish"
-                                                        data-p-id="{{ $p->id }}">
-                                                        <span class="has-tool-tip">
-                                                            <i class="fa-regular fa-heart"></i>
-                                                        </span>
-                                                    </button>
-                                                @endif
-                                                <div class="links skin-text-desc py-2 px-3">
-                                                    <div class="card-title  m-0 text-center pro-head"
-                                                        title="{{ $p->name }}">
-                                                        <h4 class="">{{ str_limit($p->name, 50) }}</h4>
+                            <div id="skinlatest">
+                                <!-- tabs slider start here -->
+                                <div class="fragrances ">
+                                    {{-- @for ($i = 1; $i < 6; $i++) --}}
+                                    @foreach ($latestSkinProducts as $p)
+                                        <!-- slide start here -->
+                                        <div class="slide  skin-slide">
+                                            <div class="mt-product1 large mt-skin-product1 w-100">
+                                                <div class="box skin-box w-100" style="max-width: 300px;">
+                                                    <div class="b1">
+                                                        <div class="b2">
+                                                            <a href="{{ route('frontend.p.show', $p->slug) }}">
+                                                                <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    alt="image description">
+                                                            </a>
+
+                                                            @if ($p->isInWishlist())
+                                                                <button class="btn like-btn-skin add-to-wish active"
+                                                                    data-p-id="{{ $p->id }}">
+                                                                    <span class="has-tool-tip">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                    </span>
+                                                                </button>
+                                                            @else
+                                                                <button class="btn like-btn-skin add-to-wish"
+                                                                    data-p-id="{{ $p->id }}">
+                                                                    <span class="has-tool-tip">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                    </span>
+                                                                </button>
+                                                            @endif
+                                                            <ul class="links skin-text-desc py-2 px-3">
+                                                                <div class="card-title  m-0 text-center pro-head"
+                                                                    title="{{ $p->name }}">
+                                                                    <h4 class="">{{ str_limit($p->name, 50) }}</h4>
+                                                                </div>
+                                                                <p class="card-text text-center">
+                                                                    {{ $p->short_decriptions }}
+                                                                </p>
+
+
+                                                                <button type="button"
+                                                                    class="btn btn-light sk-btn shop-now-btn"
+                                                                    title="{{ $p->name }}">
+                                                                    <a href="{{ route('frontend.p.show', $p->slug) }}"
+                                                                        class="p-0  text-black">
+                                                                        Shop Now
+                                                                    </a>
+                                                                </button>
+                                                            </ul>
+                                                            </a>
+
+                                                        </div>
                                                     </div>
-                                                    <p class="card-text text-center">{{ $p->short_description }}
-                                                    </p>
-                                                    <button type="button" class="btn btn-light sk-btn shop-now-btn"
-                                                        title="{{ $p->name }}">
-                                                        <a href="{{ route('frontend.p.show', $p->slug) }}"
-                                                            class="p-0  text-black">
-                                                            Shop Now
-                                                        </a>
-                                                    </button>
-
                                                 </div>
-                                            </div>
-                                        </div><!-- mt product1 center end here -->
-                                    </div>
+
+                                            </div><!-- mt product1 center end here -->
+                                        </div>
+                                    @endforeach
                                     {{-- @endfor --}}
-                                @endforeach
+                                </div>
+                                <!-- tabs slider end here -->
                             </div>
-                            <!-- tabs slider end here -->
-                        </div>
 
-                        <div id="skinpopular">
-                            <!-- tabs slider start here -->
-                            <div class="skin-sliderlg">
-                                {{-- @for ($i = 1; $i < 7; $i++) --}}
-                                @foreach ($popularSkinProducts as $p)
-                                    <!-- slide start here -->
-                                    <div class="slide  skin-slide">
-                                        <!-- mt product1 large start here -->
-                                        <div class="mt-product1 large mt-skin-product1 w-100">
-                                            <div class="box skin-box">
-                                                <div class="b1">
-                                                    <div class="b2">
-                                                        <a href="{{ route('frontend.p.show', $p->slug) }}">
-                                                            <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
-                                                                alt="image description">
-                                                        </a>
+                            <div id="skinpopular">
+                                <!-- tabs slider start here -->
+                                <div class="fragrances">
+                                    {{-- @for ($i = 1; $i < 6; $i++) --}}
+                                    @foreach ($popularSkinProducts as $p)
+                                        <div class="slide  skin-slide">
+                                            <div class="mt-product1 large mt-skin-product1 w-100">
+                                                <div class="box skin-box w-100" style="max-width: 300px;">
+                                                    <div class="b1">
+                                                        <div class="b2">
+                                                            <a href="{{ route('frontend.p.show', $p->slug) }}">
+                                                                <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    alt="image description">
+                                                            </a>
 
-                                                        @if ($p->isInWishlist())
-                                                            <button class="btn like-btn-skin add-to-wish active"
-                                                                data-p-id="{{ $p->id }}">
-                                                                <span class="has-tool-tip">
-                                                                    <i class="fa-regular fa-heart"></i>
-                                                                </span>
-                                                            </button>
-                                                        @else
-                                                            <button class="btn like-btn-skin add-to-wish"
-                                                                data-p-id="{{ $p->id }}">
-                                                                <span class="has-tool-tip">
-                                                                    <i class="fa-regular fa-heart"></i>
-                                                                </span>
-                                                            </button>
-                                                        @endif
-                                                        <ul class="links skin-text-desc py-2 px-3">
-                                                            <div class="card-title  m-0 text-center pro-head"
-                                                                title="{{ $p->name }}">
-                                                                <h4 class="">{{ str_limit($p->name, 50) }}</h4>
-                                                            </div>
-                                                            <p class="card-text text-center">{{ $p->short_decriptions }}
-                                                            </p>
+                                                            @if ($p->isInWishlist())
+                                                                <button class="btn like-btn-skin add-to-wish active"
+                                                                    data-p-id="{{ $p->id }}">
+                                                                    <span class="has-tool-tip">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                    </span>
+                                                                </button>
+                                                            @else
+                                                                <button class="btn like-btn-skin add-to-wish"
+                                                                    data-p-id="{{ $p->id }}">
+                                                                    <span class="has-tool-tip">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                    </span>
+                                                                </button>
+                                                            @endif
+                                                            <ul class="links skin-text-desc py-2 px-3">
+                                                                <div class="card-title  m-0 text-center pro-head"
+                                                                    title="{{ $p->name }}">
+                                                                    <h4 class="">{{ str_limit($p->name, 50) }}</h4>
+                                                                </div>
+                                                                <p class="card-text text-center">
+                                                                    {{ $p->short_decriptions }}
+                                                                </p>
 
 
-                                                            <button type="button"
-                                                                class="btn btn-light sk-btn shop-now-btn"
-                                                                title="{{ $p->name }}">
-                                                                <a href="{{ route('frontend.p.show', $p->slug) }}"
-                                                                    class="p-0  text-black">
-                                                                    Shop Now
-                                                                </a>
-                                                            </button>
-                                                        </ul>
-                                                        </a>
+                                                                <button type="button"
+                                                                    class="btn btn-light sk-btn shop-now-btn"
+                                                                    title="{{ $p->name }}">
+                                                                    <a href="{{ route('frontend.p.show', $p->slug) }}"
+                                                                        class="p-0  text-black">
+                                                                        Shop Now
+                                                                    </a>
+                                                                </button>
+                                                            </ul>
+                                                            </a>
 
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                        </div><!-- mt product1 center end here -->
-                                    </div>
-                                @endforeach
-                                {{-- @endfor --}}
+                                            </div><!-- mt product1 center end here -->
+                                        </div>
+                                    @endforeach
+                                    {{-- @endfor --}}
+                                </div>
+                                <!-- tabs slider end here -->
                             </div>
-                            <!-- tabs slider end here -->
+
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
-
-    {{-- FRAGRANCES slider --}}
     <section>
         <div class="container">
             <div class="row">
@@ -279,28 +289,56 @@
                                     {{-- @for ($i = 1; $i < 6; $i++) --}}
                                     @foreach ($latestFragrancesProducts as $p)
                                         <!-- slide start here -->
-                                        <div class="slide fragrances-slide">
-                                            <!-- mt product1 large start here -->
-                                            <div class="mt-product1 large mt-fragrances">
-                                                <div class="box fragrances-box">
-                                                    <a href="{{ route('frontend.p.show', $p->slug) }}">
-                                                        <img src="https://via.placeholder.com/1440x500"
-                                                            {{-- "{{ asset('storage/images/products/' . $p->thumbnail_image) }}" --}} alt="image description">
-                                                    </a>
-                                                    <div class="links fragrances-text-desc">
-                                                        <div
-                                                            class="card-title card-text-heading m-0 text-center pro-head ">
-                                                            {{ $p->name }}
-                                                        </div>
-                                                        <h5 class="text-center">
-                                                            <a href="{{ route('frontend.p.show', $p->slug) }}"
-                                                                class="p-0 main-head text-black"
-                                                                title="{{ $p->name }}">
-                                                                Shop Now
+                                        <div class="slide  skin-slide">
+                                            <div class="mt-product1 large mt-skin-product1 w-100">
+                                                <div class="box skin-box w-100" style="max-width: 300px;">
+                                                    <div class="b1">
+                                                        <div class="b2">
+                                                            <a href="{{ route('frontend.p.show', $p->slug) }}">
+                                                                <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    alt="image description">
                                                             </a>
-                                                        </h5>
+
+                                                            @if ($p->isInWishlist())
+                                                                <button class="btn like-btn-skin add-to-wish active"
+                                                                    data-p-id="{{ $p->id }}">
+                                                                    <span class="has-tool-tip">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                    </span>
+                                                                </button>
+                                                            @else
+                                                                <button class="btn like-btn-skin add-to-wish"
+                                                                    data-p-id="{{ $p->id }}">
+                                                                    <span class="has-tool-tip">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                    </span>
+                                                                </button>
+                                                            @endif
+                                                            <ul class="links skin-text-desc py-2 px-3">
+                                                                <div class="card-title  m-0 text-center pro-head"
+                                                                    title="{{ $p->name }}">
+                                                                    <h4 class="">{{ str_limit($p->name, 50) }}</h4>
+                                                                </div>
+                                                                <p class="card-text text-center">
+                                                                    {{ $p->short_decriptions }}
+                                                                </p>
+
+
+                                                                <button type="button"
+                                                                    class="btn btn-light sk-btn shop-now-btn"
+                                                                    title="{{ $p->name }}">
+                                                                    <a href="{{ route('frontend.p.show', $p->slug) }}"
+                                                                        class="p-0  text-black">
+                                                                        Shop Now
+                                                                    </a>
+                                                                </button>
+                                                            </ul>
+                                                            </a>
+
+                                                        </div>
                                                     </div>
                                                 </div>
+
                                             </div><!-- mt product1 center end here -->
                                         </div>
                                     @endforeach
@@ -314,35 +352,56 @@
                                 <div class="fragrances">
                                     {{-- @for ($i = 1; $i < 6; $i++) --}}
                                     @foreach ($popularFragrancesProducts as $p)
-                                        <!-- slide start here -->
-                                        <div class="slide fragrances-slide">
-                                            <!-- mt product1 large start here -->
-                                            <div class="mt-product1 large mt-fragrances ">
-                                                <div class="box fragrances-box">
+                                        <div class="slide  skin-slide">
+                                            <div class="mt-product1 large mt-skin-product1 w-100">
+                                                <div class="box skin-box w-100" style="max-width: 300px;">
                                                     <div class="b1">
                                                         <div class="b2">
                                                             <a href="{{ route('frontend.p.show', $p->slug) }}">
                                                                 <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
                                                                     alt="image description">
                                                             </a>
-                                                            <ul class="links fragrances-text-desc">
-                                                                <div
-                                                                    class="card-title card-text-heading m-0 text-center pro-head ">
-                                                                    {{ $p->name }}
+
+                                                            @if ($p->isInWishlist())
+                                                                <button class="btn like-btn-skin add-to-wish active"
+                                                                    data-p-id="{{ $p->id }}">
+                                                                    <span class="has-tool-tip">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                    </span>
+                                                                </button>
+                                                            @else
+                                                                <button class="btn like-btn-skin add-to-wish"
+                                                                    data-p-id="{{ $p->id }}">
+                                                                    <span class="has-tool-tip">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                    </span>
+                                                                </button>
+                                                            @endif
+                                                            <ul class="links skin-text-desc py-2 px-3">
+                                                                <div class="card-title  m-0 text-center pro-head"
+                                                                    title="{{ $p->name }}">
+                                                                    <h4 class="">{{ str_limit($p->name, 50) }}</h4>
                                                                 </div>
-                                                                {{-- <p class="card-text text-center">
-                                                                    {{ $p->short_descriptions }}</p> --}}
-                                                                <h5 class="text-center">
+                                                                <p class="card-text text-center">
+                                                                    {{ $p->short_decriptions }}
+                                                                </p>
+
+
+                                                                <button type="button"
+                                                                    class="btn btn-light sk-btn shop-now-btn"
+                                                                    title="{{ $p->name }}">
                                                                     <a href="{{ route('frontend.p.show', $p->slug) }}"
-                                                                        class="p-0 main-head text-black"
-                                                                        title="{{ $p->name }}">
+                                                                        class="p-0  text-black">
                                                                         Shop Now
                                                                     </a>
-                                                                </h5>
+                                                                </button>
                                                             </ul>
+                                                            </a>
+
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </div><!-- mt product1 center end here -->
                                         </div>
                                     @endforeach
@@ -362,34 +421,35 @@
 
 
 
-    <section>
-        <div class="container">
-            <h2 class="text-orange text-center text-capitalize">
-                Transform your living space into a cozy
-                <br> sanctuary with unique <span class="text-pink"> home decor</span> accents
-            </h2>
+    @if ($latestHomeDecorProducts->count())
+        <section>
+            <div class="container">
+                <h2 class="text-orange text-center text-capitalize">
+                    Transform your living space into a cozy
+                    <br> sanctuary with unique <span class="text-pink"> home decor</span> accents
+                </h2>
 
-            <div class="rise-up-slider">
+                <div class="rise-up-slider">
 
-                @foreach ($latestHomeDecorProducts as $p)
-                    <div class="rise-up-slider-card">
-                        <img class="product" src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
-                            alt="" class="img-fluid w-100">
-                        <div class="text">
-                            <div>
-                                <h4 class="text-capitalize" title="{{ $p->name }}">
-                                    {{ str_limit($p->name, 50) }}
-                                </h4>
-                                ₹{{ $p->final_price }} <s class="text-muted">₹{{ $p->mrp }}</s>
-                            </div>
-                            <div>
-                                {{-- @if ($p->isInWishlist()) --}}
-                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
-                                    <span class="has-tool-tip">
-                                        <i class="fa-regular fa-heart"></i>
-                                    </span>
-                                </button>
-                                {{-- @else
+                    @foreach ($latestHomeDecorProducts as $p)
+                        <div class="rise-up-slider-card">
+                            <img class="product" src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                alt="" class="img-fluid w-100">
+                            <div class="text">
+                                <div>
+                                    <h4 class="text-capitalize" title="{{ $p->name }}">
+                                        {{ str_limit($p->name, 50) }}
+                                    </h4>
+                                    ₹{{ $p->final_price }} <s class="text-muted">₹{{ $p->mrp }}</s>
+                                </div>
+                                <div>
+                                    {{-- @if ($p->isInWishlist()) --}}
+                                    <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                    {{-- @else
                                     <button class="like-btn btn btn wishlist add-to-wish"
                                         data-p-id="{{ $p->id }}">
                                         <span class="has-tool-tip">
@@ -397,29 +457,29 @@
                                         </span>
                                     </button>
                                 @endif --}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-                @foreach ($latestHomeDecorProducts as $p)
-                    <div class="rise-up-slider-card">
-                        <img class="product" src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
-                            alt="" class="img-fluid w-100">
-                        <div class="text">
-                            <div>
-                                <h4 class="text-capitalize" title="{{ $p->name }}">
-                                    {{ str_limit($p->name, 50) }}
-                                </h4>
-                                ₹{{ $p->final_price }} <s class="text-muted">₹{{ $p->mrp }}</s>
-                            </div>
-                            <div>
-                                {{-- @if ($p->isInWishlist()) --}}
-                                <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
-                                    <span class="has-tool-tip">
-                                        <i class="fa-regular fa-heart"></i>
-                                    </span>
-                                </button>
-                                {{-- @else
+                    @endforeach
+                    @foreach ($latestHomeDecorProducts as $p)
+                        <div class="rise-up-slider-card">
+                            <img class="product" src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                alt="" class="img-fluid w-100">
+                            <div class="text">
+                                <div>
+                                    <h4 class="text-capitalize" title="{{ $p->name }}">
+                                        {{ str_limit($p->name, 50) }}
+                                    </h4>
+                                    ₹{{ $p->final_price }} <s class="text-muted">₹{{ $p->mrp }}</s>
+                                </div>
+                                <div>
+                                    {{-- @if ($p->isInWishlist()) --}}
+                                    <button class="like-btn btn btn wishlist add-to-wish active" {{-- data-p-id="{{ $p->id }}" --}}>
+                                        <span class="has-tool-tip">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </button>
+                                    {{-- @else
                                 <button class="like-btn btn btn wishlist add-to-wish"
                                     data-p-id="{{ $p->id }}">
                                     <span class="has-tool-tip">
@@ -427,15 +487,16 @@
                                     </span>
                                 </button>
                             @endif --}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+
+                </div>
 
             </div>
-
-        </div>
-    </section>
+        </section>
+    @endif
 
 
     {{-- organic-product slider --}}
