@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Showcase;
 
 class HomeController extends Controller
 {
@@ -15,6 +16,12 @@ class HomeController extends Controller
         $middleSlider = Slider::where('type', 'middle slider')->first();
         $leftSliders = Slider::where('type', 'left slider')->get();
         $rightSliders = Slider::where('type', 'right slider')->get();
+
+        $featured = Showcase::whereName('Featured')->first();
+        $featured_products = $featured ? $featured->products()->latest()->get() : [];
+
+        $best_seller = Showcase::whereName('Best Seller')->first();
+        $best_seller_products = $best_seller ? $best_seller->products()->latest()->get() : [];
 
         $skin = Category::where('slug', 'skin')->first();
         $popularSkinProducts = $skin ? $skin->products()->orderBy('rating', 'desc')->limit(16)->get() : [];
@@ -33,6 +40,6 @@ class HomeController extends Controller
 
         // dd($latestSkinProducts, $latestFragrancesProducts, $latestHomeDecorProducts);
 
-        return view('frontend.index', compact('middleSlider', 'leftSliders', 'rightSliders', 'popularSkinProducts', 'latestSkinProducts', 'popularFragrancesProducts', 'latestFragrancesProducts', 'homeDecorProducts', 'latestHomeDecorProducts'));
+        return view('frontend.index', compact('middleSlider', 'leftSliders', 'rightSliders', 'featured_products', 'best_seller_products', 'popularSkinProducts', 'latestSkinProducts', 'popularFragrancesProducts', 'latestFragrancesProducts', 'homeDecorProducts', 'latestHomeDecorProducts'));
     }
 }
