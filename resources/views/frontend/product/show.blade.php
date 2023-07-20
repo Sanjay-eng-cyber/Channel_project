@@ -388,12 +388,12 @@
                                             <input type="radio" id="star1" name="rating" value="1" />
                                             <label class="star" for="star1" title="Bad"
                                                 aria-hidden="true"></label>
-                                            @if ($errors->has('rating'))
-                                                <div class="text-danger" role="alert">{{ $errors->first('rating') }}
-                                                </div>
-                                            @endif
                                         </div>
                                     </div>
+                                    @if ($errors->has('rating'))
+                                        <div class="text-danger text-end" role="alert">{{ $errors->first('rating') }}
+                                        </div>
+                                    @endif
 
                                     <div class="py-4">
                                         <input type="text"
