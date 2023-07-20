@@ -213,12 +213,18 @@
                                                     Ratings
                                                 </h6>
                                                 <div class="five-stars text-green d-flex">
+                                                    @for ($i = 1; $i <= 5; $i++)
+                                                        @if ($i <= $reviewRatingAvg)
+                                                            <i class="fa-solid fa-star"></i>
+                                                        @else
+                                                            <i class="fa-regular fa-star"></i>
+                                                        @endif
+                                                    @endfor
+                                                    {{-- <i class="fa-solid fa-star"></i>
                                                     <i class="fa-solid fa-star"></i>
                                                     <i class="fa-solid fa-star"></i>
                                                     <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i> --}}
                                                 </div>
                                             </div>
                                             <div class="d-flex">
@@ -228,9 +234,9 @@
                                                     </h6>
                                                     <i class="fa-solid fa-star text-green"></i>
                                                 </div>
-                                                <div class="rating-count text-muted">
+                                                {{-- <div class="rating-count text-muted">
                                                     Based On Verified Buyers 1k
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -264,8 +270,7 @@
 
                 <div class="row">
                     <div class="col-lg-7 col-md-12 product-showpagepills">
-                        <ul class="nav nav-pills justify-content-between prdct-pills-tab p-0" id="myTab"
-                            role="tablist">
+                        <ul class="nav nav-pills justify-content-between prdct-pills-tab p-0" id="myTab" role="tablist">
                             <li class="nav-item prdct-pills-f1">
                                 <a class="nav-link active p-0" id="home-tab" data-bs-toggle="pill" href="#home"
                                     role="tab" aria-controls="home" aria-selected="true">
@@ -398,7 +403,8 @@
                                     <div class="py-4">
                                         <input type="text"
                                             class="form-control my-2 review-sub-headline review-input-bg"
-                                            placeholder="Enter Title" name="title" required>
+                                            placeholder="Enter Title" name="title" required
+                                            value="{{ old('title') }}">
                                         @if ($errors->has('title'))
                                             <div class="text-danger" role="alert">{{ $errors->first('title') }}
                                             </div>
