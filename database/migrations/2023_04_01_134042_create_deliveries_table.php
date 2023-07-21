@@ -15,12 +15,22 @@ class CreateDeliveriesTable extends Migration
     {
         Schema::create('deliveries', function (Blueprint $table) {
             $table->id();
-            $table->string('delivery_no')->nullable();
-            $table->string('delivery_api_id')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
-            $table->string('type')->nullable();
-            $table->string('status')->nullable();
+            $table->enum('status', ['Pending', 'Intransit', 'Delivered']);
+            $table->integer('partner_order_id')->nullable();
+            $table->integer('shipment_id')->nullable();
+            $table->integer('awb_code')->nullable();
+            $table->string('courier_name')->nullable();
+            $table->integer('courier_company_id')->nullable();
+            $table->integer('partner_status_code')->nullable();
+            $table->string('partner_status')->nullable();
+            $table->dateTime('pickup_scheduled_date')->nullable();
+            $table->string('pickup_token_number')->nullable();
+            $table->string('message')->nullable();
+            $table->integer('pickup_status')->nullable();
+            $table->dateTime('pickup_date')->nullable();
+            $table->dateTime('delivered_date')->nullable();
             $table->timestamps();
         });
     }
