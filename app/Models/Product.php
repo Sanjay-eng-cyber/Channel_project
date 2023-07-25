@@ -64,28 +64,37 @@ class Product extends Model
     public function storeProductAttributes($attributes, $values, $product)
     {
         foreach ($attributes as $key => $item) {
-            ProductAttribute::create([
-                'product_id' => $product,
-                'attribute_id' => $item,
-                'attribute_value_id' => $values[$key],
-            ]);
-        }
-    }
-
-    public function updateProductAttributes($attributes, $values, $product)
-    {
-        foreach ($attributes as $key => $item) {
-            $attribute = ProductAttribute::where('product_id', $product)->where('attribute_id', $item)->first();
-            if ($attribute == null) {
+            if ($values[$key]) {
                 ProductAttribute::create([
                     'product_id' => $product,
                     'attribute_id' => $item,
                     'attribute_value_id' => $values[$key],
                 ]);
+            }
+        }
+    }
+
+    public function updateProductAttributes($attributes, $values, $product)
+    {
+        // dd($attributes, $values, $product);
+        foreach ($attributes as $key => $item) {
+            // dd($values[$key]);
+            if ($values[$key]) {
+                $attribute = ProductAttribute::where('product_id', $product)->where('attribute_id', $item)->first();
+                if ($attribute == null) {
+                    ProductAttribute::create([
+                        'product_id' => $product,
+                        'attribute_id' => $item,
+                        'attribute_value_id' => $values[$key],
+                    ]);
+                } else {
+                    $attribute->update([
+                        'attribute_value_id' => $values[$key],
+                    ]);
+                }
             } else {
-                $attribute->update([
-                    'attribute_value_id' => $values[$key],
-                ]);
+                // dd($product, $item, $values[$key]);
+                optional(ProductAttribute::where('product_id', $product)->where('attribute_id', $item)->delete());
             }
         }
     }

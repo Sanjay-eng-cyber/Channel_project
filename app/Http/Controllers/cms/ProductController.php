@@ -161,7 +161,7 @@ class ProductController extends Controller
                 $showcase_product->product_id = $product->id;
                 $showcase_product->save();
             }
-            // $product->storeProductAttributes($request->attributeKeys, $request->values, $product->id);
+            $product->storeProductAttributes($request->attributeKeys, $request->values, $product->id);
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Stored Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
@@ -183,6 +183,7 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+        // dd($request);
         $categorys = Category::pluck('id')->toArray();
         $brands = Brand::pluck('id')->toArray();
         $sub_categorys = SubCategory::pluck('id')->toArray();
@@ -256,6 +257,8 @@ class ProductController extends Controller
                 $media->save();
             }
         }
+
+        // Showcase functionality
         $showcases = $request->showcases ?? [];
         if ($showcases) {
             $showcase_products = ShowcaseProduct::where('product_id', $id);
@@ -268,8 +271,11 @@ class ProductController extends Controller
                 $showcase_product->save();
             }
         }
-       // $product->updateProductAttributes($request->attributeKeys, $request->values, $product->id);
-        if ($product->save()) {
+
+        // Product Attribute functionality
+       $product->updateProductAttributes($request->attributeKeys, $request->values, $product->id);
+
+       if ($product->save()) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Update Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
