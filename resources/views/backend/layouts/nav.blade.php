@@ -15,7 +15,7 @@
 
               <li class="nav-item theme-text w-auto">
                   <a href="/" class="nav-link">
-                      <img src="{{ asset('backend/images/channel-logo.svg') }}" class="navbar-logo img-fluid"
+                      <img src="{{ asset('backend/images/channel-logo-white.svg') }}" class="navbar-logo img-fluid"
                           alt="logo" style="width: 150px">
                   </a>
               </li>

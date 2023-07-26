@@ -1,11 +1,11 @@
 @extends('frontend.layouts.app')
-@section('title')
+@section('title', 'About-Us |')
 @section('content')
     {{-- first slider slider --}}
     <section class="pb-3">
         <div class="container">
             <div class="row main-group-card">
-                <h2 class="text-red main-head text-center my-5">About US</h2>
+                <h2 class="text-red main-head text-center my-5">About Us</h2>
                 <p>Welcome to Channel, the ultimate destination for all your gifting needs! We have been in the
                     business since 2009 and have been serving the people of Chembur with our amazing range of gifts
                     for over 14 years now. We are proud to say that we are one of the most preferred gift stores in the
@@ -44,44 +44,5 @@
 
 @endsection
 @section('js')
-    <script>
-        $('.rise-up-slider').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            centerMode: true,
-            arrows: false,
-            dots: false,
-            speed: 300,
-            centerPadding: '0px',
-            infinite: true,
-            autoplaySpeed: 2000,
-            autoplay: true,
-            responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    </script>
 
-    <script>
-        window.onload = function() {
-            $('.frontend-top-slider').slick({
-                autoplay: true,
-                autoplaySpeed: 1000,
-                arrows: false,
-                centerMode: true,
-                slidesToShow: 1,
-                slidesToScroll: 2
-            });
-        };
-    </script>
 @endsection

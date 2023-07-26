@@ -69,14 +69,17 @@ if (!function_exists('gst')) {
 }
 
 if (!function_exists('amt')) {
+
     /**
-     ** remove "00" suffix from amount returned by api and convert to int
-     * @param string $amount
-     * @return int
+     * The function "amt" converts an amount from cents to dollars.
+     *
+     * @param amount The parameter "amount" is a numeric value representing a monetary amount.
+     *
+     * @return the amount divided by 100, casted as an integer.
      */
     function amt($amount)
     {
-        return (int)substr($amount, 0, -2);
+        return (int)$amount / 100;
     }
 }
 

@@ -45,9 +45,11 @@
                         <div class="row my-3">
                             @foreach ($cartItems as $cartItem)
                                 <div class="col-12 d-flex">
-                                    <img src="https://via.placeholder.com/100"
+                                    {{-- <img src="https://via.placeholder.com/100"
                                         class="w-auto my-2 rounded-2 border border-1 pink-border me-3" height="100px"
-                                        width="100px" alt="">
+                                        width="100px" alt=""> --}}
+                                    <img src="{{ asset('storage/images/products/' . $cartItem->product->thumbnail_image) }}"
+                                        alt="..." class="my-2 rounded-2 border border-1 pink-border me-3 cart-p-img">
                                     <div class="mt-1">
                                         <p class="mb-1 text-black">{{ $cartItem->product->name }}</p>
                                         <span>Price: ₹{{ $cartItem->product->final_price }}</span><br>
@@ -86,6 +88,21 @@
                             </div>
                         </div>
                     </div>
+                    <div class="my-2">
+                        <form action="{{ route('apply-coupon') }}" method="POST">
+                            <label for="coupon-code-input my-3">Coupon</label>
+                            <div class="input-group my-2">
+                                @csrf
+                                <input type="text" class="form-control" placeholder="Enter Coupon Code"
+                                    style="max-width: 221px;" name="code" required
+                                    value="{{ session()->has('coupon') ? session('coupon') : null }}">
+                                <button type="submit" class="btn btn-outline-pink-hover p-1 p-xl-2 text-end ml-2">
+                                    Apply Coupon
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <hr>
 
                     {{-- <hr> --}}
                     <span class="h5  font-body text-capitalize">Price Details
@@ -145,14 +162,14 @@
     <script>
         var options = {
             "key": "{{ config('razorpay.id') }}", // Enter the Key ID generated from the Dashboard
-            "amount": "{{ number_format($grandTotal) }}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise "currency": "INR",
+            "amount": {{ (int) $grandTotal * 100 }}, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise "currency": "INR",
             "name": "{{ config('app.name') }}",
             "description": "{{ config('app.env') }}",
             "image": "https://example.com/your_logo",
             "order_id": "{{ $order['api_order_id'] }}",
             "callback_url": "{{ route('razorpay.callback') }}",
             "prefill": {
-                "name": "Tirumani",
+                "name": "Tiru",
                 "email": "tiru@gmail.com",
                 "contact": "1234567890"
             },

@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title', 'About-Us |')
+@section('title', $product->name . ' |')
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
@@ -14,6 +14,10 @@
                         <div class="slider">
                             <div class="product-slider">
                                 <div class="slide">
+                                    <img src="{{ asset('storage/images/products/' . $product->thumbnail_image) }}"
+                                        alt="image description">
+                                </div>
+                                {{-- <div class="slide">
                                     <img src="https://via.placeholder.com/600" alt="image description">
                                 </div>
                                 <div class="slide">
@@ -24,16 +28,17 @@
                                 </div>
                                 <div class="slide">
                                     <img src="https://via.placeholder.com/600" alt="image description">
-                                </div>
+                                </div> --}}
                             </div>
 
                             <ul class="list-unstyled slick-slider pagg-slider">
                                 <li>
                                     <div class="img">
-                                        <img src="https://via.placeholder.com/600" alt="image description">
+                                        <img src="{{ asset('storage/images/products/' . $product->thumbnail_image) }}"
+                                            alt="image description">
                                     </div>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <div class="img">
                                         <img src="https://via.placeholder.com/600" alt="image description">
                                     </div>
@@ -48,6 +53,11 @@
                                         <img src="https://via.placeholder.com/600" alt="image description">
                                     </div>
                                 </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="https://via.placeholder.com/600" alt="image description">
+                                    </div>
+                                </li> --}}
 
                             </ul>
                             <!-- Pagg Slider of the Page end -->
@@ -63,7 +73,7 @@
                                 {{ $product->short_descriptions }}
                             </p>
                             <h3 class="h5 font-body">
-                                From {{ $product->final_price }}
+                                From ₹{{ $product->final_price }} <s class="text-danger">₹{{ $product->mrp }}</s>
                             </h3>
                             @if ($product->stock)
                                 <h4 class="font-body h5 text-green">
@@ -170,7 +180,7 @@
                                 </h6>
                                 <ul class="ms-3 text-muted">
                                     <li class="text-capitalize">
-                                        {{ $product->descriptions }}
+                                        {!! $product->descriptions !!}
                                     </li>
                                 </ul>
                                 {{-- <h6 class="h5 font-body">
@@ -203,12 +213,18 @@
                                                     Ratings
                                                 </h6>
                                                 <div class="five-stars text-green d-flex">
+                                                    @for ($i = 1; $i <= 5; $i++)
+                                                        @if ($i <= $reviewRatingAvg)
+                                                            <i class="fa-solid fa-star"></i>
+                                                        @else
+                                                            <i class="fa-regular fa-star"></i>
+                                                        @endif
+                                                    @endfor
+                                                    {{-- <i class="fa-solid fa-star"></i>
                                                     <i class="fa-solid fa-star"></i>
                                                     <i class="fa-solid fa-star"></i>
                                                     <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i> --}}
                                                 </div>
                                             </div>
                                             <div class="d-flex">
@@ -218,9 +234,9 @@
                                                     </h6>
                                                     <i class="fa-solid fa-star text-green"></i>
                                                 </div>
-                                                <div class="rating-count text-muted">
+                                                {{-- <div class="rating-count text-muted">
                                                     Based On Verified Buyers 1k
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -254,8 +270,7 @@
 
                 <div class="row">
                     <div class="col-lg-7 col-md-12 product-showpagepills">
-                        <ul class="nav nav-pills justify-content-between prdct-pills-tab p-0" id="myTab"
-                            role="tablist">
+                        <ul class="nav nav-pills justify-content-between prdct-pills-tab p-0" id="myTab" role="tablist">
                             <li class="nav-item prdct-pills-f1">
                                 <a class="nav-link active p-0" id="home-tab" data-bs-toggle="pill" href="#home"
                                     role="tab" aria-controls="home" aria-selected="true">
@@ -378,17 +393,18 @@
                                             <input type="radio" id="star1" name="rating" value="1" />
                                             <label class="star" for="star1" title="Bad"
                                                 aria-hidden="true"></label>
-                                            @if ($errors->has('rating'))
-                                                <div class="text-danger" role="alert">{{ $errors->first('rating') }}
-                                                </div>
-                                            @endif
                                         </div>
                                     </div>
+                                    @if ($errors->has('rating'))
+                                        <div class="text-danger text-end" role="alert">{{ $errors->first('rating') }}
+                                        </div>
+                                    @endif
 
                                     <div class="py-4">
                                         <input type="text"
                                             class="form-control my-2 review-sub-headline review-input-bg"
-                                            placeholder="Enter Title" name="title" required>
+                                            placeholder="Enter Title" name="title" required
+                                            value="{{ old('title') }}">
                                         @if ($errors->has('title'))
                                             <div class="text-danger" role="alert">{{ $errors->first('title') }}
                                             </div>
@@ -408,36 +424,14 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-5 col-md-12">
-                        <h4 class="font-body mb-3">
-                            Narrow Reviews By
-                        </h4>
-                        <div class="row row-cols-1 row-cols-sm-2 ">
-                            <div class="col __1nw-rv pt-2 pt-sm-3 pb-2">
-                                <div class="fw-bold text-red bg-lightpink p-2 text-center">Recent</div>
-                            </div>
-                            <div class="col  __1nw-rv pt-2 pt-sm-3 pb-2">
-                                <div class="fw-bold text-red bg-lightpink p-2 text-center">By Certified Buyer</div>
-                            </div>
-                            <div class="col  __1nw-rv my-2 my-sm-2">
-                                <div class="fw-bold text-red bg-lightpink p-2 text-center">By Positive </div>
-                            </div>
-                            <div class="col __1nw-rv my-2 my-sm-2">
-                                <div class="fw-bold text-red bg-lightpink p-2 text-center">Most Helpful</div>
-                            </div>
-                            <div class="col  __1nw-rv my-2 my-sm-2">
-                                <div class="fw-bold text-red bg-lightpink p-2 text-center">By Negative </div>
-                            </div>
-                        </div>
 
-                    </div>
                 </div>
 
                 <hr>
-                <div class="row pb-4" style="padding-top:2px;">
+                {{-- <div class="row pb-4" style="padding-top:2px;">
                     <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">Recommended based on your
                         purchase</h5>
-                    {{-- @forelse ($cProducts as $cp)
+                     @forelse ($cProducts as $cp)
                         <div class="col-lg-12 col-xl-6 or-secondpage-scard">
                             <div class="p-4 or-secondpage-scard">
                                 <div class="row pt-3 pb-3 or-secondpage-scard-card">
@@ -466,15 +460,94 @@
                         </div>
                     @empty
                         <p class="text-center">No Recommended Products</p>
-                    @endforelse --}}
-                </div>
+                    @endforelse
+                </div> --}}
                 {{-- <div class="d-flex justify-content-center mt-4">
                     {{ $cProducts->onEachSide(1)->links('pagination::bootstrap-4') }}
                 </div> --}}
+
+
             </div>
+
 
         </section>
     </main>
+
+    <div class="container">
+        <div class="row">
+            <h5 class="main-head py-3 or-secondpage-scard-fhead text-capitalize">
+                Recommended Products
+            </h5>
+            <div class="col-sm-12">
+
+                <ul id="subcategory-slider">
+
+                    @foreach ($relatedProducts as $rP)
+                        <div class="product-show-grid">
+
+                            <div class=" product-show-grid-card ">
+                                <div class="product-card-img">
+                                    @if ($rP->isInWishlist())
+                                        <button class="btn wishlist add-to-wish active" data-p-id="{{ $rP->id }}">
+                                            <span class="has-tool-tip">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="tool-tip-text">Remove From Wishlist</span>
+                                            </span>
+                                        </button>
+                                    @else
+                                        <button class="btn wishlist add-to-wish" data-p-id="{{ $rP->id }}">
+                                            <span class="has-tool-tip">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="tool-tip-text">Add to Wishlist</span>
+                                            </span>
+                                        </button>
+                                    @endif
+                                    <img src="{{ asset('storage/images/products/' . $rP->thumbnail_image) }}"
+                                        alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title font-head fw-bold">
+                                        {{ $rP->name }}
+                                    </h4>
+                                    <div class="price">
+                                        ₹{{ $rP->final_price }} <s class="text-danger">₹{{ $rP->mrp }}</s>
+                                    </div>
+                                    <div class="buttons">
+                                        <a href="{{ route('frontend.p.show', $rP->slug) }}" class="btn btn-orange">
+                                            Shop now
+                                        </a>
+                                        @if ($rP->isInCart())
+                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
+                                                data-p-id="{{ $rP->id }}">
+                                                <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"
+                                                    data-prefix="fas" data-icon="check" role="img"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                                    data-fa-i2svg="">
+                                                    <path fill="currentColor"
+                                                        d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                    </path>
+                                                </svg> Added
+                                            </a>
+                                        @else
+                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
+                                                data-p-id="{{ $rP->id }}">
+                                                Add To Cart
+                                            </a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    @endforeach
+
+
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
 
     <style>
         .p-show.add-to-wish {

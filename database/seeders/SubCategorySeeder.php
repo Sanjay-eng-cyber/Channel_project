@@ -21,12 +21,12 @@ class SubCategorySeeder extends Seeder
         $subcategory = [
             1 => [
                 'Face wash',
-                ' Face Scrub',
-                ' Face Moisturiser',
-                ' Sheet Mask',
-                ' Face Serum',
-                '  Suncreen',
-                ' Face Mist',
+                'Face Scrub',
+                'Face Moisturiser',
+                'Sheet Mask',
+                'Face Serum',
+                'Suncreen',
+                'Face Mist',
             ],
             2 => [
                 'Shower Gel',
@@ -39,7 +39,7 @@ class SubCategorySeeder extends Seeder
                 'Hand wash',
             ],
             3  => [
-                '  Shampoo',
+                'Shampoo',
                 'Conditoner',
                 'Hair mask',
                 'Hair serum',
@@ -56,8 +56,8 @@ class SubCategorySeeder extends Seeder
             5  => [
                 ' School Stationery',
                 'Bobble Heads',
-                '  Action Figures',
-                '  Keychains',
+                'Action Figures',
+                'Keychains',
             ],
             6 => [
                 'Windchime',

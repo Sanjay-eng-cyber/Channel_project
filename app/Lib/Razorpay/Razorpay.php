@@ -51,7 +51,7 @@ class Razorpay
     {
         $this->currency = $currency ?: $this->currency;
         // try {
-            return collect($this->api->order->create(['amount' => "{$amount}00", 'currency' => $this->currency]));
+            return collect($this->api->order->create(['amount' => "{$amount}", 'currency' => $this->currency]));
         // } catch (BadRequestError $e){
         //     return $e;
         // }

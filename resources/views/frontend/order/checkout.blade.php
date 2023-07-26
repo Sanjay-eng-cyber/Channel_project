@@ -48,7 +48,8 @@
                                     <div class="col-12 user-address-box-holder">
                                         <input type="radio" name="address" value="{{ $address->id }}"
                                             id="user-address-{{ $address->id }}" class="d-none" required>
-                                        <label for="user-address-{{ $address->id }}" class="user-address-box w-100 p-2">
+                                        <label for="user-address-{{ $address->id }}"
+                                            class="user-address-box w-100 p-2 cur-pointer">
                                             <div class="address-header">
                                                 <span class="name">
                                                     {{ ucfirst($address->type) }}
@@ -99,9 +100,11 @@
 
                             @foreach ($cartItems as $cartItem)
                                 <div class="col-12 d-flex">
-                                    <img src="https://via.placeholder.com/100"
+                                    {{-- <img src="https://via.placeholder.com/100"
                                         class="w-auto my-2 rounded-2 border border-1 pink-border me-3" height="100px"
-                                        width="100px" alt="">
+                                        width="100px" alt=""> --}}
+                                    <img src="{{ asset('storage/images/products/' . $cartItem->product->thumbnail_image) }}"
+                                        alt="..." class="my-2 rounded-2 border border-1 pink-border me-3 cart-p-img">
                                     <div class="mt-1">
                                         <p class="mb-1 text-black">{{ $cartItem->product->name }}</p>
                                         <span>Price: ₹{{ $cartItem->product->final_price }}</span><br>

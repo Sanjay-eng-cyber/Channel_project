@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Models\Order;
+use App\Models\Coupon;
 use App\Models\Product;
 use App\Traits\Taxable;
 use Illuminate\Http\Request;
@@ -47,11 +48,12 @@ class CheckoutController extends Controller
     public function showPaymentPage(Request $request, Razorpay $api, DelhiveryService $delhivery)
     {
         // dd($request);
+        return redirect()->back()->with(toast('Work in Progress', 'info'));
         $user = auth()->user();
         $productsArray = null;
         $selectedAddress = $user->userAddresses()->find($request->address);
         if (!$selectedAddress) {
-            return redirect()->back()->with(toast('Selected Address is Invalid'));
+            return redirect()->back()->with(toast('Selected Address is Invalid', 'info'));
         }
         $pincodeStatus = $delhivery->checkPincodeAvailability($selectedAddress->postal_code);
         // dd($pincodeStatus);
@@ -95,7 +97,37 @@ class CheckoutController extends Controller
         //     session()->forget('discount');
         // }
         $order->update(['status' => 'completed']);
-        return view('callback', compact('order'));
+        return view('frontend.payment-success', compact('order'));
+    }
+
+    public function applyCoupon(Request $request)
+    {
+
+        $request->validate([
+            'code' => 'required',
+        ]);
+        $coupon = Coupon::findPromoCode($request->code);
+        // dd($coupon);
+        if ($coupon && $coupon->isValid()) {
+            session()->has('coupon') ? $this->removeCoupon() : null;
+            $discount = $coupon->discount($request->total);
+            if ($discount >= $request->total) {
+                return redirect()->route('frontend.cart.payment')->with(['alert-type' => 'info', 'message' => 'Coupon Not Applicable']);
+            }
+            session()->put([
+                'coupon' => $coupon,
+                'discount' => $discount,
+            ]);
+            return redirect()->route('frontend.cart.payment')->with(toast('Coupon Applied'));
+        }
+        return redirect()->back()->with(toast('This coupon is invalid', 'error'));
+    }
+
+    public function removeCoupon(): \Illuminate\Http\RedirectResponse
+    {
+        session()->forget('coupon');
+        session()->forget('discount');
+        return redirect()->back();
     }
 
     protected function getOrderOrCreateNew($user, Razorpay $api, $subTotal, $discount, $grandTotal, $cartItems, $selectedAddress)
@@ -104,7 +136,7 @@ class CheckoutController extends Controller
         // dd($api);
         if ($user->orders()->whereStatus('initial')->exists()) {
             $order = $user->orders()->whereStatus('initial')->latest()->first();
-            $apiOrder = $api->createOrder($grandTotal);
+            $apiOrder = $api->createOrder((int)$grandTotal * 100);
             $order->update([
                 'api_order_id' => $apiOrder['id'],
                 'sub_total' => $subTotal,
@@ -120,7 +152,7 @@ class CheckoutController extends Controller
             optional($order->item)->delete();
             self::createOrderItems($order, $cartItems);
         } else {
-            $apiOrder = $api->createOrder($grandTotal);
+            $apiOrder = $api->createOrder((int)$grandTotal * 100);
             $order = $this->createOrder($grandTotal, [
                 'api_order_id' => $apiOrder['id'],
                 'discount' => $discount

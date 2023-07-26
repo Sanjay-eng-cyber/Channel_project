@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Showcase extends Model
 {
     use HasFactory;
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class,'showcase_products');
+    }
 }

@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title')
+@section('title', 'Returns & Refunds Policy |')
 @section('content')
     {{-- first slider slider --}}
     <section class="pb-3">
@@ -69,46 +69,4 @@
 
 
 
-@endsection
-@section('js')
-    <script>
-        $('.rise-up-slider').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            centerMode: true,
-            arrows: false,
-            dots: false,
-            speed: 300,
-            centerPadding: '0px',
-            infinite: true,
-            autoplaySpeed: 2000,
-            autoplay: true,
-            responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    </script>
-
-    <script>
-        window.onload = function() {
-            $('.frontend-top-slider').slick({
-                autoplay: true,
-                autoplaySpeed: 1000,
-                arrows: false,
-                centerMode: true,
-                slidesToShow: 1,
-                slidesToScroll: 2
-            });
-        };
-    </script>
 @endsection

@@ -17,7 +17,7 @@ class CategoryController extends Controller
 
     public function show($catSlug, Request $request)
     {
-        $category = Category::where('slug', $catSlug)->firstOrFail();
+        $category = Category::where('slug', $catSlug)->with('subCategories')->firstOrFail();
         $products = $category->products();
         $products = $products->latest();
         $products = $this->filterResults($request, $products);

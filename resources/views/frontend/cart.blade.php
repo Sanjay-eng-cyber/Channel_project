@@ -3,7 +3,7 @@
 @section('cdn')
 
     <style>
-        @media screen and (max-width:768px) {
+        /* @media screen and (max-width:768px) {
             .__cart-ui-img-in {
                 padding-right: 28px;
             }
@@ -16,7 +16,7 @@
                 padding: 15px;
                 right: -86%;
             }
-        }
+        } */
     </style>
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
@@ -37,13 +37,12 @@
     @if ($cartItems)
         <section style="padding:40px 0px 65px 0px">
             <div class="container">
-                <h5 class="h5 main-head text-center text-red my-3">Your Paynent Method</h5>
+                <h5 class="h5 main-head text-center text-red my-3">Cart</h5>
                 <div class="row d-flex flex-column-reverse flex-md-row">
                     <div class="col-md-8 col-lg-9 __cart-ui-f">
 
                         <div class="row d-flex justify-content-center justify-content-lg-end __cart-ui-nav">
                             <div class="col-sm-12 px-0">
-                                <h5 class="main-head __cart-ui-nav-heading">Deselect all items</h5>
                                 <div
                                     class="d-flex cc-border justify-content-between p-3 justify-content-between __cart-ui-nav-des">
                                     <div class="fw-bold">Product</div>
@@ -65,12 +64,12 @@
                             </div>
                             <div class=" col-md-4 col-lg-3">
                                 <div class="d-flex align-items-center justify-content-center gap-1 __cart-ui-img-in">
-                                    <div class="form-check">
+                                    {{-- <div class="form-check">
                                         <input class="form-check-input ck-wallet-fi" type="checkbox" name="gender"
                                             id="male" value="male" checked="">
-                                    </div>
-                                    <img src="https://via.placeholder.com/180x180" class="img-fluid img-border"
-                                        alt="">
+                                    </div> --}}
+                                        <img src="{{ asset('storage/images/products/' . $c->product->thumbnail_image) }}"
+                                            alt="..." class="img-fluid img-border">
                                 </div>
                             </div>
 
@@ -119,11 +118,11 @@
         <div class="padding-order-summary">
             <h5 class="main-head">Order Summary</h5>
             <hr style="border-bottom: 2px solid #000000;">
-            <div class="d-flex justify-content-between my-3">
+            {{-- <div class="d-flex justify-content-between my-3">
                 <strong>Sub Total</strong>
                 <strong> {{ $subTotal }}</strong>
-            </div>
-            <hr>
+            </div> --}}
+            {{-- <hr>
 
             <div class="my-2">
                 <form action="" method="post">
@@ -134,25 +133,20 @@
                             aria-label="Coupon code" aria-describedby="coupon-button">
                     </div>
                 </form>
-            </div>
-
-            <p class="m-0 p-0 my-2 __cart-ui-pra text-capitalize">coupon code will apply on checkout page
-            </p>
+            </div> --}}
 
             <div class="d-flex justify-content-between my-3">
                 <strong>Total:</strong>
                 <strong>{{ $subTotal }}</strong>
             </div>
-            <hr>
-            <p class="m-0 p-0 my-2 __cart-ui-pra text-capitalize">coupon code will apply on checkout page
-            </p>
+            {{-- <hr> --}}
 
             <div>
-                <a href="http://" class="my-2 text-white">
+                {{-- <a href="http://" class="my-2 text-white">
                     <button type="button" class="btn btn-outline-pink-hover w-100 p-1 p-xl-2">
                         Proceed To Checkout
                     </button>
-                </a>
+                </a> --}}
                 <form action="{{ route('frontend.cart.checkout') }}" method="GET">
                     <button type="submit" class="btn mt-3 btn-orange-outline-hover w-100 my-2  p-1 p-xl-2">
                         Proceed To Checkout

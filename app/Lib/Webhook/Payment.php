@@ -24,60 +24,47 @@ class Payment extends Webhook
         $payload['order_id'] = $order->id;
         $trans = Transaction::where('pg_payment_id', $payload['id'])->first();
 
-        if ( $trans !== null ) {
+        if ($trans !== null) {
 
             self::updateTransaction($payload);
-
         } else {
 
             Transaction::create(self::format($payload, 'failed')->toArray());
-
         }
 
-        $order->update([ 'status' => 'failed']);
-        User::find($order->user_id)->alert('failed');
+        $order->update(['status' => 'failed']);
+        // User::find($order->user_id)->alert('failed');
         return 'payment.failed';
         // return respondWithError(ApiCode::SERVICE_FAILURE, 401, ['more_info' => $payload]);
     }
 
     public static function captured($payload)
     {
+        // dd($payload);
         $payloadOrderId = $payload['order_id'];
-        $order  = Order::where('api_order_id', $payload['order_id'])->select('id', 'user_id', 'model_type')->first();
+        $order  = Order::where('api_order_id', $payload['order_id'])->select('id', 'user_id')->first();
         $trans = Transaction::where('pg_payment_id', $payload['id'])->first();
 
 
         DB::transaction(function () use ($payload, $order, $payloadOrderId, $trans) {
 
-            if ( $trans !== null ) {
+            if ($trans !== null) {
 
                 self::updateTransaction($payload);
-
             } else {
 
                 $payload['order_id'] = $order->id;
                 Transaction::create(self::format($payload)->toArray());
                 $payload['order_id'] = $payloadOrderId;
-
             }
 
-            if ( $order->model_type === 'plan' ) { self::processSubscription($payload);}
-
-            if ( $order->model_type === 'workshop' ) {
-
-                self::createInvoice([
-                    'invoice_id' => $payload['invoice_id'],
-                    'subscription_id' => null,
-                    'user_id' => $order->user_id,
-                    'order_id' => $order->id,
-                ]);
-
-            }
-
-
+            self::createInvoice([
+                'invoice_id' => $payload['invoice_id'],
+                'user_id' => $order->user_id,
+                'order_id' => $order->id,
+                'invoice_date' => now()
+            ]);
         });
-
-
     }
 
     /**
@@ -98,26 +85,25 @@ class Payment extends Webhook
         return $payload;
     }
 
-     /**
+    /**
      * @param $si
      * @param $payload
      */
-    protected static function processSubscription($payload): void
-    {
-        $order = Order::where('api_order_id', $payload['order_id'])->first();
+    // protected static function processSubscription($payload): void
+    // {
+    //     $order = Order::where('api_order_id', $payload['order_id'])->first();
 
-        $newSub = Subscription::start($order->model_id, ['user_id' => $order->user_id]);
-        User::find($order->user_id)->alert('activated');
-        self::createInvoice([
-            'invoice_id' => $payload['invoice_id'],
-            'subscription_id' => $newSub->id,
-            'user_id' => $order->user_id,
-            'order_id' => $order->id,
-        ]);
+    //     $newSub = Subscription::start($order->model_id, ['user_id' => $order->user_id]);
+    //     User::find($order->user_id)->alert('activated');
+    //     self::createInvoice([
+    //         'invoice_id' => $payload['invoice_id'],
+    //         'subscription_id' => $newSub->id,
+    //         'user_id' => $order->user_id,
+    //         'order_id' => $order->id,
+    //     ]);
 
-        $order->update(['subscription_id' => $newSub->id]);
-
-    }
+    //     $order->update(['subscription_id' => $newSub->id]);
+    // }
 
     private static function updateTransaction($payload)
     {

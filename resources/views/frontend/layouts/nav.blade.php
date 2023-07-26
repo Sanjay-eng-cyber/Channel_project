@@ -1,7 +1,7 @@
    <!-- mt header style3 start here -->
    <header id="mt-header" class="style3 position-relative ">
 
-       <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute"
+       <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute" draggable="false"
            style="width: 110px;right:0; top:0">
 
        {{-- navbar header --}}
@@ -9,8 +9,8 @@
            <div class="container py-4">
                <div class="row ">
                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                       <div class="container-fluid  d-flex flex-row-reverse ">
-                           <a class="navbar-brand d-inline d-lg-none mx-auto" href="{{ url('/') }}" style="">
+                       <div class="container-fluid  d-flex flex-row">
+                           <a class="navbar-brand d-inline d-lg-none  " href="{{ url('/') }}" style="">
                                <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}" alt="channel"
                                    class="img-fluid " style="width:130px">
                            </a>
@@ -22,23 +22,17 @@
                            <div class="navbar-collapse collapse  justify-content-between flex-row-reverse navdrop-style"
                                id="navbarSupportedContent" style="">
                                <ul class="navbar-nav d-none d-lg-flex gap-3 align-items-center">
-
-                                   {{-- <li class="nav-item text-red position-relative">
-                           <i class="fas fa-cart-plus top-nav-carticon"></i>
-                           <span
-                               class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99
-                           <span class="visually-hidden">unread messages</span></span>
-                       </li> --}}
-
                                    @php
                                        $user = auth()->user();
                                        if ($user) {
                                            $cart = $user->cart;
                                        } else {
                                            $cart_session_id = session()->get('cart_session_id');
-                                           $cart = App\Models\Cart::where('session_id', $cart_session_id)->first();
+                                           $cart = $cart_session_id ? App\Models\Cart::where('session_id', $cart_session_id)->first() : null;
                                        }
                                        $cartItemsCount = $cart ? $cart->items()->count() : 0;
+                                       $navCategories = App\Models\Category::with('subCategories')->get();
+                                       //    dd($navCategories);
                                    @endphp
                                    <li class="nav-item text-red position-relative">
                                        <a class="nav-link fw-bold nn-top-cart"
@@ -71,15 +65,19 @@
                                    @endauth
 
                                </ul>
-
-
                                <div class="navbar-nav d-inline d-lg-none text-start">
                                    <ul class="list-unstyled nav-dd-color">
                                        <li class="nav-item dd-cl mt-3">
                                            <a class="nav-link px-4  {{ URL::current() == route('frontend.index') ? 'active-red' : '' }} "
                                                aria-current="page" href="{{ route('frontend.index') }}">Home</a>
                                        </li>
-                                       <li class="nav-item dd-cl">
+                                       @foreach ($navCategories as $navCategory)
+                                           <li class="nav-item dd-cl">
+                                               <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', $navCategory->slug) ? 'active-red' : '' }}"
+                                                   href="{{ route('frontend.cat.show', $navCategory->slug) }}">{{ $navCategory->name }}</a>
+                                           </li>
+                                       @endforeach
+                                       {{-- <li class="nav-item dd-cl">
                                            <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }}"
                                                href="{{ route('frontend.cat.show', 'skin') }}">Skin</a>
                                        </li>
@@ -103,14 +101,20 @@
                                        <li class="nav-item dd-cl">
                                            <a class="nav-link px-4 {{ URL::current() == route('frontend.cat.show', 'gift') ? 'active-red' : '' }}"
                                                href="{{ route('frontend.cat.show', 'gift') }}">Gift</a>
-                                       </li>
+                                       </li> --}}
+                                       @auth
+                                           <li class="nav-item dd-cl">
+                                               <form action="{{ route('frontend.logout') }}" method="POST">
+                                                   @csrf
+                                                   <a class="nav-link px-4" href="!#"
+                                                       onclick="event.preventDefault();this.closest('form').submit();">
+                                                       LOGOUT</a>
 
+                                               </form>
+                                           </li>
+                                       @endauth
                                    </ul>
-
                                </div>
-
-
-
                                <ul class="nav navbar-nav d-none d-lg-inline">
                                    <a href="/">
                                        <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}"
@@ -118,66 +122,24 @@
                                    </a>
                                </ul>
                                <div class="header-sub-1 header-top-search-icon d-none d-lg-inline">
-                                   <form action="" method="post" class="">
-                                       @csrf
-                                       <i class="fas fa-search fa-fw header-seach-icon" style="color:#EC268F"></i>
-                                       <input type="text" class="form-control" placeholder="Search Product"
+                                   <form action="" method="get" class="">
+                                       <input type="text" class="form-control px-4" placeholder="Search Product"
                                            aria-label="Search" aria-describedby="basic-addon1">
+                                       <button class="position-absolute top-0 end-0 border-0 bg-transparent"
+                                           type="submit">
+                                           <i class="fas fa-search fa-fw header-seach-icon" style="color:#EC268F"></i>
+                                       </button>
                                    </form>
                                </div>
                            </div>
+                       </div>
                    </nav>
                </div>
            </div>
        </div>
 
        {{-- navbar --}}
-       <div class="mt-bottom-bar py-2">
-           <div class="conatiner-fluid d-inline d-lg-none ">
-               <div class="row row-cols-4 ">
-                   <div class="col">
-                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                           <li>
-                               <img src="http://channel.test/frontend/images/svg/footer/home.svg" alt="">
-                           </li>
-                           <li>Home</li>
-                       </ul>
-                   </div>
-
-                   <div class="col">
-                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                           <li>
-                               <img src="http://channel.test/frontend/images/svg/footer/search.svg" alt="">
-
-                           </li>
-                           <li>Search</li>
-                       </ul>
-                   </div>
-
-                   <div class="col">
-                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                           <li>
-                               <img src="http://channel.test/frontend/images/svg/footer/account.svg" alt="">
-
-                           </li>
-                           <li>Account</li>
-                       </ul>
-                   </div>
-
-                   <div class="col">
-                       <ul class="gap-2 d-flex flex-column align-items-center list-unstyled">
-                           <li>
-                               <img src="http://channel.test/frontend/images/svg/footer/cart.svg" alt="">
-
-                           </li>
-                           <li>Cart</li>
-                       </ul>
-                   </div>
-
-               </div>
-           </div>
-
-
+       <div class="mt-bottom-bar py-0">
            <div class="container d-none d-lg-block px-0">
                <div class="row">
                    <div class="col-xs-12">
@@ -195,7 +157,6 @@
                            </li>
                        </ul>
                        <div class="header-sub-1 nav-top-search-icon">
-
                            <form action="" method="post">
                                @csrf
                                <i class="fas fa-search fa-fw header-seach-icon" style="color:#EC268F"></i>
@@ -204,60 +165,237 @@
 
                            </form>
                        </div>
-                       <nav id="nav" class="navbar hide-navbar">
+                       <nav id="nav" class="navbar hide-navbar py-0 h-100 align-items-center">
                            <ul style="margin-right: 0px">
                                <li><a href="{{ route('frontend.index') }} "
                                        class=" {{ URL::current() == route('frontend.index') ? 'active-red' : '' }} text-capitalize">Home</a>
                                </li>
-                               <li><a href="{{ route('frontend.cat.show', 'skin') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }} text-capitalize">Skin</a>
+                               @foreach ($navCategories as $navCategory)
+                                   <li class="nav-item dropdown">
+                                       <a href="{{ route('frontend.cat.show', $navCategory->slug) }}"
+                                           class="{{ URL::current() == route('frontend.cat.show', $navCategory->slug, $navCategory->slug) ? 'active-red' : '' }} nav-link text-capitalize">
+                                           {{ $navCategory->name }}
+                                       </a>
+                                       <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                           <div class="text-capitalize p-2">
+                                               @foreach ($navCategory->subCategories as $navSubCategory)
+                                                   <a class="dropdown-item"
+                                                       href="{{ route('frontend.sub-category.index', ['categorySlug' => $navCategory->slug, 'subCategorySlug' => $navSubCategory->slug]) }}">{{ $navSubCategory->name }}</a>
+                                               @endforeach
+                                               {{-- <a class="dropdown-item " href="#">Face wash</a>
+                                               <a class="dropdown-item" href="#">Face Scrub</a>
+                                               <a class="dropdown-item" href="#">Face Moisturiser</a>
+                                               <a class="dropdown-item" href="#">Sheet Mask</a>
+                                               <a class="dropdown-item" href="#">Face Serum</a>
+                                               <a class="dropdown-item" href="#">Suncreen</a>
+                                               <a class="dropdown-item" href="#">Face Mist</a> --}}
+                                           </div>
+                                       </div>
+                                   </li>
+                               @endforeach
+                               {{-- <li class="nav-item dropdown">
+                                   <a href="{{ route('frontend.cat.show', 'skin') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }} nav-link text-capitalize">
+                                       Skin
+                                   </a>
+                                   <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                       <div class="text-capitalize p-2">
+                                           <a class="dropdown-item " href="{{ url('sc/skin/face-wash') }}">Face
+                                               wash</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/face-scrub') }}">Face
+                                               Scrub</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/face-moisturiser') }}">Face
+                                               Moisturiser</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/sheet-mask') }}">Sheet
+                                               Mask</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/face-serum') }}">Face
+                                               Serum</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/suncreen') }}">Suncreen</a>
+                                           <a class="dropdown-item" href="{{ url('sc/skin/face-mist') }}">Face
+                                               Mist</a>
+                                       </div>
+                                   </div>
                                </li>
-                               <li><a href="{{ route('frontend.cat.show', 'fragrances') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'fragrances') ? 'active-red' : '' }} text-capitalize">Fragrances</a>
+                               <li class="nav-item dropdown">
+                                   <a href="{{ route('frontend.cat.show', 'fragrances') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'fragrances') ? 'active-red' : '' }} nav-link text-capitalize">
+                                       Fragrances
+                                   </a>
+                                   <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                       <div class="text-capitalize">
+                                           <a class="dropdown-item " href="{{ url('sc/fragrances/men') }}">Men</a>
+                                           <a class="dropdown-item" href="{{ url('sc/fragrances/women') }}">Women</a>
+                                       </div>
+                                   </div>
                                </li>
-                               <li><a href="{{ route('frontend.cat.show', 'hair-care') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'hair-care') ? 'active-red' : '' }} text-capitalize">Hair
-                                       Care</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'personal-care') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'personal-care') ? 'active-red' : '' }} text-capitalize">Personal
-                                       Care</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'home-decor') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'home-decor') ? 'active-red' : '' }} text-capitalize">Home
-                                       Decor</a></li>
-                               <li><a href="{{ route('frontend.cat.show', 'gift') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'gift') ? 'active-red' : '' }} text-capitalize">Gift</a>
+                               <li class="nav-item dropdown">
+                                   <a href="{{ route('frontend.cat.show', 'hair-care') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'hair-care') ? 'active-red' : '' }} nav-link text-capitalize">
+                                       Hair
+                                       Care
+                                   </a>
+                                   <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                       <div class="text-capitalize">
+                                           <a class="dropdown-item "
+                                               href="{{ url('sc/hair-care/shampoo') }}">Shampoo</a>
+                                           <a class="dropdown-item"
+                                               href="{{ url('sc/hair-care/conditoner') }}">Conditoner</a>
+                                           <a class="dropdown-item" href="{{ url('sc/hair-care/hair-mask') }}">Hair
+                                               mask</a>
+                                           <a class="dropdown-item" href="{{ url('sc/hair-care/hair-serum') }}">Hair
+                                               serum</a>
+                                           <a class="dropdown-item" href="{{ url('sc/hair-care/hair-oil') }}">Hair
+                                               Oil</a>
+                                           <a class="dropdown-item"
+                                               href="{{ url('sc/hair-care/straigthner') }}">Straigthner</a>
+                                           <a class="dropdown-item" href="{{ url('sc/hair-care/dryer') }}">Dryer</a>
+                                           <a class="dropdown-item" href="{{ url('sc/hair-care/curler') }}">Curler</a>
+                                           <a class="dropdown-item"
+                                               href="{{ url('sc/hair-care/trimmers') }}">Trimmers</a>
+                                       </div>
+                                   </div>
                                </li>
+                               <li class="nav-item dropdown">
+                                   <a href="{{ route('frontend.cat.show', 'personal-care') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'personal-care') ? 'active-red' : '' }} nav-link text-capitalize">
+                                       Personal Care
+                                   </a>
+                                   <div class="dropdown-menu ">
+                                       <div class="text-capitalize">
+                                           <a class="dropdown-item " href="{{ url('sc/personal-care/shower-gel') }}">Shower
+                                               Gel</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/body-scrub') }}">Body
+                                               Scrub</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/body-lotion') }}">Body
+                                               Lotion</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/hand-cream') }}">Hand
+                                               Cream</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/hair-oil') }}">Hair
+                                               Oil</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/foot-cream') }}">Foot
+                                               Cream</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/body-butter') }}">Body
+                                               Butter</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/soaps') }}">Soaps</a>
+                                           <a class="dropdown-item" href="{{ url('sc/personal-care/hand-wash') }}">Hand
+                                               wash</a>
+                                       </div>
+                                   </div>
+
+                               </li>
+                               <li class="nav-item dropdown">
+                                   <a href="{{ route('frontend.cat.show', 'home-decor') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'home-decor') ? 'active-red' : '' }} nav-link text-capitalize">
+                                       Home Decor
+                                   </a>
+                                   <div class="dropdown-menu">
+                                       <div class="text-capitalize">
+                                           <a class="dropdown-item "
+                                               href="{{ url('sc/home-decor/windchime') }}">Windchime</a>
+                                           <a class="dropdown-item" href="{{ url('sc/home-decor/wall-decor') }}">Wall
+                                               décor</a>
+                                           <a class="dropdown-item" href="{{ url('sc/home-decor/wall-clock') }}">Wall
+                                               Clock</a>
+                                           <a class="dropdown-item" href="{{ url('sc/home-decor/table-piece') }}">Table
+                                               Piece</a>
+                                           <a class="dropdown-item" href="{{ url('sc/home-decor/table-clock') }}">Table
+                                               Clock</a>
+                                           <a class="dropdown-item"
+                                               href="{{ url('sc/home-decor/planters') }}">Planters</a>
+                                           <a class="dropdown-item" href="{{ url('sc/home-decor/key-holders') }}">Key
+                                               Holders</a>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li class="nav-item dropdown">
+                                   <a href="{{ route('frontend.cat.show', 'gift') }}"
+                                       class="{{ URL::current() == route('frontend.cat.show', 'gift') ? 'active-red' : '' }} nav-link text-capitalize">
+                                       Gift
+                                   </a>
+                                   <div class="dropdown-menu">
+                                       <div class="text-capitalize">
+                                           <a class="dropdown-item " href="{{ url('sc/gift/school-stationery') }}">School
+                                               Stationery</a>
+                                           <a class="dropdown-item" href="{{ url('sc/gift/bobble-heads') }}">Bobble
+                                               Heads</a>
+                                           <a class="dropdown-item" href="{{ url('sc/gift/action-figures') }}">Action
+                                               Figures</a>
+                                           <a class="dropdown-item"
+                                               href="{{ url('sc/gift/keychains') }}">Keychains</a>
+                                       </div>
+                                   </div>
+                               </li> --}}
                            </ul>
                        </nav>
-
                    </div>
                </div>
            </div>
-
        </div>
-   </header>
+       <div class="d-lg-none d-block bg-white pb-3">
+           <div class="container">
+               <div class="row row-cols-4 ">
+                   <div class="col">
+                       <a href="{{ route('frontend.index') }}" class="gap-2 d-flex flex-column align-items-center">
+                           <span>
+                               <img src="{{ url('frontend/images/svg/footer/home.svg') }}" alt="">
+                           </span>
+                           <span>Home</span>
+                       </a>
+                   </div>
+                   <div class="col">
+                       <a class="gap-2 d-flex flex-column align-items-center toggle-display-trigger-by-id"
+                           data-target="phone-search" href="#">
+                           <span>
+                               <img src="{{ url('frontend/images/svg/footer/search.svg') }}" alt="">
+                           </span>
+                           <span>Search</span>
+                       </a>
+                   </div>
+                   <div class="col">
+                       @auth
+                           <a href="{{ route('frontend.profile') }}" class="gap-2 d-flex flex-column align-items-center">
+                               <span>
+                                   <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
+                               </span>
+                               <span>Account</span>
 
-   <!-- mt header end here -->
-   <!-- mt search popup start here -->
-   {{-- <div class="mt-search-popup">
-       <div class="mt-holder">
-           <a href="" class="search-close"><span></span><span></span></a>
-           <div class="mt-frame">
-               <form action="#">
-                   <fieldset>
-                       <input type="text" placeholder="Search...">
-                       <span class="icon-microphone"></span>
-                       <button class="icon-magnifier" type="submit"></button>
-                   </fieldset>
-               </form>
+                           </a>
+                       @else
+                           <a href="#" data-bs-toggle="modal" data-bs-target="#loginPopup"
+                               class="gap-2 d-flex flex-column align-items-center">
+                               <span>
+                                   <img src="{{ url('frontend/images/svg/footer/account.svg') }}" alt="">
+                               </span>
+                               <span>Login</span>
+
+                           </a>
+                       @endauth
+                   </div>
+                   <div class="col">
+                       <a href="{{ route('frontend.cart.index') }}"
+                           class="gap-2 d-flex flex-column align-items-center">
+                           <span>
+                               <img src="{{ url('frontend/images/svg/footer/cart.svg') }}" alt="">
+                           </span>
+                           <span>Cart</span>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="row" id="phone-search" style="display: none;">
+                   <div class="col-12">
+                       <div class="input-group mt-3">
+                           <input type="text" class="form-control" placeholder="Search for products"
+                               aria-label="Search for products" aria-describedby="button-addon2">
+                           <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                                   class="fas fa-search"></i></button>
+                       </div>
+                   </div>
+               </div>
            </div>
        </div>
-   </div> --}}
-
-   <!-- mt search popup end here -->
-   <!-- mt main start here -->
-   {{-- <li><a href="{{route('about')}}">About</a></li>
-                         <li><a href="{{route('contact')}}">Contact</a></li> --}}
+   </header>
+   <script></script>
 
    @guest('web')
        {{-- <livewire:log-in /> --}}

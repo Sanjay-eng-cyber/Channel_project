@@ -19,10 +19,10 @@ class CreateProductsTable extends Migration
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->foreignId('sub_category_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('connection_no')->nullable();
-            $table->string('name');
-            $table->string('slug');
-            $table->text('short_descriptions')->nullable();
-            $table->text('descriptions')->nullable();
+            $table->TINYTEXT ('name');
+            $table->TINYTEXT ('slug');
+            $table->longText('short_descriptions')->nullable();
+            $table->longText('descriptions')->nullable();
             $table->string('thumbnail_image')->nullable();
             $table->float('mrp');
             $table->float('final_price');

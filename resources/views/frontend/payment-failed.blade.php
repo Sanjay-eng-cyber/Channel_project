@@ -7,8 +7,10 @@
     <section>
         <div class="container p-md-3 p-4">
             <div class="row justify-content-center mt-md-5 py-5 custom-boder">
-                <div class="col-md-6">
-                    <img src="{{ 'frontend/images/svg/fail-paymet.svg' }}" alt="">
+                <div class="col-12">
+                    <div class="mb-2">
+                        <img src="{{ 'frontend/images/svg/fail-paymet.svg' }}" alt="" class="img-fluid mx-auto" style="width:430px">
+                    </div>
                     <h2 class="text-center custom-payment-head-fail mt-md-0 mt-3"> Your Payment is Failed</h2>
                     <p class="text-center custom-id-text">Payment ID :Re7777r3</p>
                     <div class="text-center">

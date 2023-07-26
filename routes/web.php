@@ -181,6 +181,7 @@ Route::domain(config('app.web_domain'))->group(function () {
     // })->name('products.show');
 
     Route::get('/c/{slug}', 'App\Http\Controllers\frontend\CategoryController@show')->name('frontend.cat.show');
+    Route::get('/sc/{categorySlug}/{subCategorySlug}', 'App\Http\Controllers\frontend\SubCategoryController@show')->name('frontend.sub-category.index');
     Route::get('/p/{slug}', 'App\Http\Controllers\frontend\ProductController@show')->name('frontend.p.show');
     Route::post('/p/review/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.p.store');
 
@@ -203,8 +204,10 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::get('/wishlist', 'App\Http\Controllers\frontend\WishlistController@index')->name('frontend.wishlist.index');
         Route::post('/review/store/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.review.store');
 
-        Route::get('/checkout', 'App\Http\Controllers\frontend\CheckoutController@selectAddress')->name('frontend.cart.checkout');
-        Route::post('/payment', 'App\Http\Controllers\frontend\CheckoutController@showPaymentPage')->name('frontend.cart.payment');
+        Route::get('/cart/checkout', 'App\Http\Controllers\frontend\CheckoutController@selectAddress')->name('frontend.cart.checkout');
+        Route::post('apply-coupon', 'App\Http\Controllers\frontend\CheckoutController@applyCoupon')->name('apply-coupon');
+        Route::get('remove-coupon', 'App\Http\Controllers\frontend\CheckoutController@removeCoupon')->name('remove-coupon');
+        Route::post('/cart/payment', 'App\Http\Controllers\frontend\CheckoutController@showPaymentPage')->name('frontend.cart.payment');
 
         Route::get('/orders', 'App\Http\Controllers\frontend\OrderController@index')->name('frontend.order.index');
 
@@ -219,4 +222,5 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/wishlist/delete/{id}', 'App\Http\Controllers\frontend\WishlistController@delete')->name('frontend.wishlist.delete');
 
     Route::post('callback', 'App\Http\Controllers\frontend\CheckoutController@handleCallback')->name('razorpay.callback');
+    Route::post('webhook', 'App\Http\Controllers\frontend\WebhookController@manage')->name('webhook.manage');
 });
