@@ -216,6 +216,12 @@ Route::domain(config('app.web_domain'))->group(function () {
 
 
     Route::get('/cart', 'App\Http\Controllers\frontend\CartController@index')->name('frontend.cart.index');
+
+    Route::post('/api/cart/items/fetch', 'App\Http\Controllers\frontend\CartController@getCartItemsApi')->name('frontend.get.cart_items.api');
+    Route::post('/api/cart/item/increase', 'App\Http\Controllers\frontend\CartController@increaseItemQuantity')->name('frontend.api.cart_items.increase_quantity');
+    Route::post('/api/cart/item/decrease', 'App\Http\Controllers\frontend\CartController@decreaseItemQuantity')->name('frontend.api.cart_items.decrease_quantity');
+    Route::post('/api/cart/item/remove', 'App\Http\Controllers\frontend\CartController@removeItem')->name('frontend.api.cart_item.remove');
+
     Route::get('/cart/delete/{id}', 'App\Http\Controllers\frontend\CartController@delete')->name('frontend.cart.delete');
     Route::get('/wishlist/delete/{id}', 'App\Http\Controllers\frontend\WishlistController@delete')->name('frontend.wishlist.delete');
 
