@@ -8,16 +8,16 @@
 
     <x-frontend.profile-nav image="https://via.placeholder.com/300" name="{{ $user->first_name }}" />
 
-        <section class="my-1">
-            <div class="container">
+    <section class="my-1">
+        <div class="container">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#" class="bread-crum breadcrumb-hover">Profile</a></li>
                     <li class="breadcrumb-item bread-crum" aria-current="page">My profile</li>
                 </ol>
-                </nav>
-            </div>
-        </section>
+            </nav>
+        </div>
+    </section>
     <section class="pb-4">
         <div class="container">
             <div class="row py-2 d-flex justify-content-center">
@@ -99,32 +99,30 @@
                         <div class="row">
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="c-password" class=" profile-form-input-custome"
-                                    placeholder="Current Password" minlength="3" maxlength="30"
-                                    value="" required>
-                                {{--@if ($errors->has('first_name'))
+                                    placeholder="Current Password" minlength="3" maxlength="30" value="" required>
+                                {{-- @if ($errors->has('first_name'))
                                     <div id="first_name-error" class="text-primary">{{ $errors->first('first_name') }}</div>
-                                @endif--}}
+                                @endif --}}
                             </div>
                             <div class="col-sm-6 py-2">
                                 <input type="text" name="n-password" class=" profile-form-input-custome"
-                                    placeholder="New Password" minlength="3" maxlength="30" required
-                                    value="">
-                                {{--@if ($errors->has('last_name'))
+                                    placeholder="New Password" minlength="3" maxlength="30" required value="">
+                                {{-- @if ($errors->has('last_name'))
                                     <div id="last_name-error" class="text-primary">{{ $errors->first('last_name') }}</div>
-                                @endif--}}
+                                @endif --}}
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6 pt-0 d-sm-block d-none">
-                              <img src="frontend/images/icons/lock-icon.png" alt="" class="p-0 m-0 ">
+                                <img src="frontend/images/icons/lock-icon.png" alt="" class="p-0 m-0 ">
                             </div>
 
                             <div class="col-sm-6 py-2">
-                                <input type="text" name="c-n-password" class=" profile-form-input-custome" placeholder="Confirm New Password"
-                                    minlength="5" maxlength="50" value="">
-                                {{--@if ($errors->has('email'))
+                                <input type="text" name="c-n-password" class=" profile-form-input-custome"
+                                    placeholder="Confirm New Password" minlength="5" maxlength="50" value="">
+                                {{-- @if ($errors->has('email'))
                                     <div id="email-error" class="text-primary">{{ $errors->first('email') }}</div>
-                                @endif--}}
+                                @endif --}}
                                 <div class="col-sm-12  text-end mt-5">
                                     <button type="submit" class="btn profile-btn-color">Update Password</button>
                                 </div>
@@ -197,7 +195,8 @@
                                         @endif
                                         @if ($userAddress->type != 'primary')
                                             <li>
-                                                <a href="{{route('frontend.address.delete',$userAddress->id)}}" data-bs-toggle="modal" data-bs-target="#trashbtn">
+                                                <a href="{{ route('frontend.address.delete', $userAddress->id) }}"
+                                                    data-bs-toggle="modal" data-bs-target="#trashbtn">
                                                     <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
                                                 </a>
                                             </li>
@@ -281,38 +280,8 @@
                                         <div class="col-6 pt-2">
                                             <label for="" class="form-check-label gray-new">Address Type</label>
                                         </div>
-                                        <div class="col-6 dropdown-add">
-                                            <select name="" id="" class="profile-form-input-custome gray-new" placeholder="Address Type" >
-                                                <option value="">Select</option>
-                                                <option value="" >Home</option>
-                                                <option value="">Office</option>
-
-                                                <option value="">Other</option>
-                                                   </select>
-                                        </div>
                                     </div>
-
-
-
                                 </div>
-
-                                {{-- <div class="row">
-                                <div class="col-sm-6 py-2">
-
-                                    <label for="" class="profile-f-l-color"> Address Type</label>
-
-                                </div>
-                                <div class="col-sm-6 py-2 profile-form-label-color">
-                                    <select class="form-select-lg mb-3 profile-form-input-custome profile-f-l-color"
-                                        aria-label=".form-select-lg example">
-                                        <option selected class="profile-f-l-color border-0">Home</option>
-                                        <option value="1" class="profile-f-l-color">Office</option>
-                                        <option value="2" class="profile-f-l-color">Other</option>
-                                    </select>
-                                </div>
-                            </div> --}}
-
-
                                 <div class="col-sm-12 pt-4">
                                     <button type="submit" class="btn profile-btn-color">Save Address</button>
                                 </div>
@@ -335,27 +304,29 @@
 
     </section>
 
-    <div class="modal fade auth-popup" id="trashbtn" tabindex="-1" aria-labelledby="loginPopupLabel" aria-hidden="true">
+    <div class="modal fade auth-popup" id="trashbtn" tabindex="-1" aria-labelledby="loginPopupLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content">
+            <div class="modal-content">
 
-                    <div class="modal-body" style="overflow:hidden;">
-                        <button class="auth-popup-close-button mb-4" type="button" data-bs-dismiss="modal"
-                            aria-label="Close">
-                            <img src="{{ url('frontend/images/icons/icon-close.svg') }}" style="width: 51px;"
-                                alt="">
-                        </button>
+                <div class="modal-body" style="overflow:hidden;">
+                    <button class="auth-popup-close-button mb-4" type="button" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <img src="{{ url('frontend/images/icons/icon-close.svg') }}" style="width: 51px;"
+                            alt="">
+                    </button>
 
-                        <div class="auth-popup-body" v-if="!requested">
-                           <img src="{{asset('frontend/images/popup/popup-sure.png')}}" class="img-fluid m-auto" alt="" srcset="" style="width:267px">
-                            <h4 class="dispaly-6 main-head text-black mt-3 mb-2">Are You Sure !</h4>
-                            <div class="d-flex justify-content-evenly my-4">
-                                <button type="button" class="btn btn-lightpink px-4 btn-lg">Yes</button>
-                                <button type="button" class="btn btn-pink px-4 btn-lg">No</button>
-                            </div>
+                    <div class="auth-popup-body" v-if="!requested">
+                        <img src="{{ asset('frontend/images/popup/popup-sure.png') }}" class="img-fluid m-auto"
+                            alt="" srcset="" style="width:267px">
+                        <h4 class="dispaly-6 main-head text-black mt-3 mb-2">Are You Sure !</h4>
+                        <div class="d-flex justify-content-evenly my-4">
+                            <button type="button" class="btn btn-lightpink px-4 btn-lg">Yes</button>
+                            <button type="button" class="btn btn-pink px-4 btn-lg">No</button>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 @endsection
