@@ -7,6 +7,9 @@
     <title>@yield('title') Channel</title>
     @include('frontend.layouts.header')
     @yield('cdn')
+    <script src="{{ asset('frontend/js/axios.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/vue.min.js') }}"></script>
+    {{-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> --}}
 </head>
 
 <body>

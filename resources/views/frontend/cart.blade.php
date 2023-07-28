@@ -146,9 +146,6 @@
 @section('js')
 
     <script>
-        const {
-            createCartApp
-        } = Vue;
         createApp({
             data() {
                 return {

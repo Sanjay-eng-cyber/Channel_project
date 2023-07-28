@@ -395,9 +395,12 @@
            </div>
        </div>
    </header>
-   <script></script>
-   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <script>
+       const {
+           createApp
+       } = Vue;
+   </script>
+
    @guest('web')
        {{-- <livewire:log-in /> --}}
        <div id="login_div">
@@ -490,11 +493,7 @@
            </div>
        </div>
 
-
        <script>
-           const {
-               createApp
-           } = Vue;
            createApp({
                data() {
                    return {

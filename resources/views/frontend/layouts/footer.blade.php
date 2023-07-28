@@ -291,7 +291,7 @@
 <a href="#" class="scroll-top">
     <i class="fa fa-arrow-up"></i>
 </a>
- 
+
 <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
 <script src="/js/jquery.min.js"></script>
 <script>
@@ -342,8 +342,6 @@
     });
 </script>
 
-
-<script src="{{ asset('js/axios.min.js') }}"></script>
 <script>
     $('a.add-to-cart').click(function() {
         if ($(this).attr("data-p-id")) {
@@ -540,26 +538,24 @@
 
 <script>
     //SHOW TARGET CONTENT
-jQuery(function(){
- jQuery(document).ready(function() {
-   jQuery('.showSingle').first().addClass('active');
-   for (i = 2; i <= 4; i++) {
-     jQuery('#div'+i).hide();
-   }
- });       jQuery('.showSingle').click(function(){
-              jQuery('.targetDiv').hide();
-              jQuery('#div'+$(this).attr('target')).show();
+    jQuery(function() {
+        jQuery(document).ready(function() {
+            jQuery('.showSingle').first().addClass('active');
+            for (i = 2; i <= 4; i++) {
+                jQuery('#div' + i).hide();
+            }
         });
-});
+        jQuery('.showSingle').click(function() {
+            jQuery('.targetDiv').hide();
+            jQuery('#div' + $(this).attr('target')).show();
+        });
+    });
 
-//ACTIVE STATE
- $('button.showSingle').click(function(e) {
+    //ACTIVE STATE
+    $('button.showSingle').click(function(e) {
         e.preventDefault();
         $('button.showSingle').removeClass('active');
         $(this).addClass('active');
     });
-
-
-
 </script>
 {{-- @endsection --}}
