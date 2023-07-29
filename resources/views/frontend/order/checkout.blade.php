@@ -6,7 +6,7 @@
 @section('content')
     <section class="my-5">
         <div class="container">
-            <form action="{{ route('frontend.cart.payment') }}" method="POST">
+            <form action="{{ route('frontend.cart.payment') }}" method="POST" id="checkout_form">
                 @csrf
                 <div class="row">
                     <div class="col-lg-6 mb-4">
@@ -47,7 +47,7 @@
                                 @forelse ($userAddresses as $address)
                                     <div class="col-12 user-address-box-holder">
                                         <input type="radio" name="address" value="{{ $address->id }}"
-                                            id="user-address-{{ $address->id }}" class="d-none" required>
+                                            id="user-address-{{ $address->id }}" class="d-none">
                                         <label for="user-address-{{ $address->id }}"
                                             class="user-address-box w-100 p-2 cur-pointer">
                                             <div class="address-header">
@@ -264,5 +264,21 @@
                 $('#addressFormPopup').modal('show')
             });
         @endif
+        $("#checkout_form").submit(function(e) {
+            e.preventDefault();
+            // check any address is selected or not
+            var address_id = $('input[name=address]:checked').val();
+            console.log(address_id);
+            if (address_id == undefined) {
+                Snackbar.show({
+                    text: "Please select delivery address",
+                    pos: 'top-right',
+                    actionTextColor: '#fff',
+                    backgroundColor: '#2196f3'
+                });
+                return false;
+            }
+            this.submit();
+        });
     </script>
 @endsection
