@@ -136,6 +136,9 @@ class CartController extends Controller
 
         $productInCart = CartItem::where('cart_id', $cart->id)->where('product_id', $product->id)->with('product')->first();
         if ($productInCart) {
+            if ($product->stock < $productInCart->quantity + 1) {
+                return response()->json(['status' => false,  'message' => 'Item Quantity Exceeds Stock']);
+            }
             $productInCart->update(['quantity' => $productInCart->quantity + 1]);
             $subTotal = $cart->items()->with('product')->get()->sum(function ($item) {
                 return $item->product->final_price * $item->quantity;
