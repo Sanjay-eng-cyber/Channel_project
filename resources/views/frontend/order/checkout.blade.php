@@ -6,38 +6,39 @@
 @section('content')
     <section class="my-5">
         <div class="container">
-            <form action="{{ route('frontend.cart.payment') }}" method="POST" id="checkout_form">
-                @csrf
-                <div class="row">
-                    <div class="col-lg-6 mb-4">
 
-                        <div class="step-process my-3">
-                            <span class="step completed ">
-                                <span class="number">
-                                    <i class="fas fa-check "></i>
-                                </span>
-                                <small class="text">
-                                    Log In Details
-                                </small>
-                            </span>
-                            <span class="step active">
-                                <span class="number">
-                                    2
-                                </span>
-                                <small class="text">
-                                    Delivery Address
-                                </small>
-                            </span>
-                            <span class="step">
-                                <span class="number">
-                                    3
-                                </span>
-                                <small class="text">
-                                    Payment
-                                </small>
-                            </span>
-                        </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
 
+                    <div class="step-process my-3">
+                        <span class="step completed ">
+                            <span class="number">
+                                <i class="fas fa-check "></i>
+                            </span>
+                            <small class="text">
+                                Log In Details
+                            </small>
+                        </span>
+                        <span class="step active">
+                            <span class="number">
+                                2
+                            </span>
+                            <small class="text">
+                                Delivery Address
+                            </small>
+                        </span>
+                        <span class="step">
+                            <span class="number">
+                                3
+                            </span>
+                            <small class="text">
+                                Payment
+                            </small>
+                        </span>
+                    </div>
+
+                    <form action="{{ route('frontend.cart.payment') }}" method="POST" id="checkout_form">
+                        @csrf
                         <div class="border-1 border rounded-1 gray-border p-3">
                             <h3 class="h5 font-body">
                                 Select A Delivery Address
@@ -76,99 +77,120 @@
                                 +Add Address
                             </button>
                         </div>
+                    </form>
 
-                    </div>
-                    <div class="col-lg-6 mb-4">
-
-                        <span class="h5 font-body text-capitalize">
-                            Items
-                        </span>
-                        {{-- <span class="h5 font-body text-capitalize">
-                        Estimated Delivery
-                    </span> --}}
-                        {{-- <div class="d-flex justify-content-between align-items-center text-muted">
-                        <span>
-                            <span class="me-2">
-                                29 March
-                            </span>
-                            <span>
-                                Wednesday
-                            </span>
-                        </span>
-                    </div> --}}
-
-                        <div class="row">
-
-                            @foreach ($cartItems as $cartItem)
-                                <div class="col-12 d-flex">
-                                    {{-- <img src="https://via.placeholder.com/100"
-                                        class="w-auto my-2 rounded-2 border border-1 pink-border me-3" height="100px"
-                                        width="100px" alt=""> --}}
-                                    <img src="{{ asset('storage/images/products/' . $cartItem->product->thumbnail_image) }}"
-                                        alt="..." class="my-2 rounded-2 border border-1 pink-border me-3 cart-p-img">
-                                    <div class="mt-1">
-                                        <p class="mb-1 text-black">{{ $cartItem->product->name }}</p>
-                                        <span>Price: ₹{{ $cartItem->product->final_price }}</span><br>
-                                        <span>Qty: {{ $cartItem->quantity }}</span>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                        </div>
-                        <hr>
-                        <span class="h5  font-body text-capitalize">Price Details
-                        </span>
-
-                        <div class="d-flex justify-content-between align-items-center text-muted my-1">
-                            <span>
-                                Sub-Total:
-                            </span>
-                            <span>
-                                ₹{{ $subTotal }}
-                            </span>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center text-muted my-1">
-                            <span>
-                                GST:
-                            </span>
-                            <span>
-                                ₹{{ $gst['total'] }}
-                            </span>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center text-muted my-1">
-                            <span>
-                                Total MRP:
-                            </span>
-                            <span>
-                                ₹{{ $grandTotal }}
-                            </span>
-                        </div>
-                        {{-- <div class="d-flex justify-content-between align-items-center text-muted my-1">
-                        <span>
-                            Shipping Charges:
-                        </span>
-                        <span>
-                            ₹{{ '---' }}
-                        </span>
-                    </div> --}}
-                        <div class="d-flex justify-content-between align-items-center text-muted my-3">
-                            <strong class="text-black">
-                                Order Total:
-                            </strong>
-                            <span class="text-black">
-                                ₹{{ $grandTotal }}
-                            </span>
-                        </div>
-
-                        <div class="d-flex justify-content-center justify-content-md-end text-muted my-3">
-                            <button type="submit" class="btn btn-outline-pink-hover p-1 p-xl-2 text-end">
-                                Proceed To Payment
-                            </button>
-                        </div>
-                        <hr class="my-1">
-                    </div>
                 </div>
-            </form>
+                <div class="col-lg-6 mb-4">
+
+                    <span class="h5 font-body text-capitalize">
+                        Items
+                    </span>
+
+                    <div class="row">
+
+                        @foreach ($cartItems as $cartItem)
+                            <div class="col-12 d-flex">
+                                <img src="{{ asset('storage/images/products/' . $cartItem->product->thumbnail_image) }}"
+                                    alt="..." class="my-2 rounded-2 border border-1 pink-border me-3 cart-p-img">
+                                <div class="mt-1">
+                                    <p class="mb-1 text-black">{{ $cartItem->product->name }}</p>
+                                    <span>Price: ₹{{ $cartItem->product->final_price }}</span><br>
+                                    <span>Qty: {{ $cartItem->quantity }}</span>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+
+                    <div class="my-2">
+                        @if (session()->has('coupon'))
+                            <label for="coupon-code-input my-3">Applied Coupon</label>
+                            <div class="input-group my-2">
+                                <input type="text" class="form-control" placeholder="Enter Coupon Code"
+                                    style="max-width: 221px;" name="coupon"
+                                    value="{{ session()->has('coupon') ? session('coupon') : null }}" disabled>
+                                <a href="{{ route('frontend.remove-coupon') }}">
+                                    <button type="button" class="btn btn-outline-pink-hover h-100 p-1 p-xl-2 text-end ml-2">
+                                        Remove Coupon
+                                    </button>
+                                </a>
+                            </div>
+                        @else
+                            <label for="coupon-code-input my-3">Coupon</label>
+                            <form action="{{ route('frontend.apply-coupon') }}" method="POST" id="couponForm">
+                                @csrf
+                                <div class="input-group my-2">
+                                    <input type="text" class="form-control" placeholder="Enter Coupon Code"
+                                        style="max-width: 221px;" name="coupon"
+                                        value="{{ session()->has('coupon') ? session('coupon') : null }}" required>
+                                    <button type="submit" class="btn btn-outline-pink-hover h-100 p-1 p-xl-2 text-end ml-2">
+                                        Apply Coupon
+                                    </button>
+                                </div>
+                            </form>
+                        @endif
+                        @if ($errors->has('coupon'))
+                            <div id="name-error" class="text-danger text-start">
+                                {{ $errors->first('coupon') }}</div>
+                        @endif
+                    </div>
+                    <hr>
+
+                    <span class="h5  font-body text-capitalize">Price Details
+                    </span>
+
+                    <div class="d-flex justify-content-between align-items-center text-muted my-1">
+                        <span>
+                            Sub-Total:
+                        </span>
+                        <span>
+                            ₹{{ $subTotal }}
+                        </span>
+                    </div>
+                    @if (session()->has('coupon'))
+                        <div class="d-flex justify-content-between align-items-center text-muted my-1">
+                            <span>
+                                Discount:
+                            </span>
+                            <span>
+                                ₹{{ $discount }}
+                            </span>
+                        </div>
+                    @endif
+                    <div class="d-flex justify-content-between align-items-center text-muted my-1">
+                        <span>
+                            GST:
+                        </span>
+                        <span>
+                            ₹{{ $gst['total'] }}
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center text-muted my-1">
+                        <span>
+                            Total MRP:
+                        </span>
+                        <span>
+                            ₹{{ $grandTotal }}
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center text-muted my-3">
+                        <strong class="text-black">
+                            Order Total:
+                        </strong>
+                        <span class="text-black">
+                            ₹{{ $grandTotal }}
+                        </span>
+                    </div>
+
+                    <div class="d-flex justify-content-center justify-content-md-end text-muted my-3">
+                        <button type="submit" form="checkout_form" class="btn btn-outline-pink-hover p-1 p-xl-2 text-end">
+                            Proceed To Payment
+                        </button>
+                    </div>
+                    <hr class="my-1">
+                </div>
+            </div>
+
         </div>
 
         <!-- address form popup Modal -->
@@ -259,11 +281,11 @@
 @endsection
 @section('js')
     <script>
-        @if (count($errors) > 0)
-            $(document).ready(function() {
-                $('#addressFormPopup').modal('show')
-            });
-        @endif
+        // @if (count($errors) > 0)
+        //     $(document).ready(function() {
+        //         $('#addressFormPopup').modal('show')
+        //     });
+        // @endif
         $("#checkout_form").submit(function(e) {
             e.preventDefault();
             // check any address is selected or not

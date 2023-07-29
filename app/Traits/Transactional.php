@@ -47,13 +47,13 @@ trait Transactional
      */
     public static function createOrderItems(Order $order, $cartItems)
     {
-        // dd($plan['id']);
+        // dd($cartItems);
         foreach ($cartItems as $cartItem) {
             [$gst, $baseAmount, $taxable] = self::extracted($cartItem->product->final_price, $order->discount_amount);
             OrderItem::create([
                 'order_id' => $order->id,
                 'product_id' => $cartItem->product->id,
-                'quantity' => 1,
+                'quantity' => $cartItem->quantity,
                 'taxable_amount' => $taxable,
                 'cgst_percent' => config('app.cgst'),
                 'cgst' => $gst['cgst'],

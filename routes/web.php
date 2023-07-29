@@ -205,8 +205,8 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::post('/review/store/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.review.store');
 
         Route::get('/cart/checkout', 'App\Http\Controllers\frontend\CheckoutController@selectAddress')->name('frontend.cart.checkout');
-        Route::post('apply-coupon', 'App\Http\Controllers\frontend\CheckoutController@applyCoupon')->name('apply-coupon');
-        Route::get('remove-coupon', 'App\Http\Controllers\frontend\CheckoutController@removeCoupon')->name('remove-coupon');
+        Route::post('apply-coupon', 'App\Http\Controllers\frontend\CheckoutController@applyCoupon')->name('frontend.apply-coupon');
+        Route::get('remove-coupon', 'App\Http\Controllers\frontend\CheckoutController@removeCoupon')->name('frontend.remove-coupon');
         Route::post('/cart/payment', 'App\Http\Controllers\frontend\CheckoutController@showPaymentPage')->name('frontend.cart.payment');
 
         Route::get('/orders', 'App\Http\Controllers\frontend\OrderController@index')->name('frontend.order.index');
