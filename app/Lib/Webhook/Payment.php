@@ -2,10 +2,11 @@
 
 namespace App\Lib\Webhook;
 
-use App\Models\Transaction;
-use App\Models\Order;
-use App\Models\Subscription;
 use App\Models\User;
+use App\Models\Order;
+use App\Models\Delivery;
+use App\Models\Transaction;
+use App\Models\Subscription;
 use Illuminate\Support\Facades\DB;
 
 class Payment extends Webhook
@@ -57,6 +58,13 @@ class Payment extends Webhook
                 Transaction::create(self::format($payload)->toArray());
                 $payload['order_id'] = $payloadOrderId;
             }
+
+            $delivery = Delivery::updateOrCreate([
+                'order_id' => $order->id,
+                'user_id' => $order->user_id,
+                'status' => 'Pending',
+            ]);
+            $delivery->sendOrderToShiprocketApi();
 
             self::createInvoice([
                 'invoice_id' => $payload['invoice_id'],
