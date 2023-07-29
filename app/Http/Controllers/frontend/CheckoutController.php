@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Coupon;
 use App\Models\Product;
 use App\Traits\Taxable;
+use App\Models\CouponUsage;
 use Illuminate\Http\Request;
 use App\Traits\Transactional;
 use App\Lib\Razorpay\Razorpay;
@@ -18,27 +19,18 @@ class CheckoutController extends Controller
 
     public function selectAddress(Request $request, $product_slug = null)
     {
-        // dd($product_slug);
         $user = auth()->user();
         $cartItems = $user->cart ? $user->cart->items()->with('product')->get() : [];
         $productsTotalAmount = 0;
-        // dd($cartItems->get());
         foreach ($cartItems as $key => $item) {
             if ($item->quantity > $item->product->stock) {
                 return redirect()->back('The given product quantity is not available. Please Try after some time.');
             }
             $productsTotalAmount += $item->product->final_price * $item->quantity;
-            // $productsArray[$key]['product'] = $item->product;
-            // $productsArray[$key]['quantity'] = $item->quantity;
-            // dd($productsArray);
         }
-        // $products = $cartItems->with('product')->get()->pluck('product');
-
         if ($cartItems) {
             [$subTotal, $discount, $grandTotal, $gst] = $this->calculated($productsTotalAmount);
             $userAddresses = $user->userAddresses()->get();
-            // dd($this->calculated($productsTotalAmount));
-            // dd($productsArray);
             return view('frontend.order.checkout', compact('userAddresses', 'cartItems', 'gst', 'subTotal', 'grandTotal', 'discount'));
         }
         return redirect()->back()->with(toast('No Items in your cart to checkout', 'info'));
@@ -47,7 +39,6 @@ class CheckoutController extends Controller
 
     public function showPaymentPage(Request $request, Razorpay $api, DelhiveryService $delhivery)
     {
-        // dd($request);
         return redirect()->back()->with(toast('Work in Progress', 'info'));
         $user = auth()->user();
         $productsArray = null;
@@ -63,20 +54,15 @@ class CheckoutController extends Controller
 
         $cartItems = $user->cart->items()->with('product')->get();
         $productsTotalAmount = 0;
-        // dd($cartItems->get());
         foreach ($cartItems as $key => $item) {
             if ($item->quantity > $item->product->stock) {
                 return redirect()->back('The given product quantity is not available. Please Try after some time.');
             }
             $productsTotalAmount += $item->product->final_price * $item->quantity;
-            // $productsArray[$key]['product'] = $item->product;
-            // $productsArray[$key]['quantity'] = $item->quantity;
-            // dd($productsArray);
         }
         if ($cartItems) {
             [$subTotal, $discount, $grandTotal, $gst] = $this->calculated($productsTotalAmount);
             $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $cartItems, $selectedAddress);
-            // dd($grandTotal);
             return view('frontend.order.payment', compact('selectedAddress', 'cartItems', 'order', 'gst', 'subTotal', 'grandTotal', 'discount'));
         }
         return redirect()->back()->with(toast('No Items in your cart to checkout', 'info'));
@@ -86,16 +72,16 @@ class CheckoutController extends Controller
     public function handleCallback(Request $request)
     {
         $order = Order::where('api_order_id', $request->razorpay_order_id)->first();
-        // if(session()->has('coupon')){
-        //     $coupon=session('coupon');
-        //     $coupon_usage=new CouponUsage;
-        //     $coupon_usage->coupon_id=$coupon->id;
-        //     $coupon_usage->order_id=$order->id;
-        //     $coupon_usage->user_id=$order->user_id;
-        //     $coupon_usage->save();
-        //     session()->forget('coupon');
-        //     session()->forget('discount');
-        // }
+        if(session()->has('coupon')){
+            $coupon=session('coupon');
+            $coupon_usage=new CouponUsage;
+            $coupon_usage->coupon_id=$coupon->id;
+            $coupon_usage->order_id=$order->id;
+            $coupon_usage->user_id=$order->user_id;
+            $coupon_usage->save();
+            session()->forget('coupon');
+            session()->forget('discount');
+        }
         $order->update(['status' => 'completed']);
         return view('frontend.payment-success', compact('order'));
     }
@@ -104,21 +90,28 @@ class CheckoutController extends Controller
     {
 
         $request->validate([
-            'code' => 'required',
+            'coupon' => 'required|string|min:2|max:60',
         ]);
-        $coupon = Coupon::findPromoCode($request->code);
+        $coupon = Coupon::findPromoCode($request->coupon);
         // dd($coupon);
         if ($coupon && $coupon->isValid()) {
             session()->has('coupon') ? $this->removeCoupon() : null;
-            $discount = $coupon->discount($request->total);
-            if ($discount >= $request->total) {
-                return redirect()->route('frontend.cart.payment')->with(['alert-type' => 'info', 'message' => 'Coupon Not Applicable']);
+            $cartItems = auth()->user()->cart->items()->with('product')->get();
+            $productsTotalAmount = 0;
+            foreach ($cartItems as $key => $item) {
+                $productsTotalAmount += $item->product->final_price * $item->quantity;
+            }
+            // dd($productsTotalAmount);
+            $discount = $coupon->discount($productsTotalAmount);
+            // dd($discount);
+            if ($discount >= $productsTotalAmount) {
+                return redirect()->route('frontend.cart.checkout')->with(['alert-type' => 'info', 'message' => 'Coupon Not Applicable']);
             }
             session()->put([
-                'coupon' => $coupon,
+                'coupon' => $coupon->code,
                 'discount' => $discount,
             ]);
-            return redirect()->route('frontend.cart.payment')->with(toast('Coupon Applied'));
+            return redirect()->route('frontend.cart.checkout')->with(toast('Coupon Applied'));
         }
         return redirect()->back()->with(toast('This coupon is invalid', 'error'));
     }
@@ -149,7 +142,7 @@ class CheckoutController extends Controller
                 'country' => $selectedAddress->country,
                 'postal_code' => $selectedAddress->postal_code
             ]);
-            optional($order->item)->delete();
+            optional($order->items()->delete());
             self::createOrderItems($order, $cartItems);
         } else {
             $apiOrder = $api->createOrder((int)$grandTotal * 100);

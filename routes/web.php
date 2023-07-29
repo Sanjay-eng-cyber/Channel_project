@@ -224,8 +224,8 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::post('/review/store/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.review.store');
 
         Route::get('/cart/checkout', 'App\Http\Controllers\frontend\CheckoutController@selectAddress')->name('frontend.cart.checkout');
-        Route::post('apply-coupon', 'App\Http\Controllers\frontend\CheckoutController@applyCoupon')->name('apply-coupon');
-        Route::get('remove-coupon', 'App\Http\Controllers\frontend\CheckoutController@removeCoupon')->name('remove-coupon');
+        Route::post('apply-coupon', 'App\Http\Controllers\frontend\CheckoutController@applyCoupon')->name('frontend.apply-coupon');
+        Route::get('remove-coupon', 'App\Http\Controllers\frontend\CheckoutController@removeCoupon')->name('frontend.remove-coupon');
         Route::post('/cart/payment', 'App\Http\Controllers\frontend\CheckoutController@showPaymentPage')->name('frontend.cart.payment');
 
         Route::get('/orders', 'App\Http\Controllers\frontend\OrderController@index')->name('frontend.order.index');
@@ -235,6 +235,12 @@ Route::domain(config('app.web_domain'))->group(function () {
 
 
     Route::get('/cart', 'App\Http\Controllers\frontend\CartController@index')->name('frontend.cart.index');
+
+    Route::post('/api/cart/items/fetch', 'App\Http\Controllers\frontend\CartController@getCartItemsApi')->name('frontend.get.cart_items.api');
+    Route::post('/api/cart/item/increase', 'App\Http\Controllers\frontend\CartController@increaseItemQuantity')->name('frontend.api.cart_items.increase_quantity');
+    Route::post('/api/cart/item/decrease', 'App\Http\Controllers\frontend\CartController@decreaseItemQuantity')->name('frontend.api.cart_items.decrease_quantity');
+    Route::post('/api/cart/item/remove', 'App\Http\Controllers\frontend\CartController@removeItem')->name('frontend.api.cart_item.remove');
+
     Route::get('/cart/delete/{id}', 'App\Http\Controllers\frontend\CartController@delete')->name('frontend.cart.delete');
     Route::get('/wishlist/delete/{id}', 'App\Http\Controllers\frontend\WishlistController@delete')->name('frontend.wishlist.delete');
 

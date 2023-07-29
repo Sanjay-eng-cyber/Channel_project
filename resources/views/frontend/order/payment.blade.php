@@ -88,21 +88,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="my-2">
-                        <form action="{{ route('apply-coupon') }}" method="POST">
-                            <label for="coupon-code-input my-3">Coupon</label>
+
+                    @if (session()->has('coupon'))
+                        <div class="my-2">
+                            <label for="coupon-code-input my-3">Applied Coupon</label>
                             <div class="input-group my-2">
                                 @csrf
                                 <input type="text" class="form-control" placeholder="Enter Coupon Code"
-                                    style="max-width: 221px;" name="code" required
-                                    value="{{ session()->has('coupon') ? session('coupon') : null }}">
-                                <button type="submit" class="btn btn-outline-pink-hover p-1 p-xl-2 text-end ml-2">
+                                    style="max-width: 221px;" name="coupon"
+                                    value="{{ session()->has('coupon') ? session('coupon') : null }}" disabled>
+                                {{-- <button type="submit" class="btn btn-outline-pink-hover p-1 p-xl-2 text-end ml-2">
                                     Apply Coupon
-                                </button>
+                                </button> --}}
                             </div>
-                        </form>
-                    </div>
-                    <hr>
+                            {{-- <a href="{{ route('frontend.remove-coupon') }}">Remove Coupon</a> --}}
+                        </div>
+                        <hr>
+                    @endif
 
                     {{-- <hr> --}}
                     <span class="h5  font-body text-capitalize">Price Details
@@ -116,6 +118,16 @@
                             ₹{{ $subTotal }}
                         </span>
                     </div>
+                    @if (session()->has('coupon'))
+                        <div class="d-flex justify-content-between align-items-center text-muted my-1">
+                            <span>
+                                Discount:
+                            </span>
+                            <span>
+                                ₹{{ $discount }}
+                            </span>
+                        </div>
+                    @endif
                     <div class="d-flex justify-content-between align-items-center text-muted my-1">
                         <span>
                             GST:

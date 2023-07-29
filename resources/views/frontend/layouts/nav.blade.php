@@ -395,7 +395,11 @@
            </div>
        </div>
    </header>
-   <script></script>
+   <script>
+       const {
+           createApp
+       } = Vue;
+   </script>
 
    @guest('web')
        {{-- <livewire:log-in /> --}}
@@ -488,12 +492,8 @@
                </div>
            </div>
        </div>
-       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
        <script>
-           const {
-               createApp
-           } = Vue;
            createApp({
                data() {
                    return {
