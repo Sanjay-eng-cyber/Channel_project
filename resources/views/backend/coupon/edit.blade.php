@@ -113,18 +113,18 @@
                                 </div>
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-2">
                                     <label for="formGroupExampleInput" class="">Valid From</label>
-                                    <input type="date" class="form-control" id="formGroupExampleInput"
+                                    <input type="datetime-local" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter max usage" required name="valid_from"
-                                        value="{{ old('valid_from') ?? dd_format($coupon->valid_from, 'Y-m-d') }}">
+                                        value="{{ old('valid_from') ?? $coupon->valid_from }}">
                                     @if ($errors->has('valid_from'))
                                         <div class="text-danger" role="alert">{{ $errors->first('valid_from') }}</div>
                                     @endif
                                 </div>
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-2">
                                     <label for="formGroupExampleInput" class="">Valid Till</label>
-                                    <input type="date" class="form-control" id="formGroupExampleInput"
+                                    <input type="datetime-local" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter max usage" required name="valid_till"
-                                        value="{{ old('valid_till') ?? dd_format($coupon->valid_till, 'Y-m-d') }}">
+                                        value="{{ old('valid_till') ?? $coupon->valid_till }}">
                                     @if ($errors->has('valid_till'))
                                         <div class="text-danger" role="alert">{{ $errors->first('valid_till') }}</div>
                                     @endif
