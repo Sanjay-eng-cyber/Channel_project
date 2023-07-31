@@ -33,9 +33,7 @@ class Payment extends Webhook
         }
 
         $order->update(['status' => 'failed']);
-        // User::find($order->user_id)->alert('failed');
         return 'payment.failed';
-        // return respondWithError(ApiCode::SERVICE_FAILURE, 401, ['more_info' => $payload]);
     }
 
     public static function captured($payload)
