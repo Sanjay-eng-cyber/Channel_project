@@ -86,7 +86,7 @@
                                             <td>{{ tableRowSrNo($loop->index, $orders) }}</td>
                                             <td><a class="blue-col-a"
                                                     href="{{ route('backend.user.show', $order->user_id) }}"
-                                                    target="target_blank">{{ $order->user->name }}</a></td>
+                                                    target="target_blank">{{ $order->user->first_name ?? '---' }}</a></td>
                                             <td>{{ $order->total_amount }}</td>
                                             <td>
                                                 @if ($order->status == 'initial')

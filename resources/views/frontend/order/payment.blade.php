@@ -96,7 +96,7 @@
                                 @csrf
                                 <input type="text" class="form-control" placeholder="Enter Coupon Code"
                                     style="max-width: 221px;" name="coupon"
-                                    value="{{ session()->has('coupon') ? session('coupon') : null }}" disabled>
+                                    value="{{ session()->has('coupon') ? session('coupon')->code : null }}" disabled>
                                 {{-- <button type="submit" class="btn btn-outline-pink-hover p-1 p-xl-2 text-end ml-2">
                                     Apply Coupon
                                 </button> --}}
@@ -118,10 +118,10 @@
                             ₹{{ $subTotal }}
                         </span>
                     </div>
-                    @if (session()->has('coupon'))
+                    @if (session()->has('discount'))
                         <div class="d-flex justify-content-between align-items-center text-muted my-1">
                             <span>
-                                Discount:
+                                Coupon Discount:
                             </span>
                             <span>
                                 ₹{{ $discount }}

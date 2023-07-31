@@ -102,7 +102,7 @@ class CheckoutController extends Controller
                 return redirect()->route('frontend.cart.checkout')->with(['alert-type' => 'info', 'message' => 'Coupon Not Applicable']);
             }
             session()->put([
-                'coupon' => $coupon->code,
+                'coupon' => $coupon,
                 'discount' => $discount,
             ]);
             return redirect()->route('frontend.cart.checkout')->with(toast('Coupon Applied'));
