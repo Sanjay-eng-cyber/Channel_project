@@ -108,9 +108,10 @@
                             <div class="input-group my-2">
                                 <input type="text" class="form-control" placeholder="Enter Coupon Code"
                                     style="max-width: 221px;" name="coupon"
-                                    value="{{ session()->has('coupon') ? session('coupon') : null }}" disabled>
+                                    value="{{ session()->has('coupon') ? session('coupon')->code : null }}" disabled>
                                 <a href="{{ route('frontend.remove-coupon') }}">
-                                    <button type="button" class="btn btn-outline-pink-hover h-100 p-1 p-xl-2 text-end ml-2">
+                                    <button type="button"
+                                        class="btn btn-outline-pink-hover h-100 p-1 p-xl-2 text-end ml-2">
                                         Remove Coupon
                                     </button>
                                 </a>
@@ -121,9 +122,9 @@
                                 @csrf
                                 <div class="input-group my-2">
                                     <input type="text" class="form-control" placeholder="Enter Coupon Code"
-                                        style="max-width: 221px;" name="coupon"
-                                        value="{{ session()->has('coupon') ? session('coupon') : null }}" required>
-                                    <button type="submit" class="btn btn-outline-pink-hover h-100 p-1 p-xl-2 text-end ml-2">
+                                        style="max-width: 221px;" name="coupon" required>
+                                    <button type="submit"
+                                        class="btn btn-outline-pink-hover h-100 p-1 p-xl-2 text-end ml-2">
                                         Apply Coupon
                                     </button>
                                 </div>
@@ -147,10 +148,10 @@
                             ₹{{ $subTotal }}
                         </span>
                     </div>
-                    @if (session()->has('coupon'))
+                    @if (session()->has('discount'))
                         <div class="d-flex justify-content-between align-items-center text-muted my-1">
                             <span>
-                                Discount:
+                                Coupon Discount:
                             </span>
                             <span>
                                 ₹{{ $discount }}
@@ -281,26 +282,28 @@
 @endsection
 @section('js')
     <script>
+        $(document).ready(function() {
+            $("#checkout_form").submit(function(e) {
+                e.preventDefault();
+                // check any address is selected or not
+                var address_id = $('input[name=address]:checked').val();
+                console.log(address_id);
+                if (address_id == undefined) {
+                    Snackbar.show({
+                        text: "Please select delivery address",
+                        pos: 'top-right',
+                        actionTextColor: '#fff',
+                        backgroundColor: '#2196f3'
+                    });
+                    return false;
+                }
+                this.submit();
+            });
+        });
         // @if (count($errors) > 0)
         //     $(document).ready(function() {
         //         $('#addressFormPopup').modal('show')
         //     });
         // @endif
-        $("#checkout_form").submit(function(e) {
-            e.preventDefault();
-            // check any address is selected or not
-            var address_id = $('input[name=address]:checked').val();
-            console.log(address_id);
-            if (address_id == undefined) {
-                Snackbar.show({
-                    text: "Please select delivery address",
-                    pos: 'top-right',
-                    actionTextColor: '#fff',
-                    backgroundColor: '#2196f3'
-                });
-                return false;
-            }
-            this.submit();
-        });
     </script>
 @endsection
