@@ -22,7 +22,7 @@
                            <div class="navbar-collapse collapse  justify-content-between flex-row-reverse navdrop-style"
                                id="navbarSupportedContent" style="">
                                <ul class="navbar-nav d-none d-lg-flex gap-3 align-items-center">
-                                   
+
                                    <li class="nav-item text-red position-relative">
                                        <a class="nav-link fw-bold nn-top-cart"
                                            href="{{ route('frontend.cart.index') }}">
@@ -111,9 +111,10 @@
                                    </a>
                                </ul>
                                <div class="header-sub-1 header-top-search-icon d-none d-lg-inline">
-                                   <form action="" method="get" class="">
+                                   <form action="{{ route('frontend.search.index') }}" method="GET" class="">
                                        <input type="text" class="form-control px-4" placeholder="Search Product"
-                                           aria-label="Search" aria-describedby="basic-addon1">
+                                           aria-label="Search" aria-describedby="basic-addon1" name="q"
+                                           value="{{ request('q') }}">
                                        <button class="position-absolute top-0 end-0 border-0 bg-transparent"
                                            type="submit">
                                            <i class="fas fa-search fa-fw header-seach-icon" style="color:#EC268F"></i>
@@ -134,26 +135,13 @@
                    <div class="col-xs-12">
                        <ul class="mt-icon-list pt-2 pt-md-0 pt-lg-2 pt-xl-0 pt-xxl-0">
 
-                           {{-- <li class="px-2 ">
-                               <a href="http://" class="text-black">
-                                   ORDER TRACK
-                               </a>
-                           </li> --}}
-                           <li class="bg-red px-2 rounded">
+                           <li class="bg-red px-2 rounded my-2">
                                <a href="{{ route('frontend.cart.checkout') }}" class="text-white">
                                    CHECKOUT
                                </a>
                            </li>
                        </ul>
-                       <div class="header-sub-1 nav-top-search-icon">
-                           <form action="" method="post">
-                               @csrf
-                               <i class="fas fa-search fa-fw header-seach-icon" style="color:#EC268F"></i>
-                               <input type="text" class="form-control" placeholder="Search Product"
-                                   aria-label="Search" aria-describedby="basic-addon1">
 
-                           </form>
-                       </div>
                        <nav id="nav" class="navbar hide-navbar py-0 h-100 align-items-center">
                            <ul style="margin-right: 0px">
                                <li><a href="{{ route('frontend.index') }} "
@@ -171,149 +159,12 @@
                                                    <a class="dropdown-item"
                                                        href="{{ route('frontend.sub-category.index', ['categorySlug' => $navCategory->slug, 'subCategorySlug' => $navSubCategory->slug]) }}">{{ $navSubCategory->name }}</a>
                                                @endforeach
-                                               {{-- <a class="dropdown-item " href="#">Face wash</a>
-                                               <a class="dropdown-item" href="#">Face Scrub</a>
-                                               <a class="dropdown-item" href="#">Face Moisturiser</a>
-                                               <a class="dropdown-item" href="#">Sheet Mask</a>
-                                               <a class="dropdown-item" href="#">Face Serum</a>
-                                               <a class="dropdown-item" href="#">Suncreen</a>
-                                               <a class="dropdown-item" href="#">Face Mist</a> --}}
+
                                            </div>
                                        </div>
                                    </li>
                                @endforeach
-                               {{-- <li class="nav-item dropdown">
-                                   <a href="{{ route('frontend.cat.show', 'skin') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'skin') ? 'active-red' : '' }} nav-link text-capitalize">
-                                       Skin
-                                   </a>
-                                   <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                                       <div class="text-capitalize p-2">
-                                           <a class="dropdown-item " href="{{ url('sc/skin/face-wash') }}">Face
-                                               wash</a>
-                                           <a class="dropdown-item" href="{{ url('sc/skin/face-scrub') }}">Face
-                                               Scrub</a>
-                                           <a class="dropdown-item" href="{{ url('sc/skin/face-moisturiser') }}">Face
-                                               Moisturiser</a>
-                                           <a class="dropdown-item" href="{{ url('sc/skin/sheet-mask') }}">Sheet
-                                               Mask</a>
-                                           <a class="dropdown-item" href="{{ url('sc/skin/face-serum') }}">Face
-                                               Serum</a>
-                                           <a class="dropdown-item" href="{{ url('sc/skin/suncreen') }}">Suncreen</a>
-                                           <a class="dropdown-item" href="{{ url('sc/skin/face-mist') }}">Face
-                                               Mist</a>
-                                       </div>
-                                   </div>
-                               </li>
-                               <li class="nav-item dropdown">
-                                   <a href="{{ route('frontend.cat.show', 'fragrances') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'fragrances') ? 'active-red' : '' }} nav-link text-capitalize">
-                                       Fragrances
-                                   </a>
-                                   <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                                       <div class="text-capitalize">
-                                           <a class="dropdown-item " href="{{ url('sc/fragrances/men') }}">Men</a>
-                                           <a class="dropdown-item" href="{{ url('sc/fragrances/women') }}">Women</a>
-                                       </div>
-                                   </div>
-                               </li>
-                               <li class="nav-item dropdown">
-                                   <a href="{{ route('frontend.cat.show', 'hair-care') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'hair-care') ? 'active-red' : '' }} nav-link text-capitalize">
-                                       Hair
-                                       Care
-                                   </a>
-                                   <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                                       <div class="text-capitalize">
-                                           <a class="dropdown-item "
-                                               href="{{ url('sc/hair-care/shampoo') }}">Shampoo</a>
-                                           <a class="dropdown-item"
-                                               href="{{ url('sc/hair-care/conditoner') }}">Conditoner</a>
-                                           <a class="dropdown-item" href="{{ url('sc/hair-care/hair-mask') }}">Hair
-                                               mask</a>
-                                           <a class="dropdown-item" href="{{ url('sc/hair-care/hair-serum') }}">Hair
-                                               serum</a>
-                                           <a class="dropdown-item" href="{{ url('sc/hair-care/hair-oil') }}">Hair
-                                               Oil</a>
-                                           <a class="dropdown-item"
-                                               href="{{ url('sc/hair-care/straigthner') }}">Straigthner</a>
-                                           <a class="dropdown-item" href="{{ url('sc/hair-care/dryer') }}">Dryer</a>
-                                           <a class="dropdown-item" href="{{ url('sc/hair-care/curler') }}">Curler</a>
-                                           <a class="dropdown-item"
-                                               href="{{ url('sc/hair-care/trimmers') }}">Trimmers</a>
-                                       </div>
-                                   </div>
-                               </li>
-                               <li class="nav-item dropdown">
-                                   <a href="{{ route('frontend.cat.show', 'personal-care') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'personal-care') ? 'active-red' : '' }} nav-link text-capitalize">
-                                       Personal Care
-                                   </a>
-                                   <div class="dropdown-menu ">
-                                       <div class="text-capitalize">
-                                           <a class="dropdown-item " href="{{ url('sc/personal-care/shower-gel') }}">Shower
-                                               Gel</a>
-                                           <a class="dropdown-item" href="{{ url('sc/personal-care/body-scrub') }}">Body
-                                               Scrub</a>
-                                           <a class="dropdown-item" href="{{ url('sc/personal-care/body-lotion') }}">Body
-                                               Lotion</a>
-                                           <a class="dropdown-item" href="{{ url('sc/personal-care/hand-cream') }}">Hand
-                                               Cream</a>
-                                           <a class="dropdown-item" href="{{ url('sc/personal-care/hair-oil') }}">Hair
-                                               Oil</a>
-                                           <a class="dropdown-item" href="{{ url('sc/personal-care/foot-cream') }}">Foot
-                                               Cream</a>
-                                           <a class="dropdown-item" href="{{ url('sc/personal-care/body-butter') }}">Body
-                                               Butter</a>
-                                           <a class="dropdown-item" href="{{ url('sc/personal-care/soaps') }}">Soaps</a>
-                                           <a class="dropdown-item" href="{{ url('sc/personal-care/hand-wash') }}">Hand
-                                               wash</a>
-                                       </div>
-                                   </div>
 
-                               </li>
-                               <li class="nav-item dropdown">
-                                   <a href="{{ route('frontend.cat.show', 'home-decor') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'home-decor') ? 'active-red' : '' }} nav-link text-capitalize">
-                                       Home Decor
-                                   </a>
-                                   <div class="dropdown-menu">
-                                       <div class="text-capitalize">
-                                           <a class="dropdown-item "
-                                               href="{{ url('sc/home-decor/windchime') }}">Windchime</a>
-                                           <a class="dropdown-item" href="{{ url('sc/home-decor/wall-decor') }}">Wall
-                                               décor</a>
-                                           <a class="dropdown-item" href="{{ url('sc/home-decor/wall-clock') }}">Wall
-                                               Clock</a>
-                                           <a class="dropdown-item" href="{{ url('sc/home-decor/table-piece') }}">Table
-                                               Piece</a>
-                                           <a class="dropdown-item" href="{{ url('sc/home-decor/table-clock') }}">Table
-                                               Clock</a>
-                                           <a class="dropdown-item"
-                                               href="{{ url('sc/home-decor/planters') }}">Planters</a>
-                                           <a class="dropdown-item" href="{{ url('sc/home-decor/key-holders') }}">Key
-                                               Holders</a>
-                                       </div>
-                                   </div>
-                               </li>
-                               <li class="nav-item dropdown">
-                                   <a href="{{ route('frontend.cat.show', 'gift') }}"
-                                       class="{{ URL::current() == route('frontend.cat.show', 'gift') ? 'active-red' : '' }} nav-link text-capitalize">
-                                       Gift
-                                   </a>
-                                   <div class="dropdown-menu">
-                                       <div class="text-capitalize">
-                                           <a class="dropdown-item " href="{{ url('sc/gift/school-stationery') }}">School
-                                               Stationery</a>
-                                           <a class="dropdown-item" href="{{ url('sc/gift/bobble-heads') }}">Bobble
-                                               Heads</a>
-                                           <a class="dropdown-item" href="{{ url('sc/gift/action-figures') }}">Action
-                                               Figures</a>
-                                           <a class="dropdown-item"
-                                               href="{{ url('sc/gift/keychains') }}">Keychains</a>
-                                       </div>
-                                   </div>
-                               </li> --}}
                            </ul>
                        </nav>
                    </div>
@@ -373,12 +224,15 @@
 
                <div class="row" id="phone-search" style="display: none;">
                    <div class="col-12">
-                       <div class="input-group mt-3">
-                           <input type="text" class="form-control" placeholder="Search for products"
-                               aria-label="Search for products" aria-describedby="button-addon2">
-                           <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
-                                   class="fas fa-search"></i></button>
-                       </div>
+                       <form action="{{ route('frontend.search.index') }}" method="GET">
+                           <div class="input-group mt-3">
+                               <input type="text" class="form-control" placeholder="Search for products"
+                                   aria-label="Search for products" aria-describedby="button-addon2" name="q"
+                                   required value="{{ request('q') }}">
+                               <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i
+                                       class="fas fa-search"></i></button>
+                           </div>
+                       </form>
                    </div>
                </div>
            </div>

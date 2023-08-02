@@ -28,6 +28,8 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::post('send-otp', 'App\Http\Controllers\frontend\LoginController@sendOtp')->name('frontend.send-otp');
     Route::post('verify-otp', 'App\Http\Controllers\frontend\LoginController@verifyOtp')->name('frontend.verify-otp');
 
+    Route::get('search', 'App\Http\Controllers\frontend\searchController@index')->name('frontend.search.index');
+
     Route::group(['middleware' => 'auth:web'], function () {
 
         // Route::get('/profile', function () {

@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title', $category->name . ' |')
+@section('title', 'Search ' . ucfirst($search) . ' |')
 
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
@@ -8,41 +8,59 @@
 @section('content')
 
     <section>
-
-
         <div class="container mb-5">
             <div class="row mt-5">
-
-                <div class="col-lg-5 col-xl-5 col-xxl-5">
-                    <h2 class="main-head text-red">Best In {{ $category->name }} Products</h2>
-                    {{-- @if ($category->subCategories)
-                        <div class="d-block d-sm-none">
-                            <div class="my-3">More in {{ $category->name }}</div>
-                            <select class="my-2 form-select  top-product-des" aria-label=".form-select-lg example">
-                                @foreach ($category->subCategories as $subCat)
-                                    <option selected="" class="top-product-text">{{ $subCat->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    @endif --}}
+                <div class="col-lg-5 col-xl-4 col-xxl-4">
+                    <h2 class="main-head text-red">Search: {{ $search }}</h2>
                 </div>
-                <div class="col-lg-7 col-xl-3 col-xxl-4">
+                <div class="col-lg-7 col-xl-4 col-xxl-5">
+                    <div class="d-flex gap-4 justify-content-between flex-column flex-sm-row my-4 my-lg-0">
 
+
+                        {{-- <div class="d-flex gap-3 align-items-baseline">
+                            <div>For</div>
+                            <div class="pro-radio-btn">
+                                <input type="radio" class="btn-check" name="options" id="option01" autocomplete="off">
+                                <label class="btn" for="option01">Him</label>
+                            </div>
+                            <div class="pro-radio-btn">
+                                <input type="radio" class="btn-check" name="options" id="option02" autocomplete="off">
+                                <label class="btn" for="option02">Her</label>
+                            </div>
+
+                        </div> --}}
+
+                    </div>
                 </div>
                 <div class="col-lg-12 col-xl-4 col-xxl-3">
-                    <form action="{{ route('frontend.cat.show', $category->slug) }}">
+                    <form action="{{ route('frontend.search.index') }}" method="GET">
+                        <input type="hidden" value="{{ $search }}" name="q">
+                        {{-- <div class="d-flex justify-content-end align-items-baseline gap-3 gap-xl-4 gap-xxl-3">
+                            <div>Items per page</div>
+                            <div style="width: 100px">
+                                <select class="form-select form-select-lg mb-3 top-product-des"
+                                    aria-label=".form-select-lg example" style="font-size: 16px" name="limit">
+                                    <option selected class="top-product-text">10</option>
+                                    <option value="1" class="top-product-text">20</option>
+                                    <option value="2" class="top-product-text">30</option>
+                                    <option value="3" class="top-product-text">40</option>
+                                </select>
+                            </div>
+                        </div> --}}
+
 
                         <div class="d-flex justify-content-end align-items-baseline gap-3 gap-xl-4 gap-xxl-3">
                             <div>Sort By</div>
                             <div>
                                 <select class="form-select form-select-lg mb-3 top-product-des"
-                                    aria-label=".form-select-lg example" style="font-size: 16px" name="sort_by"
-                                    onchange="this.form.submit()">
+                                    aria-label=".form-select-lg example" style="font-size: 16px"
+                                    onchange="this.form.submit()" name="sort_by">
                                     <option value="new_arrival"
                                         {{ request('sort_by') && request('sort_by') == 'new_arrival' ? 'selected' : '' }}
                                         class="top-product-text">Newest Arrivals</option>
                                     <option class="top-product-text" value="featured"
-                                        {{ request('sort_by') && request('sort_by') == 'featured' ? 'selected' : '' }}>Featured
+                                        {{ request('sort_by') && request('sort_by') == 'featured' ? 'selected' : '' }}>
+                                        Featured
                                     </option>
                                     <option value="low_to_high"
                                         {{ request('sort_by') && request('sort_by') == 'low_to_high' ? 'selected' : '' }}
@@ -60,21 +78,10 @@
                     </div>
                 @endif
 
-
             </div>
 
             <div class="row">
                 <div class="col-sm-12">
-
-                    {{-- <div class="mt-producttabs style2 wow fadeInUp p-0" data-wow-delay="0.6s">
-
-                        <ul class="producttabs pro-slidetab">
-                            <li><a href="#__skincare" class="active">Skin Care</a></li>
-                            <li><a href="#__skinlatest">Latest</a></li>
-                            <li><a href="#__skinbestseller">Best Seller</a></li>
-                        </ul>
-                    </div> --}}
-
                     <div class="tab-content">
 
                         <div id="__skincare">
@@ -153,7 +160,7 @@
                                 </div>
                             @endif
                             <div class="d-flex justify-content-center mt-4">
-                                {{ $products->onEachSide(1)->links('pagination::bootstrap-4') }}
+                                {{ $products->onEachSide(1)->withQueryString()->links('pagination::bootstrap-4') }}
                             </div>
                         </div>
                     </div>
