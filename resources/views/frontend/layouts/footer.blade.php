@@ -10,7 +10,7 @@
     <div class="footer-holder dark mt-paddingbottomxs-hide-holder ">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12  col-md-12 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
+                <div class="col-xs-12  col-md-12 col-lg-5 col-xl-5 mt-paddingbottomxs footer-first-order">
                     <!-- F Widget About of the Page -->
                     <div class="f-widget-about">
                         <div class="logo pt-md-0 pt-3 ">
@@ -97,11 +97,11 @@
 
 
                 <nav
-                    class="col-xs-12 mt-xl-0 mt-md-2 px-4 justify-content-start col-md-12 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
+                    class="col-xs-12 mt-xl-0 mt-md-2 px-4 justify-content-start col-md-12 col-lg-4 col-xl-3 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
 
 
                     <!-- Footer Nav of the Page -->
-                    <div class="nav-widget-1 cainco-breackpoint-category">
+                    <div class="nav-widget-1 cainco-breackpoint-category" style="width:100%">
                         <h3 class="f-widget-heading text-red ct-f-heading">Categories</h3>
                         <ul class="list-unstyled f-widget-nav">
                             @foreach ($navCategories as $navCategory)
@@ -124,19 +124,34 @@
                     </div> --}}
                     <!-- Footer Nav of the Page end -->
                     <!-- Footer Nav of the Page -->
-                    <div class="nav-widget-1 cainco-breackpoint-company d-sm-block ">
-                        <h3 class="f-widget-heading c-f-heading">Company</h3>
-                        <ul class="list-unstyled f-widget-nav  c-f-list">
-                            <li><a href="{{ route('frontend.about') }}">About Us</a></li>
-                            <li><a href="{{ route('frontend.returns-and-refunds-policy') }}">Returns & Refunds
-                                    Policy</a></li>
-
-                            <li><a href="{{ route('frontend.shipping-policy') }}">Shipping Policy</a></li>
-                            <li><a href="{{ route('frontend.contact-us') }}">Contact Us</a></li>
 
 
-                        </ul>
+
+                    <!-- Footer Nav of the Page end -->
+                </nav>
+                {{-- <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
+                    <!-- F Widget Newsletter of the Page -->
+                    <div class="f-widget-newsletter f-widget-news-custome">
+                        <h3 class="f-widget-heading f-widget-heading-sub" style="line-height:0px">Subscribe</h3>
+                        <div class="holder">
+                            <form class="newsletter-form form2" action="#" style="padding:6px">
+
+                                <input type="email" class="form-control" placeholder="Your e-mail"
+                                    style="border-radius:0px">
+                                <button type="submit">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+
+                            </form>
+                        </div>
+                        <p class="text-red">
+                            Hello, we are Lift Media. Our goal is to translate the positive effects from
+                            revolutionizing how companies engage with their clients & their team.
+                        </p>
                     </div>
+                </div> --}}
+
+                <div class="col-xs-12 mt-xl-0 mt-md-2 px-4 justify-content-start col-md-12 col-lg-3 col-xl-3 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
 
                     <div class="container category-mobile-version d-none">
                         <h3 class="f-widget-heading text-red ct-f-heading mt-4">Company</h3>
@@ -168,29 +183,25 @@
 
                         </div>
                     </div>
-                    <!-- Footer Nav of the Page end -->
-                </nav>
-                {{-- <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
-                    <!-- F Widget Newsletter of the Page -->
-                    <div class="f-widget-newsletter f-widget-news-custome">
-                        <h3 class="f-widget-heading f-widget-heading-sub" style="line-height:0px">Subscribe</h3>
-                        <div class="holder">
-                            <form class="newsletter-form form2" action="#" style="padding:6px">
 
-                                <input type="email" class="form-control" placeholder="Your e-mail"
-                                    style="border-radius:0px">
-                                <button type="submit">
-                                    <i class="fas fa-arrow-right"></i>
-                                </button>
+                    <div class="nav-widget-1 cainco-breackpoint-company d-sm-block " style="width: 100%">
+                        <h3 class="f-widget-heading c-f-heading">Company</h3>
+                        <ul class="list-unstyled f-widget-nav  c-f-list">
+                            <li><a href="{{ route('frontend.about') }}">About Us</a></li>
+                            <li><a href="{{ route('frontend.returns-and-refunds-policy') }}">Returns & Refunds
+                                    Policy</a></li>
 
-                            </form>
-                        </div>
-                        <p class="text-red">
-                            Hello, we are Lift Media. Our goal is to translate the positive effects from
-                            revolutionizing how companies engage with their clients & their team.
-                        </p>
+                            <li><a href="{{ route('frontend.shipping-policy') }}">Shipping Policy</a></li>
+                            <li><a href="{{ route('frontend.contact-us') }}">Contact Us</a></li>
+
+
+                        </ul>
                     </div>
-                </div> --}}
+
+
+                </div>
+
+
             </div>
         </div>
     </div>
