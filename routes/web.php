@@ -28,7 +28,7 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::post('send-otp', 'App\Http\Controllers\frontend\LoginController@sendOtp')->name('frontend.send-otp');
     Route::post('verify-otp', 'App\Http\Controllers\frontend\LoginController@verifyOtp')->name('frontend.verify-otp');
 
-    Route::get('search', 'App\Http\Controllers\frontend\searchController@index')->name('frontend.search.index');
+    Route::get('search', 'App\Http\Controllers\frontend\SearchController@index')->name('frontend.search.index');
 
     Route::group(['middleware' => 'auth:web'], function () {
 
@@ -160,9 +160,12 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/about-us', function () {
         return view('frontend.about');
     })->name('frontend.about');
+
     Route::get('/contact-us', function () {
         return view('frontend.contact-us');
     })->name('frontend.contact-us');
+
+    Route::post('contact', 'App\Http\Controllers\frontend\ContactController@submit')->name('frontend.contact.submit');
 
     Route::get('/payment', function () {
         return view('frontend.payment');
