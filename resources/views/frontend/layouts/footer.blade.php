@@ -170,7 +170,7 @@
                     </div>
                     <!-- Footer Nav of the Page end -->
                 </nav>
-                <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
+                {{-- <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
                     <!-- F Widget Newsletter of the Page -->
                     <div class="f-widget-newsletter f-widget-news-custome">
                         <h3 class="f-widget-heading f-widget-heading-sub" style="line-height:0px">Subscribe</h3>
@@ -185,12 +185,12 @@
 
                             </form>
                         </div>
-                        {{-- <p class="text-red">
+                        <p class="text-red">
                             Hello, we are Lift Media. Our goal is to translate the positive effects from
                             revolutionizing how companies engage with their clients & their team.
-                        </p> --}}
+                        </p>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
