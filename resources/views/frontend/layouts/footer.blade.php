@@ -20,7 +20,7 @@
                         </div>
 
                         <p>
-                            Welcome to Channel, the ultimate destination for all your gifting needs!
+                            Welcome to Channel, The Ultimate destination for all your gifting needs!
                         </p>
 
                         <ul class="list-unstyled d-flex gap-2 p-0  mt-sm-0 mt-3 d-sm-none d-block">
