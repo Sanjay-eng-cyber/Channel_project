@@ -22,18 +22,7 @@
                            <div class="navbar-collapse collapse  justify-content-between flex-row-reverse navdrop-style"
                                id="navbarSupportedContent" style="">
                                <ul class="navbar-nav d-none d-lg-flex gap-3 align-items-center">
-                                   @php
-                                       $user = auth()->user();
-                                       if ($user) {
-                                           $cart = $user->cart;
-                                       } else {
-                                           $cart_session_id = session()->get('cart_session_id');
-                                           $cart = $cart_session_id ? App\Models\Cart::where('session_id', $cart_session_id)->first() : null;
-                                       }
-                                       $cartItemsCount = $cart ? $cart->items()->count() : 0;
-                                       $navCategories = App\Models\Category::with('subCategories')->get();
-                                       //    dd($navCategories);
-                                   @endphp
+                                   
                                    <li class="nav-item text-red position-relative">
                                        <a class="nav-link fw-bold nn-top-cart"
                                            href="{{ route('frontend.cart.index') }}">

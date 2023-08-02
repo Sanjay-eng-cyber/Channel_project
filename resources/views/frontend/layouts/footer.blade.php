@@ -18,9 +18,9 @@
                                 <img src="{{ url('frontend/images/channel-logo.svg') }}" height="30"
                                     alt="Channel"></a>
                         </div>
-                        <p>Exercitation ullamco laboris nisi ut aliquip ex<br> commodo consequat. Duis aute
-                            irure</p>
-                        <ul class="list-unstyled d-flex gap-2 p-0">
+                        {{-- <p>Exercitation ullamco laboris nisi ut aliquip ex<br> commodo consequat. Duis aute
+                            irure</p> --}}
+                        <ul class="list-unstyled d-flex gap-2 p-0  mt-sm-0 mt-3">
                             <li>
                                 <i class="fas fa-map-marker-alt text-red"></i>
                             </li>
@@ -83,37 +83,15 @@
                     <h3 class="f-widget-heading text-red ct-f-heading mt-4">Categories</h3>
 
                     <div class="row row-cols-3">
-
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Skin</a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Fragrances</a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Haircare</a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Personal Care</a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Home Decore </a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">gift</a></li>
-                            </ul>
-                        </div>
+                        @foreach ($navCategories as $navCategory)
+                            <div class="col">
+                                <ul>
+                                    <li><a
+                                            href="{{ route('frontend.cat.show', $navCategory->slug) }}">{{ $navCategory->name }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
 
@@ -126,17 +104,16 @@
                     <div class="nav-widget-1 cainco-breackpoint-category">
                         <h3 class="f-widget-heading text-red ct-f-heading">Categories</h3>
                         <ul class="list-unstyled f-widget-nav">
-                            <li><a href="">Skin</a></li>
-                            <li><a href="">Fragrances</a></li>
-                            <li><a href="">Haircare</a></li>
-                            <li><a href="">Personal Care</a></li>
-                            <li><a href="">Home Decore </a></li>
-                            <li><a href="">gift</a></li>
+                            @foreach ($navCategories as $navCategory)
+                                <li><a
+                                        href="{{ route('frontend.cat.show', $navCategory->slug) }}">{{ $navCategory->name }}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <!-- Footer Nav of the Page end -->
                     <!-- Footer Nav of the Page -->
-                    <div class="nav-widget-1 cainco-breackpoint-info d-sm-block">
+                    {{-- <div class="nav-widget-1 cainco-breackpoint-info d-sm-block">
                         <h3 class="f-widget-heading info-f-heading">Information</h3>
                         <ul class="list-unstyled f-widget-nav info-f-list text-start">
                             <li class="d-block"><a href="{{ route('frontend.about') }}">FAQ</a></li>
@@ -144,7 +121,7 @@
                             <li class="d-block"><a href="">Support</a></li>
 
                         </ul>
-                    </div>
+                    </div> --}}
                     <!-- Footer Nav of the Page end -->
                     <!-- Footer Nav of the Page -->
                     <div class="nav-widget-1 cainco-breackpoint-company d-sm-block ">
@@ -208,10 +185,10 @@
 
                             </form>
                         </div>
-                        <p class="text-red">
+                        {{-- <p class="text-red">
                             Hello, we are Lift Media. Our goal is to translate the positive effects from
                             revolutionizing how companies engage with their clients & their team.
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
             </div>
@@ -233,9 +210,6 @@
                         </a>
                         <a href="{{ route('frontend.privacy-policy') }}" class="fw-bolder footer-links-hover-bottom">
                             Privacy
-                        </a>
-                        <a href="" class="fw-bolder footer-links-hover-bottom">
-                            Cookies
                         </a>
                     </ul>
 
