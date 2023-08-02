@@ -82,7 +82,7 @@
                 <div class="container category-mobile-version">
                     <h3 class="f-widget-heading text-red ct-f-heading mt-4">Categories</h3>
 
-                    <div class="row row-cols-3">
+                    <div class="row row-cols-2">
                         @foreach ($navCategories as $navCategory)
                             <div class="col">
                                 <ul>
