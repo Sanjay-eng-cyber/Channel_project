@@ -3630,6 +3630,11 @@ img.cart-p-img  {
     background: white;
 }
 
+.order-prod-thumb-img {
+    height: 160px;
+    object-fit: cover;
+}
+
 @media (min-width: 992px){
 
     .mt-product-detial .slider {
