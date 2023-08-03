@@ -47,22 +47,23 @@ class CheckoutController extends Controller
         if (!$selectedAddress) {
             return redirect()->back()->with(toast('Selected Address is Invalid', 'info'));
         }
+        // dd($selectedAddress->postal_code);
 
-        $loginDetails =  Shiprocket::login([
-            'email' => config('shiprocket.credentials.email'),
-            'password' => config('shiprocket.credentials.password')
-        ]);
-        $token =  isset($loginDetails['token']) ? $loginDetails['token'] : '';
-        // dd($loginDetails);
-        $checkServiceablity = Shiprocket::courier($token)->checkServiceability([
-            'pickup_postcode' => env('APP_POSTAL_CODE'),
-            'delivery_postcode' => $selectedAddress->postal_code
-        ]);
-        // dd($checkServiceablity);
-        if (!isset($checkServiceablity['status']) || $checkServiceablity['status']  !== 200) {
-            session()->flash('error', 'Not deliverable in this location');
-            return redirect()->back()->with(toast("Not Deliverable In Selected Address", 'info'));
-        }
+        // $loginDetails =  Shiprocket::login([
+        //     'email' => config('shiprocket.credentials.email'),
+        //     'password' => config('shiprocket.credentials.password')
+        // ]);
+        // // dd($loginDetails);
+        // $token =  isset($loginDetails['token']) ? $loginDetails['token'] : '';
+        // $checkServiceablity = Shiprocket::courier($token)->checkServiceability([
+        //     'pickup_postcode' => env('APP_POSTAL_CODE'),
+        //     'delivery_postcode' => (int)$selectedAddress->postal_code
+        // ]);
+        // // dd($checkServiceablity);
+        // if (!isset($checkServiceablity['status']) || $checkServiceablity['status']  !== 200) {
+        //     session()->flash('error', 'Not deliverable in this location');
+        //     return redirect()->back()->with(toast("Not Deliverable In Selected Address", 'info'));
+        // }
 
         $cartItems = $user->cart->items()->with('product')->get();
         $productsTotalAmount = 0;
