@@ -165,7 +165,7 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.contact-us');
     })->name('frontend.contact-us');
 
-    Route::post('contact', 'App\Http\Controllers\frontend\ContactController@submit')->name('frontend.contact.submit');
+    Route::post('contact', 'App\Http\Controllers\frontend\ContactUsController@submit')->name('frontend.contact.submit');
 
     Route::get('/payment', function () {
         return view('frontend.payment');

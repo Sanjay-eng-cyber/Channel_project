@@ -65,16 +65,47 @@
                                         @csrf
                                         <div class="px-3 ">
                                             <div class="form-group">
+                                                <label for="exampleFormControlInput1">Name </label>
+                                                <input type="text" class="form-control mt-2"
+                                                    id="exampleFormControlInput1" placeholder="Enter Your Name"
+                                                    name="name" minlength="3" maxlength="30" value="{{old('name')}}" required>
+                                                @if ($errors->has('name'))
+                                                    <div class="text-danger" role="alert">
+                                                        {{ $errors->first('name') }}
+                                                    </div>
+                                                @endif
+                                            </div>
+                                            <div class="form-group mt-3">
                                                 <label for="exampleFormControlInput1">Email </label>
                                                 <input type="email" class="form-control mt-2"
                                                     id="exampleFormControlInput1" placeholder="Enter Your Email"
-                                                    name="email" required>
+                                                    name="email" minlength="5" maxlength="40" value="{{old('email')}}" required>
+                                                @if ($errors->has('email'))
+                                                    <div class="text-danger" role="alert">
+                                                        {{ $errors->first('email') }}
+                                                    </div>
+                                                @endif
                                             </div>
-
+                                            <div class="form-group mt-3">
+                                                <label for="exampleFormControlInput1">Phone No. </label>
+                                                <input type="text" class="form-control mt-2"
+                                                    id="exampleFormControlInput1" placeholder="Enter Your Phone No."
+                                                    name="phone" minlength="10" maxlength="10" value="{{old('phone')}}" required>
+                                                @if ($errors->has('phone'))
+                                                    <div class="text-danger" role="alert">
+                                                        {{ $errors->first('phone') }}
+                                                    </div>
+                                                @endif
+                                            </div>
                                             <div class="form-group mt-3">
                                                 <label for="exampleFormControlTextarea1">Message</label>
                                                 <textarea class="form-control mt-2" id="exampleFormControlTextarea1" rows="3" placeholder="Write Your Message"
-                                                    name="message" required></textarea>
+                                                    name="message" minlength="5" maxlength="250" required>{{old('message')}}</textarea>
+                                                @if ($errors->has('message'))
+                                                    <div class="text-danger" role="alert">
+                                                        {{ $errors->first('message') }}
+                                                    </div>
+                                                @endif
                                             </div>
 
                                         </div>
