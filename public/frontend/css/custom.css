@@ -1,3 +1,5 @@
+
+
 .dropdown-menu {
     top: 2.9em;
     left: 50%;
@@ -3657,3 +3659,32 @@ img.cart-p-img  {
     }
 }
 
+
+
+.isolation-contact{
+    isolation: isolate;   
+   }
+   
+   .contact-border .contact-img {
+       background: url('/frontend/images/banner/contact-bg-new1.png') !important;
+       background-repeat: no-repeat !important;
+       background-size: cover !important;
+       border-radius: 10px;
+   
+   }
+   .circle-first-contact{
+       width: 200px;
+       position: absolute;
+       transform: rotate(0deg);
+       bottom: -23px;
+       right: -7em;
+   }
+   
+   .circle-second-contact{
+       position: absolute;
+       right: -114px;
+       bottom: -32px;
+       width: 112px;
+   
+   }
+   
