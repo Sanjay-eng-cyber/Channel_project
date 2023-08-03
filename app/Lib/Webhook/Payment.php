@@ -57,13 +57,6 @@ class Payment extends Webhook
                 $payload['order_id'] = $payloadOrderId;
             }
 
-            $delivery = Delivery::updateOrCreate([
-                'order_id' => $order->id,
-                'user_id' => $order->user_id,
-                'status' => 'Pending',
-            ]);
-            $delivery->sendOrderToShiprocketApi();
-
             self::createInvoice([
                 'invoice_id' => $payload['invoice_id'],
                 'user_id' => $order->user_id,
