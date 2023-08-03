@@ -15,6 +15,20 @@
 <body>
     <div id="wrapper">
         <div class="w1">
+
+            @php
+                $user = auth()->user();
+                if ($user) {
+                    $cart = $user->cart;
+                } else {
+                    $cart_session_id = session()->get('cart_session_id');
+                    $cart = $cart_session_id ? App\Models\Cart::where('session_id', $cart_session_id)->first() : null;
+                }
+                $cartItemsCount = $cart ? $cart->items()->count() : 0;
+                $navCategories = App\Models\Category::with('subCategories')->get();
+                //    dd($navCategories);
+            @endphp
+
             @include('frontend.layouts.nav')
             <main id="mt-main">
                 @yield('content')

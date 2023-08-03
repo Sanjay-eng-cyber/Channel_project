@@ -28,23 +28,19 @@ class CategoryController extends Controller
 
     protected function filterResults($request, $products)
     {
-        if ($request->q !== '' && !is_null($request->q)) {
-            if (is_numeric($request->q)) {
-                $request->validate(['q' => 'digits_between:1,40'], ['q.*' => 'Please enter proper Number']);
-            } else {
-                $request->validate(['q' => 'min:3']);
+
+        if ($request !== null && $request->has('sort_by')) {
+            if ($request['sort_by'] == 'low_to_high') {
+                $products = $products->orderBy('mrp', 'asc');
+            } elseif ($request['sort_by'] == 'high_to_low') {
+                $products = $products->orderBy('mrp', 'desc');
+            } elseif ($request['sort_by'] == 'featured') {
+                $products = $products->whereHas('showcases', function ($query) {
+                    $query->where('name', 'Featured');
+                });
             }
         }
-        if ($request !== null && $request->has('q') && $request['q'] == 'low_to_high') {
-            // dd('kddfk');
-            $products = $products->orderBy('mrp', 'asc');
-            //dd($products);
-        }
-        //dd($request->q);
-        if ($request !== null && $request->has('q') && $request['q'] == 'high_to_low') {
-            $products = $products->orderBy('mrp', 'desc');
-            //dd($products);
-        }
+
         return $products;
     }
 }

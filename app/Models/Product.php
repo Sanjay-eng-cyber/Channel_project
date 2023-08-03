@@ -36,6 +36,11 @@ class Product extends Model
         return $this->hasMany(ShowcaseProduct::class);
     }
 
+    public function showcases()
+    {
+        return $this->belongsToMany(Showcase::class, 'showcase_products');
+    }
+
     public function ProductAttribute()
     {
         return $this->hasMany(ProductAttribute::class);

@@ -10,7 +10,7 @@
     <div class="footer-holder dark mt-paddingbottomxs-hide-holder ">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12  col-md-12 col-lg-4 col-xl-4 mt-paddingbottomxs footer-first-order">
+                <div class="col-xs-12  col-md-12 col-lg-3 col-xl-3 mt-paddingbottomxs footer-first-order">
                     <!-- F Widget About of the Page -->
                     <div class="f-widget-about">
                         <div class="logo pt-md-0 pt-3 ">
@@ -18,9 +18,209 @@
                                 <img src="{{ url('frontend/images/channel-logo.svg') }}" height="30"
                                     alt="Channel"></a>
                         </div>
-                        <p>Exercitation ullamco laboris nisi ut aliquip ex<br> commodo consequat. Duis aute
-                            irure</p>
-                        <ul class="list-unstyled d-flex gap-2 p-0">
+
+                        <p>
+                            {{-- Welcome to Channel, The Ultimate destination for all your gifting needs! --}}
+                            "Discover your natural radiance with<br/>
+                            our range of luxuriousand innovative<br/>
+                            beauty products, expertly crafted<br/>
+                            with the finest ingredients to nourish,<br/>
+                            hydrate and revitalize your skin."
+                        </p>
+
+                        <ul class="list-unstyled d-flex gap-2 p-0  mt-sm-0 mt-3 d-sm-none d-block">
+                            <li>
+                                <i class="fas fa-map-marker-alt text-red"></i>
+                            </li>
+                            <li>
+                                Shop No. 5 & 6, Sunview Apartment, Tilak Nagar, Chembur (West), Mumbai - 400089.
+                            </li>
+                        </ul>
+                        {{-- <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
+                            <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
+                                <i class="fas fa-clock  text-red"></i>
+                                <span>Mon-Sat 10:00am to 6.00pm</span>
+                            </li>
+                        </ul> --}}
+
+
+                        {{-- <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
+                            <li>
+                                <i class="fas fa-phone  text-red"></i>
+                            </li>
+                            <li>
+                                <a href="tel:+917710062724" class="footer-info">+91-7710062724</a>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled  gap-2 p-0 contact-pc-version">
+                            <li>
+                                <i class="fas fa-envelope  text-red"></i>
+                            </li>
+                            <li>
+                                <a href="mailto:channeltheshop@yahoo.co.in "
+                                    class="footer-info">channeltheshop@yahoo.co.in </a>
+                            </li>
+
+                        </ul> --}}
+
+                        <ul class="list-unstyled contact-mobile-version d-sm-none d-block">
+                            {{-- <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
+                                <i class="fas fa-clock  text-red"></i>
+                                <span>Mon-Sat 10:00am to 6.00pm</span>
+                            </li> --}}
+                            <li class="gap-2 d-flex align-items-center mt-sm-0 mt-3">
+                                <i class="fas fa-phone  text-red"></i>
+                                <a href="tel:+917710062724" class="footer-links-hover">+91-7710062724</a>
+                            </li>
+
+                            <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
+                                <i class="fas fa-envelope  text-red"></i>
+                                <a href="mailto:channeltheshop@yahoo.co.in ">channeltheshop@yahoo.co.in </a>
+                            </li>
+
+
+
+                        </ul>
+
+
+
+                    </div>
+                    <!-- F Widget About of the Page -->
+                </div>
+
+
+                <div class="container category-mobile-version">
+                    <h3 class="f-widget-heading text-red ct-f-heading mt-4 font-body">Categories</h3>
+
+                    <div class="row row-cols-2">
+                        @foreach ($navCategories as $navCategory)
+                            <div class="col">
+                                <ul>
+                                    <li><a
+                                            href="{{ route('frontend.cat.show', $navCategory->slug) }}">{{ $navCategory->name }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+
+                <nav
+                    class="col-xs-12 mt-xl-0 mt-md-2 px-4 justify-content-start col-md-12 col-lg-3 col-xl-3 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
+
+
+                    <!-- Footer Nav of the Page -->
+                    <div class="nav-widget-1 cainco-breackpoint-category" style="width:100%">
+                        <h3 class="f-widget-heading text-red ct-f-heading font-body">Categories</h3>
+                        <ul class="list-unstyled f-widget-nav">
+                            @foreach ($navCategories as $navCategory)
+                                <li><a
+                                        href="{{ route('frontend.cat.show', $navCategory->slug) }}">{{ $navCategory->name }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <!-- Footer Nav of the Page end -->
+                    <!-- Footer Nav of the Page -->
+                    {{-- <div class="nav-widget-1 cainco-breackpoint-info d-sm-block">
+                        <h3 class="f-widget-heading info-f-heading">Information</h3>
+                        <ul class="list-unstyled f-widget-nav info-f-list text-start">
+                            <li class="d-block"><a href="{{ route('frontend.about') }}">FAQ</a></li>
+                            <li class="d-block"><a href="{{ route('frontend.contact-us') }}">BLOG</a></li>
+                            <li class="d-block"><a href="">Support</a></li>
+
+                        </ul>
+                    </div> --}}
+                    <!-- Footer Nav of the Page end -->
+                    <!-- Footer Nav of the Page -->
+
+
+
+                    <!-- Footer Nav of the Page end -->
+                </nav>
+                {{-- <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
+                    <!-- F Widget Newsletter of the Page -->
+                    <div class="f-widget-newsletter f-widget-news-custome">
+                        <h3 class="f-widget-heading f-widget-heading-sub" style="line-height:0px">Subscribe</h3>
+                        <div class="holder">
+                            <form class="newsletter-form form2" action="#" style="padding:6px">
+
+                                <input type="email" class="form-control" placeholder="Your e-mail"
+                                    style="border-radius:0px">
+                                <button type="submit">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+
+                            </form>
+                        </div>
+                        <p class="text-red">
+                            Hello, we are Lift Media. Our goal is to translate the positive effects from
+                            revolutionizing how companies engage with their clients & their team.
+                        </p>
+                    </div>
+                </div> --}}
+
+                <div class="col-xs-12 mt-xl-0 mt-md-2 px-4 justify-content-start col-md-12 col-lg-3 col-xl-3 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
+
+                    <div class="container category-mobile-version d-none">
+                        <h3 class="f-widget-heading text-red ct-f-heading mt-4 font-body">Company</h3>
+
+                        <div class="row row-cols-3">
+
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{ route('frontend.about') }}">About Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{ route('frontend.returns-and-refunds-policy') }}">Returns & Refunds
+                                            Policy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{ route('frontend.shipping-policy') }}">Shipping Policy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="{{ route('frontend.contact-us') }}">Contact Us</a></li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="nav-widget-1 cainco-breackpoint-company d-sm-block " style="width: 100%">
+                        <h3 class="f-widget-heading c-f-heading font-body">Company</h3>
+                        <ul class="list-unstyled f-widget-nav  c-f-list">
+                            <li><a href="{{ route('frontend.about') }}">About Us</a></li>
+                            <li><a href="{{ route('frontend.returns-and-refunds-policy') }}">Returns & Refunds Policy</a></li>
+                            <li><a href="{{ route('frontend.shipping-policy') }}">Shipping Policy</a></li>
+                            <li><a href="{{ route('frontend.contact-us') }}">Contact Us</a></li>
+                            <li class="d-none d-sm-block"><a href="{{ route('frontend.terms-and-conditions') }}">Terms</a></li>
+                            <li class="d-none d-sm-block"><a href="{{ route('frontend.privacy-policy') }}">Privacy</a></li>
+
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+
+
+                <div class="col-xs-12  col-md-12 col-lg-3 col-xl-3 mt-paddingbottomxs footer-first-order d-none d-sm-block">
+                    <div class="f-widget-about">
+
+                        <h3 class="f-widget-heading c-f-heading font-body">Contact Us</h3>
+
+
+                        <ul class="list-unstyled d-flex gap-2 p-0  mt-sm-0 mt-3">
                             <li>
                                 <i class="fas fa-map-marker-alt text-red"></i>
                             </li>
@@ -72,148 +272,42 @@
 
                         </ul>
 
+                        <div class="footer-lifinsta d-none d-sm-flex justify-content-start">
+                            <ul class="gap-2 gap-sm-4 footer-lifinsta-ul p-0">
+                                <li class="footer-lifinsta-tag-1">
+                                    <a href="https://www.linkedin.com/" class="social-icons">
+                                        <i class="fa-brands fa-linkedin-in text-red"></i>
+                                    </a>
+                                </li>
 
+                                <li class="footer-lifinsta-tag-2">
 
-                    </div>
-                    <!-- F Widget About of the Page -->
-                </div>
+                                    <a href="https://www.linkedin.com/" class="social-icons">
+                                        <i class="fa-brands fa-facebook-f text-red"></i>
+                                    </a>
+                                </li>
 
+                                <li class="footer-lifinsta-tag-3">
 
-                <div class="container category-mobile-version">
-                    <h3 class="f-widget-heading text-red ct-f-heading mt-4">Categories</h3>
+                                    <a href="https://www.linkedin.com/" class="social-icons">
+                                        <i class="fa-brands fa-twitter text-red"></i>
+                                    </a>
+                                </li>
 
-                    <div class="row row-cols-3">
-
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Skin</a></li>
                             </ul>
                         </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Fragrances</a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Haircare</a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Personal Care</a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">Home Decore </a></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul>
-                                <li><a href="">gift</a></li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
 
 
-                <nav
-                    class="col-xs-12 mt-xl-0 mt-md-2 px-4 justify-content-start col-md-12 col-lg-5 col-xl-5 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
 
 
-                    <!-- Footer Nav of the Page -->
-                    <div class="nav-widget-1 cainco-breackpoint-category">
-                        <h3 class="f-widget-heading text-red ct-f-heading">Categories</h3>
-                        <ul class="list-unstyled f-widget-nav">
-                            <li><a href="">Skin</a></li>
-                            <li><a href="">Fragrances</a></li>
-                            <li><a href="">Haircare</a></li>
-                            <li><a href="">Personal Care</a></li>
-                            <li><a href="">Home Decore </a></li>
-                            <li><a href="">gift</a></li>
-                        </ul>
-                    </div>
-                    <!-- Footer Nav of the Page end -->
-                    <!-- Footer Nav of the Page -->
-                    <div class="nav-widget-1 cainco-breackpoint-info d-sm-block">
-                        <h3 class="f-widget-heading info-f-heading">Information</h3>
-                        <ul class="list-unstyled f-widget-nav info-f-list text-start">
-                            <li class="d-block"><a href="{{ route('frontend.about') }}">FAQ</a></li>
-                            <li class="d-block"><a href="{{ route('frontend.contact-us') }}">BLOG</a></li>
-                            <li class="d-block"><a href="">Support</a></li>
-
-                        </ul>
-                    </div>
-                    <!-- Footer Nav of the Page end -->
-                    <!-- Footer Nav of the Page -->
-                    <div class="nav-widget-1 cainco-breackpoint-company d-sm-block ">
-                        <h3 class="f-widget-heading c-f-heading">Company</h3>
-                        <ul class="list-unstyled f-widget-nav  c-f-list">
-                            <li><a href="{{ route('frontend.about') }}">About Us</a></li>
-                            <li><a href="{{ route('frontend.returns-and-refunds-policy') }}">Returns & Refunds
-                                    Policy</a></li>
-
-                            <li><a href="{{ route('frontend.shipping-policy') }}">Shipping Policy</a></li>
-                            <li><a href="{{ route('frontend.contact-us') }}">Contact Us</a></li>
 
 
-                        </ul>
-                    </div>
-
-                    <div class="container category-mobile-version d-none">
-                        <h3 class="f-widget-heading text-red ct-f-heading mt-4">Company</h3>
-
-                        <div class="row row-cols-3">
-
-                            <div class="col">
-                                <ul>
-                                    <li><a href="{{ route('frontend.about') }}">About Us</a></li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <ul>
-                                    <li><a href="{{ route('frontend.returns-and-refunds-policy') }}">Returns & Refunds
-                                            Policy</a></li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <ul>
-                                    <li><a href="{{ route('frontend.shipping-policy') }}">Shipping Policy</a></li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <ul>
-                                    <li><a href="{{ route('frontend.contact-us') }}">Contact Us</a></li>
-                                </ul>
-                            </div>
 
 
-                        </div>
-                    </div>
-                    <!-- Footer Nav of the Page end -->
-                </nav>
-                <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 text-right footer-second-order">
-                    <!-- F Widget Newsletter of the Page -->
-                    <div class="f-widget-newsletter f-widget-news-custome">
-                        <h3 class="f-widget-heading f-widget-heading-sub" style="line-height:0px">Subscribe</h3>
-                        <div class="holder">
-                            <form class="newsletter-form form2" action="#" style="padding:6px">
 
-                                <input type="email" class="form-control" placeholder="Your e-mail"
-                                    style="border-radius:0px">
-                                <button type="submit">
-                                    <i class="fas fa-arrow-right"></i>
-                                </button>
-
-                            </form>
-                        </div>
-                        <p class="text-red">
-                            Hello, we are Lift Media. Our goal is to translate the positive effects from
-                            revolutionizing how companies engage with their clients & their team.
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -226,7 +320,7 @@
         <div class="container py-4">
             <div class="row">
                 <div class="col-6 col-sm-7 footer-tpc">
-                    <ul class="gap-2 gap-sm-4  p-0  footer-tpc-ul">
+                    <ul class="gap-3 gap-sm-4  p-0  footer-tpc-ul d-flex d-sm-none">
                         <a href="{{ route('frontend.terms-and-conditions') }}"
                             class="fw-bolder footer-links-hover-bottom">
                             Terms
@@ -234,14 +328,11 @@
                         <a href="{{ route('frontend.privacy-policy') }}" class="fw-bolder footer-links-hover-bottom">
                             Privacy
                         </a>
-                        <a href="" class="fw-bolder footer-links-hover-bottom">
-                            Cookies
-                        </a>
                     </ul>
 
                 </div>
 
-                <div class="col-5 col-sm-5 footer-lifinsta">
+                <div class="col-5 col-sm-5 footer-lifinsta d-flex d-sm-none justify-content-end">
                     <ul class="gap-2 gap-sm-4 footer-lifinsta-ul">
                         <li class="footer-lifinsta-tag-1">
                             <a href="https://www.linkedin.com/" class="social-icons">

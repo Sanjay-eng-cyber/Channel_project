@@ -124,10 +124,6 @@
     font-family: "Judson", serif !important;
 }
 
-.font-body {
-    font-family: "Poppins", sans-serif !important;
-}
-
 h1,
 h2,
 h3,
@@ -135,6 +131,10 @@ h4,
 h5,
 h6 {
     font-family: "Judson", serif;
+}
+
+.font-body {
+    font-family: "Poppins", sans-serif !important;
 }
 
 a {
@@ -537,6 +537,19 @@ a:hover {
 .product-show-grid .product-show-grid-card {
     padding: 1em;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.product-show-grid .product-show-grid-card .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-show-grid .product-show-grid-card .card-title{
+    max-height: 2.5em;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .product-show-grid .product-show-grid-card:hover {
@@ -552,9 +565,7 @@ a:hover {
     margin-bottom: 1em;
 }
 
-.product-show-grid .product-show-grid-card .card-title {
-    margin-bottom: 0.7em;
-}
+
 
 .product-show-grid .product-show-grid-card .price {
     margin-bottom: 0.7em;
@@ -2341,7 +2352,7 @@ a:hover {
 
     .footer-absolute-img2 {
         position: absolute;
-        bottom: 38%;
+        bottom: 52%;
         right: -7px;
         transform: translate(-50%, -50%);
         width: 100px;
@@ -3628,6 +3639,11 @@ img.cart-p-img  {
     width: 100px;
     object-fit: contain;
     background: white;
+}
+
+.order-prod-thumb-img {
+    height: 160px;
+    object-fit: cover;
 }
 
 @media (min-width: 992px){
