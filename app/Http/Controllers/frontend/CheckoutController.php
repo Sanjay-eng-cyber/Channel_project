@@ -10,6 +10,8 @@ use App\Models\CouponUsage;
 use Illuminate\Http\Request;
 use App\Traits\Transactional;
 use App\Lib\Razorpay\Razorpay;
+use Seshac\Shiprocket\Shiprocket;
+use App\Services\DelhiveryService;
 use App\Http\Controllers\Controller;
 
 class CheckoutController extends Controller
@@ -38,12 +40,28 @@ class CheckoutController extends Controller
 
     public function showPaymentPage(Request $request, Razorpay $api)
     {
-        return redirect()->back()->with(toast('Work in Progress', 'info'));
+        // return redirect()->back()->with(toast('Work in Progress', 'info'));
         $user = auth()->user();
         $productsArray = null;
         $selectedAddress = $user->userAddresses()->find($request->address);
         if (!$selectedAddress) {
             return redirect()->back()->with(toast('Selected Address is Invalid', 'info'));
+        }
+
+        $loginDetails =  Shiprocket::login([
+            'email' => config('shiprocket.credentials.email'),
+            'password' => config('shiprocket.credentials.password')
+        ]);
+        $token =  isset($loginDetails['token']) ? $loginDetails['token'] : '';
+        // dd($loginDetails);
+        $checkServiceablity = Shiprocket::courier($token)->checkServiceability([
+            'pickup_postcode' => env('APP_POSTAL_CODE'),
+            'delivery_postcode' => $selectedAddress->postal_code
+        ]);
+        // dd($checkServiceablity);
+        if (!isset($checkServiceablity['status']) || $checkServiceablity['status']  !== 200) {
+            session()->flash('error', 'Not deliverable in this location');
+            return redirect()->back()->with(toast("Not Deliverable In Selected Address", 'info'));
         }
 
         $cartItems = $user->cart->items()->with('product')->get();
@@ -66,12 +84,12 @@ class CheckoutController extends Controller
     public function handleCallback(Request $request)
     {
         $order = Order::where('api_order_id', $request->razorpay_order_id)->first();
-        if(session()->has('coupon')){
-            $coupon=session('coupon');
-            $coupon_usage=new CouponUsage;
-            $coupon_usage->coupon_id=$coupon->id;
-            $coupon_usage->order_id=$order->id;
-            $coupon_usage->user_id=$order->user_id;
+        if (session()->has('coupon')) {
+            $coupon = session('coupon');
+            $coupon_usage = new CouponUsage;
+            $coupon_usage->coupon_id = $coupon->id;
+            $coupon_usage->order_id = $order->id;
+            $coupon_usage->user_id = $order->user_id;
             $coupon_usage->save();
             session()->forget('coupon');
             session()->forget('discount');

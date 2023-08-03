@@ -167,3 +167,14 @@ if (!function_exists('replaceBracket')) {
         return $s;
     }
 }
+
+/**
+ *  Generate 8 character random string
+ */
+
+if (!function_exists('struniq')) {
+    function struniq()
+    {
+        return substr(uniqid(), 11) . rand(10, 99) . substr(strtotime(now()), 6);
+    }
+}
