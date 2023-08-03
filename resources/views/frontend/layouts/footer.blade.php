@@ -20,7 +20,12 @@
                         </div>
 
                         <p>
-                            Welcome to Channel, The Ultimate destination for all your gifting needs!
+                            {{-- Welcome to Channel, The Ultimate destination for all your gifting needs! --}}
+                            "Discover your natural radiance with<br/>
+                            our range of luxuriousand innovative<br/>
+                            beauty products, expertly crafted<br/>
+                            with the finest ingredients to nourish,<br/>
+                            hydrate and revitalize your skin."
                         </p>
 
                         <ul class="list-unstyled d-flex gap-2 p-0  mt-sm-0 mt-3 d-sm-none d-block">
@@ -85,7 +90,7 @@
 
 
                 <div class="container category-mobile-version">
-                    <h3 class="f-widget-heading text-red ct-f-heading mt-4">Categories</h3>
+                    <h3 class="f-widget-heading text-red ct-f-heading mt-4 font-body">Categories</h3>
 
                     <div class="row row-cols-2">
                         @foreach ($navCategories as $navCategory)
@@ -107,7 +112,7 @@
 
                     <!-- Footer Nav of the Page -->
                     <div class="nav-widget-1 cainco-breackpoint-category" style="width:100%">
-                        <h3 class="f-widget-heading text-red ct-f-heading">Categories</h3>
+                        <h3 class="f-widget-heading text-red ct-f-heading font-body">Categories</h3>
                         <ul class="list-unstyled f-widget-nav">
                             @foreach ($navCategories as $navCategory)
                                 <li><a
@@ -159,7 +164,7 @@
                 <div class="col-xs-12 mt-xl-0 mt-md-2 px-4 justify-content-start col-md-12 col-lg-3 col-xl-3 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
 
                     <div class="container category-mobile-version d-none">
-                        <h3 class="f-widget-heading text-red ct-f-heading mt-4">Company</h3>
+                        <h3 class="f-widget-heading text-red ct-f-heading mt-4 font-body">Company</h3>
 
                         <div class="row row-cols-3">
 
@@ -190,7 +195,7 @@
                     </div>
 
                     <div class="nav-widget-1 cainco-breackpoint-company d-sm-block " style="width: 100%">
-                        <h3 class="f-widget-heading c-f-heading">Company</h3>
+                        <h3 class="f-widget-heading c-f-heading font-body">Company</h3>
                         <ul class="list-unstyled f-widget-nav  c-f-list">
                             <li><a href="{{ route('frontend.about') }}">About Us</a></li>
                             <li><a href="{{ route('frontend.returns-and-refunds-policy') }}">Returns & Refunds Policy</a></li>
@@ -212,7 +217,7 @@
                 <div class="col-xs-12  col-md-12 col-lg-3 col-xl-3 mt-paddingbottomxs footer-first-order d-none d-sm-block">
                     <div class="f-widget-about">
 
-                        <h3 class="f-widget-heading c-f-heading">Contact Us</h3>
+                        <h3 class="f-widget-heading c-f-heading font-body">Contact Us</h3>
 
 
                         <ul class="list-unstyled d-flex gap-2 p-0  mt-sm-0 mt-3">
