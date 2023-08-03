@@ -1,23 +1,6 @@
 @extends('frontend.layouts.app')
 @section('title', 'Cart |')
 @section('cdn')
-
-    <style>
-        /* @media screen and (max-width:768px) {
-                                                                                                                                                                                        .__cart-ui-img-in {
-                                                                                                                                                                                            padding-right: 28px;
-                                                                                                                                                                                        }
-                                                                                                                                                                                    }
-
-                                                                                                                                                                                    @media screen and (max-width: 480px) {
-                                                                                                                                                                                        .__cart-ui-card .__cart-ui-close-btn {
-                                                                                                                                                                                            position: absolute;
-                                                                                                                                                                                            top: -13px;
-                                                                                                                                                                                            padding: 15px;
-                                                                                                                                                                                            right: -86%;
-                                                                                                                                                                                        }
-                                                                                                                                                                                    } */
-    </style>
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
@@ -41,7 +24,6 @@
                 <h5 class="h5 main-head text-center text-red my-3">Cart</h5>
                 <div class="row d-flex flex-md-row">
                     <div class="col-md-8 col-lg-9 __cart-ui-f">
-
                         <div class="row d-flex justify-content-center justify-content-lg-end __cart-ui-nav">
                             <div class="col-sm-12 px-0">
                                 <div
@@ -104,13 +86,6 @@
                             </div>
 
                         </div>
-
-                        {{-- <div class="pagination d-flex justify-content-center py-2">
-                        <ul class="pagination text-center">
-                            {{ $cartItems->appends(Request::all())->links('pagination::bootstrap-4') }}
-                        </ul>
-                    </div> --}}
-
                     </div>
                     <div class="col-md-4 col-lg-3">
                         <div class="padding-order-summary">
@@ -133,6 +108,7 @@
 
                     </div>
                 </div>
+            </div>
         </section>
         {{-- @else --}}
         <div v-if="cartItems.length == 0">
@@ -283,7 +259,6 @@
             },
             async created() {
                 this.getCartItems();
-                console.log('created') // 30
             }
         }).mount('#cart_div')
     </script>
