@@ -68,7 +68,7 @@
                                     class="col-sm-12  col-md-12 col-lg-12 col-xl-3 py-3 py-xl-0 py-xxl-0  my-order-main-in-btn gap-2">
                                     {{-- <a href="http://" class="arriving-or-btn">Arriving Wednesday</a> --}}
                                     <button type="button" class="btn  add-orderDetails-btn">
-                                        <a href="http://">
+                                        <a href="{{route('frontend.order.show',$order->id)}}">
                                             Order Details
                                         </a>
                                     </button>
