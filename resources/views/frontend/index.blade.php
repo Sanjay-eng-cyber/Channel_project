@@ -91,8 +91,8 @@
 
                 <div class="slider-container">
 
-                    @if ($leftSliders->count())
-                        <div class="frontend-top-slider">
+                    <div class="frontend-top-slider">
+                        @if ($leftSliders->count())
                             @forelse ($leftSliders as $leftslider)
                                 <div class="slide min-height-500px">
                                     <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}"
@@ -110,9 +110,45 @@
                                 </div>
                             @empty
                             @endforelse
-                        </div>
+                        @endif
+                        @if ($middleSlider)
+                            <div class="slide min-height-500px">
+                                <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}"
+                                    class="img-fluid min-height-500px" alt="image description " style="">
+                                <div class="slide-content">
+                                    <div class="slide-content-desc">
+                                        <h3 class="">{{ $middleSlider->title }}</h3>
+                                        <p class="">{{ $middleSlider->descriptions }} </p>
+                                        <a class="d-flex gap-2 justify-content-center " href="{{ $middleSlider->link }}">
+                                            <span class="group-card-shop-btn ">Shop Now</span>
+                                            <i class="fa fa-angle-right group-button-arrow"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        @if ($rightSliders->count())
+                            @forelse ($rightSliders as $rightSlider)
+                                <div class="slide min-height-500px">
+                                    <img src="{{ asset('storage/images/sliders/' . $rightSlider->image) }}"
+                                        class="img-fluid min-height-500px" alt="image description " style="">
+                                    <div class="slide-content">
+                                        <div class="slide-content-desc">
+                                            <h3 class="">{{ $rightSlider->title }}</h3>
+                                            <p class="">{{ $rightSlider->descriptions }} </p>
+                                            <a class="d-flex gap-2 justify-content-center " href="{{ $rightSlider->link }}">
+                                                <span class="group-card-shop-btn ">Shop Now</span>
+                                                <i class="fa fa-angle-right group-button-arrow"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @empty
+                            @endforelse
+                        @endif
 
-                    @endif
+                    </div>
+
 
                 </div>
 
