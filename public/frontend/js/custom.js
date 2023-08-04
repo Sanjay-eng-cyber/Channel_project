@@ -213,17 +213,41 @@ $('.rise-up-slider').slick({
     }
     ]
 });
-window.onload = function () {
-    $('.frontend-top-slider').slick({
-        autoplay: true,
-        autoplaySpeed: 3000,
-        arrows: false,
-        centerMode: false,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        gap: 0,
-    });
-};
+
+// window.onload = function () {
+//     $('.frontend-top-slider').slick({
+//         autoplay: true,
+//         autoplaySpeed: 3000,
+//         arrows: false,
+//         centerMode: false,
+//         slidesToShow: 2,
+//         slidesToScroll: 1,
+//         gap: 0,
+//     });
+// };
+
+// $(document).ready(function () {
+//     $('.frontend-top-slider').slick({
+//       autoplay: true,
+//       autoplaySpeed: 3000,
+//       arrows: true,
+//       centerMode: false,
+//       slidesToShow: 2,
+//       slidesToScroll: 1,
+//       gap: 0,
+//     });
+//   });
+
+
+$('.frontend-top-slider').slick({
+    autoplay: true,
+    autoplaySpeed: 2500, // Adjust the speed as needed
+    arrows: true,
+    prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+    nextArrow: '<button type="button" class="slick-next">Next</button>',
+    slidesToShow: 1,
+    slidesToScroll: 1,
+});
 
 document.querySelectorAll('.toggle-display-trigger-by-id').forEach(function(el) {
     el.addEventListener('click', function(e) {

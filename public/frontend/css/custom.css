@@ -3687,4 +3687,14 @@ img.cart-p-img  {
        width: 112px;
    
    }
-   
+   .slider-container
+   .slick-prev:before,
+   .slick-next:before {
+     font-family: 'slick';
+     font-size: 65px;
+     line-height: 1;
+     opacity: 1;
+     color: #fff;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+   }

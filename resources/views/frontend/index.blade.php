@@ -88,29 +88,34 @@
                 </div>
             </div>
             <div class="d-block d-md-none">
-                @if ($leftSliders->count())
 
-                    <div class="frontend-top-slider">
-                        @forelse ($leftSliders as $leftslider)
-                            <div class="slide min-height-500px">
-                                <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}"
-                                    class="img-fluid min-height-500px" alt="image description " style="">
-                                <div class="slide-content">
-                                    <div class="slide-content-desc">
-                                        <h3 class="">{{ $leftslider->title }}</h3>
-                                        <p class="">{{ $leftslider->descriptions }} </p>
-                                        <a class="d-flex gap-2 justify-content-center " href="{{ $leftslider->link }}">
-                                            <span class="group-card-shop-btn ">Shop Now</span>
-                                            <i class="fa fa-angle-right group-button-arrow"></i>
-                                        </a>
+                <div class="slider-container">
+
+                    @if ($leftSliders->count())
+                        <div class="frontend-top-slider">
+                            @forelse ($leftSliders as $leftslider)
+                                <div class="slide min-height-500px">
+                                    <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}"
+                                        class="img-fluid min-height-500px" alt="image description " style="">
+                                    <div class="slide-content">
+                                        <div class="slide-content-desc">
+                                            <h3 class="">{{ $leftslider->title }}</h3>
+                                            <p class="">{{ $leftslider->descriptions }} </p>
+                                            <a class="d-flex gap-2 justify-content-center " href="{{ $leftslider->link }}">
+                                                <span class="group-card-shop-btn ">Shop Now</span>
+                                                <i class="fa fa-angle-right group-button-arrow"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @empty
-                        @endforelse
-                    </div>
+                            @empty
+                            @endforelse
+                        </div>
 
-                @endif
+                    @endif
+
+                </div>
+
             </div>
         </div>
     </section>
