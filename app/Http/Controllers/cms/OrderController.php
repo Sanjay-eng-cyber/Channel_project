@@ -19,7 +19,8 @@ class OrderController extends Controller
     public function orderItems($id)
     {
         $order = Order::findOrFail($id);
-        $order_items = $order->items()->latest()->paginate(10);
+        $order_items = $order->items()->with('product')->latest()->paginate(10);
+        // dd($order_items);
         return view('backend.order.order_items', compact('order', 'order_items'));
     }
 
@@ -42,7 +43,7 @@ class OrderController extends Controller
     public function show($id)
     {
         $order = Order::findOrFail($id);
-        $transaction = $order->transactions()->where('status', 'completed')->orderBy('status', 'asc')->first();
+        $transaction = $order->transactions()->orderBy('status', 'asc')->first();
         //dd($transaction);
         return view('backend.order.show', compact('order', 'transaction'));
     }
