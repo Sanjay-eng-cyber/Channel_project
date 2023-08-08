@@ -80,7 +80,7 @@
                     </div>
 
                     <hr>
-                    <span class="h6 font-body">Order Place On: {{ dd_format($order->created_at, 'd M Y h:i a') }}
+                    <span class="h6 font-body">Order Placed On: {{ dd_format($order->created_at, 'd M Y h:i a') }}
                     </span>
                     <hr>
                     <span class="h5  font-body text-capitalize">Price Details

@@ -19,7 +19,7 @@ class OrderController extends Controller
     {
         // return $order_id;
         $user = auth()->user();
-        $order = Order::where('user_id', $user->id)->with('items')->findOrFail($order_id);
+        $order = Order::whereStatus('completed')->where('user_id', $user->id)->with('items')->findOrFail($order_id);
         // dd($order);
         return view('frontend.order.show', compact('order'));
     }

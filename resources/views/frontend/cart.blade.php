@@ -4,7 +4,9 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
+@auth
     <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
+@endauth
 
     <section class="my-1">
         <div class="container">
