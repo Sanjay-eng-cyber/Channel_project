@@ -19,6 +19,8 @@ Route::domain(config('app.web_domain'))->group(function () {
 
     Route::get('/test', function () {
 
+        // dd(getShiprocketToken());
+
         $order = App\Models\Order::latest()->first();
         // dd($order);
         $delivery = App\Models\Delivery::updateOrCreate([
