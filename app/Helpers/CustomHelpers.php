@@ -187,13 +187,7 @@ if (!function_exists('getShiprocketToken')) {
         if ($configToken) {
             $token = $configToken->value;
         } else {
-            // dd(config('shiprocket.credentials.email'),config('shiprocket.credentials.password'));
-            $loginDetails =  Seshac\Shiprocket\Shiprocket::login([
-                'email' => config('shiprocket.credentials.email'),
-                'password' => config('shiprocket.credentials.password')
-            ]);
-            // dd($loginDetails);
-            $token =  isset($loginDetails['token']) ? $loginDetails['token'] : null;
+            $token =  Seshac\Shiprocket\Shiprocket::getToken() ?? null;
             if ($token) {
                 $configToken = App\Models\ShiprocketConfig::updateOrCreate(
                     ['name' => 'token'],
