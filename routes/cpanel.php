@@ -96,6 +96,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         Route::get('orders/', 'App\Http\Controllers\cms\OrderController@index')->name('backend.order.index');
         Route::get('/order/show/{id}', 'App\Http\Controllers\cms\OrderController@show')->name("backend.order.show");
+        Route::get('/order/items/{id}', 'App\Http\Controllers\cms\OrderController@orderItems')->name("backend.order.items");
 
         Route::get('transactions/', 'App\Http\Controllers\cms\TransactionController@index')->name('backend.transaction.index');
         Route::get('/transaction/show/{id}', 'App\Http\Controllers\cms\TransactionController@show')->name("backend.transaction.show");

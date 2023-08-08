@@ -15,6 +15,14 @@ class OrderController extends Controller
         $orders = $orders->paginate(10);
         return view('backend.order.index', compact('orders'));
     }
+
+    public function orderItems($id)
+    {
+        $order = Order::findOrFail($id);
+        $order_items = $order->items()->latest()->paginate(10);
+        return view('backend.order.order_items', compact('order', 'order_items'));
+    }
+
     protected function filterResults($request, $orders)
     {
         $request->validate([
@@ -34,6 +42,8 @@ class OrderController extends Controller
     public function show($id)
     {
         $order = Order::findOrFail($id);
-        return view('backend.order.show', compact('order'));
+        $transaction = $order->transactions()->where('status', 'completed')->orderBy('status', 'asc')->first();
+        //dd($transaction);
+        return view('backend.order.show', compact('order', 'transaction'));
     }
 }

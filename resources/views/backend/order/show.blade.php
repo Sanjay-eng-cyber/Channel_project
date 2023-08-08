@@ -38,55 +38,56 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">User</label><br>
-                                                <p class="label-title">{{ $order->user->first_name }} {{ $order->user->last_name }}</p>
+                                                <p class="label-title">{{ $order->user->first_name }}
+                                                    {{ $order->user->last_name }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Order Id</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Order
+                                                    Id</label><br>
                                                 <p class="label-title">{{ $order->api_order_id }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Delivery Id</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Delivery
+                                                    Id</label><br>
                                                 <p class="label-title">{{ $order->delivery_api_id }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Delivery Type</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Delivery
+                                                    Type</label><br>
                                                 <p class="label-title">{{ $order->delivery_type }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Delivery Status</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Delivery
+                                                    Status</label><br>
                                                 <p class="label-title">{{ $order->delivery_status ?? '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Sub Total</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Sub
+                                                    Total</label><br>
                                                 <p class="label-title">{{ $order->sub_total }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Discount Amount</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Discount
+                                                    Amount</label><br>
                                                 <p class="label-title">{{ $order->discount_amount }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Total Amount</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Total
+                                                    Amount</label><br>
                                                 <p class="label-title">{{ $order->total_amount }}</p>
                                             </div>
                                         </div>
@@ -96,15 +97,35 @@
                                                     class="label-title">Status</label><br>
                                                 <p class="label-title">
                                                     @if ($order->status == 'initial')
-                                                    <label class="badge badge-primary" style="color:white">{{ $order->status }}</label>
-                                                @elseif ($order->status == 'failed')
-                                                    <label class="badge badge-danger" style="color:white">{{ $order->status }}</label>
-                                                @else
-                                                    <label class="badge badge-success" style="color:white">{{ $order->status }}</label>
-                                                @endif
-                                            </p>
+                                                        <label class="badge badge-primary"
+                                                            style="color:white">{{ $order->status }}</label>
+                                                    @elseif ($order->status == 'failed')
+                                                        <label class="badge badge-danger"
+                                                            style="color:white">{{ $order->status }}</label>
+                                                    @else
+                                                        <label class="badge badge-success"
+                                                            style="color:white">{{ $order->status }}</label>
+                                                    @endif
+                                                </p>
                                             </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"></label>
+                                                <a class="btn btn-primary"
+                                                    href="{{ route('backend.order.items', $order->id) }}">View Items</a>
+                                            </div>
+                                        </div>
+                                        @if ($transaction)
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title"></label>
+                                                    <a class="btn btn-primary"
+                                                        href="{{ route('backend.transaction.show', $transaction->id) }}">View
+                                                        Transaction</a>
+                                                </div>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
