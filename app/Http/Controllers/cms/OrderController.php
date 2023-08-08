@@ -36,4 +36,16 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
         return view('backend.order.show', compact('order'));
     }
+
+    public function createShipment($order_id)
+    {
+        $order = Order::findOrFail($order_id);
+        return view('backend.order.create-shipment', compact('order'));
+    }
+
+    public function storeShipment($order_id)
+    {
+        $order = Order::findOrFail($order_id);
+        return redirect()->back(toast("Work In Progress", 'info'));
+    }
 }
