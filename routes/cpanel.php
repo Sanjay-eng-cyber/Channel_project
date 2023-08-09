@@ -86,7 +86,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::post('product/review/update/{product_id}/{review_id}', 'App\Http\Controllers\cms\ProductController@reviewUpdate')->name('backend.product.review.update');
         Route::get('product/review/delete/{product_id}/{review_id}', 'App\Http\Controllers\cms\ProductController@reviewDestroy')->name('backend.product.review.delete');
 
-        Route::get('showcases/', 'App\Http\Controllers\cms\ShowcaseController@index')->name('backend.showcase.index');
+        Route::get('showcases', 'App\Http\Controllers\cms\ShowcaseController@index')->name('backend.showcase.index');
         Route::get('/showcase/show/{id}', 'App\Http\Controllers\cms\ShowcaseController@show')->name("backend.showcase.show");
         Route::get('showcase/create', 'App\Http\Controllers\cms\ShowcaseController@create')->name('backend.showcase.create');
         Route::post('showcase/store', 'App\Http\Controllers\cms\ShowcaseController@store')->name('backend.showcase.store');
@@ -94,11 +94,14 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::post('showcase/update/{id}', 'App\Http\Controllers\cms\ShowcaseController@update')->name('backend.showcase.update');
         Route::get('showcase/delete/{id}', 'App\Http\Controllers\cms\ShowcaseController@destroy')->name('backend.showcase.destroy');
 
-        Route::get('orders/', 'App\Http\Controllers\cms\OrderController@index')->name('backend.order.index');
+        Route::get('orders', 'App\Http\Controllers\cms\OrderController@index')->name('backend.order.index');
         Route::get('/order/show/{id}', 'App\Http\Controllers\cms\OrderController@show')->name("backend.order.show");
 
         Route::get('/order/delivery/create/{id}', 'App\Http\Controllers\cms\OrderController@createDelivery')->name("backend.order.delivery.create");
         Route::post('/order/delivery/store/{id}', 'App\Http\Controllers\cms\OrderController@storeDelivery')->name("backend.order.delivery.store");
+
+        Route::get('deliveries', 'App\Http\Controllers\cms\DeliveryController@index')->name('backend.delivery.index');
+        Route::get('/delivery/show/{id}', 'App\Http\Controllers\cms\DeliveryController@show')->name("backend.delivery.show");
 
 
         Route::get('transactions/', 'App\Http\Controllers\cms\TransactionController@index')->name('backend.transaction.index');
@@ -106,11 +109,11 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         Route::get('/category/get/subcategory/{id}', 'App\Http\Controllers\cms\ProductController@getSubCategory')->name("cms.subcategory.get");
 
-        Route::get('sliders/', 'App\Http\Controllers\cms\SliderController@index')->name('backend.slider.index');
+        Route::get('sliders', 'App\Http\Controllers\cms\SliderController@index')->name('backend.slider.index');
         Route::get('/slider/show/{id}', 'App\Http\Controllers\cms\SliderController@show')->name("backend.slider.show");
         Route::get('slider/create', 'App\Http\Controllers\cms\SliderController@create')->name('backend.slider.create');
         Route::post('slider/store', 'App\Http\Controllers\cms\SliderController@store')->name('backend.slider.store');
-        Route::get('sliser/edit/{id}', 'App\Http\Controllers\cms\SliderController@edit')->name('backend.slider.edit');
+        Route::get('slider/edit/{id}', 'App\Http\Controllers\cms\SliderController@edit')->name('backend.slider.edit');
         Route::post('slider/update/{id}', 'App\Http\Controllers\cms\SliderController@update')->name('backend.slider.update');
         Route::get('slider/delete/{id}', 'App\Http\Controllers\cms\SliderController@destroy')->name('backend.slider.destroy');
 
