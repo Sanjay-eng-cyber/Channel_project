@@ -91,13 +91,13 @@
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $deliveries) }}</td>
                                             <td>
-                                                <a class="text-primary"
+                                                <a class="text-warning"
                                                     href="{{ route('backend.user.show', $d->user_id) }}">
                                                     {{ $d->user->first_name }}
                                                 </a>
                                             </td>
                                             <td>
-                                                <a class="text-primary"
+                                                <a class="text-warning"
                                                     href="{{ route('backend.order.show', $d->order_id) }}">
                                                     {{ $d->order_id }}
                                                 </a>

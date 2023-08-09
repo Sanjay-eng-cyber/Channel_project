@@ -14,9 +14,9 @@ class DeliveryController extends Controller
         return view('backend.delivery.index', compact('deliveries'));
     }
 
-    // public function show($deliveryId)
-    // {
-    //     $delivery = Delivery::findOrFail($deliveryId);
-    //     return view('backend.delivery.show', compact('delivery'));
-    // }
+    public function show($deliveryId)
+    {
+        $delivery = Delivery::findOrFail($deliveryId);
+        return view('backend.delivery.show', compact('delivery'));
+    }
 }
