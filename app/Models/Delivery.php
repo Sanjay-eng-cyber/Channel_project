@@ -63,13 +63,13 @@ class Delivery extends Model
         return $this->belongsTo(order::class);
     }
 
-    public function addItems($request): void
+    public function addItems($ordersItems): void
     {
-        foreach ($request['products'] as $product) {
+        foreach ($ordersItems as $product) {
             \DB::table('delivery_items')->insert([
-                'order_id' => $request['order_id'],
+                'order_id' => $this->order_id,
                 'delivery_id' => $this->id,
-                'product_id' => $product,
+                'product_id' => $ordersItems->product_id,
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
@@ -83,12 +83,13 @@ class Delivery extends Model
         $userAddress = $user->address;
         $order = $this->order;
         // dd($order);
-        $payment_method = 'COD';
+        // $payment_method = 'COD';
+        $payment_method = 'Prepaid';
 
         foreach ($order->items as $item) {
             $items[$item->product->name] = [
                 'name' => $item->product->name,
-                'sku' => struniq(),
+                'sku' => $item->product->sku,
                 'units' => $item->quantity,
                 'selling_price' => $item->amount,
                 "hsn" => 000000
@@ -118,10 +119,10 @@ class Delivery extends Model
             "transaction_charges" => 0,
             "total_discount" => 0,
             "sub_total" => $this->order->total_amount,
-            "length" => 6 * 2.5,
-            "breadth" => 4 * 2.5,
-            "height" => 2.5 * 2.5,
-            "weight" => 5
+            "length" => $this->length,
+            "breadth" => $this->breadth,
+            "height" => $this->height,
+            "weight" => $this->weight
         ];
     }
 
@@ -130,11 +131,7 @@ class Delivery extends Model
         $user = User::find($this->user_id);
         $details = $this->prepareOrder();
         // dd($details);
-        $loginDetails =  Shiprocket::login([
-            'email' => config('shiprocket.credentials.email'),
-            'password' => config('shiprocket.credentials.password')
-        ]);
-        $token =  isset($loginDetails['token']) ? $loginDetails['token'] : null;
+        $token = getShiprocketToken();
         // dd($token);
         $response = Shiprocket::order($token)->create($details);
         // dd($response);
@@ -183,7 +180,6 @@ class Delivery extends Model
             ];
         }
 
-        //        if ( $response['awb_code'] === 0 || $response['awb_code'] === "" || $response['awb_code'] === null) {
         if (in_array($response['awb_code'], [0, '', null], true)) {
 
             $paramForAwb = ['shipment_id' => $response['shipment_id'], 'courier_id' => $response['courier_company_id']];

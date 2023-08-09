@@ -298,7 +298,7 @@ class ProductSeeder extends Seeder
                 'mrp' => $product['mrp'],
                 'final_price' => $product['final_price'],
                 'stock' => $product['stock'],
-                'sku' => now()->format('dmy-his-dmy') . rand(1, 99) . rand(1, 99),
+                'sku' => struniq(),
                 'rating' => $product['rating'],
             ]);
             try {

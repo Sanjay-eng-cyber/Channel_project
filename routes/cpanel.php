@@ -97,8 +97,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('orders/', 'App\Http\Controllers\cms\OrderController@index')->name('backend.order.index');
         Route::get('/order/show/{id}', 'App\Http\Controllers\cms\OrderController@show')->name("backend.order.show");
 
-        Route::get('/order/shipment/create/{id}', 'App\Http\Controllers\cms\OrderController@createShipment')->name("backend.order.shipment.create");
-        Route::post('/order/shipment/store/{id}', 'App\Http\Controllers\cms\OrderController@storeShipment')->name("backend.order.shipment.store");
+        Route::get('/order/delivery/create/{id}', 'App\Http\Controllers\cms\OrderController@createDelivery')->name("backend.order.delivery.create");
+        Route::post('/order/delivery/store/{id}', 'App\Http\Controllers\cms\OrderController@storeDelivery')->name("backend.order.delivery.store");
 
 
         Route::get('transactions/', 'App\Http\Controllers\cms\TransactionController@index')->name('backend.transaction.index');
