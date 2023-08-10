@@ -94,6 +94,8 @@ class CheckoutController extends Controller
             session()->forget('discount');
         }
         $order->update(['status' => 'completed']);
+        $userCart = auth()->user()->cart;
+        optional($userCart->items()->delete());
         return view('frontend.payment-success', compact('order'));
     }
 
