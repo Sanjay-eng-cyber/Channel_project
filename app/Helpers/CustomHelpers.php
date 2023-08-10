@@ -198,6 +198,6 @@ if (!function_exists('getShiprocketToken')) {
                 );
             }
         }
-        return $token;
+        return $token ?? '';
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\cms;
 use App\Models\Order;
 use App\Models\Delivery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 
 class DeliveryController extends Controller
@@ -24,6 +25,9 @@ class DeliveryController extends Controller
     public function create($order_id)
     {
         $order = Order::whereStatus('completed')->with('items')->findOrFail($order_id);
+        if($order->deliveries){
+            return redirect()->back()->with(toast("Delivery Already Created", 'info'));
+        }
         foreach ($order->items as $item) {
             if ($item->product->stock < $item->quantity) {
                 return redirect()->back()->with(toast("Product Quantity is less than ordered quantity", 'info'));
@@ -37,6 +41,9 @@ class DeliveryController extends Controller
         // return redirect()->back(toast("Work In Progress", 'info'));
 
         $order = Order::whereStatus('completed')->with('items')->findOrFail($order_id);
+        if($order->deliveries){
+            return redirect()->back()->with(toast("Delivery Already Created", 'info'));
+        }
         $request->validate([
             'length' => 'required|numeric|min:0.5,max:1000',
             'breadth' => 'required|numeric|min:0.5,max:1000',

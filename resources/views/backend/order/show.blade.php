@@ -110,17 +110,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Create
-                                                    Delivery</label><br>
-                                                <a href="{{ route('backend.order.delivery.create', $order->id) }}"
-                                                    class="btn btn-primary"
-                                                    onclick="return confirm('Are you sure you want to create delivery for this order?')">Create</a>
+                                    @if (!$order->deliveries)
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title" class="label-title">Create
+                                                        Delivery</label><br>
+                                                    <a href="{{ route('backend.order.delivery.create', $order->id) }}"
+                                                        class="btn btn-primary"
+                                                        onclick="return confirm('Are you sure you want to create delivery for this order?')">Create</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endif
+
                                 </div>
                             </div>
                         </div>
