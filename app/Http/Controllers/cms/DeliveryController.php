@@ -25,8 +25,8 @@ class DeliveryController extends Controller
     public function create($order_id)
     {
         $order = Order::whereStatus('completed')->with('items')->findOrFail($order_id);
-        if($order->deliveries){
-            return redirect()->back()->with(toast("Delivery Already Created", 'info'));
+        if ($order->deliveries->count()) {
+            return redirect()->route('backend.order.show', $order_id)->with(toast("Delivery Already Created", 'info'));
         }
         foreach ($order->items as $item) {
             if ($item->product->stock < $item->quantity) {
@@ -41,8 +41,8 @@ class DeliveryController extends Controller
         // return redirect()->back(toast("Work In Progress", 'info'));
 
         $order = Order::whereStatus('completed')->with('items')->findOrFail($order_id);
-        if($order->deliveries){
-            return redirect()->back()->with(toast("Delivery Already Created", 'info'));
+        if ($order->deliveries->count()) {
+            return redirect()->route('backend.order.show', $order_id)->with(toast("Delivery Already Created", 'info'));
         }
         $request->validate([
             'length' => 'required|numeric|min:0.5,max:1000',
