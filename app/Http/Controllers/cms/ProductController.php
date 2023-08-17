@@ -49,14 +49,14 @@ class ProductController extends Controller
         }
         if ($request !== null && $request->has('brand') && $request->brand != '') {
             $brand = Brand::whereSlug($request->brand)->first();
-            if($brand) {
-                $products = $products->where('brand_id',$brand->id);
+            if ($brand) {
+                $products = $products->where('brand_id', $brand->id);
             }
         }
         if ($request !== null && $request->has('category') && $request->category != '') {
             $category = Category::whereSlug($request->category)->first();
-            if($category) {
-                $products = $products->where('category_id',$category->id);
+            if ($category) {
+                $products = $products->where('category_id', $category->id);
             }
         }
         return $products;
@@ -104,7 +104,7 @@ class ProductController extends Controller
             'category_id' => ['required', Rule::in($categorys)],
             'brand_id' => ['nullable', Rule::in($brands)],
             'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
-            'image' => 'required|max:10',
+            'image' => 'required|max:8',
             'image.*' => 'mimes:png,jpg,jpeg|max:1024',
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
@@ -119,7 +119,7 @@ class ProductController extends Controller
         //dd($fileWithExtension);
         if ($fileWithExtension) {
             $filename = now()->format('dmy-his') . '-' . rand(1, 99) . '.' . $fileWithExtension->clientExtension();
-            $destinationPath = storage_path('app/public/images/products/');
+            $destinationPath = storage_path('app/public/images/products/thumbnails/');
             $img = Image::make($fileWithExtension->getRealPath())->resize(200, 200, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upSize();
@@ -200,7 +200,7 @@ class ProductController extends Controller
             'category_id' => ['required', Rule::in($categorys)],
             'brand_id' => ['nullable', Rule::in($brands)],
             'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
-            'image' => 'nullable|max:10',
+            'image' => 'nullable|max:8',
             'image.*' => 'mimes:png,jpg,jpeg|max:1024',
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
@@ -213,14 +213,14 @@ class ProductController extends Controller
         $fileWithExtension = $request->file('thumbnail_image');
         if ($request->has('thumbnail_image')) {
             $filename = now()->format('dmy-his') . '-' . rand(1, 99) . '.' . $fileWithExtension->clientExtension();
-            $destinationPath = storage_path('app/public/images/products/');
+            $destinationPath = storage_path('app/public/images/products/thumbnails/');
             $img = Image::make($fileWithExtension->getRealPath())->resize(200, 200, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upSize();
             });
             $img->save($destinationPath . $filename, 85);
             if ($product->thumbnail_image) {
-                Storage::disk('public')->delete('images/products/' . $product->thumbnail_image);
+                Storage::disk('public')->delete('images/products/thumbnails/' . $product->thumbnail_image);
             }
             $product->thumbnail_image = $filename;
         }
@@ -273,9 +273,9 @@ class ProductController extends Controller
         }
 
         // Product Attribute functionality
-       $product->updateProductAttributes($request->attributeKeys, $request->values, $product->id);
+        $product->updateProductAttributes($request->attributeKeys, $request->values, $product->id);
 
-       if ($product->save()) {
+        if ($product->save()) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Update Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
@@ -306,7 +306,7 @@ class ProductController extends Controller
         // foreach ($showcase_products as $showcase_product) {
         //     $showcase_product->delete();
         // }
-        if ($product->delete() && Storage::disk('public')->delete('images/products/' . $product->thumbnail_image)) {
+        if ($product->delete() && Storage::disk('public')->delete('images/products/thumbnails/' . $product->thumbnail_image)) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Deleted Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);

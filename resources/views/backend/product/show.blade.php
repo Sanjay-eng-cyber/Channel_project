@@ -104,7 +104,7 @@
                                                 <div class="d-flex flex-wrap">
                                                     @forelse ($product->medias()->get() as $media)
                                                         <img class="m-2 border"
-                                                            src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                            src="{{ asset('storage/images/products/thumbnails/' . $media->file_name) }}"
                                                             height="150px" width="150px" alt="">
                                                     @empty
                                                     @endforelse

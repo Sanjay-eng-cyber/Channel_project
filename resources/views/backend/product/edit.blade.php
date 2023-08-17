@@ -228,7 +228,7 @@
                                     <div class="col-xl-6  col-md-6 col-sm-12 mb-3">
                                         <label for="degree2">Thumbnail Image</label><br>
                                         <img class="m-2 border"
-                                            src="{{ asset('storage/images/products/' . $product->thumbnail_image) }}"
+                                            src="{{ asset('storage/images/products/thumbnails/' . $product->thumbnail_image) }}"
                                             height="150px" width="150px" alt="">
                                         <input class="form-control" name="thumbnail_image" type="file"
                                             id="image">

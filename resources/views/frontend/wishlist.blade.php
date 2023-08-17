@@ -42,7 +42,7 @@
                             <div class="row wishlist-main-in">
                                 <div
                                     class="col-sm-12 col-md-4 col-lg-4 col-xl-3 d-flex justify-content-center flex-column wishlist-main-in-img">
-                                    <img src="{{ asset('storage/images/products/' . $w->product->thumbnail_image) }}" class="img-fluid"
+                                    <img src="{{ asset('storage/images/products/thumbnails/' . $w->product->thumbnail_image) }}" class="img-fluid"
                                         alt="">
                                 </div>
                                 <div

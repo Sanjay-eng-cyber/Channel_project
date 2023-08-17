@@ -99,7 +99,7 @@ class CartController extends Controller
             $cartItemsArr[$key]['item_id'] = $item->id;
             $cartItemsArr[$key]['name'] = $item->product->name;
             $cartItemsArr[$key]['slug'] = $item->product->slug;
-            $cartItemsArr[$key]['thumbnail_image'] = asset('storage/images/products/' . $item->product->thumbnail_image);
+            $cartItemsArr[$key]['thumbnail_image'] = asset('storage/images/products/thumbnails/' . $item->product->thumbnail_image);
             // $cartItemsArr[$key]['thumbnail_image'] = $item->product->thumbnail_image;
             $cartItemsArr[$key]['mrp'] = $item->product->mrp;
             $cartItemsArr[$key]['final_price'] = $item->product->final_price;

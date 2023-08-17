@@ -101,7 +101,7 @@
                                                         </span>
                                                     </button>
                                                 @endif
-                                                <img src="{{ asset('storage/images/products/' . $pro->thumbnail_image) }}"
+                                                <img src="{{ asset('storage/images/products/thumbnails/' . $pro->thumbnail_image) }}"
                                                     alt="...">
                                             </div>
                                             <div class="card-body">
