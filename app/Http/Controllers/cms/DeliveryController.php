@@ -7,6 +7,7 @@ use App\Models\Delivery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use Seshac\Shiprocket\Shiprocket;
 
 class DeliveryController extends Controller
 {
@@ -96,8 +97,22 @@ class DeliveryController extends Controller
 
     public function update(Request $request, $delivery_id)
     {
+        // $request->validate([
+        //     'length' => 'required|numeric|min:0.5,max:1000',
+        //     'breadth' => 'required|numeric|min:0.5,max:1000',
+        //     'height' => 'required|numeric|min:0.5,max:1000',
+        //     'weight' => 'required|numeric|min:0.1|max:25'
+        // ]);
+
         $delivery = Delivery::whereStatus('Intransit')->findOrFail($delivery_id);
         $order = $delivery->order;
+        // $delivery->update([
+        //     "length" => $request->length,
+        //     "breadth" => $request->breadth,
+        //     "height" => $request->height,
+        //     "weight" => $request->weight
+        // ]);
+
         $shiprocketDetails = $delivery->sendOrderToShiprocketApi();
         // dd($shiprocketDetails);
         if (!$shiprocketDetails['success']) {
@@ -113,5 +128,78 @@ class DeliveryController extends Controller
         Log::info($shiprocketDetails['message']);
         // dd($delivery);
         return redirect()->back()->with(toast('Delivery Updated', 'success'));
+    }
+
+    public function generateAwb(Delivery $delivery)
+    {
+        $token = getShiprocketToken();
+
+        $generateAwbResponse = Shiprocket::courier($token)->generateAWB(['shipment_id' => $delivery->shipment_id]);
+
+        if ( $generateAwbResponse->has('status_code') ) {
+            $delivery->update([
+                'partner_status_code' => $generateAwbResponse['status_code'],
+                'partner_status' => $generateAwbResponse['message']
+            ]);
+
+            // return response()->json(['error' => "Your awb could not be generated. {$generateAwbResponse['message']}"]);
+            return response()->json(['error' => "Your awb could not be generated. {$generateAwbResponse}"]);
+        }
+
+        if ( $generateAwbResponse->has('awb_assign_status') && $generateAwbResponse['awb_assign_status'] === 1) {
+            $data = ['shipment_id' => $delivery->shipment_id];
+            $response = $delivery->prepareForPickup($data, $token);
+            $delivery->update($response);
+        }
+        return response()->json(['success' => 'Pickup requested']);
+    }
+
+    public function retryPickup(Delivery $delivery)
+    {
+        $token = Shiprocket::getToken();
+
+        $data = ['shipment_id' => $delivery->shipment_id];
+        $response = $delivery->prepareForPickup($data, $token);
+        $delivery->update($response);
+
+        return response()->json(['success' => 'Pickup requested']);
+    }
+
+    public function getTrackingDetails(Request $request): JsonResponse
+    {
+        if ( $request->scans[0]['activity'] === "SHIPMENT DELIVERED" ) {
+            Delivery::where('partner_order_id', $request->order_id)->update([
+                'partner_status' => $request->scans[0]['activity'],
+                'status' => 'Delivered'
+            ]);
+        } else {
+            Delivery::where('partner_order_id', $request->order_id)->update([
+                'partner_status' => $request->scans[0]['activity']
+            ]);
+        }
+        return response()->json(['success' => 'Details updated']);
+    }
+
+    public function printManifest($id)
+    {
+        $token = Shiprocket::getToken();
+
+        $res = Shiprocket::generate($token)->printManifest(['order_ids' =>  [$id] ])['manifest_url'];
+
+        header("Content-type:application/pdf");
+        header("Content-Disposition:attachment;filename=manifest.pdf");
+        return readfile($res);
+
+    }
+
+    public function printLabel($id)
+    {
+        $token = Shiprocket::getToken();
+
+        $res = Shiprocket::generate($token)->label(['shipment_id' => [ $id ]])['label_url'];
+
+        header("Content-type:application/pdf");
+        header("Content-Disposition:attachment;filename=label.pdf");
+        return readfile($res);
     }
 }

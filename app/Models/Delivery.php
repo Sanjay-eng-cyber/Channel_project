@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use Seshac\Shiprocket\Shiprocket;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -180,11 +181,23 @@ class Delivery extends Model
             ];
         }
 
+        $response = $this->generateAWB($token, $response);
+
+        $this->storeShiprocketData($response);
+
+        return [
+            'success' => true,
+            'message' => 'Details updated'
+        ];
+    }
+
+    public function generateAWB($token, $response)
+    {
         if (in_array($response['awb_code'], [0, '', null], true)) {
 
             $paramForAwb = ['shipment_id' => $response['shipment_id'], 'courier_id' => $response['courier_company_id']];
             $awb = Shiprocket::courier($token)->generateAWB($paramForAwb);
-
+            Log::info($awb);
             if ($awb->has('status_code')) {
                 session()->flash('error', "Your AWB could not be generated. {$awb['message']}");
                 $response['status_code'] = $awb['status_code'];
@@ -201,29 +214,7 @@ class Delivery extends Model
                 Shiprocket::generate($token)->manifest(['shipment_id' => [$response['shipment_id']]]);
             }
         }
-        $this->storeShiprocketData($response);
-        return [
-            'success' => true,
-            'message' => 'Details updated'
-        ];
-    }
-
-    public function storeShiprocketData($shiprocketDetails): void
-    {
-
-        $this->update([
-            'partner_order_id' => $shiprocketDetails['order_id'],
-            'shipment_id' => $shiprocketDetails['shipment_id'],
-            'awb_code' => $shiprocketDetails['awb_code'] ?: null,
-            'courier_company_id' => $shiprocketDetails['courier_company_id'] ?: null,
-            'courier_name' => $shiprocketDetails['courier_name'] ?: null,
-            'partner_status_code' => $shiprocketDetails['status_code'],
-            'partner_status' => self::API_STATUS[$shiprocketDetails['status_code']] ?? null,
-            'pickup_status' => $shiprocketDetails['pickup_data']['pickup_status'] ?? null,
-            'pickup_date' => $shiprocketDetails['pickup_data']['pickup_scheduled_date'] ?? null,
-            'pickup_token_number' => $shiprocketDetails['pickup_data']['pickup_token_number'] ?? null,
-            'message' => $shiprocketDetails['pickup_data']['message'] ?? null
-        ]);
+        return $response;
     }
 
     /**
@@ -256,5 +247,24 @@ class Delivery extends Model
             session()->flash('success', $requestPickup['response']['data']);
         }
         return $response;
+    }
+
+
+    public function storeShiprocketData($shiprocketDetails): void
+    {
+
+        $this->update([
+            'partner_order_id' => $shiprocketDetails['order_id'],
+            'shipment_id' => $shiprocketDetails['shipment_id'],
+            'awb_code' => $shiprocketDetails['awb_code'] ?: null,
+            'courier_company_id' => $shiprocketDetails['courier_company_id'] ?: null,
+            'courier_name' => $shiprocketDetails['courier_name'] ?: null,
+            'partner_status_code' => $shiprocketDetails['status_code'],
+            'partner_status' => self::API_STATUS[$shiprocketDetails['status_code']] ?? null,
+            'pickup_status' => $shiprocketDetails['pickup_data']['pickup_status'] ?? null,
+            'pickup_date' => $shiprocketDetails['pickup_data']['pickup_scheduled_date'] ?? null,
+            'pickup_token_number' => $shiprocketDetails['pickup_data']['pickup_token_number'] ?? null,
+            'message' => $shiprocketDetails['pickup_data']['message'] ?? null
+        ]);
     }
 }
