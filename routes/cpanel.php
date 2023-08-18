@@ -102,6 +102,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         Route::get('deliveries', 'App\Http\Controllers\cms\DeliveryController@index')->name('backend.delivery.index');
         Route::get('/delivery/show/{id}', 'App\Http\Controllers\cms\DeliveryController@show')->name("backend.delivery.show");
+        Route::get('/delivery/edit/{id}', 'App\Http\Controllers\cms\DeliveryController@edit')->name("backend.delivery.edit");
+        Route::post('/delivery/update/{id}', 'App\Http\Controllers\cms\DeliveryController@update')->name("backend.delivery.update");
 
 
         Route::get('transactions/', 'App\Http\Controllers\cms\TransactionController@index')->name('backend.transaction.index');

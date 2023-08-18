@@ -86,4 +86,32 @@ class DeliveryController extends Controller
 
         return redirect()->back()->with(toast('Delivery created', 'success'));
     }
+
+    public function edit($delivery_id)
+    {
+        $delivery = Delivery::findOrFail($delivery_id);
+        $order = $delivery->order;
+        return view('backend.delivery.edit', compact('order', 'delivery'));
+    }
+
+    public function update(Request $request, $delivery_id)
+    {
+        $delivery = Delivery::whereStatus('Intransit')->findOrFail($delivery_id);
+        $order = $delivery->order;
+        $shiprocketDetails = $delivery->sendOrderToShiprocketApi();
+        // dd($shiprocketDetails);
+        if (!$shiprocketDetails['success']) {
+            $delivery->update([
+                "message" => isset($shiprocketDetails['message']) ? $shiprocketDetails['message'] : "Something Went Wrong",
+            ]);
+            Log::info("Delivery ID : " . $delivery->id);
+            Log::info($shiprocketDetails['message']);
+            return redirect()->back()->with(toast('Failed To Deliver', 'error'));
+        }
+
+        Log::info("Delivery ID : " . $delivery->id);
+        Log::info($shiprocketDetails['message']);
+        // dd($delivery);
+        return redirect()->back()->with(toast('Delivery Updated', 'success'));
+    }
 }
