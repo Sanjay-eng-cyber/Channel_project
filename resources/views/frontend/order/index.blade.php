@@ -25,7 +25,7 @@
                             <div class="row  my-order-main-in">
                                 <div
                                     class="col-sm-12 col-md-4 col-lg-4 col-xl-3 d-flex justify-content-center flex-column my-order-main-in-img">
-                                    <img src="{{ asset('storage/images/products/' . $order->items->first()->product->thumbnail_image) }}"
+                                    <img src="{{ asset('storage/images/products/thumbnails/' . $order->items->first()->product->thumbnail_image) }}"
                                         class="img-fluid order-prod-thumb-img" alt="">
                                 </div>
                                 <div class="col-sm-12  col-md-8 col-lg-8 col-xl-6  my-order-main-desc">

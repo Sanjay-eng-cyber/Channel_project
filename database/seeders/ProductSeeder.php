@@ -302,7 +302,7 @@ class ProductSeeder extends Seeder
                 'rating' => $product['rating'],
             ]);
             try {
-                File::copy(public_path('frontend/images/seeders/products_new/' . $product['thumbnail_image']), storage_path('app/public/images/products/' . $product['thumbnail_image']));
+                File::copy(public_path('frontend/images/seeders/products_new/' . $product['thumbnail_image']), storage_path('app/public/images/products/thumbnails/' . $product['thumbnail_image']));
             } catch (\Throwable $th) {
                 //Log::info("file" . $eas->image);
             }

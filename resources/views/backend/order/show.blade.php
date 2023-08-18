@@ -109,6 +109,23 @@
                                                 </p>
                                             </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"></label>
+                                                <a class="btn btn-primary"
+                                                    href="{{ route('backend.order.items', $order->id) }}">View Items</a>
+                                            </div>
+                                        </div>
+                                        @if ($transaction)
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title"></label>
+                                                    <a class="btn btn-primary"
+                                                        href="{{ route('backend.transaction.show', $transaction->id) }}">View
+                                                        Transaction</a>
+                                                </div>
+                                            </div>
+                                        @endif
                                     </div>
                                     @if (!$order->deliveries->count())
                                         <div class="row">
