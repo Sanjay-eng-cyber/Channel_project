@@ -27,10 +27,20 @@
             <div class="statbox widget box box-shadow col-md-6">
                 <div class="row m-0">
                     <div class="col-12">
-                        <form class="mt-3" method="POST" action="{{ route('backend.product.review.update', ['product_id' => $products->id, 'review_id' => $reviews->id]) }}"
+                        <form class="mt-3" method="POST"
+                            action="{{ route('backend.product.review.update', ['product_id' => $products->id, 'review_id' => $reviews->id]) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
+                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12">
+                                    <label for="formGroupExampleInput">Title</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Title" required name="title"
+                                        value="{{ old('title') ?? $reviews->title }}" minlength="3" maxlength="120">
+                                    @if ($errors->has('title'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('title') }}</div>
+                                    @endif
+                                </div>
                                 <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput">Rating</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
@@ -63,4 +73,3 @@
 @endsection
 @section('js')
 @endsection
-
