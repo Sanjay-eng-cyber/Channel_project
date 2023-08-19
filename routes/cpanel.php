@@ -80,11 +80,12 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('product/edit/{id}', 'App\Http\Controllers\cms\ProductController@edit')->name('backend.product.edit');
         Route::post('product/update/{id}', 'App\Http\Controllers\cms\ProductController@update')->name('backend.product.update');
         Route::get('product/delete/{id}', 'App\Http\Controllers\cms\ProductController@destroy')->name('backend.product.destroy');
-        Route::get('product/review/{id}', 'App\Http\Controllers\cms\ProductController@reviewIndex')->name('backend.product.review');
-        Route::get('product/review/show/{product_id}/{review_id}', 'App\Http\Controllers\cms\ProductController@reviewShow')->name('backend.product.review.show');
-        Route::get('product/review/edit/{product_id}/{review_id}', 'App\Http\Controllers\cms\ProductController@reviewEdit')->name('backend.product.review.edit');
-        Route::post('product/review/update/{product_id}/{review_id}', 'App\Http\Controllers\cms\ProductController@reviewUpdate')->name('backend.product.review.update');
-        Route::get('product/review/delete/{product_id}/{review_id}', 'App\Http\Controllers\cms\ProductController@reviewDestroy')->name('backend.product.review.delete');
+
+        Route::get('product/review/{id}', 'App\Http\Controllers\cms\ReviewController@index')->name('backend.product.review');
+        Route::get('product/review/show/{product_id}/{review_id}', 'App\Http\Controllers\cms\ReviewController@show')->name('backend.product.review.show');
+        Route::get('product/review/edit/{product_id}/{review_id}', 'App\Http\Controllers\cms\ReviewController@edit')->name('backend.product.review.edit');
+        Route::post('product/review/update/{product_id}/{review_id}', 'App\Http\Controllers\cms\ReviewController@update')->name('backend.product.review.update');
+        Route::get('product/review/delete/{product_id}/{review_id}', 'App\Http\Controllers\cms\ReviewController@destroy')->name('backend.product.review.delete');
 
         Route::get('showcases/', 'App\Http\Controllers\cms\ShowcaseController@index')->name('backend.showcase.index');
         Route::get('/showcase/show/{id}', 'App\Http\Controllers\cms\ShowcaseController@show')->name("backend.showcase.show");
