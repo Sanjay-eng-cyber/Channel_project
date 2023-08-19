@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use Illuminate\Support\Str;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\File;
 
 class ProductSeeder extends Seeder
@@ -304,7 +305,9 @@ class ProductSeeder extends Seeder
             try {
                 File::copy(public_path('frontend/images/seeders/products_new/' . $product['thumbnail_image']), storage_path('app/public/images/products/thumbnails/' . $product['thumbnail_image']));
             } catch (\Throwable $th) {
-                //Log::info("file" . $eas->image);
+
+                // Log::info($th);
+                // Log::info("file" . $product['thumbnail']);
             }
         }
     }

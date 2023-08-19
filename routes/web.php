@@ -207,7 +207,7 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/c/{slug}', 'App\Http\Controllers\frontend\CategoryController@show')->name('frontend.cat.show');
     Route::get('/sc/{categorySlug}/{subCategorySlug}', 'App\Http\Controllers\frontend\SubCategoryController@show')->name('frontend.sub-category.index');
     Route::get('/p/{slug}', 'App\Http\Controllers\frontend\ProductController@show')->name('frontend.p.show');
-    Route::post('/p/review/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.p.store');
+    // Route::post('/p/review/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.p.store');
 
     Route::get('/checkout/p/{product_slug}', 'App\Http\Controllers\frontend\ProductController@checkout')->name('frontend.p.checkout');
 

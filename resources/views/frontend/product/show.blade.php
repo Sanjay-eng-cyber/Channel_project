@@ -13,10 +13,12 @@
                         <!-- Slider of the Page -->
                         <div class="slider">
                             <div class="product-slider">
-                                <div class="slide">
-                                    <img src="{{ asset('storage/images/products/' . $product->thumbnail_image) }}"
-                                        alt="image description">
-                                </div>
+                                @foreach ($product->medias as $media)
+                                    <div class="slide">
+                                        <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                            alt="image description">
+                                    </div>
+                                @endforeach
                                 {{-- <div class="slide">
                                     <img src="https://via.placeholder.com/600" alt="image description">
                                 </div>
@@ -32,12 +34,14 @@
                             </div>
 
                             <ul class="list-unstyled slick-slider pagg-slider">
-                                <li>
-                                    <div class="img">
-                                        <img src="{{ asset('storage/images/products/' . $product->thumbnail_image) }}"
-                                            alt="image description">
-                                    </div>
-                                </li>
+                                @foreach ($product->medias as $media)
+                                    <li>
+                                        <div class="img">
+                                            <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                alt="image description">
+                                        </div>
+                                    </li>
+                                @endforeach
                                 {{-- <li>
                                     <div class="img">
                                         <img src="https://via.placeholder.com/600" alt="image description">
@@ -179,9 +183,9 @@
                                     Description
                                 </h6>
                                 <ul class="ms-3 text-muted">
-                                    <li class="text-capitalize">
-                                        {!! $product->descriptions !!}
-                                    </li>
+                                    {{-- <li class="text-capitalize"> --}}
+                                    {!! $product->descriptions !!}
+                                    {{-- </li> --}}
                                 </ul>
                                 {{-- <h6 class="h5 font-body">
                                         Main Ingredients
@@ -300,11 +304,13 @@
                                                     <div class="">
                                                         <div class="d-flex review-head">
                                                             <div class="five-stars text-green d-flex">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-regular fa-star"></i>
+                                                                @for ($i = 1; $i <= 5; $i++)
+                                                                    @if ($i <= $re->rating)
+                                                                        <i class="fa-solid fa-star"></i>
+                                                                    @else
+                                                                        <i class="fa-regular fa-star"></i>
+                                                                    @endif
+                                                                @endfor
                                                             </div>
                                                             <div class="review-title">
                                                                 <h5 class="font-body">
@@ -319,10 +325,10 @@
 
                                                     <div class="review-text">
                                                         <p>
-                                                            {{ $re->body }}
+                                                            {!! nl2br($re->body) !!}
                                                         </p>
                                                     </div>
-                                                    <div class="review-gallery d-flex">
+                                                    {{-- <div class="review-gallery d-flex">
                                                         <div class="review-gallery-item me-2">
                                                             <img src="https://via.placeholder.com/600" class="rounded-4"
                                                                 alt="">
@@ -339,15 +345,15 @@
                                                             <img src="https://via.placeholder.com/600" class="rounded-4"
                                                                 alt="">
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                     <div
                                                         class="review-info text-muted d-flex flex-wrap justify-content-between">
                                                         <div class="py-2">
-                                                            Kiran22
-                                                            <i class="fa-solid fa-star text-warning"></i>
-                                                            | June 2020
+                                                            {{ $re->user->first_name ?? 'User' }}
+                                                            {{-- <i class="fa-solid fa-star text-warning"></i> --}}
+                                                            | {{ dd_Format($re->created_at, 'M-Y') }}
                                                         </div>
-                                                        <div class="py-2">
+                                                        {{-- <div class="py-2">
                                                             <button class="text-muted p-0 btn">
                                                                 <i class="fa-solid fa-thumbs-up"></i>
                                                                 200
@@ -357,7 +363,7 @@
                                                                 <i class="fa-solid fa-thumbs-down"></i>
                                                                 10
                                                             </button>
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
                                                 </div>
                                             </div>

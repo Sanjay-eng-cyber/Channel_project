@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="col-xl-6 col-md-6 col-sm-12 mb-3">
                                     <label for="degree2">Image</label>
-                                    <input class="form-control" name="image[]" type="file" id="image" multiple />
+                                    <input class="form-control" name="image[]" type="file" id="image" multiple required/>
                                     @if ($errors->has('image'))
                                         <div class="text-danger" role="alert">{{ $errors->first('image') }}
                                         </div>

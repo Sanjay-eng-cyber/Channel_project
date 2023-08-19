@@ -32,7 +32,8 @@ class ProductController extends Controller
      */
     public function show($productSlug)
     {
-        $product = Product::where('slug', $productSlug)->firstOrFail();
+        $product = Product::where('slug', $productSlug)->with('medias')->firstOrFail();
+        // dd($product);
         $cProducts = Product::where('id', '!=', $product->id)->where('connection_no', $product->connection_no)->get();
         $variants = [];
         $attributes = $product->attributes()->get();
@@ -53,7 +54,7 @@ class ProductController extends Controller
         // dd('stop');
         // dd($attributes);
 
-        $reviews = $product->reviews()->latest();
+        $reviews = $product->reviews()->with('user')->latest();
         $reviewsCount = $reviews->count();
         $reviews = $reviews->paginate(5);
 

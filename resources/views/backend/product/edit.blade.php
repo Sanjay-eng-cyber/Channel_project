@@ -88,9 +88,9 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div
-                                        class="col-xl-6  col-md-6 col-sm-12                                      <label for="degree2">
-                                        Sub Category</label>
+                                    <div class="col-xl-6  col-md-6 col-sm-12">
+                                        <label for="degree2">
+                                            Sub Category</label>
                                         <select class="form-control mb-4" name="sub_category_id" id="sub">
                                             <option value="">Select Any Sub Category</option>
                                         </select>
