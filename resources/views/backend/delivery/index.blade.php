@@ -137,10 +137,10 @@
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.delivery.show', $d->id) }}">View</a>
-                                                        @if ($d->status == 'Intransit')
+                                                        {{-- @if ($d->status == 'Intransit')
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.delivery.edit', $d->id) }}">Edit</a>
-                                                        @endif
+                                                        @endif --}}
                                                     </div>
                                                 </div>
 
