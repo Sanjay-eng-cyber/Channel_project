@@ -48,7 +48,7 @@
                                                 <p class="label-title">{{ $sub_category->category->name }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        {{-- <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Image</label><br>
@@ -57,14 +57,14 @@
                                                         height="150px" width="150px" alt="">
                                                 @endif
                                             </div>
-                                        </div>
-                                        <div class="col-md-4">
+                                        </div> --}}
+                                        {{-- <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Description</label><br>
                                                 <p class="label-title">{{ $sub_category->descriptions ?? '---'}}</p>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>

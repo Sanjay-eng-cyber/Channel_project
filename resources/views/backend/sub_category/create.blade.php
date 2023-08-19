@@ -55,15 +55,15 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12  col-md-6 col-sm-12 py-2">
+                                {{-- <div class="col-xl-12  col-md-6 col-sm-12 py-2">
                                     <label for="formGroupExampleInput" class="">Image</label>
                                     <input type="file" class="form-control" id="formGroupExampleInput"required
                                         name="image">
                                     @if ($errors->has('image'))
                                         <div class="text-danger" role="alert">{{ $errors->first('image') }}</div>
                                     @endif
-                                </div>
-                                <div class="col-xl-12  col-md-6 col-sm-12 py-2">
+                                </div> --}}
+                                {{-- <div class="col-xl-12  col-md-6 col-sm-12 py-2">
                                     <label for="degree2">Description</label>
                                     <textarea class="form-control" placeholder="Enter Description" rows="3" name="descriptions" minlength="3"
                                         maxlength="250">{{ old('descriptions') }}</textarea>
@@ -71,7 +71,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
                                         </div>
                                     @endif
-                                </div>
+                                </div> --}}
                             </div>
                             <input type="submit" class="btn btn-primary">
                         </form>

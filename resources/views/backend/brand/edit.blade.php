@@ -40,7 +40,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12  col-md-6 col-sm-12 py-2">
+                                {{-- <div class="col-xl-12  col-md-6 col-sm-12 py-2">
                                     <label for="degree2">Image</label><br>
                                     @if ($brand->image)
                                         <img src="{{ asset('storage/images/brands/' . $brand->image) }}" height="150px"
@@ -52,8 +52,8 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('image') }}
                                         </div>
                                     @endif
-                                </div>
-                                <div class="col-xl-12  col-md-6 col-sm-12 py-2">
+                                </div> --}}
+                                {{-- <div class="col-xl-12  col-md-6 col-sm-12 py-2">
                                     <label for="degree2">Description</label>
                                     <textarea class="form-control" placeholder="Enter Description" rows="3" name="descriptions" minlength="3"
                                         maxlength="250">{{ old('descriptions', $brand->descriptions) }}</textarea>
@@ -61,7 +61,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
                                         </div>
                                     @endif
-                                </div>
+                                </div> --}}
                             </div>
                             <input type="submit" class="btn btn-primary"
                                 onclick="return confirm('Are you sure, you want to update?')">
