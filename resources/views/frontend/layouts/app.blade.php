@@ -25,7 +25,9 @@
                     $cart = $cart_session_id ? App\Models\Cart::where('session_id', $cart_session_id)->first() : null;
                 }
                 $cartItemsCount = $cart ? $cart->items()->count() : 0;
-                $navCategories = App\Models\Category::with('subCategories')->get();
+                $navCategories = App\Models\Category::with('subCategories')
+                    ->limit(7)
+                    ->get();
                 //    dd($navCategories);
             @endphp
 

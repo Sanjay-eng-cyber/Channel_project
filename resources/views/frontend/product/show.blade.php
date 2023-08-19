@@ -38,7 +38,7 @@
                                     <li>
                                         <div class="img">
                                             <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                alt="image description">
+                                                alt="image description" class="min-h-2-80">
                                         </div>
                                     </li>
                                 @endforeach
@@ -416,7 +416,8 @@
                                             </div>
                                         @endif
                                         <textarea name="body" id="body" cols="10" rows="3"
-                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review" minlength="3" maxlength="2000" required>{{ old('body') }}</textarea>
+                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review"
+                                            minlength="3" maxlength="2000" required>{{ old('body') }}</textarea>
                                         @if ($errors->has('body'))
                                             <div class="text-danger" role="alert">{{ $errors->first('body') }}
                                             </div>
@@ -567,6 +568,11 @@
 
         .p-show.add-to-wish.active svg path {
             fill: #ec268f;
+        }
+
+        .min-h-2-80 {
+            height: 80px;
+            width: 80px;
         }
     </style>
 @endsection
