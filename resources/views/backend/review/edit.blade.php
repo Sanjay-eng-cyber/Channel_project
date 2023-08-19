@@ -42,8 +42,8 @@
                                 </div>
                                 <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 py-2">
                                     <label for="degree2">Description</label>
-                                    <textarea class="form-control" placeholder="Enter Description" rows="3" name="body" minlength="5"
-                                        maxlength="120" required>{{ old('body', $reviews->body) }}</textarea>
+                                    <textarea class="form-control" placeholder="Enter Description" rows="3" name="body" minlength="3"
+                                        maxlength="2000" required>{{ old('body', $reviews->body) }}</textarea>
                                     @if ($errors->has('body'))
                                         <div class="text-danger" role="alert">{{ $errors->first('body') }}
                                         </div>

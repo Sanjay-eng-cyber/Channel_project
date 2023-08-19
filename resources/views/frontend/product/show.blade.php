@@ -416,7 +416,7 @@
                                             </div>
                                         @endif
                                         <textarea name="body" id="body" cols="10" rows="3"
-                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review" required>{{ old('body') }}</textarea>
+                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review" minlength="3" maxlength="2000" required>{{ old('body') }}</textarea>
                                         @if ($errors->has('body'))
                                             <div class="text-danger" role="alert">{{ $errors->first('body') }}
                                             </div>

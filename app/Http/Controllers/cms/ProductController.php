@@ -339,8 +339,8 @@ class ProductController extends Controller
         $products = Product::findOrFail($product_id);
         $reviews = $products->reviews()->findOrFail($review_id);
         $request->validate([
-            'body' => 'required',
-            'rating' => 'required|min:5|max:120',
+            'body' => 'required|min:3|max:2000',
+            'rating' => 'required|numeric|min:1|max:5',
         ]);
         $reviews->rating = $request->rating;
         $reviews->body = $request->body;
