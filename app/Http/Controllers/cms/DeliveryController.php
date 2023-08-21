@@ -59,7 +59,7 @@ class DeliveryController extends Controller
             }
         }
 
-        $delivery = Delivery::updateOrCreate([
+        $delivery = Delivery::create([
             'order_id' => $order->id,
             'user_id' => $order->user_id,
             'status' => 'Pending',
@@ -70,6 +70,10 @@ class DeliveryController extends Controller
         ]);
 
         $shiprocketDetails = $delivery->sendOrderToShiprocketApi();
+
+        // Log::info('store method shipRocket Details');
+        // Log::info($shiprocketDetails);
+
         // dd($shiprocketDetails);
 
         if (!$shiprocketDetails['success']) {
@@ -78,6 +82,7 @@ class DeliveryController extends Controller
             ]);
             Log::info("Delivery ID : " . $delivery->id);
             Log::info($shiprocketDetails['message']);
+            // $delivery->delete();
             return redirect()->back()->with(toast('Failed To Deliver', 'error'));
         }
 
@@ -130,73 +135,73 @@ class DeliveryController extends Controller
         return redirect()->back()->with(toast('Delivery Updated', 'success'));
     }
 
-    public function generateAwb(Delivery $delivery)
-    {
-        $token = getShiprocketToken();
+    // public function generateAwb($id)
+    // {
+    //     $delivery = Delivery::findOrFail($id);
+    //     // dd($delivery);
+    //     $token = getShiprocketToken();
+    //     $generateAwbResponse = Shiprocket::courier($token)->generateAWB(['shipment_id' => $delivery->shipment_id]);
+    //     Log::info($generateAwbResponse);
 
-        $generateAwbResponse = Shiprocket::courier($token)->generateAWB(['shipment_id' => $delivery->shipment_id]);
+    //     if ($generateAwbResponse->has('status_code')) {
+    //         $delivery->update([
+    //             'partner_status_code' => $generateAwbResponse['status_code'],
+    //             'partner_status' => $generateAwbResponse['message']
+    //         ]);
+    //         // return response()->json(['error' => "Your awb could not be generated. {$generateAwbResponse['message']}"]);
+    //         // return response()->json(['error' => "Your awb could not be generated. {$generateAwbResponse}"]);
+    //         return redirect()->back()->with(toast("Your awb could not be generated. {$generateAwbResponse}", 'error'));
+    //     }
 
-        if ( $generateAwbResponse->has('status_code') ) {
-            $delivery->update([
-                'partner_status_code' => $generateAwbResponse['status_code'],
-                'partner_status' => $generateAwbResponse['message']
-            ]);
+    //     if ($generateAwbResponse->has('awb_assign_status') && $generateAwbResponse['awb_assign_status'] === 1) {
+    //         $data = ['shipment_id' => $delivery->shipment_id];
+    //         $response = $delivery->prepareForPickup($data, $token);
+    //         $delivery->update($response);
+    //     }
+    //     return redirect()->back()->with(toast("Pickup requested.", 'success'));
+    //     // return response()->json(['success' => 'Pickup requested']);
+    // }
 
-            // return response()->json(['error' => "Your awb could not be generated. {$generateAwbResponse['message']}"]);
-            return response()->json(['error' => "Your awb could not be generated. {$generateAwbResponse}"]);
-        }
+    // public function retryPickup(Delivery $delivery)
+    // {
+    //     $token = getShiprocketToken();
 
-        if ( $generateAwbResponse->has('awb_assign_status') && $generateAwbResponse['awb_assign_status'] === 1) {
-            $data = ['shipment_id' => $delivery->shipment_id];
-            $response = $delivery->prepareForPickup($data, $token);
-            $delivery->update($response);
-        }
-        return response()->json(['success' => 'Pickup requested']);
-    }
+    //     $data = ['shipment_id' => $delivery->shipment_id];
+    //     $response = $delivery->prepareForPickup($data, $token);
+    //     $delivery->update($response);
+    //     Log::info('retry pickup');
+    //     Log::info($response);
 
-    public function retryPickup(Delivery $delivery)
-    {
-        $token = Shiprocket::getToken();
-
-        $data = ['shipment_id' => $delivery->shipment_id];
-        $response = $delivery->prepareForPickup($data, $token);
-        $delivery->update($response);
-
-        return response()->json(['success' => 'Pickup requested']);
-    }
-
-    public function getTrackingDetails(Request $request): JsonResponse
-    {
-        if ( $request->scans[0]['activity'] === "SHIPMENT DELIVERED" ) {
-            Delivery::where('partner_order_id', $request->order_id)->update([
-                'partner_status' => $request->scans[0]['activity'],
-                'status' => 'Delivered'
-            ]);
-        } else {
-            Delivery::where('partner_order_id', $request->order_id)->update([
-                'partner_status' => $request->scans[0]['activity']
-            ]);
-        }
-        return response()->json(['success' => 'Details updated']);
-    }
+    //     return redirect()->back()->with(toast("Pickup requested.", 'success'));
+    // }
 
     public function printManifest($id)
     {
-        $token = Shiprocket::getToken();
+        $token = getShiprocketToken();
 
-        $res = Shiprocket::generate($token)->printManifest(['order_ids' =>  [$id] ])['manifest_url'];
+        $res = Shiprocket::generate($token)->printManifest(['order_ids' =>  [$id]]);
+        // dd($res);
+        if ($res['manifest_url']) {
+            $res = $res['manifest_url'];
+        } else {
+            return redirect()->back()->with(toast('Manifest Not Available', 'error'));
+        }
 
         header("Content-type:application/pdf");
         header("Content-Disposition:attachment;filename=manifest.pdf");
         return readfile($res);
-
     }
 
     public function printLabel($id)
     {
-        $token = Shiprocket::getToken();
+        $token = getShiprocketToken();
 
-        $res = Shiprocket::generate($token)->label(['shipment_id' => [ $id ]])['label_url'];
+        $res = Shiprocket::generate($token)->label(['shipment_id' => [$id]]);
+        if ($res['label_created']) {
+            $res = $res['label_url'];
+        } else {
+            return redirect()->back()->with(toast('Label Not Available', 'error'));
+        }
 
         header("Content-type:application/pdf");
         header("Content-Disposition:attachment;filename=label.pdf");

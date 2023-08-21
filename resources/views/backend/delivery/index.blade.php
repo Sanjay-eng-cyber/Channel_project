@@ -76,13 +76,13 @@
                                 <thead>
                                     <tr>
                                         <th>Sr no.</th>
-                                        <th>User Name</th>
+                                        {{-- <th>User Name</th> --}}
                                         <th>Order Id</th>
                                         <th>Shipment Id</th>
                                         <th>AWB Code</th>
-                                        <th>Pickup Date</th>
+                                        {{-- <th>Pickup Date</th> --}}
                                         <th>Delivered Date</th>
-                                        <th>Status</th>
+                                        <th>Delivery Status</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -90,12 +90,12 @@
                                     @forelse($deliveries as $d)
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $deliveries) }}</td>
-                                            <td>
+                                            {{-- <td>
                                                 <a class="text-warning"
                                                     href="{{ route('backend.user.show', $d->user_id) }}">
                                                     {{ $d->user->first_name }}
                                                 </a>
-                                            </td>
+                                            </td> --}}
                                             <td>
                                                 <a class="text-warning"
                                                     href="{{ route('backend.order.show', $d->order_id) }}">
@@ -104,18 +104,23 @@
                                             </td>
                                             <td>{{ $d->shipment_id ?? '--' }}</td>
                                             <td>{{ $d->awb_code ?? '--' }}</td>
-                                            <td>{{ $d->pickup_date ? dd_format($d->pickup_date, 'd-m-y h:i:a') : '--' }}
+                                            {{-- <td>{{ $d->pickup_date ? dd_format($d->pickup_date, 'd-m-y h:i:a') : '--' }} --}}
                                             <td>{{ $d->delivered_date ? dd_format($d->delivered_date, 'd-m-y h:i:a') : '--' }}
                                             </td>
                                             <td>
-                                                @if ($d->status == 'Pending')
-                                                    <label class="badge badge-warning">{{ $d->status }}</label>
-                                                @elseif ($d->status == 'Intransit')
-                                                    <label class="badge badge-primary">{{ $d->status }}</label>
-                                                @elseif ($d->status == 'Delivered')
-                                                    <label class="badge badge-success">{{ $d->status }}</label>
+                                                @if ($d->awb_code === null)
+                                                    <span class="badge badge-danger">{{ 'AWB Not Available' }}</span>
+                                                @elseif($d->awb_code !== null && $d->message === 'Pickup queued')
+                                                    <span class="badge badge-info">{{ 'Pickup Queued' }}</span>
                                                 @else
-                                                    <label class="badge badge-secondary">{{ $d->status ?? '--' }}</label>
+                                                    @if ($d->status === 'Intransit')
+                                                        <span class="badge badge-warning">{{ $d->status }}</span>
+                                                    @elseif($d->status === 'Delivered')
+                                                        <span class="badge badge-success">{{ $d->status }}</span>
+                                                    @else
+                                                        <label
+                                                            class="badge badge-secondary">{{ $d->status ?? '--' }}</label>
+                                                    @endif
                                                 @endif
                                             </td>
 
@@ -137,6 +142,14 @@
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.delivery.show', $d->id) }}">View</a>
+                                                        @if ($d->awb_code && $d->status === 'Intransit')
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('backend.delivery.manifest', $d->partner_order_id) }}">Print
+                                                                Manifest</a>
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('backend.delivery.label', $d->shipment_id) }}">Print
+                                                                Label</a>
+                                                        @endif
                                                         {{-- @if ($d->status == 'Intransit')
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.delivery.edit', $d->id) }}">Edit</a>

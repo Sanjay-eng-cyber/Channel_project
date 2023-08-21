@@ -135,6 +135,8 @@ class Delivery extends Model
         $token = getShiprocketToken();
         // dd($token);
         $response = Shiprocket::order($token)->create($details);
+        Log::info('Order Create');
+        Log::info($response);
         // dd($response);
         if ($response['status_code'] === 422) {
             foreach ($response['errors'] as $key => $err) {
@@ -172,6 +174,8 @@ class Delivery extends Model
             'delivery_postcode' => $details['billing_pincode'],
             'order_id' => $response['order_id']
         ]);
+        // Log::info('Check Serviceability');
+        // Log::info($checkServiceablity);
 
         if ($checkServiceablity['status']  !== 200) {
             session()->flash('error', 'Not deliverable in this location');
@@ -187,7 +191,7 @@ class Delivery extends Model
 
         return [
             'success' => true,
-            'message' => 'Details updated'
+            'message' => 'Details Updated'
         ];
     }
 
@@ -197,6 +201,7 @@ class Delivery extends Model
 
             $paramForAwb = ['shipment_id' => $response['shipment_id'], 'courier_id' => $response['courier_company_id']];
             $awb = Shiprocket::courier($token)->generateAWB($paramForAwb);
+            Log::info('Generate AWB');
             Log::info($awb);
             if ($awb->has('status_code')) {
                 session()->flash('error', "Your AWB could not be generated. {$awb['message']}");
@@ -211,7 +216,9 @@ class Delivery extends Model
         } else {
             $response = $this->prepareForPickup($response, $token);
             if (array_key_exists('pickup_data', $response)) {
-                Shiprocket::generate($token)->manifest(['shipment_id' => [$response['shipment_id']]]);
+                $manifest = Shiprocket::generate($token)->manifest(['shipment_id' => [$response['shipment_id']]]);
+                Log::info('Generate Manifest');
+                Log::info($manifest);
             }
         }
         return $response;
@@ -225,6 +232,8 @@ class Delivery extends Model
     public function prepareForPickup($response, $token)
     {
         $requestPickup = Shiprocket::courier($token)->requestPickup(['shipment_id' => $response['shipment_id']]);
+        Log::info('Prepare For Pickup');
+        Log::info($requestPickup);
 
         if ($requestPickup->has('message')) {
             session()->flash('error', $requestPickup['message']);
@@ -253,6 +262,8 @@ class Delivery extends Model
     public function storeShiprocketData($shiprocketDetails): void
     {
 
+        Log::info('Storing Data');
+        Log::info($shiprocketDetails);
         $this->update([
             'partner_order_id' => $shiprocketDetails['order_id'],
             'shipment_id' => $shiprocketDetails['shipment_id'],

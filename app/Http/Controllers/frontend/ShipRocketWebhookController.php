@@ -25,6 +25,5 @@ class ShipRocketWebhookController extends Controller
             ]);
         }
         return response()->json(['success' => 'Details Updated']);
-        // return 'success';
     }
 }
