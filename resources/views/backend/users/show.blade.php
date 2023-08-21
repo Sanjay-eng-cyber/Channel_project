@@ -243,6 +243,7 @@
                                                     href="{{ route('backend.order.show', $transaction->order_id) }}"
                                                     target="target_blank">{{ $transaction->order_id }}</a>
                                             </td>
+                                            <td>{{$transaction->amount}}</td>
                                             <td>
                                                 @if ($transaction->status == 'initial')
                                                     <label class="badge badge-primary">{{ $transaction->status }}</label>
