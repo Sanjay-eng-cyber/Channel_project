@@ -37,7 +37,7 @@
                                     <option value="initial"
                                         {{ request('status') && request('status') == 'initial' ? 'selected' : '' }}>
                                         Initial</option>
-                                        <option value="pending"
+                                    <option value="pending"
                                         {{ request('status') && request('status') == 'pending' ? 'selected' : '' }}>
                                         Pending</option>
                                     <option value="failed"
@@ -90,7 +90,11 @@
                                     @forelse($transactions as $transaction)
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $transactions) }}</td>
-                                            <td>{{ $transaction->order_id }}</td>
+                                            <td>
+                                                <a class="blue-col-a"
+                                                    href="{{ route('backend.order.show', $transaction->order_id) }}"
+                                                    target="target_blank">{{ $transaction->order_id }}</a>
+                                            </td>
                                             <td>{{ $transaction->amount }}</td>
                                             <td>
                                                 @if ($transaction->status == 'initial')
