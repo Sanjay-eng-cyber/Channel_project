@@ -135,6 +135,27 @@ class DeliveryController extends Controller
         return redirect()->back()->with(toast('Delivery Updated', 'success'));
     }
 
+    public function fetchDelivery($id)
+    {
+        $delivery = Delivery::where('status', '!=', 'Delivered')->findOrFail($id);
+        // dd($delivery);
+        $token = getShiprocketToken();
+        $shipment = Shiprocket::shipment($token)->getSpecific($delivery->shipment_id);
+        // dd($shipment['data']);
+        if ($shipment && isset($shipment['data'])) {
+            $delivery->update([
+                'awb_code' => $shipment['data']['awb'] ? $shipment['data']['awb'] : null,
+                'courier_name' => $shipment['data']['courier'] ?: null,
+                'partner_status_code' => $shipment['data']['status'],
+                'partner_status' => Delivery::API_STATUS[$shipment['data']['status']] ?? null,
+                'pickup_token_number' => $shipment['data']['pickup_token_number'] ?? null,
+                'delivered_date' => $shipment['data']['delivered_date'] ?? null
+            ]);
+            return redirect()->back()->with(toast('Delivery Fetched Successfully', 'success'));
+        }
+        return redirect()->back()->with(toast('Shipment Not Available', 'info'));
+    }
+
     // public function generateAwb($id)
     // {
     //     $delivery = Delivery::findOrFail($id);

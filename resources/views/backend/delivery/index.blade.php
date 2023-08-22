@@ -142,6 +142,10 @@
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.delivery.show', $d->id) }}">View</a>
+                                                        @if ($d->status != 'Delivered')
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('backend.delivery.fetch', $d->id) }}">Fetch</a>
+                                                        @endif
                                                         @if ($d->awb_code && $d->status === 'Intransit')
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.delivery.manifest', $d->partner_order_id) }}">Print

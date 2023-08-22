@@ -21,7 +21,6 @@ class ShipRocketWebhookController extends Controller
             Delivery::where('partner_order_id', $request->order_id)->update([
                 'partner_status' => isset($request->scans[0]) ? $request->scans[0]['activity'] : null,
                 'pickup_scheduled_date' => $request->pickup_scheduled_date ?? null,
-                'status' => $request->shipment_status
             ]);
         }
         return response()->json(['success' => 'Details Updated']);

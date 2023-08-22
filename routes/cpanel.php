@@ -109,6 +109,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
         // Route::get('/delivery/print/generate_awb/{id}', 'App\Http\Controllers\cms\DeliveryController@generateAwb')->name("backend.delivery.generate_awb");
 
+        Route::get('/delivery/fetch/{id}', 'App\Http\Controllers\cms\DeliveryController@fetchDelivery')->name("backend.delivery.fetch");
+
         Route::get('/delivery/print/manifest/{id}', 'App\Http\Controllers\cms\DeliveryController@printManifest')->name("backend.delivery.manifest");
         Route::get('/delivery/print/label/{id}', 'App\Http\Controllers\cms\DeliveryController@printLabel')->name("backend.delivery.label");
 
