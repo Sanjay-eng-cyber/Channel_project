@@ -140,6 +140,7 @@ class DeliveryController extends Controller
         $delivery = Delivery::where('status', '!=', 'Delivered')->findOrFail($id);
         // dd($delivery);
         $token = getShiprocketToken();
+
         $shipment = Shiprocket::shipment($token)->getSpecific($delivery->shipment_id);
         // dd($shipment['data']);
         if ($shipment && isset($shipment['data'])) {
@@ -151,9 +152,22 @@ class DeliveryController extends Controller
                 'pickup_token_number' => $shipment['data']['pickup_token_number'] ?? null,
                 'delivered_date' => $shipment['data']['delivered_date'] ?? null
             ]);
-            return redirect()->back()->with(toast('Delivery Fetched Successfully', 'success'));
         }
-        return redirect()->back()->with(toast('Shipment Not Available', 'info'));
+
+        $awbResponse =  Shiprocket::track($token)->throughAwb($delivery->awb_code);
+        // dd($awbResponse);
+        if ($awbResponse && isset($awbResponse['tracking_data']) && isset($awbResponse['tracking_data']['track_status'])) {
+            // dd($awbResponse);
+            $pickup_date = null;
+            if (isset($awbResponse['tracking_data']['shipment_track'])) {
+                $pickup_date = isset($awbResponse['tracking_data']['shipment_track']['pickup_date']) ? $awbResponse['tracking_data']['shipment_track']['pickup_date'] : null;
+            }
+            $delivery->update([
+                'pickup_date' => $pickup_date
+            ]);
+        }
+        // dd($awbResponse);
+        return redirect()->back()->with(toast('Delivery Fetched Successfully', 'success'));
     }
 
     // public function generateAwb($id)
