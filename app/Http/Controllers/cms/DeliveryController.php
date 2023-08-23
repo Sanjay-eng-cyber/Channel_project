@@ -140,34 +140,36 @@ class DeliveryController extends Controller
         $delivery = Delivery::where('status', '!=', 'Delivered')->findOrFail($id);
         // dd($delivery);
         $token = getShiprocketToken();
-
+        $response =  Shiprocket::track($token)->throwShipmentId($delivery->shipment_id);
+        // dd($response);
         $shipment = Shiprocket::shipment($token)->getSpecific($delivery->shipment_id);
         // dd($shipment['data']);
         if ($shipment && isset($shipment['data'])) {
             $delivery->update([
-                'awb_code' => $shipment['data']['awb'] ? $shipment['data']['awb'] : null,
-                'courier_name' => $shipment['data']['courier'] ?: null,
-                'partner_status_code' => $shipment['data']['status'],
-                'partner_status' => Delivery::API_STATUS[$shipment['data']['status']] ?? null,
-                'pickup_token_number' => $shipment['data']['pickup_token_number'] ?? null,
-                'delivered_date' => $shipment['data']['delivered_date'] ?? null
+                'awb_code' => isset($shipment['data']['awb']) ? $shipment['data']['awb'] : null,
+                'courier_name' => isset($shipment['data']['courier']) ? $shipment['data']['courier'] : null,
+                'partner_status_code' => isset($shipment['data']['status']) ? $shipment['data']['status'] : null,
+                'partner_status' => isset($shipment['data']['status']) ? Delivery::API_STATUS[$shipment['data']['status']] : null,
+                'pickup_token_number' => isset($shipment['data']['pickup_token_number']) ? $shipment['data']['pickup_token_number'] : null,
+                'delivered_date' => isset($shipment['data']['delivered_date']) ? $shipment['data']['delivered_date'] : null
             ]);
+            return redirect()->back()->with(toast('Delivery Fetched Successfully', 'success'));
         }
 
-        $awbResponse =  Shiprocket::track($token)->throughAwb($delivery->awb_code);
+        // $awbResponse =  Shiprocket::track($token)->throughAwb($delivery->awb_code);
+        // // dd($awbResponse);
+        // if ($awbResponse && isset($awbResponse['tracking_data']) && isset($awbResponse['tracking_data']['track_status'])) {
+        //     // dd($awbResponse);
+        //     $pickup_date = null;
+        //     if (isset($awbResponse['tracking_data']['shipment_track'])) {
+        //         $pickup_date = isset($awbResponse['tracking_data']['shipment_track']['pickup_date']) ? $awbResponse['tracking_data']['shipment_track']['pickup_date'] : null;
+        //     }
+        //     $delivery->update([
+        //         'pickup_date' => $pickup_date
+        //     ]);
+        // }
         // dd($awbResponse);
-        if ($awbResponse && isset($awbResponse['tracking_data']) && isset($awbResponse['tracking_data']['track_status'])) {
-            // dd($awbResponse);
-            $pickup_date = null;
-            if (isset($awbResponse['tracking_data']['shipment_track'])) {
-                $pickup_date = isset($awbResponse['tracking_data']['shipment_track']['pickup_date']) ? $awbResponse['tracking_data']['shipment_track']['pickup_date'] : null;
-            }
-            $delivery->update([
-                'pickup_date' => $pickup_date
-            ]);
-        }
-        // dd($awbResponse);
-        return redirect()->back()->with(toast('Delivery Fetched Successfully', 'success'));
+        return redirect()->back()->with(toast('Something Went Wrong', 'error'));
     }
 
     // public function generateAwb($id)
