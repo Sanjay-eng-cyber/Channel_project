@@ -22,9 +22,9 @@ class CreateDeliveriesTable extends Migration
             $table->decimal('breadth')->nullable();
             $table->decimal('height')->nullable();
             $table->decimal('weight')->nullable();
-            $table->bigInteger('partner_order_id')->nullable();
-            $table->bigInteger('shipment_id')->nullable();
-            $table->bigInteger('awb_code')->nullable();
+            $table->string('partner_order_id')->nullable();
+            $table->string('shipment_id')->nullable();
+            $table->string('awb_code')->nullable();
             $table->string('courier_name')->nullable();
             $table->bigInteger('courier_company_id')->nullable();
             $table->bigInteger('partner_status_code')->nullable();
