@@ -47,7 +47,7 @@ class CartController extends Controller
             $cart_session_id = session()->get('cart_session_id');
             if (!$cart_session_id) {
                 $cart_session_id = now()->format('dmyhis') . rand(100, 999);
-                session()->put('cart_session_id', now()->format('dmyhis') . rand(100, 999));
+                session()->put('cart_session_id', $cart_session_id);
             }
             $cart = Cart::updateOrCreate([
                 'session_id' => $cart_session_id
