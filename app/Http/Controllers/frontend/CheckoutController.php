@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 use App\Traits\Transactional;
 use App\Lib\Razorpay\Razorpay;
 use Seshac\Shiprocket\Shiprocket;
-use App\Services\DelhiveryService;
 use App\Http\Controllers\Controller;
 
 class CheckoutController extends Controller
@@ -49,21 +48,20 @@ class CheckoutController extends Controller
         }
         // dd($selectedAddress->postal_code);
 
-        // $loginDetails =  Shiprocket::login([
-        //     'email' => config('shiprocket.credentials.email'),
-        //     'password' => config('shiprocket.credentials.password')
-        // ]);
-        // // dd($loginDetails);
-        // $token =  isset($loginDetails['token']) ? $loginDetails['token'] : '';
-        // $checkServiceablity = Shiprocket::courier($token)->checkServiceability([
-        //     'pickup_postcode' => env('APP_POSTAL_CODE'),
-        //     'delivery_postcode' => (int)$selectedAddress->postal_code
-        // ]);
-        // // dd($checkServiceablity);
-        // if (!isset($checkServiceablity['status']) || $checkServiceablity['status']  !== 200) {
-        //     session()->flash('error', 'Not deliverable in this location');
-        //     return redirect()->back()->with(toast("Not Deliverable In Selected Address", 'info'));
-        // }
+        $token = getShiprocketToken();
+
+        $checkServiceablity = Shiprocket::courier($token)->checkServiceability([
+            'pickup_postcode' => env('APP_POSTAL_CODE'),
+            'delivery_postcode' => (int)$selectedAddress->postal_code,
+            'cod' => 0,
+            'weight' => 2
+        ]);
+
+        // dd($checkServiceablity);
+        if (!isset($checkServiceablity['status']) || $checkServiceablity['status']  !== 200) {
+            session()->flash('error', 'Not deliverable in this location');
+            return redirect()->back()->with(toast("Not Deliverable In Selected Address", 'info'));
+        }
 
         $cartItems = $user->cart->items()->with('product')->get();
         $productsTotalAmount = 0;
@@ -96,6 +94,8 @@ class CheckoutController extends Controller
             session()->forget('discount');
         }
         $order->update(['status' => 'completed']);
+        $userCart = auth()->user()->cart;
+        optional($userCart->items()->delete());
         return view('frontend.payment-success', compact('order'));
     }
 

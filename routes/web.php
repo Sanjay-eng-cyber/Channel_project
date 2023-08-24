@@ -19,6 +19,8 @@ Route::domain(config('app.web_domain'))->group(function () {
 
     Route::get('/test', function () {
 
+        // dd(getShiprocketToken());
+
         $order = App\Models\Order::latest()->first();
         // dd($order);
         $delivery = App\Models\Delivery::updateOrCreate([
@@ -254,4 +256,7 @@ Route::domain(config('app.web_domain'))->group(function () {
 
     Route::post('callback', 'App\Http\Controllers\frontend\CheckoutController@handleCallback')->name('razorpay.callback');
     Route::post('webhook', 'App\Http\Controllers\frontend\WebhookController@manage')->name('webhook.manage');
+
+    Route::post('s/webhook', 'App\Http\Controllers\frontend\ShipRocketWebhookController@manage')->name('webhook.manage');
+
 });

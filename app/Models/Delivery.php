@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use Seshac\Shiprocket\Shiprocket;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -13,7 +14,7 @@ class Delivery extends Model
 
     protected $guarded = ['id'];
 
-    protected const API_STATUS = [
+    public const API_STATUS = [
         1 => "Awb Assigned",
         2 => "Label Generated",
         3 => "Pickup Scheduled/Generated",
@@ -63,13 +64,13 @@ class Delivery extends Model
         return $this->belongsTo(order::class);
     }
 
-    public function addItems($request): void
+    public function addItems($ordersItems): void
     {
-        foreach ($request['products'] as $product) {
+        foreach ($ordersItems as $product) {
             \DB::table('delivery_items')->insert([
-                'order_id' => $request['order_id'],
+                'order_id' => $this->order_id,
                 'delivery_id' => $this->id,
-                'product_id' => $product,
+                'product_id' => $ordersItems->product_id,
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
@@ -83,12 +84,13 @@ class Delivery extends Model
         $userAddress = $user->address;
         $order = $this->order;
         // dd($order);
-        $payment_method = 'COD';
+        // $payment_method = 'COD';
+        $payment_method = 'Prepaid';
 
         foreach ($order->items as $item) {
             $items[$item->product->name] = [
                 'name' => $item->product->name,
-                'sku' => struniq(),
+                'sku' => $item->product->sku,
                 'units' => $item->quantity,
                 'selling_price' => $item->amount,
                 "hsn" => 000000
@@ -118,10 +120,10 @@ class Delivery extends Model
             "transaction_charges" => 0,
             "total_discount" => 0,
             "sub_total" => $this->order->total_amount,
-            "length" => 6 * 2.5,
-            "breadth" => 4 * 2.5,
-            "height" => 2.5 * 2.5,
-            "weight" => 5
+            "length" => $this->length,
+            "breadth" => $this->breadth,
+            "height" => $this->height,
+            "weight" => $this->weight
         ];
     }
 
@@ -130,13 +132,11 @@ class Delivery extends Model
         $user = User::find($this->user_id);
         $details = $this->prepareOrder();
         // dd($details);
-        $loginDetails =  Shiprocket::login([
-            'email' => config('shiprocket.credentials.email'),
-            'password' => config('shiprocket.credentials.password')
-        ]);
-        $token =  isset($loginDetails['token']) ? $loginDetails['token'] : null;
+        $token = getShiprocketToken();
         // dd($token);
         $response = Shiprocket::order($token)->create($details);
+        Log::info('Order Create');
+        Log::info($response);
         // dd($response);
         if ($response['status_code'] === 422) {
             foreach ($response['errors'] as $key => $err) {
@@ -174,6 +174,8 @@ class Delivery extends Model
             'delivery_postcode' => $details['billing_pincode'],
             'order_id' => $response['order_id']
         ]);
+        // Log::info('Check Serviceability');
+        // Log::info($checkServiceablity);
 
         if ($checkServiceablity['status']  !== 200) {
             session()->flash('error', 'Not deliverable in this location');
@@ -183,38 +185,86 @@ class Delivery extends Model
             ];
         }
 
-        //        if ( $response['awb_code'] === 0 || $response['awb_code'] === "" || $response['awb_code'] === null) {
-        if (in_array($response['awb_code'], [0, '', null], true)) {
+        // to assign awb number
+        // $response = $this->generateAWB($token, $response);
 
-            $paramForAwb = ['shipment_id' => $response['shipment_id'], 'courier_id' => $response['courier_company_id']];
-            $awb = Shiprocket::courier($token)->generateAWB($paramForAwb);
-
-            if ($awb->has('status_code')) {
-                session()->flash('error', "Your AWB could not be generated. {$awb['message']}");
-                $response['status_code'] = $awb['status_code'];
-            }
-
-            if ($awb->has('awb_assign_status') && $awb['awb_assign_status'] === 1) {
-                $response['awb_code'] = $awb['response']['data']['awb_code'];
-                $response['status_code'] = $awb['awb_assign_status'];
-                $response = $this->prepareForPickup($response, $token);
-            }
-        } else {
-            $response = $this->prepareForPickup($response, $token);
-            if (array_key_exists('pickup_data', $response)) {
-                Shiprocket::generate($token)->manifest(['shipment_id' => [$response['shipment_id']]]);
-            }
-        }
         $this->storeShiprocketData($response);
+
         return [
             'success' => true,
-            'message' => 'Details updated'
+            'message' => 'Delivery Updated'
         ];
     }
+
+    // public function generateAWB($token, $response)
+    // {
+    //     if (in_array($response['awb_code'], [0, '', null], true)) {
+
+    //         $paramForAwb = ['shipment_id' => $response['shipment_id'], 'courier_id' => $response['courier_company_id']];
+    //         $awb = Shiprocket::courier($token)->generateAWB($paramForAwb);
+    //         Log::info('Generate AWB');
+    //         Log::info($awb);
+    //         if ($awb->has('status_code')) {
+    //             session()->flash('error', "Your AWB could not be generated. {$awb['message']}");
+    //             $response['status_code'] = $awb['status_code'];
+    //         }
+
+    //         if ($awb->has('awb_assign_status') && $awb['awb_assign_status'] === 1) {
+    //             $response['awb_code'] = $awb['response']['data']['awb_code'];
+    //             $response['status_code'] = $awb['awb_assign_status'];
+    //             $response = $this->prepareForPickup($response, $token);
+    //         }
+    //     } else {
+    //         $response = $this->prepareForPickup($response, $token);
+    //         if (array_key_exists('pickup_data', $response)) {
+    //             $manifest = Shiprocket::generate($token)->manifest(['shipment_id' => [$response['shipment_id']]]);
+    //             Log::info('Generate Manifest');
+    //             Log::info($manifest);
+    //         }
+    //     }
+    //     return $response;
+    // }
+
+    // /**
+    //  * @param $response
+    //  * @param $token
+    //  * @return mixed
+    //  */
+    // public function prepareForPickup($response, $token)
+    // {
+    //     $requestPickup = Shiprocket::courier($token)->requestPickup(['shipment_id' => $response['shipment_id']]);
+    //     Log::info('Prepare For Pickup');
+    //     Log::info($requestPickup);
+
+    //     if ($requestPickup->has('message')) {
+    //         session()->flash('error', $requestPickup['message']);
+    //         $response['status_code'] = $requestPickup['status_code'];
+    //         $response['message'] = $requestPickup['message'];
+    //     }
+
+    //     if ($requestPickup->has('pickup_status') && $requestPickup['pickup_status'] === 0 && $requestPickup['response']['data'] === 'Pickup queued') {
+    //         $response['pickup_data'] = ['message' => $requestPickup['response']['data']];
+    //     }
+
+    //     if ($requestPickup->has('pickup_status') && $requestPickup['pickup_status'] === 1) {
+
+    //         $response['pickup_data'] = [
+    //             'pickup_status' =>  $requestPickup['pickup_status'],
+    //             'pickup_scheduled_date' => $requestPickup['response']['pickup_scheduled_date'],
+    //             'pickup_token_number' => $requestPickup['response']['pickup_token_number'],
+    //             'message' => $requestPickup['response']['data']
+    //         ];
+    //         session()->flash('success', $requestPickup['response']['data']);
+    //     }
+    //     return $response;
+    // }
+
 
     public function storeShiprocketData($shiprocketDetails): void
     {
 
+        Log::info('Storing Data');
+        Log::info($shiprocketDetails);
         $this->update([
             'partner_order_id' => $shiprocketDetails['order_id'],
             'shipment_id' => $shiprocketDetails['shipment_id'],
@@ -228,37 +278,5 @@ class Delivery extends Model
             'pickup_token_number' => $shiprocketDetails['pickup_data']['pickup_token_number'] ?? null,
             'message' => $shiprocketDetails['pickup_data']['message'] ?? null
         ]);
-    }
-
-    /**
-     * @param $response
-     * @param $token
-     * @return mixed
-     */
-    public function prepareForPickup($response, $token)
-    {
-        $requestPickup = Shiprocket::courier($token)->requestPickup(['shipment_id' => $response['shipment_id']]);
-
-        if ($requestPickup->has('message')) {
-            session()->flash('error', $requestPickup['message']);
-            $response['status_code'] = $requestPickup['status_code'];
-            $response['message'] = $requestPickup['message'];
-        }
-
-        if ($requestPickup->has('pickup_status') && $requestPickup['pickup_status'] === 0 && $requestPickup['response']['data'] === 'Pickup queued') {
-            $response['pickup_data'] = ['message' => $requestPickup['response']['data']];
-        }
-
-        if ($requestPickup->has('pickup_status') && $requestPickup['pickup_status'] === 1) {
-
-            $response['pickup_data'] = [
-                'pickup_status' =>  $requestPickup['pickup_status'],
-                'pickup_scheduled_date' => $requestPickup['response']['pickup_scheduled_date'],
-                'pickup_token_number' => $requestPickup['response']['pickup_token_number'],
-                'message' => $requestPickup['response']['data']
-            ];
-            session()->flash('success', $requestPickup['response']['data']);
-        }
-        return $response;
     }
 }

@@ -178,3 +178,26 @@ if (!function_exists('struniq')) {
         return substr(uniqid(), 11) . rand(10, 99) . substr(strtotime(now()), 6);
     }
 }
+
+if (!function_exists('getShiprocketToken')) {
+    function getShiprocketToken()
+    {
+        $configToken = App\Models\ShiprocketConfig::where('name', 'token')->where('validity', '>', now())->first();
+        // dd($configToken);
+        if ($configToken) {
+            $token = $configToken->value;
+        } else {
+            $token =  Seshac\Shiprocket\Shiprocket::getToken() ?? null;
+            if ($token) {
+                $configToken = App\Models\ShiprocketConfig::updateOrCreate(
+                    ['name' => 'token'],
+                    [
+                        'value' => $token,
+                        'validity' => Carbon\Carbon::now()->addHours(9)
+                    ]
+                );
+            }
+        }
+        return $token ?? '';
+    }
+}
