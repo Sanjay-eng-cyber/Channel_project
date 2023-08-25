@@ -169,7 +169,7 @@
                                 </div>
                                 <button class="btn btn-pink edit_modal" value="{{ $userAddress->id }}" type="button"
                                     style="margin-top: 5%">
-                                    +Edit Address
+                                    Update Address
                                 </button>
                             </div>
                         </div>
@@ -304,7 +304,8 @@
 
                     {{-- if otp not send --}}
                     <div class="auth-popup-body">
-                        <form class="row" action="{{ route('frontend.address.update', $userAddress->id) }}" method="post">
+                        <form class="row" action="{{ route('frontend.address.update', $userAddress->id) }}"
+                            method="post">
                             @csrf
                             <h5 class="main-head text-red">Edit Address</h5>
                             <input type="hidden" name="type" id="type" value="">
@@ -317,8 +318,9 @@
                                 @endif
                             </div>
                             <div class="form-group py-2 req-input-2">
-                                <input type="text" name="street_address" id="street_address" class=" profile-form-input-custome"
-                                    placeholder="Street Address" required minlength="5" maxlength="80" required>
+                                <input type="text" name="street_address" id="street_address"
+                                    class=" profile-form-input-custome" placeholder="Street Address" required
+                                    minlength="5" maxlength="80" required>
                                 @if ($errors->has('street_address'))
                                     <div id="street_address-error" class="text-danger text-start">
                                         {{ $errors->first('street_address') }}</div>
@@ -353,8 +355,9 @@
                                 @endif
                             </div>
                             <div class="form-group py-2 col-md-6">
-                                <input type="text" name="postal_code" id="postal_code" class="profile-form-input-custome col-md-6"
-                                    placeholder="Pin Code" minlength="3" maxlength="20" required>
+                                <input type="text" name="postal_code" id="postal_code"
+                                    class="profile-form-input-custome col-md-6" placeholder="Pin Code" minlength="3"
+                                    maxlength="20" required>
                                 @if ($errors->has('postal_code'))
                                     <div id="postal_code-error" class="text-danger text-start">
                                         {{ $errors->first('postal_code') }}
@@ -383,8 +386,8 @@
                 $('#editaddress').modal('show');
                 $.ajax({
                     type: "GET",
-                    url: "/address/edit/"+ address_id,
-                    success: function(response){
+                    url: "/address/edit/" + address_id,
+                    success: function(response) {
                         console.log(response);
                         $('#name').val(response.userAddress.name);
                         $('#street_address').val(response.userAddress.street_address);
