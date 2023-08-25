@@ -211,7 +211,7 @@
                            </a>
                        @endauth
                    </div>
-                   <div class="col">
+                   <div class="col" style="position: relative;z-index: 9999;">
                        <a href="{{ route('frontend.cart.index') }}"
                            class="gap-2 d-flex flex-column align-items-center">
                            <span>
