@@ -209,7 +209,7 @@
 
                         {{-- if otp not send --}}
                         <div class="auth-popup-body">
-                            <form class="row" action="{{ route('frontend.address.update') }}" method="post">
+                            <form class="row" action="{{ route('frontend.address.store') }}" method="post">
                                 @csrf
                                 <h5 class="main-head text-red">Add Address</h5>
 

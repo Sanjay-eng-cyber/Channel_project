@@ -167,7 +167,10 @@
                                         {{ $userAddress->country }} - {{ $userAddress->postal_code }}
                                     </span>
                                 </div>
-
+                                <button class="btn btn-pink edit_modal" value="{{ $userAddress->id }}" type="button"
+                                    style="margin-top: 5%">
+                                    +Edit Address
+                                </button>
                             </div>
                         </div>
                     @empty
@@ -285,4 +288,114 @@
             </div>
         </div>
     </div>
+
+    {{-- Edit address Modal --}}
+    <div class="modal fade auth-popup" id="editaddress" tabindex="-1" aria-labelledby="addressFormPopupLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <button class="auth-popup-close-button mb-4" type="button" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <img src="{{ url('frontend/images/icons/icon-close.svg') }}" style="width: 51px;"
+                            alt="">
+                    </button>
+
+                    {{-- if otp not send --}}
+                    <div class="auth-popup-body">
+                        <form class="row" action="{{ route('frontend.address.update', $userAddress->id) }}" method="post">
+                            @csrf
+                            <h5 class="main-head text-red">Edit Address</h5>
+                            <input type="hidden" name="type" id="type" value="">
+                            <div class="form-group py-2 req-input">
+                                <input type="text" name="name" id="name" class=" profile-form-input-custome "
+                                    placeholder="Name" required minlength="3" maxlength="20" required>
+                                @if ($errors->has('name'))
+                                    <div id="name-error" class="text-danger text-start">
+                                        {{ $errors->first('name') }}</div>
+                                @endif
+                            </div>
+                            <div class="form-group py-2 req-input-2">
+                                <input type="text" name="street_address" id="street_address" class=" profile-form-input-custome"
+                                    placeholder="Street Address" required minlength="5" maxlength="80" required>
+                                @if ($errors->has('street_address'))
+                                    <div id="street_address-error" class="text-danger text-start">
+                                        {{ $errors->first('street_address') }}</div>
+                                @endif
+                            </div>
+
+                            <div class="form-group py-2 col-md-6">
+                                <input type="text" name="city" id="city" class=" profile-form-input-custome"
+                                    placeholder="City" minlength="3" maxlength="20" required>
+                                @if ($errors->has('city'))
+                                    <div id="city-error" class="text-danger text-start">{{ $errors->first('city') }}
+                                    </div>
+                                @endif
+                            </div>
+
+                            <div class="form-group py-2 col-md-6">
+                                <input type="text" name="state" id="state" class=" profile-form-input-custome"
+                                    placeholder="State" minlength="3" maxlength="50" required>
+                                @if ($errors->has('state'))
+                                    <div id="state-error" class="text-danger text-start">
+                                        {{ $errors->first('state') }}</div>
+                                @endif
+                            </div>
+
+                            <div class="form-group py-2 col-md-6">
+                                <input type="text" name="country" id="country" class=" profile-form-input-custome"
+                                    placeholder="Country" minlength="3" maxlength="50" required>
+                                @if ($errors->has('country'))
+                                    <div id="country-error" class="text-danger text-start">
+                                        {{ $errors->first('country') }}
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="form-group py-2 col-md-6">
+                                <input type="text" name="postal_code" id="postal_code" class="profile-form-input-custome col-md-6"
+                                    placeholder="Pin Code" minlength="3" maxlength="20" required>
+                                @if ($errors->has('postal_code'))
+                                    <div id="postal_code-error" class="text-danger text-start">
+                                        {{ $errors->first('postal_code') }}
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="col-sm-12 pt-4">
+                                <button type="submit" class="btn profile-btn-color">Update Address</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- edit address modal end --}}
+@endsection
+@section('js')
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '.edit_modal', function() {
+                var address_id = $(this).val();
+                $('#editaddress').modal('show');
+                $.ajax({
+                    type: "GET",
+                    url: "/address/edit/"+ address_id,
+                    success: function(response){
+                        console.log(response);
+                        $('#name').val(response.userAddress.name);
+                        $('#street_address').val(response.userAddress.street_address);
+                        $('#city').val(response.userAddress.city);
+                        $('#state').val(response.userAddress.state);
+                        $('#country').val(response.userAddress.country);
+                        $('#postal_code').val(response.userAddress.postal_code);
+                        $('#type').val(response.userAddress.type);
+                    }
+                })
+            });
+        });
+    </script>
 @endsection

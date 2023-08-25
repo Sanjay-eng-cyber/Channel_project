@@ -224,7 +224,9 @@ Route::domain(config('app.web_domain'))->group(function () {
         // })->name('frontend.profile');
         Route::get('/profile', 'App\Http\Controllers\frontend\ProfileController@index')->name('frontend.profile');
         Route::post('/profile/update', 'App\Http\Controllers\frontend\ProfileController@update')->name('frontend.profile.update');
-        Route::post('/address/update', 'App\Http\Controllers\frontend\AddressController@update')->name('frontend.address.update');
+        Route::post('/address/store', 'App\Http\Controllers\frontend\AddressController@store')->name('frontend.address.store');
+        Route::post('/address/update/{id}', 'App\Http\Controllers\frontend\AddressController@update')->name('frontend.address.update');
+        Route::get('/address/edit/{id}', 'App\Http\Controllers\frontend\AddressController@edit')->name('frontend.address.edit');
         Route::get('/address/delete/{id}', 'App\Http\Controllers\frontend\AddressController@destroy')->name('frontend.address.delete');
 
         Route::get('/wishlist', 'App\Http\Controllers\frontend\WishlistController@index')->name('frontend.wishlist.index');
