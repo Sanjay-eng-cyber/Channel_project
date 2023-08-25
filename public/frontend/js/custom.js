@@ -240,7 +240,7 @@ $('.rise-up-slider').slick({
 
 
 $('.frontend-top-slider').slick({
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2500, // Adjust the speed as needed
     arrows: true,
     prevArrow: '<button type="button" class="slick-prev">Previous</button>',

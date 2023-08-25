@@ -7,40 +7,45 @@
             <h2 class="text-red main-head text-capitalize mt-4 mb-3">#Bestseller of channel</h2>
             <div class="d-none d-md-block">
                 <div class="row main-group-card">
-                    <div class="col-lg-4 col-md-6 mb-md-4 mb-lg-0">
+                    <div class="product-slide-1">
                         @if ($leftSliders)
                             @forelse ($leftSliders as $leftSlider)
-                                <div class="  group-card-2 min-height-500px ">
-                                    <div class="card second-group-card">
-                                        <img src="{{ asset('storage/images/sliders/' . $leftSlider->image) }}"
-                                            class="img-fluid second-group-img" alt="...">
-                                        <div class="card-body text-center bg-skin-color second-group-card-body">
-                                            <h4 class="card-title text-center font-head ">{{ $leftSlider->title }}</h4>
-                                            <p class="card-text group-card-text-color">
+                                <div class="hero-main-slider" style="">
+                                    <img src="{{ asset('storage/images/sliders/' . $leftSlider->image) }}"
+                                        class="img-fluid" alt="..."
+                                        style="border-radius: 30px 30px 0px 0px">
+                                    <div class="slider-card-first">
+                                        <div class="text-center bg-skin-color second-group-card-body">
+                                            <h4 class="text-center font-head">{{ $leftSlider->title }}</h4>
+                                            <p class="group-card-text-color">
                                                 {{ $leftSlider->descriptions }}
                                             </p>
                                             <button type="button" class="text-center group-buutton-bg-disable">
-                                                <a class=" d-flex gap-2" href="{{ $leftSlider->link }}">
-                                                    <span class="group-card-shop-btn ">Shop Now</span>
+                                                <a class="d-flex gap-2" href="{{ $leftSlider->link }}">
+                                                    <span class="group-card-shop-btn">Shop Now</span>
                                                     <i class="fa fa-angle-right group-button-arrow"></i>
                                                 </a>
                                             </button>
                                         </div>
                                     </div>
+
                                 </div>
                             @empty
                             @endforelse
                         @endif
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-md-4 mb-lg-0">
+                    <div class="product-slide-2">
                         @if ($middleSlider)
-                            <div class="  group-card-2  min-height-500px">
-                                <div class="card second-group-card">
-                                    <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}"
-                                        class="img-fluid second-group-img" alt="...">
-                                    <div class="card-body text-center  second-group-card-body">
+                            <div class="hero-main-slider">
+                                <img src="{{ asset('frontend/images/sliders/new-xi.png') }}"
+                                    class="img-fluid second-group-img" alt="...">
+                                <div class="slider-card-second">
+                                    {{-- <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}"
+                                        class="img-fluid second-group-img" alt="..."> --}}
+
+                                    <div class=" text-center  second-group-card-body d-flex flex-column justify-content-center align-items-center gap-2">
                                         <h4 class="card-title text-center font-head ">{{ $middleSlider->title }}</h4>
-                                        <p class="card-text group-card-text-color">
+                                        <p class="card-text group-card-text-color mt-0 mb-0" style="font-size:14px">
                                             {{ $middleSlider->descriptions }}
                                         </p>
 
@@ -52,10 +57,12 @@
                                         </button>
                                     </div>
                                 </div>
+
                             </div>
                         @endif
                     </div>
-                    <div class="col-lg-4 col-md-12">
+
+                    <div class="product-slide-3">
                         @if ($rightSliders->count())
                             <div class="row">
                                 @forelse ($rightSliders as $rigslider)
@@ -85,6 +92,7 @@
                             </div>
                         @endif
                     </div>
+
                 </div>
             </div>
             <div class="d-block d-md-none">
@@ -136,7 +144,8 @@
                                         <div class="slide-content-desc">
                                             <h3 class="">{{ $rightSlider->title }}</h3>
                                             <p class="">{{ $rightSlider->descriptions }} </p>
-                                            <a class="d-flex gap-2 justify-content-center " href="{{ $rightSlider->link }}">
+                                            <a class="d-flex gap-2 justify-content-center "
+                                                href="{{ $rightSlider->link }}">
                                                 <span class="group-card-shop-btn ">Shop Now</span>
                                                 <i class="fa fa-angle-right group-button-arrow"></i>
                                             </a>
@@ -159,7 +168,7 @@
 
     {{-- Features Products --}}
     @if ($featured_products)
-        <section>
+        <section class="mt-5">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">

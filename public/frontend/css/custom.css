@@ -692,13 +692,13 @@ a:hover {
     border: 0px;
     height: 100%;
 }
-
+/*
 .group-card-2 .second-group-card .second-group-img {
     width: 100%;
     border-radius: 27px 27px 0px 0px;
     flex-basis: 100%;
     object-fit: cover;
-}
+} */
 .group-card-3:last-of-type{
     margin-bottom: 0 !important;
 }
@@ -707,17 +707,17 @@ a:hover {
     flex-direction: column;
     height: 100%;
 }
-.bg-skin-color{
+/* .bg-skin-color{
     background: rgba(235, 181, 121, 1) !important;
 }
 .min-height-500px{
     min-height: 500px;
-}
-
+} */
+/*
 .group-card-2 .second-group-card .second-group-card-body {
     background: #fb8ca5;
     border-radius: 0px 0px 27px 27px;
-}
+} */
 
 .group-card-3 {
     display: flex;
@@ -3662,15 +3662,15 @@ img.cart-p-img  {
 
 
 .isolation-contact{
-    isolation: isolate;   
+    isolation: isolate;
    }
-   
+
    .contact-border .contact-img {
        background: url('/frontend/images/banner/contact-bg-new1.png') !important;
        background-repeat: no-repeat !important;
        background-size: cover !important;
        border-radius: 10px;
-   
+
    }
    .circle-first-contact{
        width: 200px;
@@ -3679,13 +3679,13 @@ img.cart-p-img  {
        bottom: -23px;
        right: -7em;
    }
-   
+
    .circle-second-contact{
        position: absolute;
        right: -114px;
        bottom: -32px;
        width: 112px;
-   
+
    }
    .slider-container
    .slick-prev:before,
@@ -3698,3 +3698,50 @@ img.cart-p-img  {
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
    }
+
+
+   .main-group-card
+   {
+     display: grid;
+     grid-template-columns: 40% 30% 30%;
+   }
+   @media screen and (max-width: 992px) {
+
+    .main-group-card
+    {
+      display: grid;
+      grid-template-columns:60% 40%;
+      grid-template-rows:auto;
+      grid-row-gap: 40px;
+
+    }
+
+  }
+
+
+
+
+
+.hero-main-slider{
+    position: relative;
+    isolation:isolate
+}
+
+.slider-card-first{
+    position:absolute;
+    bottom:-32px;
+    width:100%;
+    background-color:#ebb579;
+    border-radius: 0px 0px 30px 30px;
+    padding:18px 0px 18px 0px
+}
+
+
+.slider-card-second{
+    position:absolute;
+    bottom:-92px;
+    width:100%;
+    background-color:#fb8ca5;
+    border-radius: 0px 0px 30px 30px;
+    padding:22px 0px 22px 0px;
+}
