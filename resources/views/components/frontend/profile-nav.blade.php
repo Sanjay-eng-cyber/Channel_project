@@ -18,11 +18,15 @@
                       </div>
                 </button>
             </div>
+            @if($name)
+
             <div class="user-name-section">
+
                 <p class="name-input text-center mt-2">{{ $name }} <i class="fa fa-pencil text-white "></i></p>
 
                 <hr class="name-border mx-auto">
             </div>
+            @endif
             {{-- <form action="" class="user-name-section">
                 <div class="input-group">
                     <input type="text" class="form-control name-input" value=" {{ $name }}">
