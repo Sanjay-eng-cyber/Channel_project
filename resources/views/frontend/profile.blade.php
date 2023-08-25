@@ -304,8 +304,7 @@
 
                     {{-- if otp not send --}}
                     <div class="auth-popup-body">
-                        <form class="row" action="{{ route('frontend.address.update', $userAddress->id) }}"
-                            method="post">
+                        <form class="row" id="editForm" method="post" action="">
                             @csrf
                             <h5 class="main-head text-red">Edit Address</h5>
                             <input type="hidden" name="type" id="type" value="">
@@ -365,7 +364,8 @@
                                 @endif
                             </div>
                             <div class="col-sm-12 pt-4">
-                                <button type="submit" class="btn profile-btn-color">Update Address</button>
+                                <button type="submit" id="updateButton" class="btn profile-btn-color">Update
+                                    Address</button>
                             </div>
 
                         </form>
@@ -388,7 +388,7 @@
                     type: "GET",
                     url: "/address/edit/" + address_id,
                     success: function(response) {
-                        console.log(response);
+                        //console.log(response);
                         $('#name').val(response.userAddress.name);
                         $('#street_address').val(response.userAddress.street_address);
                         $('#city').val(response.userAddress.city);
@@ -396,6 +396,8 @@
                         $('#country').val(response.userAddress.country);
                         $('#postal_code').val(response.userAddress.postal_code);
                         $('#type').val(response.userAddress.type);
+                        var editForm = $('#editForm');
+                        editForm.attr('action', '/address/update/' + address_id);
                     }
                 })
             });
