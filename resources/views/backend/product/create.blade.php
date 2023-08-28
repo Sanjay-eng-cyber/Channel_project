@@ -81,14 +81,14 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6  col-md-6 col-sm-12 mb-3">
+                                {{-- <div class="col-xl-6  col-md-6 col-sm-12 mb-3">
                                     <label for="formGroupExampleInput" class="">Connection No.</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Connection No." minlength="3" maxlength="20" name="connection_no" value="{{ old('connection_no') }}">
                                     @if ($errors->has('connection_no'))
                                         <div class="text-danger" role="alert">{{ $errors->first('connection_no') }}</div>
                                     @endif
-                                </div>
+                                </div> --}}
                                 <div class="col-xl-6 col-md-6 col-sm-12 mb-3">
                                     <label for="degree2">Image</label>
                                     <input class="form-control" name="image[]" type="file" id="image" multiple required/>

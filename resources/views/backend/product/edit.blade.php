@@ -99,7 +99,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-6  col-md-6 col-sm-12">
+                                    {{-- <div class="col-xl-6  col-md-6 col-sm-12">
                                         <label for="formGroupExampleInput" class="">Connection No.</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Connection No." minlength="3" maxlength="20"
@@ -109,7 +109,7 @@
                                             <div class="text-danger" role="alert">{{ $errors->first('connection_no') }}
                                             </div>
                                         @endif
-                                    </div>
+                                    </div> --}}
                                     <div class="col-xl-6 col-md-6 col-sm-12">
                                         <label for="formGroupExampleInput" class="">MRP</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
