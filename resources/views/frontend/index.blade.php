@@ -126,7 +126,7 @@
 
                                 <div class="slide-content mobile-element-second-hero-slider-maindiv">
                                         <h3 class="">{{ $middleSlider->title }}</h3>
-                                        <p class="">{{ $middleSlider->descriptions }} </p>
+                                        <p class="" style="font-size:14px">{{ $middleSlider->descriptions }} </p>
                                         <a class="d-flex gap-2 justify-content-center " href="{{ $middleSlider->link }}">
                                             <span class="group-card-shop-btn ">Shop Now</span>
                                             <i class="fa fa-angle-right group-button-arrow"></i>
@@ -143,7 +143,7 @@
                                         class="img-fluid position-relative" alt="image description " style="border-radius:12px">
                                     <div class="text-center mobile-element-third-hero-slider-maindiv">
                                             <h3 class="">{{ $rightSlider->title }}</h3>
-                                            <p class="">{{ $rightSlider->descriptions }} </p>
+                                            <p class="" style="font-size:14px">{{ $rightSlider->descriptions }} </p>
                                             <a class="d-flex gap-2 justify-content-center "
                                                 href="{{ $rightSlider->link }}">
                                                 <span class="group-card-shop-btn ">Shop Now</span>
