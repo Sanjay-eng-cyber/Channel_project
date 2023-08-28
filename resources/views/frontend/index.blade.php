@@ -16,7 +16,7 @@
                                         style="border-radius: 30px 30px 0px 0px">
                                     <div class="slider-card-first">
                                         <div class="text-center bg-skin-color second-group-card-body">
-                                            <h4 class="text-center font-head">{{ $leftSlider->title }}</h4>
+                                            <h2 class="text-center font-head">{{ $leftSlider->title }}</h2>
                                             <p class="group-card-text-color">
                                                 {{ $leftSlider->descriptions }}
                                             </p>
@@ -44,7 +44,7 @@
                                         class="img-fluid second-group-img" alt="..."> --}}
 
                                     <div class=" text-center  second-group-card-body d-flex flex-column justify-content-center align-items-center gap-2">
-                                        <h4 class="card-title text-center font-head ">{{ $middleSlider->title }}</h4>
+                                        <h3 class="card-title text-center font-head ">{{ $middleSlider->title }}</h3>
                                         <p class="card-text group-card-text-color mt-0 mb-0" style="font-size:14px">
                                             {{ $middleSlider->descriptions }}
                                         </p>
@@ -73,8 +73,8 @@
                                                 class="card-img-top fourth-group-img" alt="..."
                                                 style="border-radius: 26.6782px 26.6782px 0px 0px;">
                                             <div class="card-body text-center fourth-group-card-body">
-                                                <h4 class="card-title text-center font-head m-0">{{ $rigslider->title }}
-                                                </h4>
+                                                <h3 class="card-title text-center font-head m-0">{{ $rigslider->title }}
+                                                </h3>
                                                 <p class="card-text group-card-text-color m-0">
                                                     {{ $rigslider->descriptions }}
                                                 </p>
