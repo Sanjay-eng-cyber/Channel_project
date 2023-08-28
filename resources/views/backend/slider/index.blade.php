@@ -45,10 +45,10 @@
                         </div>
 
                         <div class="align-items-center col-xl-5 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
-                            <a href="{{ route('backend.slider.create') }}" name="txt"
+                            {{-- <a href="{{ route('backend.slider.create') }}" name="txt"
                                 class="btn btn-primary mt-2 ml-3 ">
                                 Add New Slider
-                            </a>
+                            </a> --}}
                         </div>
 
                     </div>
@@ -75,9 +75,9 @@
                                             <td>{{ tableRowSrNo($loop->index, $sliders) }}</td>
                                             <td>{{ $slider->title }}</td>
                                             <td>{{ $slider->type }}</td>
-                                            <td>
+                                            <td class="text-center">
                                                 <img src="{{ asset('storage/images/sliders/' . $slider->image) }}"
-                                                height="150px" width="150px" alt="">
+                                                height="150px" style="max-width: 150px" alt="">
                                             </td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">

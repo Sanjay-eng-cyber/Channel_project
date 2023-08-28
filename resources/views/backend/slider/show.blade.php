@@ -40,13 +40,13 @@
                                                 <p class="label-title">{{ $slider->title }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Type</label><br>
                                                 <p class="label-title">{{ $slider->type }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Link</label><br>
                                                 <p class="label-title">{{ $slider->link }}</p>
@@ -58,7 +58,7 @@
                                                     class="label-title">Image</label><br>
                                                 @if ($slider->image)
                                                     <img src="{{ asset('storage/images/sliders/' . $slider->image) }}"
-                                                        height="150px" width="150px" alt="">
+                                                        width="200px" alt="">
                                                 @endif
                                             </div>
                                         </div>
