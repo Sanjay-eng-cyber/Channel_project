@@ -239,6 +239,7 @@ $('.rise-up-slider').slick({
 //   });
 
 
+
 $('.frontend-top-slider').slick({
     autoplay: false,
     autoplaySpeed: 2500, // Adjust the speed as needed
