@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
             $table->foreignId('brand_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->foreignId('sub_category_id')->nullable()->constrained()->onDelete('cascade');
-            $table->TINYTEXT ('name');
-            $table->TINYTEXT ('slug');
+            $table->tinyText('name');
+            $table->tinyText ('slug');
             $table->longText('short_descriptions')->nullable();
             $table->longText('descriptions')->nullable();
             $table->string('thumbnail_image')->nullable();
