@@ -3700,14 +3700,14 @@ img.cart-p-img  {
    }
 
 
-   .main-group-card
+   .main-group-card-hero-slider
    {
      display: grid;
      grid-template-columns: 40% 30% 30%;
    }
    @media screen and (max-width: 992px) {
 
-    .main-group-card
+    .main-group-card-hero-slider
     {
       display: grid;
       grid-template-columns:60% 40%;
