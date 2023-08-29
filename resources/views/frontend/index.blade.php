@@ -733,26 +733,25 @@
 
     <section class="og-main-section">
         <div class="container og-main">
-            <div class="sib-card">
-                <div class="og-main-part-1">
-                    <h3 class="text-red card-text-heading text-capitalize" style="padding:40px 0px 40px 0px">#look for
-                        personal care too..
-                    </h3>
+            <div class="sib-card row">
+                <div class="og-main-part-1 col-lg-6">
+                    <h4 class="text-red  text-capitalize main-head" style="font-weight:500;padding:40px 0px 40px 0px">
+                        #look for home decor too..
+                    </h4>
 
-                    <img src="frontend/images/organic-product/og-1.png" alt="" class="og-main-img-first">
-                    <img src="frontend/images/organic-product/og-2.png" alt="" class="og-main-img-second">
-                    <img src="frontend/images/organic-product/og-4.png" alt="" class="og-main-img-third">
-                    <img src="frontend/images/organic-product/og-5.png" alt="" class="og-main-img-fourth">
-                    <img src="frontend/images/organic-product/og-3.png" alt="" class="og-main-img-fifth">
+                    <img src="frontend/images/organic-product/dm-1.png" alt="" class="og-main-img-first img-fluid" style="z-index: 1">
 
-                    <div class="organic-product-slider og-main-card">
+
+                    <div class="organic-product-slider og-main-card ">
                         <div class="text og-main-text">
-                            <div class="og-main-sy">
-                                <h3 class="pro-head">Pure And Organic <br />Products </h3>
+                            <div class="og-main-sy position-relative" style="z-index: 10">
+                                <h3 class="pro-head">
+                                    Add Flair To Your Home With <br/> Statement Home Décor
+                                </h3>
 
-                                <p style="font-weight: 300;" class="text-capitalize">
-                                    Enhance your self-care routine with<br />
-                                    our premium personal care products.
+
+                                <p style="color:rgba(0, 0, 0, 0.6 )" class="text-capitalize">
+                                    Here are our home decor categories <br/> that will transform your home
                                 </p>
 
                             </div>
@@ -770,24 +769,20 @@
                 </div>
 
 
-                <div class=" og-main-part-1">
-                    <h3 class="text-red card-text-heading text-capitalize" style="padding:40px 0px 40px 0px">
-                        #best hair care product
-                    </h3>
+                <div class=" og-main-part-1 col-lg-6">
+                    <h4 class="text-red text-capitalize main-head" style="font-weight:500;padding:40px 0px 40px 0px">
+                        #best Gift for your loved ones
+                    </h4>
 
-                    <img src="frontend/images/organic-product/og-1.png" alt="" class="og-main-img-first">
-                    <img src="frontend/images/organic-product/og-2.png" alt="" class="og-main-img-second">
-                    <img src="frontend/images/organic-product/og-4.png" alt="" class="og-main-img-third">
-                    <img src="frontend/images/organic-product/og-5.png" alt="" class="og-main-img-fourth">
-                    <img src="frontend/images/organic-product/og-3.png" alt="" class="og-main-img-fifth">
+                    <img src="frontend/images/organic-product/dm-2.png" alt="" class="og-main-img-first img-fluid">
 
-                    <div class="organic-product-slider og-main-card">
-                        <div class="text og-main-text">
-                            <div class="og-main-sy">
-                                <h3 class="pro-head">Nourishing And<br /> Revitalizing Hair Products</h3>
+                    <div class="organic-product-slider og-main-card " >
+                        <div class="text og-main-text" >
+                            <div class="og-main-sy position-relative" style="z-index: 10">
+                                <h3 class="pro-head">Find The Perfect <br/>Gift</h3>
 
-                                <p style="font-weight: 300;" class="text-capitalize">
-                                    Enhance your self-care routine with <br />our premium personal care products.
+                                <p style="color:rgba(0, 0, 0, 0.6 )" class="text-capitalize">
+                                    Making Moments Magical Gift for <br/> your loved ones
 
                                 </p>
 

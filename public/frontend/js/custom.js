@@ -244,8 +244,8 @@ $('.frontend-top-slider').slick({
     autoplay: false,
     autoplaySpeed: 2500, // Adjust the speed as needed
     arrows: true,
-    prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-    nextArrow: '<button type="button" class="slick-next">Next</button>',
+    // prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+    // nextArrow: '<button type="button" class="slick-next">Next</button>',
     slidesToShow: 1,
     slidesToScroll: 1,
 });
