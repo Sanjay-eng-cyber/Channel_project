@@ -35,9 +35,6 @@ class HomeController extends Controller
         $homeDecorProducts = $home_decor ? $home_decor->products()->limit(16)->get() : [];
         $latestHomeDecorProducts = $home_decor ? $home_decor->products()->latest()->limit(16)->get() : [];
 
-        $cProduct = Product::where('connection_no', 457820)->get();
-        // dd($cProduct);
-
         // dd($latestSkinProducts, $latestFragrancesProducts, $latestHomeDecorProducts);
 
         return view('frontend.index', compact('middleSlider', 'leftSliders', 'rightSliders', 'featured_products', 'best_seller_products', 'popularSkinProducts', 'latestSkinProducts', 'popularFragrancesProducts', 'latestFragrancesProducts', 'homeDecorProducts', 'latestHomeDecorProducts'));

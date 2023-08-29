@@ -178,7 +178,7 @@
 
                     @if ($userAddresses->count() < 3)
                         <div class="p-4 profile-form-border " style="position: relative;">
-                            <form class="" action="{{ route('frontend.address.update') }}" method="post">
+                            <form class="" action="{{ route('frontend.address.store') }}" method="post">
                                 @csrf
                                 <h5 class="main-head text-red">Add Address</h5>
 
