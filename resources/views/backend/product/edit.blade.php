@@ -149,7 +149,7 @@
                                     </div>
                                     <div class="col-xl-6  col-md-6 col-sm-12 mb-3">
                                         <label for="formGroupExampleInput" class="">Short Descriptions</label>
-                                        <textarea name="short_descriptions" rows="5" cols="50" class="form-control" minlength="3"
+                                        <textarea name="short_descriptions" class="team-about" rows="5" cols="50" class="form-control" minlength="3"
                                             maxlength="5000" required>{{ $product->short_descriptions }}</textarea>
                                         @if ($errors->has('short_descriptions'))
                                             <div class="text-danger" role="alert">
@@ -240,7 +240,7 @@
                                     </div>
                                     <div class="col-xl-12  col-sm-12 py-1">
                                         <label for="descriptions">Description</label>
-                                        <textarea id="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') ?? $product->descriptions }}</textarea>
+                                        <textarea id="team-about" class="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') ?? $product->descriptions }}</textarea>
                                         @if ($errors->has('body'))
                                             <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
                                             </div>
@@ -284,7 +284,7 @@
 </script>
 <script>
     tinymce.init({
-        selector: '#team-about',
+        selector: '.team-about',
         height: 200,
         plugins: 'textcolor colorpicker lists link',
         toolbar: "formatselect | fontsizeselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify  | numlist bullist | link | outdent indent  | removeformat",
