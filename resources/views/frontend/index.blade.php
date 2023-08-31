@@ -177,7 +177,7 @@
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="mt-producttabs style2 " data-wow-delay="0.6s">
                             <!-- producttabs start here -->
                             <ul class="producttabs">
                                 <li> Channel</li>
@@ -191,14 +191,14 @@
                                         {{-- @for ($i = 1; $i < 6; $i++) --}}
                                         @foreach ($featured_products as $p)
                                             <!-- slide start here -->
-                                            <div class="slide  skin-slide">
+                                            <div class="slide  skin-slide isolation position-relative">
                                                 <div class="mt-product1 large mt-skin-product1 w-100">
                                                     <div class="box skin-box w-100" style="max-width: 300px;">
                                                         <div class="b1">
                                                             <div class="b2">
-                                                                <a href="{{ route('frontend.p.show', $p->slug) }}">
+                                                                <a href="{{ route('frontend.p.show', $p->slug) }}" class="position-relative fragrances-img-bottom">
                                                                     <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
-                                                                        alt="image description">
+                                                                        alt="image description" class="img-fluid">
                                                                 </a>
 
                                                                 @if ($p->isInWishlist())
@@ -219,19 +219,19 @@
                                                                 <ul class="links skin-text-desc py-2 px-3">
                                                                     <div class="card-title  m-0 text-center pro-head"
                                                                         title="{{ $p->name }}">
-                                                                        <h4 class="">{{ str_limit($p->name, 50) }}
+                                                                        <h4 class="product-text-size">{{ str_limit($p->name, 50) }}
                                                                         </h4>
                                                                     </div>
-                                                                    <p class="card-text text-center">
+                                                                    <span class="card-text text-center">
                                                                         {{ $p->short_decriptions }}
-                                                                    </p>
+                                                                    </span>
 
 
                                                                     <button type="button"
-                                                                        class="btn btn-light sk-btn shop-now-btn"
+                                                                        class="btn btn-light sk-btn shop-now-btn shop-cutome-newbtn"
                                                                         title="{{ $p->name }}">
                                                                         <a href="{{ route('frontend.p.show', $p->slug) }}"
-                                                                            class="p-0  text-black">
+                                                                            class="p-0  text-black shop-cutome-btn" >
                                                                             Shop Now
                                                                         </a>
                                                                     </button>
@@ -266,7 +266,7 @@
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="mt-producttabs style2" data-wow-delay="0.6s">
                             <!-- producttabs start here -->
                             <ul class="producttabs">
                                 <li> Channel</li>
@@ -280,12 +280,12 @@
                                         {{-- @for ($i = 1; $i < 6; $i++) --}}
                                         @foreach ($best_seller_products as $p)
                                             <!-- slide start here -->
-                                            <div class="slide  skin-slide">
+                                            <div class="slide  skin-slide isolation position-relative">
                                                 <div class="mt-product1 large mt-skin-product1 w-100">
                                                     <div class="box skin-box w-100" style="max-width: 300px;">
                                                         <div class="b1">
                                                             <div class="b2">
-                                                                <a href="{{ route('frontend.p.show', $p->slug) }}">
+                                                                <a href="{{ route('frontend.p.show', $p->slug) }}" class="position-relative fragrances-img-bottom">
                                                                     <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
                                                                         alt="image description">
                                                                 </a>
@@ -308,19 +308,19 @@
                                                                 <ul class="links skin-text-desc py-2 px-3">
                                                                     <div class="card-title  m-0 text-center pro-head"
                                                                         title="{{ $p->name }}">
-                                                                        <h4 class="">{{ str_limit($p->name, 50) }}
+                                                                        <h4 class="product-text-size">{{ str_limit($p->name, 50) }}
                                                                         </h4>
                                                                     </div>
-                                                                    <p class="card-text text-center">
+                                                                    <span class="card-text text-center">
                                                                         {{ $p->short_decriptions }}
-                                                                    </p>
+                                                                    </span>
 
 
                                                                     <button type="button"
-                                                                        class="btn btn-light sk-btn shop-now-btn"
+                                                                        class="btn btn-light sk-btn shop-now-btn shop-cutome-newbtn"
                                                                         title="{{ $p->name }}">
                                                                         <a href="{{ route('frontend.p.show', $p->slug) }}"
-                                                                            class="p-0  text-black">
+                                                                            class="p-0  text-black shop-cutome-btn">
                                                                             Shop Now
                                                                         </a>
                                                                     </button>
@@ -354,7 +354,7 @@
             <div class="row">
                 <div class="col-xs-12">
 
-                    <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="mt-producttabs style2 " data-wow-delay="0.6s">
                         <!-- producttabs start here -->
                         <ul class="producttabs">
                             <li> Skin Care</li>
@@ -370,12 +370,12 @@
                                     {{-- @for ($i = 1; $i < 6; $i++) --}}
                                     @foreach ($latestSkinProducts as $p)
                                         <!-- slide start here -->
-                                        <div class="slide  skin-slide">
+                                        <div class="slide  skin-slide isolation position-relative">
                                             <div class="mt-product1 large mt-skin-product1 w-100">
                                                 <div class="box skin-box w-100" style="max-width: 300px;">
                                                     <div class="b1">
                                                         <div class="b2">
-                                                            <a href="{{ route('frontend.p.show', $p->slug) }}">
+                                                            <a href="{{ route('frontend.p.show', $p->slug) }}" class="position-relative fragrances-img-bottom">
                                                                 <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
                                                                     alt="image description">
                                                             </a>
@@ -398,18 +398,18 @@
                                                             <ul class="links skin-text-desc py-2 px-3">
                                                                 <div class="card-title  m-0 text-center pro-head"
                                                                     title="{{ $p->name }}">
-                                                                    <h4 class="">{{ str_limit($p->name, 50) }}</h4>
+                                                                    <h4 class="product-text-size">{{ str_limit($p->name, 50) }}</h4>
                                                                 </div>
-                                                                <p class="card-text text-center">
+                                                                <span class="card-text text-center">
                                                                     {{ $p->short_decriptions }}
-                                                                </p>
+                                                                </span>
 
 
                                                                 <button type="button"
-                                                                    class="btn btn-light sk-btn shop-now-btn"
+                                                                    class="btn btn-light sk-btn shop-now-btn shop-cutome-newbtn"
                                                                     title="{{ $p->name }}">
                                                                     <a href="{{ route('frontend.p.show', $p->slug) }}"
-                                                                        class="p-0  text-black">
+                                                                        class="p-0  text-black shop-cutome-btn">
                                                                         Shop Now
                                                                     </a>
                                                                 </button>
@@ -433,12 +433,12 @@
                                 <div class="fragrances">
                                     {{-- @for ($i = 1; $i < 6; $i++) --}}
                                     @foreach ($popularSkinProducts as $p)
-                                        <div class="slide  skin-slide">
+                                        <div class="slide  skin-slide isolation position-relative">
                                             <div class="mt-product1 large mt-skin-product1 w-100">
                                                 <div class="box skin-box w-100" style="max-width: 300px;">
                                                     <div class="b1">
                                                         <div class="b2">
-                                                            <a href="{{ route('frontend.p.show', $p->slug) }}">
+                                                            <a href="{{ route('frontend.p.show', $p->slug) }}" class="position-relative fragrances-img-bottom">
                                                                 <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
                                                                     alt="image description">
                                                             </a>
@@ -461,18 +461,18 @@
                                                             <ul class="links skin-text-desc py-2 px-3">
                                                                 <div class="card-title  m-0 text-center pro-head"
                                                                     title="{{ $p->name }}">
-                                                                    <h4 class="">{{ str_limit($p->name, 50) }}</h4>
+                                                                    <h4 class="product-text-size">{{ str_limit($p->name, 50) }}</h4>
                                                                 </div>
-                                                                <p class="card-text text-center">
+                                                                <span class="card-text text-center">
                                                                     {{ $p->short_decriptions }}
-                                                                </p>
+                                                                </span>
 
 
                                                                 <button type="button"
-                                                                    class="btn btn-light sk-btn shop-now-btn"
+                                                                    class="btn btn-light sk-btn shop-now-btn shop-cutome-newbtn"
                                                                     title="{{ $p->name }}">
                                                                     <a href="{{ route('frontend.p.show', $p->slug) }}"
-                                                                        class="p-0  text-black">
+                                                                        class="p-0  text-black shop-cutome-btn">
                                                                         Shop Now
                                                                     </a>
                                                                 </button>
@@ -505,7 +505,7 @@
             <div class="row">
                 <div class="col-xs-12">
 
-                    <div class="mt-producttabs style2 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="mt-producttabs style2 " data-wow-delay="0.6s">
                         <!-- producttabs start here -->
                         <ul class="producttabs">
                             <li> Fragrances</li>
@@ -521,12 +521,12 @@
                                     {{-- @for ($i = 1; $i < 6; $i++) --}}
                                     @foreach ($latestFragrancesProducts as $p)
                                         <!-- slide start here -->
-                                        <div class="slide  skin-slide">
+                                        <div class="slide  skin-slide isolation position-relative">
                                             <div class="mt-product1 large mt-skin-product1 w-100">
                                                 <div class="box skin-box w-100" style="max-width: 300px;">
                                                     <div class="b1">
                                                         <div class="b2">
-                                                            <a href="{{ route('frontend.p.show', $p->slug) }}">
+                                                            <a href="{{ route('frontend.p.show', $p->slug) }}" class="position-relative fragrances-img-bottom">
                                                                 <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
                                                                     alt="image description">
                                                             </a>
@@ -549,18 +549,18 @@
                                                             <ul class="links skin-text-desc py-2 px-3">
                                                                 <div class="card-title  m-0 text-center pro-head"
                                                                     title="{{ $p->name }}">
-                                                                    <h4 class="">{{ str_limit($p->name, 50) }}</h4>
+                                                                    <h4 class="product-text-size">{{ str_limit($p->name, 50) }}</h4>
                                                                 </div>
-                                                                <p class="card-text text-center">
+                                                                <span class="card-text text-center">
                                                                     {{ $p->short_decriptions }}
-                                                                </p>
+                                                                </span>
 
 
                                                                 <button type="button"
-                                                                    class="btn btn-light sk-btn shop-now-btn"
+                                                                    class="btn btn-light sk-btn shop-now-btn shop-cutome-newbtn"
                                                                     title="{{ $p->name }}">
                                                                     <a href="{{ route('frontend.p.show', $p->slug) }}"
-                                                                        class="p-0  text-black">
+                                                                        class="p-0  text-black shop-cutome-btn">
                                                                         Shop Now
                                                                     </a>
                                                                 </button>

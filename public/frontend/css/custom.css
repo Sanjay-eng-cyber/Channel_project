@@ -26,7 +26,9 @@
 #subcategory-slider{
     isolation: isolate;
 }
-
+.isolation{
+    isolation: isolate;
+}
 #subcategory-slider
   .slide-arrow {
     position: absolute;
@@ -3826,3 +3828,27 @@ position: absolute;bottom:-79px;background-color:#F1D2AD;width:100%;border-radiu
 
     position: absolute;bottom:-79px;background-color: #EBB579;;width:100%;border-radius:0px 0px 12px 12px;padding:5px;width:100%;
 } */
+
+
+@media screen and (max-width:480px){
+    .product-text-size{
+        font-size:12px;
+    }
+
+    .mt-skin-product img, .mt-skin-product1 img{
+        height: 236px !important;
+    }
+    .fragrances-img-bottom{
+        bottom:28px
+    }
+    .shop-cutome-btn{
+        font-size:12px;
+    }
+    .shop-cutome-newbtn{
+        padding: 3px 18px 3px 18px;
+    }
+
+
+}
+
+
