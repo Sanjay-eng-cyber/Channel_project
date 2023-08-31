@@ -754,7 +754,7 @@
                                 </h3>
 
 
-                                <p style="color:rgba(0, 0, 0, 0.6 )" class="text-capitalize py-2">
+                                <p style="color:rgba(0, 0, 0, 0.6 )" class="text-capitalize pt-2 pb-2">
                                     Here are our home decor categories <br /> that will transform your home
                                 </p>
 
@@ -784,10 +784,12 @@
                     <div class="organic-product-slider og-main-card ">
                         <div class="text og-main-text">
                             <div class="og-main-sy position-relative" style="z-index: 10">
-                                <h3 class="pro-head">Find The Perfect Gift</h3>
+                                <h3 class="pro-head">
+                                    A Little Something To <br/> Make Someone Smile
+                                </h3>
 
                                 <p style="color:rgba(0, 0, 0, 0.6 )"
-                                    class="text-capitalize pt-3 pb-3 pt-lg-5 pt-xl-4 pb-lg-4 ">
+                                    class="text-capitalize pt-4 pb-3 pt-xl-2 pb-xl-2">
                                     Making Moments Magical Gift for <br /> your loved ones
 
                                 </p>
