@@ -11,9 +11,8 @@
                         @if ($leftSliders)
                             @forelse ($leftSliders as $leftSlider)
                                 <div class="hero-main-slider" style="">
-                                    <img src="{{ asset('storage/images/sliders/' . $leftSlider->image) }}"
-                                        class="img-fluid" alt="..."
-                                        style="border-radius: 30px 30px 0px 0px">
+                                    <img src="{{ asset('storage/images/sliders/' . $leftSlider->image) }}" class="img-fluid"
+                                        alt="..." style="border-radius: 30px 30px 0px 0px">
                                     <div class="slider-card-first">
                                         <div class="text-center bg-skin-color second-group-card-body">
                                             <h2 class="text-center font-head">{{ $leftSlider->title }}</h2>
@@ -43,7 +42,8 @@
                                     {{-- <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}"
                                         class="img-fluid second-group-img" alt="..."> --}}
 
-                                    <div class=" text-center  second-group-card-body d-flex flex-column justify-content-center align-items-center gap-2">
+                                    <div
+                                        class=" text-center  second-group-card-body d-flex flex-column justify-content-center align-items-center gap-2">
                                         <h3 class="card-title text-center font-head ">{{ $middleSlider->title }}</h3>
                                         <p class="card-text group-card-text-color mt-0 mb-0" style="font-size:14px">
                                             {{ $middleSlider->descriptions }}
@@ -105,15 +105,16 @@
                                 <div class="slide mobile-element-hero-slider-firstslide">
                                     {{-- <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}"
                                         class="img-fluid position-relative" alt="image description " style="border-radius:12px"> --}}
-                                        <img src="{{ asset('frontend/images/mobile-hero-slider/ele-1.png') }}"
-                                        class="img-fluid position-relative" alt="image description " style="border-radius:12px">
+                                    <img src="{{ asset('frontend/images/mobile-hero-slider/ele-1.png') }}"
+                                        class="img-fluid position-relative" alt="image description "
+                                        style="border-radius:12px">
                                     <div class="text-center mobile-element-first-hero-slider-maindiv">
-                                            <h4 class="">{{ $leftslider->title }}</h4>
-                                            <p class="" style="font-size:14px">{{ $leftslider->descriptions }} </p>
-                                            <a class="d-flex gap-2 justify-content-center " href="{{ $leftslider->link }}">
-                                                <span class="group-card-shop-btn ">Shop Now</span>
-                                                <i class="fa fa-angle-right group-button-arrow"></i>
-                                            </a>
+                                        <h4 class="">{{ $leftslider->title }}</h4>
+                                        <p class="" style="font-size:14px">{{ $leftslider->descriptions }} </p>
+                                        <a class="d-flex gap-2 justify-content-center " href="{{ $leftslider->link }}">
+                                            <span class="group-card-shop-btn ">Shop Now</span>
+                                            <i class="fa fa-angle-right group-button-arrow"></i>
+                                        </a>
                                     </div>
                                 </div>
                             @empty
@@ -127,12 +128,12 @@
                                     class="img-fluid position-relative" alt="image description" style="border-radius:12px">
 
                                 <div class="slide-content mobile-element-second-hero-slider-maindiv">
-                                        <h3 class="">{{ $middleSlider->title }}</h3>
-                                        <p class="" style="font-size:14px">{{ $middleSlider->descriptions }} </p>
-                                        <a class="d-flex gap-2 justify-content-center " href="{{ $middleSlider->link }}">
-                                            <span class="group-card-shop-btn ">Shop Now</span>
-                                            <i class="fa fa-angle-right group-button-arrow"></i>
-                                        </a>
+                                    <h3 class="">{{ $middleSlider->title }}</h3>
+                                    <p class="" style="font-size:14px">{{ $middleSlider->descriptions }} </p>
+                                    <a class="d-flex gap-2 justify-content-center " href="{{ $middleSlider->link }}">
+                                        <span class="group-card-shop-btn ">Shop Now</span>
+                                        <i class="fa fa-angle-right group-button-arrow"></i>
+                                    </a>
                                 </div>
                             </div>
                         @endif
@@ -142,15 +143,15 @@
                                     {{-- <img src="{{ asset('storage/images/sliders/' . $rightSlider->image) }}"
                                         class="img-fluid" alt="image description " style=""> --}}
                                     <img src="{{ asset('frontend/images/mobile-hero-slider/ele-3.png') }}"
-                                        class="img-fluid position-relative" alt="image description " style="border-radius:12px">
+                                        class="img-fluid position-relative" alt="image description "
+                                        style="border-radius:12px">
                                     <div class="text-center mobile-element-third-hero-slider-maindiv">
-                                            <h3 class="">{{ $rightSlider->title }}</h3>
-                                            <p class="" style="font-size:14px">{{ $rightSlider->descriptions }} </p>
-                                            <a class="d-flex gap-2 justify-content-center "
-                                                href="{{ $rightSlider->link }}">
-                                                <span class="group-card-shop-btn ">Shop Now</span>
-                                                <i class="fa fa-angle-right group-button-arrow"></i>
-                                            </a>
+                                        <h3 class="">{{ $rightSlider->title }}</h3>
+                                        <p class="" style="font-size:14px">{{ $rightSlider->descriptions }} </p>
+                                        <a class="d-flex gap-2 justify-content-center " href="{{ $rightSlider->link }}">
+                                            <span class="group-card-shop-btn ">Shop Now</span>
+                                            <i class="fa fa-angle-right group-button-arrow"></i>
+                                        </a>
                                     </div>
                                 </div>
                             @empty
@@ -741,25 +742,26 @@
                         #look for home decor too..
                     </h4>
 
-                    <img src="frontend/images/organic-product/dm-1.png" alt="" class="og-main-img-first img-fluid" style="z-index: 1">
+                    <img src="frontend/images/organic-product/dm-1.png" alt=""
+                        class="og-main-img-first img-fluid" style="z-index: 1">
 
 
                     <div class="organic-product-slider og-main-card ">
                         <div class="text og-main-text">
                             <div class="og-main-sy position-relative" style="z-index: 10">
                                 <h3 class="pro-head">
-                                    Add Flair To Your Home With <br/> Statement Home Décor
+                                    Add Flair To Your Home With <br /> Statement Home Décor
                                 </h3>
 
 
                                 <p style="color:rgba(0, 0, 0, 0.6 )" class="text-capitalize py-2">
-                                    Here are our home decor categories <br/> that will transform your home
+                                    Here are our home decor categories <br /> that will transform your home
                                 </p>
 
                             </div>
                             <div class="og-main-button">
                                 <button type="button" class="oganic-button">
-                                    <a href="{{ route('frontend.cat.show', 'personal-care') }}">
+                                    <a href="{{ route('frontend.cat.show', 'home-decor') }}">
                                         Shop Now
                                     </a>
                                 </button>
@@ -776,22 +778,24 @@
                         #best Gift for your loved ones
                     </h4>
 
-                    <img src="frontend/images/organic-product/dm-2.png" alt="" class="og-main-img-newfirst img-fluid">
+                    <img src="frontend/images/organic-product/dm-2.png" alt=""
+                        class="og-main-img-newfirst img-fluid">
 
-                    <div class="organic-product-slider og-main-card " >
-                        <div class="text og-main-text" >
+                    <div class="organic-product-slider og-main-card ">
+                        <div class="text og-main-text">
                             <div class="og-main-sy position-relative" style="z-index: 10">
                                 <h3 class="pro-head">Find The Perfect Gift</h3>
 
-                                <p style="color:rgba(0, 0, 0, 0.6 )" class="text-capitalize pt-3 pb-3 pt-lg-5 pt-xl-4 pb-lg-4 ">
-                                    Making Moments Magical Gift for <br/> your loved ones
+                                <p style="color:rgba(0, 0, 0, 0.6 )"
+                                    class="text-capitalize pt-3 pb-3 pt-lg-5 pt-xl-4 pb-lg-4 ">
+                                    Making Moments Magical Gift for <br /> your loved ones
 
                                 </p>
 
                             </div>
                             <div class="og-main-button">
                                 <button type="button" class="oganic-button">
-                                    <a href="{{ route('frontend.cat.show', 'hair-care') }}">
+                                    <a href="{{ route('frontend.cat.show', 'gift') }}">
                                         Shop Now
                                     </a>
                                 </button>
