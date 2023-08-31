@@ -3843,7 +3843,14 @@ position: absolute;bottom:-79px;background-color:#F1D2AD;width:100%;border-radiu
     position: absolute;bottom:-79px;background-color: #EBB579;;width:100%;border-radius:0px 0px 12px 12px;padding:5px;width:100%;
 } */
 
+.product-text-size{
+    font-size:1.125rem;
+}
 
+.shop-cutome-newbtn{
+    padding: 6px 29px 6px 29px;
+    font-size: 0.875rem;
+}
 @media screen and (max-width:480px){
     .product-text-size{
         font-size:12px;
