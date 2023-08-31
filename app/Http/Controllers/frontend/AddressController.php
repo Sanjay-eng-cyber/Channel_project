@@ -63,9 +63,8 @@ class AddressController extends Controller
             'country' => 'required|string|min:3|max:40',
             'postal_code' => 'required|digits:6',
         ]);
-        $address = UserAddress::findOrFail($id);
-        $address->type = $request->type;
-        $address->user_id = auth()->user()->id;
+        $user = auth()->user();
+        $address = $user->userAddress()->findOrFail($id);
         $address->name = $request->name;
         $address->street_address = $request->street_address;
         $address->city = $request->city;
@@ -74,7 +73,7 @@ class AddressController extends Controller
         $address->postal_code = $request->postal_code;
         if ($address->save()) {
             return redirect()->back()->with([
-                "message" => "Address Update Successfully",
+                "message" => "Address Updated Successfully",
                 "alert-type" => "success"
             ]);
         }
