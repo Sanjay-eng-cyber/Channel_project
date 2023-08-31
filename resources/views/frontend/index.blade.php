@@ -103,7 +103,9 @@
                         @if ($leftSliders->count())
                             @forelse ($leftSliders as $leftslider)
                                 <div class="slide mobile-element-hero-slider-firstslide">
-                                    <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}"
+                                    {{-- <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}"
+                                        class="img-fluid position-relative" alt="image description " style="border-radius:12px"> --}}
+                                        <img src="{{ asset('frontend/images/mobile-hero-slider/ele-1.png') }}"
                                         class="img-fluid position-relative" alt="image description " style="border-radius:12px">
                                     <div class="text-center mobile-element-first-hero-slider-maindiv">
                                             <h4 class="">{{ $leftslider->title }}</h4>
@@ -734,8 +736,8 @@
     <section class="og-main-section">
         <div class="container og-main">
             <div class="sib-card row">
-                <div class="og-main-part-1 col-lg-6">
-                    <h4 class="text-red  text-capitalize main-head" style="font-weight:500;padding:40px 0px 40px 0px">
+                <div class="og-main-part-1 col-lg-6 mb-5 mb-lg-0">
+                    <h4 class="text-red  text-capitalize main-head mb-4" style="font-weight:500;">
                         #look for home decor too..
                     </h4>
 
@@ -750,7 +752,7 @@
                                 </h3>
 
 
-                                <p style="color:rgba(0, 0, 0, 0.6 )" class="text-capitalize">
+                                <p style="color:rgba(0, 0, 0, 0.6 )" class="text-capitalize py-2">
                                     Here are our home decor categories <br/> that will transform your home
                                 </p>
 
@@ -770,18 +772,18 @@
 
 
                 <div class=" og-main-part-1 col-lg-6">
-                    <h4 class="text-red text-capitalize main-head" style="font-weight:500;padding:40px 0px 40px 0px">
+                    <h4 class="text-red text-capitalize main-head mb-4" style="font-weight:500;">
                         #best Gift for your loved ones
                     </h4>
 
-                    <img src="frontend/images/organic-product/dm-2.png" alt="" class="og-main-img-first img-fluid">
+                    <img src="frontend/images/organic-product/dm-2.png" alt="" class="og-main-img-newfirst img-fluid">
 
                     <div class="organic-product-slider og-main-card " >
                         <div class="text og-main-text" >
                             <div class="og-main-sy position-relative" style="z-index: 10">
-                                <h3 class="pro-head">Find The Perfect <br/>Gift</h3>
+                                <h3 class="pro-head">Find The Perfect Gift</h3>
 
-                                <p style="color:rgba(0, 0, 0, 0.6 )" class="text-capitalize">
+                                <p style="color:rgba(0, 0, 0, 0.6 )" class="text-capitalize pt-3 pb-3 pt-lg-5 pt-xl-4 pb-lg-4 ">
                                     Making Moments Magical Gift for <br/> your loved ones
 
                                 </p>

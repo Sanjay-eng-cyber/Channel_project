@@ -1426,6 +1426,14 @@ a:hover {
     z-index: 99;
 }
 
+.og-main .og-main-part-1 .og-main-img-newfirst {
+    position: absolute;
+    width: 240px;
+    bottom: 14px;
+    right: 25px;
+    z-index: 99;
+}
+
 .og-main .og-main-part-1 .og-main-img-second {
     position: absolute;
     width: 26%;
@@ -1883,6 +1891,13 @@ a:hover {
         right: 10px;
     }
 
+    .og-main .og-main-part-1 .og-main-img-newfirst {
+        width: 244px;
+        position: absolute;
+        bottom: 0px;
+        right: 10px;
+    }
+
     .og-main .og-main-part-1 .og-main-img-second {
         position: absolute;
         width: 26%;
@@ -1919,6 +1934,14 @@ a:hover {
         bottom: 0px;
         right: 10px;
     }
+
+    .og-main .og-main-part-1 .og-main-img-newfirst {
+        position: absolute;
+        width:191px;
+        bottom: 0px;
+        right: 10px;
+    }
+
 
     .og-main .og-main-part-1 .og-main-img-second {
         position: absolute;
@@ -1972,6 +1995,14 @@ a:hover {
     } */
     /* organic-product */
     .og-main .og-main-part-1 .og-main-img-first {
+        position: absolute;
+        /* width: 33%;
+        height: 273px; */
+        bottom: 0px;
+        right: 10px;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-newfirst {
         position: absolute;
         /* width: 33%;
         height: 273px; */
@@ -2085,12 +2116,26 @@ a:hover {
         right: 10px;
     }
 
+    .og-main .og-main-part-1 .og-main-img-newfirst {
+        position: absolute;
+        width:229px;
+        bottom: 0px;
+        right: 10px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
     .og-main .og-main-part-1 .og-main-img-first {
         position: absolute;
         width:244px;
+        bottom: 0px;
+        right: 10px;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-newfirst {
+        position: absolute;
+        width:220px;
         bottom: 0px;
         right: 10px;
     }
@@ -2474,8 +2519,13 @@ a:hover {
 
 @media screen and (max-width: 480px) {
     .og-main .og-main-part-1 .og-main-img-first{
-        width:184px;
-        bottom:30px;
+        width:150px;
+        bottom:69px;
+    }
+
+    .og-main .og-main-part-1 .og-main-img-newfirst{
+        width:150px;
+        bottom:64px;
     }
     #return-order-custome-input {
         width: 75%;
