@@ -136,6 +136,11 @@
                                 </div>
                                 <div class="col-6 py-2">
                                     <ul class="d-flex gap-4 list-unstyled justify-content-end">
+                                        <li>
+                                            <a href="#" class="edit_modal" data-id="{{ $userAddress->id }}">
+                                                <i class="far fa-edit fa-1x profile-trash-icon"></i>
+                                            </a>
+                                        </li>
                                         @if ($userAddress->type == 'primary')
                                             <li>
                                                 <button type="button"
@@ -167,10 +172,10 @@
                                         {{ $userAddress->country }} - {{ $userAddress->postal_code }}
                                     </span>
                                 </div>
-                                <button class="btn btn-pink edit_modal" value="{{ $userAddress->id }}" type="button"
+                                {{-- <button class="btn btn-pink edit_modal" value="{{ $userAddress->id }}" type="button"
                                     style="margin-top: 5%">
                                     Update Address
-                                </button>
+                                </button> --}}
                             </div>
                         </div>
                     @empty
@@ -382,12 +387,12 @@
     <script>
         $(document).ready(function() {
             $(document).on('click', '.edit_modal', function() {
-                var address_id = $(this).val();
-                $('#editaddress').modal('show');
+                var address_id = $(this).attr("data-id");
                 $.ajax({
                     type: "GET",
                     url: "/address/edit/" + address_id,
                     success: function(response) {
+                        $('#editaddress').modal('show');
                         //console.log(response);
                         $('#name').val(response.userAddress.name);
                         $('#street_address').val(response.userAddress.street_address);
@@ -398,6 +403,15 @@
                         $('#type').val(response.userAddress.type);
                         var editForm = $('#editForm');
                         editForm.attr('action', '/address/update/' + address_id);
+                    },
+                    error: function(response) {
+                        // console.log('Error', response);
+                        Snackbar.show({
+                            text: "Something Went Wrong",
+                            pos: 'top-right',
+                            actionTextColor: '#fff',
+                            backgroundColor: '#e7515a'
+                        });
                     }
                 })
             });

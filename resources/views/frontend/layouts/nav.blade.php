@@ -281,7 +281,7 @@
                                            <span class="text-danger" v-text='allErrors'></span>
                                        </div>
                                    </div>
-                                   <div class="row justify-content-center mx-auto">
+                                   {{-- <div class="row justify-content-center mx-auto">
                                        <p class="text-center text-black h6 py-3">Or Connect With</p>
                                        <div class="col-6 text-center">
                                            <button class="border-0 d-flex pt-2 links-btns mx-auto"><img
@@ -294,7 +294,7 @@
                                                    src="{{ url('frontend/images/icons/icon-google.png') }}"
                                                    alt="" class="mx-2 icon-img-size"> Google</button>
                                        </div>
-                                   </div>
+                                   </div> --}}
                                </form>
                            </div>
                            {{-- @elseif($step == 2) --}}
