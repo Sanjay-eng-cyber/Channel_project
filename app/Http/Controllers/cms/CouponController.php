@@ -4,6 +4,7 @@ namespace App\Http\Controllers\cms;
 
 use App\Http\Controllers\Controller;
 use App\Models\Coupon;
+use App\Models\CouponUsage;
 use Illuminate\Http\Request;
 
 class CouponController extends Controller
@@ -12,6 +13,13 @@ class CouponController extends Controller
     {
         $coupons = Coupon::with('couponUsage')->latest()->paginate(10);
         return view('backend.coupon.index', compact('coupons'));
+    }
+
+    public function couponUsageIndex ($id)
+    {
+        $coupon = Coupon::findOrFail($id);
+        $coupon_usages = $coupon->couponUsage()->latest()->paginate(10);
+        return view('backend.coupon.coupon_usages_index', compact('coupon_usages'));
     }
 
     public function show($id)
@@ -90,9 +98,14 @@ class CouponController extends Controller
     public function destroy($id)
     {
         $coupon = Coupon::findOrFail($id);
-        if ($coupon->delete()) {
-            return redirect()->route('backend.coupon.index')->with(['alert-type' => 'success', 'message' => 'Coupon Deleted Successfully']);
+        $coupon_usages = $coupon->couponUsage()->get();
+      // dd($coupon_usages->count());
+        if ($coupon_usages->count() < 1) {
+            if ($coupon->delete()) {
+                return redirect()->route('backend.coupon.index')->with(['alert-type' => 'success', 'message' => 'Coupon Deleted Successfully']);
+            }
+            return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
         }
-        return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
+        return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Coupon Used']);
     }
 }

@@ -9,7 +9,7 @@
                     <div class="row justify-content-between align-items-center mb-1 ">
                         <div class="col-lg-4 col-md-12 col-sm-12">
                             <legend class="h4">
-                                Coupons
+                                Coupon Usages
                             </legend>
                         </div>
 
@@ -18,7 +18,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a
-                                            href="javascript:void(0);">Coupons</a></li>
+                                            href="javascript:void(0);">Coupon Usages</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -44,13 +44,13 @@
                         <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12 mb-2">
                         </div>
 
-                        <div
+                        {{-- <div
                             class="align-items-center col-xl-5 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-end row mb-2">
                             <a href="{{ route('backend.coupon.create') }}" name="txt"
                                 class="btn btn-primary mt-2 ml-3 ">
                                 Add New Coupon
                             </a>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>
@@ -64,22 +64,28 @@
                                 <thead>
                                     <tr>
                                         <th>Sr no.</th>
-                                        <th>Name</th>
-                                        <th>Valid From</th>
-                                        <th>Valid Till</th>
-                                        <th>Usage</th>
-                                        <th class="text-center">Action</th>
+                                        <th>User</th>
+                                        <th>Order Id</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($coupons as $coupon)
+                                    @forelse($coupon_usages as $coupon_usage)
                                         <tr>
-                                            <td>{{ tableRowSrNo($loop->index, $coupons) }}</td>
-                                            <td>{{ $coupon->name }}</td>
-                                            <td>{{ dd_format($coupon->valid_from, 'd-m-y h:ia') }}</td>
-                                            <td>{{ dd_format($coupon->valid_till, 'd-m-y h:ia') }}</td>
-                                            <td>{{ $coupon->couponUsage->count() }}</td>
-                                            <td class="text-center">
+                                            <td>{{ tableRowSrNo($loop->index, $coupon_usages) }}</td>
+                                            <td>
+                                                <a class="blue-col-a"
+                                                    href="{{ route('backend.user.show', $coupon_usage->user_id) }}">
+                                                    {{ $coupon_usage->user->first_name }}
+                                                    {{ $coupon_usage->user->last_name }}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="blue-col-a"
+                                                    href="{{ route('backend.order.show', $coupon_usage->order_id) }}">
+                                                    {{ $coupon_usage->order_id }}
+                                                </a>
+                                            </td>
+                                            {{-- <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"
                                                         id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
@@ -95,22 +101,20 @@
                                                     </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                        {{-- <a class="dropdown-item"
-                                                            href="{{ route('backend.coupon.show', $coupon->id) }}">View</a> --}}
+                                                        <a class="dropdown-item"
+                                                            href="{{ route('backend.coupon.show', $coupon->id) }}">View</a>
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.coupon.edit', $coupon->id) }}">Edit</a>
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.coupon.destroy', $coupon->id) }}">Delete</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.couponUsages.index', $coupon->id) }}">Coupon Usages</a>
                                                     </div>
                                                 </div>
 
-                                            </td>
+                                            </td> --}}
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="4">No Records Found</td>
+                                            <td colspan="3">No Records Found</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -119,7 +123,7 @@
                         <div class="pagination col-lg-12 mt-3">
                             <div class=" text-center mx-auto">
                                 <ul class="pagination text-center">
-                                    {{ $coupons->appends(Request::all())->links('pagination::bootstrap-4') }}
+                                    {{ $coupon_usages->appends(Request::all())->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
                         </div>
