@@ -2534,7 +2534,7 @@ a:hover {
     }
     .og-main .og-main-card .og-main-button button a {
         font-size:14px;
-        
+
     }
     .og-main .og-main-card .og-main-button button{
     padding:6px 25px 6px 25px;
@@ -3678,12 +3678,13 @@ text-transform: capitalize;
 }
 .custom-id-text{
     color: #455A64;
-font-size: 20px;
-font-family: Poppins;
-font-weight: 500;
-text-transform: capitalize;
-opacity: 0.7;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    text-transform: capitalize;
+    opacity: 0.7;
 }
+
 .custom-boder
 {
     border-radius: 15px;
@@ -3775,6 +3776,8 @@ img.cart-p-img  {
    {
      display: grid;
      grid-template-columns: 40% 30% 30%;
+     grid-template-rows: auto auto;
+
    }
    @media screen and (max-width: 992px) {
 
@@ -3782,9 +3785,12 @@ img.cart-p-img  {
     {
       display: grid;
       grid-template-columns:60% 40%;
-      grid-template-rows:auto;
-      grid-row-gap: 40px;
+      grid-template-rows: auto auto;
+      grid-row-gap: 60px;
 
+    }
+     .product-slide-3 {
+        grid-column: 1 / span 2; /* Third card spans both columns */
     }
 
   }
