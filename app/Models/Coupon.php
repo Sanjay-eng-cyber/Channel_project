@@ -21,14 +21,19 @@ class Coupon extends Model
 
     public function discount($total)
     {
-        if ($this->type == 'Referral' && $this->value > env('MAX_DISC'))
+        if ($this->type == 'Referral' && $this->value > env('MAX_DISC')) {
             return env('MAX_DISC');
-        if ($this->rate === 'flat')
+        }
+        if ($this->rate === 'flat') {
             return $this->value;
-        elseif ($this->rate === 'percent')
+        } elseif ($this->rate === 'percent') {
+            $gst = gst($total);
+            $total = $total - $gst['total'];
+            // dd($gst, $total);
             return ($this->value / 100) * $total;
-        else
+        } else {
             return 0;
+        }
     }
 
     public function isValid()
