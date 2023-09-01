@@ -127,6 +127,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('slider/edit/{id}', 'App\Http\Controllers\cms\SliderController@edit')->name('backend.slider.edit');
         Route::post('slider/update/{id}', 'App\Http\Controllers\cms\SliderController@update')->name('backend.slider.update');
         Route::get('slider/delete/{id}', 'App\Http\Controllers\cms\SliderController@destroy')->name('backend.slider.destroy');
+        Route::get('coupon/usages/{id}', 'App\Http\Controllers\cms\CouponController@couponUsageIndex')->name('backend.couponUsages.index');
 
     });
 });
