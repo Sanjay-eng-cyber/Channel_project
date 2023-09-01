@@ -6,7 +6,7 @@
 @section('content')
     <main id="mt-main">
         <!-- Mt Product detial of the Page -->
-        <section class="mt-product-detial wow fadeInUp mt-4 " data-wow-delay="0.4s">
+        <section class="mt-product-detial mt-4 " data-wow-delay="0.4s">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">

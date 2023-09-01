@@ -60,13 +60,13 @@
     position: relative;
 }
 
-.profile-form-group-star-pin-code::after {
+/* .profile-form-group-star-pin-code::after {
     content: "*";
     position: absolute;
     top: 14px;
     left: 72px;
     color: rgba(241, 0, 0, 0.7);
-}
+} */
 
 .profile-form-input-custome {
     display: block;
