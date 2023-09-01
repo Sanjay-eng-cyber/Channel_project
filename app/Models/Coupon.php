@@ -11,7 +11,7 @@ class Coupon extends Model
 
     public function couponUsage()
     {
-        return $this->hasMany(CouponUsage::class)->where('coupon_id', $this->id)->count();
+        return $this->hasMany(CouponUsage::class);
     }
 
     public static function findPromoCode($code)

@@ -10,7 +10,7 @@ class CouponController extends Controller
 {
     public function index()
     {
-        $coupons = Coupon::latest()->paginate(10);
+        $coupons = Coupon::with('couponUsage')->latest()->paginate(10);
         return view('backend.coupon.index', compact('coupons'));
     }
 
@@ -30,11 +30,11 @@ class CouponController extends Controller
     {
         $request->validate([
             'name' => 'required|min:3|max:40|unique:coupons,name,',
-            'code'=> 'required|numeric|min:0|unique:coupons,code',
+            'code' => 'required|string|max:12|min:3|unique:coupons,code',
             'type' => 'required|string',
             'rate' => 'required|string',
             'value' => 'required|numeric',
-            'max_usage' =>'required|numeric',
+            'max_usage' => 'required|numeric',
             'valid_from' => 'required|date',
             'valid_till' => 'required|date',
         ]);
@@ -63,12 +63,12 @@ class CouponController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|min:3|max:40|unique:coupons,name,' .$id,
-            'code'=> 'required|numeric|min:0|unique:coupons,code,' .$id,
+            'name' => 'required|min:3|max:40|unique:coupons,name,' . $id,
+            'code' => 'required|string|max:12|min:3|unique:coupons,code,' . $id,
             'type' => 'required|string',
             'rate' => 'required|string',
             'value' => 'required|numeric',
-            'max_usage' =>'required|numeric',
+            'max_usage' => 'required|numeric',
             'valid_from' => 'required|date',
             'valid_till' => 'required|date',
         ]);
