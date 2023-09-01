@@ -296,3 +296,7 @@ select.form-control {
 
     background: #445ede !important;
 }
+
+.mce-notification-warning {
+    display: none;
+}

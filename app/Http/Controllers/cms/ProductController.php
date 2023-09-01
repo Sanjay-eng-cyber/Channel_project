@@ -109,7 +109,7 @@ class ProductController extends Controller
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'required|mimes:png,jpg,jpeg|max:1024',
-            'short_descriptions' => 'required|min:3|max:5000',
+            'short_descriptions' => 'nullable|min:3|max:5000',
             // 'connection_no' => 'nullable|min:3|max:20',
             // 'attribute_id' => ['nullable',Rule::in($attribute)],
             // 'product_attribute_value_id' => ['nullable',Rule::in($productAttributeValues)],
@@ -205,7 +205,7 @@ class ProductController extends Controller
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'nullable|mimes:png,jpg,jpeg|max:1024',
-            'short_descriptions' => 'required|min:3|max:5000',
+            'short_descriptions' => 'nullable|min:3|max:5000',
             // 'connection_no' => 'nullable|min:3|max:20',
 
         ]);

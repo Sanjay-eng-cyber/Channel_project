@@ -10,30 +10,30 @@ class ReviewController extends Controller
 {
     public function Index(Request $request, $id)
     {
-        $products = Product::findOrFail($id);
-        $reviews = $products->reviews()->latest()->paginate(10);
-        return view('backend.review.index', compact('reviews', 'products'));
+        $product = Product::findOrFail($id);
+        $reviews = $product->reviews()->latest()->paginate(10);
+        return view('backend.review.index', compact('reviews', 'product'));
     }
 
     public function Show(Request $request, $product_id, $review_id)
     {
-        $products = Product::findOrFail($product_id);
-        $reviews = $products->reviews()->findOrFail($review_id);
-        return view('backend.review.show', compact('reviews', 'products'));
+        $product = Product::findOrFail($product_id);
+        $reviews = $product->reviews()->findOrFail($review_id);
+        return view('backend.review.show', compact('reviews', 'product'));
     }
 
     public function Edit($product_id, $review_id)
     {
-        $products = Product::findOrFail($product_id);
-        $reviews = $products->reviews()->findOrFail($review_id);
+        $product = Product::findOrFail($product_id);
+        $reviews = $product->reviews()->findOrFail($review_id);
         // dd($medias);
-        return view('backend.review.edit', compact('products', 'reviews'));
+        return view('backend.review.edit', compact('product', 'reviews'));
     }
 
     public function Update(Request $request, $product_id, $review_id)
     {
-        $products = Product::findOrFail($product_id);
-        $reviews = $products->reviews()->findOrFail($review_id);
+        $product = Product::findOrFail($product_id);
+        $reviews = $product->reviews()->findOrFail($review_id);
         $request->validate([
             'title' => 'required|min:3|max:120',
             'body' => 'required|min:3|max:2000',
@@ -48,8 +48,8 @@ class ReviewController extends Controller
 
     public function Destroy($product_id, $review_id)
     {
-        $products = Product::findOrFail($product_id);
-        $reviews = $products->reviews()->findOrFail($review_id);
+        $product = Product::findOrFail($product_id);
+        $reviews = $product->reviews()->findOrFail($review_id);
         if ($reviews->delete()) {
             return redirect()->route('backend.product.review', $product_id)->with(['alert-type' => 'success', 'message' => 'Review Deleted Successfully']);
         }

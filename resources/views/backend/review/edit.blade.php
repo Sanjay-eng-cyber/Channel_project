@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Dashboard')
+@section('title', 'Review Edit - ' . $product->name)
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -28,7 +28,7 @@
                 <div class="row m-0">
                     <div class="col-12">
                         <form class="mt-3" method="POST"
-                            action="{{ route('backend.product.review.update', ['product_id' => $products->id, 'review_id' => $reviews->id]) }}"
+                            action="{{ route('backend.product.review.update', ['product_id' => $product->id, 'review_id' => $reviews->id]) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">

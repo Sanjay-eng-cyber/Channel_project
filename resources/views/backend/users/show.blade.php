@@ -38,14 +38,15 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Name</label><br>
-                                                <p class="label-title">{{ $user->first_name }} {{ $user->last_name }}</p>
+                                                <p class="label-title">{{ $user->first_name ?? '---' }}
+                                                    {{ $user->last_name }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Email</label><br>
-                                                <p class="label-title">{{ $user->email }}</p>
+                                                <p class="label-title">{{ $user->email ?? '---' }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -109,7 +110,6 @@
                                 <thead>
                                     <tr>
                                         <th>Sr no.</th>
-                                        {{-- <th>User</th> --}}
                                         <th>Total Amount</th>
                                         <th>Status</th>
                                         <th>Date</th>
@@ -120,9 +120,6 @@
                                     @forelse((object) $orders as $order)
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $orders) }}</td>
-                                            {{-- <td><a class="blue-col-a"
-                                                    href="{{ route('backend.user.show', $order->user_id) }}"
-                                                    target="target_blank">{{ $order->user->name }}</a></td> --}}
                                             <td>{{ $order->total_amount }}</td>
                                             <td>
                                                 @if ($order->status == 'initial')
@@ -166,8 +163,8 @@
                                             </td>
                                         </tr>
                                     @empty
-                                        <tr>
-                                            <td colspan="4">No Records Found</td>
+                                        <tr class="text-md-center">
+                                            <td colspan="5">No Records Found</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -194,7 +191,6 @@
                                 </thead>
                                 <tbody>
                                     @forelse($wishlists as $wishlist)
-                                        {{-- @dd($wishlist->products()) --}}
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $wishlists) }}</td>
                                             <td>
@@ -204,8 +200,8 @@
                                             </td>
                                         </tr>
                                     @empty
-                                        <tr>
-                                            <td colspan="4">No Records Found</td>
+                                        <tr class="text-md-center">
+                                            <td colspan="2">No Records Found</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -243,7 +239,7 @@
                                                     href="{{ route('backend.order.show', $transaction->order_id) }}"
                                                     target="target_blank">{{ $transaction->order_id }}</a>
                                             </td>
-                                            <td>{{$transaction->amount}}</td>
+                                            <td>{{ $transaction->amount }}</td>
                                             <td>
                                                 @if ($transaction->status == 'initial')
                                                     <label class="badge badge-primary">{{ $transaction->status }}</label>
@@ -288,8 +284,8 @@
                                             </td>
                                         </tr>
                                     @empty
-                                        <tr>
-                                            <td colspan="4">No Records Found</td>
+                                        <tr class="text-md-center">
+                                            <td colspan="6">No Records Found</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
