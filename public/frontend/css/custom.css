@@ -3453,6 +3453,8 @@ background: #F8FDFF;
 
 }
 }
+
+/*
 .profile-form-border .req-input::after {
     content: "*" !important;
     position: absolute !important;
@@ -3469,7 +3471,7 @@ background: #F8FDFF;
     left: 140px !important;
     color: rgba(241, 0, 0, 0.7) !important;
 
-}
+} */
 @media screen and (max-width: 576px){
 .footer-absolute-img1 {
     bottom: -53px;
