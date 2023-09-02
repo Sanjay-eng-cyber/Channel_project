@@ -111,13 +111,13 @@
                                    </a>
                                </ul>
                                <div class="header-sub-1 header-top-search-icon d-none d-lg-inline">
-                                   <form action="{{ route('frontend.search.index') }}" method="GET" class="">
-                                       <input type="text" class="form-control px-4" placeholder="Search Product"
+                                   <form action="{{ route('frontend.search.index') }}" method="GET" class="position-relative" style="isolation: isolate">
+                                       <input type="text" class="form-control px-4 search-btn-newp" placeholder="Search Product"
                                            aria-label="Search" aria-describedby="basic-addon1" name="q"
                                            value="{{ request('q') }}">
-                                       <button class="position-absolute top-0 end-0 border-0 bg-transparent"
+                                       <button class="position-absolute  border-0 bg-transparent header-seach-icon"
                                            type="submit">
-                                           <i class="fas fa-search fa-fw header-seach-icon" style="color:#EC268F"></i>
+                                           <i class="fas fa-search fa-fw " style="color:#EC268F"></i>
                                        </button>
                                    </form>
                                </div>
@@ -476,5 +476,6 @@
    {{-- we will move this styles in css file before production --}}
 
    <style>
+
 
    </style>
