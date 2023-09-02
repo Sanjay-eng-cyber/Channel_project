@@ -1083,10 +1083,14 @@ a:hover {
 
 .header-seach-icon {
     position: absolute;
-    top: 11px;
-    left: 28px;
+    top: 8px;
+    left: 12px;
 }
 
+.search-btn-newp {
+    padding-left:50px !important; /* Remove any left padding to prevent overlapping with the indent */
+
+  }
 ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     margin-left: 40px !important;
@@ -2595,12 +2599,12 @@ a:hover {
         font-size: 12px;
         height: 31px;
     }
-
+/*
     .header-seach-icon {
         position: absolute;
         top: 9px;
         left: 4px;
-    }
+    } */
 
     /* skin slider */
     .mt-skin-product1 {
