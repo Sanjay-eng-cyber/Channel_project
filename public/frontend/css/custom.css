@@ -1083,12 +1083,12 @@ a:hover {
 
 .header-seach-icon {
     position: absolute;
-    top: 8px;
+    top: 10px;
     left: 12px;
 }
 
 .search-btn-newp {
-    padding-left:50px !important; /* Remove any left padding to prevent overlapping with the indent */
+    padding-left:50px !important;
 
   }
 ::-webkit-input-placeholder {
@@ -3149,17 +3149,16 @@ a:hover {
     opacity: 0;
   }
 .cart-has-item-icon{
-    width:12px;
-    height:12px;
+    width:10px;
+    height:11px;
      border-radius:100%;
      background:#EC268F;
      position: absolute;
-     top:3px;
-     right:3px;
-     font-size:10px;
+     top:14px;
+     right:14px;
+     font-size:8px;
      color:white;
      text-align: center !important;
-     padding-bottom:15px !important;
 
 }
 .icon-img-size
