@@ -98,7 +98,7 @@
                                             </td> --}}
                                             <td>
                                                 <a class="text-warning"
-                                                    href="{{ route('backend.order.show', $d->order_id) }}">
+                                                    href="{{ route('backend.order.show', $d->order_id) }}" target="_blank">
                                                     {{ $d->order_id }}
                                                 </a>
                                             </td>
@@ -164,7 +164,7 @@
                                             </td>
                                         </tr>
                                     @empty
-                                        <tr>
+                                        <tr class="text-md-center">
                                             <td colspan="7">No Records Found</td>
                                         </tr>
                                     @endforelse

@@ -38,8 +38,11 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">User</label><br>
-                                                <p class="label-title">{{ $order->user->first_name ?? '---' }}
-                                                    {{ $order->user->last_name }}</p>
+                                                <p class="label-title"><a
+                                                        href="{{ route('backend.user.show', $order->user_id) }}"
+                                                        class="cust-title"
+                                                        target="_blank">{{ $order->user->first_name ?? '---' }}
+                                                        {{ $order->user->last_name }}</a></p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -49,6 +52,26 @@
                                                 <p class="label-title">{{ $order->api_order_id ?? '---' }}</p>
                                             </div>
                                         </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Order
+                                                    Status</label><br>
+                                                <p class="label-title">
+                                                    @if ($order->status == 'initial')
+                                                        <label class="badge badge-primary"
+                                                            style="color:white">{{ $order->status }}</label>
+                                                    @elseif ($order->status == 'failed')
+                                                        <label class="badge badge-danger"
+                                                            style="color:white">{{ $order->status }}</label>
+                                                    @else
+                                                        <label class="badge badge-success"
+                                                            style="color:white">{{ $order->status }}</label>
+                                                    @endif
+                                                </p>
+                                            </div>
+                                        </div>
+
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Delivery
@@ -70,6 +93,8 @@
                                                 <p class="label-title">{{ $order->delivery_status ?? '---' }}</p>
                                             </div>
                                         </div>
+
+
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Sub
@@ -91,24 +116,7 @@
                                                 <p class="label-title">{{ $order->total_amount }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Status</label><br>
-                                                <p class="label-title">
-                                                    @if ($order->status == 'initial')
-                                                        <label class="badge badge-primary"
-                                                            style="color:white">{{ $order->status }}</label>
-                                                    @elseif ($order->status == 'failed')
-                                                        <label class="badge badge-danger"
-                                                            style="color:white">{{ $order->status }}</label>
-                                                    @else
-                                                        <label class="badge badge-success"
-                                                            style="color:white">{{ $order->status }}</label>
-                                                    @endif
-                                                </p>
-                                            </div>
-                                        </div>
+
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"></label>
