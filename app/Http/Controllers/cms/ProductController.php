@@ -5,18 +5,21 @@ namespace App\Http\Controllers\cms;
 use App\Models\Brand;
 use App\Models\Media;
 use App\Models\Product;
+use App\Models\CartItem;
 use App\Models\Category;
 use App\Models\Showcase;
 use App\Models\Attribute;
+use App\Models\OrderItem;
 use App\Models\SubCategory;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
 use App\Models\ShowcaseProduct;
 use Illuminate\Validation\Rule;
 use App\Models\ProductAttribute;
 use App\Http\Controllers\Controller;
 use App\Models\ProductAttributeValue;
+use App\Models\Wishlist;
+use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -302,18 +305,21 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
+        if (OrderItem::where('product_id', $product->id)->exists()) {
+            return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Product is in use']);
+        };
+
         $medias = Media::where('model_id', $id)->where('model_type', Product::class)->get();
         foreach ($medias as $media) {
             if (Storage::disk('public')->delete('images/products/' . $media->file_name)) {
                 $media->delete();
             }
         }
-        optional(ShowcaseProduct::where([['product_id', $id]])->delete());
-        optional(ProductAttribute::where([['product_id', $id]])->delete());
-        // $showcase_products = ShowcaseProduct::where('product_id', $id)->get();
-        // foreach ($showcase_products as $showcase_product) {
-        //     $showcase_product->delete();
-        // }
+        optional(ProductAttribute::where('product_id', $id)->delete());
+        optional(ShowcaseProduct::where('product_id', $id)->delete());
+        optional(CartItem::where('product_id', $id)->delete());
+        optional(Wishlist::where('product_id', $id)->delete());
+
         if ($product->delete() && Storage::disk('public')->delete('images/products/thumbnails/' . $product->thumbnail_image)) {
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Deleted Successfully']);
         }

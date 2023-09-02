@@ -28,6 +28,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('stock');
             $table->string('sku')->unique()->nullable();
             $table->float('rating')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
