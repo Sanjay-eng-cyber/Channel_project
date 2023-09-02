@@ -54,10 +54,11 @@
                   <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                       <div class="user-profile-section">
                           <div class="media mx-auto">
-                              <img src="assets/img/90x90.svg" class="img-fluid mr-2" alt="avatar">
+                              {{-- <img src="{{asset('backend/assets/img/90x90.svg')}}" class="img-fluid mr-2" alt="avatar"> --}}
                               <div class="media-body">
-                                  <h5>{{ ucfirst(auth()->user()->name) }}</h5>
-                                  <h5>{{ ucfirst(auth()->user()->role) }}</h5>
+                                <h5>Admin</h5>
+                                  {{-- <h5>{{ ucfirst(auth()->user()->name) }}</h5>
+                                  <h5>{{ ucfirst(auth()->user()->role) }}</h5> --}}
                                   <!-- <p>Project Leader</p> -->
                               </div>
                           </div>
