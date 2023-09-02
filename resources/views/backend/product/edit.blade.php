@@ -101,8 +101,10 @@
                                     </div>
 
                                     <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
-                                        <label for="degree2">Thumbnail Image : </label> <a href="javascript:void(0)"
-                                            type="button" class="text-primary font-weight-bold float-right">View</a>
+                                        <label for="degree2">Thumbnail Image : </label>
+                                        <span id="lightgallery1"><a class="text-primary font-weight-bold float-right"
+                                                href="{{ asset('storage/images/products/thumbnails/' . $product->thumbnail_image) }}">View</a>
+                                        </span>
                                         <br>
                                         {{-- <img class="m-2 border"
                                             src="{{ asset('storage/images/products/thumbnails/' . $product->thumbnail_image) }}"
@@ -116,16 +118,28 @@
                                     </div>
 
                                     <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
-                                        <label for="degree2">Image : </label> <a href="javascript:void(0)" type="button"
-                                            class="text-primary font-weight-bold float-right">View</a>
+                                        <label for="degree2">Image : </label>
+                                        <span id="lightgallery2">
+                                            @forelse ($product->medias()->get() as $key => $media)
+                                                @if ($key == 0)
+                                                    <a href="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                        type="button" class="text-primary font-weight-bold float-right">
+                                                        View
+                                                    </a>
+                                                @else
+                                                    <a href="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                        type="button" class="d-none">
+                                                        View
+                                                    </a>
+                                                @endif
+                                            @empty
+                                            @endforelse
+                                        </span>
                                         {{-- <div class="d-flex flex-wrap">
-                                            @forelse ($product->medias()->get() as $media)
                                                 <img class="m-2 border"
                                                     src="{{ asset('storage/images/products/' . $media->file_name) }}"
                                                     height="150px" width="150px" alt="">
 
-                                            @empty
-                                            @endforelse
                                         </div> --}}
                                         <input class="form-control" name="image[]" type="file" id="image" multiple />
                                         @if ($errors->has('image'))
@@ -152,8 +166,8 @@
                                     <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
                                         <label for="formGroupExampleInput" class="">MRP*</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
-                                            placeholder="Enter Mrp" minlength="3" maxlength="40" required name="mrp"
-                                            value="{{ old('mrp') ?? $product->mrp }}">
+                                            placeholder="Enter Mrp" minlength="3" maxlength="40" required
+                                            name="mrp" value="{{ old('mrp') ?? $product->mrp }}">
                                         @if ($errors->has('mrp'))
                                             <div class="text-danger" role="alert">{{ $errors->first('mrp') }}</div>
                                         @endif
@@ -270,20 +284,21 @@
     </div>
 @endsection
 @section('js')
-    <link type=" text/css" rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css" />
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js') }}">
-    </script>
-    <script src="{{ asset('js/lg-zoom.min.js') }}"></script>
-    {{-- <link rel="stylesheet" type=" text/css" href="{{ asset('css/lightgallery.css') }}">
-        <script src="{{ asset('js/lightgallery.js') }}"></script> --}}
+    <script src="{{ asset('plugins/lightgallery/js/lightgallery.min.js') }}"></script>
+    <script src="{{ asset('plugins/lightgallery/js/lg-zoom.js') }}"></script>>
     <script>
         $(document).ready(function() {
-            $("#lightgallery2").lightGallery({
+            lightGallery(document.getElementById('lightgallery1'), {
+                speed: 500,
                 download: false,
-                escKey: true,
-                fullScreen: true
+                thumbnail: true,
             });
+            lightGallery(document.getElementById('lightgallery2'), {
+                speed: 500,
+                download: false,
+                thumbnail: true,
+            });
+            getValues();
         });
     </script>
 @endsection
@@ -351,7 +366,4 @@
             })
         }
     }
-    $(document).ready(function() {
-        getValues()
-    });
 </script>

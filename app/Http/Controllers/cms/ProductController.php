@@ -89,8 +89,8 @@ class ProductController extends Controller
         $brands = Brand::pluck('id')->toArray();
         $sub_categorys = SubCategory::pluck('id')->toArray();
         $showcases_id = Showcase::pluck('id')->toArray();
-        $attribute = Attribute::pluck('id')->toArray();
-        $productAttributeValues = Attribute::pluck('id')->toArray();
+        $attributes = Attribute::pluck('id')->toArray();
+        $showcases = Showcase::pluck('id')->toArray();
         // dd($categorys);
         // dd($request);
         // dd($showcases_id);
@@ -110,9 +110,11 @@ class ProductController extends Controller
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'required|mimes:png,jpg,jpeg|max:1024',
             'short_descriptions' => 'nullable|min:3|max:5000',
+            'attributeKeys' => ['nullable'],
+            'attributeKeys.*' => ['nullable', Rule::in($attributes)],
+            'showcases' => ['nullable'],
+            'showcases.*' => ['required', Rule::in($showcases)],
             // 'connection_no' => 'nullable|min:3|max:20',
-            // 'attribute_id' => ['nullable',Rule::in($attribute)],
-            // 'product_attribute_value_id' => ['nullable',Rule::in($productAttributeValues)],
         ]);
 
         $fileWithExtension = $request->file('thumbnail_image');
@@ -189,6 +191,8 @@ class ProductController extends Controller
         $sub_categorys = SubCategory::pluck('id')->toArray();
         $product = Product::findOrFail($id);
         $showcases_id = Showcase::pluck('id')->toArray();
+        $attributes = Attribute::pluck('id')->toArray();
+        $showcases = Showcase::pluck('id')->toArray();
         // dd($media);
         $request->validate([
             'name' => 'required|min:3|max:250|unique:products,name,' . $id,
@@ -206,6 +210,10 @@ class ProductController extends Controller
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'nullable|mimes:png,jpg,jpeg|max:1024',
             'short_descriptions' => 'nullable|min:3|max:5000',
+            'attributeKeys' => ['nullable'],
+            'attributeKeys.*' => ['nullable', Rule::in($attributes)],
+            'showcases' => ['nullable'],
+            'showcases.*' => ['required', Rule::in($showcases)],
             // 'connection_no' => 'nullable|min:3|max:20',
 
         ]);
