@@ -199,7 +199,7 @@
                                                             <div class="b2">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}"
                                                                     class="position-relative fragrances-img-bottom">
-                                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    <img src="{{ asset('storage/images/products/thumbnails/' . $p->thumbnail_image) }}"
                                                                         alt="image description" class="img-fluid">
                                                                 </a>
 
@@ -290,7 +290,7 @@
                                                             <div class="b2">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}"
                                                                     class="position-relative fragrances-img-bottom">
-                                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    <img src="{{ asset('storage/images/products/thumbnails/' . $p->thumbnail_image) }}"
                                                                         alt="image description">
                                                                 </a>
 
@@ -383,7 +383,7 @@
                                                             <div class="b2">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}"
                                                                     class="position-relative fragrances-img-bottom">
-                                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    <img src="{{ asset('storage/images/products/thumbnails/' . $p->thumbnail_image) }}"
                                                                         alt="image description">
                                                                 </a>
 
@@ -448,7 +448,7 @@
                                                             <div class="b2">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}"
                                                                     class="position-relative fragrances-img-bottom">
-                                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    <img src="{{ asset('storage/images/products/thumbnails/' . $p->thumbnail_image) }}"
                                                                         alt="image description">
                                                                 </a>
 
@@ -541,7 +541,7 @@
                                                             <div class="b2">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}"
                                                                     class="position-relative fragrances-img-bottom">
-                                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    <img src="{{ asset('storage/images/products/thumbnails/' . $p->thumbnail_image) }}"
                                                                         alt="image description">
                                                                 </a>
 
@@ -606,7 +606,7 @@
                                                             <div class="b2">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}"
                                                                     class="position-relative fragrances-img-bottom">
-                                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    <img src="{{ asset('storage/images/products/thumbnails/' . $p->thumbnail_image) }}"
                                                                         alt="image description">
                                                                 </a>
 
@@ -699,7 +699,7 @@
                                                             <div class="b2">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}"
                                                                     class="position-relative fragrances-img-bottom">
-                                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    <img src="{{ asset('storage/images/products/thumbnails/' . $p->thumbnail_image) }}"
                                                                         alt="image description">
                                                                 </a>
 
@@ -764,7 +764,7 @@
                                                             <div class="b2">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}"
                                                                     class="position-relative fragrances-img-bottom">
-                                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    <img src="{{ asset('storage/images/products/thumbnails/' . $p->thumbnail_image) }}"
                                                                         alt="image description">
                                                                 </a>
 
@@ -857,7 +857,7 @@
                                                             <div class="b2">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}"
                                                                     class="position-relative fragrances-img-bottom">
-                                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    <img src="{{ asset('storage/images/products/thumbnails/' . $p->thumbnail_image) }}"
                                                                         alt="image description">
                                                                 </a>
 
@@ -921,7 +921,7 @@
                                                         <div class="b1">
                                                             <div class="b2">
                                                                 <a href="{{ route('frontend.p.show', $p->slug) }}">
-                                                                    <img src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                                                                    <img src="{{ asset('storage/images/products/thumbnails/' . $p->thumbnail_image) }}"
                                                                         alt="image description">
                                                                 </a>
 
@@ -998,7 +998,7 @@
 
                     @foreach ($latestHomeDecorProducts as $p)
                         <div class="rise-up-slider-card">
-                            <img class="product" src="{{ asset('storage/images/products/' . $p->thumbnail_image) }}"
+                            <img class="product" src="{{ asset('storage/images/products/thumbnails/' . $p->thumbnail_image) }}"
                                 alt="" class="img-fluid w-100">
                             <div class="text">
                                 <div>

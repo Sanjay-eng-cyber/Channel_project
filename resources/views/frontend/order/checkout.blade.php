@@ -90,7 +90,7 @@
 
                         @foreach ($cartItems as $cartItem)
                             <div class="col-12 d-flex">
-                                <img src="{{ asset('storage/images/products/' . $cartItem->product->thumbnail_image) }}"
+                                <img src="{{ asset('storage/images/products/thumbnails/' . $cartItem->product->thumbnail_image) }}"
                                     alt="..." class="my-2 rounded-2 border border-1 pink-border me-3 cart-p-img">
                                 <div class="mt-1">
                                     <p class="mb-1 text-black">{{ $cartItem->product->name }}</p>
