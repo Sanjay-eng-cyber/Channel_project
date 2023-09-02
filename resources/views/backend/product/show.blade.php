@@ -99,16 +99,35 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Images</label><br>
+                                                <label for="degree3" class="cust-title" class="label-title">Other
+                                                    Images</label><br>
                                                 <div class="d-flex flex-wrap">
-                                                    @forelse ($product->medias()->get() as $media)
-                                                        <img class="m-2 border"
-                                                            src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                            height="150px" width="150px" alt="">
-                                                    @empty
-                                                    @endforelse
+                                                    <span id="lightgallery2">
+                                                        @forelse ($product->medias()->get()  as $key => $media)
+                                                            @if ($key == 0)
+                                                                <a href="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                                    type="button"
+                                                                    class="text-primary font-weight-bold float-right">
+                                                                    View
+                                                                </a>
+                                                            @else
+                                                                <a href="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                                    type="button" class="d-none">
+                                                                    View
+                                                                </a>
+                                                            @endif
+                                                        @empty
+                                                        @endforelse
+                                                    </span>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree2" class="label-title cust-title">Thumbnail Image</label><br>
+                                                <span id="lightgallery1"><a class="text-primary font-weight-bold"
+                                                        href="{{ asset('storage/images/products/thumbnails/' . $product->thumbnail_image) }}">View</a>
+                                                </span>
                                             </div>
                                         </div>
                                         {{-- @dd($product_showcases) --}}
@@ -166,6 +185,8 @@
     <link href="{{ asset('assets/css/components/tabs-accordian/custom-tabs.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('js')
+    <script src="{{ asset('plugins/lightgallery/js/lightgallery.min.js') }}"></script>
+    <script src="{{ asset('plugins/lightgallery/js/lg-zoom.js') }}"></script>>
     <script>
         $(document).ready(function() {
             $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
@@ -186,11 +207,17 @@
         <script src="{{ asset('js/lightgallery.js') }}"></script> --}}
     <script>
         $(document).ready(function() {
-            $("#lightgallery2").lightGallery({
+            lightGallery(document.getElementById('lightgallery1'), {
+                speed: 500,
                 download: false,
-                escKey: true,
-                fullScreen: true,
+                thumbnail: true,
             });
+            lightGallery(document.getElementById('lightgallery2'), {
+                speed: 500,
+                download: false,
+                thumbnail: true,
+            });
+            getValues();
         });
     </script>
 @endsection
