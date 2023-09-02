@@ -48,20 +48,20 @@ class CheckoutController extends Controller
         }
         // dd($selectedAddress->postal_code);
 
-        $token = getShiprocketToken();
+        // $token = getShiprocketToken();
 
-        $checkServiceablity = Shiprocket::courier($token)->checkServiceability([
-            'pickup_postcode' => env('APP_POSTAL_CODE'),
-            'delivery_postcode' => (int)$selectedAddress->postal_code,
-            'cod' => 0,
-            'weight' => 2
-        ]);
+        // $checkServiceablity = Shiprocket::courier($token)->checkServiceability([
+        //     'pickup_postcode' => env('APP_POSTAL_CODE'),
+        //     'delivery_postcode' => (int)$selectedAddress->postal_code,
+        //     'cod' => 0,
+        //     'weight' => 2
+        // ]);
 
-        // dd($checkServiceablity);
-        if (!isset($checkServiceablity['status']) || $checkServiceablity['status']  !== 200) {
-            session()->flash('error', 'Not deliverable in this location');
-            return redirect()->back()->with(toast("Not Deliverable In Selected Address", 'info'));
-        }
+        // // dd($checkServiceablity);
+        // if (!isset($checkServiceablity['status']) || $checkServiceablity['status']  !== 200) {
+        //     session()->flash('error', 'Not deliverable in this location');
+        //     return redirect()->back()->with(toast("Not Deliverable In Selected Address", 'info'));
+        // }
 
         $cartItems = $user->cart->items()->with('product')->get();
         $productsTotalAmount = 0;
