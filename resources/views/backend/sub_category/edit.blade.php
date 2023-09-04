@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Dashboard')
+@section('title', 'Sub Category - ' .$sub_category->name)
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="col-xl-12  col-md-6 col-sm-12 py-2">
                                     <label for="formGroupExampleInput">Category</label>
-                                    <select class="form-control" name="category_id">
+                                    <select class="form-control" name="category_id" required>
                                         <option value="">Select Any Category</option>
                                         @if (old('category_id'))
                                             @foreach ($categorys as $category)

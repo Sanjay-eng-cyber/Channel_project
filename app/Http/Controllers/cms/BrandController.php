@@ -32,7 +32,7 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|min:3|max:80|unique:brands,name,',
+            'name' => 'required|min:3|max:80|unique:brands,name',
         //    'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf',
         //    'descriptions' => 'nullable|min:3|max:250'
         ]);

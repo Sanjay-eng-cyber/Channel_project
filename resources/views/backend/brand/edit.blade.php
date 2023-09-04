@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Dashboard')
+@section('title', 'Edit Brand - ' . $brand->name)
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -28,7 +28,8 @@
                 <div class="row m-0">
                     <div class="col-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.brand.update', $brand->id) }}"
-                            enctype="multipart/form-data" autocomplete="off">
+                            enctype="multipart/form-data" autocomplete="off"
+                            onsubmit="return confirm('Are you sure, you want to update?')">
                             @csrf
                             <div class="form-group mb-3 row">
                                 <div class="col-xl-12  col-md-6 col-sm-12">
@@ -63,8 +64,7 @@
                                     @endif
                                 </div> --}}
                             </div>
-                            <input type="submit" class="btn btn-primary"
-                                onclick="return confirm('Are you sure, you want to update?')">
+                            <input type="submit" class="btn btn-primary">
                         </form>
                     </div>
                 </div>
@@ -75,4 +75,3 @@
 @endsection
 @section('js')
 @endsection
-
