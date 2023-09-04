@@ -188,7 +188,7 @@
                             <div class="tab-content">
                                 <div id="featured">
                                     <!-- tabs slider start here -->
-                                    <div class="fragrances ">
+                                    <div class="fragrances">
                                         {{-- @for ($i = 1; $i < 6; $i++) --}}
                                         @foreach ($featured_products as $p)
                                             <!-- slide start here -->

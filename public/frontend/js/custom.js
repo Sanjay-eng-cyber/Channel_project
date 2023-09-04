@@ -52,10 +52,15 @@ jQuery('.skin-sliderlg').slick({
 });
 
 
-// fragrances slider
+// fragrances
+
 jQuery('.fragrances').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
+    speed: 300,
+    infinite: true,
+    autoplaySpeed: 2000,
+    autoplay: true,
     responsive: [
         {
             breakpoint: 1200,
