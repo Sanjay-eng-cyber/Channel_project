@@ -300,3 +300,7 @@ select.form-control {
 .mce-notification-warning {
     display: none;
 }
+
+thead tr th:first-child{
+    width: 75px;
+}

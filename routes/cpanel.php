@@ -23,7 +23,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('/', 'App\Http\Controllers\cms\StatisticsController@index')->name("cms.statistics.index");
 
         Route::get('categories/', 'App\Http\Controllers\cms\CategoryController@index')->name('backend.category.index');
-        Route::get('/category/show/{id}', 'App\Http\Controllers\cms\CategoryController@show')->name("backend.category.show");
+        // Route::get('/category/show/{id}', 'App\Http\Controllers\cms\CategoryController@show')->name("backend.category.show");
         Route::get('category/create', 'App\Http\Controllers\cms\CategoryController@create')->name('backend.category.create');
         Route::post('category/store', 'App\Http\Controllers\cms\CategoryController@store')->name('backend.category.store');
         Route::get('category/edit/{id}', 'App\Http\Controllers\cms\CategoryController@edit')->name('backend.category.edit');

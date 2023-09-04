@@ -37,7 +37,7 @@ class SubCategoryController extends Controller
     {
         $categorys = Category::pluck('id')->toArray();
         $request->validate([
-            'name' => 'required|min:3|max:40|unique:sub_categories,name,',
+            'name' => 'required|min:3|max:40|unique:sub_categories,name',
             //    'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf',
             //    'descriptions' => 'nullable|min:3|max:250',
             'category_id' => ['required', Rule::in($categorys)],
@@ -112,6 +112,9 @@ class SubCategoryController extends Controller
     public function destroy($id)
     {
         $sub_category = SubCategory::findOrFail($id);
+        if ($sub_category->products()->exists()) {
+            return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Products exists in this Sub-Category']);
+        }
         if ($sub_category->delete()) {
             return redirect()->route('backend.sub_category.index')->with(['alert-type' => 'success', 'message' => 'Sub Category Deleted Successfully']);
         }
