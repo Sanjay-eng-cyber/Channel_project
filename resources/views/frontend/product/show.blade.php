@@ -159,7 +159,20 @@
                                             Buy Now
                                         </button>
 
-                                        @if ($product->isInWishlist())
+                                            <div class="qty-counter">
+                                                <label for="qty" class="px-md-2">
+                                                    Qty
+                                                </label>
+                                                <div class="input-group flex-nowrap counter">
+                                                    <button type="button" class="input-group-text decrease-quantity">-</button>
+                                                    <input type="number" name="quantity" class="form-control quantity-input"
+                                                        value="1">
+                                                    <button type="button" class="input-group-text increase-quantity">+</button>
+                                                </div>
+                                            </div>
+    
+
+                                        {{-- @if ($product->isInWishlist())
                                             <button type="button" class="btn mt-sm-0 mt-3 p-show add-to-wish active"
                                                 data-p-id="{{ $product->id }}">
                                                 <i class="fa-regular fa-heart"></i>
@@ -175,7 +188,8 @@
                                                     Add To Wishlist
                                                 </span>
                                             </button>
-                                        @endif
+                                        @endif --}}
+                                        
                                     </div>
                                 </form>
 
