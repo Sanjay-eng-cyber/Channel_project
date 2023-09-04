@@ -122,7 +122,7 @@
                                 <form action="{{ route('frontend.p.checkout', $product->slug) }}" method="GET">
                                     {{-- @csrf --}}
                                     <div class="col-12 col-md-6 mb-3">
-                                        <div class="qty-counter">
+                                        {{-- <div class="qty-counter">
                                             <label for="qty" class="px-md-2">
                                                 Quantity
                                             </label>
@@ -132,7 +132,26 @@
                                                     value="1">
                                                 <button type="button" class="input-group-text increase-quantity">+</button>
                                             </div>
-                                        </div>
+                                        </div> --}}
+
+                                        @if ($product->isInWishlist())
+                                            <button type="button" class="btn mt-sm-0 mt-3 p-show add-to-wish active"
+                                                data-p-id="{{ $product->id }}">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="tool-tip-text">
+                                                    Remove From Wishlist
+                                                </span>
+                                            </button>
+                                        @else
+                                            <button type="button" class="btn mt-sm-0 mt-3 p-show add-to-wish"
+                                                data-p-id="{{ $product->id }}">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="tool-tip-text">
+                                                    Add To Wishlist
+                                                </span>
+                                            </button>
+                                        @endif
+                                        
                                     </div>
 
                                     <div class="d-flex justify-content-around flex-wrap my-3 ">
