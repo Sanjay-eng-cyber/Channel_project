@@ -178,7 +178,7 @@
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <div class="mt-producttabs style2 " data-wow-delay="0.6s">
+                        <div class="mt-producttabs style2" data-wow-delay="0.6s">
                             <!-- producttabs start here -->
                             <ul class="producttabs">
                                 <li> Channel</li>
@@ -1164,7 +1164,7 @@
                         </div>
                         <!-- F Widget Item of the Page -->
                     </div>
-                    <div class="col">
+                    <div class="col ft-svg-class-4-new">
                         <!-- F Widget Item of the Page -->
                         <div class="f-widget-item ft-svg-class-4">
                             <span class="widget-icon ft-svg-child-1">

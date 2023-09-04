@@ -2439,8 +2439,8 @@ a:hover {
     .ft-svg-class-1 .ft-svg-sub-class-1 {
         display: flex;
         flex-direction: column;
-        background: rgba(243, 219, 225, 1);
-
+        background:#FEEEF2;
+        border-radius: 8px;
         padding: 15px;
     }
 
@@ -2462,7 +2462,8 @@ a:hover {
     .ft-svg-class-2 .ft-svg-sub-class-2 {
         display: flex;
         flex-direction: column;
-        background: rgba(243, 219, 225, 1);
+        background:#FEEEF2;
+        border-radius: 8px;
         padding: 15px;
     }
 
@@ -2484,7 +2485,8 @@ a:hover {
     .ft-svg-class-3 .ft-svg-sub-class-3 {
         display: flex;
         flex-direction: column;
-        background: rgba(243, 219, 225, 1);
+        background:#FEEEF2;
+        border-radius: 8px;
         padding: 15px;
     }
 
@@ -2506,7 +2508,8 @@ a:hover {
     .ft-svg-class-4 {
         display: flex;
         flex-direction: column;
-        background: rgba(243, 219, 225, 1);
+        background:#FEEEF2;
+        border-radius: 8px;
         padding: 15px;
     }
 
@@ -3884,4 +3887,40 @@ position: absolute;bottom:-79px;background-color:#F1D2AD;width:100%;border-radiu
 
 }
 
+
+@media screen and (max-width: 576px){
+    .ft-svg-class-1{
+        padding-right: 5px;
+    }
+    .ft-svg-class-2{
+        padding-left: 5px;
+    }
+    .ft-svg-class-3{
+        padding-right: 5px;
+
+    }
+    .ft-svg-class-4-new{
+        padding-left: 5px;
+
+    }
+    .mt-paddingbottomsm {
+        padding-bottom: 9px;
+    }
+    .ft-svg-class-2 .ft-svg-sub-class-2 .ft-svg-child-1 img{
+        height:31px;
+    }
+    
+    .ft-svg-class-1 .ft-svg-sub-class-1 .ft-svg-child-1 img{
+        height: 31px;
+    }
+    .ft-svg-class-3 .ft-svg-sub-class-3 .ft-svg-child-1 img{
+        height:31px;
+    }
+    .ft-svg-class-4 .ft-svg-child-1 img{
+        height:31px;
+    }
+    .f-promo-box .f-widget-item .f-promo-box-heading{
+        font-size:10px;
+    }
+}
 
