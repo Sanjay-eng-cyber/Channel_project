@@ -490,7 +490,7 @@
                 <ul id="subcategory-slider">
 
                     @foreach ($relatedProducts as $rP)
-                        <div class="product-show-grid">
+                        <div class="product-show-grid my-3 mx-2">
 
                             <div class=" product-show-grid-card ">
                                 <div class="product-card-img">
