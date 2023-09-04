@@ -90,7 +90,9 @@
 
 
                 <div class="container category-mobile-version">
-                    <h3 class="f-widget-heading text-red ct-f-heading mt-4 font-body">Categories</h3>
+                    <div style="padding-left:1rem">
+                        <h3 class="f-widget-heading text-red ct-f-heading mt-4 font-body">Categories</h3>
+                    </div>
 
                     <div class="row row-cols-2">
                         @foreach ($navCategories as $navCategory)
