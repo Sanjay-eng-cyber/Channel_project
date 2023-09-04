@@ -3922,5 +3922,10 @@ position: absolute;bottom:-79px;background-color:#F1D2AD;width:100%;border-radiu
     .f-promo-box .f-widget-item .f-promo-box-heading{
         font-size:10px;
     }
+
+    .footer-despsn{
+        opacity:50%;
+        font-size:14px;
+    }
 }
 

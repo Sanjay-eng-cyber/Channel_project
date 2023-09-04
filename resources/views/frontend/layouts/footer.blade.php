@@ -19,7 +19,7 @@
                                     alt="Channel"></a>
                         </div>
 
-                        <p>
+                        <p class="footer-despsn">
                             {{-- Welcome to Channel, The Ultimate destination for all your gifting needs! --}}
                             "Discover your natural radiance with<br/>
                             our range of luxuriousand innovative<br/>
