@@ -28,10 +28,6 @@ class OrderController extends Controller
 
     protected function filterResults($request, $orders)
     {
-        $request->validate([
-            'q' => 'nullable|min:3|max:40'
-        ]);
-
         if ($request !== null && $request->has('status') && $request['status'] == 'initial') {
             $orders = $orders->where('status', '=', 'initial');
         } elseif ($request !== null && $request->has('status') && $request['status'] == 'failed') {
