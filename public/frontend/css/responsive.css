@@ -1353,9 +1353,9 @@
 }
 
 @media only screen and (max-width: 767px) {
-	.mt-paddingbottomxs {
-		padding-bottom: 30px;
-	}
+	/* .mt-paddingbottomxs {
+		padding-bottom: 0px;
+	} */
 
 	.mt-nopaddingtopxs {
 		padding-top: 0 !important;
