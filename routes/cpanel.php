@@ -31,7 +31,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('category/delete/{id}', 'App\Http\Controllers\cms\CategoryController@destroy')->name('backend.category.destroy');
 
         Route::get('brands/', 'App\Http\Controllers\cms\BrandController@index')->name('backend.brand.index');
-        Route::get('/brand/show/{id}', 'App\Http\Controllers\cms\BrandController@show')->name("backend.brand.show");
+        // Route::get('/brand/show/{id}', 'App\Http\Controllers\cms\BrandController@show')->name("backend.brand.show");
         Route::get('brand/create', 'App\Http\Controllers\cms\BrandController@create')->name('backend.brand.create');
         Route::post('brand/store', 'App\Http\Controllers\cms\BrandController@store')->name('backend.brand.store');
         Route::get('brand/edit/{id}', 'App\Http\Controllers\cms\BrandController@edit')->name('backend.brand.edit');
