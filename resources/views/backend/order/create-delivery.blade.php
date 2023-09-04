@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Create Shiment')
+@section('title', 'Create Delivery')
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
