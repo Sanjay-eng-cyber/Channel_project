@@ -178,13 +178,21 @@
            <div class="container d-none d-lg-block px-0">
                <div class="row">
                    <div class="col-xs-12">
-                       <ul class="mt-icon-list pt-2 pt-md-0 pt-lg-2 pt-xl-0 pt-xxl-0">
+                       <ul class="mt-icon-list ">
 
-                           <li class="bg-red px-2 rounded my-2">
+                           {{-- <li class="bg-red px-2 rounded my-2">
                                <a href="{{ route('frontend.cart.checkout') }}" class="text-white">
                                    CHECKOUT
                                </a>
-                           </li>
+                           </li> --}}
+
+                           <li class="px-2 rounded my-2">
+                            <a href="{{ route('frontend.about') }}" class="text-dark">
+                                About Us
+                            </a>
+                        </li>
+
+
                        </ul>
 
                        <nav id="nav" class="navbar hide-navbar py-0 h-100 align-items-center">

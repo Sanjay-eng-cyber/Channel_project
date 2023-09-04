@@ -1089,6 +1089,7 @@ a:hover {
 
 .search-btn-newp {
     padding-left:50px !important;
+    opacity: 60%;
 
   }
 ::-webkit-input-placeholder {
@@ -1980,10 +1981,10 @@ a:hover {
         height: 38px;
         width: 14%;
     }
-
+/*
     #mt-header.style3 #nav {
         margin: 10px 0 0;
-    }
+    } */
 
     .group-card-3 {
         display: flex;
