@@ -173,7 +173,7 @@
 
     {{-- Features Products --}}
     @if ($featured_products)
-        <section class="mt-5">
+        <section class="mt-0 mt-sm-5">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -1038,7 +1038,7 @@
     <section class="og-main-section">
         <div class="container og-main">
             <div class="sib-card row">
-                <div class="og-main-part-1 col-lg-6 mb-5 mb-lg-0">
+                <div class="og-main-part-1 col-lg-6 mb-4 mb-lg-0">
                     <h4 class="text-red  text-capitalize main-head mb-4" style="font-weight:500;">
                         #look for home decor too..
                     </h4>
@@ -1118,7 +1118,7 @@
 
     <!-- F Promo Box of the Page -->
     <section class="pb-0 mb-0 service-box-bg">
-        <aside class="f-promo-box dark">
+        <aside class="f-promo-box dark  f-promo-box-newp">
             <div class="container divider">
                 <div class="row row-cols-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 ">
                     <div class="col mt-paddingbottomsm ft-svg-class-1">

@@ -1412,7 +1412,7 @@ a:hover {
 /* organic product */
 /* style="padding: 40px 0px 30px 35px" */
 .og-main-section {
-    padding: 75px 0px 50px 0px;
+    padding: 40px 0px 40px 0px;
 }
 
 .og-main .og-main-part-1 {
@@ -3887,8 +3887,17 @@ position: absolute;bottom:-79px;background-color:#F1D2AD;width:100%;border-radiu
 
 }
 
-
+.f-promo-box-newp{
+    padding-top:60px;
+}
 @media screen and (max-width: 576px){
+    .og-main-section{
+        padding:25px 0px 30px 0px;
+    }
+    .f-promo-box-newp{
+        padding-top:0px;
+        padding-bottom:20px;
+    }
     .ft-svg-class-1{
         padding-right: 5px;
     }
