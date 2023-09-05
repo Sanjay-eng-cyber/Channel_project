@@ -39,17 +39,18 @@
                 <div class="row py-3">
                     <div class="d-flex justify-content-center wishlist-main">
                         <div class="col-sm-8 wishlist-main-out">
-                            <div class="row wishlist-main-in">
+                            <div class="row wishlist-main-in d-flex align-items-center justify-content-between;">
                                 <div
-                                    class="col-sm-12 col-md-4 col-lg-4 col-xl-3 d-flex justify-content-center flex-column wishlist-main-in-img">
+                                    class="col-sm-12 col-md-4 col-lg-4 col-xl-3  wishlist-main-in-img text-center">
                                     <img src="{{ asset('storage/images/products/thumbnails/' . $w->product->thumbnail_image) }}" class="img-fluid"
-                                        alt="">
+                                        alt="" style="max-width:140px;max-height:140px;object-fit:contain">
                                 </div>
                                 <div
                                     class="col-sm-12 text-md-start text-center  col-md-8 col-lg-8 col-xl-6 wishlist-main-desc">
 
                                     <h5 class="main-head">{{ $w->product->name }}</h5>
                                     <p style="font-size: 14px;opacity: 0.6;">{{ $w->product->short_descriptions }}
+
                                     </p>
 
                                     <ul class="list-unstyled d-flex gap-3 justify-content-md-start justify-content-center">
@@ -80,8 +81,8 @@
                                             Cart</a>
                                     @endif
 
-                                    <a href="{{ route('frontend.wishlist.delete', $w->id) }}" style="font-size:12px"
-                                        class="py-1 text-red mt-md-1 mt-2" data-bs-toggle="" data-bs-target="">
+                                    <a href="{{ route('frontend.wishlist.delete', $w->id) }}" style="font-size:12px;opacity:65%"
+                                        class="py-1 text-red mt-md-1 mt-2 " data-bs-toggle="" data-bs-target="" >
                                         Remove item from Wishlist
                                     </a>
                                 </div>

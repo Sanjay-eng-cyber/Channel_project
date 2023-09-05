@@ -72,7 +72,7 @@
                                 @endforelse
 
                             </div>
-                            <button class="btn btn-pink" data-bs-toggle="modal" type="button"
+                            <button class="btn btn-pink px-4" data-bs-toggle="modal" type="button"
                                 data-bs-target="#addressFormPopup">
                                 +Add Address
                             </button>
@@ -184,7 +184,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center justify-content-md-end text-muted my-3">
-                        <button type="submit" form="checkout_form" class="btn btn-outline-pink-hover p-1 p-xl-2 text-end">
+                        <button type="submit" form="checkout_form" class="btn btn-outline-pink-hover px-4 text-end">
                             Proceed To Payment
                         </button>
                     </div>

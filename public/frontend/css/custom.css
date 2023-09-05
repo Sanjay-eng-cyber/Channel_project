@@ -3941,3 +3941,6 @@ position: absolute;bottom:-79px;background-color:#F1D2AD;width:100%;border-radiu
     }
 }
 
+.text-red:hover{
+    color:#ec268f;
+}
