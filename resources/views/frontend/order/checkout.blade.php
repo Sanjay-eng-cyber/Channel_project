@@ -46,17 +46,17 @@
                             <div class="row my-3">
 
                                 @forelse ($userAddresses as $address)
-                                    <div class="col-12 user-address-box-holder">
+                                    <div class="col-12 col-sm-6 user-address-box-holder">
                                         <input type="radio" name="address" value="{{ $address->id }}"
                                             id="user-address-{{ $address->id }}" class="d-none">
                                         <label for="user-address-{{ $address->id }}"
-                                            class="user-address-box w-100 p-2 cur-pointer">
+                                            class="user-address-box w-100 px-3 py-4 cur-pointer">
                                             <div class="address-header">
                                                 <span class="name">
                                                     {{ ucfirst($address->type) }}
                                                 </span>
                                             </div>
-                                            <h6 class="h6 font-body text-capitalize">
+                                            <h6 class="h6 font-body text-capitalize my-3">
                                                 {{ $address->name }}
                                             </h6>
                                             <p class="tex-capitalize">

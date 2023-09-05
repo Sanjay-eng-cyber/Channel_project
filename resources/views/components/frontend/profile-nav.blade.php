@@ -22,9 +22,9 @@
 
             <div class="user-name-section">
 
-                <p class="name-input text-center mt-2">{{ $name }} <i class="fa fa-pencil text-white "></i></p>
+                <p class="name-input text-center mt-2 mb-0">{{ $name }} <i class="fa fa-pencil text-white "></i></p>
 
-                <hr class="name-border mx-auto">
+                <hr class="name-border mx-auto m-0">
             </div>
             @endif
             {{-- <form action="" class="user-name-section">
@@ -39,28 +39,32 @@
         <div class="profile-menu justify-content-evenly">
             <a href="{{ route('frontend.profile') }}" class="btn {{URL::current()==route('frontend.profile')? 'active':''}}">
                 <span class="menu-icon">
-                    <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
+                    <svg width="45" height="45" viewBox="0 0 65 65" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M32.5 13.375C36.0062 13.375 38.875 16.2437 38.875 19.75C38.875 23.2562 36.0062 26.125 32.5 26.125C28.9937 26.125 26.125 23.2562 26.125 19.75C26.125 16.2437 28.9937 13.375 32.5 13.375ZM32.5 45.25C41.1062 45.25 50.9875 49.3619 51.625 51.625H13.375C14.1081 49.33 23.9256 45.25 32.5 45.25ZM32.5 7C25.4556 7 19.75 12.7056 19.75 19.75C19.75 26.7944 25.4556 32.5 32.5 32.5C39.5444 32.5 45.25 26.7944 45.25 19.75C45.25 12.7056 39.5444 7 32.5 7ZM32.5 38.875C23.9894 38.875 7 43.1462 7 51.625V58H58V51.625C58 43.1462 41.0106 38.875 32.5 38.875Z" />
                     </svg>
                 </span>
-                My Profile
+                <div class="mt-2">
+                    My Profile
+                </div>
             </a>
             <a href="{{ route('frontend.wishlist.index') }}" class="btn {{URL::current()==route('frontend.wishlist.index')? 'active':''}}">
                 <span class="menu-icon">
-                    <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
+                    <svg width="45" height="45" viewBox="0 0 65 65" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M54.8256 10.9005C47.1314 5.93688 37.6302 8.25323 32.5007 13.9338C27.3713 8.25323 17.8701 5.9093 10.1759 10.9005C6.0956 13.5478 3.53087 18.015 3.356 22.7305C2.94797 33.4298 12.9738 42.0059 28.2747 55.1594L28.5662 55.4076C30.7812 57.3103 34.1911 57.3103 36.4061 55.38L36.7267 55.1043C52.0277 41.9783 62.0243 33.4022 61.6454 22.7029C61.4706 18.015 58.9058 13.5478 54.8256 10.9005ZM32.7922 51.0507L32.5007 51.3264L32.2093 51.0507C18.3364 39.1656 9.18494 31.3065 9.18494 23.3371C9.18494 17.822 13.5567 13.6856 19.3856 13.6856C23.8739 13.6856 28.2456 16.4156 29.7903 20.1935H35.2403C36.7558 16.4156 41.1276 13.6856 45.6158 13.6856C51.4448 13.6856 55.8165 17.822 55.8165 23.3371C55.8165 31.3065 46.6651 39.1656 32.7922 51.0507Z" />
                     </svg>
 
                 </span>
-                My Wishlist
+                <div class="mt-2">
+                    My Wishlist
+                </div>
             </a>
             <a href="{{ route('frontend.cart.index') }}" class="btn {{URL::current()==route('frontend.cart.index')? 'active':''}}">
                 <span class="menu-icon">
-                    <svg width="65" height="65" viewBox="0 0 48 48" fill="#00000063"
+                    <svg width="45" height="45" viewBox="0 0 48 48" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
                         <path class="{{URL::current()==route('frontend.cart.index')? 'pink-icon-clr':''}}"
                             d="M34.283 26.3332C36.033 26.3332 37.573 25.3765 38.3663 23.9298L46.7197 8.7865C47.583 7.2465 46.463 5.33317 44.6897 5.33317H10.1563L7.96301 0.666504H0.333008V5.33317H4.99967L13.3997 23.0432L10.2497 28.7365C8.54634 31.8632 10.7863 35.6665 14.333 35.6665H42.333V30.9998H14.333L16.8997 26.3332H34.283ZM12.373 9.99984H40.723L34.283 21.6665H17.903L12.373 9.99984ZM14.333 37.9998C11.7663 37.9998 9.68968 40.0998 9.68968 42.6665C9.68968 45.2332 11.7663 47.3332 14.333 47.3332C16.8997 47.3332 18.9997 45.2332 18.9997 42.6665C18.9997 40.0998 16.8997 37.9998 14.333 37.9998ZM37.6663 37.9998C35.0997 37.9998 33.023 40.0998 33.023 42.6665C33.023 45.2332 35.0997 47.3332 37.6663 47.3332C40.233 47.3332 42.333 45.2332 42.333 42.6665C42.333 40.0998 40.233 37.9998 37.6663 37.9998Z"
@@ -68,11 +72,13 @@
                     </svg>
 
                 </span>
-                Cart
+                <div class="mt-2">
+                    Cart
+                </div>
             </a>
             <a href="{{url('/orders')}}" class="btn {{URL::current()==url('/orders')?'active':''}}">
                 <span class="menu-icon">
-                    <svg width="65" height="65" viewBox="0 0 65 65" fill="#00000063"
+                    <svg width="45" height="45" viewBox="0 0 65 65" fill="#00000063"
                         xmlns="http://www.w3.org/2000/svg">
 
                         <path
@@ -102,7 +108,9 @@
 
                     </svg>
                 </span>
-                My Orders
+                <div class="mt-2">
+                    My Orders
+                </div>
             </a>
             {{-- <a href="{{url('/review-index')}}" class="btn {{URL::current()==url('/review-index')?'active':''}}">
                 <span class="menu-icon">
