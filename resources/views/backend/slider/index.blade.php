@@ -111,7 +111,7 @@
                                             </td>
                                         </tr>
                                     @empty
-                                        <tr>
+                                        <tr class="text-md-center">
                                             <td colspan="5">No Records Found</td>
                                         </tr>
                                     @endforelse

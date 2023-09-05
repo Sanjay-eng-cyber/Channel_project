@@ -29,7 +29,7 @@ class ShowcaseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|min:3|max:40',
+            'name' => 'required|min:3|max:40|unique:showcases,name',
         ]);
         $showcase = new Showcase();
         $showcase->name = $request->name;
@@ -49,12 +49,12 @@ class ShowcaseController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|min:3|max:40',
+            'name' => 'required|min:3|max:40|unique:showcases,name,' . $id,
         ]);
         $showcase = Showcase::findOrFail($id);
         $showcase->name = $request->name;
         if ($showcase->save()) {
-            return redirect()->route('backend.showcase.index')->with(['alert-type' => 'success', 'message' => 'Showcase Update Successfully']);
+            return redirect()->route('backend.showcase.index')->with(['alert-type' => 'success', 'message' => 'Showcase Updated Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
     }
@@ -62,6 +62,9 @@ class ShowcaseController extends Controller
     public function destroy($id)
     {
         $showcase = Showcase::findOrFail($id);
+        if ($showcase->products()->exists()) {
+            return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Showcase Can not be deleted because it has products']);
+        }
         if ($showcase->delete()) {
             return redirect()->route('backend.showcase.index')->with(['alert-type' => 'success', 'message' => 'Showcase Deleted Successfully']);
         }
