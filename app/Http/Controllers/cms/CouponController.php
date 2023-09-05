@@ -44,6 +44,8 @@ class CouponController extends Controller
             'max_usage' => 'required|numeric|min:0|max:100',
             'valid_from' => 'required|date',
             'valid_till' => 'required|date|after:valid_from',
+            'min_order_amount' => 'required|numeric|min:100|max:50000',
+
         ]);
 
         if ($request->rate == 'flat') {
@@ -71,6 +73,7 @@ class CouponController extends Controller
         $coupon->max_usage = $request->max_usage;
         $coupon->valid_from = $request->valid_from;
         $coupon->valid_till = $request->valid_till;
+        $coupon->min_order_amount = $request->min_order_amount;
         if ($coupon->save()) {
             return redirect()->route('backend.coupon.index')->with(['alert-type' => 'success', 'message' => 'Coupon Stored Successfully']);
         }
@@ -94,6 +97,8 @@ class CouponController extends Controller
             'max_usage' => 'required|numeric|min:0|max:100',
             'valid_from' => 'required|date',
             'valid_till' => 'required|date|after:valid_from',
+            'min_order_amount' => 'required|numeric|min:100|max:50000',
+
         ]);
 
         if ($request->rate == 'flat') {
@@ -121,6 +126,7 @@ class CouponController extends Controller
         $coupon->max_usage = $request->max_usage;
         $coupon->valid_from = $request->valid_from;
         $coupon->valid_till = $request->valid_till;
+        $coupon->min_order_amount = $request->min_order_amount;
         if ($coupon->save()) {
             return redirect()->route('backend.coupon.index')->with(['alert-type' => 'success', 'message' => 'Coupon Update Successfully']);
         }
