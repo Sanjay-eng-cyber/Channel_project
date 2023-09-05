@@ -23,18 +23,18 @@
         {{-- @if ($cartItems) --}}
         <section style="padding:15px 0px 65px 0px" v-if="cartItems.length != 0">
             <div class="container">
-                <h5 class="h5 main-head text-center text-red my-3">Cart</h5>
+                <h3 class="h2 main-head text-center text-red my-3">Cart</h3>
                 <div class="row d-flex flex-md-row">
                     <div class="col-md-8 col-lg-9 __cart-ui-f">
                         <div class="row d-flex justify-content-center justify-content-lg-end __cart-ui-nav">
                             <div class="col-sm-12 px-0">
                                 <div
-                                    class="d-flex cc-border justify-content-between p-3 justify-content-between __cart-ui-nav-des">
+                                    class="d-none d-lg-flex cc-border justify-content-between p-3 justify-content-between __cart-ui-nav-des">
                                     <div class="fw-bold">Product</div>
                                     <ul class="d-flex gap-5 list-unstyled p-0 m-0">
-                                        <li class="fw-bold">Price</li>
-                                        <li class="fw-bold">Quantity</li>
-                                        <li class="fw-bold">Total</li>
+                                        <li class="fw-bold px-3 px-xxl-5">Price</li>
+                                        <li class="fw-bold px-3 px-xxl-4">Quantity</li>
+                                        <li class="fw-bold px-3 px-xxl-4">Total</li>
                                     </ul>
 
                                 </div>
