@@ -102,6 +102,9 @@ class BrandController extends Controller
     public function destroy($id)
     {
         $brand = Brand::findOrFail($id);
+        if ($brand->products()->exists()) {
+            return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Products exists in this Brand']);
+        }
         if ($brand->delete()) {
             return redirect()->route('backend.brand.index')->with(['alert-type' => 'success', 'message' => 'Brand Deleted Successfully']);
         }
