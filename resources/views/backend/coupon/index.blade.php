@@ -95,8 +95,8 @@
                                                     </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                        {{-- <a class="dropdown-item"
-                                                            href="{{ route('backend.coupon.show', $coupon->id) }}">View</a> --}}
+                                                        <a class="dropdown-item"
+                                                            href="{{ route('backend.coupon.show', $coupon->id) }}">View</a>
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.couponUsages.index', $coupon->id) }}">Coupon
                                                             Usages</a>

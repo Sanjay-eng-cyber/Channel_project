@@ -24,8 +24,8 @@ class CouponController extends Controller
 
     public function show($id)
     {
-        $attribute = Coupon::findOrFail($id);
-        return view('backend.coupon.show', compact('attribute'));
+        $coupon = Coupon::findOrFail($id);
+        return view('backend.coupon.show', compact('coupon'));
     }
 
     public function create()
