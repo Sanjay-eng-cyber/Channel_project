@@ -55,7 +55,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('attribute/delete/{id}', 'App\Http\Controllers\cms\AttributeController@destroy')->name('backend.attribute.destroy');
 
         Route::get('product_attribute_values/', 'App\Http\Controllers\cms\ProductAttributeController@index')->name('backend.product_attribute_value.index');
-        Route::get('/product_attribute_value/show/{id}', 'App\Http\Controllers\cms\ProductAttributeController@show')->name("backend.product_attribute_value.show");
+        // Route::get('/product_attribute_value/show/{id}', 'App\Http\Controllers\cms\ProductAttributeController@show')->name("backend.product_attribute_value.show");
         Route::get('product_attribute_value/create', 'App\Http\Controllers\cms\ProductAttributeController@create')->name('backend.product_attribute_value.create');
         Route::post('product_attribute_value/store', 'App\Http\Controllers\cms\ProductAttributeController@store')->name('backend.product_attribute_value.store');
         Route::get('product_attribute_value/edit/{id}', 'App\Http\Controllers\cms\ProductAttributeController@edit')->name('backend.product_attribute_value.edit');

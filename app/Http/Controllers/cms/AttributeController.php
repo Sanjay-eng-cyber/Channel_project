@@ -63,8 +63,8 @@ class AttributeController extends Controller
     {
         $attribute = Attribute::findOrFail($id);
         // dd($attribute->products()->count());
-        if ($attribute->products()->exists()) {
-            return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Product Exists With This Attribute']);
+        if ($attribute->values()->exists() || $attribute->products()->exists()) {
+            return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Product / Values Exists With This Attribute']);
         }
         if ($attribute->delete()) {
             return redirect()->route('backend.attribute.index')->with(['alert-type' => 'success', 'message' => 'Attribute Deleted Successfully']);
