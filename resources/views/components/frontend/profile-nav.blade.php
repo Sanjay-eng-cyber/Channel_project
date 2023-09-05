@@ -45,7 +45,9 @@
                             d="M32.5 13.375C36.0062 13.375 38.875 16.2437 38.875 19.75C38.875 23.2562 36.0062 26.125 32.5 26.125C28.9937 26.125 26.125 23.2562 26.125 19.75C26.125 16.2437 28.9937 13.375 32.5 13.375ZM32.5 45.25C41.1062 45.25 50.9875 49.3619 51.625 51.625H13.375C14.1081 49.33 23.9256 45.25 32.5 45.25ZM32.5 7C25.4556 7 19.75 12.7056 19.75 19.75C19.75 26.7944 25.4556 32.5 32.5 32.5C39.5444 32.5 45.25 26.7944 45.25 19.75C45.25 12.7056 39.5444 7 32.5 7ZM32.5 38.875C23.9894 38.875 7 43.1462 7 51.625V58H58V51.625C58 43.1462 41.0106 38.875 32.5 38.875Z" />
                     </svg>
                 </span>
-                My Profile
+                <div class="mt-2">
+                    My Profile
+                </div>
             </a>
             <a href="{{ route('frontend.wishlist.index') }}" class="btn {{URL::current()==route('frontend.wishlist.index')? 'active':''}}">
                 <span class="menu-icon">
@@ -56,7 +58,9 @@
                     </svg>
 
                 </span>
-                My Wishlist
+                <div class="mt-2">
+                    My Wishlist
+                </div>
             </a>
             <a href="{{ route('frontend.cart.index') }}" class="btn {{URL::current()==route('frontend.cart.index')? 'active':''}}">
                 <span class="menu-icon">
@@ -68,7 +72,9 @@
                     </svg>
 
                 </span>
-                Cart
+                <div class="mt-2">
+                    Cart
+                </div>
             </a>
             <a href="{{url('/orders')}}" class="btn {{URL::current()==url('/orders')?'active':''}}">
                 <span class="menu-icon">
@@ -102,7 +108,9 @@
 
                     </svg>
                 </span>
-                My Orders
+                <div class="mt-2">
+                    My Orders
+                </div>
             </a>
             {{-- <a href="{{url('/review-index')}}" class="btn {{URL::current()==url('/review-index')?'active':''}}">
                 <span class="menu-icon">
