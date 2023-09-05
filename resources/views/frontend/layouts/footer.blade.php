@@ -21,10 +21,10 @@
 
                         <p class="footer-despsn">
                             {{-- Welcome to Channel, The Ultimate destination for all your gifting needs! --}}
-                            "Discover your natural radiance with<br/>
-                            our range of luxuriousand innovative<br/>
-                            beauty products, expertly crafted<br/>
-                            with the finest ingredients to nourish,<br/>
+                            "Discover your natural radiance with<br />
+                            our range of luxurious and innovative<br />
+                            beauty products, expertly crafted<br />
+                            with the finest ingredients to nourish,<br />
                             hydrate and revitalize your skin."
                         </p>
 
@@ -163,7 +163,8 @@
                     </div>
                 </div> --}}
 
-                <div class="col-xs-12 mt-xl-0 mt-md-2 px-4 justify-content-start col-md-12 col-lg-3 col-xl-3 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
+                <div
+                    class="col-xs-12 mt-xl-0 mt-md-2 px-4 justify-content-start col-md-12 col-lg-3 col-xl-3 mt-paddingbottomxs mt-paddingbottomxs-hide cainco-breackpoint gap-4">
 
                     <div class="container category-mobile-version d-none">
                         <h3 class="f-widget-heading text-red ct-f-heading mt-4 font-body">Company</h3>
@@ -200,11 +201,14 @@
                         <h3 class="f-widget-heading c-f-heading font-body">Company</h3>
                         <ul class="list-unstyled f-widget-nav  c-f-list">
                             <li><a href="{{ route('frontend.about') }}">About Us</a></li>
-                            <li><a href="{{ route('frontend.returns-and-refunds-policy') }}">Returns & Refunds Policy</a></li>
+                            <li><a href="{{ route('frontend.returns-and-refunds-policy') }}">Returns & Refunds
+                                    Policy</a></li>
                             <li><a href="{{ route('frontend.shipping-policy') }}">Shipping Policy</a></li>
                             <li><a href="{{ route('frontend.contact-us') }}">Contact Us</a></li>
-                            <li class="d-none d-sm-block"><a href="{{ route('frontend.terms-and-conditions') }}">Terms</a></li>
-                            <li class="d-none d-sm-block"><a href="{{ route('frontend.privacy-policy') }}">Privacy</a></li>
+                            <li class="d-none d-sm-block"><a
+                                    href="{{ route('frontend.terms-and-conditions') }}">Terms</a></li>
+                            <li class="d-none d-sm-block"><a href="{{ route('frontend.privacy-policy') }}">Privacy</a>
+                            </li>
 
 
                         </ul>
@@ -216,7 +220,8 @@
 
 
 
-                <div class="col-xs-12  col-md-12 col-lg-3 col-xl-3 mt-paddingbottomxs footer-first-order d-none d-sm-block">
+                <div
+                    class="col-xs-12  col-md-12 col-lg-3 col-xl-3 mt-paddingbottomxs footer-first-order d-none d-sm-block">
                     <div class="f-widget-about">
 
                         <h3 class="f-widget-heading c-f-heading font-body">Contact Us</h3>
@@ -365,7 +370,7 @@
         <div class="container pb-3">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 right_reserved">
-                    <p class="footer-custome-c"> © 2023 channel. All Rights Reserved.</p>
+                    <p class="footer-custome-c"> © {{ now()->format('Y ') . config('app.name') }}. All Rights Reserved.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-end">
 

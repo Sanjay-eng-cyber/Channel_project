@@ -1131,7 +1131,7 @@
                             </span>
                             <div class="txt-holder  ft-svg-child-2">
                                 <h1 class="f-promo-box-heading">FREE SHIPPING</h1>
-                                <p>Free shipping on all US order</p>
+                                <p>Free shipping on all order</p>
                             </div>
                         </div>
                         <!-- F Widget Item of the Page end -->
