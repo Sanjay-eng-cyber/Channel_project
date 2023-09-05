@@ -129,6 +129,16 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('valid_till') }}</div>
                                     @endif
                                 </div>
+                                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 py-2">
+                                    <label for="formGroupExampleInput" class="">Min Order Amount</label>
+                                    <input type="number" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter min order amount" min="100" max="50000" required
+                                        name="min_order_amount" value="{{ old('min_order_amount') ?? $coupon->min_order_amount}}">
+                                    @if ($errors->has('min_order_amount'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('min_order_amount') }}
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
 
                             <input type="submit" class="btn btn-primary"
