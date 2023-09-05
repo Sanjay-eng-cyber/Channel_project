@@ -3891,6 +3891,9 @@ position: absolute;bottom:-79px;background-color:#F1D2AD;width:100%;border-radiu
     padding-top:60px;
 }
 @media screen and (max-width: 576px){
+    .in-stock{
+        font-size: 14px;
+    }
     .og-main-section{
         padding:25px 0px 30px 0px;
     }
@@ -3918,7 +3921,7 @@ position: absolute;bottom:-79px;background-color:#F1D2AD;width:100%;border-radiu
     .ft-svg-class-2 .ft-svg-sub-class-2 .ft-svg-child-1 img{
         height:31px;
     }
-    
+
     .ft-svg-class-1 .ft-svg-sub-class-1 .ft-svg-child-1 img{
         height: 31px;
     }

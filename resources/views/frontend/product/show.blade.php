@@ -76,11 +76,31 @@
                             <p class="text-muted">
                                 {{ $product->short_descriptions }}
                             </p>
-                            <h3 class="h5 font-body">
-                                From ₹{{ $product->final_price }} <s class="text-danger">₹{{ $product->mrp }}</s>
-                            </h3>
+                            <div class="d-flex align-items-center gap-5">
+                                <h3 class="h5 font-body">
+                                    From ₹{{ $product->final_price }} <s class="text-danger">₹{{ $product->mrp }}</s>
+                                </h3>
+                                @if ($product->isInWishlist())
+                                <button type="button" class=" btn p-show add-to-wish active"
+                                    data-p-id="{{ $product->id }}">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span class="tool-tip-text">
+                                        Remove From Wishlist
+                                    </span>
+                                </button>
+                                @else
+                                    <button type="button" class="btn mt-sm-0 p-show add-to-wish"
+                                        data-p-id="{{ $product->id }}">
+                                        <i class="fa-regular fa-heart"></i>
+                                        <span class="tool-tip-text">
+                                            Add To Wishlist
+                                        </span>
+                                    </button>
+                                @endif
+                            </div>
+
                             @if ($product->stock)
-                                <h4 class="font-body h5 text-green">
+                                <h4 class="font-body h5 text-green in-stock">
                                     <i class="fa-regular fa-circle-check"></i> In Stock
                                 </h4>
                             @else
@@ -133,25 +153,6 @@
                                                 <button type="button" class="input-group-text increase-quantity">+</button>
                                             </div>
                                         </div> --}}
-
-                                        @if ($product->isInWishlist())
-                                            <button type="button" class="btn mt-sm-0 mt-3 p-show add-to-wish active"
-                                                data-p-id="{{ $product->id }}">
-                                                <i class="fa-regular fa-heart"></i>
-                                                <span class="tool-tip-text">
-                                                    Remove From Wishlist
-                                                </span>
-                                            </button>
-                                        @else
-                                            <button type="button" class="btn mt-sm-0 mt-3 p-show add-to-wish"
-                                                data-p-id="{{ $product->id }}">
-                                                <i class="fa-regular fa-heart"></i>
-                                                <span class="tool-tip-text">
-                                                    Add To Wishlist
-                                                </span>
-                                            </button>
-                                        @endif
-                                        
                                     </div>
 
                                     <div class="d-flex justify-content-around flex-wrap my-3 ">
@@ -168,18 +169,18 @@
                                                 </svg> Added
                                             </a>
                                         @else
-                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
+                                            <a href="javascript:void(0)" class=" btn btn-pink add-to-cart d-flex align-items-center"
                                                 data-p-id="{{ $product->id }}">
                                                 Add To Cart
                                             </a>
                                         @endif
 
-                                        <button class="btn btn-primary btn-black" type="submit">
+                                        <button class="btn btn-primary btn-black px-4" type="submit">
                                             Buy Now
                                         </button>
 
-                                            <div class="qty-counter">
-                                                <label for="qty" class="px-md-2">
+                                            <div class="qty-counter my-3 my-sm-0 my-md-3 my-lg-0">
+                                                <label for="qty" class="px-2">
                                                     Qty
                                                 </label>
                                                 <div class="input-group flex-nowrap counter">
@@ -189,7 +190,7 @@
                                                     <button type="button" class="input-group-text increase-quantity">+</button>
                                                 </div>
                                             </div>
-    
+
 
                                         {{-- @if ($product->isInWishlist())
                                             <button type="button" class="btn mt-sm-0 mt-3 p-show add-to-wish active"
@@ -208,14 +209,14 @@
                                                 </span>
                                             </button>
                                         @endif --}}
-                                        
+
                                     </div>
                                 </form>
 
                                 <h6 class="h5 font-body">
                                     Description
                                 </h6>
-                                <ul class="ms-3 text-muted">
+                                <ul class="text-muted">
                                     {{-- <li class="text-capitalize"> --}}
                                     {!! $product->descriptions !!}
                                     {{-- </li> --}}
@@ -266,7 +267,7 @@
                                             </div>
                                             <div class="d-flex">
                                                 <div class="rating-total d-flex align-items-center me-3">
-                                                    <h6 class="h2 text-muted font-body mb-0">
+                                                    <h6 class="display-6 text-muted font-body my-2">
                                                         {{ $reviewRatingAvg }}
                                                     </h6>
                                                     <i class="fa-solid fa-star text-green"></i>
