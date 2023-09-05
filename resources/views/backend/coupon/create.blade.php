@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Dashboard')
+@section('title', 'Create Coupon')
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -42,7 +42,7 @@
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput" class="">Code</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Code" minlength="3" maxlength="40" required name="code" value="{{ old('code') }}">
+                                        placeholder="Enter Code" minlength="3" maxlength="12" required name="code" value="{{ old('code') }}">
                                     @if ($errors->has('code'))
                                         <div class="text-danger" role="alert">{{ $errors->first('code') }}</div>
                                     @endif

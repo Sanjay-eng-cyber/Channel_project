@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Dashboard')
+@section('title', 'Coupon Usages - ' . $coupon->name)
 @section('content')
     <div class="row layout-top-spacing m-0 pa-padding-remove">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -113,7 +113,7 @@
                                             </td> --}}
                                         </tr>
                                     @empty
-                                        <tr>
+                                        <tr class="text-md-center">
                                             <td colspan="3">No Records Found</td>
                                         </tr>
                                     @endforelse

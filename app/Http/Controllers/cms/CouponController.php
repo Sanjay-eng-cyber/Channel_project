@@ -15,11 +15,11 @@ class CouponController extends Controller
         return view('backend.coupon.index', compact('coupons'));
     }
 
-    public function couponUsageIndex ($id)
+    public function couponUsageIndex($id)
     {
         $coupon = Coupon::findOrFail($id);
         $coupon_usages = $coupon->couponUsage()->latest()->paginate(10);
-        return view('backend.coupon.coupon_usages_index', compact('coupon_usages'));
+        return view('backend.coupon.coupon_usages_index', compact('coupon', 'coupon_usages'));
     }
 
     public function show($id)
@@ -37,15 +37,31 @@ class CouponController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|min:3|max:40|unique:coupons,name,',
+            'name' => 'required|min:3|max:40|unique:coupons,name',
             'code' => 'required|string|max:12|min:3|unique:coupons,code',
-            'type' => 'required|string',
-            'rate' => 'required|string',
-            'value' => 'required|numeric',
-            'max_usage' => 'required|numeric',
+            'type' => 'required|string|in:promo,external',
+            'rate' => 'required|string|in:flat,percent',
+            'max_usage' => 'required|numeric|min:0|max:100',
             'valid_from' => 'required|date',
-            'valid_till' => 'required|date',
+            'valid_till' => 'required|date|after:valid_from',
         ]);
+
+        if ($request->rate == 'flat') {
+            $request->validate([
+                'value' => 'required|numeric|min:1|max:2000',
+            ], [
+                'value.min' => 'The value must be at least 1 when type is flat.',
+                'value.max' => 'The value may not be greater than 2000 when type is flat',
+            ]);
+        } elseif ($request->rate == 'percent') {
+            $request->validate([
+                'value' => 'required|numeric|min:1|max:50',
+            ], [
+                'value.min' => 'The value must be at least 1 when type is percent.',
+                'value.max' => 'The value may not be greater than 50 when type is percent',
+            ]);
+        }
+
         $coupon = new Coupon();
         $coupon->name = $request->name;
         $coupon->code = $request->code;
@@ -73,13 +89,29 @@ class CouponController extends Controller
         $request->validate([
             'name' => 'required|min:3|max:40|unique:coupons,name,' . $id,
             'code' => 'required|string|max:12|min:3|unique:coupons,code,' . $id,
-            'type' => 'required|string',
-            'rate' => 'required|string',
-            'value' => 'required|numeric',
-            'max_usage' => 'required|numeric',
+            'type' => 'required|string|in:promo,external',
+            'rate' => 'required|string|in:flat,percent',
+            'max_usage' => 'required|numeric|min:0|max:100',
             'valid_from' => 'required|date',
-            'valid_till' => 'required|date',
+            'valid_till' => 'required|date|after:valid_from',
         ]);
+
+        if ($request->rate == 'flat') {
+            $request->validate([
+                'value' => 'required|numeric|min:1|max:2000',
+            ], [
+                'value.min' => 'The value must be at least 1 when type is flat.',
+                'value.max' => 'The value may not be greater than 2000 when type is flat',
+            ]);
+        } elseif ($request->rate == 'percent') {
+            $request->validate([
+                'value' => 'required|numeric|min:1|max:50',
+            ], [
+                'value.min' => 'The value must be at least 1 when type is percent.',
+                'value.max' => 'The value may not be greater than 50 when type is percent',
+            ]);
+        }
+
         $coupon = Coupon::findOrFail($id);
         $coupon->name = $request->name;
         $coupon->code = $request->code;
@@ -98,14 +130,13 @@ class CouponController extends Controller
     public function destroy($id)
     {
         $coupon = Coupon::findOrFail($id);
-        $coupon_usages = $coupon->couponUsage()->get();
-      // dd($coupon_usages->count());
-        if ($coupon_usages->count() < 1) {
+        $coupon_usages = $coupon->couponUsage()->exists();
+        if (!$coupon_usages) {
             if ($coupon->delete()) {
                 return redirect()->route('backend.coupon.index')->with(['alert-type' => 'success', 'message' => 'Coupon Deleted Successfully']);
             }
             return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
         }
-        return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Coupon Used']);
+        return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Coupon Already Used']);
     }
 }

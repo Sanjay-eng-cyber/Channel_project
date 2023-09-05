@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Dashboard')
+@section('title', 'Coupons')
 @section('content')
     <div class="row layout-top-spacing m-0 pa-padding-remove">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -98,18 +98,19 @@
                                                         {{-- <a class="dropdown-item"
                                                             href="{{ route('backend.coupon.show', $coupon->id) }}">View</a> --}}
                                                         <a class="dropdown-item"
+                                                            href="{{ route('backend.couponUsages.index', $coupon->id) }}">Coupon
+                                                            Usages</a>
+                                                        <a class="dropdown-item"
                                                             href="{{ route('backend.coupon.edit', $coupon->id) }}">Edit</a>
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.coupon.destroy', $coupon->id) }}">Delete</a>
-                                                        <a class="dropdown-item"
-                                                            href="{{ route('backend.couponUsages.index', $coupon->id) }}">Coupon Usages</a>
                                                     </div>
                                                 </div>
 
                                             </td>
                                         </tr>
                                     @empty
-                                        <tr>
+                                        <tr class="text-md-center">
                                             <td colspan="6">No Records Found</td>
                                         </tr>
                                     @endforelse

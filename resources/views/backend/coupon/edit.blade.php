@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Dashboard')
+@section('title', 'Coupon Usages - ' . $coupon->name)
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -43,7 +43,7 @@
                                 <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput" class="">Code</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Code" minlength="3" maxlength="40" required name="code"
+                                        placeholder="Enter Code" minlength="3" maxlength="12" required name="code"
                                         value="{{ old('code') ?? $coupon->code }}">
                                     @if ($errors->has('code'))
                                         <div class="text-danger" role="alert">{{ $errors->first('code') }}</div>
@@ -76,9 +76,9 @@
                                     <select name="rate" class="form-control" required>
                                         <option value="">Select Any</option>
                                         @if (old('rate'))
-                                            <option value="promo"
+                                            <option value="flat"
                                                 @if (old('rate') == 'flat') {{ 'selected' }} @endif>Flat</option>
-                                            <option value="external"
+                                            <option value="percent"
                                                 @if (old('rate') == 'percent') {{ 'selected' }} @endif>Percent
                                             </option>
                                         @else
@@ -143,4 +143,3 @@
 @endsection
 @section('js')
 @endsection
-
