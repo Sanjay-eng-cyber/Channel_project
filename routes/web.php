@@ -99,16 +99,19 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::get('/wishlist', 'App\Http\Controllers\frontend\WishlistController@index')->name('frontend.wishlist.index');
         Route::get('/wishlist/delete/{id}', 'App\Http\Controllers\frontend\WishlistController@delete')->name('frontend.wishlist.delete');
 
-        Route::post('/review/store/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.review.store');
+        Route::group(['middleware' => 'checkProfileFilled'], function () {
 
-        Route::get('/cart/checkout', 'App\Http\Controllers\frontend\CheckoutController@selectAddress')->name('frontend.cart.checkout');
-        Route::post('/cart/payment', 'App\Http\Controllers\frontend\CheckoutController@showPaymentPage')->name('frontend.cart.payment');
+            Route::post('/review/store/{product_slug}', 'App\Http\Controllers\frontend\ReviewController@store')->name('frontend.review.store');
 
-        Route::post('apply-coupon', 'App\Http\Controllers\frontend\CheckoutController@applyCoupon')->name('frontend.apply-coupon');
-        Route::get('remove-coupon', 'App\Http\Controllers\frontend\CheckoutController@removeCoupon')->name('frontend.remove-coupon');
+            Route::get('/cart/checkout', 'App\Http\Controllers\frontend\CheckoutController@selectAddress')->name('frontend.cart.checkout');
+            Route::post('/cart/payment', 'App\Http\Controllers\frontend\CheckoutController@showPaymentPage')->name('frontend.cart.payment');
 
-        Route::get('/orders', 'App\Http\Controllers\frontend\OrderController@index')->name('frontend.order.index');
-        Route::get('/order/{order_id}', 'App\Http\Controllers\frontend\OrderController@show')->name('frontend.order.show');
+            Route::post('apply-coupon', 'App\Http\Controllers\frontend\CheckoutController@applyCoupon')->name('frontend.apply-coupon');
+            Route::get('remove-coupon', 'App\Http\Controllers\frontend\CheckoutController@removeCoupon')->name('frontend.remove-coupon');
+
+            Route::get('/orders', 'App\Http\Controllers\frontend\OrderController@index')->name('frontend.order.index');
+            Route::get('/order/{order_id}', 'App\Http\Controllers\frontend\OrderController@show')->name('frontend.order.show');
+        });
 
         Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');
     });

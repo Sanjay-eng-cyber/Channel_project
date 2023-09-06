@@ -18,11 +18,11 @@ class CheckProfileFilled
     {
         $user = auth()->user();
         if ($user && $user->first_name) {
-            if (!$user->userAddress()->exist()) {
-                return redirect()->route('frontend.index')->with(toast('Please add Address', 'info'));
+            if (!$user->userAddress()->exists()) {
+                return redirect()->route('frontend.profile')->with(toast('Please Add Address', 'info'));
             }
             return $next($request);
         }
-        return redirect()->route('frontend.index')->with(toast('Please complete your Profile', 'info'));
+        return redirect()->route('frontend.profile')->with(toast('Please complete your Profile', 'info'));
     }
 }

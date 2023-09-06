@@ -48,7 +48,7 @@
                                 @forelse ($userAddresses as $address)
                                     <div class="col-12 col-sm-6 user-address-box-holder">
                                         <input type="radio" name="address" value="{{ $address->id }}"
-                                            id="user-address-{{ $address->id }}" class="d-none">
+                                            id="user-address-{{ $address->id }}" class="d-none" @if($address->type == "primary") {{'checked'}} @endif>
                                         <label for="user-address-{{ $address->id }}"
                                             class="user-address-box w-100 px-3 py-4 cur-pointer">
                                             <div class="address-header">

@@ -30,7 +30,7 @@ class CheckoutController extends Controller
         }
         if ($cartItems) {
             [$subTotal, $discount, $grandTotal, $gst] = $this->calculated($productsTotalAmount);
-            $userAddresses = $user->userAddresses()->get();
+            $userAddresses = $user->userAddresses()->orderBy('type', 'asc')->get();
             return view('frontend.order.checkout', compact('userAddresses', 'cartItems', 'gst', 'subTotal', 'grandTotal', 'discount'));
         }
         return redirect()->back()->with(toast('No Items in your cart to checkout', 'info'));
