@@ -100,18 +100,26 @@
 
                                </ul>
                                <div class="navbar-nav d-inline d-lg-none text-start">
-                                   <ul class="list-unstyled nav-dd-color">
-                                       <li class="nav-item dd-cl mt-3">
+                                   <ul class="list-unstyled nav-dd-color isolation mynew-droparrow">
+                                       <li class="nav-item dd-cl my-2">
                                            <a class="nav-link px-4  {{ URL::current() == route('frontend.index') ? 'active-red' : '' }} "
                                                aria-current="page" href="{{ route('frontend.index') }}">Home</a>
                                        </li>
-                                       @foreach ($navCategories as $navCategory)
-                                       <li class="nav-item dropdown">
+                                       @foreach ($navCategories as $index =>  $navCategory)
+                                       <li class="nav-item dropdown position-relative">
+                                        
                                            <a href="{{ route('frontend.cat.show', $navCategory->slug) }}"
-                                               class="{{ URL::current() == route('frontend.cat.show', $navCategory->slug, $navCategory->slug) ? 'active-red' : '' }} nav-link text-capitalize nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                               class="{{ URL::current() == route('frontend.cat.show', $navCategory->slug, $navCategory->slug) ? 'active-red' : '' }} px-4"
                                                >
                                                {{ $navCategory->name }}
-                                           </a>
+                                              </a>
+
+                                               {{-- <div class="nav-link text-capitalize nav-link dropdown-toggle mycustome-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                               </div> --}}
+
+                                               <div class="nav-link text-capitalize nav-link dropdown-toggle mycustome-toggle show dropdown-toggle-{{ $index }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                               </div>
+
                                            <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                                <div class="text-capitalize p-2">
                                                    @foreach ($navCategory->subCategories as $navSubCategory)
