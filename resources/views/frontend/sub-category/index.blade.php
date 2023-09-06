@@ -18,7 +18,7 @@
 
                 </div>
                 <div class="col-lg-12 col-xl-4 col-xxl-3">
-                    <form action="{{ route('frontend.sub-category.index', [$category->slug, $sub_category->slug]) }}">
+                    <form action="{{ route('frontend.sub-category.show', [$category->slug, $sub_category->slug]) }}">
 
                         <div class="d-flex justify-content-end align-items-baseline gap-3 gap-xl-4 gap-xxl-3">
                             <div>Sort By</div>
