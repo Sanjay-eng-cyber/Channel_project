@@ -224,7 +224,7 @@
                                @foreach ($navCategories as $navCategory)
                                    <li class="nav-item dropdown">
                                        <a href="{{ route('frontend.cat.show', $navCategory->slug) }}"
-                                           class="{{ URL::current() == route('frontend.cat.show', $navCategory->slug, $navCategory->slug) ? 'active-red' : '' }} nav-link text-capitalize nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                           class="{{ URL::current() == route('frontend.cat.show', $navCategory->slug, $navCategory->slug) ? 'active-red' : '' }} nav-link text-capitalize ">
                                            {{ $navCategory->name }}
                                        </a>
                                        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
