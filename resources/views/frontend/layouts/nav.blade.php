@@ -124,7 +124,7 @@
                                                <div class="text-capitalize p-2">
                                                    @foreach ($navCategory->subCategories as $navSubCategory)
                                                        <a class="dropdown-item"
-                                                           href="{{ route('frontend.sub-category.index', ['categorySlug' => $navCategory->slug, 'subCategorySlug' => $navSubCategory->slug]) }}">{{ $navSubCategory->name }}</a>
+                                                           href="{{ route('frontend.sub-category.show', ['categorySlug' => $navCategory->slug, 'subCategorySlug' => $navSubCategory->slug]) }}">{{ $navSubCategory->name }}</a>
                                                    @endforeach
 
                                                </div>
@@ -231,7 +231,7 @@
                                            <div class="text-capitalize p-2 ">
                                                @foreach ($navCategory->subCategories as $navSubCategory)
                                                    <a class="dropdown-item"
-                                                       href="{{ route('frontend.sub-category.index', ['categorySlug' => $navCategory->slug, 'subCategorySlug' => $navSubCategory->slug]) }}">{{ $navSubCategory->name }}</a>
+                                                       href="{{ route('frontend.sub-category.show', ['categorySlug' => $navCategory->slug, 'subCategorySlug' => $navSubCategory->slug]) }}">{{ $navSubCategory->name }}</a>
                                                @endforeach
 
                                            </div>

@@ -33,25 +33,10 @@ class ProductController extends Controller
     public function show($productSlug)
     {
         $product = Product::where('slug', $productSlug)->with('medias')->firstOrFail();
+        $category = $product->category;
+        $subCategory = $product->subCategory;
         // dd($product);
-        // $cProducts = Product::where('id', '!=', $product->id)->where('connection_no', $product->connection_no)->get();
-        // $variants = [];
         $attributes = $product->attributes()->get();
-        // dd($attributes);
-        // $similarProducts = Product::where('connection_no', $product->connection_no)->get();
-        // dd($similarProducts);
-        // foreach ($attributes as $attribute) {
-        //     // echo $attribute->name . '<br>';
-        //     foreach ($similarProducts as $similarProduct) {
-        //         if ($similarProduct->values()->where('product_attributes.attribute_id', $attribute->id)->first()) {
-        //             // echo $similarProduct->values()->where('product_attributes.attribute_id', $attribute->id)->first()->name . '<br>';
-        //         }
-        //         // dd($similarProduct->values()->where('product_attributes.attribute_id', $attribute->id)->first());
-        //     }
-        // }
-
-        // $attributes = $product->attributes()->with('values')->get();
-        // dd('stop');
         // dd($attributes);
 
         $reviews = $product->reviews()->with('user')->latest();
@@ -76,7 +61,7 @@ class ProductController extends Controller
 
         $relatedProducts = Product::where('id', '!=', $product->id)->where('category_id', $product->category_id)->latest()->limit(12)->get();
         // dd($relatedProducts);
-        return view('frontend.product.show', compact('product', 'reviews', 'relatedProducts', 'reviewRatingAvg', 'ratingsArr', 'attributes'));
+        return view('frontend.product.show', compact('product', 'category', 'subCategory','reviews', 'relatedProducts', 'reviewRatingAvg', 'ratingsArr', 'attributes'));
     }
 
     public function checkout(Request $request, $product_slug)
