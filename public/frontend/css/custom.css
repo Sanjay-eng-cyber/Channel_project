@@ -633,7 +633,7 @@ a:hover {
     justify-content: space-between;
 }
 .product-show-grid .product-show-grid-card .card-title{
-    max-height: 2.5em;
+    max-height: 3.5em;
     text-overflow: ellipsis;
     overflow: hidden;
 }
