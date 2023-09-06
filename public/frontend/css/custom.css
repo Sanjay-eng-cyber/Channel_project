@@ -1,6 +1,6 @@
 
 
-.dropdown-menu {
+/* .dropdown-menu {
     top: 2.9em;
     left: 50%;
     transform: translateX(-50%);
@@ -14,7 +14,7 @@
 #nav > ul > li{
     padding-top: 1em;
     padding-bottom: 1em;
-}
+} */
 
 /* .sib-card{
     display: grid;
@@ -2532,8 +2532,20 @@ a:hover {
 
 @media screen and (max-width: 480px) {
     .og-main .og-main-part-1 .og-main-img-first{
-        width:150px;
-        bottom:69px;
+        width:185px;
+        bottom:15px;
+    }
+    .og-main .og-main-part-1 .og-main-text .og-main-sy h3 {
+        padding: 20px 20px 0px 15px;
+        color: rgba(236, 38, 143, 1);
+        font-size:16px;
+    }
+    .og-main .og-main-part-1 .og-main-text .og-main-sy p {
+        padding: 10px 130px 0px 15px;
+        font-size:12px;
+    }
+    .og-main .og-main-card .og-main-button{
+        padding:15px 0px 20px 15px;
     }
 
     .og-main .og-main-part-1 .og-main-img-newfirst{
