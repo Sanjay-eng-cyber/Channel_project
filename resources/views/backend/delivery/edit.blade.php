@@ -27,7 +27,7 @@
             <div class="statbox widget box box-shadow temp-a col-xl-12">
 
                 <div class="row m-0">
-                    <legend class="h5 mt-3">
+                    {{-- <legend class="h5 mt-3">
                         Order Details
                     </legend>
                     <div class="col-12">
@@ -106,25 +106,55 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <legend class="h5 mt-3">
+                    </div> --}}
+                    {{-- <legend class="h5 mt-3">
                         Edit Delivery
-                    </legend>
+                    </legend> --}}
                     <div class="col-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.delivery.update', $delivery->id) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
-                            <div class="form-group mb-4 row">
-                                <div class="col-md-3">
-                                    <label for="formGroupExampleInput" class="">Length (in cm)</label>
-                                    <input type="number" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Length" required step="0.1" name="length"
-                                        value="{{ old('length') ?? $delivery->length }}">
-                                    @if ($errors->has('length'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('length') }}</div>
+                            <div class="form-group mb-12 row">
+                                <div class="col-md-6">
+                                    <label for="formGroupExampleInput" class="">Delivery Date</label>
+                                    <input type="date" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter date"  name="delivered_date"
+                                        value="{{ old('delivered_date') ?? dd_format($delivery->delivered_date , 'Y-m-d') }}">
+                                    @if ($errors->has('delivered_date'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('delivered_date') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-6">
+                                    <label for="formGroupExampleInput" class="">Status</label>
+                                    <select name="status" class="form-control" required>
+                                        <option value="">Select Any</option>
+                                        @if (old('status'))
+                                            <option value="Pending"
+                                                @if (old('status') == 'Pending') {{ 'selected' }} @endif>Pending
+                                            </option>
+                                            <option value="Intransit"
+                                                @if (old('status') == 'Intransit') {{ 'selected' }} @endif>Intransit
+                                            </option>
+                                            <option value="Delivered"
+                                                @if (old('status') == 'Delivered') {{ 'selected' }} @endif>Delivered
+                                            </option>
+                                        @else
+                                            <option value="Pending"
+                                                @if ($delivery->status == 'Pending') {{ 'selected' }} @endif>Pending
+                                            </option>
+                                            <option value="Intransit"
+                                                @if ($delivery->status == 'Intransit') {{ 'selected' }} @endif>Intransit
+                                            </option>
+                                            <option value="Delivered"
+                                                @if ($delivery->status == 'Delivered') {{ 'selected' }} @endif>Delivered
+                                            </option>
+                                        @endif
+                                    </select>
+                                    @if ($errors->has('status'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('status') }}</div>
+                                    @endif
+                                </div>
+                                {{-- <div class="col-md-3">
                                     <label for="formGroupExampleInput" class="">Breadth (in cm)</label>
                                     <input type="number" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Breadth" required step="0.1" name="breadth"
@@ -132,8 +162,8 @@
                                     @if ($errors->has('breadth'))
                                         <div class="text-danger" role="alert">{{ $errors->first('breadth') }}</div>
                                     @endif
-                                </div>
-                                <div class="col-md-3">
+                                </div> --}}
+                                {{-- <div class="col-md-3">
                                     <label for="formGroupExampleInput" class="">Height (in cm)</label>
                                     <input type="number" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Height" required step="0.1" name="height"
@@ -141,8 +171,8 @@
                                     @if ($errors->has('height'))
                                         <div class="text-danger" role="alert">{{ $errors->first('height') }}</div>
                                     @endif
-                                </div>
-                                <div class="col-md-3">
+                                </div> --}}
+                                {{-- <div class="col-md-3">
                                     <label for="formGroupExampleInput" class="">Weight (in kg)</label>
                                     <input type="number" class="form-control" id="formGroupExampleInput"
                                         placeholder="Enter Weight" required step="0.1" name="weight"
@@ -150,7 +180,7 @@
                                     @if ($errors->has('weight'))
                                         <div class="text-danger" role="alert">{{ $errors->first('weight') }}</div>
                                     @endif
-                                </div>
+                                </div> --}}
                             </div>
                             <button type="submit" class="btn btn-primary float-right">Submit</button>
                         </form>
