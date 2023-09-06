@@ -318,7 +318,7 @@
                            {{-- @if ($step == 1) --}}
                            <div class="auth-popup-body" v-if="!requested">
                                <h4 class="text-pink  font-body my-4">
-                                   Log in/Create Account
+                                   Log In / Sign Up
                                </h4>
                                <form v-on:submit="submitMobileNo">
                                    <div class="input-group phone-number-arrow mb-3">
