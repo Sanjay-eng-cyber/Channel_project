@@ -117,7 +117,7 @@
                                                {{-- <div class="nav-link text-capitalize nav-link dropdown-toggle mycustome-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                </div> --}}
 
-                                               <div class="nav-link text-capitalize nav-link dropdown-toggle mycustome-toggle show dropdown-toggle-{{ $index }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                               <div class="nav-link text-capitalize nav-link dropdown-toggle mycustome-toggle show dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                </div>
 
                                            <div class="p-0 dropdown-menu " aria-labelledby="navbarDropdown">
