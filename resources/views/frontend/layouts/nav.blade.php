@@ -107,7 +107,7 @@
                                        </li>
                                        @foreach ($navCategories as $index =>  $navCategory)
                                        <li class="nav-item dropdown position-relative">
-                                        
+
                                            <a href="{{ route('frontend.cat.show', $navCategory->slug) }}"
                                                class="{{ URL::current() == route('frontend.cat.show', $navCategory->slug, $navCategory->slug) ? 'active-red' : '' }} px-4"
                                                >
@@ -120,7 +120,7 @@
                                                <div class="nav-link text-capitalize nav-link dropdown-toggle mycustome-toggle show dropdown-toggle-{{ $index }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                </div>
 
-                                           <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                           <div class="p-0 dropdown-menu " aria-labelledby="navbarDropdown">
                                                <div class="text-capitalize p-2">
                                                    @foreach ($navCategory->subCategories as $navSubCategory)
                                                        <a class="dropdown-item"
@@ -228,7 +228,7 @@
                                            {{ $navCategory->name }}
                                        </a>
                                        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                                           <div class="text-capitalize p-2">
+                                           <div class="text-capitalize p-2 ">
                                                @foreach ($navCategory->subCategories as $navSubCategory)
                                                    <a class="dropdown-item"
                                                        href="{{ route('frontend.sub-category.index', ['categorySlug' => $navCategory->slug, 'subCategorySlug' => $navSubCategory->slug]) }}">{{ $navSubCategory->name }}</a>
