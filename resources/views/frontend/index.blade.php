@@ -4,7 +4,7 @@
     {{-- first slider slider --}}
     <section>
         <div class="container">
-            <h2 class="text-red main-head text-capitalize mt-0 mt-sm-4 mb-3 mb-sm-4">#Bestseller of channel</h2>
+            <h2 class="text-red main-head text-capitalize mt-4 mb-3 mb-sm-4">#Bestseller of channel</h2>
             <div class="d-none d-md-block">
                 <div class="row main-group-card-hero-slider">
                     <div class="product-slide-1">

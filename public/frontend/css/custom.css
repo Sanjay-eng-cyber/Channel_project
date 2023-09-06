@@ -689,6 +689,11 @@ a:hover {
 .product-show-grid .product-show-grid-card .product-card-img .wishlist.active svg path {
     fill: #fff;
 }
+.slick-slide.product-show-grid .product-show-grid-card .card-title{
+    max-height: 2.5em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
 .has-tool-tip {
     position: relative;
