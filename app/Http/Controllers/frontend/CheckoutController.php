@@ -80,25 +80,6 @@ class CheckoutController extends Controller
         // abort(404);
     }
 
-    public function handleCallback(Request $request)
-    {
-        $order = Order::where('api_order_id', $request->razorpay_order_id)->first();
-        if (session()->has('coupon')) {
-            $coupon = session('coupon');
-            $coupon_usage = new CouponUsage;
-            $coupon_usage->coupon_id = $coupon->id;
-            $coupon_usage->order_id = $order->id;
-            $coupon_usage->user_id = $order->user_id;
-            $coupon_usage->save();
-            session()->forget('coupon');
-            session()->forget('discount');
-        }
-        $order->update(['status' => 'completed']);
-        $userCart = auth()->user()->cart;
-        optional($userCart->items()->delete());
-        return view('frontend.payment-success', compact('order'));
-    }
-
     public function applyCoupon(Request $request)
     {
 
@@ -117,6 +98,9 @@ class CheckoutController extends Controller
             // dd($productsTotalAmount);
             $discount = $coupon->discount($productsTotalAmount);
             // dd($discount);
+            if ($productsTotalAmount < $coupon->min_order_amount) {
+                return redirect()->route('frontend.cart.checkout')->with(['alert-type' => 'info', 'message' => 'This Coupon is applicable on orders above Rs ' . (int)$coupon->min_order_amount . ' only.']);
+            }
             if ($discount >= $productsTotalAmount) {
                 return redirect()->route('frontend.cart.checkout')->with(['alert-type' => 'info', 'message' => 'Coupon Not Applicable']);
             }
@@ -126,7 +110,7 @@ class CheckoutController extends Controller
             ]);
             return redirect()->route('frontend.cart.checkout')->with(toast('Coupon Applied'));
         }
-        return redirect()->back()->with(toast('This coupon is invalid', 'error'));
+        return redirect()->back()->with(toast('This Coupon is Invalid', 'error'));
     }
 
     public function removeCoupon(): \Illuminate\Http\RedirectResponse
@@ -134,6 +118,25 @@ class CheckoutController extends Controller
         session()->forget('coupon');
         session()->forget('discount');
         return redirect()->back();
+    }
+
+    public function handleCallback(Request $request)
+    {
+        $order = Order::where('api_order_id', $request->razorpay_order_id)->first();
+        if (session()->has('coupon')) {
+            $coupon = session('coupon');
+            $coupon_usage = new CouponUsage;
+            $coupon_usage->coupon_id = $coupon->id;
+            $coupon_usage->order_id = $order->id;
+            $coupon_usage->user_id = $order->user_id;
+            $coupon_usage->save();
+            session()->forget('coupon');
+            session()->forget('discount');
+        }
+        $order->update(['status' => 'completed']);
+        $userCart = auth()->user()->cart;
+        optional($userCart->items()->delete());
+        return view('frontend.payment-success', compact('order'));
     }
 
     protected function getOrderOrCreateNew($user, Razorpay $api, $subTotal, $discount, $grandTotal, $cartItems, $selectedAddress)
