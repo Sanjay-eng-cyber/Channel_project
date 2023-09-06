@@ -15,16 +15,6 @@
 
                 <div class="col-lg-5 col-xl-5 col-xxl-5">
                     <h2 class="main-head text-red">Best In {{ $category->name }} Products</h2>
-                    {{-- @if ($category->subCategories)
-                        <div class="d-block d-sm-none">
-                            <div class="my-3">More in {{ $category->name }}</div>
-                            <select class="my-2 form-select  top-product-des" aria-label=".form-select-lg example">
-                                @foreach ($category->subCategories as $subCat)
-                                    <option selected="" class="top-product-text">{{ $subCat->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    @endif --}}
                 </div>
                 <div class="col-lg-7 col-xl-3 col-xxl-4">
 
@@ -42,7 +32,8 @@
                                         {{ request('sort_by') && request('sort_by') == 'new_arrival' ? 'selected' : '' }}
                                         class="top-product-text">Newest Arrivals</option>
                                     <option class="top-product-text" value="featured"
-                                        {{ request('sort_by') && request('sort_by') == 'featured' ? 'selected' : '' }}>Featured
+                                        {{ request('sort_by') && request('sort_by') == 'featured' ? 'selected' : '' }}>
+                                        Featured
                                     </option>
                                     <option value="low_to_high"
                                         {{ request('sort_by') && request('sort_by') == 'low_to_high' ? 'selected' : '' }}
@@ -66,15 +57,6 @@
             <div class="row">
                 <div class="col-sm-12">
 
-                    {{-- <div class="mt-producttabs style2 wow fadeInUp p-0" data-wow-delay="0.6s">
-
-                        <ul class="producttabs pro-slidetab">
-                            <li><a href="#__skincare" class="active">Skin Care</a></li>
-                            <li><a href="#__skinlatest">Latest</a></li>
-                            <li><a href="#__skinbestseller">Best Seller</a></li>
-                        </ul>
-                    </div> --}}
-
                     <div class="tab-content">
 
                         <div id="__skincare">
@@ -84,7 +66,7 @@
                                     @forelse ($products as $pro)
                                         <div class=" product-show-grid-card ">
                                             <div class="product-card-img">
-                                                @if ($pro->isInWishlist())
+                                                @if (in_array($pro->id, $wishlist))
                                                     <button class="btn wishlist add-to-wish active"
                                                         data-p-id="{{ $pro->id }}">
                                                         <span class="has-tool-tip">
@@ -122,7 +104,7 @@
                                                         class="btn btn-orange">
                                                         Shop now
                                                     </a>
-                                                    @if ($pro->isInCart())
+                                                    @if (in_array($pro->id, $productInCart))
                                                         <a href="javascript:void(0)"
                                                             class="btn btn-pink add-to-cart btn-outline-pink"
                                                             data-p-id="{{ $pro->id }}">

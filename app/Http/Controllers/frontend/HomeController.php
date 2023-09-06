@@ -13,15 +13,15 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $leftSliders = Slider::where('type', 'left slider')->first();
         $middleSlider = Slider::where('type', 'middle slider')->first();
-        $leftSliders = Slider::where('type', 'left slider')->get();
         $rightSliders = Slider::where('type', 'right slider')->get();
 
         $featured = Showcase::whereName('Featured')->first();
-        $featured_products = $featured ? $featured->products()->latest()->get() : [];
+        $featured_products = $featured ? $featured->products()->latest()->limit(16)->get() : [];
 
         $best_seller = Showcase::whereName('Best Seller')->first();
-        $best_seller_products = $best_seller ? $best_seller->products()->latest()->get() : [];
+        $best_seller_products = $best_seller ? $best_seller->products()->latest()->limit(16)->get() : [];
 
         $skin = Category::where('slug', 'skin')->first();
         $popularSkinProducts = $skin ? $skin->products()->orderBy('rating', 'desc')->limit(16)->get() : [];

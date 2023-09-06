@@ -2,28 +2,39 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Cart;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::latest()->paginate(10);
-        dd($categories);
+        // $categories = Category::latest()->paginate(10);
+        // dd($categories);
     }
 
     public function show($catSlug, Request $request)
     {
-        $category = Category::where('slug', $catSlug)->with('subCategories')->firstOrFail();
-        $products = $category->products();
-        $products = $products->latest();
+        $category = Category::where('slug', $catSlug)->firstOrFail();
+        $products = $category->products()->latest();
         $products = $this->filterResults($request, $products);
-        $products = $products->paginate(10);
+        $products = $products->paginate(16);
+
+        $user = auth()->user();
+        $wishlist = $user ? $user->wishlist()->pluck('product_id')->toArray() : [];
         //dd($products);
-        return view('frontend.product.index', compact('products', 'category'));
+        if ($user) {
+            $cart = $user->cart;
+        } else {
+            $cart_session_id = session()->get('cart_session_id');
+            $cart = $cart_session_id ? Cart::where('session_id', $cart_session_id)->first() : null;
+        }
+        $productInCart = $cart ? $cart->items()->pluck('product_id')->toArray() : [];
+
+        return view('frontend.category.index', compact('products', 'category', 'wishlist', 'productInCart'));
     }
 
     protected function filterResults($request, $products)

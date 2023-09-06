@@ -9,28 +9,24 @@
                 <div class="row main-group-card-hero-slider">
                     <div class="product-slide-1">
                         @if ($leftSliders)
-                            @forelse ($leftSliders as $leftSlider)
-                                <div class="hero-main-slider" style="">
-                                    <img src="{{ asset('storage/images/sliders/' . $leftSlider->image) }}" class="img-fluid"
-                                        alt="..." style="border-radius: 30px 30px 0px 0px">
-                                    <div class="slider-card-first">
-                                        <div class="text-center bg-skin-color second-group-card-body">
-                                            <h2 class="text-center font-head">{{ $leftSlider->title }}</h2>
-                                            <p class="group-card-text-color">
-                                                {{ $leftSlider->descriptions }}
-                                            </p>
-                                            <button type="button" class="text-center group-buutton-bg-disable">
-                                                <a class="d-flex gap-2" href="{{ $leftSlider->link }}">
-                                                    <span class="group-card-shop-btn">Shop Now</span>
-                                                    <i class="fa fa-angle-right group-button-arrow"></i>
-                                                </a>
-                                            </button>
-                                        </div>
+                            <div class="hero-main-slider" style="">
+                                <img src="{{ asset('storage/images/sliders/' . $leftSliders->image) }}" class="img-fluid"
+                                    alt="..." style="border-radius: 30px 30px 0px 0px">
+                                <div class="slider-card-first">
+                                    <div class="text-center bg-skin-color second-group-card-body">
+                                        <h2 class="text-center font-head">{{ $leftSliders->title }}</h2>
+                                        <p class="group-card-text-color">
+                                            {{ $leftSliders->descriptions }}
+                                        </p>
+                                        <button type="button" class="text-center group-buutton-bg-disable">
+                                            <a class="d-flex gap-2" href="{{ $leftSliders->link }}">
+                                                <span class="group-card-shop-btn">Shop Now</span>
+                                                <i class="fa fa-angle-right group-button-arrow"></i>
+                                            </a>
+                                        </button>
                                     </div>
-
                                 </div>
-                            @empty
-                            @endforelse
+                            </div>
                         @endif
                     </div>
                     <div class="product-slide-2">
@@ -100,32 +96,28 @@
                 <div class="slider-container" style="isolation:isolate">
 
                     <div class="frontend-top-slider">
-                        @if ($leftSliders->count())
-                            @forelse ($leftSliders as $leftslider)
-                                <div class="slide mobile-element-hero-slider-firstslide">
-                                    {{-- <img src="{{ asset('storage/images/sliders/' . $leftslider->image) }}"
-                                        class="img-fluid position-relative" alt="image description " style="border-radius:12px"> --}}
-                                    <img src="{{ asset('frontend/images/mobile-hero-slider/ele-1.png') }}"
-                                        class="img-fluid position-relative" alt="image description "
-                                        style="border-radius:12px">
-                                    <div class="text-center mobile-element-first-hero-slider-maindiv">
-                                        <h4 class="">{{ $leftslider->title }}</h4>
-                                        <p class="" style="font-size:14px">{{ $leftslider->descriptions }} </p>
-                                        <a class="d-flex gap-2 justify-content-center " href="{{ $leftslider->link }}">
-                                            <span class="group-card-shop-btn ">Shop Now</span>
-                                            <i class="fa fa-angle-right group-button-arrow"></i>
-                                        </a>
-                                    </div>
+                        @if ($leftSliders)
+                            <div class="slide mobile-element-hero-slider-firstslide">
+                                <img src="{{ asset('storage/images/sliders/' . $leftSliders->image) }}"
+                                    class="img-fluid position-relative" alt="image description " style="border-radius:12px">
+                                {{-- <img src="{{ asset('frontend/images/mobile-hero-slider/ele-1.png') }}"
+                                    class="img-fluid position-relative" alt="image description " style="border-radius:12px"> --}}
+                                <div class="text-center mobile-element-first-hero-slider-maindiv">
+                                    <h4 class="">{{ $leftSliders->title }}</h4>
+                                    <p class="" style="font-size:14px">{{ $leftSliders->descriptions }} </p>
+                                    <a class="d-flex gap-2 justify-content-center " href="{{ $leftSliders->link }}">
+                                        <span class="group-card-shop-btn ">Shop Now</span>
+                                        <i class="fa fa-angle-right group-button-arrow"></i>
+                                    </a>
                                 </div>
-                            @empty
-                            @endforelse
+                            </div>
                         @endif
                         @if ($middleSlider)
                             <div class="slide position-relative">
-                                {{-- <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}"
-                                    class="img-fluid position-relative" alt="image description " style=""> --}}
-                                <img src="{{ asset('frontend/images/mobile-hero-slider/ele-2.png') }}"
-                                    class="img-fluid position-relative" alt="image description" style="border-radius:12px">
+                                <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}"
+                                    class="img-fluid position-relative" alt="image description " style="">
+                                {{-- <img src="{{ asset('frontend/images/mobile-hero-slider/ele-2.png') }}"
+                                    class="img-fluid position-relative" alt="image description" style="border-radius:12px"> --}}
 
                                 <div class="slide-content mobile-element-second-hero-slider-maindiv">
                                     <h3 class="">{{ $middleSlider->title }}</h3>
@@ -140,11 +132,11 @@
                         @if ($rightSliders->count())
                             @forelse ($rightSliders as $rightSlider)
                                 <div class="slide position-relative">
-                                    {{-- <img src="{{ asset('storage/images/sliders/' . $rightSlider->image) }}"
-                                        class="img-fluid" alt="image description " style=""> --}}
-                                    <img src="{{ asset('frontend/images/mobile-hero-slider/ele-3.png') }}"
+                                    <img src="{{ asset('storage/images/sliders/' . $rightSlider->image) }}"
+                                        class="img-fluid position-relative" alt="image description " style="">
+                                    {{-- <img src="{{ asset('frontend/images/mobile-hero-slider/ele-3.png') }}"
                                         class="img-fluid position-relative" alt="image description "
-                                        style="border-radius:12px">
+                                        style="border-radius:12px"> --}}
                                     <div class="text-center mobile-element-third-hero-slider-maindiv">
                                         <h3 class="">{{ $rightSlider->title }}</h3>
                                         <p class="" style="font-size:14px">{{ $rightSlider->descriptions }} </p>
