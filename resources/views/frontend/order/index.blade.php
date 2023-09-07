@@ -66,6 +66,12 @@
                                                             Order Cancelled
                                                         </a>
                                                     </li>
+                                                @elseif ($order->status == 'returned')
+                                                    <li class="cancel-order text-red list-unstyled">
+                                                        <a href="javascript:void(0)" class="text-red">
+                                                            Order Returned
+                                                        </a>
+                                                    </li>
                                                 @endif
                                             </ul>
                                         </li>
