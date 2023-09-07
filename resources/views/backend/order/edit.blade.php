@@ -88,9 +88,6 @@
                                     @endif
                                 </div>
                             </div>
-
-
-
                             <input type="submit" class="btn btn-primary"
                                 onclick="return confirm('Are you sure, you want to update?')">
                         </form>
