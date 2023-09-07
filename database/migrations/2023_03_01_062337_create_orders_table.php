@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->decimal('sub_total');
             $table->float('discount_amount')->nullable();
             $table->decimal('total_amount');
-            $table->enum('status', ['initial', 'completed', 'failed', 'cancelled']);
+            $table->enum('status', ['initial', 'completed', 'failed', 'cancelled', 'returned']);
             $table->foreignId('user_address_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('address_name')->nullable();
             $table->longText('street_address')->nullable();
@@ -30,9 +30,10 @@ class CreateOrdersTable extends Migration
             $table->string('state')->nullable();
             $table->string('country')->nullable();
             $table->string('postal_code')->nullable();
-            $table->string('refund_note')->nullable();
             $table->string('refund_status')->nullable();
+            $table->string('refund_amount')->nullable();
             $table->string('refund_date')->nullable();
+            $table->string('refund_note')->nullable();
             $table->timestamps();
         });
     }

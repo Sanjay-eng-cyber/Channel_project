@@ -64,8 +64,11 @@
                                                     @elseif ($order->status == 'failed')
                                                         <label class="badge badge-danger"
                                                             style="color:white">{{ $order->status }}</label>
-                                                    @else
+                                                    @elseif ($order->status == 'completed')
                                                         <label class="badge badge-success"
+                                                            style="color:white">{{ $order->status }}</label>
+                                                    @else
+                                                        <label class="badge badge-secondary"
                                                             style="color:white">{{ $order->status }}</label>
                                                     @endif
                                                 </p>
