@@ -151,6 +151,7 @@ class CheckoutController extends Controller
                 'sub_total' => $subTotal,
                 'total_amount' => $grandTotal,
                 'discount_amount' => $discount,
+                'address_name' => $selectedAddress->name,
                 'street_address' => $selectedAddress->street_address,
                 'landmark' => $selectedAddress->landmark,
                 'city' => $selectedAddress->city,

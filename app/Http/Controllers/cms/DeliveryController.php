@@ -26,7 +26,7 @@ class DeliveryController extends Controller
     public function create($order_id)
     {
         $order = Order::whereStatus('completed')->with('items')->findOrFail($order_id);
-        if ($order->deliveries->count()) {
+        if ($order->deliveries->where('status', '!=', 'Pending')->count()) {
             return redirect()->route('backend.order.show', $order_id)->with(toast("Delivery Already Created", 'info'));
         }
         foreach ($order->items as $item) {
@@ -42,7 +42,7 @@ class DeliveryController extends Controller
         // return redirect()->back(toast("Work In Progress", 'info'));
 
         $order = Order::whereStatus('completed')->with('items')->findOrFail($order_id);
-        if ($order->deliveries->count()) {
+        if ($order->deliveries->where('status', '!=', 'Pending')->count()) {
             return redirect()->route('backend.order.show', $order_id)->with(toast("Delivery Already Created", 'info'));
         }
         $request->validate([
@@ -90,7 +90,7 @@ class DeliveryController extends Controller
         Log::info($shiprocketDetails['message']);
         $delivery->update(['status' => 'Intransit']);
 
-        return redirect()->route('backend.delivery.index')->with(toast('Delivery created', 'success'));
+        return redirect()->route('backend.delivery.index')->with(toast('Delivery Created', 'success'));
     }
 
     public function edit($delivery_id)
@@ -104,11 +104,12 @@ class DeliveryController extends Controller
     public function update(Request $request, $delivery_id)
     {
         $request->validate([
-            'delivered_date' => 'nullable|date',
-            'status' => 'required|in:Pending,Intransit,Delivered',
+            'status' => 'required|in:Pending,Intransit,Delivered,Returned',
+            'delivered_date' => 'required_if:status,==,Delivered',
         ]);
 
         $delivery = Delivery::findOrFail($delivery_id);
+        // $order = Order::findOrFail($delivery->order_id);
 
         $delivery->delivered_date = $request->delivered_date;
         $delivery->status = $request->status;
@@ -116,6 +117,7 @@ class DeliveryController extends Controller
             return redirect()->route('backend.delivery.index')->with(['alert-type' => 'success', 'message' => 'Delivery Updated Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
+
         // $request->validate([
         //     'length' => 'required|numeric|min:0.5,max:1000',
         //     'breadth' => 'required|numeric|min:0.5,max:1000',

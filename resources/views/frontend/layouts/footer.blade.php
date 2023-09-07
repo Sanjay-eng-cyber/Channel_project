@@ -370,7 +370,8 @@
         <div class="container pb-3">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 right_reserved">
-                    <p class="footer-custome-c"> © {{ now()->format('Y ') . config('app.name') }}. All Rights Reserved.</p>
+                    <p class="footer-custome-c"> © {{ now()->format('Y ') . config('app.name') }}. All Rights
+                        Reserved.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-end">
 
@@ -616,9 +617,16 @@
     var no4 = Math.floor((Math.random() * 9) + 1);
 
 
-    document.getElementById("display2").innerHTML = no2;
-    document.getElementById("display3").innerHTML = no3;
-    document.getElementById("display4").innerHTML = no4;
+    if (document.getElementById("display2")) {
+        document.getElementById("display2").innerHTML = no2;
+    }
+    if (document.getElementById("display3")) {
+        document.getElementById("display3").innerHTML = no3
+    }
+    if (document.getElementById("display4")) {
+        document.getElementById("display4").innerHTML = no4;
+    }
+
 
     function Generate() {
 

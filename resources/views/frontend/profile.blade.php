@@ -6,11 +6,11 @@
 @endsection
 @section('content')
 
-<style>
-    .new-asterisk{
-        color:red;
-    }
-</style>
+    <style>
+        .new-asterisk {
+            color: red;
+        }
+    </style>
 
     <x-frontend.profile-nav image="https://via.placeholder.com/300" name="{{ $user->first_name }}" />
 
@@ -191,8 +191,9 @@
                                 <h5 class="main-head text-red">Add Address</h5>
 
                                 <div class="form-group py-2 req-input position-relative isolation">
-                                    <input type="text" name="name" class=" profile-form-input-custome profile-asterisk"
-                                        placeholder="Name" required minlength="3" maxlength="20" required>
+                                    <input type="text" name="name"
+                                        class=" profile-form-input-custome profile-asterisk" placeholder="Name" required
+                                        minlength="3" maxlength="20" required>
                                     <span class="new-asterisk position-absolute" style="top:10px;left:50px">*</span>
                                     @if ($errors->has('name'))
                                         <div id="name-error" class="text-primary">
@@ -200,9 +201,10 @@
                                     @endif
                                 </div>
                                 <div class="form-group py-2 req-input-2 position-relative isolation">
-                                    <input type="text" name="street_address" class=" profile-form-input-custome profile-asterisk"
-                                        placeholder="Street Address" required minlength="5" maxlength="80" required>
-                                        <span class="new-asterisk  position-absolute" style="top:10px;left:120px">*</span>
+                                    <input type="text" name="street_address"
+                                        class=" profile-form-input-custome profile-asterisk" placeholder="Street Address"
+                                        required minlength="5" maxlength="80" required>
+                                    <span class="new-asterisk  position-absolute" style="top:10px;left:120px">*</span>
 
                                     @if ($errors->has('street_address'))
                                         <div id="street_address-error" class="text-primary">
@@ -211,8 +213,9 @@
                                 </div>
 
                                 <div class="form-group py-2">
-                                    <input type="text" name="city" class=" profile-form-input-custome profile-asterisk"
-                                        placeholder="City" minlength="3" maxlength="20" required>
+                                    <input type="text" name="city"
+                                        class=" profile-form-input-custome profile-asterisk" placeholder="City"
+                                        minlength="3" maxlength="20" required>
                                     @if ($errors->has('city'))
                                         <div id="city-error" class="text-primary">{{ $errors->first('city') }}</div>
                                     @endif
@@ -227,31 +230,24 @@
                                 </div>
 
                                 <div class="form-group py-2">
-                                    <input type="text" name="country" class=" profile-form-input-custome profile-asterisk"
-                                        placeholder="Country" minlength="3" maxlength="50" required>
+                                    <input type="text" name="country"
+                                        class=" profile-form-input-custome profile-asterisk" placeholder="Country"
+                                        minlength="3" maxlength="50" required>
                                     @if ($errors->has('country'))
                                         <div id="country-error" class="text-primary">{{ $errors->first('country') }}
                                         </div>
                                     @endif
                                 </div>
                                 <div class="form-group  profile-form-group-star-pin-code py-2 position-relative isolation">
-                                    <input type="text" name="postal_code" class="profile-form-input-custome profile-asterisk"
-                                        placeholder="Pin Code" minlength="3" maxlength="20" required>
-                                        <span class="new-asterisk  position-absolute" style="top:10px;left:73px">*</span>
+                                    <input type="text" name="postal_code"
+                                        class="profile-form-input-custome profile-asterisk" placeholder="Pin Code"
+                                        minlength="3" maxlength="20" required>
+                                    <span class="new-asterisk  position-absolute" style="top:10px;left:73px">*</span>
                                     @if ($errors->has('postal_code'))
                                         <div id="postal_code-error" class="text-primary">
                                             {{ $errors->first('postal_code') }}
                                         </div>
                                     @endif
-                                </div>
-
-                                <div class="form-group   py-2">
-
-                                    <div class="row">
-                                        <div class="col-6 pt-2">
-                                            <label for="" class="form-check-label gray-new">Address Type</label>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="col-sm-12 pt-4">
                                     <button type="submit" class="btn profile-btn-color">Save Address</button>
@@ -394,22 +390,21 @@
 
     <script>
         // Select all input fields with the "required" class
-const requiredInputs = document.querySelectorAll('.profile-asterisk');
-// console.log(requiredInputs);
+        const requiredInputs = document.querySelectorAll('.profile-asterisk');
+        // console.log(requiredInputs);
 
 
-requiredInputs.forEach((input) => {
-    input.addEventListener("input", () => {
-        const asterisk = input.nextElementSibling;
+        requiredInputs.forEach((input) => {
+            input.addEventListener("input", () => {
+                const asterisk = input.nextElementSibling;
 
-        if (input.value.trim() !== "") {
-            asterisk.style.display = "none";
-        } else {
-            asterisk.style.display = "inline";
-        }
-    });
-});
-
+                if (input.value.trim() !== "") {
+                    asterisk.style.display = "none";
+                } else {
+                    asterisk.style.display = "inline";
+                }
+            });
+        });
     </script>
     <script>
         $(document).ready(function() {
