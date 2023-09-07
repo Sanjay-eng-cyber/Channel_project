@@ -503,6 +503,14 @@ a:hover {
     align-items: center; */
 }
 
+.btn-30padding{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.btn-40padding{
+    padding-left: 40px;
+    padding-right: 40px;
+}
 .address-header .name {
     background: #fffafb;
     border: 1px solid rgba(236, 38, 143, 0.1);
@@ -689,6 +697,7 @@ a:hover {
 .product-show-grid .product-show-grid-card .product-card-img .wishlist.active svg path {
     fill: #fff;
 }
+
 .slick-slide.product-show-grid .product-show-grid-card .card-title{
     max-height: 2.5em;
     text-overflow: ellipsis;
@@ -1986,7 +1995,14 @@ a:hover {
 
 
 @media screen and (max-width: 1400px) {
-
+    .btn-40padding{
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+    .btn-30padding {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
     /* organic-product */
     .og-main .og-main-part-1 .og-main-img-first {
         width: 244px;
@@ -2032,6 +2048,7 @@ a:hover {
 }
 
 @media screen and (max-width: 1200px) {
+
     .og-main .og-main-part-1 .og-main-img-first {
         position: absolute;
         width:207px;
@@ -3480,6 +3497,7 @@ display: flex !important;
 .pink-icon-clr{
     fill:#ec268f !important;
 }
+
 a.add-to-cart:focus {
     border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
 }
@@ -3900,6 +3918,16 @@ img.cart-p-img  {
      grid-template-rows: auto auto;
 
    }
+
+@media screen and (max-width:1200px) {
+
+   .mt-product-detial .qty-counter {
+    display: flex;
+    justify-content:start;
+    align-items: center;
+}
+
+}
    @media screen and (max-width: 992px) {
 
     .main-group-card-hero-slider
@@ -3980,6 +4008,9 @@ position: absolute;bottom:-79px;background-color:#F1D2AD;width:100%;border-radiu
     font-size: 0.875rem;
 }
 @media screen and (max-width:480px){
+    .rem-1{
+        font-size:1rem;
+    }
     .product-text-size{
         font-size:12px;
     }
@@ -4057,3 +4088,13 @@ position: absolute;bottom:-79px;background-color:#F1D2AD;width:100%;border-radiu
 .text-red:hover{
     color:#ec268f;
 }
+
+
+/*
+.btn:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: var(--bs-btn-hover-bg);
+    border-color: var(--bs-btn-hover-border-color);
+    transform: none;
+
+} */

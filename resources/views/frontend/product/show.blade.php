@@ -62,13 +62,13 @@
                                 {!! $product->short_descriptions !!}
                             </p> --}}
                             <div
-                                class="d-flex align-items-start flex-column gap-0  align-items-md-center flex-sm-row gap-md-5 justify-content-md-between">
+                                class="d-flex flex-row  justify-content-between align-items-start">
                                 <div>
-                                    <h3 class="h5 font-body">
+                                    <h3 class="h5 font-body rem-1">
                                         From ₹{{ $product->final_price }} <s class="text-danger">₹{{ $product->mrp }}</s>
                                     </h3>
                                     @if ($product->stock)
-                                        <h4 class="font-body h5 text-green in-stock">
+                                        <h4 class="font-body h5 text-green in-stock mb-0">
                                             <i class="fa-regular fa-circle-check"></i> In Stock
                                         </h4>
                                     @else
@@ -78,7 +78,7 @@
                                     @endif
                                 </div>
                                 @if ($product->isInWishlist())
-                                    <button type="button" class=" btn p-show add-to-wish mx-auto mx-md-0 active"
+                                    <button type="button" class=" btn p-show add-to-wish active"
                                         data-p-id="{{ $product->id }}">
                                         <i class="fa-regular fa-heart"></i>
                                         <span class="tool-tip-text">
@@ -86,7 +86,7 @@
                                         </span>
                                     </button>
                                 @else
-                                    <button type="button" class="btn mt-sm-0 p-show add-to-wish mx-auto mx-md-0"
+                                    <button type="button" class="btn m-0 p-0 p-show add-to-wish  "
                                         data-p-id="{{ $product->id }}">
                                         <i class="fa-regular fa-heart"></i>
                                         <span class="tool-tip-text">
@@ -100,11 +100,11 @@
                             <div class="row">
                                 <form action="{{ route('frontend.p.checkout', $product->slug) }}" method="GET">
 
-                                    <div class="d-flex justify-content-around flex-wrap my-3 ">
+                                    <div class="d-flex flex-column flex-xl-row justify-content-between my-3 ">
 
-                                        <div class="qty-counter my-3 my-sm-0 my-md-3 my-lg-0">
+                                        <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
                                             <label for="qty" class="px-2">
-                                                Qty
+                                                Quantity
                                             </label>
                                             <div class="input-group flex-nowrap counter">
                                                 <button type="button" class="input-group-text decrease-quantity">-</button>
@@ -114,30 +114,36 @@
                                             </div>
                                         </div>
 
-                                        <button class="btn btn-primary btn-black px-4" type="submit">
-                                            Buy Now
-                                        </button>
+                                        <div class="d-flex
+                                        justify-content-between
+                                        justify-content-sm-start
+                                        justify-content-lg-end
+                                        justify-content-xl-between
+                                        gap-1 gap-sm-3 mt-3 mt-xl-0  ">
+                                            <button class="btn btn-primary btn-black btn-40padding" type="submit">
+                                                Buy Now
+                                            </button>
 
-                                        @if ($product->isInCart())
-                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
-                                                data-p-id="{{ $product->id }}">
-                                                <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"
-                                                    data-prefix="fas" data-icon="check" role="img"
-                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                                    data-fa-i2svg="">
-                                                    <path fill="currentColor"
-                                                        d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                                                    </path>
-                                                </svg> Added
-                                            </a>
-                                        @else
-                                            <a href="javascript:void(0)"
-                                                class=" btn btn-pink add-to-cart d-flex align-items-center"
-                                                data-p-id="{{ $product->id }}">
-                                                Add To Cart
-                                            </a>
-                                        @endif
-
+                                            @if ($product->isInCart())
+                                                <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink btn-40padding"
+                                                    data-p-id="{{ $product->id }}">
+                                                    <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"
+                                                        data-prefix="fas" data-icon="check" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                                        data-fa-i2svg="">
+                                                        <path fill="currentColor"
+                                                            d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                        </path>
+                                                    </svg> Added
+                                                </a>
+                                            @else
+                                                <a href="javascript:void(0)"
+                                                    class=" btn btn-pink add-to-cart d-flex align-items-center btn-30padding"
+                                                    data-p-id="{{ $product->id }}">
+                                                    Add To Cart
+                                                </a>
+                                            @endif
+                                        </div>
                                     </div>
                                 </form>
 
