@@ -10,8 +10,9 @@
         <div class="container">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" class="bread-crum breadcrumb-hover">Profile</a></li>
-                    <li class="breadcrumb-item bread-crum" aria-current="page">My Order</li>
+                    <li class="breadcrumb-item"><a href="{{ route('frontend.profile') }}"
+                            class="bread-crum breadcrumb-hover">Profile</a></li>
+                    <li class="breadcrumb-item bread-crum" aria-current="page">My Orders</li>
                 </ol>
             </nav>
         </div>
@@ -31,12 +32,9 @@
                                 <div class="col-sm-12  col-md-8 col-lg-8 col-xl-6  my-order-main-desc">
 
                                     <h5 class="main-head">{{ $order->items->first()->product->name }}@if ($order->items->count() > 1)
-                                            {{ '& more' }}
+                                            {{ ' & more' }}
                                         @endif
                                     </h5>
-                                    {{-- <p>essence Long Lasting Eye Pencil is a creamy and
-                                        pigmented eye pencil that brightens and accentuates your eye more....</p> --}}
-
                                     <ul class="list-unstyled d-flex gap-2 flex-column">
                                         {{-- <li>
                                             <ul class="gap-2 d-flex flex-row flex-lg-column flex-xl-column  gap-lg-1 justify-content-between"
@@ -54,11 +52,21 @@
                                                         Return Order
                                                     </a>
                                                 </li> --}}
-                                                <li class="cancel-order text-red list-unstyled">
-                                                    <a href="http://" class="text-red">
-                                                        Cancel Order
-                                                    </a>
-                                                </li>
+                                                @if ($order->status == 'completed' && !$order->deliveries->count())
+                                                    <li class="cancel-order text-red list-unstyled">
+                                                        <a href="{{ route('frontend.order.cancel', $order->id) }}"
+                                                            class="text-red">
+                                                            Cancel Order
+                                                        </a>
+                                                    </li>
+                                                @endif
+                                                @if ($order->status == 'cancelled')
+                                                    <li class="cancel-order text-red list-unstyled">
+                                                        <a href="javascript:void(0)" class="text-red">
+                                                            Order Cancelled
+                                                        </a>
+                                                    </li>
+                                                @endif
                                             </ul>
                                         </li>
                                     </ul>
@@ -68,15 +76,15 @@
                                     class="col-sm-12  col-md-12 col-lg-12 col-xl-3 py-3 py-xl-0 py-xxl-0  my-order-main-in-btn gap-2">
                                     {{-- <a href="http://" class="arriving-or-btn">Arriving Wednesday</a> --}}
                                     <button type="button" class="btn  add-orderDetails-btn">
-                                        <a href="{{route('frontend.order.show',$order->id)}}">
+                                        <a href="{{ route('frontend.order.show', $order->id) }}">
                                             Order Details
                                         </a>
                                     </button>
-                                    <button type="submit" class="btn  add-track-btn">
+                                    {{-- <button type="submit" class="btn  add-track-btn">
                                         <a href="http://">
                                             Track Order
                                         </a>
-                                    </button>
+                                    </button> --}}
                                 </div>
                             </div>
                         </div>

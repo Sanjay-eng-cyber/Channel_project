@@ -508,7 +508,6 @@
                        this.sendOtp();
                    },
                    otpNew() {
-                       //    $('#otpNew').focus();
                    },
                    beginTimer() {
                        this.clearErrorMessage();

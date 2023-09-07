@@ -17,7 +17,7 @@ class CreateDeliveriesTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
-            $table->enum('status', ['Pending', 'Intransit', 'Delivered']);
+            $table->enum('status', ['Pending', 'Intransit', 'Delivered', 'Returned']);
             $table->decimal('length')->nullable();
             $table->decimal('breadth')->nullable();
             $table->decimal('height')->nullable();
