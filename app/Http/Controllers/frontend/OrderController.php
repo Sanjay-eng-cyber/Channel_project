@@ -21,7 +21,8 @@ class OrderController extends Controller
         $user = auth()->user();
         $order = Order::whereIn('status', ['cancelled', 'completed'])->where('user_id', $user->id)->with('items')->findOrFail($order_id);
         // dd($order);
-        return view('frontend.order.show', compact('order'));
+        $delivery = $order->deliveries()->whereStatus('Delivered')->latest()->first();
+        return view('frontend.order.show', compact('order', 'delivery'));
     }
 
     public function cancel($order_id)

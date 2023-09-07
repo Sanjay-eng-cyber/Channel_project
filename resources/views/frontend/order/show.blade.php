@@ -9,7 +9,8 @@
         <div class="container">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{route('frontend.profile')}}" class="bread-crum breadcrumb-hover">Profile</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('frontend.profile') }}"
+                            class="bread-crum breadcrumb-hover">Profile</a></li>
                     <li class="breadcrumb-item bread-crum" aria-current="page">My Orders</li>
                 </ol>
             </nav>
@@ -76,7 +77,7 @@
                             <div class="col-12 border-1 border rounded-1 pink-border">
                                 <label class="w-100 p-2">
                                     <h6 class="h6 font-body text-capitalize">
-                                        {{ $order->name }}
+                                        {{ $order->address_name }}
                                     </h6>
                                     <p class="tex-capitalize">
                                         {{ $order->street_address . ', ' . $order->landmark }}
@@ -86,6 +87,13 @@
                                         {{ $order->country . ', ' . $order->postal_code }}
                                     </p>
                                 </label>
+                                @if ($order->status == 'completed' && $delivery)
+                                    <label for="" class="w100 p-2">
+                                        <h6 class="h6 font-body text-capitalize">Delivered On:
+                                            {{ $delivery->delivered_date ? dd_fromat($delivery->delivered_date, 'd-m-y') : 'NA' }}
+                                        </h6>
+                                    </label>
+                                @endif
                             </div>
                         </div>
                     </div>

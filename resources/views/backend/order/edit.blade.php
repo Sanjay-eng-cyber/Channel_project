@@ -31,7 +31,7 @@
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3 row">
-                                <div class="col-xl-6  col-md-6 col-sm-6">
+                                <div class="col-md-4 col-12">
                                     <label for="formGroupExampleInput">Refund Status</label>
                                     <select name="refund_status" class="form-control">
                                         <option value="">Select Any</option>
@@ -61,7 +61,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('refund_status') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6  col-md-6 col-sm-6">
+                                <div class="col-md-4 col-12">
                                     <label for="formGroupExampleInput">Refund Amount</label>
                                     <input type="text" name="refund_amount" min="1" max="100000"
                                         class="form-control" placeholder="Enter Refund Amount"
@@ -70,7 +70,7 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('refund_amount') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6  col-md-6 col-sm-6">
+                                <div class="col-md-4 col-12">
                                     <label for="formGroupExampleInput">Refund Date</label>
                                     <input type="date" name="refund_date" class="form-control"
                                         placeholder="Enter Refund Date"
@@ -79,10 +79,10 @@
                                         <div class="text-danger" role="alert">{{ $errors->first('refund_date') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-12  col-md-6 col-sm-12">
+                                <div class="col-md-4 col-12">
                                     <label for="formGroupExampleInput">Refund Note</label>
                                     <textarea type="text" name="refund_note" minlength="3" maxlength="150" class="form-control"
-                                        placeholder="Enter Refund note" rows="5" cols="100">{{ old('refund_note', $order->refund_note) }}</textarea>
+                                        placeholder="Enter Refund note" rows="3" cols="100">{{ old('refund_note', $order->refund_note) }}</textarea>
                                     @if ($errors->has('refund_note'))
                                         <div class="text-danger" role="alert">{{ $errors->first('refund_note') }}</div>
                                     @endif
