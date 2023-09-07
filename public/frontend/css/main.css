@@ -125,7 +125,7 @@
 
 /* // justify nav
 %justify {
- text-align: justify; 
+ text-align: justify;
  font-size: 1px;
  line-height: 0px;
  > * {
@@ -135,7 +135,7 @@
   font-size: $font-size-base;
   line-height: $line-height-base;
  }
- &:after { 
+ &:after {
   content: '';
   width: 100%;
   display: inline-block;
@@ -3544,7 +3544,7 @@ a:hover {
   font-size: 12px;
   line-height: 20px;
   overflow: hidden;
-  font-family: "Oxygen", sans-serif;
+  font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
   color: #353535;
 }
@@ -3557,7 +3557,7 @@ a:hover {
   margin: 0 0 1px;
   color: #353535;
   text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .f-promo-box .f-widget-item .txt {
