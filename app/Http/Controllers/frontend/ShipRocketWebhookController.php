@@ -11,6 +11,8 @@ class ShipRocketWebhookController extends Controller
 {
     public function manage(Request $request)
     {
+        $time = now()->format('d-m-y h:is');
+        Log::info('ShipRocket Webhook Response @ ' . $time);
         Log::info($request);
         if (isset($request->scans[0]) && $request->scans[0]['activity'] === "SHIPMENT DELIVERED") {
             Delivery::where('partner_order_id', $request->order_id)->update([

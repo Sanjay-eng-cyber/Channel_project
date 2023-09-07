@@ -93,8 +93,10 @@
                                                     <label class="badge badge-primary">{{ $order->status }}</label>
                                                 @elseif ($order->status == 'failed')
                                                     <label class="badge badge-danger">{{ $order->status }}</label>
-                                                @else
+                                                @elseif ($order->status == 'completed')
                                                     <label class="badge badge-success">{{ $order->status }}</label>
+                                                @else
+                                                    <label class="badge badge-secondary">{{ $order->status }}</label>
                                                 @endif
                                             </td>
                                             <td>{{ $order->created_at }}</td>
