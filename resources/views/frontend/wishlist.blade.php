@@ -46,12 +46,12 @@
                                         alt="" style="max-width:140px;max-height:140px;object-fit:contain">
                                 </div>
                                 <div
-                                    class="col-sm-12 text-md-start text-center  col-md-8 col-lg-8 col-xl-6 wishlist-main-desc">
+                                    class="col-sm-12 text-md-start text-center  col-md-8 col-lg-8 col-xl-6 wishlist-main-desc pt-3 pt-md-0">
 
                                     <h5 class="main-head">{{ $w->product->name }}</h5>
-                                    <p style="font-size: 14px;opacity: 0.6;">{{ $w->product->short_descriptions }}
+                                    <span style="font-size: 14px;opacity: 0.6;">{{ $w->product->short_descriptions }}
 
-                                    </p>
+                                    </span>
 
                                     <ul class="list-unstyled d-flex gap-3 justify-content-md-start justify-content-center">
                                         <li class="price">From ₹ {{ $w->product->final_price }}</li>
@@ -62,7 +62,7 @@
 
                                 </div>
                                 <div
-                                    class="col-sm-12  col-md-12 col-lg-12 col-xl-3 py-3 py-xl-0 py-xxl-0 wishlist-main-in-btn">
+                                    class="col-sm-12  col-md-12 col-lg-12 col-xl-3  wishlist-main-in-btn">
                                     @if ($w->product->isInCart())
                                         <a href="javascript:void(0)"
                                             class="add-p-btn add-to-cart add-to-cart-btn btn btn-outline-pink btn-pink profile-btn-color"
