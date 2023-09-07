@@ -81,16 +81,13 @@
                                 </div>
                                 <div class="col-xl-12  col-md-6 col-sm-12">
                                     <label for="formGroupExampleInput">Refund Note</label>
-                                    <textarea type="text" name="refund_note" min="3" max="150" class="form-control"
+                                    <textarea type="text" name="refund_note" minlength="3" maxlength="150" class="form-control"
                                         placeholder="Enter Refund note" rows="5" cols="100">{{ old('refund_note', $order->refund_note) }}</textarea>
                                     @if ($errors->has('refund_note'))
                                         <div class="text-danger" role="alert">{{ $errors->first('refund_note') }}</div>
                                     @endif
                                 </div>
                             </div>
-
-
-
                             <input type="submit" class="btn btn-primary"
                                 onclick="return confirm('Are you sure, you want to update?')">
                         </form>
