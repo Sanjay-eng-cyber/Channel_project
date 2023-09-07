@@ -90,7 +90,7 @@
                                 @if ($order->status == 'completed' && $delivery)
                                     <label for="" class="w100 p-2">
                                         <h6 class="h6 font-body text-capitalize">Delivered On:
-                                            {{ $delivery->delivered_date ? dd_fromat($delivery->delivered_date, 'd-m-y') : 'NA' }}
+                                            {{ $delivery->delivered_date ? dd_format($delivery->delivered_date, 'd M Y') : 'NA' }}
                                         </h6>
                                     </label>
                                 @endif
