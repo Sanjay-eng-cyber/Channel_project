@@ -120,9 +120,9 @@
                                                             href="{{ route('backend.order.show', $order->id) }}">View</a>
                                                         <a class="dropdown-item" target="_blank"
                                                             href="{{ route('backend.order.items', $order->id) }}">Order Items</a>
-                                                        {{-- <a class="dropdown-item"
-                                                            href="{{ route('backend.showcase.edit', $showcase->id) }}">Edit</a>
-                                                            <a class="dropdown-item"
+                                                        <a class="dropdown-item"
+                                                            href="{{ route('backend.order.edit', $order->id) }}">Edit</a>
+                                                            {{-- <a class="dropdown-item"
                                                             href="{{ route('backend.showcase.destroy', $showcase->id) }}">Delete</a> --}}
                                                     </div>
                                                 </div>
