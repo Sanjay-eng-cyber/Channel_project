@@ -48,7 +48,8 @@
                                 @forelse ($userAddresses as $address)
                                     <div class="col-12 col-sm-6 user-address-box-holder">
                                         <input type="radio" name="address" value="{{ $address->id }}"
-                                            id="user-address-{{ $address->id }}" class="d-none" @if($address->type == "primary") {{'checked'}} @endif>
+                                            id="user-address-{{ $address->id }}" class="d-none"
+                                            @if ($address->type == 'primary') {{ 'checked' }} @endif>
                                         <label for="user-address-{{ $address->id }}"
                                             class="user-address-box w-100 px-3 py-4 cur-pointer">
                                             <div class="address-header">
@@ -214,16 +215,18 @@
                                 <h5 class="main-head text-red">Add Address</h5>
 
                                 <div class="form-group py-2 req-input">
-                                    <input type="text" name="name" class=" profile-form-input-custome "
-                                        placeholder="Name" required minlength="3" maxlength="20" required>
+                                    <input type="text" name="name" value="{{ old('name') }}"
+                                        class=" profile-form-input-custome " placeholder="Name" required minlength="3"
+                                        maxlength="20" required>
                                     @if ($errors->has('name'))
                                         <div id="name-error" class="text-danger text-start">
                                             {{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
                                 <div class="form-group py-2 req-input-2">
-                                    <input type="text" name="street_address" class=" profile-form-input-custome"
-                                        placeholder="Street Address" required minlength="5" maxlength="80" required>
+                                    <input type="text" name="street_address" value="{{ old('street_address') }}"
+                                        class=" profile-form-input-custome" placeholder="Street Address" required
+                                        minlength="5" maxlength="80" required>
                                     @if ($errors->has('street_address'))
                                         <div id="street_address-error" class="text-danger text-start">
                                             {{ $errors->first('street_address') }}</div>
@@ -231,8 +234,9 @@
                                 </div>
 
                                 <div class="form-group py-2 col-md-6">
-                                    <input type="text" name="city" class=" profile-form-input-custome"
-                                        placeholder="City" minlength="3" maxlength="20" required>
+                                    <input type="text" name="city" value="{{ old('city') }}"
+                                        class=" profile-form-input-custome" placeholder="City" minlength="3"
+                                        maxlength="20" required>
                                     @if ($errors->has('city'))
                                         <div id="city-error" class="text-danger text-start">{{ $errors->first('city') }}
                                         </div>
@@ -240,8 +244,9 @@
                                 </div>
 
                                 <div class="form-group py-2 col-md-6">
-                                    <input type="text" name="state" class=" profile-form-input-custome"
-                                        placeholder="State" minlength="3" maxlength="50" required>
+                                    <input type="text" name="state" value="{{ old('state') }}"
+                                        class=" profile-form-input-custome" placeholder="State" minlength="3"
+                                        maxlength="50" required>
                                     @if ($errors->has('state'))
                                         <div id="state-error" class="text-danger text-start">
                                             {{ $errors->first('state') }}</div>
@@ -249,8 +254,9 @@
                                 </div>
 
                                 <div class="form-group py-2 col-md-6">
-                                    <input type="text" name="country" class=" profile-form-input-custome"
-                                        placeholder="Country" minlength="3" maxlength="50" required>
+                                    <input type="text" name="country" value="{{ old('country') }}"
+                                        class=" profile-form-input-custome" placeholder="Country" minlength="3"
+                                        maxlength="50" required>
                                     @if ($errors->has('country'))
                                         <div id="country-error" class="text-danger text-start">
                                             {{ $errors->first('country') }}
@@ -258,8 +264,9 @@
                                     @endif
                                 </div>
                                 <div class="form-group py-2 col-md-6">
-                                    <input type="text" name="postal_code" class="profile-form-input-custome col-md-6"
-                                        placeholder="Pin Code" minlength="3" maxlength="20" required>
+                                    <input type="text" name="postal_code" value="{{ old('postal_code') }}"
+                                        class="profile-form-input-custome col-md-6" placeholder="Pin Code" minlength="3"
+                                        maxlength="20" required>
                                     @if ($errors->has('postal_code'))
                                         <div id="postal_code-error" class="text-danger text-start">
                                             {{ $errors->first('postal_code') }}
@@ -287,7 +294,7 @@
                 e.preventDefault();
                 // check any address is selected or not
                 var address_id = $('input[name=address]:checked').val();
-                console.log(address_id);
+                // console.log(address_id);
                 if (address_id == undefined) {
                     Snackbar.show({
                         text: "Please select delivery address",
@@ -300,10 +307,12 @@
                 this.submit();
             });
         });
-        // @if (count($errors) > 0)
-        //     $(document).ready(function() {
-        //         $('#addressFormPopup').modal('show')
-        //     });
-        // @endif
     </script>
+    @if (count($errors) > 0 && !$errors->has('coupon'))
+        <script>
+            $(document).ready(function() {
+                $('#addressFormPopup').modal('show');
+            });
+        </script>
+    @endif
 @endsection

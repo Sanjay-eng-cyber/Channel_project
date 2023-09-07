@@ -16,7 +16,7 @@
             </nav>
         </div>
     </section>
-    <section class="my-5">
+    <section class="my-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mb-2">
@@ -47,7 +47,7 @@
                         </span>
                     </div> --}}
 
-                    <div class="py-3">
+                    <div class="">
                         <h3 class="h5 font-body">
                             Items
                         </h3>
