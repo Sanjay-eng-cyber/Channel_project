@@ -694,6 +694,17 @@ a:hover {
     text-overflow: ellipsis;
     overflow: hidden;
 }
+.slick-slide.product-show-grid .product-show-grid-card{
+    height: 100%;
+}
+.slick-track
+{
+    display: flex !important;
+}
+.slick-slide
+{
+    height: inherit !important;
+}
 
 .has-tool-tip {
     position: relative;

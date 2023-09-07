@@ -154,10 +154,10 @@
                                                                 href="{{ route('backend.delivery.label', $d->shipment_id) }}">Print
                                                                 Label</a>
                                                         @endif
-                                                        {{-- @if ($d->status == 'Intransit')
+
                                                             <a class="dropdown-item"
                                                                 href="{{ route('backend.delivery.edit', $d->id) }}">Edit</a>
-                                                        @endif --}}
+
                                                     </div>
                                                 </div>
 

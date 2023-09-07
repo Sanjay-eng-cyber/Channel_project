@@ -96,12 +96,26 @@ class DeliveryController extends Controller
     public function edit($delivery_id)
     {
         $delivery = Delivery::findOrFail($delivery_id);
-        $order = $delivery->order;
-        return view('backend.delivery.edit', compact('order', 'delivery'));
+        // $order = $delivery->order;
+        return view('backend.delivery.edit', compact('delivery'));
+        // return view('backend.delivery.edit', compact('order', 'delivery'));
     }
 
     public function update(Request $request, $delivery_id)
     {
+        $request->validate([
+            'delivered_date' => 'nullable|date',
+            'status' => 'required|in:Pending,Intransit,Delivered',
+        ]);
+
+        $delivery = Delivery::findOrFail($delivery_id);
+
+        $delivery->delivered_date = $request->delivered_date;
+        $delivery->status = $request->status;
+        if ($delivery->save()) {
+            return redirect()->route('backend.delivery.index')->with(['alert-type' => 'success', 'message' => 'Delivery Updated Successfully']);
+        }
+        return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
         // $request->validate([
         //     'length' => 'required|numeric|min:0.5,max:1000',
         //     'breadth' => 'required|numeric|min:0.5,max:1000',
@@ -109,8 +123,8 @@ class DeliveryController extends Controller
         //     'weight' => 'required|numeric|min:0.1|max:25'
         // ]);
 
-        $delivery = Delivery::whereStatus('Intransit')->findOrFail($delivery_id);
-        $order = $delivery->order;
+        // $delivery = Delivery::whereStatus('Intransit')->findOrFail($delivery_id);
+        // $order = $delivery->order;
         // $delivery->update([
         //     "length" => $request->length,
         //     "breadth" => $request->breadth,
@@ -118,21 +132,21 @@ class DeliveryController extends Controller
         //     "weight" => $request->weight
         // ]);
 
-        $shiprocketDetails = $delivery->sendOrderToShiprocketApi();
+        // $shiprocketDetails = $delivery->sendOrderToShiprocketApi();
         // dd($shiprocketDetails);
-        if (!$shiprocketDetails['success']) {
-            $delivery->update([
-                "message" => isset($shiprocketDetails['message']) ? $shiprocketDetails['message'] : "Something Went Wrong",
-            ]);
-            Log::info("Delivery ID : " . $delivery->id);
-            Log::info($shiprocketDetails['message']);
-            return redirect()->back()->with(toast('Failed To Deliver', 'error'));
-        }
+        // if (!$shiprocketDetails['success']) {
+        //     $delivery->update([
+        //         "message" => isset($shiprocketDetails['message']) ? $shiprocketDetails['message'] : "Something Went Wrong",
+        //     ]);
+        //     Log::info("Delivery ID : " . $delivery->id);
+        //     Log::info($shiprocketDetails['message']);
+        //     return redirect()->back()->with(toast('Failed To Deliver', 'error'));
+        // }
 
-        Log::info("Delivery ID : " . $delivery->id);
-        Log::info($shiprocketDetails['message']);
+        // Log::info("Delivery ID : " . $delivery->id);
+        // Log::info($shiprocketDetails['message']);
         // dd($delivery);
-        return redirect()->back()->with(toast('Delivery Updated', 'success'));
+        // return redirect()->back()->with(toast('Delivery Updated', 'success'));
     }
 
     public function fetchDelivery($id)
