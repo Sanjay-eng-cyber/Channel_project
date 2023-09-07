@@ -3857,7 +3857,7 @@ img.cart-p-img  {
 
 .order-prod-thumb-img {
     height: 160px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 @media (min-width: 992px){
