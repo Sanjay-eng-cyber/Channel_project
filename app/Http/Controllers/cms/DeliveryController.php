@@ -90,7 +90,7 @@ class DeliveryController extends Controller
         Log::info($shiprocketDetails['message']);
         $delivery->update(['status' => 'Intransit']);
 
-        return redirect()->back()->with(toast('Delivery created', 'success'));
+        return redirect()->route('backend.delivery.index')->with(toast('Delivery created', 'success'));
     }
 
     public function edit($delivery_id)
