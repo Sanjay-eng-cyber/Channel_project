@@ -1948,6 +1948,14 @@ a:hover {
 
 }
 
+@media screen and (max-width:1200px) {
+    .__cart-ui-card .__cart-ui-close-btn {
+    position: absolute;
+    top: 0px;
+    padding: 15px;
+    right: -92%;
+    }
+}
 @media screen and (max-width:992px) {
     .__cart-ui-card .__cart-ui-close-btn {
         position: absolute;
@@ -3611,6 +3619,14 @@ background: #F8FDFF;
 
 } */
 @media screen and (max-width: 576px){
+    .__cart-ui-card .__cart-ui-close-btn {
+        position: absolute;
+        top: 0px;
+        padding: 15px;
+        right: -83%;
+
+
+    }
 .footer-absolute-img1 {
     bottom: -53px;
     left: -34px ;
