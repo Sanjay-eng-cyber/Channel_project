@@ -209,6 +209,9 @@
 .font-head {
     font-family: "Judson", serif !important;
 }
+.fw-500{
+    font-weight: 500;
+}
 
 h1,
 h2,
@@ -2000,8 +2003,8 @@ a:hover {
         padding-right: 35px;
     }
     .btn-30padding {
-        padding-left: 25px;
-        padding-right: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     /* organic-product */
     .og-main .og-main-part-1 .og-main-img-first {
@@ -2655,7 +2658,7 @@ a:hover {
         font-size:16px;
     }
     .og-main .og-main-part-1 .og-main-text .og-main-sy p {
-        padding: 10px 130px 0px 15px;
+        padding: 10px 169px 0px 15px;
         font-size:12px;
     }
     .og-main .og-main-card .og-main-button{
@@ -2663,8 +2666,9 @@ a:hover {
     }
 
     .og-main .og-main-part-1 .og-main-img-newfirst{
-        width:150px;
-        bottom:64px;
+        width:162px;
+        bottom:39px;
+        right:16px;
     }
     .og-main .og-main-card .og-main-button button a {
         font-size:14px;
@@ -4063,17 +4067,17 @@ position: absolute;bottom:-79px;background-color:#F1D2AD;width:100%;border-radiu
         padding-bottom: 9px;
     }
     .ft-svg-class-2 .ft-svg-sub-class-2 .ft-svg-child-1 img{
-        height:31px;
+        height:44px;
     }
 
     .ft-svg-class-1 .ft-svg-sub-class-1 .ft-svg-child-1 img{
-        height: 31px;
+        height: 44px;
     }
     .ft-svg-class-3 .ft-svg-sub-class-3 .ft-svg-child-1 img{
-        height:31px;
+        height:44px;
     }
     .ft-svg-class-4 .ft-svg-child-1 img{
-        height:31px;
+        height:44px;
     }
     .f-promo-box .f-widget-item .f-promo-box-heading{
         font-size:10px;
