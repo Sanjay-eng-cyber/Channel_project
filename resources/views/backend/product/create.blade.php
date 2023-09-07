@@ -213,7 +213,7 @@
                                         @endif
                                     </div>
 
-                                    <div class="col-12 mb-3">
+                                    {{-- <div class="col-12 mb-3">
                                         <label for="formGroupExampleInput" class="">Short Descriptions</label>
                                         <textarea id="team-about" class="team-about" name="short_descriptions" rows="5" cols="50"
                                             class="form-control" minlength="3" maxlength="5000">{{ old('short_descriptions') }}</textarea>
@@ -221,7 +221,7 @@
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('short_descriptions') }}</div>
                                         @endif
-                                    </div>
+                                    </div> --}}
 
                                     <div class="col-12 mb-3">
                                         <label for="descriptions">Description</label>
