@@ -154,10 +154,10 @@ class DeliveryController extends Controller
         $delivery = Delivery::where('status', '!=', 'Delivered')->findOrFail($id);
         // dd($delivery);
         $token = getShiprocketToken();
-        $time = now()->format('d-m-y h:is');
-        $response =  Shiprocket::track($token)->throwShipmentId($delivery->shipment_id);
-        Log::info('ShipRocket FetchDelivery ThrowShipmentId Response @ ' . $time);
-        Log::info($response);
+        // $time = now()->format('d-m-y h:is');
+        // $response =  Shiprocket::track($token)->throwShipmentId($delivery->shipment_id);
+        // Log::info('ShipRocket FetchDelivery ThrowShipmentId Response @ ' . $time);
+        // Log::info($response);
         // dd($response);
         $time = now()->format('d-m-y h:is');
         $shipment = Shiprocket::shipment($token)->getSpecific($delivery->shipment_id);
