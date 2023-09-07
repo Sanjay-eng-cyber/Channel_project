@@ -4,6 +4,17 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
+
+    <section class="my-1">
+        <div class="container">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{route('frontend.profile')}}" class="bread-crum breadcrumb-hover">Profile</a></li>
+                    <li class="breadcrumb-item bread-crum" aria-current="page">My Orders</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
     <section class="my-5">
         <div class="container">
             <div class="row">
