@@ -110,7 +110,115 @@
                     {{-- <legend class="h5 mt-3">
                         Edit Delivery
                     </legend> --}}
-                    <div class="col-12">
+                    <div class="col-12 mt-3">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">User
+                                        Name</label><br>
+                                    <p class="label-title">
+                                        <a class="text-warning"
+                                            href="{{ route('backend.user.show', $delivery->user_id) }}">
+                                            {{ $delivery->user->first_name }}
+                                    </p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">Order
+                                        Id</label><br>
+                                    <p class="label-title">
+                                        <a class="text-warning"
+                                            href="{{ route('backend.order.show', $delivery->order_id) }}">
+                                            {{ $delivery->order_id }}
+                                    </p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">Partner Order
+                                        Id</label><br>
+                                    <p class="label-title">{{ $delivery->partner_order_id ?? '---' }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">Shipment
+                                        Id</label><br>
+                                    <p class="label-title">{{ $delivery->shipment_id ?? '---' }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">AWB
+                                        Code</label><br>
+                                    <p class="label-title">{{ $delivery->awb_code ?? '---' }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">Partner
+                                        Status</label><br>
+                                    <p class="label-title">{{ $delivery->partner_status ?? '---' }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">Pickup Token
+                                        No.</label><br>
+                                    <p class="label-title">{{ $delivery->pickup_token_number ?? '---' }}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">Pickup
+                                        Date</label><br>
+                                    <p class="label-title">
+                                        {{ $delivery->pickup_date ? dd_format($delivery->pickup_date, 'd-m-y h:i:a') : '--' }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">Delivered
+                                        Date</label><br>
+                                    <p class="label-title">
+                                        {{ $delivery->delivered_date ? dd_format($delivery->delivered_date, 'd-m-y h:i:a') : '--' }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title"
+                                        class="label-title">Message</label><br>
+                                    <p class="label-title">{{ $delivery->message ?? '---' }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title"
+                                        class="label-title">Status</label><br>
+                                    <p>
+                                        @if ($delivery->status == 'Pending')
+                                            <label
+                                                class="text-white badge badge-warning">{{ $delivery->status }}</label>
+                                        @elseif ($delivery->status == 'Intransit')
+                                            <label
+                                                class="text-white badge badge-primary">{{ $delivery->status }}</label>
+                                        @elseif ($delivery->status == 'Delivered')
+                                            <label
+                                                class="text-white badge badge-success">{{ $delivery->status }}</label>
+                                        @else
+                                            <label
+                                                class="text-white badge badge-secondary">{{ $delivery->status ?? '--' }}</label>
+                                        @endif
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                         <form class="mt-3" method="POST" action="{{ route('backend.delivery.update', $delivery->id) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
