@@ -137,7 +137,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    @if ($order->status == 'completed' && !$order->deliveries->count())
+                                    @if ($order->status == 'completed' && !$order->deliveries->where('status', '!=', 'Pending')->count())
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group">
