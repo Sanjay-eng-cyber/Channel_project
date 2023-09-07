@@ -45,4 +45,31 @@ class OrderController extends Controller
         //dd($transaction);
         return view('backend.order.show', compact('order', 'transaction'));
     }
+
+    public function edit($id)
+    {
+        $order = Order::findOrFail($id);
+        // dd($order);
+        return view('backend.order.edit', compact('order'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'refund_status' => 'nullable|in:pending,created,processed',
+            'refund_amount' => 'nullable|numeric|min:1|max:100000',
+            'refund_date' => 'nullable|date',
+            'refund_note' => 'nullable|min:3|max:150',
+        ]);
+
+        $order = Order::findOrFail($id);
+        $order->refund_status = $request->refund_status;
+        $order->refund_amount = $request->refund_amount;
+        $order->refund_date = $request->refund_date;
+        $order->refund_note = $request->refund_note;
+        if ($order->save()) {
+            return redirect()->route('backend.order.index')->with(['alert-type' => 'success', 'message' => 'Order Update Successfully']);
+        }
+        return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
+    }
 }
