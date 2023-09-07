@@ -1121,8 +1121,8 @@
                                     alt="">
 
                             </span>
-                            <div class="txt-holder  ft-svg-child-2">
-                                <h1 class="f-promo-box-heading">FREE SHIPPING</h1>
+                            <div class="txt-holder  ft-svg-child-2 main-head">
+                                <h1 class="f-promo-box-heading ">FREE SHIPPING</h1>
                                 <p>Free shipping on all order</p>
                             </div>
                         </div>
@@ -1135,7 +1135,7 @@
                                 <img src="{{ asset('frontend/images/products/footer-icon/support.svg') }}"
                                     alt="">
                             </span>
-                            <div class="txt-holder ft-svg-child-2">
+                            <div class="txt-holder ft-svg-child-2 main-head">
                                 <h1 class="f-promo-box-heading">SUPPORT 24/7</h1>
                                 <p>We support 24 hours a day</p>
                             </div>
@@ -1149,7 +1149,7 @@
                                 <img src="{{ asset('frontend/images/products/footer-icon/gift-card.svg') }}"
                                     alt="">
                             </span>
-                            <div class="txt-holder ft-svg-child-2">
+                            <div class="txt-holder ft-svg-child-2 main-head">
                                 <h1 class="f-promo-box-heading">GIFT CARDS</h1>
                                 <p>Give perfect gift</p>
                             </div>
@@ -1164,7 +1164,7 @@
                                     alt="">
                             </span>
                             <div class="txt-holder ft-svg-child-2">
-                                <h1 class="f-promo-box-heading">PAYMENT 100% SECURE</h1>
+                                <h1 class="h2 f-promo-box-heading">PAYMENT 100% SECURE</h1>
                                 <p>Payment 100% secure</p>
                             </div>
                         </div>
