@@ -109,11 +109,11 @@
 }
 
 .profile-breadcrumb .bg-stipe {
-    background: #ec268f99;
+    background-image:url('/frontend/images/banner/profile-bg.png');
     position: absolute;
     width: 100%;
     height: 54%;
-    top: 30%;
+    top:27%;
     left: 0;
     -webkit-user-select: none;
     -ms-user-select: none;
