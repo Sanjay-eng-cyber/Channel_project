@@ -94,6 +94,27 @@ class AddressController extends Controller
         ]);
     }
 
+    public function makePrimaryAddress($id)
+    {
+        $makeSecondary = auth()->user()->userAddress()->where('type', 'primary')->first();
+        $makeSecondary->type = 'secondary';
+
+        if ($makeSecondary->save()) {
+
+            $makePrimary = auth()->user()->userAddress()->findOrFail($id);
+            $makePrimary->type = 'primary';
+            $makePrimary->save();
+
+            return redirect()->back()->with([
+                "message" => "Address Make Primary",
+                "alert-type" => "success"
+            ]);
+        }
+        return redirect()->back()->with([
+            "message" => "Something went wrong",
+            "alert-type" => "error"
+        ]);
+    }
 
     public function destroy($id)
     {

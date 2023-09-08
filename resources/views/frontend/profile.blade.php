@@ -168,7 +168,10 @@
                                                     <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
                                                 </a>
                                             </li>
-                                        @endif
+                                            <li> <a href="{{route('frontend.address.make-primary', $userAddress)}}">
+                                                <button class="btn btn-primary">Make As Primary</button>
+                                                </a></li>
+                                            @endif
                                     </ul>
                                 </div>
                                 <div class="col-12">

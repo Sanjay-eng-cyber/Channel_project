@@ -95,6 +95,7 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::post('/address/update/{id}', 'App\Http\Controllers\frontend\AddressController@update')->name('frontend.address.update');
         Route::get('/address/edit/{id}', 'App\Http\Controllers\frontend\AddressController@edit')->name('frontend.address.edit');
         Route::get('/address/delete/{id}', 'App\Http\Controllers\frontend\AddressController@destroy')->name('frontend.address.delete');
+        Route::get('/user/address/primary/{id}', 'App\Http\Controllers\frontend\AddressController@makePrimaryAddress')->name('frontend.address.make-primary');
 
         Route::get('/wishlist', 'App\Http\Controllers\frontend\WishlistController@index')->name('frontend.wishlist.index');
         Route::get('/wishlist/delete/{id}', 'App\Http\Controllers\frontend\WishlistController@delete')->name('frontend.wishlist.delete');
