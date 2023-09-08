@@ -27,7 +27,7 @@
     <section class="pb-4">
         <div class="container">
             <div class="row py-2 d-flex justify-content-center">
-                <div class="col-12 col-lg-6 ">
+                <div class="col-12 col-lg-6 col-xl-6">
                     <form class="p-4 profile-form-border" action="{{ route('frontend.profile.update') }}" method="post">
                         <h5 class="main-head text-red">Personal Information</h5>
                         @csrf
@@ -131,17 +131,17 @@
                     </form> --}}
                 </div>
 
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-6 col-xl-5">
 
                     @forelse($userAddresses->get() as $key => $userAddress)
                         <div class="profile-form-border p-4 mb-3">
                             <div class="row">
 
-                                <div class="col-6 py-2">
+                                <div class="col-6 col-sm-4 col-xl-4 py-2">
                                     <h5 class="main-head text-red">Address {{ $key + 1 }}</h5>
                                 </div>
-                                <div class="col-6 py-2">
-                                    <ul class="d-flex gap-4 list-unstyled justify-content-end">
+                                <div class="col-6 col-sm-8 col-xl-8 py-2">
+                                    <ul class="d-flex gap-2 gap-md-3 gap-lg-2 list-unstyled justify-content-end">
                                         <li>
                                             <a href="javascript:void(0)" class="edit_modal"
                                                 data-id="{{ $userAddress->id }}">
@@ -168,8 +168,8 @@
                                                     <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
                                                 </a>
                                             </li>
-                                            <li> <a href="{{route('frontend.address.make-primary', $userAddress)}}">
-                                                <button class="btn btn-primary">Make As Primary</button>
+                                            <li class="d-none d-sm-block"> <a href="{{route('frontend.address.make-primary', $userAddress)}}" class="btn make-primary-address">
+                                                Make As Primary
                                                 </a></li>
                                             @endif
                                     </ul>
