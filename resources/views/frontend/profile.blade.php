@@ -195,7 +195,7 @@
                                         class=" profile-form-input-custome profile-asterisk" placeholder="Name" required
                                         minlength="3" maxlength="20" required>
                                     <span class="new-asterisk position-absolute" style="top:10px;left:50px">*</span>
-                                    @if ($errors->has('name'))
+                                    @if (session()->has('store-form-error') && $errors->has('name'))
                                         <div id="name-error" class="text-primary">
                                             {{ $errors->first('name') }}</div>
                                     @endif
@@ -206,7 +206,7 @@
                                         required minlength="5" maxlength="80" required>
                                     <span class="new-asterisk  position-absolute" style="top:10px;left:120px">*</span>
 
-                                    @if ($errors->has('street_address'))
+                                    @if (session()->has('store-form-error') && $errors->has('street_address'))
                                         <div id="street_address-error" class="text-primary">
                                             {{ $errors->first('street_address') }}</div>
                                     @endif
@@ -216,24 +216,40 @@
                                     <input type="text" name="city"
                                         class=" profile-form-input-custome profile-asterisk" placeholder="City"
                                         minlength="3" maxlength="20" required>
-                                    @if ($errors->has('city'))
+                                    @if (session()->has('store-form-error') && $errors->has('city'))
                                         <div id="city-error" class="text-primary">{{ $errors->first('city') }}</div>
                                     @endif
                                 </div>
 
                                 <div class="form-group py-2">
-                                    <input type="text" name="state" class=" profile-form-input-custome"
-                                        placeholder="State" minlength="3" maxlength="50" required>
-                                    @if ($errors->has('state'))
+                                    {{-- <input type="text" name="state" class=" profile-form-input-custome"
+                                        placeholder="State" minlength="3" maxlength="50" required> --}}
+                                    <select name="state" class=" profile-form-input-custome profile-asterisk">
+                                        <option value="">
+                                            Select State
+                                        </option>
+                                        @foreach (App\Models\UserAddress::STATE as $state)
+                                            <option value="{{ $state }}">{{ $state }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if (session()->has('store-form-error') && $errors->has('state'))
                                         <div id="state-error" class="text-primary">{{ $errors->first('state') }}</div>
                                     @endif
                                 </div>
 
                                 <div class="form-group py-2">
-                                    <input type="text" name="country"
+                                    {{-- <input type="text" name="country"
                                         class=" profile-form-input-custome profile-asterisk" placeholder="Country"
-                                        minlength="3" maxlength="50" required>
-                                    @if ($errors->has('country'))
+                                        minlength="3" maxlength="50" required> --}}
+                                    <select name="country" class=" profile-form-input-custome profile-asterisk">
+                                        <option value="">
+                                            Select Country
+                                        </option>
+                                        @foreach (App\Models\UserAddress::COUNTRY as $country)
+                                            <option value="{{ $country }}">{{ $country }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if (session()->has('store-form-error') && $errors->has('country'))
                                         <div id="country-error" class="text-primary">{{ $errors->first('country') }}
                                         </div>
                                     @endif
@@ -243,7 +259,7 @@
                                         class="profile-form-input-custome profile-asterisk" placeholder="Pin Code"
                                         minlength="3" maxlength="20" required>
                                     <span class="new-asterisk  position-absolute" style="top:10px;left:73px">*</span>
-                                    @if ($errors->has('postal_code'))
+                                    @if (session()->has('store-form-error') && $errors->has('postal_code'))
                                         <div id="postal_code-error" class="text-primary">
                                             {{ $errors->first('postal_code') }}
                                         </div>
@@ -319,7 +335,7 @@
                             <div class="form-group py-2 req-input">
                                 <input type="text" name="name" id="name" class=" profile-form-input-custome "
                                     placeholder="Name" required minlength="3" maxlength="20" required>
-                                @if ($errors->has('name'))
+                                @if (session()->has('edit-form-error') && $errors->has('name'))
                                     <div id="name-error" class="text-danger text-start">
                                         {{ $errors->first('name') }}</div>
                                 @endif
@@ -328,7 +344,7 @@
                                 <input type="text" name="street_address" id="street_address"
                                     class=" profile-form-input-custome" placeholder="Street Address" required
                                     minlength="5" maxlength="80" required>
-                                @if ($errors->has('street_address'))
+                                @if (session()->has('edit-form-error') && $errors->has('street_address'))
                                     <div id="street_address-error" class="text-danger text-start">
                                         {{ $errors->first('street_address') }}</div>
                                 @endif
@@ -337,35 +353,48 @@
                             <div class="form-group py-2 col-md-6">
                                 <input type="text" name="city" id="city" class=" profile-form-input-custome"
                                     placeholder="City" minlength="3" maxlength="20" required>
-                                @if ($errors->has('city'))
+                                @if (session()->has('edit-form-error') && $errors->has('city'))
                                     <div id="city-error" class="text-danger text-start">{{ $errors->first('city') }}
                                     </div>
                                 @endif
                             </div>
 
                             <div class="form-group py-2 col-md-6">
-                                <input type="text" name="state" id="state" class=" profile-form-input-custome"
-                                    placeholder="State" minlength="3" maxlength="50" required>
-                                @if ($errors->has('state'))
+                                <select name="state" id="state" class=" profile-form-input-custome" required>
+                                    <option value="">
+                                        Select State
+                                    </option>
+                                    @foreach (App\Models\UserAddress::STATE as $state)
+                                        <option value="{{ $state }}">{{ $state }}</option>
+                                    @endforeach
+                                </select>
+                                @if (session()->has('edit-form-error') && $errors->has('state'))
                                     <div id="state-error" class="text-danger text-start">
                                         {{ $errors->first('state') }}</div>
                                 @endif
                             </div>
 
                             <div class="form-group py-2 col-md-6">
-                                <input type="text" name="country" id="country" class=" profile-form-input-custome"
-                                    placeholder="Country" minlength="3" maxlength="50" required>
-                                @if ($errors->has('country'))
-                                    <div id="country-error" class="text-danger text-start">
-                                        {{ $errors->first('country') }}
-                                    </div>
-                                @endif
+                                <select name="country" id="country" class="profile-form-input-custome" required>
+                                    <option value="">
+                                        Select Country
+                                    </option>
+                                    @foreach (App\Models\UserAddress::COUNTRY as $country)
+                                        <option value="{{ $country }}">
+                                            {{ $country }}</option>
+                                    @endforeach
+                                    @if (session()->has('edit-form-error') && $errors->has('country'))
+                                        <div id="country-error" class="text-danger text-start">
+                                            {{ $errors->first('country') }}
+                                        </div>
+                                    @endif
+                                </select>
                             </div>
                             <div class="form-group py-2 col-md-6">
                                 <input type="text" name="postal_code" id="postal_code"
-                                    class="profile-form-input-custome col-md-6" placeholder="Pin Code" minlength="3"
+                                    class="profile-form-input-custome" placeholder="Pin Code" minlength="3"
                                     maxlength="20" required>
-                                @if ($errors->has('postal_code'))
+                                @if (session()->has('edit-form-error') && $errors->has('postal_code'))
                                     <div id="postal_code-error" class="text-danger text-start">
                                         {{ $errors->first('postal_code') }}
                                     </div>
@@ -419,8 +448,8 @@
                         $('#name').val(response.userAddress.name);
                         $('#street_address').val(response.userAddress.street_address);
                         $('#city').val(response.userAddress.city);
-                        $('#state').val(response.userAddress.state);
-                        $('#country').val(response.userAddress.country);
+                        $('#state').val(response.userAddress.state).change();
+                        $('#country').val(response.userAddress.country).change();
                         $('#postal_code').val(response.userAddress.postal_code);
                         $('#type').val(response.userAddress.type);
                         var editForm = $('#editForm');

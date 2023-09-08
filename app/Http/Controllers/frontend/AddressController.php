@@ -2,22 +2,29 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Http\Controllers\Controller;
 use App\Models\UserAddress;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class AddressController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|min:3|max:20',
             'street_address' => 'required|string|min:5|max:120',
             'city' => 'required|string|min:3|max:40',
-            'state' => 'required|string|min:3|max:40',
-            'country' => 'required|string|min:3|max:40',
+            'state' => ['required', 'string', Rule::in(UserAddress::STATE)],
+            'country' => ['required', 'string', Rule::in(UserAddress::COUNTRY)],
             'postal_code' => 'required|digits:6',
         ]);
+        if ($validator->fails()) {
+            session()->flash('store-form-error', true);
+            return redirect()->back()->withErrors($validator->errors())->withInput();
+        }
+
         $userAddressCount = auth()->user()->userAddress()->count();
         //dd($userAddressCount);
         if ($userAddressCount >= 3) {
@@ -55,14 +62,18 @@ class AddressController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|min:3|max:20',
             'street_address' => 'required|string|min:5|max:120',
             'city' => 'required|string|min:3|max:40',
-            'state' => 'required|string|min:3|max:40',
-            'country' => 'required|string|min:3|max:40',
+            'state' => ['required', 'string', Rule::in(UserAddress::STATE)],
+            'country' => ['required', 'string', Rule::in(UserAddress::COUNTRY)],
             'postal_code' => 'required|digits:6',
         ]);
+        if ($validator->fails()) {
+            session()->flash('edit-form-error', true);
+            return redirect()->back()->withErrors($validator->errors())->withInput();
+        }
         $user = auth()->user();
         $address = $user->userAddress()->findOrFail($id);
         $address->name = $request->name;
