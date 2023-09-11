@@ -198,7 +198,7 @@
        <div class="mt-bottom-bar py-0">
            <div class="container d-none d-lg-block px-0">
                <div class="row">
-                   <div class="col-xs-12">
+                   <div class="col-xs-12 py-2">
                        <ul class="mt-icon-list ">
 
                            {{-- <li class="bg-red px-2 rounded my-2">
@@ -207,8 +207,8 @@
                                </a>
                            </li> --}}
 
-                           <li class="px-2 rounded my-2">
-                            <a href="{{ route('frontend.about') }}" class="text-dark">
+                           <li class="px-2 m-0 d-flex align-items-center">
+                            <a href="{{ route('frontend.about') }}" class="text-dark" style="font-size: 1rem">
                                 About Us
                             </a>
                         </li>
