@@ -148,6 +148,7 @@ class CheckoutController extends Controller
             $order = $user->orders()->whereStatus('initial')->latest()->first();
             $apiOrder = $api->createOrder((int)$grandTotal * 100);
             $order->update([
+                'order_no' => generateOrderNo(),
                 'api_order_id' => $apiOrder['id'],
                 'sub_total' => $subTotal,
                 'total_amount' => $grandTotal,
@@ -165,6 +166,7 @@ class CheckoutController extends Controller
         } else {
             $apiOrder = $api->createOrder((int)$grandTotal * 100);
             $order = $this->createOrder($grandTotal, [
+                'order_no' => generateOrderNo(),
                 'api_order_id' => $apiOrder['id'],
                 'discount' => $discount
             ], $selectedAddress);

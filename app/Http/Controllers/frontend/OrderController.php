@@ -15,11 +15,11 @@ class OrderController extends Controller
         return view('frontend.order.index', compact('orders'));
     }
 
-    public function show($order_id)
+    public function show($order_no)
     {
         // return $order_id;
         $user = auth()->user();
-        $order = Order::whereIn('status', ['cancelled', 'completed'])->where('user_id', $user->id)->with('items')->findOrFail($order_id);
+        $order = Order::whereIn('status', ['cancelled', 'completed'])->where('user_id', $user->id)->with('items')->where('order_no', $order_no)->firstOrFail();
         // dd($order);
         $delivery = $order->deliveries()->whereStatus('Delivered')->latest()->first();
         return view('frontend.order.show', compact('order', 'delivery'));

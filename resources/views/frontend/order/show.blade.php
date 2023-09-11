@@ -53,12 +53,17 @@
                         </h3>
                         <hr>
                         <div class="row my-3">
-                            @foreach ($order->items()->get() as $item)
+                            @foreach ($order->items()->with('product')->get() as $item)
                                 <div class="col-12 d-flex">
-                                    <img src="{{ asset('storage/images/products/thumbnails/' . $item->product->thumbnail_image) }}"
-                                        alt="..." class="my-2 rounded-2 border border-1 pink-border me-3 cart-p-img">
+                                    <a href="{{ route('frontend.p.show', $item->product->slug) }}">
+                                        <img src="{{ asset('storage/images/products/thumbnails/' . $item->product->thumbnail_image) }}"
+                                            alt="..."
+                                            class="my-2 rounded-2 border border-1 pink-border me-3 cart-p-img">
+                                    </a>
                                     <div class="mt-1">
-                                        <p class="mb-1 text-black">{{ $item->product->name }}</p>
+                                        <a href="{{ route('frontend.p.show', $item->product->slug) }}">
+                                            <p class="mb-1 text-black">{{ $item->product->name }}</p>
+                                        </a>
                                         <span>Price: ₹{{ $item->amount }}</span><br>
                                         <span>Qty: {{ $item->quantity }}</span>
                                     </div>
@@ -84,13 +89,13 @@
                                         <br>
                                         {{ $order->city . ', ' . $order->state }}
                                         <br>
-                                        {{ $order->country . ', ' . $order->postal_code }}
+                                        {{ $order->country . ' ' . $order->postal_code }}
                                     </p>
                                 </label>
-                                @if ($order->status == 'completed' && $delivery)
+                                @if ($order->status == 'completed' && $delivery && $delivery->delivered_date)
                                     <label for="" class="w100 p-2">
                                         <h6 class="h6 font-body text-capitalize">Delivered On:
-                                            {{ $delivery->delivered_date ? dd_format($delivery->delivered_date, 'd M Y') : 'NA' }}
+                                            {{ dd_format($delivery->delivered_date, 'd M Y') }}
                                         </h6>
                                     </label>
                                 @endif

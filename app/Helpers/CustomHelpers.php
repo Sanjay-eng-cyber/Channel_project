@@ -201,3 +201,14 @@ if (!function_exists('getShiprocketToken')) {
         return $token ?? '';
     }
 }
+
+if (!function_exists('generateOrderNo')) {
+    function generateOrderNo()
+    {
+        do {
+            $order_no = 'ord_' . now()->format('dmyhis') . rand(10, 99);
+        } while (App\Models\Order::where('order_no', $order_no)->exists());
+
+        return $order_no;
+    }
+}

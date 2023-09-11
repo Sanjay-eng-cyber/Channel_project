@@ -163,16 +163,15 @@
                                         @endif
                                         @if ($userAddress->type != 'primary')
                                             <li>
-                                                
                                                 <a href="{{ route('frontend.address.delete', $userAddress->id) }}"
                                                     data-bs-toggle="modal" data-bs-target="#trashbtn">
                                                     <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
                                                 </a>
                                             </li>
-                                            <li class="d-none d-sm-block"> <a
+                                            <li class=""> <a
                                                     href="{{ route('frontend.address.make-primary', $userAddress) }}"
-                                                    class="btn make-primary-address">
-                                                    Make As Primary
+                                                    class="btn btn-primary position-relative profile-s-bg-color">
+                                                    Make as Primary
                                                 </a></li>
                                         @endif
                                     </ul>
@@ -308,7 +307,7 @@
                             alt="" srcset="" style="width:267px">
                         <h4 class="dispaly-6 main-head text-black mt-3 mb-2">Are You Sure !</h4>
                         <div class="d-flex justify-content-evenly my-4">
-                            <a href="{{route('frontend.address.delete', $userAddress->id) }}" class="btn btn-lightpink px-4 btn-lg">
+                            <a href="" class="btn btn-lightpink px-4 btn-lg">
                                 Yes
                             </a>
                             <button type="button" class="btn btn-pink px-4 btn-lg" data-bs-dismiss="modal">No</button>

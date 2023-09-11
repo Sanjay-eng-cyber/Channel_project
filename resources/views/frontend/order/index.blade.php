@@ -47,19 +47,14 @@
                                         <li class="status">
                                             <ul
                                                 class="gap-2 d-flex flex-row flex-lg-column flex-xl-column  gap-lg-2 justify-content-between p-0">
-                                                {{-- <li class="return-order light-sky">
-                                                    <a href="http://" class="light-sky">
-                                                        Return Order
-                                                    </a>
-                                                </li> --}}
-                                                @if ($order->status == 'completed' && !$order->deliveries->count())
+                                                {{-- @if ($order->status == 'completed' && !$order->deliveries->count())
                                                     <li class="cancel-order text-red list-unstyled">
                                                         <a href="{{ route('frontend.order.cancel', $order->id) }}"
                                                             class="text-red">
                                                             Cancel Order
                                                         </a>
                                                     </li>
-                                                @endif
+                                                @endif --}}
                                                 @if ($order->status == 'cancelled')
                                                     <li class="cancel-order text-red list-unstyled">
                                                         <a href="javascript:void(0)" class="text-red">
@@ -72,6 +67,29 @@
                                                             Order Returned
                                                         </a>
                                                     </li>
+                                                @elseif ($order->status == 'completed')
+                                                    @php
+                                                        $delivery = $order
+                                                            ->deliveries()
+                                                            ->whereStatus('Delivered')
+                                                            ->latest()
+                                                            ->first();
+                                                    @endphp
+                                                    @if (!$order->deliveries->count())
+                                                        <li class="cancel-order text-red list-unstyled">
+                                                            <a href="{{ route('frontend.order.cancel', $order->id) }}"
+                                                                class="text-red">
+                                                                Cancel Order
+                                                            </a>
+                                                        </li>
+                                                    @elseif($delivery && $delivery->delivered_date)
+                                                        <li class="cancel-order text-red list-unstyled">
+                                                            <a href="javascript:void(0)" class="text-red">
+                                                                Delivered On:
+                                                                {{ dd_format($delivery->delivered_date, 'd M Y') }}
+                                                            </a>
+                                                        </li>
+                                                    @endif
                                                 @endif
                                             </ul>
                                         </li>
@@ -82,7 +100,7 @@
                                     class="col-sm-12  col-md-12 col-lg-12 col-xl-3 py-3 py-xl-0 py-xxl-0  my-order-main-in-btn gap-2">
                                     {{-- <a href="http://" class="arriving-or-btn">Arriving Wednesday</a> --}}
                                     <button type="button" class="btn  add-orderDetails-btn">
-                                        <a href="{{ route('frontend.order.show', $order->id) }}">
+                                        <a href="{{ route('frontend.order.show', $order->order_no) }}">
                                             Order Details
                                         </a>
                                     </button>

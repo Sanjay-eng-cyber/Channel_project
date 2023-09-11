@@ -23,6 +23,7 @@ trait Transactional
         $options['discount_amount'] = $options['discount_amount'] ?? 0;
 
         return Order::create([
+            'order_no' => $options['order_no'],
             'api_order_id' => $options['api_order_id'] ?? null,
             'user_id' => $options['user_id'] ?? Auth::id(),
             'sub_total' => $amount,
