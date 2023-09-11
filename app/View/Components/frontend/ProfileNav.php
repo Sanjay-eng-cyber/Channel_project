@@ -11,13 +11,11 @@ class ProfileNav extends Component
      *
      * @return void
      */
-    public $name;
-    public $image;
-    public function __construct($name, $image)
+    public $user;
+    public function __construct()
     {
         //dynamic data
-        $this->name = $name;
-        $this->image = $image;
+        $this->user = auth()->user();
     }
 
     /**

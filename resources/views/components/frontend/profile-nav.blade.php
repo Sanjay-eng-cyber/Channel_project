@@ -3,29 +3,36 @@
     <div class="container">
         <div class="profile">
             <div class="profile-photo-section">
-                <img src=" {{ $image }}" class="profile-photo" alt="">
-                <button class="btn edit-photo-btn">
-                    {{--<img src="{{ url('frontend/images/icons/icon-camera.svg') }}" alt="">--}}
-                    <div class="input--file">
-                        <span>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="3.2"/>
-                            <path d="M9 2l-1.83 2h-3.17c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2h-3.17l-1.83-2h-6zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
-                            <path d="M0 0h24v24h-24z" fill="none"/>
-                          </svg>
-                        </span>
-                        <input class="w-40" name="Select File" type="file" />
-                      </div>
-                </button>
+                <img src="{{ $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
+                    class="profile-photo" alt="" style="max-height: 200px;object-fit:cover;">
+                <form action="{{ route('frontend.profile.image.update') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <button class="btn edit-photo-btn">
+                        <div class="input--file">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="3.2" />
+                                    <path
+                                        d="M9 2l-1.83 2h-3.17c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2h-3.17l-1.83-2h-6zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" />
+                                    <path d="M0 0h24v24h-24z" fill="none" />
+                                </svg>
+                            </span>
+                            <input class="w-40" type="file" name="image" onchange="this.form.submit()" />
+                        </div>
+                    </button>
+                </form>
             </div>
-            @if($name)
-
-            <div class="user-name-section">
-
-                <p class="name-input text-center mt-2 mb-0">{{ $name }} <i class="fa fa-pencil text-white "></i></p>
-
-                <hr class="name-border mx-auto m-0">
-            </div>
+            @if ($errors->has('image'))
+                <div class="text-center">{{ $errors->first('image') }}</div>
+            @endif
+            @if ($user->first_name)
+                <div class="user-name-section">
+                    <p class="name-input text-center mt-2 mb-0">{{ $user->first_name }}
+                        {{-- <i class="fa fa-pencil text-white "></i> --}}
+                    </p>
+                    <hr class="name-border mx-auto m-0">
+                </div>
             @endif
             {{-- <form action="" class="user-name-section">
                 <div class="input-group">
@@ -37,7 +44,8 @@
             </form> --}}
         </div>
         <div class="profile-menu justify-content-evenly">
-            <a href="{{ route('frontend.profile') }}" class="btn {{URL::current()==route('frontend.profile')? 'active':''}}">
+            <a href="{{ route('frontend.profile') }}"
+                class="btn {{ URL::current() == route('frontend.profile') ? 'active' : '' }}">
                 <span class="menu-icon">
                     <svg width="45" height="45" viewBox="0 0 65 65" fill="rgba(0, 0, 0, 0.20)"
                         xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +57,8 @@
                     My Profile
                 </div>
             </a>
-            <a href="{{ route('frontend.wishlist.index') }}" class="btn {{URL::current()==route('frontend.wishlist.index')? 'active':''}}">
+            <a href="{{ route('frontend.wishlist.index') }}"
+                class="btn {{ URL::current() == route('frontend.wishlist.index') ? 'active' : '' }}">
                 <span class="menu-icon">
                     <svg width="45" height="45" viewBox="0 0 65 65" fill="rgba(0, 0, 0, 0.20)"
                         xmlns="http://www.w3.org/2000/svg">
@@ -62,13 +71,14 @@
                     My Wishlist
                 </div>
             </a>
-            <a href="{{ route('frontend.cart.index') }}" class="btn {{URL::current()==route('frontend.cart.index')? 'active':''}}">
+            <a href="{{ route('frontend.cart.index') }}"
+                class="btn {{ URL::current() == route('frontend.cart.index') ? 'active' : '' }}">
                 <span class="menu-icon">
                     <svg width="45" height="45" viewBox="0 0 48 48" fill="rgba(0, 0, 0, 0.34)"
                         xmlns="http://www.w3.org/2000/svg">
-                        <path class="{{URL::current()==route('frontend.cart.index')? 'pink-icon-clr':''}}"
+                        <path class="{{ URL::current() == route('frontend.cart.index') ? 'pink-icon-clr' : '' }}"
                             d="M34.283 26.3332C36.033 26.3332 37.573 25.3765 38.3663 23.9298L46.7197 8.7865C47.583 7.2465 46.463 5.33317 44.6897 5.33317H10.1563L7.96301 0.666504H0.333008V5.33317H4.99967L13.3997 23.0432L10.2497 28.7365C8.54634 31.8632 10.7863 35.6665 14.333 35.6665H42.333V30.9998H14.333L16.8997 26.3332H34.283ZM12.373 9.99984H40.723L34.283 21.6665H17.903L12.373 9.99984ZM14.333 37.9998C11.7663 37.9998 9.68968 40.0998 9.68968 42.6665C9.68968 45.2332 11.7663 47.3332 14.333 47.3332C16.8997 47.3332 18.9997 45.2332 18.9997 42.6665C18.9997 40.0998 16.8997 37.9998 14.333 37.9998ZM37.6663 37.9998C35.0997 37.9998 33.023 40.0998 33.023 42.6665C33.023 45.2332 35.0997 47.3332 37.6663 47.3332C40.233 47.3332 42.333 45.2332 42.333 42.6665C42.333 40.0998 40.233 37.9998 37.6663 37.9998Z"
-                            fill="rgba(0, 0, 0, 0.20)"  />
+                            fill="rgba(0, 0, 0, 0.20)" />
                     </svg>
 
                 </span>
@@ -76,7 +86,7 @@
                     Cart
                 </div>
             </a>
-            <a href="{{url('/orders')}}" class="btn {{URL::current()==url('/orders')?'active':''}}">
+            <a href="{{ url('/orders') }}" class="btn {{ URL::current() == url('/orders') ? 'active' : '' }}">
                 <span class="menu-icon">
                     <svg width="45" height="45" viewBox="0 0 65 65" fill="rgba(0, 0, 0, 0.20)"
                         xmlns="http://www.w3.org/2000/svg">

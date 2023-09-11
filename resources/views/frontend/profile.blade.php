@@ -12,7 +12,7 @@
         }
     </style>
 
-    <x-frontend.profile-nav image="https://via.placeholder.com/300" name="{{ $user->first_name }}" />
+    <x-frontend.profile-nav />
 
     <section class="my-1">
         <div class="container">
@@ -82,9 +82,9 @@
 
 
                             <div class="col-6 py-2">
-                                <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
+                                <input class="form-check-input" type="radio" name="gender" id="exampleRadios2"
                                     value="female" @if ($user->gender == 'female') {{ 'checked' }} @endif required>
-                                <label class="form-check-label profile-f-l-color" for="exampleRadios1">
+                                <label class="form-check-label profile-f-l-color" for="exampleRadios2">
                                     Female
                                 </label>
                             </div>
@@ -168,10 +168,12 @@
                                                     <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
                                                 </a>
                                             </li>
-                                            <li class="d-none d-sm-block"> <a href="{{route('frontend.address.make-primary', $userAddress)}}" class="btn make-primary-address">
-                                                Make As Primary
+                                            <li class="d-none d-sm-block"> <a
+                                                    href="{{ route('frontend.address.make-primary', $userAddress) }}"
+                                                    class="btn make-primary-address">
+                                                    Make As Primary
                                                 </a></li>
-                                            @endif
+                                        @endif
                                     </ul>
                                 </div>
                                 <div class="col-12">
@@ -245,12 +247,10 @@
                                         class=" profile-form-input-custome profile-asterisk" placeholder="Country"
                                         minlength="3" maxlength="50" required> --}}
                                     <select name="country" class=" profile-form-input-custome profile-asterisk">
-                                        <option value="">
-                                            Select Country
-                                        </option>
-                                        @foreach (App\Models\UserAddress::COUNTRY as $country)
+                                        <option value="India" selected>India</option>
+                                        {{-- @foreach (App\Models\UserAddress::COUNTRY as $country)
                                             <option value="{{ $country }}">{{ $country }}</option>
-                                        @endforeach
+                                        @endforeach --}}
                                     </select>
                                     @if (session()->has('store-form-error') && $errors->has('country'))
                                         <div id="country-error" class="text-primary">{{ $errors->first('country') }}
@@ -379,13 +379,14 @@
 
                             <div class="form-group py-2 col-md-6">
                                 <select name="country" id="country" class="profile-form-input-custome" required>
-                                    <option value="">
+                                    {{-- <option value="">
                                         Select Country
-                                    </option>
-                                    @foreach (App\Models\UserAddress::COUNTRY as $country)
+                                    </option> --}}
+                                    <option value="India">India</option>
+                                    {{-- @foreach (App\Models\UserAddress::COUNTRY as $country)
                                         <option value="{{ $country }}">
                                             {{ $country }}</option>
-                                    @endforeach
+                                    @endforeach --}}
                                     @if (session()->has('edit-form-error') && $errors->has('country'))
                                         <div id="country-error" class="text-danger text-start">
                                             {{ $errors->first('country') }}

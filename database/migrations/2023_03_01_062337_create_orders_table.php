@@ -22,7 +22,6 @@ class CreateOrdersTable extends Migration
             $table->float('discount_amount')->nullable();
             $table->decimal('total_amount');
             $table->enum('status', ['initial', 'completed', 'failed', 'cancelled', 'returned']);
-            $table->foreignId('user_address_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('address_name')->nullable();
             $table->longText('street_address')->nullable();
             $table->longText('landmark')->nullable();

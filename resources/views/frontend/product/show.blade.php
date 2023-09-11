@@ -61,8 +61,7 @@
                             {{-- <p class="text-muted">
                                 {!! $product->short_descriptions !!}
                             </p> --}}
-                            <div
-                                class="d-flex flex-row  justify-content-between align-items-start">
+                            <div class="d-flex flex-row  justify-content-between align-items-start">
                                 <div>
                                     <h3 class="h5 font-body rem-1">
                                         From ₹{{ $product->final_price }} <s class="text-danger">₹{{ $product->mrp }}</s>
@@ -114,7 +113,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="d-flex
+                                        <div
+                                            class="d-flex
                                         justify-content-between
                                         justify-content-sm-start
                                         justify-content-lg-end
@@ -125,10 +125,11 @@
                                             </button>
 
                                             @if ($product->isInCart())
-                                                <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink btn-40padding"
+                                                <a href="javascript:void(0)"
+                                                    class="btn btn-pink add-to-cart btn-outline-pink btn-40padding"
                                                     data-p-id="{{ $product->id }}">
-                                                    <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"
-                                                        data-prefix="fas" data-icon="check" role="img"
+                                                    <svg class="svg-inline--fa fa-check" aria-hidden="true"
+                                                        focusable="false" data-prefix="fas" data-icon="check" role="img"
                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
                                                         data-fa-i2svg="">
                                                         <path fill="currentColor"
@@ -268,7 +269,8 @@
                                                 <div class="d-flex align-items-center">
 
                                                     <div class="review-user">
-                                                        <img src="https://via.placeholder.com/150" alt="">
+                                                        <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="">
                                                         <div class="d-flex review-head">
@@ -300,8 +302,8 @@
                                                     <div
                                                         class="review-info text-muted d-flex flex-wrap justify-content-between">
                                                         <div class="py-2">
-                                                            {{ $re->user->first_name ?? 'User' }}
-                                                            | {{ dd_Format($re->created_at, 'M-Y') }}
+                                                            {{ $re->user->first_name ?? 'Anonymous' }}
+                                                            | {{ dd_format($re->created_at, 'd M-Y') }}
                                                         </div>
                                                     </div>
                                                 </div>

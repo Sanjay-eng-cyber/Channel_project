@@ -32,6 +32,7 @@ class ProductController extends Controller
      */
     public function show($productSlug)
     {
+        $user = auth()->user();
         $product = Product::where('slug', $productSlug)->with('medias')->firstOrFail();
         $category = $product->category;
         $subCategory = $product->subCategory;
@@ -61,7 +62,7 @@ class ProductController extends Controller
 
         $relatedProducts = Product::where('id', '!=', $product->id)->where('category_id', $product->category_id)->latest()->limit(12)->get();
         // dd($relatedProducts);
-        return view('frontend.product.show', compact('product', 'category', 'subCategory','reviews', 'relatedProducts', 'reviewRatingAvg', 'ratingsArr', 'attributes'));
+        return view('frontend.product.show', compact('user', 'product', 'category', 'subCategory', 'reviews', 'relatedProducts', 'reviewRatingAvg', 'ratingsArr', 'attributes'));
     }
 
     public function checkout(Request $request, $product_slug)

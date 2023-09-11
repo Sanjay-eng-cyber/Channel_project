@@ -91,6 +91,8 @@ Route::domain(config('app.web_domain'))->group(function () {
         Route::get('/profile', 'App\Http\Controllers\frontend\ProfileController@index')->name('frontend.profile');
         Route::post('/profile/update', 'App\Http\Controllers\frontend\ProfileController@update')->name('frontend.profile.update');
 
+        Route::post('/profile/image/update', 'App\Http\Controllers\frontend\ProfileController@updateProfileImage')->name('frontend.profile.image.update');
+
         Route::post('/address/store', 'App\Http\Controllers\frontend\AddressController@store')->name('frontend.address.store');
         Route::post('/address/update/{id}', 'App\Http\Controllers\frontend\AddressController@update')->name('frontend.address.update');
         Route::get('/address/edit/{id}', 'App\Http\Controllers\frontend\AddressController@edit')->name('frontend.address.edit');

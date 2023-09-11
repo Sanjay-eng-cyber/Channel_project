@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -42,5 +44,30 @@ class ProfileController extends Controller
             "message" => "Something went wrong.",
             "alert-type" => "error"
         ]);
+    }
+    public function updateProfileImage(Request $request)
+    {
+        // dd($request);
+        $request->validate([
+            'image' => 'required|mimes:png,jpg,jpeg|max:10240'
+        ]);
+
+        $user = User::findOrFail(auth()->user()->id);
+        $fileWithExtension = $request->file('image');
+        $filename = now()->format('dmy-his') . '-' . rand(1, 99) . '.' . $fileWithExtension->clientExtension();
+        $destinationPath = storage_path('app/public/images/profile/');
+        $img = Image::make($fileWithExtension->getRealPath())->resize(200, 200, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upSize();
+        });
+        $img->save($destinationPath . $filename, 80);
+        if ($user->profile_image) {
+            Storage::disk('public')->delete('images/profile/' . $user->profile_image);
+        }
+        $user->profile_image = $filename;
+        if ($user->save()) {
+            return redirect()->back()->with(toast("Profile Image Updated", 'success'));
+        }
+        return redirect()->back()->with(toast("Something Went Wrong", 'error'));
     }
 }
