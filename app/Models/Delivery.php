@@ -99,7 +99,7 @@ class Delivery extends Model
         // dd($items);
 
         return [
-            'order_id' => $this->order_id,
+            'order_id' => $this->order_no,
             'order_date' => $this->created_at ?? now(),
             'pickup_location' => 'Primary',
             "billing_customer_name" => $user->first_name,
