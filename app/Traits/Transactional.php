@@ -29,6 +29,7 @@ trait Transactional
             'discount_amount' => $options['discount_amount'],
             'total_amount' => $amount - $options['discount_amount'],
             'status' => $options['status'] ?? 'initial',
+            'address_name' => $selectedAddress->name,
             'street_address' => $selectedAddress->street_address,
             'landmark' => $selectedAddress->landmark,
             'city' => $selectedAddress->city,
