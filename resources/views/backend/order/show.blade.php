@@ -52,7 +52,13 @@
                                                 <p class="label-title">{{ $order->api_order_id ?? '---' }}</p>
                                             </div>
                                         </div>
-
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Order
+                                                    No.</label><br>
+                                                <p class="label-title">{{ $order->order_no ?? '---' }}</p>
+                                            </div>
+                                        </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Order

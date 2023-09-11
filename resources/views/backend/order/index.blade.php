@@ -77,6 +77,7 @@
                                         <th>Total Amount</th>
                                         <th>Status</th>
                                         <th>Date</th>
+                                        <th>Order No.</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -100,6 +101,7 @@
                                                 @endif
                                             </td>
                                             <td>{{ $order->created_at }}</td>
+                                           <td>{{ $order->order_no ?? '----'}}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"
