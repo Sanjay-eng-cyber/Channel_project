@@ -68,7 +68,7 @@
 
                 </span>
                 <div class="mt-2">
-                    My Wishlist
+                    Wishlist
                 </div>
             </a>
             <a href="{{ route('frontend.cart.index') }}"
@@ -119,7 +119,7 @@
                     </svg>
                 </span>
                 <div class="mt-2">
-                    My Orders
+                    Orders
                 </div>
             </a>
             {{-- <a href="{{url('/review-index')}}" class="btn {{URL::current()==url('/review-index')?'active':''}}">

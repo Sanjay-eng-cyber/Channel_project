@@ -4,13 +4,13 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
-    <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
+    <x-frontend.profile-nav />
     <section class="mt-3">
         <div class="container">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#" class="bread-crum breadcrumb-hover">Profile</a></li>
-                    <li class="breadcrumb-item bread-crum" aria-current="page">My Wishlist </li>
+                    <li class="breadcrumb-item bread-crum" aria-current="page">Wishlist</li>
                 </ol>
             </nav>
         </div>
@@ -40,10 +40,10 @@
                     <div class="d-flex justify-content-center wishlist-main">
                         <div class="col-sm-8 wishlist-main-out">
                             <div class="row wishlist-main-in d-flex align-items-center justify-content-between;">
-                                <div
-                                    class="col-sm-12 col-md-4 col-lg-4 col-xl-3  wishlist-main-in-img text-center">
-                                    <img src="{{ asset('storage/images/products/thumbnails/' . $w->product->thumbnail_image) }}" class="img-fluid"
-                                        alt="" style="max-width:140px;max-height:140px;object-fit:contain">
+                                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-3  wishlist-main-in-img text-center">
+                                    <img src="{{ asset('storage/images/products/thumbnails/' . $w->product->thumbnail_image) }}"
+                                        class="img-fluid" alt=""
+                                        style="max-width:140px;max-height:140px;object-fit:contain">
                                 </div>
                                 <div
                                     class="col-sm-12 text-md-start text-center  col-md-8 col-lg-8 col-xl-6 wishlist-main-desc pt-3 pt-md-0">
@@ -61,8 +61,7 @@
                                     </ul>
 
                                 </div>
-                                <div
-                                    class="col-sm-12  col-md-12 col-lg-12 col-xl-3  wishlist-main-in-btn">
+                                <div class="col-sm-12  col-md-12 col-lg-12 col-xl-3  wishlist-main-in-btn">
                                     @if ($w->product->isInCart())
                                         <a href="javascript:void(0)"
                                             class="add-p-btn add-to-cart add-to-cart-btn btn btn-outline-pink btn-pink profile-btn-color"
@@ -81,8 +80,9 @@
                                             Cart</a>
                                     @endif
 
-                                    <a href="{{ route('frontend.wishlist.delete', $w->id) }}" style="font-size:12px;opacity:65%"
-                                        class="py-1 text-red mt-md-1 mt-2 " data-bs-toggle="" data-bs-target="" >
+                                    <a href="{{ route('frontend.wishlist.delete', $w->id) }}"
+                                        style="font-size:12px;opacity:65%" class="py-1 text-red mt-md-1 mt-2 "
+                                        data-bs-toggle="" data-bs-target="">
                                         Remove item from Wishlist
                                     </a>
                                 </div>
