@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
-    <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
+    <x-frontend.profile-nav />
 
     <section class="my-1">
         <div class="container">
@@ -12,7 +12,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('frontend.profile') }}"
                             class="bread-crum breadcrumb-hover">Profile</a></li>
-                    <li class="breadcrumb-item bread-crum" aria-current="page">My Orders</li>
+                    <li class="breadcrumb-item bread-crum" aria-current="page">Orders</li>
                 </ol>
             </nav>
         </div>

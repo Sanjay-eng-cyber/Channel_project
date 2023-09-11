@@ -11,7 +11,8 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('frontend.profile') }}"
                             class="bread-crum breadcrumb-hover">Profile</a></li>
-                    <li class="breadcrumb-item bread-crum" aria-current="page">My Orders</li>
+                    <li class="breadcrumb-item"><a href="{{ route('frontend.order.index') }}"
+                            class="bread-crum breadcrumb-hover">My Orders</a></li>
                 </ol>
             </nav>
         </div>
