@@ -251,6 +251,9 @@ a:hover {
     border-radius:30px;
 }
 
+.make-primary-address:hover{
+    border:1px solid rgba(151, 151, 151, 0.8);
+}
 
 .btn-black {
     --bs-btn-color: #fff;
