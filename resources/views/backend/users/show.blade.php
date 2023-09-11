@@ -78,6 +78,17 @@
                                                 </div>
                                             </div>
                                         @endif
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Profile
+                                                    Image</label><br>
+                                                <a href="{{ asset('storage/images/profile/' . $user->profile_image) }}">
+                                                    <img src="{{ asset('storage/images/profile/' . $user->profile_image) }}"
+                                                        style="height: 150px;width:150px;object-fit:contain;"
+                                                        alt="">
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
