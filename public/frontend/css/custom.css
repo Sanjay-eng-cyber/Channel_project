@@ -272,6 +272,9 @@ a:hover {
     --bs-btn-disabled-border-color: #000;
 }
 
+.btn-black:hover{
+    border:1px solid #000;
+}
 /* btn pink  */
 .btn-pink {
     --bs-btn-color: #fff;
@@ -288,6 +291,9 @@ a:hover {
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #ec268f;
     --bs-btn-disabled-border-color: #ec268f;
+}
+.btn-pink:hover{
+    border:1px solid #ec268f;
 }
 
 /* btn outline pink  to btn pink*/
@@ -308,6 +314,9 @@ a:hover {
     --bs-btn-disabled-border-color: #ec268f;
 }
 
+.btn-outline-pink:hover{
+    border:1px solid #ec268f;
+}
 /* btn lightpink*/
 .btn-lightpink {
     --bs-btn-color: black;
@@ -326,6 +335,9 @@ a:hover {
     --bs-btn-disabled-border-color: rgba(251, 140, 165, 0.18);
 }
 
+.btn-lightpink:hover{
+    border:1px solid rgba(251, 140, 165, 0.18);
+}
 /* btn pink to btn outline pink */
 
 .btn-outline-pink-hover {
@@ -375,6 +387,10 @@ a:hover {
     --bs-btn-disabled-border-color: rgba(30, 186, 17, 1);
 }
 
+.btn-green:hover{
+    border:1px solid #f58634;
+}
+
 .btn-orange {
     --bs-btn-color: #000;
     --bs-btn-bg: #ebb579;
@@ -392,6 +408,9 @@ a:hover {
     --bs-btn-disabled-border-color: #ebb579;
 }
 
+.btn-orange:hover{
+    border:1px solid #ebb579;
+}
 /*btn orange to btn outline pink */
 
 .btn-orange-outline-hover {
