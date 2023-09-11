@@ -54,7 +54,9 @@ jQuery('.skin-sliderlg').slick({
 
 // fragrances
 
-jQuery('.fragrances').slick({
+$(document).ready(function() {
+
+$('.fragrances').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     speed: 300,
@@ -85,6 +87,7 @@ jQuery('.fragrances').slick({
     ]
 });
 
+});
 
 
 
