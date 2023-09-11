@@ -136,7 +136,8 @@ class CheckoutController extends Controller
         $order->update(['status' => 'completed']);
         $userCart = auth()->user()->cart;
         optional($userCart->items()->delete());
-        return view('frontend.payment-success', compact('order'));
+        $transaction = $order->transactions()->whereStatus('completed')->first();
+        return view('frontend.payment-success', compact('order', 'transaction'));
     }
 
     protected function getOrderOrCreateNew($user, Razorpay $api, $subTotal, $discount, $grandTotal, $cartItems, $selectedAddress)
