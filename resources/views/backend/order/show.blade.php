@@ -81,28 +81,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Delivery
-                                                    Id</label><br>
-                                                <p class="label-title">{{ $order->delivery_api_id ?? '---' }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Delivery
-                                                    Type</label><br>
-                                                <p class="label-title">{{ $order->delivery_type ?? '---' }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="degree3" class="cust-title" class="label-title">Delivery
-                                                    Status</label><br>
-                                                <p class="label-title">{{ $order->delivery_status ?? '---' }}</p>
-                                            </div>
-                                        </div>
-
 
                                         <div class="col-md-4">
                                             <div class="form-group">
