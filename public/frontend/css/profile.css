@@ -1,13 +1,39 @@
-.profile-s-bg-color {
+/* .profile-s-bg-color {
     background-color: #FEEAEF;
     color: black;
     border: 0.782313px solid rgba(236, 38, 143, 0.4);
     border-radius: 637.585px;
 
 }
+
 .profile-s-bg-color:hover {
     background-color: #FEEAEF;
     color: black;
+    border: 0.782313px solid rgba(236, 38, 143, 0.4);
+    border-radius: 637.585px;
+} */
+
+
+.profile-s-bg-color {
+    --bs-btn-color: black;
+    --bs-btn-bg: #FEEAEF;
+    --bs-btn-border-color: rgba(236, 38, 143, 0.4);
+    --bs-btn-hover-color:black;
+    --bs-btn-hover-bg: #FEEAEF;
+    --bs-btn-hover-border-color:rgba(236, 38, 143, 0.4);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: black;
+    --bs-btn-active-bg: #FEEAEF;
+    --bs-btn-active-border-color: rgba(236, 38, 143, 0.4);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: black
+    --bs-btn-disabled-bg:#FEEAEF;
+    --bs-btn-disabled-border-color: rgba(236, 38, 143, 0.4);
+    border: 0.782313px solid rgba(236, 38, 143, 0.4);
+    border-radius: 637.585px;
+
+}
+.profile-s-bg-color:hover{
     border: 0.782313px solid rgba(236, 38, 143, 0.4);
     border-radius: 637.585px;
 }
