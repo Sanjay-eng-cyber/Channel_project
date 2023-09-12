@@ -36,6 +36,7 @@
                                         <th>Sr no.</th>
                                         <th>Product Name</th>
                                         <th>Amount</th>
+                                        <th>Quantity</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -44,6 +45,7 @@
                                             <td>{{ tableRowSrNo($loop->index, $order_items) }}</td>
                                             <td>{{ $oi->product->name }}</td>
                                             <td>{{ $oi->amount }}</td>
+                                            <td>{{ $oi->quantity }}</td>
                                             {{-- <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"
@@ -73,7 +75,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="3">No Records Found</td>
+                                            <td colspan="4">No Records Found</td>
                                         </tr>
                                     @endforelse
                                 </tbody>

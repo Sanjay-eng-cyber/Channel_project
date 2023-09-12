@@ -19,7 +19,7 @@ class DeliveryController extends Controller
 
     public function show($deliveryId)
     {
-        $delivery = Delivery::findOrFail($deliveryId);
+        $delivery = Delivery::with('order')->findOrFail($deliveryId);
         return view('backend.delivery.show', compact('delivery'));
     }
 
@@ -45,6 +45,15 @@ class DeliveryController extends Controller
         if ($order->deliveries->where('status', '!=', 'Pending')->count()) {
             return redirect()->route('backend.order.show', $order_id)->with(toast("Delivery Already Created", 'info'));
         }
+
+        $items = $order->items()->with('product')->get();
+        // dd($items);
+        foreach ($items as $item) {
+            if ($item->quantity > $item->product->stock) {
+                return redirect()->back('Some product are not in stock.');
+            }
+        }
+
         $request->validate([
             'length' => 'required|numeric|min:0.5,max:1000',
             'breadth' => 'required|numeric|min:0.5,max:1000',
@@ -59,38 +68,37 @@ class DeliveryController extends Controller
             }
         }
 
-        $delivery = Delivery::create([
-            'order_id' => $order->id,
-            'user_id' => $order->user_id,
-            'status' => 'Pending',
+        $packageDetails = [
             "length" => $request->length,
             "breadth" => $request->breadth,
             "height" => $request->height,
             "weight" => $request->weight
-        ]);
+        ];
 
-        $shiprocketDetails = $delivery->sendOrderToShiprocketApi();
-
-        // Log::info('store method shipRocket Details');
-        // Log::info($shiprocketDetails);
-
-        // dd($shiprocketDetails);
-
-        if (!$shiprocketDetails['success']) {
-            $delivery->update([
-                "message" => isset($shiprocketDetails['message']) ? $shiprocketDetails['message'] : "Something Went Wrong",
-            ]);
-            Log::info("Delivery ID : " . $delivery->id);
-            Log::info($shiprocketDetails['message']);
-            // $delivery->delete();
-            return redirect()->back()->with(toast('Failed To Deliver', 'error'));
+        // dd($order->sendOrderToShiprocketApi($packageDetails));
+        $shiprocketOrder = $order->sendOrderToShiprocketApi($packageDetails);
+        if (!$shiprocketOrder['success']) {
+            return redirect()->back()->with(toast($shiprocketOrder['message'], 'error'));
         }
 
-        Log::info("Delivery ID : " . $delivery->id);
-        Log::info($shiprocketDetails['message']);
-        $delivery->update(['status' => 'Intransit']);
+        $delivery = Delivery::create([
+            'order_id' => $order->id,
+            'user_id' => $order->user_id,
+            'status' => 'Intransit',
+            "length" => $request->length,
+            "breadth" => $request->breadth,
+            "height" => $request->height,
+            "weight" => $request->weight,
+            'partner_order_id' => isset($shiprocketOrder['response']['order_id']) ? $shiprocketOrder['response']['order_id'] : null,
+            'shipment_id' => isset($shiprocketOrder['response']['shipment_id']) ? $shiprocketOrder['response']['shipment_id'] : null,
+            // 'awb_code' => isset($shiprocketOrder['response']['awb_code']) && $shiprocketOrder['response']['awb_code'] ? $shiprocketOrder['response']['awb_code'] : null,
+            // 'courier_company_id' => isset($shiprocketOrder['response']['courier_company_id']) && $shiprocketOrder['response']['courier_company_id'] ? $shiprocketOrder['response']['courier_company_id'] : null,
+            // 'courier_name' => isset($shiprocketOrder['response']['courier_name']) && $shiprocketOrder['response']['courier_name'] ? $shiprocketOrder['response']['courier_name'] : null,
+            // 'partner_status_code' => isset($shiprocketOrder['response']['status_code']) && $shiprocketOrder['response']['status_code'] ? $shiprocketOrder['response']['status_code'] : null,
+            // 'partner_status' => isset($shiprocketOrder['response']['status_code']) && isset(Order::API_STATUS[$shiprocketOrder['response']['status_code']]) ? Order::API_STATUS[$shiprocketOrder['response']['status_code']] : null,
+        ]);
 
-        return redirect()->route('backend.delivery.index')->with(toast('Delivery Created', 'success'));
+        return redirect()->route('backend.delivery.index')->with(toast($shiprocketOrder['message'], 'success'));
     }
 
     public function edit($delivery_id)
@@ -154,6 +162,9 @@ class DeliveryController extends Controller
     public function fetchDelivery($id)
     {
         $delivery = Delivery::where('status', '!=', 'Delivered')->findOrFail($id);
+        if (!$delivery->shipment_id) {
+            return redirect()->back()->with(toast('Shipment Id not available', 'error'));
+        }
         // dd($delivery);
         $token = getShiprocketToken();
         // $time = now()->format('d-m-y h:is');
@@ -165,13 +176,13 @@ class DeliveryController extends Controller
         $shipment = Shiprocket::shipment($token)->getSpecific($delivery->shipment_id);
         Log::info('ShipRocket FetchDelivery getSpecific Response @ ' . $time);
         Log::info($shipment);
-        // dd($shipment['data']);
+        // dd($shipment);
         if ($shipment && isset($shipment['data'])) {
             $delivery->update([
                 'awb_code' => isset($shipment['data']['awb']) ? $shipment['data']['awb'] : null,
                 'courier_name' => isset($shipment['data']['courier']) ? $shipment['data']['courier'] : null,
                 'partner_status_code' => isset($shipment['data']['status']) ? $shipment['data']['status'] : null,
-                'partner_status' => isset($shipment['data']['status']) ? Delivery::API_STATUS[$shipment['data']['status']] : null,
+                'partner_status' => isset($shipment['data']['status']) ? Order::API_STATUS[$shipment['data']['status']] : null,
                 'pickup_token_number' => isset($shipment['data']['pickup_token_number']) ? $shipment['data']['pickup_token_number'] : null,
                 'delivered_date' => isset($shipment['data']['delivered_date']) ? $shipment['data']['delivered_date'] : null
             ]);

@@ -16,7 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('order_no')->nullable()->unique();
-            $table->string('type')->nullable()->default('online_payment');
+            $table->string('type')->nullable()->default('Prepaid');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('api_order_id')->nullable();
             $table->decimal('sub_total');

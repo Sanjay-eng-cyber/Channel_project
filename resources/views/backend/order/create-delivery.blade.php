@@ -32,63 +32,48 @@
                     </legend>
                     <div class="col-12">
                         <div class="row mt-3">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="degree3" class="cust-title" class="label-title">User</label><br>
                                     <p class="label-title">{{ $order->user->first_name }}
                                         {{ $order->user->last_name }}</p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="degree3" class="cust-title" class="label-title">Order
                                         Id</label><br>
                                     <p class="label-title">{{ $order->api_order_id }}</p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="degree3" class="cust-title" class="label-title">Delivery
-                                        Id</label><br>
-                                    <p class="label-title">{{ $order->delivery_api_id }}</p>
+                                    <label for="degree3" class="cust-title" class="label-title">Order No</label><br>
+                                    <p class="label-title">{{ $order->order_no }}</p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="degree3" class="cust-title" class="label-title">Delivery
-                                        Type</label><br>
-                                    <p class="label-title">{{ $order->delivery_type }}</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="degree3" class="cust-title" class="label-title">Delivery
-                                        Status</label><br>
-                                    <p class="label-title">{{ $order->delivery_status ?? '---' }}</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="degree3" class="cust-title" class="label-title">Sub
                                         Total</label><br>
                                     <p class="label-title">{{ $order->sub_total }}</p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="degree3" class="cust-title" class="label-title">Discount
                                         Amount</label><br>
                                     <p class="label-title">{{ $order->discount_amount }}</p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="degree3" class="cust-title" class="label-title">Total
                                         Amount</label><br>
                                     <p class="label-title">{{ $order->total_amount }}</p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="degree3" class="cust-title" class="label-title">Status</label><br>
                                     <p class="label-title">
@@ -105,15 +90,82 @@
                                     </p>
                                 </div>
                             </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">Street Address</label><br>
+                                    <p class="label-title">{{ $order->street_address }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">City</label><br>
+                                    <p class="label-title">{{ $order->city }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">State</label><br>
+                                    <p class="label-title">{{ $order->state }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">Country</label><br>
+                                    <p class="label-title">{{ $order->country }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- <div class="row mt-3">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="degree3" class="cust-title" class="label-title">Total
+                                        Amount</label><br>
+                                    <p class="label-title">{{ $order->total_amount }}</p>
+                                </div>
+                            </div>
+                        </div> --}}
+
+                    </div>
+                    <legend class="h5 mt-3">
+                        Order Items
+                    </legend>
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Sr no.</th>
+                                        <th style="min-width: 200px;">Product Name</th>
+                                        <th>Amount</th>
+                                        <th>QTY</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse($order->items as $key => $oi)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+                                            <td>{{ $oi->product->name }}</td>
+                                            <td>{{ $oi->amount }}</td>
+                                            <td>{{ $oi->quantity }}</td>
+                                        @empty
+                                        <tr>
+                                            <td colspan="4">No Records Found</td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+
                     <legend class="h5 mt-3">
                         Create Delivery
                     </legend>
                     <div class="col-12">
                         <form class="mt-3" method="POST"
-                            action="{{ route('backend.order.delivery.store', $order->id) }}" enctype="multipart/form-data"
-                            autocomplete="off">
+                            action="{{ route('backend.order.delivery.store', $order->id) }}"
+                            enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-4 row">
                                 <div class="col-md-3">

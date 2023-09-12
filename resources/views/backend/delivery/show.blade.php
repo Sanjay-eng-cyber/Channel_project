@@ -34,7 +34,7 @@
                                     <div class="row">
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">User
                                                     Name</label><br>
@@ -46,7 +46,7 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Order
                                                     Id</label><br>
@@ -58,35 +58,35 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Partner Order
                                                     Id</label><br>
                                                 <p class="label-title">{{ $delivery->partner_order_id ?? '---' }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Shipment
                                                     Id</label><br>
                                                 <p class="label-title">{{ $delivery->shipment_id ?? '---' }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">AWB
                                                     Code</label><br>
                                                 <p class="label-title">{{ $delivery->awb_code ?? '---' }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Partner
                                                     Status</label><br>
                                                 <p class="label-title">{{ $delivery->partner_status ?? '---' }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Pickup Token
                                                     No.</label><br>
@@ -94,7 +94,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Pickup
                                                     Date</label><br>
@@ -103,7 +103,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Delivered
                                                     Date</label><br>
@@ -112,14 +112,14 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Message</label><br>
                                                 <p class="label-title">{{ $delivery->message ?? '---' }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Status</label><br>
@@ -139,6 +139,66 @@
                                                     @endif
                                                 </p>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Street
+                                                    Address</label><br>
+                                                <p class="label-title">{{ $delivery->order->street_address }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">City</label><br>
+                                                <p class="label-title">{{ $delivery->order->city }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">State</label><br>
+                                                <p class="label-title">{{ $delivery->order->state }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Country</label><br>
+                                                <p class="label-title">{{ $delivery->order->country }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <legend class="h5 mt-3">
+                                        Delivery Items
+                                    </legend>
+                                    <div class="row">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Sr no.</th>
+                                                        <th style="min-width: 200px;">Product Name</th>
+                                                        <th>Amount</th>
+                                                        <th>QTY</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @forelse($delivery->order->items as $key => $oi)
+                                                        <tr>
+                                                            <td>{{ $key + 1 }}</td>
+                                                            <td>{{ $oi->product->name }}</td>
+                                                            <td>{{ $oi->amount }}</td>
+                                                            <td>{{ $oi->quantity }}</td>
+                                                        @empty
+                                                        <tr>
+                                                            <td colspan="4">No Records Found</td>
+                                                        </tr>
+                                                    @endforelse
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>

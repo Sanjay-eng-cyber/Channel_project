@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = auth()->user()->orders()->whereIn('status', ['completed', 'cancelled'])->with('items', 'deliveries')->paginate(10);
+        $orders = auth()->user()->orders()->whereIn('status', ['completed', 'cancelled', 'returned'])->with('items', 'deliveries')->latest()->paginate(10);
         // dd($orders);
         return view('frontend.order.index', compact('orders'));
     }
@@ -19,7 +19,7 @@ class OrderController extends Controller
     {
         // return $order_id;
         $user = auth()->user();
-        $order = Order::whereIn('status', ['cancelled', 'completed'])->where('user_id', $user->id)->with('items')->where('order_no', $order_no)->firstOrFail();
+        $order = Order::whereIn('status', ['completed', 'cancelled', 'returned'])->where('user_id', $user->id)->with('items')->where('order_no', $order_no)->firstOrFail();
         // dd($order);
         $delivery = $order->deliveries()->whereStatus('Delivered')->latest()->first();
         return view('frontend.order.show', compact('order', 'delivery'));
