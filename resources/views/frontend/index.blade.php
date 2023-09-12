@@ -95,7 +95,7 @@
 
                 <div class="slider-container" style="isolation:isolate">
 
-                    <div class="hero-top-slider">
+                    <div class="hero-top-slider" style="--card-theme-color:#ebb579">
                         @if ($leftSliders)
                             <div class="slide mobile-hero-slide">
                                 <img src="{{ asset('storage/images/sliders/' . $leftSliders->image) }}" alt="">
@@ -114,7 +114,7 @@
                             </div>
                         @endif
                         @if ($middleSlider)
-                            <div class="slide mobile-hero-slide">
+                            <div class="slide mobile-hero-slide" style="--card-theme-color:#fb8ca5">
                                 <img src="{{ asset('storage/images/sliders/' . $middleSlider->image) }}" alt="">
                                 <div class="content">
                                     <h4>
@@ -131,24 +131,28 @@
                             </div>
                         @endif
                         @if ($rightSliders->count())
-                            @forelse ($rightSliders as $rightSlider)
-                                <div class="slide mobile-hero-slide">
-                                    <img src="{{ asset('storage/images/sliders/' . $rightSlider->image) }}" alt="">
-                                    <div class="content">
-                                        <h4>
-                                            {{ $rightSlider->title }}
-                                        </h4>
-                                        <p class="text-center">
-                                            {{ $rightSlider->descriptions }}
-                                        </p>
-                                        <a class="d-flex gap-2 justify-content-center " href="{{ $rightSlider->link }}">
-                                            <span class="group-card-shop-btn ">Shop Now</span>
-                                            <i class="fa fa-angle-right group-button-arrow"></i>
-                                        </a>
+                            <div class="d-flex flex-column justify-content-center">
+                                @forelse ($rightSliders as $rightSlider)
+                                    <div class="slide mobile-hero-slide half">
+                                        <img src="{{ asset('storage/images/sliders/' . $rightSlider->image) }}"
+                                            alt="">
+                                        <div class="content">
+                                            <h4 class="mb-1">
+                                                {{ $rightSlider->title }}
+                                            </h4>
+                                            <p class="text-center mb-1">
+                                                {{ $rightSlider->descriptions }}
+                                            </p>
+                                            <a class="d-flex gap-2 justify-content-center "
+                                                href="{{ $rightSlider->link }}">
+                                                <span class="group-card-shop-btn ">Shop Now</span>
+                                                <i class="fa fa-angle-right group-button-arrow"></i>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                            @empty
-                            @endforelse
+                                @empty
+                                @endforelse
+                            </div>
                         @endif
                     </div>
                 </div>
