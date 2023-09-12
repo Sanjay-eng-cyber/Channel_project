@@ -120,7 +120,7 @@
                                         justify-content-lg-end
                                         justify-content-xl-between
                                         gap-1 gap-sm-3 mt-3 mt-xl-0  ">
-                                            <button class="btn btn-primary btn-black btn-40padding" type="submit">
+                                            <button class="btn btn-black btn-40padding" type="submit">
                                                 Buy Now
                                             </button>
 
