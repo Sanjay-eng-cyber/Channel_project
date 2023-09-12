@@ -4,7 +4,7 @@ namespace App\View\Components\frontend;
 
 use Illuminate\View\Component;
 
-class ProfileNav extends Component
+class ProfileNavDiv extends Component
 {
     /**
      * Create a new component instance.
@@ -24,6 +24,6 @@ class ProfileNav extends Component
     public function render()
     {
         $userProfile = auth()->user();
-        return view('components.frontend.profile-nav', compact('userProfile'));
+        return view('components.frontend.profile-nav-div', compact('userProfile'));
     }
 }

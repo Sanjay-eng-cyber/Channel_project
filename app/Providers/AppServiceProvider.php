@@ -28,6 +28,5 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
-        Blade::component('profile-nav', ProfileNav::class);
     }
 }
