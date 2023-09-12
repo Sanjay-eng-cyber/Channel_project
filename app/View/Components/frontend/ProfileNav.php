@@ -11,11 +11,9 @@ class ProfileNav extends Component
      *
      * @return void
      */
-    public $user;
     public function __construct()
     {
         //dynamic data
-        $this->user = auth()->user();
     }
 
     /**
@@ -25,6 +23,7 @@ class ProfileNav extends Component
      */
     public function render()
     {
-        return view('components.frontend.profile-nav');
+        $user = auth()->user();
+        return view('components.frontend.profile-nav', compact('user'));
     }
 }
