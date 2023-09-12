@@ -118,7 +118,7 @@ class AddressController extends Controller
 
     public function destroy($id)
     {
-        $userAddress = auth()->user()->userAddress()->where('type', 'secondary')->find($id);
+        $userAddress = auth()->user()->userAddress()->where('type', 'secondary')->findOrFail($id);
         // dd($userAddress);
         if ($userAddress->delete()) {
             return redirect()->back()->with(['alert-type' => 'success', 'message' => 'Address Deleted Successfully']);

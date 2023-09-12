@@ -137,7 +137,8 @@
                             <div class="row">
 
 
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 gap-sm-0 py-2">
+                                <div
+                                    class="d-flex flex-wrap justify-content-between align-items-center gap-1 gap-sm-0 py-2">
                                     <h5 class="main-head text-red">Address {{ $key + 1 }}</h5>
                                     <div class="d-flex gap-2">
                                         <div>
@@ -154,15 +155,13 @@
                                                     <span
                                                         class="position-absolute top-0 start-100 translate-middle  bg-success border border-light rounded-circle profile-alert-icon">
                                                         <i class="fas fa-check" style="color:white"></i>
-                                                        <span class="visually-hidden">New alerts</span>
                                                     </span>
                                                 </button>
                                             </div>
                                         @endif
                                         @if ($userAddress->type != 'primary')
-                                            <div>
-                                                <a href="{{ route('frontend.address.delete', $userAddress->id) }}"
-                                                    data-bs-toggle="modal" data-bs-target="#trashbtn">
+                                            <div class="cur-pointer">
+                                                <a data-bs-toggle="modal" data-bs-target="#trashbtn{{ $key }}">
                                                     <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
                                                 </a>
                                             </div>
@@ -171,6 +170,38 @@
                                                     class="btn btn-primary position-relative profile-s-bg-color">
                                                     Make as Primary
                                                 </a>
+                                            </div>
+                                            <div class="modal fade auth-popup" id="trashbtn{{ $key }}"
+                                                tabindex="-1" aria-labelledby="loginPopupLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                    <div class="modal-content">
+
+                                                        <div class="modal-body" style="overflow:hidden;">
+                                                            <button class="auth-popup-close-button mb-4" type="button"
+                                                                data-bs-dismiss="modal" aria-label="Close">
+                                                                <img src="{{ url('frontend/images/icons/icon-close.svg') }}"
+                                                                    style="width: 51px;" alt="">
+                                                            </button>
+
+                                                            <div class="auth-popup-body" v-if="!requested">
+                                                                <img src="{{ asset('frontend/images/popup/popup-sure.png') }}"
+                                                                    class="img-fluid m-auto" alt=""
+                                                                    srcset="" style="width:267px">
+                                                                <h4 class="dispaly-6 main-head text-black mt-3 mb-2">Are
+                                                                    You Sure !</h4>
+                                                                <div class="d-flex justify-content-evenly my-4">
+                                                                    <a href="{{ route('frontend.address.delete', $userAddress->id) }}"
+                                                                        class="btn btn-lightpink px-4 btn-lg">
+                                                                        Yes
+                                                                    </a>
+                                                                    <button type="button"
+                                                                        class="btn btn-pink px-4 btn-lg"
+                                                                        data-bs-dismiss="modal">No</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         @endif
                                     </div>
@@ -186,6 +217,7 @@
                                 </div>
                             </div>
                         </div>
+
                     @empty
                     @endforelse
 
@@ -290,33 +322,7 @@
 
     </section>
 
-    <div class="modal fade auth-popup" id="trashbtn" tabindex="-1" aria-labelledby="loginPopupLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
 
-                <div class="modal-body" style="overflow:hidden;">
-                    <button class="auth-popup-close-button mb-4" type="button" data-bs-dismiss="modal"
-                        aria-label="Close">
-                        <img src="{{ url('frontend/images/icons/icon-close.svg') }}" style="width: 51px;"
-                            alt="">
-                    </button>
-
-                    <div class="auth-popup-body" v-if="!requested">
-                        <img src="{{ asset('frontend/images/popup/popup-sure.png') }}" class="img-fluid m-auto"
-                            alt="" srcset="" style="width:267px">
-                        <h4 class="dispaly-6 main-head text-black mt-3 mb-2">Are You Sure !</h4>
-                        <div class="d-flex justify-content-evenly my-4">
-                            <a href="" class="btn btn-lightpink px-4 btn-lg">
-                                Yes
-                            </a>
-                            <button type="button" class="btn btn-pink px-4 btn-lg" data-bs-dismiss="modal">No</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     {{-- Edit address Modal --}}
     <div class="modal fade auth-popup" id="editaddress" tabindex="-1" aria-labelledby="addressFormPopupLabel"
