@@ -136,19 +136,18 @@
                         <div class="profile-form-border p-4 mb-3">
                             <div class="row">
 
-                                <div class="col-6 col-sm-4 col-xl-4 py-2">
+
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 gap-sm-0 py-2">
                                     <h5 class="main-head text-red">Address {{ $key + 1 }}</h5>
-                                </div>
-                                <div class="col-6 col-sm-8 col-xl-8 py-2">
-                                    <ul class="d-flex gap-2 gap-md-3 gap-lg-2 list-unstyled justify-content-end">
-                                        <li>
+                                    <div class="d-flex gap-2">
+                                        <div>
                                             <a href="javascript:void(0)" class="edit_modal"
                                                 data-id="{{ $userAddress->id }}">
                                                 <i class="far fa-edit fa-1x profile-trash-icon"></i>
                                             </a>
-                                        </li>
+                                        </div>
                                         @if ($userAddress->type == 'primary')
-                                            <li>
+                                            <div>
                                                 <button type="button"
                                                     class="btn btn-primary position-relative profile-s-bg-color">
                                                     {{ ucfirst($userAddress->type) }}
@@ -158,23 +157,25 @@
                                                         <span class="visually-hidden">New alerts</span>
                                                     </span>
                                                 </button>
-                                            </li>
+                                            </div>
                                         @endif
                                         @if ($userAddress->type != 'primary')
-                                            <li>
+                                            <div>
                                                 <a href="{{ route('frontend.address.delete', $userAddress->id) }}"
                                                     data-bs-toggle="modal" data-bs-target="#trashbtn">
                                                     <i class="far fa-trash-alt fa-1x profile-trash-icon"></i>
                                                 </a>
-                                            </li>
-                                            <li class=""> <a
+                                            </div>
+                                            <div class=""> <a
                                                     href="{{ route('frontend.address.make-primary', $userAddress) }}"
                                                     class="btn btn-primary position-relative profile-s-bg-color">
                                                     Make as Primary
-                                                </a></li>
+                                                </a>
+                                            </div>
                                         @endif
-                                    </ul>
+                                    </div>
                                 </div>
+
                                 <div class="col-12">
                                     <h6 class="main-head">{{ $userAddress->name }}</h6>
                                     <span>{{ $userAddress->street_address }} <br>
