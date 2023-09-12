@@ -249,7 +249,9 @@
                                             Select State
                                         </option>
                                         @foreach (App\Models\UserAddress::STATE as $state)
-                                            <option value="{{ $state }}" @if (old('state') == $state) {{'selected'}}  @endif>{{ $state }}</option>
+                                            <option value="{{ $state }}"
+                                                @if (old('state') == $state) {{ 'selected' }} @endif>
+                                                {{ $state }}</option>
                                         @endforeach
                                     </select>
                                     @if (session()->has('store-form-error') && $errors->has('state'))
@@ -260,19 +262,18 @@
 
                                 <div class="form-group py-2 col-md-6">
                                     <select name="country" id="country" class="profile-form-input-custome" required>
-                                        <option value="">
-                                            Select Country
-                                        </option>
-                                        @foreach (App\Models\UserAddress::COUNTRY as $country)
-                                            <option value="{{ $country }}" @if (old('country') == $country) {{'selected'}}  @endif>
+                                        <option value="India" selected>India</option>
+                                        {{-- @foreach (App\Models\UserAddress::COUNTRY as $country)
+                                            <option value="{{ $country }}"
+                                                @if (old('country') == $country) {{ 'selected' }} @endif>
                                                 {{ $country }}</option>
-                                        @endforeach
-                                        @if (session()->has('store-form-error') && $errors->has('country'))
-                                            <div id="country-error" class="text-danger text-start">
-                                                {{ $errors->first('country') }}
-                                            </div>
-                                        @endif
+                                        @endforeach --}}
                                     </select>
+                                    @if (session()->has('store-form-error') && $errors->has('country'))
+                                        <div id="country-error" class="text-danger text-start">
+                                            {{ $errors->first('country') }}
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="form-group py-2 col-md-6">
                                     <input type="text" name="postal_code" value="{{ old('postal_code') }}"
