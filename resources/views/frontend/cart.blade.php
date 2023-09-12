@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 @auth
-    <x-frontend.profile-nav image="https://via.placeholder.com/300" name="users name" />
+    <x-frontend.profile-nav />
 @endauth
 
     <section class="my-1">

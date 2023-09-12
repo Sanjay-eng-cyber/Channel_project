@@ -3,7 +3,7 @@
     <div class="container">
         <div class="profile">
             <div class="profile-photo-section">
-                <img src="{{ $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
+                <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
                     class="profile-photo" alt="" style="max-height: 200px;object-fit:cover;">
                 <form action="{{ route('frontend.profile.image.update') }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -26,7 +26,7 @@
             @if ($errors->has('image'))
                 <div class="text-center">{{ $errors->first('image') }}</div>
             @endif
-            @if ($user->first_name)
+            @if ($user && $user->first_name)
                 <div class="user-name-section">
                     <p class="name-input text-center mt-2 mb-0">{{ $user->first_name }}
                         {{-- <i class="fa fa-pencil text-white "></i> --}}
