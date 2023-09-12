@@ -13,7 +13,7 @@ class DeliveryController extends Controller
 {
     public function index(Request $request)
     {
-        $deliveries = Delivery::latest()->paginate(10);
+        $deliveries = Delivery::with('order')->latest()->paginate(10);
         return view('backend.delivery.index', compact('deliveries'));
     }
 

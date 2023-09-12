@@ -77,12 +77,13 @@
                                     <tr>
                                         <th>Sr no.</th>
                                         {{-- <th>User Name</th> --}}
-                                        <th>Order Id</th>
+                                        <th>Order No</th>
                                         <th>Shipment Id</th>
                                         <th>AWB Code</th>
                                         {{-- <th>Pickup Date</th> --}}
+                                        <th>Delivery Partner Status</th>
                                         <th>Delivered Date</th>
-                                        <th>Delivery Status</th>
+                                        {{-- <th>Status</th> --}}
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -99,15 +100,27 @@
                                             <td>
                                                 <a class="text-warning"
                                                     href="{{ route('backend.order.show', $d->order_id) }}" target="_blank">
-                                                    {{ $d->order_id }}
+                                                    {{ $d->order->order_no }}
                                                 </a>
                                             </td>
                                             <td>{{ $d->shipment_id ?? '--' }}</td>
                                             <td>{{ $d->awb_code ?? '--' }}</td>
                                             {{-- <td>{{ $d->pickup_date ? dd_format($d->pickup_date, 'd-m-y h:i:a') : '--' }} --}}
+                                            <td>
+                                                @if ($d->partner_status == 'Pending')
+                                                    <span class="badge badge-warning">{{ 'Pending' }}</span>
+                                                @elseif($d->partner_status == 'Cancelled')
+                                                    <span class="badge badge-danger">{{ 'Cancelled' }}</span>
+                                                @elseif($d->partner_status == 'Delivered')
+                                                    <span class="badge badge-success">{{ 'Delivered' }}</span>
+                                                @else
+                                                    <span
+                                                        class="badge badge-primary">{{ $d->partner_status ?? '--' }}</span>
+                                                @endif
+                                            </td>
                                             <td>{{ $d->delivered_date ? dd_format($d->delivered_date, 'd-m-y h:i:a') : '--' }}
                                             </td>
-                                            <td>
+                                            {{-- <td>
                                                 @if ($d->awb_code === null)
                                                     <span class="badge badge-danger">{{ 'AWB Not Available' }}</span>
                                                 @elseif($d->awb_code !== null && $d->message === 'Pickup queued')
@@ -122,7 +135,7 @@
                                                             class="badge badge-secondary">{{ $d->status ?? '--' }}</label>
                                                     @endif
                                                 @endif
-                                            </td>
+                                            </td> --}}
 
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
@@ -155,8 +168,8 @@
                                                                 Label</a>
                                                         @endif
 
-                                                            <a class="dropdown-item"
-                                                                href="{{ route('backend.delivery.edit', $d->id) }}">Edit</a>
+                                                        <a class="dropdown-item"
+                                                            href="{{ route('backend.delivery.edit', $d->id) }}">Edit</a>
 
                                                     </div>
                                                 </div>
@@ -165,7 +178,7 @@
                                         </tr>
                                     @empty
                                         <tr class="text-md-center">
-                                            <td colspan="7">No Records Found</td>
+                                            <td colspan="6">No Records Found</td>
                                         </tr>
                                     @endforelse
                                 </tbody>

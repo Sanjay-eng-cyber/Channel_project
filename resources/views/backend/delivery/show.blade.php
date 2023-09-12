@@ -49,11 +49,11 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Order
-                                                    Id</label><br>
+                                                    No</label><br>
                                                 <p class="label-title">
                                                     <a class="text-warning"
                                                         href="{{ route('backend.order.show', $delivery->order_id) }}">
-                                                        {{ $delivery->order_id }}
+                                                        {{ $delivery->order->order_no }}
                                                 </p>
                                                 </a>
                                             </div>
@@ -83,7 +83,17 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Partner
                                                     Status</label><br>
-                                                <p class="label-title">{{ $delivery->partner_status ?? '---' }}</p>
+                                                {{-- <p class="label-title">{{ $delivery->partner_status ?? '---' }}</p> --}}
+                                                @if ($delivery->partner_status == 'Pending')
+                                                    <span class="badge badge-warning">{{ 'Pending' }}</span>
+                                                @elseif($delivery->partner_status == 'Cancelled')
+                                                    <span class="badge badge-danger">{{ 'Cancelled' }}</span>
+                                                @elseif($delivery->partner_status == 'Delivered')
+                                                    <span class="badge badge-success">{{ 'Delivered' }}</span>
+                                                @else
+                                                    <span
+                                                        class="badge badge-primary">{{ $delivery->partner_status ?? '--' }}</span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3">
