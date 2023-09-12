@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Traits\Transactional;
 use App\Lib\Razorpay\Razorpay;
 use Seshac\Shiprocket\Shiprocket;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 
 class CheckoutController extends Controller
@@ -59,7 +60,8 @@ class CheckoutController extends Controller
 
         // dd($checkServiceability);
         if (!isset($checkServiceability['status']) || $checkServiceability['status']  !== 200) {
-            session()->flash('error', 'Not deliverable in this location');
+            Log::info("checkServiceability");
+            Log::info($checkServiceability);
             return redirect()->back()->with(toast("Not Deliverable In Selected Address", 'info'));
         }
 
