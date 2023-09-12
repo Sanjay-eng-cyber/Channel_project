@@ -23,7 +23,7 @@ class ProfileNav extends Component
      */
     public function render()
     {
-        $user = auth()->user();
-        return view('components.frontend.profile-nav', compact('user'));
+        $userProfile = auth()->user();
+        return view('components.frontend.profile-nav', compact('userProfile'));
     }
 }
