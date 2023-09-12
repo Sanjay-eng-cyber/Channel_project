@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
-@auth
-    <x-frontend.profile-nav />
-@endauth
+    @auth
+        @include('components.frontend.profile-nav-div')
+    @endauth
 
     <section class="my-1">
         <div class="container">
@@ -47,10 +47,10 @@
                                         @click="removeItemFromCart(key,item['item_id'])"></button>
                                 </div>
                                 <div class=" col-md-4 col-lg-3">
-                                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-1 __cart-ui-img-in">
-                                        <img :src="item['thumbnail_image']" alt="..." class="img-fluid img-border" style="max-width: 146px;
-    max-height: 146px;
-    object-fit: contain;">
+                                    <div
+                                        class="d-flex align-items-center justify-content-center justify-content-md-start gap-1 __cart-ui-img-in">
+                                        <img :src="item['thumbnail_image']" alt="..." class="img-fluid img-border"
+                                            style="max-width: 146px;max-height: 146px;object-fit: contain;">
                                         {{-- <img :src="asset('storage/images/products/'.item['thumbnail_image'])" alt="..."
                                         class="img-fluid img-border"> --}}
                                     </div>

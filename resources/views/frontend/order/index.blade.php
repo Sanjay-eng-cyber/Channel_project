@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
-    <x-frontend.profile-nav />
+    @include('components.frontend.profile-nav-div')
 
     <section class="my-1">
         <div class="container">

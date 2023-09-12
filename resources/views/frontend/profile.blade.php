@@ -12,7 +12,7 @@
         }
     </style>
 
-    <x-frontend.profile-nav />
+    @include('components.frontend.profile-nav-div')
 
     <section class="my-1">
         <div class="container">

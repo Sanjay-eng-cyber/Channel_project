@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
-    <x-frontend.profile-nav-div />
+    @include('components.frontend.profile-nav-div')
     <section class="mt-3">
         <div class="container">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
