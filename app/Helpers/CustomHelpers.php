@@ -186,11 +186,9 @@ if (!function_exists('getShiprocketToken')) {
     {
         $configToken = App\Models\ShiprocketConfig::where('name', 'token')->where('validity', '>', now())->first();
         // dd($configToken);
-        Log::info("DB TOKEN : " . $configToken);
         if ($configToken) {
             $token = $configToken->value;
         } else {
-            Log::info('Shiprocket Token : ' . Shiprocket::getToken());
             $token =  Shiprocket::getToken() ?? null;
             if ($token) {
                 $configToken = App\Models\ShiprocketConfig::updateOrCreate(
