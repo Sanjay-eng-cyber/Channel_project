@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Log;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
@@ -184,10 +185,13 @@ if (!function_exists('getShiprocketToken')) {
     {
         $configToken = App\Models\ShiprocketConfig::where('name', 'token')->where('validity', '>', now())->first();
         // dd($configToken);
+        Log::info($configToken);
         if ($configToken) {
             $token = $configToken->value;
         } else {
+            Log::info(Seshac\Shiprocket\Shiprocket::getToken());
             $token =  Seshac\Shiprocket\Shiprocket::getToken() ?? null;
+            Log::info($token);
             if ($token) {
                 $configToken = App\Models\ShiprocketConfig::updateOrCreate(
                     ['name' => 'token'],
