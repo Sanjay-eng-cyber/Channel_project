@@ -17,32 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::domain(config('app.web_domain'))->group(function () {
 
-    Route::get('/test', function () {
-
-        print_r(config('shiprocket.credentials'));
-        return getShiprocketToken();
-
-        // dd(getShiprocketToken());
-
-        $order = App\Models\Order::latest()->first();
-        // dd($order);
-        $delivery = App\Models\Delivery::updateOrCreate([
-            'order_id' => $order->id,
-            'user_id' => 1,
-            'status' => 'Pending',
-        ]);
-
-        // for ($i = 1; $i < 3; $i++) {
-        //     $deliveryItem = App\Models\DeliveryItem::updateOrCreate([
-        //         'order_id' => $order->id,
-        //         'delivery_id' => $delivery->id,
-        //         'product_id' => $i
-        //     ]);
-        // }
-        // dd($delivery->sendOrderToShiprocketApi());
-
-        return 'hii';
-    })->name('index');
+    // Route::get('/test', function () {
+    //     return 'test';
+    // })->name('test');
 
     Route::get('/', 'App\Http\Controllers\frontend\HomeController@index')->name('frontend.index');
 
