@@ -200,7 +200,7 @@ if (!function_exists('getShiprocketToken')) {
                 );
             }
         }
-        return $token ?? 'error';
+        return $token ?? '';
     }
 }
 
