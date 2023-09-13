@@ -26,6 +26,6 @@ class Delivery extends Model
 
     public function order(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(order::class);
+        return $this->belongsTo(Order::class);
     }
 }
