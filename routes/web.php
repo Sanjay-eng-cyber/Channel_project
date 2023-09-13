@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::domain(config('app.web_domain'))->group(function () {
 
     Route::get('/test', function () {
+
+        print_r(config('shiprocket.credentials'));
         return getShiprocketToken();
 
         // dd(getShiprocketToken());
