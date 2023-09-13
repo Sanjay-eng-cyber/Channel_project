@@ -163,12 +163,12 @@
 
     {{-- Features Products --}}
     @if ($featured_products)
-        <section class="mt-0 mt-sm-5">
+        <section class="mt-0 mt-sm-5 ">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <div class="mt-producttabs style2" data-wow-delay="0.6s">
+                        <div class="mt-producttabs style2" data-aos="fade-up">
                             <!-- producttabs start here -->
                             <ul class="producttabs">
                                 <li> Channel</li>
@@ -259,7 +259,7 @@
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <div class="mt-producttabs style2" data-wow-delay="0.6s">
+                        <div class="mt-producttabs style2" data-aos="fade-up">
                             <!-- producttabs start here -->
                             <ul class="producttabs">
                                 <li> Channel</li>
@@ -350,7 +350,7 @@
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <div class="mt-producttabs style2 " data-wow-delay="0.6s">
+                        <div class="mt-producttabs style2 " data-aos="fade-up">
                             <!-- producttabs start here -->
                             <ul class="producttabs">
                                 <li> Skin Care</li>
@@ -508,7 +508,7 @@
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <div class="mt-producttabs style2 " data-wow-delay="0.6s">
+                        <div class="mt-producttabs style2 " data-aos="fade-up">
                             <!-- producttabs start here -->
                             <ul class="producttabs">
                                 <li> Personal Care</li>
@@ -666,7 +666,7 @@
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <div class="mt-producttabs style2 " data-wow-delay="0.6s">
+                        <div class="mt-producttabs style2 " data-aos="fade-up">
                             <!-- producttabs start here -->
                             <ul class="producttabs">
                                 <li> Hair Care</li>
@@ -824,7 +824,7 @@
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <div class="mt-producttabs style2 " data-wow-delay="0.6s">
+                        <div class="mt-producttabs style2 " data-aos="fade-up">
                             <!-- producttabs start here -->
                             <ul class="producttabs">
                                 <li> Fragrances</li>
@@ -1028,7 +1028,7 @@
     <section class="og-main-section">
         <div class="container og-main">
             <div class="sib-card row">
-                <div class="og-main-part-1 col-lg-6 mb-4 mb-lg-0">
+                <div class="og-main-part-1 col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
                     <h4 class="text-red  text-capitalize main-head mb-4" style="font-weight:500;">
                         #look for home decor too..
                     </h4>
@@ -1064,7 +1064,7 @@
                 </div>
 
 
-                <div class=" og-main-part-1 col-lg-6">
+                <div class=" og-main-part-1 col-lg-6" data-aos="fade-left">
                     <h4 class="text-red text-capitalize main-head mb-4" style="font-weight:500;">
                         #best Gift for your loved ones
                     </h4>
