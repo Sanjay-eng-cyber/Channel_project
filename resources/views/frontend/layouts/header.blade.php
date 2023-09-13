@@ -23,7 +23,10 @@
 
 <link href="{{ asset('plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
 
+
 <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
+
+<link rel="stylesheet" href="{{ asset('frontend/css/aos.css') }}">
 
 <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
 

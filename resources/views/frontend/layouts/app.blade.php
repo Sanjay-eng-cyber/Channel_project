@@ -48,13 +48,17 @@
     {{-- <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
+
     <script src="{{ asset('frontend/js/fontawesome.min.js') }}"></script>
+
+    <script src="{{ asset('frontend/js/aos.js') }}"></script>
 
     <script src="{{ asset('frontend/js/custom.js') }}"></script>
     {{-- <script src="{{ asset('frontend/js/jquery.min.js') }}"></script> --}}
 
-    <script src="{{ asset('frontend/js/aos.js') }}"></script>
-
+    <script>
+        AOS.init();
+      </script>
     @yield('js')
 
 </body>
