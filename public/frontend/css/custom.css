@@ -4046,9 +4046,6 @@ img.cart-p-img {
 
 
 
-.pills-divider{
-    border-right: 3px solid rgba(0, 0, 0, 1);
-}
 /* Define the initial styles */
 .pills-divider-h5 {
 border-bottom: 0px solid transparent;
@@ -4066,8 +4063,5 @@ border-bottom: 2px solid rgba(236, 38, 143, 1); /* Change the border width on ho
     border-bottom: 3px solid rgba(0, 0, 0, 1);
 }
 
-.pills-divider{
-    border-right: 0px solid rgba(0, 0, 0, 1);
-}
 
 }
