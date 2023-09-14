@@ -1690,8 +1690,9 @@ a:hover {
     background: var(--card-theme-color, #f1d2ad);
 }
 .mobile-hero-slide.half {
-    height: 45vh !important;
+    height: 44vh !important;
 }
+
 .mobile-hero-slide img {
     width: 100%;
     height: 100%;
@@ -3051,7 +3052,7 @@ a:hover {
     }
 
     .rating {
-        margin-top: 1em;
+        margin-top: 0em;
         margin-bottom: 1em;
     }
 }
