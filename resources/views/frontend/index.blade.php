@@ -131,7 +131,7 @@
                             </div>
                         @endif
                         @if ($rightSliders->count())
-                            <div class="d-flex flex-column justify-content-center gap-3">
+                            <div class="d-flex flex-column justify-content-center" style="gap:0.8rem">
                                 @forelse ($rightSliders as $rightSlider)
                                     <div class="slide mobile-hero-slide half">
                                         <img src="{{ asset('storage/images/sliders/' . $rightSlider->image) }}"
