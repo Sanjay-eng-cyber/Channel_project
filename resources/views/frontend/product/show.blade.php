@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
 @section('content')
+
     <main id="mt-main">
 
         <section class="my-1 mt-3">
@@ -157,6 +158,7 @@
                                     {{-- </li> --}}
                                 </ul>
                                 <hr>
+                                <div class="my-1">
                                 <div class="d-flex gap-2 my-1">
                                     <div>Color:</div>
                                     <div class="fw-500">Pink</div>
@@ -165,6 +167,7 @@
                                 <div class="d-flex gap-2 my-1">
                                     <div>Quantity:</div>
                                     <div class="fw-500">250ml</div>
+                                </div>
                                 </div>
                                 {{-- <h6 class="h5 font-body">
                                         Main Ingredients
@@ -252,25 +255,15 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-lg-7 col-md-12 product-showpagepills">
-                        <ul class="nav nav-pills justify-content-between prdct-pills-tab p-0" id="myTab"
-                            role="tablist">
-                            <li class="nav-item prdct-pills-f1">
-                                <a class="nav-link active p-0" id="home-tab" data-bs-toggle="pill" href="#home"
-                                    role="tab" aria-controls="home" aria-selected="true">
-                                    <h5 class="main-head tab-fs">Customer Reviews</h5>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link p-0" id="profile-tab" data-bs-toggle="pill" href="#profile"
-                                    role="tab" aria-controls="profile" aria-selected="false">
-                                    <h5 class="main-head">Write A Review</h5>
-                                </a>
-                            </li>
-                        </ul>
-                        <hr>
-                        <div class="tab-content mt-3" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel"
+                    <div class="my-0 my-lg-2 col-lg-6 col-md-12 product-showpagepills pills-divider-border divider-border-left">
+
+                        <div class="pills-divider d-flex justify-content-center align-items-center ">
+                            <h5 class="main-head tab-fs text-center pills-divider-h5 p-2">Customer Reviews</h5>
+                        </div>
+
+
+                        <div class="tab-content my-4">
+                            <div class="tab-pane fade show active" id="home"
                                 aria-labelledby="home-tab">
                                 <div class="container">
                                     @forelse ($reviews as $re)
@@ -320,7 +313,7 @@
                                             </div>
                                         </div>
                                     @empty
-                                        <p class="text-center">No Reviews</p>
+                                        <p class="text-center my-4">No Reviews</p>
                                     @endforelse
                                 </div>
                                 <div class="d-flex justify-content-center mt-4">
@@ -328,7 +321,70 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            {{-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <form action="{{ route('frontend.review.store', $product->slug) }}" method="POST">
+                                    @csrf
+                                    <div class="d-flex justify-content-between flex-column flex-sm-row gap-1">
+                                        <div>Give Your Rating</div>
+
+                                        <div class="rating-input">
+                                            <input type="radio" id="star5" name="rating" value="5" />
+                                            <label class="star" for="star5" title="Awesome"
+                                                aria-hidden="true"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" />
+                                            <label class="star" for="star4" title="Great"
+                                                aria-hidden="true"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" />
+                                            <label class="star" for="star3" title="Very good"
+                                                aria-hidden="true"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" />
+                                            <label class="star" for="star2" title="Good"
+                                                aria-hidden="true"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" />
+                                            <label class="star" for="star1" title="Bad"
+                                                aria-hidden="true"></label>
+                                        </div>
+                                    </div>
+                                    @if ($errors->has('rating'))
+                                        <div class="text-danger text-end" role="alert">{{ $errors->first('rating') }}
+                                        </div>
+                                    @endif
+
+                                    <div class="py-4">
+                                        <input type="text"
+                                            class="form-control my-2 review-sub-headline review-input-bg"
+                                            placeholder="Enter Title" name="title" required
+                                            value="{{ old('title') }}">
+                                        @if ($errors->has('title'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('title') }}
+                                            </div>
+                                        @endif
+                                        <textarea name="body" id="body" cols="10" rows="3"
+                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review"
+                                            minlength="3" maxlength="2000" required>{{ old('body') }}</textarea>
+                                        @if ($errors->has('body'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('body') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-pink">Post Your Review</button>
+                                    </div>
+                                </form>
+                            </div> --}}
+
+                        </div>
+                    </div>
+
+
+                    <div class="my-0 py-3 py-lg-0 my-lg-2 col-lg-6 col-md-12 product-showpagepills pills-divider-border">
+                        <div class=" d-flex justify-content-center align-items-center ">
+                            <h5 class="main-head tab-fs text-center p-2 pills-divider-h5">Write a Reviews</h5>
+                        </div>
+
+                        <div class="tab-content my-4" >
+
+                            <div class="">
                                 <form action="{{ route('frontend.review.store', $product->slug) }}" method="POST">
                                     @csrf
                                     <div class="d-flex justify-content-between flex-column flex-sm-row gap-1">
@@ -379,6 +435,7 @@
                                     </div>
                                 </form>
                             </div>
+
                         </div>
                     </div>
 
