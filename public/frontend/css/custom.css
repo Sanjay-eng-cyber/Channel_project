@@ -4065,3 +4065,12 @@ border-bottom: 2px solid rgba(236, 38, 143, 1); /* Change the border width on ho
 
 
 }
+
+.hero-top-slider
+.slider-container .slick-prev:before, .slick-next:before{
+    color:rgb(0 0 0 / 40%) !important;
+}
+.hero-top-slider
+.slider-container .slick-prev:before, .slick-prev:before{
+    color:rgb(0 0 0 / 40%) !important;
+}
