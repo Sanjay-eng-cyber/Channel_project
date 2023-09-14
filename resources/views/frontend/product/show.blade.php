@@ -77,7 +77,7 @@
                                         </h4>
                                     @endif
                                 </div>
-                                @if ($product->isInWishlist())
+                                @if (in_array($product->id, $wishlist))
                                     <button type="button" class=" btn p-show add-to-wish active"
                                         data-p-id="{{ $product->id }}">
                                         <i class="fa-regular fa-heart"></i>
@@ -115,17 +115,12 @@
                                         </div>
 
                                         <div
-                                            class="d-flex
-                                        justify-content-between
-                                        justify-content-sm-start
-                                        justify-content-lg-end
-                                        justify-content-xl-between
-                                        gap-1 gap-sm-3 mt-3 mt-xl-0  ">
+                                            class="d-flex justify-content-between justify-content-sm-start justify-content-lg-end justify-content-xl-between gap-1 gap-sm-3 mt-3 mt-xl-0  ">
                                             <button class="btn btn-black btn-40padding" type="submit">
                                                 Buy Now
                                             </button>
 
-                                            @if ($product->isInCart())
+                                            @if (in_array($product->id, $productInCart))
                                                 <a href="javascript:void(0)"
                                                     class="btn btn-pink add-to-cart btn-outline-pink btn-40padding"
                                                     data-p-id="{{ $product->id }}">
@@ -153,42 +148,21 @@
                                     Description
                                 </h6>
                                 <ul class="text-muted">
-                                    {{-- <li class="text-capitalize"> --}}
                                     {!! $product->descriptions !!}
-                                    {{-- </li> --}}
                                 </ul>
                                 <hr>
-                                <div class="my-1">
-                                <div class="d-flex gap-2 my-1">
-                                    <div>Color:</div>
-                                    <div class="fw-500">Pink</div>
-                                </div>
-
-                                <div class="d-flex gap-2 my-1">
-                                    <div>Quantity:</div>
-                                    <div class="fw-500">250ml</div>
-                                </div>
-                                </div>
-                                {{-- <h6 class="h5 font-body">
-                                        Main Ingredients
-                                    </h6>
-                                    <ul class="ms-3 text-muted">
-                                        <li>
-                                           dfskjsk k k fgkjfsg dfk fkj df sfj sd
-                                        </li>
-                                        <li>
-                                            dfskjsk k k fgkjfsg dfk fkj df sfj sd
-                                         </li>
-                                         <li>
-                                            dfskjsk k k fgkjfsg dfk fkj df sfj sd
-                                         </li>
-                                    </ul> --}}
-                                {{-- <h6 class="h5 font-body">
-                                        How to use
-                                    </h6>
-                                    <p class="text-muted">
-                                        Apply essence Long Lasting Eye Pencil directly to the lash and waterline of the eye.
-                                    </p> --}}
+                                @if ($product_attributes->count())
+                                    <div class="my-1">
+                                        @forelse ($product_attributes as $product_attribute)
+                                            <div class="d-flex gap-2 my-1">
+                                                <div>{{ $product_attribute->attribute->name . ' : ' }}</div>
+                                                <div class="fw-500">{{ $product_attribute->value->name }}</div>
+                                            </div>
+                                        @empty
+                                        @endforelse
+                                    </div>
+                                    <hr>
+                                @endif
                             </div>
                             <div class="rating-holder">
                                 <div class="row">
@@ -206,11 +180,6 @@
                                                             <i class="fa-regular fa-star"></i>
                                                         @endif
                                                     @endfor
-                                                    {{-- <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-regular fa-star"></i> --}}
                                                 </div>
                                             </div>
                                             <div class="d-flex">
@@ -220,9 +189,6 @@
                                                     </h6>
                                                     <i class="fa-solid fa-star text-green"></i>
                                                 </div>
-                                                {{-- <div class="rating-count text-muted">
-                                                    Based On Verified Buyers 1k
-                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -262,7 +228,7 @@
                             <h5 class="main-head tab-fs py-2 pills-divider-h5">Write a Reviews</h5>
                         </div>
 
-                        <div class="tab-content my-4" >
+                        <div class="tab-content my-4">
 
                             <div class="">
                                 <form action="{{ route('frontend.review.store', $product->slug) }}" method="POST">
@@ -327,8 +293,7 @@
 
 
                         <div class="tab-content my-4">
-                            <div class="tab-pane fade show active" id="home"
-                                aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" id="home" aria-labelledby="home-tab">
                                 <div class="container p-0 px-0 px-lg-3">
                                     @forelse ($reviews as $re)
                                         <div class="review-area">
@@ -454,7 +419,7 @@
 
                             <div class="product-show-grid-card">
                                 <div class="product-card-img">
-                                    @if ($rP->isInWishlist())
+                                    @if (in_array($rP->id, $wishlist))
                                         <button class="btn wishlist add-to-wish active" data-p-id="{{ $rP->id }}">
                                             <span class="has-tool-tip">
                                                 <i class="fa-regular fa-heart"></i>
@@ -486,7 +451,7 @@
                                             title="{{ $rP->name }}">
                                             Shop now
                                         </a>
-                                        @if ($rP->isInCart())
+                                        @if (in_array($rP->id, $productInCart))
                                             <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
                                                 data-p-id="{{ $rP->id }}">
                                                 <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"

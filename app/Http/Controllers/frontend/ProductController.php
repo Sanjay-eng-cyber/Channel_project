@@ -34,12 +34,13 @@ class ProductController extends Controller
     {
         $user = auth()->user();
         $product = Product::where('slug', $productSlug)->with('medias')->firstOrFail();
+        $product_attributes = $product->ProductAttribute()->with('attribute', 'value')->latest()->get();
+        // dd($product_attributes);
         $category = $product->category;
         $subCategory = $product->subCategory;
         // dd($product);
         $attributes = $product->attributes()->get();
         // dd($attributes);
-
         $reviews = $product->reviews()->with('user')->latest();
         $reviewsCount = $reviews->count();
         $reviews = $reviews->paginate(5);
@@ -62,7 +63,17 @@ class ProductController extends Controller
 
         $relatedProducts = Product::where('id', '!=', $product->id)->where('category_id', $product->category_id)->latest()->limit(12)->get();
         // dd($relatedProducts);
-        return view('frontend.product.show', compact('user', 'product', 'category', 'subCategory', 'reviews', 'relatedProducts', 'reviewRatingAvg', 'ratingsArr', 'attributes'));
+
+        if ($user) {
+            $cart = $user->cart;
+        } else {
+            $cart_session_id = session()->get('cart_session_id');
+            $cart = $cart_session_id ? Cart::where('session_id', $cart_session_id)->first() : null;
+        }
+        $productInCart = $cart ? $cart->items()->pluck('product_id')->toArray() : [];
+        $wishlist = $user ? $user->wishlist()->pluck('product_id')->toArray() : [];
+
+        return view('frontend.product.show', compact('user', 'product', 'product_attributes', 'category', 'subCategory', 'reviews', 'relatedProducts', 'reviewRatingAvg', 'ratingsArr', 'productInCart', 'wishlist'));
     }
 
     public function checkout(Request $request, $product_slug)

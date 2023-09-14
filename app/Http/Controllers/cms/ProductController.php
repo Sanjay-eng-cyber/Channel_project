@@ -69,7 +69,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $product_showcases = $product->showcaseProducts()->get();
-        $product_attributes = $product->ProductAttribute()->latest()->get();
+        $product_attributes = $product->ProductAttribute()->with('attribute', 'value')->latest()->get();
         //  dd( $product_attribute_values);
         return view('backend.product.show', compact('product', 'product_showcases', 'product_attributes'));
     }

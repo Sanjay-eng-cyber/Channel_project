@@ -31,8 +31,7 @@
                         <div class="work-section">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="row">
-                                    </div>
+
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -90,13 +89,17 @@
                                                 <p class="label-title">{{ $product->sku }}</p>
                                             </div>
                                         </div>
+
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Description</label><br>
-                                                <p class="label-title">{{ strip_tags($product->descriptions ?? '---') }}</p>
+                                                <label for="degree2" class="label-title cust-title">Thumbnail
+                                                    Image</label><br>
+                                                <span id="lightgallery1"><a class="text-primary font-weight-bold"
+                                                        href="{{ asset('storage/images/products/thumbnails/' . $product->thumbnail_image) }}">View</a>
+                                                </span>
                                             </div>
                                         </div>
+
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Other
@@ -122,21 +125,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="degree2" class="label-title cust-title">Thumbnail Image</label><br>
-                                                <span id="lightgallery1"><a class="text-primary font-weight-bold"
-                                                        href="{{ asset('storage/images/products/thumbnails/' . $product->thumbnail_image) }}">View</a>
-                                                </span>
-                                            </div>
-                                        </div>
+
                                         {{-- @dd($product_showcases) --}}
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Showcases</label><br>
                                                 @forelse ($product_showcases as $p_showcase)
-                                                    <p class="label-title">{{ $p_showcase->showcase->name }}
+                                                    <p class="label-title d-inline">
+                                                        {{ $p_showcase->showcase->name . ', ' }}
                                                     </p>
                                                 @empty
                                                     <p class="label-title">---</p>
@@ -144,28 +141,28 @@
 
                                             </div>
                                         </div>
+
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Attribute</label><br>
-                                                <div class="row">
-                                                    @forelse ($product_attributes as $product_attribute)
-                                                        <div class="col-md-6">
-                                                            <p class="label-title">
-                                                                {{ $product_attribute->attribute->name }}
-                                                            </p>
-                                                        </div>
+                                                @forelse ($product_attributes as $product_attribute)
+                                                    <p class="label-title">
+                                                        {{ $product_attribute->attribute->name . ' - ' . $product_attribute->value->name }}
+                                                    </p>
+                                                @empty
+                                                    <p class="label-title">---</p>
+                                                @endforelse
+                                            </div>
+                                        </div>
 
-                                                        @forelse ($product_attribute->value()->get() as $attVaule)
-                                                            <p class="label-title">{{ $attVaule->name }}
-                                                            </p>
-                                                        @empty
-                                                            <p class="label-title">---</p>
-                                                        @endforelse
-                                                    @empty
-                                                        <p class="label-title">---</p>
-                                                    @endforelse
-                                                </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Description</label><br>
+                                                <p class="label-title">{!! $product->descriptions !!}</p>
                                             </div>
                                         </div>
                                     </div>
