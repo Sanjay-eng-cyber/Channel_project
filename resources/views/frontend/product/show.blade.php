@@ -147,7 +147,7 @@
                                         </div>
                                     </div>
                                 </form>
-
+                                <hr>
                                 <h6 class="h5 font-body">
                                     Description
                                 </h6>
@@ -156,6 +156,16 @@
                                     {!! $product->descriptions !!}
                                     {{-- </li> --}}
                                 </ul>
+                                <hr>
+                                <div class="d-flex gap-2 my-1">
+                                    <div>Color:</div>
+                                    <div class="fw-500">Pink</div>
+                                </div>
+
+                                <div class="d-flex gap-2 my-1">
+                                    <div>Quantity:</div>
+                                    <div class="fw-500">250ml</div>
+                                </div>
                                 {{-- <h6 class="h5 font-body">
                                         Main Ingredients
                                     </h6>
