@@ -321,7 +321,7 @@
 
                     <div class="my-0 my-lg-2 col-lg-6 col-md-12 product-showpagepills pills-divider-border ">
 
-                        <div class="pills-divider d-flex justify-content-start">
+                        <div class="pills-divider d-flex justify-content-start px-0 px-lg-3">
                             <h5 class="main-head tab-fs pills-divider-h5 py-2">Customer Reviews</h5>
                         </div>
 
@@ -329,7 +329,7 @@
                         <div class="tab-content my-4">
                             <div class="tab-pane fade show active" id="home"
                                 aria-labelledby="home-tab">
-                                <div class="container">
+                                <div class="container p-0 px-0 px-lg-3">
                                     @forelse ($reviews as $re)
                                         <div class="review-area">
                                             <div class="review-card ">
