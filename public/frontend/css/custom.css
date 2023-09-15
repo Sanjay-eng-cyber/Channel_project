@@ -4074,3 +4074,16 @@ border-bottom: 2px solid rgba(236, 38, 143, 1); /* Change the border width on ho
 .slider-container .slick-prev:before, .slick-prev:before{
     color:rgb(0 0 0 / 40%) !important;
 }
+
+.ele-scale-1{
+    transform: scale(1);
+    transition: transform 0.7s ease-in-out;
+}
+
+
+
+.ele-scale-1:hover{
+    transform: scale(1.05);
+    transition: transform 0.7s ease-in-out;
+}
+

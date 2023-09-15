@@ -7,7 +7,7 @@
             <h2 class="text-red main-head text-capitalize mt-4 mb-3 mb-sm-4">#Bestseller of channel</h2>
             <div class="d-none d-md-block">
                 <div class="row main-group-card-hero-slider">
-                    <div class="product-slide-1">
+                    <div class="product-slide-1 ele-scale-1">
                         @if ($leftSliders)
                             <div class="hero-main-slider" style="">
                                 <img src="{{ asset('storage/images/sliders/' . $leftSliders->image) }}" class="img-fluid"
@@ -29,7 +29,7 @@
                             </div>
                         @endif
                     </div>
-                    <div class="product-slide-2">
+                    <div class="product-slide-2 ele-scale-1">
                         @if ($middleSlider)
                             <div class="hero-main-slider">
                                 <img src="{{ asset('frontend/images/sliders/new-xi.png') }}"
@@ -64,7 +64,7 @@
                                 @forelse ($rightSliders as $rigslider)
                                     <div class="col-lg-12 col-md-6 group-card-3 mb-md-0 mb-lg-4">
 
-                                        <div class="card fourth-group-card">
+                                        <div class="card fourth-group-card ele-scale-1">
                                             <img src="{{ asset('storage/images/sliders/' . $rigslider->image) }}"
                                                 class="card-img-top fourth-group-img" alt="..."
                                                 style="border-radius: 26.6782px 26.6782px 0px 0px;">
