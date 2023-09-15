@@ -83,7 +83,7 @@
                                         <button type="button" class="input-group-text increase-quantity"
                                             @click="increaseQuantity(key,item['id'])">+</button>
                                     </div>
-                                    <div class="d-none d-md-inline">
+                                    <div class="d-md-inline">
                                         ₹@{{ item['total_price'] }}
                                     </div>
                                 </div>
