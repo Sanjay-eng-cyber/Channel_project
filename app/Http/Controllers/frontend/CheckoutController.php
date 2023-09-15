@@ -170,7 +170,9 @@ class CheckoutController extends Controller
             $order = $this->createOrder($grandTotal, [
                 'order_no' => generateOrderNo(),
                 'api_order_id' => $apiOrder['id'],
-                'discount' => $discount
+                'sub_total' => $subTotal,
+                'total_amount' => $grandTotal,
+                'discount_amount' => $discount
             ], $selectedAddress);
             self::createOrderItems($order, $cartItems);
         }

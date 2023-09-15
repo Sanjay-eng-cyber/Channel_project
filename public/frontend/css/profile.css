@@ -542,7 +542,7 @@
         font-size: 1.02rem;
         font-weight: 500;
         line-height: 1.2;
-        padding-left: 17px;
+        /* padding-left: 17px; */
         padding-top: 15px;
     }
 }

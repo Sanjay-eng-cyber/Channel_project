@@ -131,9 +131,17 @@
                     @endif
                     <div class="d-flex justify-content-between align-items-center text-muted my-1">
                         <span>
-                            Total MRP:
+                            GST:
                         </span>
                         <span>
+                            ₹{{ $gst['total'] }}
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center text-muted my-1">
+                        <span class="text-black">
+                            Total MRP:
+                        </span>
+                        <span class="text-black">
                             ₹{{ $order->total_amount }}
                         </span>
                     </div>
@@ -146,7 +154,7 @@
                         </span>
                     </div> --}}
 
-                    {{-- <hr class="my-1"> --}}
+                    <hr class="my-1">
                 </div>
             </div>
         </div>
