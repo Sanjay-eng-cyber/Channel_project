@@ -7,7 +7,7 @@
         <div class="profile">
             <div class="profile-photo-section">
                 <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
-                    class="profile-photo" alt="" style="max-height: 200px;object-fit:cover;">
+                    class="profile-photo" alt="" style="width:191px;height:191px;object-fit: cover">
                 <form action="{{ route('frontend.profile.image.update') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <button class="btn edit-photo-btn">
