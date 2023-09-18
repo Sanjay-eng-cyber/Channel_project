@@ -4,13 +4,15 @@ namespace App\Lib\MSG91;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Support\Facades\Log;
 
 class MSG91
 {
-    public const URL = 'https://api.msg91.com/api/v5/';
+    const URL = 'https://api.msg91.com/api/v5/';
 
 
-    public const STATUS_CODE = [
+    const STATUS_CODE = [
         "505" => "Demo account",
         "418" => "IP not whitelisted",
         "200" => "Ok",
@@ -38,7 +40,7 @@ class MSG91
 
     public static function sendOTP($param)
     {
-        $param['otp_expiry'] = $param['otp_expiry'] ?? 10;
+        $param['otp_expiry'] = $param['otp_expiry'] ?? 5;
         return static::setup('sendotp', $param);
     }
 
@@ -55,70 +57,53 @@ class MSG91
     }
     public static function sms($param)
     {
-        $url = 'https://api.msg91.com/api/v5/flow';
-        return Http::post($url, [
-            "sender" => config('msg91.sender_id'),
-            "country" => config('msg91.country'),
-            "authkey" => config('msg91.auth_key'),
-            // 'email' => config('msg91.sender_email'),
-            'flow_id' => $param['flow_id'],
-            "mobiles" => $param['mobile'],
-            // 'days'   => $param['days'],
-        ])->json();
-    }
-
-    public static function sendBulkSms($param)
-    {
-        return Http::post("https://api.msg91.com/api/v2/sendsms", [
-            "sender" => config('msg91.sender_id'),
-            "route" => config('msg91.route'),
-            "country" => config('msg91.country'),
-            "sms" => [
-                [
-                    "message" => $param["msg"],
-                    "to" => $param["mobiles"]
-                ]
-            ],
-            "authkey" => config('msg91.auth_key')
-        ])->json();
+        $url = config('app.msg91_base_url');
+        $param['url'] = $param['url'] ?? $url;
+        return static::setup('flow', $param);
     }
 
 
     private static function setup($action, $param)
     {
-
-        $param['authkey'] = $param['authkey'] ?? config('msg91.auth_key');
-        $param['sender'] = $param['sender'] ?? config('msg91.sender_id');
-        $param['country'] = $param['country'] ?? config('msg91.country');
-        $param['route'] = $param['route'] ?? config('msg91.route');
-        $sms = ["sendotp" => "otp?", "resendotp" => "otp/resend?", "verify" => "otp/verify?", "sms" => "sendhttp.php"];
+        // dd($action, $param);
+        $param['authkey'] = $param['authkey'] ?? env('MSG91_AUTH_KEY');
+        $sms = [
+            "sendotp" => "otp?",
+            "resendotp" => "otp/resend?",
+            "verify" => "otp/verify?",
+            "sms" => "sendhttp.php",
+            "showSmsBalance" => "balance.php",
+            "flow" => 'flow'
+        ];
         if (!array_key_exists($action, $sms)) {
-            return (["success" => false, "message" => "invalid request"]);
+            return (object)(["success" => false, "message" => "invalid request"]);
         }
-        $url = ($param['url'] ?? self::URL) . $sms[$action];
+        $url = ($param['url'] ?? static::URL) . $sms[$action];
         unset($param['url']);
 
         try {
-            $client = new Client(); //GuzzleHttp\Client
-            $response = $client->post($url, [
-                'form_params' => $param
-            ]);
+            // dd($action, $param);
+            if ($action == 'verify') {
+                $response = Http::withOptions(["verify" => false])->get($url, $param);
+            } else {
+                $response = Http::withOptions(["verify" => false])->post($url, $param);
+            }
+            // Log::info('try');
+            // Log::info($response);
         } catch (\Throwable $th) {
-            return (["success" => false, "message" => $th->getMessage()]);
+            Log::info('catch');
+            Log::info($th->getMessage());
+            return (object)(["success" => false, "message" => $th->getMessage()]);
         }
         if ($response->getStatusCode() == 200) {
-
             $data = json_decode($response->getBody());
-            // return $data;
             if ($data) {
                 return static::checkResponse($data);
             } else {
-                return (["success" => true, "message" => 'success']);
+                return (object) (["success" => true, "message" => 'sucsess']);
             }
         } else {
-            return (["success" => false, "message" => $response->message]);
-
-            // return ['type' => "error", "message" => "fail to send!"];
+            return (object)(["success" => false, "message" => $response->message]);
         }
     }
 
@@ -126,29 +111,36 @@ class MSG91
     public static function checkResponse($response)
     {
 
-
         if (isset($response->type)) {
-            try {
 
-                if (gettype($response) != 'object' || gettype($response) != 'array') {
-                    return (["success" => true, "message" => ($response ?? 'success')]);
+            try {
+                if (gettype((object) $response) != 'object' && gettype($response) != 'array') {
+                    return (object)(["success" => true, "message" => ($response ?? 'success')]);
                 } elseif (strtolower($response->type) == "success") {
-                    return (["success" => true, "message" => ($response->message ?? 'success')]);
+                    return (object)(["success" => true, "message" => ($response->message ?? 'success')]);
                 } else if (strtolower($response->message) == "success") {
-                    return (["success" => true, "message" => $response->type]);
+                    return (object) (["success" => true, "message" => $response->type]);
                 }
                 if (strtolower($response->type) == "error") {
-                    return (["success" => false, "message" => ($response->message ?? 'Failed')]);
+                    return (object)(["success" => false, "message" => ($response->message ?? 'Failed')]);
                 } else if (strtolower($response->message) == "error") {
-                    return (["success" => false, "message" => $response->type]);
+                    return (object) (["success" => false, "message" => $response->type]);
                 } else {
-                    return (["success" => false, "message" => ($response->message ?? 'success')]);
+                    return (object)(["success" => false, "message" => ($response->message ?? 'success')]);
                 }
             } catch (\Throwable $th) {
-                return (["success" => false, "message" => ('Failed')]);
+                return (object)(["success" => false, "message" => ('Failed')]);
             }
         } else {
-            return (["success" => false, "message" => ('Failed')]);
+            return ["success" => false, "message" => 'Failed'];
         }
+    }
+
+    public static function showSmsBalance($param)
+    {
+        $url = 'https://api.msg91.com/api/';
+        $param['url'] = $param['url'] ?? $url;
+
+        return static::setup('showSmsBalance', $param);
     }
 }
