@@ -18,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::domain(config('app.web_domain'))->group(function () {
 
     // Route::get('/test', function () {
-    //     return 'test';
+    //     $userMail = 'sanjay@gmail.com';
+    //     $userName = 'sanjay';
+    //     $product = 'Alovera Gel';
+    //     $adminMail = 'admin@test.com';
+    //     event(new App\Events\OrderDeliveredEvent($userMail, $userName, $product, $adminMail));
     // })->name('test');
 
     Route::get('/', 'App\Http\Controllers\frontend\HomeController@index')->name('frontend.index');
