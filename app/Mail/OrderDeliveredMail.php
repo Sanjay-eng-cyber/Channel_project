@@ -16,14 +16,10 @@ class OrderDeliveredMail extends Mailable
      *
      * @return void
      */
-    public $userName;
-    public $product;
-    public $adminMail;
-    public function __construct($userName, $product, $adminMail)
+    public $order;
+    public function __construct($order)
     {
-        $this->userName = $userName;
-        $this->product = $product;
-        $this->adminMail = $adminMail;
+        $this->order = $order;
     }
 
     /**
@@ -33,10 +29,16 @@ class OrderDeliveredMail extends Mailable
      */
     public function build()
     {
+        // dd($this->order);
+        // dd($this->order->items()->with('product')->get());
+        $productsNameArray = $this->order->items()->with('product')->get()->pluck('product.name')->toArray();
+        // dd($productsNameArray);
+        // dd(implode(", ", $productsNameArray));
+        $order = $this->order;
         return $this->subject('Your Product Has Been Delivered.')->markdown('mail.order-delivered-mail')->with([
-            'userName' => $this->userName,
-            'product' => $this->product,
-            'adminMail' => $this->adminMail,
+            'userName' => $order->user->name,
+            'productName' => implode(", ", $productsNameArray),
+            'adminMail' => config('app.enquiry_email'),
         ]);
     }
 }

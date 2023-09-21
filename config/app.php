@@ -19,6 +19,8 @@ return [
     'cms_domain' => env('CMS_DOMAIN'),
     'mail_to_address' => env('MAIL_TO_ADDRESS'),
 
+    'enquiry_email' => env('ENQUIRY_EMAIL'),
+
     'cgst' => env('CGST', 9),
     'sgst' => env('SGST', 9),
 
