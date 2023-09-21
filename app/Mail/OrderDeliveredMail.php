@@ -36,7 +36,7 @@ class OrderDeliveredMail extends Mailable
         // dd(implode(", ", $productsNameArray));
         $order = $this->order;
         return $this->subject('Your Product Has Been Delivered.')->markdown('mail.order-delivered-mail')->with([
-            'userName' => $order->user->name,
+            'userName' => $order->user->first_name,
             'productName' => implode(", ", $productsNameArray),
             'adminMail' => config('app.enquiry_email'),
         ]);

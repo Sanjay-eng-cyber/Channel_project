@@ -28,13 +28,9 @@ class OrderPlacedListener
      */
     public function handle(OrderPlacedEvent $event)
     {
-        $userMail = 'sanjay@gmail.com';
-        $userName = 'sanjay';
-        $product = 'Alovera Gel';
-        $adminMail = 'admin@test.com';
-                // dd($product);
-        if ($userMail) {
-            Mail::to($userMail)->send(new OrderPlacedMail($userName,$product,$adminMail));
+        $order = $event->order;
+        if ($order->user->email) {
+            Mail::to($order->user->email)->send(new OrderPlacedMail($order));
         }
     }
 }
