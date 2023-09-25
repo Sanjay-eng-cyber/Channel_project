@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use App\Lib\MSG91\MSG91;
 use App\Mail\OrderProccessingMail;
 use Illuminate\Support\Facades\Mail;
 use App\Events\OrderProccessingEvent;
@@ -31,6 +32,16 @@ class OrderProccessingListener implements ShouldQueue
         $order = $event->order;
         if ($order->user->email) {
             Mail::to($order->user->email)->send(new OrderProccessingMail($order));
+        }
+
+        if ($order->user->phone) {
+            $res = MSG91::sms([
+                "flow_id" => config('app.msg91_profile_rejected_flow_id'),
+                "authkey" => config('app.msg91_auth_key'),
+                "mobiles" => '91' . $order->user->phone,
+                "NAME" => str_limit($order->user->full_name, 27),
+            ]);
+            // dd($res);
         }
     }
 }
