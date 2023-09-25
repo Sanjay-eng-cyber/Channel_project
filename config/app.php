@@ -24,6 +24,14 @@ return [
     'cgst' => env('CGST', 9),
     'sgst' => env('SGST', 9),
 
+    'msg91_base_url' => env('MSG91_BASE_URL'),
+    'msg91_auth_key' => env('MSG91_AUTH_KEY'),
+
+    'msg91_order_delivered_flow_id' => env('MSG91_ORDER_DELIVERED_FLOW_ID'),
+    'msg91_order_placed_flow_id' => env('MSG91_ORDER_PLACED_FLOW_ID'),
+    'msg91_order_proccessing_flow_id' => env('MSG91_ORDER_PROCCESSING_FLOW_ID'),
+    'msg91_order_cancelled_flow_id' => env('MSG91_ORDER_CANCELLED_FLOW_ID'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
