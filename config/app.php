@@ -32,6 +32,9 @@ return [
     'msg91_order_proccessing_flow_id' => env('MSG91_ORDER_PROCCESSING_FLOW_ID'),
     'msg91_order_cancelled_flow_id' => env('MSG91_ORDER_CANCELLED_FLOW_ID'),
 
+    'google_captcha_site_key' => env('GOOGLE_CAPTCHA_SITE_KEY'),
+    'google_captcha_secret_key' => env('GOOGLE_CAPTCHA_SECRET_KEY'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
