@@ -95,7 +95,8 @@
                                         <input class="form-control" name="thumbnail_image" type="file" id="image"
                                             required>
                                         @if ($errors->has('thumbnail_image'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('thumbnail_image') }}
+                                            <div class="text-danger" role="alert">
+                                                {{ $errors->first('thumbnail_image') }}
                                             </div>
                                         @endif
                                     </div>
@@ -231,6 +232,14 @@
                                             </div>
                                         @endif
                                     </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="descriptions">Tags</label>
+                                        <select class="form-control tagging" name="tags[]" multiple="multiple">
+                                            {{-- <option>orange</option>
+                                            <option>white</option>
+                                            <option>purple</option> --}}
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <input type="submit" class="btn btn-primary">
@@ -240,8 +249,11 @@
             </div>
         </div>
     </div>
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/select2/select2.min.css') }}">
 @endsection
 @section('js')
+    <script src="{{ asset('plugins/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('plugins/select2/custom-select2.js') }}"></script>
     <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
     </script>
     <script>
@@ -298,5 +310,8 @@
                 })
             }
         }
+        $(".tagging").select2({
+            tags: true
+        });
     </script>
 @endsection
