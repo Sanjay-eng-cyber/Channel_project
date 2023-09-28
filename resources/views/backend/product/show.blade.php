@@ -156,6 +156,20 @@
                                             </div>
                                         </div>
 
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Tags</label><br>
+                                                <p class="label-title">
+                                                    @forelse ($product->tags as $tag)
+                                                        {{ $tag->name . ', ' }}
+                                                    @empty
+                                                        ---
+                                                    @endforelse
+                                                </p>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
