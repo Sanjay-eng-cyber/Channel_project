@@ -271,6 +271,35 @@
                                             </div>
                                         @endif
                                     </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="tags">Tags</label>
+                                        <select class="form-control tagging" name="tags[]" minlength="3"
+                                            maxlength="30" multiple="multiple">
+                                            <option value="">Select Any</option>
+                                            @if (old('tags'))
+                                                @foreach ($tags as $tag)
+                                                    <option value="{{ $tag->name }}"
+                                                        @if (in_array($tag->name, old('tags'))) {{ 'selected' }} @endif>
+                                                        {{ $tag->name }}
+                                                    </option>
+                                                @endforeach
+                                            @else
+                                                @foreach ($tags as $tag)
+                                                    <option value="{{ $tag->name }}"
+                                                        @if (in_array($tag->name, $tagsArray)) {{ 'selected' }} @endif>
+                                                        {{ $tag->name }}</option>
+                                                @endforeach
+                                            @endif
+                                        </select>
+                                        @if ($errors->has('tags'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('tags') }}
+                                            </div>
+                                        @endif
+                                        @if ($errors->has('tags.*'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('tags.*') }}
+                                            </div>
+                                        @endif
+                                    </div>
                                 </div>
                                 <input type="submit" class="btn btn-primary"
                                     onclick="return confirm('Are you sure, you want to update?')">
@@ -282,8 +311,11 @@
         </div>
     </div>
     </div>
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/select2/select2.min.css') }}">
 @endsection
 @section('js')
+    <script src="{{ asset('plugins/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('plugins/select2/custom-select2.js') }}"></script>
     <script src="{{ asset('plugins/lightgallery/js/lightgallery.min.js') }}"></script>
     <script src="{{ asset('plugins/lightgallery/js/lg-zoom.js') }}"></script>>
     <script>
@@ -299,6 +331,10 @@
                 thumbnail: true,
             });
             getValues();
+        });
+
+        $(".tagging").select2({
+            tags: true
         });
     </script>
 @endsection

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\cms;
 
+use App\Models\Tag;
 use App\Models\Brand;
 use App\Models\Media;
 use App\Models\Product;
 use App\Models\CartItem;
 use App\Models\Category;
 use App\Models\Showcase;
+use App\Models\Wishlist;
 use App\Models\Attribute;
 use App\Models\OrderItem;
 use App\Models\SubCategory;
@@ -18,7 +20,6 @@ use Illuminate\Validation\Rule;
 use App\Models\ProductAttribute;
 use App\Http\Controllers\Controller;
 use App\Models\ProductAttributeValue;
-use App\Models\Wishlist;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
@@ -80,8 +81,9 @@ class ProductController extends Controller
         $categorys = Category::all();
         $showcases = Showcase::all();
         $attributes = Attribute::all();
+        $tags = Tag::all();
         // dd($showcases);
-        return view('backend.product.create', compact('categorys', 'brands', 'showcases', 'attributes'));
+        return view('backend.product.create', compact('categorys', 'brands', 'showcases', 'attributes', 'tags'));
     }
 
 
@@ -118,6 +120,8 @@ class ProductController extends Controller
             'showcases' => ['nullable'],
             'showcases.*' => ['required', Rule::in($showcases)],
             // 'connection_no' => 'nullable|min:3|max:20',
+            'tags' => 'nullable|max:20',
+            'tags.*' => 'string|min:3|max:30'
         ]);
 
         $fileWithExtension = $request->file('thumbnail_image');
@@ -166,6 +170,7 @@ class ProductController extends Controller
                 $showcase_product->product_id = $product->id;
                 $showcase_product->save();
             }
+            storeTags($request->tags, $product->id);
             $product->storeProductAttributes($request->attributeKeys, $request->values, $product->id);
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Stored Successfully']);
         }
@@ -180,10 +185,13 @@ class ProductController extends Controller
         $categorys = Category::all();
         $showcases = Showcase::all();
         $attributes = Attribute::all();
+        $tags = Tag::all();
+        $tagsArray = $product->tags()->pluck('tags.name')->toArray();
+        //dd($tagsArray);
         $product_attribute = $product->ProductAttribute()->pluck('attribute_value_id')->toArray();
         $product_showcases = $product->showcaseProducts()->exists() ? $product->showcaseProducts()->pluck('showcase_id')->toArray() : [];
         //  dd($product_attribute);
-        return view('backend.product.edit', compact('product', 'categorys', 'brands', 'showcases', 'product_showcases', 'attributes', 'product_attribute'));
+        return view('backend.product.edit', compact('product', 'categorys', 'brands', 'showcases', 'product_showcases', 'attributes', 'product_attribute', 'tags', 'tagsArray'));
     }
 
     public function update(Request $request, $id)
@@ -218,6 +226,8 @@ class ProductController extends Controller
             'showcases' => ['nullable'],
             'showcases.*' => ['required', Rule::in($showcases)],
             // 'connection_no' => 'nullable|min:3|max:20',
+            'tags' => 'nullable|max:20',
+            'tags.*' => 'string|min:3|max:30'
 
         ]);
 
@@ -283,6 +293,8 @@ class ProductController extends Controller
             }
         }
 
+        // add function for tags
+        updateTags($request->tags, $product->id);
         // Product Attribute functionality
         $product->updateProductAttributes($request->attributeKeys, $request->values, $product->id);
 

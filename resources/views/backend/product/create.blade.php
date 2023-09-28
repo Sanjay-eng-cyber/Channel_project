@@ -233,12 +233,31 @@
                                         @endif
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="descriptions">Tags</label>
-                                        <select class="form-control tagging" name="tags[]" multiple="multiple">
-                                            {{-- <option>orange</option>
-                                            <option>white</option>
-                                            <option>purple</option> --}}
+                                        <label for="tags">Tags</label>
+                                        <select class="form-control tagging" name="tags[]" minlength="3"
+                                            maxlength="30" multiple="multiple">
+                                            <option value="">Select Any</option>
+                                            @if (old('tags'))
+                                                @foreach ($tags as $tag)
+                                                    <option value="{{ $tag->name }}"
+                                                        @if (in_array($tag->name, old('tags'))) {{ 'selected' }} @endif>
+                                                        {{ $tag->name }}
+                                                    </option>
+                                                @endforeach
+                                            @else
+                                                @foreach ($tags as $tag)
+                                                    <option value="{{ $tag->name }}">{{ $tag->name }}</option>
+                                                @endforeach
+                                            @endif
                                         </select>
+                                        @if ($errors->has('tags'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('tags') }}
+                                            </div>
+                                        @endif
+                                        @if ($errors->has('tags.*'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('tags.*') }}
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

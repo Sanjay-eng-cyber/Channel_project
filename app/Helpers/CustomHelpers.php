@@ -1,8 +1,11 @@
 <?php
 
+use App\Models\Tag;
+use App\Models\Product;
 use Seshac\Shiprocket\Shiprocket;
 use Illuminate\Support\Facades\Log;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -212,5 +215,50 @@ if (!function_exists('generateOrderNo')) {
         } while (App\Models\Order::where('order_no', $order_no)->exists());
 
         return $order_no;
+    }
+
+    if (!function_exists('storeTags')) {
+        function storeTags($tags, $id)
+        {
+            // dd($tags);
+            $product = Product::find($id);
+            $product->tags = $tags;
+            // dd($manual->tags);
+            foreach ($product->tags as $tag) {
+                if (!Tag::where('name', $tag)->exists()) {
+                    // dd($tag);
+                    $newTag = $product->tags()->create(['name' => $tag]);
+                    // $manual->tags()->attach($newTag->id);
+                } else {
+
+                    $product->tags()->attach(Tag::where('name', $tag)->first()->id);
+                }
+
+
+                // $tags = $manual->tags;
+
+                // Taggable::create()
+            }
+        }
+    }
+
+    if (!function_exists('updateTags')) {
+        function updateTags($tags, $id)
+        {
+            $product = Product::find($id);
+            $product->tags()->detach();
+            $product->tags = $tags;
+            foreach ($product->tags as $tag) {
+                if (!Tag::where('name', $tag)->exists()) {
+                    $newTag = $product->tags()->create(['name' => $tag]);
+                    // $manual->tags()->attach($newTag->id);
+                } else {
+
+                    $product->tags()->attach(Tag::where('name', $tag)->first()->id);
+                }
+                // $sync_tag = $manual->tags()->updateOrCreate(['name' => $tag], ['name' => $tag]);
+                // $manual->tags()->sync(['id' => $sync_tag->id]);
+            }
+        }
     }
 }
