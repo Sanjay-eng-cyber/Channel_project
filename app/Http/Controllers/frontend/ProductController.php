@@ -73,7 +73,10 @@ class ProductController extends Controller
         $productInCart = $cart ? $cart->items()->pluck('product_id')->toArray() : [];
         $wishlist = $user ? $user->wishlist()->pluck('product_id')->toArray() : [];
 
-        return view('frontend.product.show', compact('user', 'product', 'product_attributes', 'category', 'subCategory', 'reviews', 'relatedProducts', 'reviewRatingAvg', 'ratingsArr', 'productInCart', 'wishlist'));
+        $tags = $product->tags()->pluck('name')->toArray();
+        // dd(implode(', ', $tags));
+
+        return view('frontend.product.show', compact('user', 'product', 'product_attributes', 'category', 'subCategory', 'reviews', 'relatedProducts', 'reviewRatingAvg', 'ratingsArr', 'productInCart', 'wishlist', 'tags'));
     }
 
     public function checkout(Request $request, $product_slug)

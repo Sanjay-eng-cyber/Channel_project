@@ -3,6 +3,15 @@
 @section('cdn')
     <link rel="stylesheet" href="{{ url('frontend/css/profile.css') }}">
 @endsection
+@push('meta')
+    <meta name="keywords" content="{{ count($tags) ? implode(', ', $tags) : $product->name }}">
+    <meta name="description" content="{{ $product->name }}">
+    <meta property="og:title" content="{{ $product->name }}">
+    <meta property="og:description" content="{{ $product->name }}">
+    <meta property="og:image" content="{{ asset('storage/images/products/thumbnails/' . $product->thumbnail_image) }}">
+    <meta property="og:url" content="{{ request()->url() }}">
+    <meta name="twitter:card" content="{{ asset('storage/images/products/thumbnails/' . $product->thumbnail_image) }}">
+@endpush
 @section('content')
 
     <main id="mt-main">

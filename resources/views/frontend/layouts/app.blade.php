@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') Channel</title>
+    @stack('meta')
     @include('frontend.layouts.header')
     @yield('cdn')
     <script src="{{ asset('frontend/js/axios.min.js') }}"></script>
@@ -58,7 +59,7 @@
 
     <script>
         AOS.init();
-      </script>
+    </script>
     @yield('js')
 
 </body>
