@@ -2,13 +2,14 @@
 
 namespace App\Listeners;
 
+use App\Lib\MSG91\MSG91;
 use App\Mail\OrderCancelledMail;
 use App\Events\OrderCancelledEvent;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderCancelledListener
+class OrderCancelledListener implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -28,13 +29,19 @@ class OrderCancelledListener
      */
     public function handle(OrderCancelledEvent $event)
     {
-        $userMail = 'sanjay@gmail.com';
-        $userName = 'sanjay';
-        $product = 'Alovera Gel';
-        $adminMail = 'admin@test.com';
-                // dd($product);
-        if ($userMail) {
-            Mail::to($userMail)->send(new OrderCancelledMail($userName,$product,$adminMail));
+        $order = $event->order;
+        if ($order->user->email) {
+            Mail::to($order->user->email)->send(new OrderCancelledMail($order));
+        }
+
+        if ($order->user->phone) {
+            $res = MSG91::sms([
+                "flow_id" => config('app.MSG91_ORDER_CANCELLED_FLOW_ID'),
+                "authkey" => config('app.msg91_auth_key'),
+                "mobiles" => '91' . $order->user->phone,
+                "NAME" => str_limit($order->user->full_name, 27),
+            ]);
+            // dd($res);
         }
     }
 }

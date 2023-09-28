@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::domain(config('app.web_domain'))->group(function () {
 
-    Route::get('/test', function () {
-        $order = App\Models\Order::with('user', 'items')->first();
-        // dd($order);
-        event(new App\Events\OrderDeliveredEvent($order));
-    })->name('test');
+    // Route::get('/test', function () {
+    //     $order = App\Models\Order::with('user', 'items')->first();
+    //     //dd($order);
+    //     event(new App\Events\OrderPlacedEvent($order));
+    // })->name('test');
 
     Route::get('/', 'App\Http\Controllers\frontend\HomeController@index')->name('frontend.index');
 

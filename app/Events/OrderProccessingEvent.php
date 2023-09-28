@@ -19,16 +19,10 @@ class OrderProccessingEvent
      *
      * @return void
      */
-    public $userName;
-    public $userMail;
-    public $product;
-    public $adminMail;
-    public function __construct($userName, $product,$adminMail,$userMail)
+    public $order;
+    public function __construct($order)
     {
-        $this->userName = $userName;
-        $this->product = $product;
-        $this->adminMail = $adminMail;
-        $this->userMail = $userMail;
+        $this->order = $order;
     }
 
     /**

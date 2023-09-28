@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class OrderPlacedMail extends Mailable
+class OrderPlacedMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
@@ -16,14 +16,10 @@ class OrderPlacedMail extends Mailable
      *
      * @return void
      */
-    public $userName;
-    public $product;
-    public $adminMail;
-    public function __construct($userName, $product, $adminMail)
+    public $order;
+    public function __construct($order)
     {
-        $this->userName = $userName;
-        $this->product = $product;
-        $this->adminMail = $adminMail;
+        $this->order = $order;
     }
 
     /**
@@ -33,10 +29,14 @@ class OrderPlacedMail extends Mailable
      */
     public function build()
     {
+        $productsNameArray = $this->order->items()->with('product')->get()->pluck('product.name')->toArray();
+        // dd($productsNameArray);
+        // dd(implode(", ", $productsNameArray));
+        $order = $this->order;
         return $this->subject('Your Product Has Been Placed.')->markdown('mail.order-placed-mail')->with([
-            'userName' => $this->userName,
-            'product' => $this->product,
-            'adminMail' => $this->adminMail,
+            'userName' => $order->user->first_name,
+            'productName' => implode(", ", $productsNameArray),
+            'adminMail' => config('app.enquiry_email'),
         ]);
     }
 }
