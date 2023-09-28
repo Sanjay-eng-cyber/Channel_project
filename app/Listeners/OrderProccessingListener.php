@@ -35,12 +35,12 @@ class OrderProccessingListener implements ShouldQueue
         }
 
         if ($order->user->phone) {
-            $res = MSG91::sms([
-                "flow_id" => config('app.MSG91_ORDER_PROCCESSING_FLOW_ID'),
-                "authkey" => config('app.msg91_auth_key'),
-                "mobiles" => '91' . $order->user->phone,
-                "NAME" => str_limit($order->user->full_name, 27),
-            ]);
+            // $res = MSG91::sms([
+            //     "flow_id" => config('app.MSG91_ORDER_PROCCESSING_FLOW_ID'),
+            //     "authkey" => config('app.msg91_auth_key'),
+            //     "mobiles" => '91' . $order->user->phone,
+            //     "NAME" => str_limit($order->user->full_name, 27),
+            // ]);
             // dd($res);
         }
     }
