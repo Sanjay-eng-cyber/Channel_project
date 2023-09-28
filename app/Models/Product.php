@@ -68,6 +68,11 @@ class Product extends Model
         return $this->belongsToMany(AttributeValue::class, 'product_attributes');
     }
 
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
     public function storeProductAttributes($attributes, $values, $product)
     {
         foreach ($attributes as $key => $item) {
