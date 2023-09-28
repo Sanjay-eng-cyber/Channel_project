@@ -170,7 +170,7 @@ class ProductController extends Controller
                 $showcase_product->product_id = $product->id;
                 $showcase_product->save();
             }
-            storeTags($request->tags, $product->id);
+            $this->storeTags($request->tags, $product->id);
             $product->storeProductAttributes($request->attributeKeys, $request->values, $product->id);
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Stored Successfully']);
         }
@@ -294,7 +294,7 @@ class ProductController extends Controller
         }
 
         // add function for tags
-        updateTags($request->tags, $product->id);
+        $this->updateTags($request->tags, $product->id);
         // Product Attribute functionality
         $product->updateProductAttributes($request->attributeKeys, $request->values, $product->id);
 
@@ -327,6 +327,7 @@ class ProductController extends Controller
                 $media->delete();
             }
         }
+        $product->tags()->detach();
         optional(ProductAttribute::where('product_id', $id)->delete());
         optional(ShowcaseProduct::where('product_id', $id)->delete());
         optional(CartItem::where('product_id', $id)->delete());
@@ -336,5 +337,36 @@ class ProductController extends Controller
             return redirect()->route('backend.product.index')->with(['alert-type' => 'success', 'message' => 'Product Deleted Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
+    }
+
+    protected function storeTags($tags, $id)
+    {
+        // dd($tags);
+        $product = Product::find($id);
+        if ($tags) {
+            foreach ($tags as $tag) {
+                if (!Tag::where('name', $tag)->exists()) {
+                    $newTag = $product->tags()->create(['name' => $tag]);
+                } else {
+
+                    $product->tags()->attach(Tag::where('name', $tag)->first()->id);
+                }
+            }
+        }
+    }
+
+    protected function updateTags($tags, $id)
+    {
+        $product = Product::find($id);
+        $product->tags()->detach();
+        if ($tags) {
+            foreach ($tags as $tag) {
+                if (!Tag::where('name', $tag)->exists()) {
+                    $newTag = $product->tags()->create(['name' => $tag]);
+                } else {
+                    $product->tags()->attach(Tag::where('name', $tag)->first()->id);
+                }
+            }
+        }
     }
 }

@@ -236,7 +236,6 @@
                                         <label for="tags">Tags</label>
                                         <select class="form-control tagging" name="tags[]" minlength="3"
                                             maxlength="30" multiple="multiple">
-                                            <option value="">Select Any</option>
                                             @if (old('tags'))
                                                 @foreach ($tags as $tag)
                                                     <option value="{{ $tag->name }}"
@@ -330,7 +329,8 @@
             }
         }
         $(".tagging").select2({
-            tags: true
+            tags: true,
+            placeholder: "Select / Enter Tags",
         });
     </script>
 @endsection
