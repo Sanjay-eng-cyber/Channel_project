@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -27,7 +28,19 @@ class SearchController extends Controller
                 $query->where('name', 'like', '%' . $search . '%');
             })
             ->paginate(12);
-        return view('frontend.search.index', compact('search', 'products'));
+
+        $user = auth()->user();
+        $wishlist = $user ? $user->wishlist()->pluck('product_id')->toArray() : [];
+        //dd($products);
+        if ($user) {
+            $cart = $user->cart;
+        } else {
+            $cart_session_id = session()->get('cart_session_id');
+            $cart = $cart_session_id ? Cart::where('session_id', $cart_session_id)->first() : null;
+        }
+        $productInCart = $cart ? $cart->items()->pluck('product_id')->toArray() : [];
+
+        return view('frontend.search.index', compact('search', 'products', 'wishlist', 'productInCart'));
     }
 
     protected function filterResults($request, $products)

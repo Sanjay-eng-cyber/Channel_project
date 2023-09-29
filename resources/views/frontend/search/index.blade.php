@@ -91,7 +91,7 @@
                                     @forelse ($products as $pro)
                                         <div class=" product-show-grid-card ">
                                             <div class="product-card-img">
-                                                @if ($pro->isInWishlist())
+                                                @if (in_array($pro->id, $wishlist))
                                                     <button class="btn wishlist add-to-wish active"
                                                         data-p-id="{{ $pro->id }}">
                                                         <span class="has-tool-tip">
@@ -131,7 +131,7 @@
                                                         class="btn btn-orange">
                                                         Shop now
                                                     </a>
-                                                    @if ($pro->isInCart())
+                                                    @if (in_array($pro->id, $productInCart))
                                                         <a href="javascript:void(0)"
                                                             class="btn btn-pink add-to-cart btn-outline-pink"
                                                             data-p-id="{{ $pro->id }}" data-p-quantity="1">
