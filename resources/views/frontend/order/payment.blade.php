@@ -181,8 +181,8 @@
             "order_id": "{{ $order['api_order_id'] }}",
             "callback_url": "{{ route('razorpay.callback') }}",
             "prefill": {
-                "name": "Tiru",
-                "email": "tiru@gmail.com",
+                "name": "User",
+                "email": "user@gmail.com",
                 "contact": "1234567890"
             },
             "notes": {

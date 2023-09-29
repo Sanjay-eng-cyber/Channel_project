@@ -25,8 +25,8 @@
 
                                 <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-4 mt-3">
                                     <i class="fas fa-envelope text-white"></i>
-                                    <a href="mailto:channeltheshop@yahoo.co.in "
-                                        class="text-white contact-us-link">channeltheshop@yahoo.co.in </a>
+                                    <a href="mailto:support@channelonline.in "
+                                        class="text-white contact-us-link">support@channelonline.in </a>
                                 </li>
 
 

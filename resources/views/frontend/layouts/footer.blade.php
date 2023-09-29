@@ -57,8 +57,8 @@
                                 <i class="fas fa-envelope  text-red"></i>
                             </li>
                             <li>
-                                <a href="mailto:channeltheshop@yahoo.co.in "
-                                    class="footer-info">channeltheshop@yahoo.co.in </a>
+                                <a href="mailto:support@channelonline.in "
+                                    class="footer-info">support@channelonline.in </a>
                             </li>
 
                         </ul> --}}
@@ -75,7 +75,7 @@
 
                             <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
                                 <i class="fas fa-envelope  text-red"></i>
-                                <a href="mailto:channeltheshop@yahoo.co.in ">channeltheshop@yahoo.co.in </a>
+                                <a href="mailto:support@channelonline.in ">support@channelonline.in </a>
                             </li>
 
 
@@ -254,8 +254,8 @@
                                 <i class="fas fa-envelope  text-red"></i>
                             </li>
                             <li>
-                                <a href="mailto:channeltheshop@yahoo.co.in "
-                                    class="footer-info">channeltheshop@yahoo.co.in </a>
+                                <a href="mailto:support@channelonline.in "
+                                    class="footer-info">support@channelonline.in </a>
                             </li>
 
                         </ul>
@@ -272,7 +272,7 @@
 
                             <li class="gap-2 d-flex align-items-center footer-links-hover mt-sm-0 mt-3">
                                 <i class="fas fa-envelope  text-red"></i>
-                                <a href="mailto:channeltheshop@yahoo.co.in ">channeltheshop@yahoo.co.in </a>
+                                <a href="mailto:support@channelonline.in ">support@channelonline.in </a>
                             </li>
 
 
