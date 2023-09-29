@@ -5,9 +5,9 @@
 @endsection
 @push('meta')
     <meta name="keywords" content="{{ count($tags) ? implode(', ', $tags) : $product->name }}">
-    <meta name="description" content="{{ $product->name }}">
+    <meta name="description" content="{{ $product->short_descriptions ?? $product->name }}">
     <meta property="og:title" content="{{ $product->name }}">
-    <meta property="og:description" content="{{ $product->name }}">
+    <meta property="og:description" content="{{ $product->short_descriptions ?? $product->name }}">
     <meta property="og:image" content="{{ asset('storage/images/products/thumbnails/' . $product->thumbnail_image) }}">
     <meta property="og:url" content="{{ request()->url() }}">
     <meta name="twitter:card" content="{{ asset('storage/images/products/thumbnails/' . $product->thumbnail_image) }}">
@@ -68,9 +68,11 @@
                                 {{ $product->name }}
                             </h1>
                             <hr>
-                            {{-- <p class="text-muted">
-                                {!! $product->short_descriptions !!}
-                            </p> --}}
+                            @if ($product->short_descriptions)
+                                <p class="text-muted">
+                                    {{ $product->short_descriptions }}
+                                </p>
+                            @endif
                             <div class="d-flex flex-row  justify-content-between align-items-start">
                                 <div>
                                     <h3 class="h5 font-body rem-1">

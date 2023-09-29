@@ -21,7 +21,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::latest()->paginate(10);
-        dd($products);
+        // dd($products);
     }
 
     /**
@@ -82,22 +82,9 @@ class ProductController extends Controller
     public function checkout(Request $request, $product_slug)
     {
         $product = Product::whereSlug($product_slug)->first();
+        // dd($product);
         if ($product) {
-            $user = auth()->user();
-            if ($user) {
-                $cart = Cart::updateOrCreate([
-                    'user_id' => $user->id
-                ]);
-            } else {
-                $cart_session_id = session()->get('cart_session_id');
-                if (!$cart_session_id) {
-                    $cart_session_id = now()->format('dmyhis') . rand(100, 999);
-                    session()->put('cart_session_id', now()->format('dmyhis') . rand(100, 999));
-                }
-                $cart = Cart::updateOrCreate([
-                    'session_id' => $cart_session_id
-                ]);
-            }
+            $cart = getUserCart();
             $productInCart = CartItem::where('cart_id', $cart->id)->where('product_id', $product->id)->first();
             if ($productInCart) {
                 $productInCart->update(['quantity' => $request->quantity]);

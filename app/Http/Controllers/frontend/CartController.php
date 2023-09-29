@@ -37,22 +37,7 @@ class CartController extends Controller
     {
         $product = Product::findOrFail($request->product_id);
         // dd($product);
-        $user = auth()->user();
-        if ($user) {
-            $cart = Cart::updateOrCreate([
-                'user_id' => $user->id
-            ]);
-            // dd($cart);
-        } else {
-            $cart_session_id = session()->get('cart_session_id');
-            if (!$cart_session_id) {
-                $cart_session_id = now()->format('dmyhis') . rand(100, 999);
-                session()->put('cart_session_id', $cart_session_id);
-            }
-            $cart = Cart::updateOrCreate([
-                'session_id' => $cart_session_id
-            ]);
-        }
+        $cart = getUserCart();
         // Log::info("Cart Id: " . $cart->id);
 
         $productInCart = CartItem::where('cart_id', $cart->id)->where('product_id', $product->id)->first();
@@ -117,22 +102,7 @@ class CartController extends Controller
     {
         // dd($request->product_id);
         $product = Product::findOrFail($request->product_id);
-        $user = auth()->user();
-        if ($user) {
-            $cart = Cart::updateOrCreate([
-                'user_id' => $user->id
-            ]);
-            // dd($cart);
-        } else {
-            $cart_session_id = session()->get('cart_session_id');
-            if (!$cart_session_id) {
-                $cart_session_id = now()->format('dmyhis') . rand(100, 999);
-                session()->put('cart_session_id', now()->format('dmyhis') . rand(100, 999));
-            }
-            $cart = Cart::updateOrCreate([
-                'session_id' => $cart_session_id
-            ]);
-        }
+        $cart = getUserCart();
 
         $productInCart = CartItem::where('cart_id', $cart->id)->where('product_id', $product->id)->with('product')->first();
         if ($productInCart) {
@@ -153,22 +123,7 @@ class CartController extends Controller
     {
         // dd($request->product_id);
         $product = Product::findOrFail($request->product_id);
-        $user = auth()->user();
-        if ($user) {
-            $cart = Cart::updateOrCreate([
-                'user_id' => $user->id
-            ]);
-            // dd($cart);
-        } else {
-            $cart_session_id = session()->get('cart_session_id');
-            if (!$cart_session_id) {
-                $cart_session_id = now()->format('dmyhis') . rand(100, 999);
-                session()->put('cart_session_id', now()->format('dmyhis') . rand(100, 999));
-            }
-            $cart = Cart::updateOrCreate([
-                'session_id' => $cart_session_id
-            ]);
-        }
+        $cart = getUserCart();
 
         $productInCart = CartItem::where('cart_id', $cart->id)->where('product_id', $product->id)->first();
         if ($productInCart->quantity == 1) {

@@ -12,6 +12,7 @@ class SearchController extends Controller
     public function index(Request $request)
     {
         $search = $request->q;
+        // dd($search);
         $products = Product::orWhere('name', 'like', '%' . $search . '%')
             ->orWhereHas('category', function ($query) use ($search) {
                 $query->where('name', 'like', '%' . $search . '%');
@@ -20,6 +21,9 @@ class SearchController extends Controller
                 $query->where('name', 'like', '%' . $search . '%');
             })
             ->orWhereHas('brand', function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%');
+            })
+            ->orWhereHas('tags', function ($query) use ($search) {
                 $query->where('name', 'like', '%' . $search . '%');
             })
             ->paginate(12);

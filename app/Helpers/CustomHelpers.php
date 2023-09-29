@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Tag;
+use App\Models\Cart;
 use App\Models\Product;
 use Seshac\Shiprocket\Shiprocket;
 use Illuminate\Support\Facades\Log;
@@ -215,5 +216,27 @@ if (!function_exists('generateOrderNo')) {
         } while (App\Models\Order::where('order_no', $order_no)->exists());
 
         return $order_no;
+    }
+}
+
+if (!function_exists('getUserCart')) {
+    function getUserCart()
+    {
+        $user = auth()->user();
+        if ($user) {
+            $cart = Cart::updateOrCreate([
+                'user_id' => $user->id
+            ]);
+        } else {
+            $cart_session_id = session()->get('cart_session_id');
+            if (!$cart_session_id) {
+                $cart_session_id = now()->format('dmyhis') . rand(100, 999);
+                session()->put('cart_session_id', $cart_session_id);
+            }
+            $cart = Cart::updateOrCreate([
+                'session_id' => $cart_session_id
+            ]);
+        }
+        return $cart;
     }
 }
