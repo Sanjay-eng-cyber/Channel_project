@@ -149,72 +149,7 @@
                                         @endif
                                     </div>
 
-                                    <div class="col-12">
-                                        <label for="descriptions">Attributes:</label><br>
-                                    </div>
-                                    @foreach ($attributes as $attribute)
-                                        <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
-                                            <input hidden name="attributeKeys[]" value="{{ $attribute->id }}">
-                                            <label for="degree2">{{ $attribute->name }}</label>
-                                            <select class="form-control" name="values[]">
-                                                <option value="">Select Any Attribute</option>
-                                                @foreach ($attribute->values()->get() as $attrbuteValue)
-                                                    <option value="{{ $attrbuteValue->id }}"
-                                                        @if (old('values') == $attrbuteValue->id) {{ 'selected' }} @endif>
-                                                        {{ $attrbuteValue->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    @endforeach
-
-                                    {{-- <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
-                                    <label for="degree2">Attribute</label>
-                                    <select class="form-control mb-4" name="attribute_id">
-                                        <option value="">Select Any Attribute</option>
-                                        @foreach (ProductAttributeValue()->where('attribute_id', '1')->get() as $attrbutes)
-                                            <option value="{{ $attrbutes->id }}"
-                                                @if (old('attribute_id') == $attrbutes->id) {{ 'selected' }} @endif>
-                                                {{ $attrbutes->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    @if ($errors->has('attribute_id'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('attribute_id') }}
-                                        </div>
-                                    @endif
-                                </div> --}}
-                                    {{-- <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12 mb-3">
-                                    <label for="degree2">Attribute Value</label>
-                                    <select class="form-control mb-4" name="product_attribute_value_id">
-                                        <option value="">Select Any Attribute Value</option>
-                                        @foreach ($productAttributeValues as $productAttributeValue)
-                                            <option value="{{ $productAttributeValue->id }}"
-                                                @if (old('attribute_id') == $productAttributeValue->id) {{ 'selected' }} @endif>
-                                                {{ $productAttributeValue->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    @if ($errors->has('product_attribute_value_id'))
-                                        <div class="text-danger" role="alert">{{ $errors->first('product_attribute_value_id') }}
-                                        </div>
-                                    @endif
-                                </div> --}}
-
-                                    <div class="col-12 mb-3">
-                                        <label for="descriptions">Showcase</label><br>
-                                        @foreach ($showcases as $showcase)
-                                            {{-- @dd($showcase) --}}
-                                            <label for="{{ $showcase->id }}">{{ $showcase->name }}</label>
-                                            <input type="checkbox" id="{{ $showcase->id }}" name="showcases[]"
-                                                value="{{ $showcase->id }}"
-                                                @if (old('showcases') && in_array($showcase->id, old('showcases'))) {{ 'checked' }} @endif>
-                                        @endforeach
-
-                                        @if ($errors->has('showcases'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('showcases') }}
-                                            </div>
-                                        @endif
-                                    </div>
-
-                                    <div class="col-12 mb-3">
+                                    <div class="col-md-6 mb-3">
                                         <label for="formGroupExampleInput" class="">Short Descriptions</label>
                                         <textarea name="short_descriptions" rows="3" cols="50" placeholder="Enter Short Description"
                                             class="form-control" minlength="3" maxlength="5000">{{ old('short_descriptions') }}</textarea>
@@ -224,14 +159,6 @@
                                         @endif
                                     </div>
 
-                                    <div class="col-12 mb-3">
-                                        <label for="descriptions">Description</label>
-                                        <textarea id="team-about" class="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') }}</textarea>
-                                        @if ($errors->has('descriptions'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
-                                            </div>
-                                        @endif
-                                    </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="tags">Tags</label>
                                         <select class="form-control tagging" name="tags[]" minlength="3"
@@ -258,6 +185,52 @@
                                             </div>
                                         @endif
                                     </div>
+
+                                    <div class="col-12 mb-3">
+                                        <label for="descriptions">Description</label>
+                                        <textarea id="team-about" class="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') }}</textarea>
+                                        @if ($errors->has('descriptions'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="descriptions">Attributes:</label><br>
+                                    </div>
+                                    @foreach ($attributes as $attribute)
+                                        <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
+                                            <input hidden name="attributeKeys[]" value="{{ $attribute->id }}">
+                                            <label for="degree2">{{ $attribute->name }}</label>
+                                            <select class="form-control" name="values[]">
+                                                <option value="">Select Any Attribute</option>
+                                                @foreach ($attribute->values()->get() as $attrbuteValue)
+                                                    <option value="{{ $attrbuteValue->id }}"
+                                                        @if (old('values') == $attrbuteValue->id) {{ 'selected' }} @endif>
+                                                        {{ $attrbuteValue->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    @endforeach
+
+                                    <div class="col-12 mb-3">
+                                        <label for="descriptions">Showcase :</label><br>
+                                        @foreach ($showcases as $showcase)
+                                            {{-- @dd($showcase) --}}
+                                            <input type="checkbox" id="{{ $showcase->id }}" name="showcases[]"
+                                                value="{{ $showcase->id }}"
+                                                @if (old('showcases') && in_array($showcase->id, old('showcases'))) {{ 'checked' }} @endif>
+                                            <label for="{{ $showcase->id }}">{{ $showcase->name }}</label>
+                                        @endforeach
+
+                                        @if ($errors->has('showcases'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('showcases') }}
+                                            </div>
+                                        @endif
+                                    </div>
+
+
+
                                 </div>
                             </div>
                             <input type="submit" class="btn btn-primary">

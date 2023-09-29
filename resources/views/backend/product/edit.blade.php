@@ -32,7 +32,7 @@
                             @csrf
                             <div class="form-group mb-3 row">
                                 <div class="form-group mb-3 row">
-                                    <div class="col-xl-9 col-12 mb-3 mb-md-0">
+                                    <div class="col-xl-9 col-12 mb-3">
                                         <label for="formGroupExampleInput" class="">Name*</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Name" minlength="3" maxlength="250" required name="name"
@@ -41,7 +41,7 @@
                                             <div class="text-danger" role="alert">{{ $errors->first('name') }}</div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="degree2">Brand</label>
                                         <select class="form-control mb-4" name="brand_id">
                                             <option value="">Select Any Brand</option>
@@ -64,7 +64,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="degree2">Category*</label>
                                         <select class="form-control mb-4" name="category_id" id="sel1"
                                             onchange="getValues()" required>
@@ -88,7 +88,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="degree2">
                                             Sub Category</label>
                                         <select class="form-control mb-4" name="sub_category_id" id="sub">
@@ -100,7 +100,7 @@
                                         @endif
                                     </div>
 
-                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="degree2">Thumbnail Image : </label>
                                         <span id="lightgallery1"><a class="text-primary font-weight-bold float-right"
                                                 href="{{ asset('storage/images/products/thumbnails/' . $product->thumbnail_image) }}">View</a>
@@ -117,7 +117,7 @@
                                         @endif
                                     </div>
 
-                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="degree2">Image : </label>
                                         <span id="lightgallery2">
                                             @forelse ($product->medias()->get() as $key => $media)
@@ -152,7 +152,7 @@
                                         @endif
                                     </div>
 
-                                    {{-- <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                                    {{-- <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="formGroupExampleInput" class="">Connection No.</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Connection No." minlength="3" maxlength="20"
@@ -163,7 +163,7 @@
                                             </div>
                                         @endif
                                     </div> --}}
-                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="formGroupExampleInput" class="">MRP*</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Mrp" minlength="3" maxlength="40" required
@@ -172,7 +172,7 @@
                                             <div class="text-danger" role="alert">{{ $errors->first('mrp') }}</div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="formGroupExampleInput" class="">Final Price*</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Final Price" minlength="3" maxlength="40" required
@@ -182,7 +182,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="formGroupExampleInput" class="">Stock*</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Stock" minlength="3" maxlength="40" required
@@ -191,7 +191,7 @@
                                             <div class="text-danger" role="alert">{{ $errors->first('stock') }}</div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="formGroupExampleInput" class="">SKU*</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter SKU" required name="sku"
@@ -201,59 +201,7 @@
                                         @endif
                                     </div>
 
-                                    <div class="col-12 pt-3">
-                                        <label for="descriptions">Attributes:</label><br>
-                                    </div>
-                                    @foreach ($attributes as $attribute)
-                                        <div class="col-xl-3 col-md-6 col-sm-12 mb-3 mb-md-0">
-                                            <input hidden name="attributeKeys[]" value="{{ $attribute->id }}">
-                                            <label for="degree2">{{ $attribute->name }}</label>
-                                            <select class="form-control" name="values[]">
-                                                <option value="">Select Any Attribute</option>
-                                                @if (old('values'))
-                                                    @foreach ($attribute->values()->get() as $attrbuteValue)
-                                                        <option value="{{ $attrbuteValue->id }}"
-                                                            @if (old('values') == $attrbuteValue->id) {{ 'selected' }} @endif>
-                                                            {{ $attrbuteValue->name }}</option>
-                                                    @endforeach
-                                                @else
-                                                    @foreach ($attribute->values()->get() as $attrbuteValue)
-                                                        <option value="{{ $attrbuteValue->id }}"
-                                                            @if (in_array($attrbuteValue->id, $product_attribute)) {{ 'selected' }} @endif>
-                                                            {{ $attrbuteValue->name }}</option>
-                                                    @endforeach
-                                                @endif
-                                            </select>
-                                        </div>
-                                    @endforeach
-
-                                    <div class="col-12 py-2 mb-3 mb-md-0">
-                                        <label for="descriptions">Showcase</label><br>
-                                        @if (old('showcases'))
-                                            @foreach ($showcases as $showcase)
-                                                {{-- @dd($showcase) --}}
-                                                <label for="{{ $showcase->id }}">{{ $showcase->name }}</label>
-                                                <input type="checkbox" id="{{ $showcase->id }}" name="showcases[]"
-                                                    value="{{ $showcase->id }}"
-                                                    @if (old('showcases') && in_array($showcase->id, old('showcases'))) {{ 'checked' }} @endif>
-                                            @endforeach
-                                        @else
-                                            @foreach ($showcases as $showcase)
-                                                {{-- @dd($showcases,$showcase->id,$product_showcases,in_array($showcase->id,$product_showcases)) --}}
-                                                <input type="checkbox" id="{{ $showcase->id }}" name="showcases[]"
-                                                    value="{{ $showcase->id }}"
-                                                    @if (in_array($showcase->id, $product_showcases)) {{ 'checked' }} @endif>
-                                                <label for="{{ $showcase->id }}">{{ $showcase->name }}</label>
-                                            @endforeach
-                                        @endif
-
-                                        @if ($errors->has('showcases'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('showcases') }}
-                                            </div>
-                                        @endif
-                                    </div>
-
-                                    <div class="col-12 py-2 mb-3 mb-md-0">
+                                    <div class="col-md-6 mb-3">
                                         <label for="formGroupExampleInput" class="">Short Descriptions</label>
                                         <textarea name="short_descriptions" placeholder="Enter Short Description" rows="3" cols="50"
                                             class="form-control" minlength="3" maxlength="5000">{{ $product->short_descriptions }}</textarea>
@@ -263,14 +211,6 @@
                                         @endif
                                     </div>
 
-                                    <div class="col-12 py-2 mb-3 mb-md-0">
-                                        <label for="descriptions">Description</label>
-                                        <textarea id="team-about" class="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') ?? $product->descriptions }}</textarea>
-                                        @if ($errors->has('body'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
-                                            </div>
-                                        @endif
-                                    </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="tags">Tags</label>
                                         <select class="form-control tagging" name="tags[]" minlength="3"
@@ -299,6 +239,70 @@
                                             </div>
                                         @endif
                                     </div>
+
+                                    <div class="col-12 py-2 mb-3">
+                                        <label for="descriptions">Description</label>
+                                        <textarea id="team-about" class="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') ?? $product->descriptions }}</textarea>
+                                        @if ($errors->has('body'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('descriptions') }}
+                                            </div>
+                                        @endif
+                                    </div>
+
+
+                                    <div class="col-12 pt-3">
+                                        <label for="descriptions">Attributes:</label><br>
+                                    </div>
+                                    @foreach ($attributes as $attribute)
+                                        <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
+                                            <input hidden name="attributeKeys[]" value="{{ $attribute->id }}">
+                                            <label for="degree2">{{ $attribute->name }}</label>
+                                            <select class="form-control" name="values[]">
+                                                <option value="">Select Any Attribute</option>
+                                                @if (old('values'))
+                                                    @foreach ($attribute->values()->get() as $attrbuteValue)
+                                                        <option value="{{ $attrbuteValue->id }}"
+                                                            @if (old('values') == $attrbuteValue->id) {{ 'selected' }} @endif>
+                                                            {{ $attrbuteValue->name }}</option>
+                                                    @endforeach
+                                                @else
+                                                    @foreach ($attribute->values()->get() as $attrbuteValue)
+                                                        <option value="{{ $attrbuteValue->id }}"
+                                                            @if (in_array($attrbuteValue->id, $product_attribute)) {{ 'selected' }} @endif>
+                                                            {{ $attrbuteValue->name }}</option>
+                                                    @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+                                    @endforeach
+
+                                    <div class="col-12 py-2 mb-3">
+                                        <label for="descriptions">Showcase</label><br>
+                                        @if (old('showcases'))
+                                            @foreach ($showcases as $showcase)
+                                                {{-- @dd($showcase) --}}
+                                                <label for="{{ $showcase->id }}">{{ $showcase->name }}</label>
+                                                <input type="checkbox" id="{{ $showcase->id }}" name="showcases[]"
+                                                    value="{{ $showcase->id }}"
+                                                    @if (old('showcases') && in_array($showcase->id, old('showcases'))) {{ 'checked' }} @endif>
+                                            @endforeach
+                                        @else
+                                            @foreach ($showcases as $showcase)
+                                                {{-- @dd($showcases,$showcase->id,$product_showcases,in_array($showcase->id,$product_showcases)) --}}
+                                                <input type="checkbox" id="{{ $showcase->id }}" name="showcases[]"
+                                                    value="{{ $showcase->id }}"
+                                                    @if (in_array($showcase->id, $product_showcases)) {{ 'checked' }} @endif>
+                                                <label for="{{ $showcase->id }}">{{ $showcase->name }}</label>
+                                            @endforeach
+                                        @endif
+
+                                        @if ($errors->has('showcases'))
+                                            <div class="text-danger" role="alert">{{ $errors->first('showcases') }}
+                                            </div>
+                                        @endif
+                                    </div>
+
+
                                 </div>
                                 <input type="submit" class="btn btn-primary"
                                     onclick="return confirm('Are you sure, you want to update?')">
