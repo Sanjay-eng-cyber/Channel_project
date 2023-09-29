@@ -443,8 +443,10 @@
                                             </span>
                                         </button>
                                     @endif
-                                    <img src="{{ asset('storage/images/products/thumbnails/' . $rP->thumbnail_image) }}"
-                                        alt="...">
+                                    <a href="{{ route('frontend.p.show', $rP->slug) }}">
+                                        <img src="{{ asset('storage/images/products/thumbnails/' . $rP->thumbnail_image) }}"
+                                            alt="...">
+                                    </a>
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title font-head fw-bold" title="{{ $rP->name }}">
