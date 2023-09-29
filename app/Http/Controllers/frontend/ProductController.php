@@ -8,8 +8,9 @@ use App\Models\Product;
 use App\Models\CartItem;
 use App\Models\Attribute;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\ProductAttribute;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -81,9 +82,18 @@ class ProductController extends Controller
 
     public function checkout(Request $request, $product_slug)
     {
+        $validator = Validator::make($request->all(), [
+            'quantity' => 'nullable|numeric|min:1|max:50'
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->with(toast('Product Quantity Error.', 'error'));
+        }
         $product = Product::whereSlug($product_slug)->first();
         // dd($product);
         if ($product) {
+            if ($product->stock < $request->quantity) {
+                return redirect()->back()->with(toast('Product Quantity Exceeds Stock.', 'error'));
+            }
             $cart = getUserCart();
             $productInCart = CartItem::where('cart_id', $cart->id)->where('product_id', $product->id)->first();
             if ($productInCart) {

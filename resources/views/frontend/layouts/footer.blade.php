@@ -254,8 +254,8 @@
                                 <i class="fas fa-envelope  text-red"></i>
                             </li>
                             <li>
-                                <a href="mailto:support@channelonline.in "
-                                    class="footer-info">support@channelonline.in </a>
+                                <a href="mailto:support@channelonline.in " class="footer-info">support@channelonline.in
+                                </a>
                             </li>
 
                         </ul>
@@ -444,14 +444,24 @@
 <script>
     $('a.add-to-cart').click(function() {
         if ($(this).attr("data-p-id")) {
+            // console.log($("#product_quantity").val());
+            var quantity = 1;
+            var quantity_attr = $(this).attr("data-p-quantity");
+            // console.log(quantity_attr);
+            if (quantity_attr == undefined && $("#product_quantity")) {
+                quantity = $("#product_quantity").val();
+            }
+            // console.log(quantity);
+            // return 0;
             // console.log(this);
             var btn = $(this);
             axios.post('{{ route('frontend.p.addToCart') }}', {
-                    product_id: $(this).attr("data-p-id")
+                    product_id: $(this).attr("data-p-id"),
+                    quantity
                 })
                 .then(function(res) {
-                    console.log(btn);
-                    console.log(res.data);
+                    // console.log(btn);
+                    // console.log(res.data);
                     if (res.data.status) {
                         if (res.data.addToCart) {
 

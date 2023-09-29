@@ -8,6 +8,7 @@ use App\Models\CartItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
@@ -36,10 +37,17 @@ class CartController extends Controller
     public function addToCart(Request $request)
     {
         $product = Product::findOrFail($request->product_id);
-        // dd($product);
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'quantity' => 'nullable|numeric|min:1|max:50'
+        ]);
         $cart = getUserCart();
-        // Log::info("Cart Id: " . $cart->id);
-
+        if ($validator->fails()) {
+            return response()->json(['status' => true, 'addToCart' => 0, 'count' => $cart->items()->count(), 'message' => 'Quantity is Incorrect']);
+        }
+        if ($product->stock < $request->quantity) {
+            return response()->json(['status' => true, 'addToCart' => 0, 'count' => $cart->items()->count(), 'message' => 'Item Quantity Exceeds Stock']);
+        }
         $productInCart = CartItem::where('cart_id', $cart->id)->where('product_id', $product->id)->first();
         if ($productInCart) {
             $productInCart->delete();
@@ -47,7 +55,8 @@ class CartController extends Controller
         } else {
             CartItem::create([
                 'cart_id' => $cart->id,
-                'product_id' => $product->id
+                'product_id' => $product->id,
+                'quantity' => $request->quantity ?? 1
             ]);
             return response()->json(['status' => true, 'addToCart' => 1, 'count' => $cart->items()->count(), 'message' => 'Product Added to Cart']);
         }

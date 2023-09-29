@@ -109,7 +109,7 @@
                                                     @if (in_array($pro->id, $productInCart))
                                                         <a href="javascript:void(0)"
                                                             class="btn btn-pink add-to-cart btn-outline-pink"
-                                                            data-p-id="{{ $pro->id }}">
+                                                            data-p-id="{{ $pro->id }}" data-p-quantity="1">
                                                             <svg class="svg-inline--fa fa-check" aria-hidden="true"
                                                                 focusable="false" data-prefix="fas" data-icon="check"
                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +121,7 @@
                                                         </a>
                                                     @else
                                                         <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
-                                                            data-p-id="{{ $pro->id }}">
+                                                            data-p-id="{{ $pro->id }}" data-p-quantity="1">
                                                             Add To Cart
                                                         </a>
                                                     @endif

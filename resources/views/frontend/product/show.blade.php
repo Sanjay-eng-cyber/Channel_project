@@ -120,7 +120,7 @@
                                             <div class="input-group flex-nowrap counter">
                                                 <button type="button" class="input-group-text decrease-quantity">-</button>
                                                 <input type="number" name="quantity" class="form-control quantity-input"
-                                                    value="1">
+                                                    value="1" id="product_quantity">
                                                 <button type="button" class="input-group-text increase-quantity">+</button>
                                             </div>
                                         </div>
@@ -466,7 +466,7 @@
                                         </a>
                                         @if (in_array($rP->id, $productInCart))
                                             <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
-                                                data-p-id="{{ $rP->id }}">
+                                                data-p-id="{{ $rP->id }}" data-p-quantity="1">
                                                 <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"
                                                     data-prefix="fas" data-icon="check" role="img"
                                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
@@ -478,7 +478,7 @@
                                             </a>
                                         @else
                                             <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
-                                                data-p-id="{{ $rP->id }}">
+                                                data-p-id="{{ $rP->id }}" data-p-quantity="1">
                                                 Add To Cart
                                             </a>
                                         @endif
