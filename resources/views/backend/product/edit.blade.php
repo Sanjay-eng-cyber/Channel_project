@@ -255,8 +255,8 @@
 
                                     <div class="col-12 py-2 mb-3 mb-md-0">
                                         <label for="formGroupExampleInput" class="">Short Descriptions</label>
-                                        <textarea name="short_descriptions"  rows="5" cols="50" class="form-control"
-                                            minlength="3" maxlength="5000">{{ $product->short_descriptions }}</textarea>
+                                        <textarea name="short_descriptions" placeholder="Enter Short Description" rows="3" cols="50"
+                                            class="form-control" minlength="3" maxlength="5000">{{ $product->short_descriptions }}</textarea>
                                         @if ($errors->has('short_descriptions'))
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('short_descriptions') }}</div>

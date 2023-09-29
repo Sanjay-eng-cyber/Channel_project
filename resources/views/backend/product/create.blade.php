@@ -216,7 +216,7 @@
 
                                     <div class="col-12 mb-3">
                                         <label for="formGroupExampleInput" class="">Short Descriptions</label>
-                                        <textarea   name="short_descriptions" rows="5" cols="50"
+                                        <textarea name="short_descriptions" rows="3" cols="50" placeholder="Enter Short Description"
                                             class="form-control" minlength="3" maxlength="5000">{{ old('short_descriptions') }}</textarea>
                                         @if ($errors->has('short_descriptions'))
                                             <div class="text-danger" role="alert">
