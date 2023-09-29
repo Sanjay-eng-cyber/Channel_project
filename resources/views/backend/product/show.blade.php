@@ -169,7 +169,6 @@
                                                 </p>
                                             </div>
                                         </div>
-
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
@@ -177,6 +176,13 @@
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Description</label><br>
                                                 <p class="label-title">{!! $product->descriptions !!}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Short
+                                                    Description</label><br>
+                                                <p class="label-title">{{ $product->short_descriptions }}</p>
                                             </div>
                                         </div>
                                     </div>

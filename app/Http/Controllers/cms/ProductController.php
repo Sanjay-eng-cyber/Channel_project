@@ -114,12 +114,12 @@ class ProductController extends Controller
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'required|mimes:png,jpg,jpeg|max:1024',
-            // 'short_descriptions' => 'nullable|min:3|max:5000',
+            'short_descriptions' => 'nullable|min:3|max:5000',
             'attributeKeys' => ['nullable'],
             'attributeKeys.*' => ['nullable', Rule::in($attributes)],
             'showcases' => ['nullable'],
             'showcases.*' => ['required', Rule::in($showcases)],
-            // 'connection_no' => 'nullable|min:3|max:20',
+           // 'connection_no' => 'nullable|min:3|max:20',
             'tags' => 'nullable|max:20',
             'tags.*' => 'string|min:3|max:30'
         ]);
@@ -148,7 +148,7 @@ class ProductController extends Controller
         $product->stock = $request->stock;
         $product->sku = $request->sku;
         $product->descriptions = $request->descriptions;
-        // $product->short_descriptions = $request->short_descriptions;
+        $product->short_descriptions = $request->short_descriptions;
         $product->thumbnail_image = $filename;
 
 
@@ -220,7 +220,7 @@ class ProductController extends Controller
             'showcases' => ['nullable', 'array'],
             'showcases.*' => [Rule::in($showcases_id)],
             'thumbnail_image' => 'nullable|mimes:png,jpg,jpeg|max:1024',
-            // 'short_descriptions' => 'nullable|min:3|max:5000',
+            'short_descriptions' => 'nullable|min:3|max:5000',
             'attributeKeys' => ['nullable'],
             'attributeKeys.*' => ['nullable', Rule::in($attributes)],
             'showcases' => ['nullable'],
@@ -257,7 +257,7 @@ class ProductController extends Controller
         $product->stock = $request->stock;
         $product->sku = $request->sku;
         $product->descriptions = $request->descriptions;
-        // $product->short_descriptions = $request->short_descriptions;
+        $product->short_descriptions = $request->short_descriptions;
 
         if ($request->file('image')) {
             $medias = Media::where('model_id', $id)->where('model_type', Product::class)->get();
