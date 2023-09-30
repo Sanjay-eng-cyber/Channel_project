@@ -32,6 +32,7 @@ class LoginController extends Controller
                 'mobile' => config('msg91.country') . $request->phone,
                 "message" =>  Lang::get(config('msg91.map')[SMSCode::SEND_OTP]),
                 "template_id" => SMSCode::SEND_OTP,
+                "USER" => 'User',
             ]);
 
             // dd($otp);

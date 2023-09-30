@@ -4,5 +4,5 @@ namespace App\Lib\MSG91;
 
 final class SMSCode
 {
-    public const SEND_OTP = '649d446edc22555b6d679c13';
+    public const SEND_OTP = '6516d9c7f4813c7d65193295';
 }
