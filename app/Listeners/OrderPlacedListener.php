@@ -30,17 +30,22 @@ class OrderPlacedListener implements ShouldQueue
     public function handle(OrderPlacedEvent $event)
     {
         $order = $event->order;
+        $productsNameArray = $order->items()->with('product')->get()->pluck('product.name')->toArray();
+        $productsName = implode(", ", $productsNameArray);
+
         if ($order->user->email) {
-            Mail::to($order->user->email)->send(new OrderPlacedMail($order));
+            Mail::to($order->user->email)->send(new OrderPlacedMail($order, $productsNameArray));
         }
 
-        if ($order->user->phone) {
-            // $res = MSG91::sms([
-            //     "flow_id" => config('app.MSG91_ORDER_PLACED_FLOW_ID'),
-            //     "authkey" => config('app.msg91_auth_key'),
-            //     "mobiles" => '91' . $order->user->phone,
-            //     "NAME" => str_limit($order->user->full_name, 27),
-            // ]);
+        if (app()->env() == 'production' && $order->user->phone) {
+            $res = MSG91::sms([
+                "flow_id" => config('app.msg91_order_placed_flow_id'),
+                "authkey" => config('app.msg91_auth_key'),
+                "mobiles" => '91' . $order->user->phone,
+                "USER" => str_limit($order->user->first_name, 27),
+                "PRODUCTNAME" => str_limit($productsName, 27),
+                "EMAIL" => config('app.enquiry_email'),
+            ]);
             // dd($res);
         }
     }

@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class OrderProccessingMail extends Mailable implements ShouldQueue
+class OrderProcessingMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
@@ -17,9 +17,11 @@ class OrderProccessingMail extends Mailable implements ShouldQueue
      * @return void
      */
     public $order;
-    public function __construct($order)
+    public $productsNameArray;
+    public function __construct($order, $productsNameArray)
     {
         $this->order = $order;
+        $this->productsNameArray = $productsNameArray;
     }
 
     /**
@@ -29,13 +31,10 @@ class OrderProccessingMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        $productsNameArray = $this->order->items()->with('product')->get()->pluck('product.name')->toArray();
-        // dd($productsNameArray);
-        // dd(implode(", ", $productsNameArray));
         $order = $this->order;
-        return $this->subject('Your Product Has Been Proccessing.')->markdown('mail.order-proccessing-mail')->with([
+        return $this->subject('Your Product Has Been Processing.')->markdown('mail.order-processing-mail')->with([
             'userName' => $order->user->first_name,
-            'productName' => implode(", ", $productsNameArray),
+            'productName' => implode(", ", $this->productsNameArray),
             'adminMail' => config('app.enquiry_email'),
         ]);
     }
