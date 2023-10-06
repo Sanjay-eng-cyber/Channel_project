@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::domain(config('app.web_domain'))->group(function () {
 
     // Route::get('/test', function () {
@@ -213,6 +214,12 @@ Route::domain(config('app.web_domain'))->group(function () {
     Route::get('/payment-success', function () {
         return view('frontend.payment-success');
     })->name('frontend.payment-success');
+
+//Email route
+    Route::get('/order-placed-mail', function () {
+        return view('mail/order-placed-mail');
+    })->name('order-placed-mail');
+
 
     // Route::get('/payment-failed', function () {
     //     return view('frontend.payment-failed');
