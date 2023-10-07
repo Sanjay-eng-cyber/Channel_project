@@ -220,6 +220,18 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('mail/order-placed-mail');
     })->name('order-placed-mail');
 
+     Route::get('/order-cancelled-mail', function () {
+        return view('mail/order-cancelled-mail');
+    })->name('order-cancelled-mail');
+
+    Route::get('/order-proccessing-mail', function () {
+        return view('mail/order-proccessing-mail');
+    })->name('order-proccessing-mail');
+
+    Route::get('/order-delivered-mail', function () {
+        return view('mail/order-delivered-mail');
+    })->name('order-delivered-mail.blade');
+
 
     // Route::get('/payment-failed', function () {
     //     return view('frontend.payment-failed');
