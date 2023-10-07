@@ -26,14 +26,14 @@
 
             <h2 style="color:rgba(30, 186, 17, 1);font-weight:500">Order Placed</h2>
             <p style="text-align: center;color:#6a7b83;font-weight:;padding-left:20px;padding-right:20px;">
-                Hello <strong> USER </strong>, Thank You for shopping at Channel.
-                Your order for <strong>Product Name</strong> has been received successfully.
+                Hello <strong> USER </strong>, Thank You For Shopping At Channel.<br/>
+                Your Order For <strong>Product Name</strong> Has Been Received<br/> Successfully.
             </p>
             <p style="color:#6a7b83;">
-                We’ll soon let you know when it’s on the way.
+                We’ll Soon Let You Know When It’s On The Way.
             </p>
-            <p style="color:#6a7b83;font-weight:500">
-                For any queries please contact on Email
+            <p style="color:#6a7b83;font-weight:500;opacity:50%">
+                For Any Queries Please Contact On Email
             </p>
             <div style="max-width:67px;margin: 0 auto;padding-top:15px;padding-bottom:15px;">
 
