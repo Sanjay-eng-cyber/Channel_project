@@ -76,7 +76,7 @@
                             <div class="d-flex flex-row  justify-content-between align-items-start">
                                 <div>
                                     <h3 class="h5 font-body rem-1">
-                                        From ₹{{ $product->final_price }} <s class="text-danger">₹{{ $product->mrp }}</s>
+                                        Special Price ₹{{ $product->final_price }} <s class="text-danger">₹{{ $product->mrp }}</s>
                                     </h3>
                                     @if ($product->stock)
                                         <h4 class="font-body h5 text-green in-stock mb-0">
