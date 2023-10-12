@@ -119,9 +119,11 @@ class ProductController extends Controller
             'attributeKeys.*' => ['nullable', Rule::in($attributes)],
             'showcases' => ['nullable'],
             'showcases.*' => ['required', Rule::in($showcases)],
-           // 'connection_no' => 'nullable|min:3|max:20',
+            // 'connection_no' => 'nullable|min:3|max:20',
             'tags' => 'nullable|max:20',
-            'tags.*' => 'string|min:3|max:30'
+            'tags.*' => 'string|min:3|max:30',
+            'unit_sale_price' => 'nullable|numeric',
+
         ]);
 
         $fileWithExtension = $request->file('thumbnail_image');
@@ -150,6 +152,7 @@ class ProductController extends Controller
         $product->descriptions = $request->descriptions;
         $product->short_descriptions = $request->short_descriptions;
         $product->thumbnail_image = $filename;
+        $product->unit_sale_price = $request->unit_sale_price;
 
 
         if ($product->save()) {
@@ -227,7 +230,8 @@ class ProductController extends Controller
             'showcases.*' => ['required', Rule::in($showcases)],
             // 'connection_no' => 'nullable|min:3|max:20',
             'tags' => 'nullable|max:20',
-            'tags.*' => 'string|min:3|max:30'
+            'tags.*' => 'string|min:3|max:30',
+            'unit_sale_price' => 'nullable|numeric',
 
         ]);
 
@@ -258,6 +262,7 @@ class ProductController extends Controller
         $product->sku = $request->sku;
         $product->descriptions = $request->descriptions;
         $product->short_descriptions = $request->short_descriptions;
+        $product->unit_sale_price = $request->unit_sale_price;
 
         if ($request->file('image')) {
             $medias = Media::where('model_id', $id)->where('model_type', Product::class)->get();

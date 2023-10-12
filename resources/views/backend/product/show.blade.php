@@ -89,7 +89,13 @@
                                                 <p class="label-title">{{ $product->sku }}</p>
                                             </div>
                                         </div>
-
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Unit Sale
+                                                    Price</label><br>
+                                                <p class="label-title">{{ $product->unit_sale_price }}</p>
+                                            </div>
+                                        </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree2" class="label-title cust-title">Thumbnail
