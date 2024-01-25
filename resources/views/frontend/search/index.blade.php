@@ -109,7 +109,7 @@
                                                     </button>
                                                 @endif
                                                 <a href="{{ route('frontend.p.show', $pro->slug) }}">
-                                                    <img src="{{ asset('storage/images/products/' . $pro->thumbnail_image) }}"
+                                                    <img src="{{ asset('storage/images/products/thumbnails/' . $pro->thumbnail_image) }}"
                                                         alt="...">
                                                 </a>
                                             </div>
