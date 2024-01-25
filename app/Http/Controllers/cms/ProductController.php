@@ -122,7 +122,7 @@ class ProductController extends Controller
             // 'connection_no' => 'nullable|min:3|max:20',
             'tags' => 'nullable|max:20',
             'tags.*' => 'string|min:3|max:30',
-            'unit_sale_price' => 'nullable|numeric',
+            'unit_sale_price' => 'nullable|string|min:1|max:60',
 
         ]);
 
@@ -231,7 +231,7 @@ class ProductController extends Controller
             // 'connection_no' => 'nullable|min:3|max:20',
             'tags' => 'nullable|max:20',
             'tags.*' => 'string|min:3|max:30',
-            'unit_sale_price' => 'nullable|numeric',
+            'unit_sale_price' => 'nullable|string|min:1|max:60',
 
         ]);
 
