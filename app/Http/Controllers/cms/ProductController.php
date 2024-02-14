@@ -152,7 +152,7 @@ class ProductController extends Controller
         $product->descriptions = $request->descriptions;
         $product->short_descriptions = $request->short_descriptions;
         $product->thumbnail_image = $filename;
-        $product->unit_sale_price = $request->unit_sale_price;
+        $product->unit_sale_price = $request->unit_sale_price ?? null;
 
 
         if ($product->save()) {
@@ -262,7 +262,7 @@ class ProductController extends Controller
         $product->sku = $request->sku;
         $product->descriptions = $request->descriptions;
         $product->short_descriptions = $request->short_descriptions;
-        $product->unit_sale_price = $request->unit_sale_price;
+        $product->unit_sale_price = $request->unit_sale_price ?? null;
 
         if ($request->file('image')) {
             $medias = Media::where('model_id', $id)->where('model_type', Product::class)->get();

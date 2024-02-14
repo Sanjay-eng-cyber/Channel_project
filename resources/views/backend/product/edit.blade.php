@@ -241,7 +241,7 @@
                                     <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="formGroupExampleInput" class="">Unit Sale Price</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
-                                            placeholder="Enter Unit Sale Price" required name="unit_sale_price"
+                                            placeholder="Enter Unit Sale Price" name="unit_sale_price"
                                             value="{{ old('unit_sale_price') ?? $product->unit_sale_price }}">
                                         @if ($errors->has('unit_sale_price'))
                                             <div class="text-danger" role="alert">
