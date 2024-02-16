@@ -197,7 +197,17 @@
 .fw-500 {
     font-weight: 500;
 }
+.fw-600{
+    font-weight: 600;
+}
 
+.fw-400{
+    font-weight: 400;
+}
+
+.fw-300{
+    font-weight: 300;
+}
 h1,
 h2,
 h3,
@@ -1218,14 +1228,21 @@ a:hover {
 
 .header-seach-icon {
     position: absolute;
-    top: 10px;
-    left: 12px;
+    top: 17px;
+    right: 12px;
 }
 
 .search-btn-newp {
-    padding-left: 50px !important;
-    opacity: 60%;
+    padding-right:75px !important;
+    padding-left: 30px;
 }
+.my-input-form::placeholder {
+    color: #979797;
+    opacity: 70%;
+    font-weight: 300 !important; /* Change the color to blue */
+    font-size: 1rem;
+  }
+
 ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     margin-left: 40px !important;
@@ -1247,7 +1264,7 @@ a:hover {
     margin: 0px 0 0;
     text-transform: uppercase;
     font:
-        14px/20px "Poppins",
+        16px/20px "Poppins",
         sans-serif;
 }
 
@@ -1279,7 +1296,7 @@ a:hover {
 }
 
 .mt-bottom-bar {
-    background: #cbeffc;
+    background:rgba(0, 175, 239, 0.29);
     padding: 42px 31px 42px 48px;
     -moz-transition: all 0.4s linear;
     -webkit-transition: all 0.4s linear;
@@ -1297,6 +1314,8 @@ a:hover {
 
 #nav > ul > li > a {
     color: black;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 #mt-header.style3 #nav {
@@ -1955,6 +1974,7 @@ a:hover {
 }
 
 @media screen and (max-width: 1200px) {
+
     .__cart-ui-card .__cart-ui-close-btn {
         position: absolute;
         top: 0px;
@@ -2004,8 +2024,26 @@ a:hover {
         gap: 1rem;
     }
 }
+#nav > ul > li {
+    position: relative;
+    vertical-align: top;
+    margin: 0 27px 0 7px;
+    display: inline-block;
+}
 
 @media screen and (max-width: 1400px) {
+    #nav > ul > li {
+        position: relative;
+        vertical-align: top;
+        margin: 0 15px 0 7px;
+        display: inline-block;
+    }
+
+    .search-btn-newp {
+        padding-right:65px !important;
+        padding-left: 20px;
+    }
+
     .btn-40padding {
         padding-left: 35px;
         padding-right: 35px;
@@ -2059,6 +2097,22 @@ a:hover {
 }
 
 @media screen and (max-width: 1200px) {
+    .search-btn-newp {
+        padding-right: 25px !important;
+        padding-left: 17px;
+    
+    }
+    #nav > ul > li {
+        position: relative;
+        vertical-align: top;
+        margin: 0 7px 0 7px;
+        display: inline-block;
+    }
+    #nav > ul > li > a {
+        
+        font-size: 14px;
+        font-weight: 400;
+    }
     .og-main .og-main-part-1 .og-main-img-first {
         position: absolute;
         width: 207px;
