@@ -1,12 +1,25 @@
    <!-- mt header style3 start here -->
-   <header id="mt-header" class="style3 position-relative ">
+   <header id="" class="style3 position-relative " style="height: unset">
 
        <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute" draggable="false"
-           style="width: 110px;right:0; top:0">
+           style="width: 110px;right:0; top:0"> 
+        @if(Request::is('profile'))
+            <img src="{{asset('frontend/images/mobile-hero-slider/ab-pro.png')}}" alt="" class="img-fluid position-absolute main-ab-img" draggable="false">
+        @endif
+        @if(Request::is('wishlist'))
+            <img src="{{asset('frontend/images/mobile-hero-slider/ab-pro.png')}}" alt="" class="img-fluid position-absolute main-ab-img" draggable="false" >
+        @endif
+        @if(Request::is('cart'))
+            <img src="{{asset('frontend/images/mobile-hero-slider/ab-pro.png')}}" alt="" class="img-fluid position-absolute main-ab-img" draggable="false" >
+        @endif
+
+        @if(Request::is('orders'))
+            <img src="{{asset('frontend/images/mobile-hero-slider/ab-pro.png')}}" alt="" class="img-fluid position-absolute main-ab-img" draggable="false" >
+        @endif
 
        {{-- navbar header --}}
-       <div class="mt-top-bar" style="background-color: white;color:black">
-           <div class="container pt-2 pb-1">
+       <div class="" style="background:unset;">
+           <div class="container pt-2  pb-1">
                <div class="row ">
                    <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
                        <div class="container-fluid  d-flex flex-row">
@@ -247,7 +260,7 @@
                </div>
            </div>
        </div>
-       <div class="d-lg-none d-block bg-white pb-3">
+       <div class="d-lg-none d-block py-4" style="">
            <div class="container">
                <div class="row row-cols-4 ">
                    <div class="col">
@@ -314,6 +327,8 @@
            </div>
        </div>
    </header>
+
+   
    <script>
        const {
            createApp

@@ -173,10 +173,10 @@ a:hover {
 /*------------------------------------------------------------------
 3. Mt Header / #mt-header
 -------------------------------------------------------------------*/
-#mt-header {
+/* #mt-header {
   z-index: 4;
   position: relative;
-}
+} */
 
 #mt-header a:hover {
   text-decoration: none;
@@ -1192,6 +1192,7 @@ a:hover {
   left: 0;
   right: 0;
   position: fixed;
+  z-index: 99999;
   -webkit-box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
 }

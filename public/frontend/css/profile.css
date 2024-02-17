@@ -149,7 +149,7 @@
 }
 
 .profile-photo-section {
-    max-width: 200px;
+
     position: relative;
     margin: auto;
 }
@@ -157,6 +157,7 @@
 .profile-photo {
     /* border: 5px solid #ec268f; */
     border-radius: 30em;
+    width:5em;height:5em;object-fit: cover
 }
 
 .edit-photo-btn {
@@ -180,6 +181,20 @@
     border: 0.23px solid #393535
 }
 
+
+
+@media screen and (max-width:576px){
+    .profile-photo {
+        width:6em;
+        height:6em;
+        object-fit: cover
+    }  
+    .edit-photo-btn {
+        width: 1.5em;
+        height:1.5em;
+    }
+
+}
 .profile {
     margin-bottom: 1em;
 }
@@ -241,11 +256,7 @@
         font-size: 13px;
     }
 }
-@media (max-width: 576px) {
-    .profile-menu a.btn {
-        font-size: 10px;
-    }
-}
+
 
 .menu-icon {
     display: flex;
@@ -291,6 +302,20 @@
 .profile-menu a.btn:hover .menu-icon.wishlist-svg svg path  {
     stroke: #ec268f !important;
     fill: none !important;
+}
+@media (max-width: 576px) {
+    .profile-menu{
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-top: 0px;
+    }
+    .profile-menu a.btn {
+        font-size: 10px;
+    }
+    .menu-icon {
+    width: 6em;
+    height: 6em;
+    }
 }
 /* wishlist  page */
 

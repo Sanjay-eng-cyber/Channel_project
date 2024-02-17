@@ -1917,6 +1917,14 @@ a:hover {
     color: black;
 }
 
+.main-ab-img{
+    top: 0;
+    width: auto;
+    height: 909.31px;
+    object-fit: cover;
+    z-index:-9
+}
+
 @media screen and (max-width: 992px) {
     .review-first-section .review-first-subsection-img img {
         width: 194px;

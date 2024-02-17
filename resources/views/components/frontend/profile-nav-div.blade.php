@@ -1,7 +1,7 @@
 @php
     $user = auth()->user();
 @endphp
-<section class="profile-breadcrumb">
+<section class="profile-breadcrumb" style="z-index: 999">
     <div class="bg-stipe"></div>
     {{-- <img src="{{asset('frontend/images/mobile-hero-slider/ab-pro.png')}}" alt="" 
     class="img-fluid position-absolute"
@@ -43,7 +43,7 @@
         </div> --}}
 
         <div class="row d-flex justify-content-center">
-            <div class="col-sm-8">
+            <div class="col-12 col-md-10 col-lg-8">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="profile-menu justify-content-evenly">
@@ -67,7 +67,7 @@
                                     <div class="profile-photo-section">
                                         <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
                                             class="profile-photo" alt=""
-                                            style="width:5em;height:5em;object-fit: cover">
+                                            style="">
                                         <form action="{{ route('frontend.profile.image.update') }}" method="POST"
                                             enctype="multipart/form-data">
                                             @csrf
