@@ -135,11 +135,12 @@
 }
 
 .profile-breadcrumb .bg-stipe {
-    background-image:url('/frontend/images/banner/profile-bg.png');
+    /* background-image:url('/frontend/images/banner/profile-bg.png'); */
+    background-color: #FFDFF0;
     position: absolute;
     width: 100%;
-    height: 54%;
-    top:27%;
+    height: 100%;
+    top:-36%;
     left: 0;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -154,26 +155,29 @@
 }
 
 .profile-photo {
-    border: 5px solid #ec268f;
+    /* border: 5px solid #ec268f; */
     border-radius: 30em;
 }
 
 .edit-photo-btn {
     position: absolute;
-    bottom: 1em;
-    right: 1em;
-    width: 3em;
-    height: 3em;
+    bottom: 0em;
+    right: 0em;
+    width: 2em;
+    height: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.3em;
     border-radius: 5em;
-    background: #d9d9d9;
+    background: #FFFFFF;
+    border: 0.23px solid #393535
 }
+
 
 .edit-photo-btn:hover {
     background: #fff;
+    border: 0.23px solid #393535
 }
 
 .profile {
@@ -211,8 +215,11 @@
     background: #ffffff;
     box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-top: 1.2rem;
 }
 
 .profile-menu a.btn {
@@ -220,7 +227,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+    font-size: 16px;
     border: none;
 }
 @media (max-width: 992px) {
@@ -250,7 +257,8 @@
     padding: 0.8em;
     margin-bottom: 0.2em;
     background: #ffffff;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.52);
+    border: 1px solid #ACAAAA;
+    /* box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.52); */
     transition: box-shadow 1s;
 }
 .profile-menu a.btn:hover,
@@ -259,20 +267,31 @@
 }
 
 .profile-menu a.btn.active .menu-icon {
-    box-shadow: 0px 0px 4px #ec268f;
+    /* box-shadow: 0px 0px 4px #ec268f; */
+    border: 1px solid #FEC7E4
 }
 .profile-menu a.btn.active .menu-icon svg {
     fill: #ec268f;
 }
-.profile-menu a.btn:hover .menu-icon {
-    /* box-shadow: -2px -8px 16px 0px #ec268f99; */
-    box-shadow: 0px 0px 4px #ec268f;
+
+.profile-menu a.btn:hover .menu-icon {    
+    border: 1px solid #FEC7E4
+
 }
 .profile-menu a.btn:hover .menu-icon svg {
     /* fill: #ec268f99; */
     fill: #ec268f;
 }
 
+.profile-menu a.btn.active .menu-icon.wishlist-svg svg path {
+    stroke: #ec268f !important;
+    fill: none !important;
+}
+
+.profile-menu a.btn:hover .menu-icon.wishlist-svg svg path  {
+    stroke: #ec268f !important;
+    fill: none !important;
+}
 /* wishlist  page */
 
 .wishlist-main .wishlist-main-out {
