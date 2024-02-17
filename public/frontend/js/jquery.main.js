@@ -374,7 +374,7 @@ function initStickyHeader() {
 		var flag = true;
 
 
-		jQuery(this).css('height' , jQuery(this).innerHeight());
+		// jQuery(this).css('height' , jQuery(this).innerHeight());
 
 		function scrollHandler() {
 			if (win.scrollTop() > headerOffset) {

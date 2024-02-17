@@ -1,5 +1,5 @@
    <!-- mt header style3 start here -->
-   <header id="" class="style3 position-relative " style="height: unset">
+   <header id="mt-header" class="style3" style="height: unset">
 
        <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute" draggable="false"
            style="width: 110px;right:0; top:0"> 
