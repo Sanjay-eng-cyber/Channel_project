@@ -22,7 +22,15 @@
 
 } */
 /* Default style for the dropdown menu */
-
+.font-size14{
+    font-size:14px;
+}
+.stock-width{
+    width: 76%;
+}
+.btn-size-width109{
+    width:110px;
+}
 .dropdown-menu {
     display: none;
     top: 1.3em;
@@ -317,6 +325,8 @@ a:hover {
 .btn-pink:hover{
     border:1px solid #ec268f;
 }
+
+
 
 /* btn outline pink  to btn pink*/
 .btn-outline-pink {
@@ -2052,6 +2062,9 @@ a:hover {
 }
 
 @media screen and (max-width: 1400px) {
+    .stock-width{
+        width: 74%;
+    }
     #nav > ul > li {
         position: relative;
         vertical-align: top;
@@ -2117,6 +2130,9 @@ a:hover {
 }
 
 @media screen and (max-width: 1200px) {
+    .stock-width{
+        width: 100%;
+    }
     .search-btn-newp {
         padding-right: 25px !important;
         padding-left: 17px;
@@ -3022,24 +3038,19 @@ a:hover {
 }
 
 .mt-product-detial .slider {
-    padding-right: 20px;
+    padding-right: 0px;
 }
 
-.mt-product-detial .detial-holder {
+/* .mt-product-detial .detial-holder {
     border-left: 1px solid #00000054;
     padding: 0;
     padding-left: 20px;
-}
+} */
 
 .mt-product-detial {
     background: #fff;
 }
 
-.mt-product-detial > .container {
-    border: 1px solid #00000033;
-    border-radius: 8px;
-    padding: 20px;
-}
 
 .mt-product-detial .product-slider {
     max-width: 498px;
@@ -3890,14 +3901,66 @@ img.cart-p-img {
     object-fit: contain;
 }
 
-@media (min-width: 992px) {
+
+
+.mt-product-detial > .container {
+    border: 1px solid #00000033;
+    border-radius: 8px;
+    padding: 35px 40px 20px 20px;
+}
+
     .mt-product-detial .slider {
-        width: 46%;
+        width: 48%;
+    }
+
+    .mt-product-detial .detial-holder {
+        width: 52%;
+    }
+
+ @media (max-width: 1400px) {
+    .mt-product-detial .slider {
+        width: 44%;
+    }
+
+    .mt-product-detial .detial-holder {
+        width: 56%;
+    }
+    .mt-product-detial > .container {
+       
+        padding: 30px 30px 20px 20px;
+    }
+    
+} 
+
+
+@media (max-width: 1200px) {
+    .mt-product-detial .slider {
+        width: 50%;
     }
 
     .mt-product-detial .detial-holder {
         width: 50%;
     }
+    .mt-product-detial > .container {
+       
+        padding: 20px 20px 20px 20px;
+    }
+    
+}
+
+@media (max-width: 992px) {
+    .mt-product-detial .slider {
+        width: 100%;
+    }
+
+    .mt-product-detial .detial-holder {
+        width: 100%;
+    }
+    .mt-product-detial > .container {
+       
+        padding: 20px 20px 20px 20px;
+    }
+    
 }
 
 .isolation-contact {
