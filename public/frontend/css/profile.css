@@ -140,7 +140,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    top:-36%;
+    top:-29%;
     left: 0;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -234,7 +234,7 @@
     padding-bottom: 2.4em;
     padding-left: 4rem;
     padding-right: 4rem;
-    margin-top: 1.2rem;
+    margin-top: 1.3rem;
 }
 
 .profile-menu a.btn {
@@ -302,6 +302,9 @@
 .profile-menu a.btn:hover .menu-icon.wishlist-svg svg path  {
     stroke: #ec268f !important;
     fill: none !important;
+}
+.nav-color-active .nav-color-active-ul a.nav-color-btn.active svg{
+    fill: #ec268f;
 }
 @media (max-width: 576px) {
     .profile-menu{
