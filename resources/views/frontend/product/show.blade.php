@@ -76,7 +76,7 @@
                             <div class="d-flex flex-row  justify-content-between align-items-start">
                                 <div>
                                     <h3 class="h5 font-body rem-1">
-                                        Special Price ₹{{ $product->final_price }} <s
+                                        From ₹{{ $product->final_price }} <s
                                             class="text-danger">₹{{ $product->mrp }}</s><br>
                                         @if ($product->unit_sale_price)
                                             <small class="d-block" style="font-size: 85%;">({{ $product->unit_sale_price }})</small>
@@ -119,12 +119,12 @@
 
                                         <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
                                             <label for="qty" class="px-2">
-                                                Quantity
+                                                Qty
                                             </label>
-                                            <div class="input-group flex-nowrap counter">
+                                            <div class="input-group flex-nowrap counter qty-num-input">
                                                 <button type="button" class="input-group-text decrease-quantity">-</button>
                                                 <input type="number" name="quantity" class="form-control quantity-input"
-                                                    value="1" id="product_quantity">
+                                                    value="1" id="product_quantity" style="border-left: 0px;border-right: 0px;padding-left:0px;padding-right:0px">
                                                 <button type="button" class="input-group-text increase-quantity">+</button>
                                             </div>
                                         </div>
@@ -502,6 +502,31 @@
     </div>
 
     <style>
+      .qty-num-input input::-webkit-outer-spin-button,
+       .qty-num-input input::-webkit-inner-spin-button {
+               -webkit-appearance: none;
+                margin: 0;
+        }
+ 
+        .qty-num-input  input[type=number] {
+            -moz-appearance: textfield;
+        }
+        .qty-num-input .input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0rem 0rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+}
         .p-show.add-to-wish {
             border: 0;
         }

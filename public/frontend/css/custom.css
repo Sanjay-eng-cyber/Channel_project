@@ -3578,7 +3578,7 @@ a.add-to-cart:focus {
     background: #fafafa;
 }
 .mt-product-detial .qty-counter input {
-    width: 6ch !important;
+    width: 4ch !important;
     text-align: center !important;
 }
 .padding-order-summary {
