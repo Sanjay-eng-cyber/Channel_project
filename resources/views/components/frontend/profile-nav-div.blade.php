@@ -63,11 +63,36 @@
 
                             <a href="{{ route('frontend.profile') }}"
                                 class="btn {{ URL::current() == route('frontend.profile') ? 'active' : '' }}">
+
+                                <div class="position-relative">
+
+                                    @if ($errors->has('image'))
+                                        <div class="text-center position-absolute popup-cstm-tooltip">
+                                            {{ $errors->first('image') }}
+                                        </div>
+                                    @endif
+                                    @if ($user && $user->first_name)
+                                        <div class="user-name-section">
+                                            <p class="name-input text-center mt-2 mb-0">{{ $user->first_name }}
+                                            </p>
+                                            <hr class="name-border mx-auto m-0">
+                                        </div>
+                                    @endif
+                                </div>
+
+
+
                                 <div class="profile mb-0">
                                     <div class="profile-photo-section">
-                                        <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
+                                        {{-- <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
                                             class="profile-photo" alt=""
-                                            style="">
+                                            style=""> --}}
+                                        <img src="{{ $errors->has('image')
+                                            ? asset('frontend/images/error-pic.png')
+                                            : ($user && $user->profile_image
+                                                ? asset('storage/images/profile/' . $user->profile_image)
+                                                : asset('frontend/images/user-pic.png')) }}"
+                                            class="profile-photo" alt="">                                    
                                         <form action="{{ route('frontend.profile.image.update') }}" method="POST"
                                             enctype="multipart/form-data">
                                             @csrf
@@ -88,21 +113,14 @@
                                             </button>
                                         </form>
                                     </div>
-                                    @if ($errors->has('image'))
-                                        <div class="text-center">{{ $errors->first('image') }}</div>
-                                    @endif
-                                    @if ($user && $user->first_name)
-                                        <div class="user-name-section">
-                                            <p class="name-input text-center mt-2 mb-0">{{ $user->first_name }}
-                                            </p>
-                                            <hr class="name-border mx-auto m-0">
-                                        </div>
-                                    @endif
+
+
 
                                 </div>
                                 <div class="mt-3">
                                     Profile
                                 </div>
+
                             </a>
                             <a href="{{ url('/orders') }}"
                                 class="btn {{ URL::current() == url('/orders') ? 'active' : '' }}">
