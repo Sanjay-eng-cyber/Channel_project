@@ -21,11 +21,11 @@
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('frontend.cat.show', $category->slug) }}"
-                                class="bread-crum breadcrumb-hover">{{ $category->name }}</a></li>
+                                class="bread-crum breadcrumb-hover fw-400 opacity-50">{{ $category->name }}</a></li>
                         @if ($subCategory)
                             <li class="breadcrumb-item"><a
                                     href="{{ route('frontend.sub-category.show', [$category->slug, $subCategory->slug]) }}"
-                                    class="bread-crum breadcrumb-hover">{{ $subCategory->name }}</a></li>
+                                    class="bread-crum breadcrumb-hover  fw-400 opacity-50">{{ $subCategory->name }}</a></li>
                         @endif
                         {{-- <li class="breadcrumb-item bread-crum" aria-current="page">{{ $product->name }}</li> --}}
                     </ol>
@@ -39,17 +39,17 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- Slider of the Page -->                      
-                            <div class="slider">
+                            <div class="slider ">
                                 <div class="product-slider">
                                     @foreach ($product->medias as $media)
-                                        <div class="slide">
+                                        <div class="slide ">
                                             <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                alt="image description">
+                                                alt="image description" class="pro-slide-pa">
                                         </div>
                                     @endforeach
                                 </div>
 
-                                <ul class="list-unstyled slick-slider pagg-slider">
+                                <ul class="list-unstyled slick-slider pagg-slider m-0 p-0">
                                     @foreach ($product->medias as $media)
                                         <li>
                                             <div class="img">
@@ -63,7 +63,7 @@
                             </div>
                             <!-- Slider of the Page end -->
                             <!-- detial Holder of the Page -->
-                            <div class="detial-holder p-0">
+                            <div class="detial-holder">
                                 <h1 class="h4 font-body">
                                     {{ $product->name }}
                                 </h1>
@@ -163,8 +163,8 @@
                                             
                                                 @if (in_array($product->id, $productInCart))
                                                     <a href="javascript:void(0)"
-                                                        class="btn btn-pink add-to-cart btn-outline-pink  font-size14 btn-size-width109 d-flex justify-content-center align-items-center gap-1"
-                                                        data-p-id="{{ $product->id }}" stye>
+                                                        class="btn btn-pink add-to-cart btn-outline-pink  font-size14 btn-size-width109 gap-1 rayeen"
+                                                        data-p-id="{{ $product->id }}"  style="">
                                                         <svg class="svg-inline--fa fa-check" aria-hidden="true"
                                                             focusable="false" data-prefix="fas" data-icon="check" role="img"
                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
@@ -214,34 +214,47 @@
                                 <div class="rating-holder">
                                     <div class="row">
                                         <div class="col-12 col-sm-6 p-0">
-                                            <div class="rating">
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="h5 font-body mb-0 me-2">
-                                                        Ratings
-                                                    </h6>
-                                                    <div class="five-stars text-green d-flex">
-                                                        @for ($i = 1; $i <= 5; $i++)
-                                                            @if ($i <= $reviewRatingAvg)
-                                                                <i class="fa-solid fa-star"></i>
-                                                            @else
-                                                                <i class="fa-regular fa-star"></i>
-                                                            @endif
-                                                        @endfor
-                                                    </div>
+
+                                                <div class="text-black">
+                                                    <div class="pb-2">Color : <span class="fw-500">Pink</span> </div>
+                                                    <div class="pb-2">Skin Type : <span class="fw-500">Pink</span></div>
+                                                    <div class="pb-2">Net Quantity : <span class="fw-500">Pink</span></div>
+                                                    <div class="pb-2">Care Instruction : <span class="fw-500">Pink</span></div>
+                                                    <div class="pb-2">Special Ingredients : <span class="fw-500">Pink</span></div>
+                                                    <div class="pb-2">Size (L x W x H) : <span class="fw-500">Pink</span></div>
                                                 </div>
-                                                <div class="d-flex">
-                                                    <div class="rating-total d-flex align-items-center me-3">
-                                                        <h6 class="display-6 text-muted font-body my-2">
-                                                            {{ $reviewRatingAvg }}
-                                                        </h6>
-                                                        <i class="fa-solid fa-star text-green"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+
                                         </div>
                                         <div class="col-12 col-sm-6 p-0">
                                             <div class="rating-stats text-muted">
-
+                                                <div class="rating">
+                                                    <div class="d-flex align-items-center">
+                                                        <h6 class="h6 font-body mb-0 me-2 fw-500 text-black">
+                                                            Ratings
+                                                        </h6>
+                                                        <div class="five-stars text-green d-flex">
+                                                            @for ($i = 1; $i <= 5; $i++)
+                                                                @if ($i <= $reviewRatingAvg)
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                @else
+                                                                    <i class="fa-regular fa-star"></i>
+                                                                @endif
+                                                            @endfor
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex py-2">
+                                                        <div class="rating-total d-flex align-items-center me-3 position-relative isolate gap-4">
+                                                            <div>
+                                                                <h6 class="h5 text-muted font-body my-2">
+                                                                    {{ $reviewRatingAvg }}
+                                                                </h6>
+                                                                <i class="fa-solid fa-star text-green position-absolute " style="top:0;left:33px"></i>
+                                                            </div>
+                                                            <h6 class="m-0 p-0 main-head" style="font-size:12px">Based On Verified Buyers</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 @for ($i = 5; $i >= 1; $i--)
                                                     <div class="rating-stat">
                                                         <div>{{ $i }}</div>

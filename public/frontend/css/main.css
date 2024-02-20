@@ -7161,7 +7161,7 @@ a:hover {
   margin: 0 7px;
   cursor: pointer;
   background: #fff;
-  border: 1px solid #ededed;
+  /* border: 1px solid #ededed; */
   border-top: 0;
 }
 
