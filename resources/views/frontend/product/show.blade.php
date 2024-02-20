@@ -38,196 +38,227 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <!-- Slider of the Page -->
-                        <div class="slider">
-                            <div class="product-slider">
-                                @foreach ($product->medias as $media)
-                                    <div class="slide">
-                                        <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                            alt="image description">
-                                    </div>
-                                @endforeach
-                            </div>
-
-                            <ul class="list-unstyled slick-slider pagg-slider">
-                                @foreach ($product->medias as $media)
-                                    <li>
-                                        <div class="img">
+                        <!-- Slider of the Page -->                      
+                            <div class="slider">
+                                <div class="product-slider">
+                                    @foreach ($product->medias as $media)
+                                        <div class="slide">
                                             <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                alt="image description" class="min-h-2-80">
+                                                alt="image description">
                                         </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                            <!-- Pagg Slider of the Page end -->
-                        </div>
-                        <!-- Slider of the Page end -->
-                        <!-- detial Holder of the Page -->
-                        <div class="detial-holder">
-                            <h1 class="h3 font-body">
-                                {{ $product->name }}
-                            </h1>
-                            <hr>
-                            @if ($product->short_descriptions)
-                                <p class="text-muted">
-                                    {{ $product->short_descriptions }}
-                                </p>
-                            @endif
-                            <div class="d-flex flex-row  justify-content-between align-items-start">
-                                <div>
-                                    <h3 class="h5 font-body rem-1">
-                                        Special Price ₹{{ $product->final_price }} <s
-                                            class="text-danger">₹{{ $product->mrp }}</s><br>
-                                        @if ($product->unit_sale_price)
-                                            <small class="d-block" style="font-size: 85%;">({{ $product->unit_sale_price }})</small>
-                                        @endif
-                                    </h3>
-                                    @if ($product->stock)
-                                        <h4 class="font-body h5 text-green in-stock mb-0">
-                                            <i class="fa-regular fa-circle-check"></i> In Stock
-                                        </h4>
-                                    @else
-                                        <h4 class="font-body h5 text-red">
-                                            <i class="fa-regular fa-circle-xmark"></i> Out of Stock
-                                        </h4>
-                                    @endif
+                                    @endforeach
                                 </div>
-                                @if (in_array($product->id, $wishlist))
-                                    <button type="button" class=" btn p-show add-to-wish active"
-                                        data-p-id="{{ $product->id }}">
-                                        <i class="fa-regular fa-heart"></i>
-                                        <span class="tool-tip-text">
-                                            Remove From Wishlist
-                                        </span>
-                                    </button>
-                                @else
-                                    <button type="button" class="btn m-0 p-0 p-show add-to-wish  "
-                                        data-p-id="{{ $product->id }}">
-                                        <i class="fa-regular fa-heart"></i>
-                                        <span class="tool-tip-text">
-                                            Add To Wishlist
-                                        </span>
-                                    </button>
-                                @endif
-                            </div>
 
-
-                            <div class="row">
-                                <form action="{{ route('frontend.p.checkout', $product->slug) }}" method="GET">
-
-                                    <div class="d-flex flex-column flex-xl-row justify-content-between my-3 ">
-
-                                        <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
-                                            <label for="qty" class="px-2">
-                                                Quantity
-                                            </label>
-                                            <div class="input-group flex-nowrap counter">
-                                                <button type="button" class="input-group-text decrease-quantity">-</button>
-                                                <input type="number" name="quantity" class="form-control quantity-input"
-                                                    value="1" id="product_quantity">
-                                                <button type="button" class="input-group-text increase-quantity">+</button>
+                                <ul class="list-unstyled slick-slider pagg-slider">
+                                    @foreach ($product->medias as $media)
+                                        <li>
+                                            <div class="img">
+                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    alt="image description" class="min-h-2-80">
                                             </div>
-                                        </div>
-
-                                        <div
-                                            class="d-flex justify-content-between justify-content-sm-start justify-content-lg-end justify-content-xl-between gap-1 gap-sm-3 mt-3 mt-xl-0  ">
-                                            <button class="btn btn-black btn-40padding" type="submit">
-                                                Buy Now
-                                            </button>
-
-                                            @if (in_array($product->id, $productInCart))
-                                                <a href="javascript:void(0)"
-                                                    class="btn btn-pink add-to-cart btn-outline-pink btn-40padding"
-                                                    data-p-id="{{ $product->id }}">
-                                                    <svg class="svg-inline--fa fa-check" aria-hidden="true"
-                                                        focusable="false" data-prefix="fas" data-icon="check" role="img"
-                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                                        data-fa-i2svg="">
-                                                        <path fill="currentColor"
-                                                            d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                                                        </path>
-                                                    </svg> Added
-                                                </a>
-                                            @else
-                                                <a href="javascript:void(0)"
-                                                    class=" btn btn-pink add-to-cart d-flex align-items-center btn-30padding"
-                                                    data-p-id="{{ $product->id }}">
-                                                    Add To Cart
-                                                </a>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </form>
-                                <hr>
-                                <h6 class="h5 font-body">
-                                    Description
-                                </h6>
-                                <ul class="text-muted">
-                                    {!! $product->descriptions !!}
+                                        </li>
+                                    @endforeach
                                 </ul>
-                                <hr>
-                                @if ($product_attributes->count())
-                                    <div class="my-1">
-                                        @forelse ($product_attributes as $product_attribute)
-                                            <div class="d-flex gap-2 my-1">
-                                                <div>{{ $product_attribute->attribute->name . ' : ' }}</div>
-                                                <div class="fw-500">{{ $product_attribute->value->name }}</div>
-                                            </div>
-                                        @empty
-                                        @endforelse
-                                    </div>
-                                    <hr>
-                                @endif
+                                <!-- Pagg Slider of the Page end -->
                             </div>
-                            <div class="rating-holder">
-                                <div class="row">
-                                    <div class="col-12 col-sm-6 p-0">
-                                        <div class="rating">
-                                            <div class="d-flex align-items-center">
-                                                <h6 class="h5 font-body mb-0 me-2">
-                                                    Ratings
-                                                </h6>
-                                                <div class="five-stars text-green d-flex">
-                                                    @for ($i = 1; $i <= 5; $i++)
-                                                        @if ($i <= $reviewRatingAvg)
-                                                            <i class="fa-solid fa-star"></i>
-                                                        @else
-                                                            <i class="fa-regular fa-star"></i>
-                                                        @endif
-                                                    @endfor
-                                                </div>
-                                            </div>
-                                            <div class="d-flex">
-                                                <div class="rating-total d-flex align-items-center me-3">
-                                                    <h6 class="display-6 text-muted font-body my-2">
-                                                        {{ $reviewRatingAvg }}
-                                                    </h6>
-                                                    <i class="fa-solid fa-star text-green"></i>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <!-- Slider of the Page end -->
+                            <!-- detial Holder of the Page -->
+                            <div class="detial-holder p-0">
+                                <h1 class="h4 font-body">
+                                    {{ $product->name }}
+                                </h1>
+                                <hr>
+                                @if ($product->short_descriptions)
+                                    <p class="text-muted">
+                                        {{ $product->short_descriptions }}
+                                    </p>
+                                @endif
+                                <div class="d-flex flex-row  justify-content-between align-items-start stock-width">
+                                    <div>
+                                        <h3 class="h6 font-body rem-1">
+                                            From ₹{{ $product->final_price }} <s
+                                                class="text-danger">₹{{ $product->mrp }}</s><br>
+                                            @if ($product->unit_sale_price)
+                                                <small class="d-block" style="font-size: 85%;">({{ $product->unit_sale_price }})</small>
+                                            @endif
+                                        </h3>
+                                        {{-- @if ($product->stock)
+                                            <h4 class="font-body h5 text-green in-stock mb-0">
+                                                <i class="fa-regular fa-circle-check"></i> In Stock
+                                            </h4>
+                                        @else
+                                            <h4 class="font-body h5 text-red">
+                                                <i class="fa-regular fa-circle-xmark"></i> Out of Stock
+                                            </h4>
+                                        @endif --}}
                                     </div>
-                                    <div class="col-12 col-sm-6 p-0">
-                                        <div class="rating-stats text-muted">
+                                    @if ($product->stock)
+                                            <h4 class="font-body h5 text-green in-stock mb-0 font-size14">In Stock
+                                                <i class="fa-regular fa-circle-check"></i> 
+                                            </h4>
+                                    @else
+                                            <h4 class="font-body h5 text-red font-size14">Out of Stock
+                                                <i class="fa-regular fa-circle-xmark"></i> 
+                                            </h4>
+                                    @endif
+                                    {{-- @if (in_array($product->id, $wishlist))
+                                        <button type="button" class=" btn p-show add-to-wish active"
+                                            data-p-id="{{ $product->id }}">
+                                            <i class="fa-regular fa-heart"></i>
+                                            <span class="tool-tip-text">
+                                                Remove From Wishlist
+                                            </span>
+                                        </button>
+                                    @else
+                                        <button type="button" class="btn m-0 p-0 p-show add-to-wish  "
+                                            data-p-id="{{ $product->id }}">
+                                            <i class="fa-regular fa-heart"></i>
+                                            <span class="tool-tip-text">
+                                                Add To Wishlist
+                                            </span>
+                                        </button>
+                                    @endif --}}
+                                </div>
 
-                                            @for ($i = 5; $i >= 1; $i--)
-                                                <div class="rating-stat">
-                                                    <div>{{ $i }}</div>
-                                                    <div class="review-bar">
-                                                        <div class="review-bar-value"
-                                                            style="width: {{ $ratingsArr[$i] }}%;">
-                                                        </div>
+
+                                <div class="row">
+                                    <form action="{{ route('frontend.p.checkout', $product->slug) }}" method="GET">
+
+                                        <div class="d-flex flex-column flex-xl-row justify-content-between my-3 ">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
+                                                    <label for="qty" class="px-2">
+                                                        Qty
+                                                    </label>
+                                                    <div class="input-group flex-nowrap counter qty-num-input">
+                                                        <button type="button" class="input-group-text decrease-quantity">-</button>
+                                                        <input type="number" name="quantity" class="form-control quantity-input"
+                                                            value="1" id="product_quantity" style="border-left: 0px;border-right: 0px;padding-left:0px;padding-right:0px">
+                                                        <button type="button" class="input-group-text increase-quantity">+</button>
                                                     </div>
                                                 </div>
-                                            @endfor
 
+                                                <div>
+                                                    @if (in_array($product->id, $wishlist))
+                                                        <button type="button" class=" btn  p-show add-to-wish active d-flex align-items-center justify-content-center gap-1" 
+                                                            data-p-id="{{ $product->id }}" style="background-color:white;box-shadow: 0px 4px 4px 0px #0000001C;padding:7px 7px 7px 7px; border-radius:8px;">
+                                                            <i class="fa-regular fa-heart"></i>
+                                                            <span class="tool-tip-text font-size14">
+                                                                Remove From Wishlist
+                                                            </span>
+                                                        </button>
+                                                    @else
+                                                        <button type="button" class="btn m-0 p-show add-to-wish  " style="background-color:white;box-shadow: 0px 4px 4px 0px #0000001C;padding:7px 7px 7px 7px; border-radius:8px;"
+                                                            data-p-id="{{ $product->id }}">
+                                                            <i class="fa-regular fa-heart"></i>
+                                                            <span class="tool-tip-text font-size14">
+                                                                Add To Wishlist
+                                                            </span>
+                                                        </button>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between justify-content-sm-start justify-content-lg-end justify-content-xl-between gap-1 gap-sm-3 mt-3 mt-xl-0  ">
+                                            
+                                                @if (in_array($product->id, $productInCart))
+                                                    <a href="javascript:void(0)"
+                                                        class="btn btn-pink add-to-cart btn-outline-pink  font-size14 btn-size-width109 d-flex justify-content-center align-items-center gap-1"
+                                                        data-p-id="{{ $product->id }}" stye>
+                                                        <svg class="svg-inline--fa fa-check" aria-hidden="true"
+                                                            focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                                            data-fa-i2svg="">
+                                                            <path fill="currentColor"
+                                                                d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            </path>
+                                                        </svg> 
+                                                        <span>Added</span>
+                                                    </a>
+                                                @else
+                                                    <a href="javascript:void(0)"
+                                                        class=" btn btn-pink add-to-cart d-flex align-items-center btn-size-width109 font-size14"
+                                                        data-p-id="{{ $product->id }}" >
+                                                        Add To Cart
+                                                    </a>
+                                                @endif
+
+                                                <button class="btn btn-black font-size14 btn-size-width109" type="submit">
+                                                    Buy Now
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <hr>
+                                    <h6 class="h5 font-body">
+                                        Description
+                                    </h6>
+                                    <ul class="text-black">
+                                        {!! $product->descriptions !!}
+                                    </ul>
+                                    <hr>
+                                    @if ($product_attributes->count())
+                                        <div class="my-1">
+                                            @forelse ($product_attributes as $product_attribute)
+                                                <div class="d-flex gap-2 my-1">
+                                                    <div>{{ $product_attribute->attribute->name . ' : ' }}</div>
+                                                    <div class="fw-500">{{ $product_attribute->value->name }}</div>
+                                                </div>
+                                            @empty
+                                            @endforelse
+                                        </div>
+                                        <hr>
+                                    @endif
+                                </div>
+                                <div class="rating-holder">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 p-0">
+                                            <div class="rating">
+                                                <div class="d-flex align-items-center">
+                                                    <h6 class="h5 font-body mb-0 me-2">
+                                                        Ratings
+                                                    </h6>
+                                                    <div class="five-stars text-green d-flex">
+                                                        @for ($i = 1; $i <= 5; $i++)
+                                                            @if ($i <= $reviewRatingAvg)
+                                                                <i class="fa-solid fa-star"></i>
+                                                            @else
+                                                                <i class="fa-regular fa-star"></i>
+                                                            @endif
+                                                        @endfor
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <div class="rating-total d-flex align-items-center me-3">
+                                                        <h6 class="display-6 text-muted font-body my-2">
+                                                            {{ $reviewRatingAvg }}
+                                                        </h6>
+                                                        <i class="fa-solid fa-star text-green"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 p-0">
+                                            <div class="rating-stats text-muted">
+
+                                                @for ($i = 5; $i >= 1; $i--)
+                                                    <div class="rating-stat">
+                                                        <div>{{ $i }}</div>
+                                                        <div class="review-bar">
+                                                            <div class="review-bar-value"
+                                                                style="width: {{ $ratingsArr[$i] }}%;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endfor
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        </div>
-                        <!-- detial Holder of the Page end -->
+                            </div>
                     </div>
                 </div>
             </div>
@@ -502,6 +533,31 @@
     </div>
 
     <style>
+      .qty-num-input input::-webkit-outer-spin-button,
+       .qty-num-input input::-webkit-inner-spin-button {
+               -webkit-appearance: none;
+                margin: 0;
+        }
+ 
+        .qty-num-input  input[type=number] {
+            -moz-appearance: textfield;
+        }
+        .qty-num-input .input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0rem 0rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+}
         .p-show.add-to-wish {
             border: 0;
         }

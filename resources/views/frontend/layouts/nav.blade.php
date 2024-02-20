@@ -1,14 +1,27 @@
    <!-- mt header style3 start here -->
-   <header id="mt-header" class="style3 position-relative ">
+   <header id="mt-header" class="style3" style="height: unset">
 
        <img src="frontend/images/nav-sb.png" alt="" class="img-fluid position-absolute" draggable="false"
-           style="width: 110px;right:0; top:0">
+           style="width: 110px;right:0; top:0"> 
+        @if(Request::is('profile'))
+            <img src="{{asset('frontend/images/mobile-hero-slider/ab-pro.png')}}" alt="" class="img-fluid position-absolute main-ab-img" draggable="false">
+        @endif
+        @if(Request::is('wishlist'))
+            <img src="{{asset('frontend/images/mobile-hero-slider/ab-pro.png')}}" alt="" class="img-fluid position-absolute main-ab-img" draggable="false" >
+        @endif
+        @if(Request::is('cart'))
+            <img src="{{asset('frontend/images/mobile-hero-slider/ab-pro.png')}}" alt="" class="img-fluid position-absolute main-ab-img" draggable="false" >
+        @endif
+
+        @if(Request::is('orders'))
+            <img src="{{asset('frontend/images/mobile-hero-slider/ab-pro.png')}}" alt="" class="img-fluid position-absolute main-ab-img" draggable="false" >
+        @endif
 
        {{-- navbar header --}}
-       <div class="mt-top-bar" style="background-color: white;color:black">
-           <div class="container py-4">
+       <div class="" style="background:unset;">
+           <div class="container pt-2  pb-1">
                <div class="row ">
-                   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                   <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
                        <div class="container-fluid  d-flex flex-row">
                            <a class="navbar-brand d-inline d-lg-none  " href="{{ url('/') }}" style="">
                                <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}" alt="channel"
@@ -19,65 +32,68 @@
                                aria-expanded="true" aria-label="Toggle navigation">
                                <span class="navbar-toggler-icon"></span>
                            </button>
-                           <div class="navbar-collapse collapse  justify-content-between flex-row-reverse navdrop-style"
+                           <div class="navbar-collapse collapse  justify-content-between flex-row-reverse navdrop-style nav-color-active"
                                id="navbarSupportedContent" style="">
-                               <ul class="navbar-nav d-none d-lg-flex gap-3 align-items-center">
-
-                                   <li class="nav-item text-red position-relative">
-                                       <a class=" "
-                                           href="{{ route('frontend.cart.index') }}">
-                                           <svg width="50" height="49" viewBox="0 0 87 87" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g filter="url(#filter0_d_1629_264)">
-                                            <circle cx="43.1372" cy="43.5" r="36.5" fill="white"/>
-                                            </g>
-                                            <path d="M54.0642 54.7296H33.2727C31.7323 54.7296 30.8242 53.5537 30.7236 52.3914C30.6451 51.4838 31.0506 50.4826 31.9556 49.9619L28.626 35.0545C28.5677 34.7932 28.6313 34.5192 28.7989 34.3101C28.9662 34.1009 29.2199 33.9791 29.4877 33.9791H60.0669C60.3524 33.9791 60.6211 34.1177 60.7866 34.3507C60.952 34.5836 60.9944 34.8828 60.9004 35.1524L57.3779 45.2463C56.9407 46.4986 55.8574 47.4177 54.5513 47.6458L33.1412 51.3876C33.1386 51.388 33.1359 51.3885 33.1328 51.3889C32.4714 51.5067 32.4679 52.0689 32.4829 52.2387C32.4974 52.4091 32.598 52.9642 33.2736 52.9642H54.0651C54.5522 52.9642 54.9476 53.3595 54.9476 53.8466C54.9476 54.3338 54.5518 54.7296 54.0642 54.7296ZM30.5886 35.7446L33.6623 49.5052L54.2473 45.9082C54.9237 45.7899 55.485 45.3138 55.7114 44.6652L58.8243 35.745L30.5886 35.7446Z" fill="#EC268F"/>
-                                            <path d="M33.5242 61.8694C31.9291 61.8694 30.6319 60.5721 30.6319 58.977C30.6319 57.3819 31.9291 56.0842 33.5242 56.0842C35.1193 56.0842 36.417 57.3815 36.417 58.977C36.4166 60.5721 35.1189 61.8694 33.5242 61.8694ZM33.5242 57.8496C32.9025 57.8496 32.3968 58.3553 32.3968 58.9774C32.3968 59.5987 32.9025 60.1048 33.5242 60.1048C34.1459 60.1048 34.652 59.5992 34.652 58.9774C34.6516 58.3553 34.1459 57.8496 33.5242 57.8496Z" fill="#EC268F"/>
-                                            <path d="M51.6148 61.8694C50.0197 61.8694 48.722 60.5721 48.722 58.977C48.722 57.3819 50.0193 56.0842 51.6148 56.0842C53.2104 56.0842 54.5076 57.3815 54.5076 58.977C54.5072 60.5721 53.2099 61.8694 51.6148 61.8694ZM51.6148 57.8496C50.9931 57.8496 50.487 58.3553 50.487 58.9774C50.487 59.5987 50.9927 60.1048 51.6148 60.1048C52.237 60.1048 52.7427 59.5992 52.7427 58.9774C52.7422 58.3553 52.2365 57.8496 51.6148 57.8496Z" fill="#EC268F"/>
-                                            <path d="M29.4864 35.7446C29.0822 35.7446 28.7177 35.4653 28.626 35.0545L28.0051 32.2742C27.7064 30.9359 26.5397 30.0013 25.1688 30.0013H22.1198C21.6327 30.0013 21.2373 29.606 21.2373 29.1188C21.2373 28.6317 21.6327 28.2363 22.1198 28.2363H25.1684C27.3724 28.2363 29.2472 29.7383 29.7277 31.8894L30.3486 34.6697C30.4549 35.1453 30.1553 35.617 29.6797 35.7234C29.6148 35.7379 29.5499 35.7446 29.4864 35.7446Z" fill="#EC268F"/>
-                                            <circle cx="55.3886" cy="34.5151" r="8.93308" fill="#F64D4D"/>
-                                            <defs>
-                                            <filter id="filter0_d_1629_264" x="0.000844002" y="0.363637" width="86.2727" height="86.2727" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                                            <feOffset/>
-                                            <feGaussianBlur stdDeviation="3.31818"/>
-                                            <feComposite in2="hardAlpha" operator="out"/>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1629_264"/>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1629_264" result="shape"/>
-                                            </filter>
-                                            </defs>
-                                            </svg>
-
-                                           <span
-                                               class="cart-has-item-icon cart-count"> {{ $cartItemsCount }}</span>
-                                       </a>
-                                   </li>
-
-                                   @auth
-                                       <li class="nav-item text-red">
-                                           <a class=" " href="{{ route('frontend.profile') }}">
-                                               {{-- <i class="fas fa-user nn-top-cart-icon"></i> --}}
-
-                                               <svg width="50" height="49" viewBox="0 0 88 87" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g filter="url(#filter0_d_1629_261)">
-                                                <circle cx="43.978" cy="43.5" r="36.5" fill="white"/>
+                               <ul class="navbar-nav d-none d-lg-flex  align-items-center nav-color-active-ul"  style="gap:0.5rem">
+                                    <li class="nav-item text-red position-relative">
+                                        <a class="nav-color-btn {{ URL::current() == route('frontend.cart.index') ? 'active' : '' }}"
+                                            href="{{ route('frontend.cart.index') }}">
+                                            <svg width="65" height="65" viewBox="0 0 88 88" fill="#393535" xmlns="http://www.w3.org/2000/svg">
+                                                <g filter="url(#filter0_d_542_119)">
+                                                <circle cx="44" cy="40" r="30" fill="white"/>
                                                 </g>
-                                                <path d="M56.6447 56.7825H31.3691V56.1452C31.3691 49.1766 37.0384 43.5074 44.0069 43.5074C50.9754 43.5074 56.6447 49.1766 56.6447 56.1452V56.7825ZM32.6614 55.5078H55.3521C55.021 49.5374 50.0586 44.7821 44.0069 44.7821C37.9552 44.7821 32.9931 49.5374 32.6614 55.5078Z" fill="#EC268F"/>
-                                                <path d="M44.0069 42.1141C40.1436 42.1141 37.0008 38.971 37.0008 35.1077C37.0008 31.2447 40.1436 28.1016 44.0069 28.1016C47.8702 28.1016 51.013 31.2447 51.013 35.1077C51.013 38.971 47.8702 42.1141 44.0069 42.1141ZM44.0069 29.3763C40.8466 29.3763 38.2755 31.9474 38.2755 35.1077C38.2755 38.268 40.8466 40.8394 44.0069 40.8394C47.1672 40.8394 49.7383 38.2683 49.7383 35.1077C49.7383 31.9474 47.1672 29.3763 44.0069 29.3763Z" fill="#EC268F"/>
+                                                <path d="M51.8389 46.9052H39.2736C38.3426 46.9052 37.7938 46.066 37.733 45.2367C37.6856 44.589 37.9306 43.8746 38.4776 43.503L36.4653 32.8653C36.4301 32.6789 36.4685 32.4834 36.5698 32.3341C36.6709 32.1849 36.8242 32.098 36.9861 32.098H55.4666C55.6391 32.098 55.8015 32.1968 55.9015 32.3631C56.0015 32.5293 56.0271 32.7428 55.9703 32.9352L53.8415 40.1381C53.5772 41.0317 52.9226 41.6875 52.1332 41.8503L39.1941 44.5204C39.1925 44.5207 39.1909 44.521 39.189 44.5213C38.7893 44.6054 38.7872 45.0065 38.7962 45.1277C38.805 45.2493 38.8658 45.6454 39.2741 45.6454H51.8394C52.1338 45.6454 52.3727 45.9275 52.3727 46.2751C52.3727 46.6227 52.1335 46.9052 51.8389 46.9052ZM37.6514 33.3578L39.509 43.1772L51.9495 40.6104C52.3583 40.526 52.6975 40.1862 52.8343 39.7234L54.7156 33.3581L37.6514 33.3578Z" />
+                                                <path d="M39.4256 52C38.4616 52 37.6776 51.0743 37.6776 49.9361C37.6776 48.7978 38.4616 47.8718 39.4256 47.8718C40.3896 47.8718 41.1738 48.7975 41.1738 49.9361C41.1736 51.0743 40.3893 52 39.4256 52ZM39.4256 49.1316C39.0498 49.1316 38.7442 49.4924 38.7442 49.9364C38.7442 50.3797 39.0498 50.7409 39.4256 50.7409C39.8013 50.7409 40.1072 50.38 40.1072 49.9364C40.1069 49.4924 39.8013 49.1316 39.4256 49.1316Z" />
+                                                <path d="M50.3586 52C49.3946 52 48.6103 51.0743 48.6103 49.9361C48.6103 48.7978 49.3943 47.8718 50.3586 47.8718C51.3229 47.8718 52.1068 48.7975 52.1068 49.9361C52.1066 51.0743 51.3226 52 50.3586 52ZM50.3586 49.1316C49.9829 49.1316 49.677 49.4924 49.677 49.9364C49.677 50.3797 49.9826 50.7409 50.3586 50.7409C50.7346 50.7409 51.0402 50.38 51.0402 49.9364C51.0399 49.4924 50.7343 49.1316 50.3586 49.1316Z" />
+                                                <path d="M36.9853 33.3578C36.741 33.3578 36.5208 33.1584 36.4653 32.8653L36.0901 30.8813C35.9096 29.9263 35.2045 29.2595 34.376 29.2595H32.5333C32.2389 29.2595 32 28.9773 32 28.6297C32 28.2821 32.2389 28 32.5333 28H34.3757C35.7077 28 36.8408 29.0718 37.1312 30.6068L37.5064 32.5907C37.5706 32.9302 37.3896 33.2668 37.1021 33.3426C37.0629 33.353 37.0237 33.3578 36.9853 33.3578Z"/>
+                                                <circle cx="58.5" cy="25.5" r="2.5" fill="#F64D4D"/>
                                                 <defs>
-                                                <filter id="filter0_d_1629_261" x="0.841664" y="0.363637" width="86.2727" height="86.2727" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <filter id="filter0_d_542_119" x="0.2" y="0.2" width="87.6" height="87.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                                                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
                                                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                                                <feOffset/>
-                                                <feGaussianBlur stdDeviation="3.31818"/>
+                                                <feOffset dy="4"/>
+                                                <feGaussianBlur stdDeviation="6.9"/>
                                                 <feComposite in2="hardAlpha" operator="out"/>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1629_261"/>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1629_261" result="shape"/>
+                                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.11 0"/>
+                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_542_119"/>
+                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_542_119" result="shape"/>
                                                 </filter>
                                                 </defs>
                                                 </svg>
+                                                
+                                                
+                                                
+
+                                            <span
+                                                class="cart-has-item-icon cart-count"> {{ $cartItemsCount }}</span>
+                                        </a> 
+                                                                                                                              
+                                    </li>
+
+                                   @auth
+                                       <li class="nav-item text-red">
+                                           <a class="nav-color-btn {{ URL::current() == route('frontend.profile') ? 'active' : '' }}" href="{{ route('frontend.profile') }}">
+                                               {{-- <i class="fas fa-user nn-top-cart-icon"></i> --}}
+
+                                            <svg width="65" height="65" viewBox="0 0 88 88" fill="#393535" xmlns="http://www.w3.org/2000/svg">
+                                                <g filter="url(#filter0_d_542_116)">
+                                                <circle cx="44" cy="40" r="30" fill="white"/>
+                                                </g>
+                                                <path d="M56 52.115H56.115V52V51.4667C56.115 45.5587 50.6663 40.7765 44 40.7765C37.3337 40.7765 31.885 45.5587 31.885 51.4667V52V52.115H32H56ZM54.6493 50.8183H33.3504C33.7294 45.9517 38.3493 42.0731 44 42.0731C49.6508 42.0731 54.2709 45.9517 54.6493 50.8183ZM37.2325 33.8627C37.2325 37.1722 40.2822 39.8406 44 39.8406C47.7178 39.8406 50.7675 37.1722 50.7675 33.8627C50.7675 30.5534 47.7178 27.885 44 27.885C40.2822 27.885 37.2325 30.5534 37.2325 33.8627ZM38.6728 33.8627C38.6728 31.2949 41.0486 29.1817 44 29.1817C46.9514 29.1817 49.3272 31.2949 49.3272 33.8627C49.3272 36.4307 46.9514 38.5439 44 38.5439C41.0486 38.5439 38.6728 36.4305 38.6728 33.8627Z"  stroke-width="0.23"/>
+                                                <defs>
+                                                <filter id="filter0_d_542_116" x="0.2" y="0.2" width="87.6" height="87.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                                <feOffset dy="4"/>
+                                                <feGaussianBlur stdDeviation="6.9"/>
+                                                <feComposite in2="hardAlpha" operator="out"/>
+                                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.11 0"/>
+                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_542_116"/>
+                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_542_116" result="shape"/>
+                                                </filter>
+                                                </defs>
+                                            </svg>
+                                                
 
 
                                            </a>
@@ -172,21 +188,11 @@
                                </div>
                                <ul class="nav navbar-nav d-none d-lg-inline">
                                    <a href="/">
-                                       <img height="35" src="{{ asset('frontend/images/channel-logo.svg') }}"
-                                           alt="schon" class="">
+                                       <img  src="{{ asset('frontend/images/channel-logo.svg') }}"
+                                           alt="schon" class="img-fluid" style="width: 180px">
                                    </a>
                                </ul>
-                               <div class="header-sub-1 header-top-search-icon d-none d-lg-inline">
-                                   <form action="{{ route('frontend.search.index') }}" method="GET" class="position-relative" style="isolation: isolate">
-                                       <input type="text" class="form-control px-4 search-btn-newp" placeholder="Search Product"
-                                           aria-label="Search" aria-describedby="basic-addon1" name="q"
-                                           value="{{ request('q') }}" style="padding-top: 9px;padding-bottom:9px">
-                                       <button class="position-absolute  border-0 bg-transparent header-seach-icon"
-                                           type="submit">
-                                           <i class="fas fa-search fa-fw " style="color:#EC268F"></i>
-                                       </button>
-                                   </form>
-                               </div>
+                             
                            </div>
                        </div>
                    </nav>
@@ -198,7 +204,7 @@
        <div class="mt-bottom-bar py-0">
            <div class="container d-none d-lg-block px-0">
                <div class="row">
-                   <div class="col-xs-12 py-2">
+                   <div class="col-xs-12" style="padding-top: 12px;padding-bottom: 14px;">
                        <ul class="mt-icon-list ">
 
                            {{-- <li class="bg-red px-2 rounded my-2">
@@ -207,10 +213,22 @@
                                </a>
                            </li> --}}
 
-                           <li class="px-2 m-0 d-flex align-items-center">
+                           {{-- <li class="px-2 m-0 d-flex align-items-center">
                             <a href="{{ route('frontend.about') }}" class="text-dark" style="font-size: 1rem">
                                 About Us
                             </a>
+                        </li> --}}
+
+                        <li>
+                            <form action="{{ route('frontend.search.index') }}" method="GET" class="position-relative" style="isolation: isolate;background-color: white;border-radius:36px">
+                                <input type="text" class="form-control search-btn-newp my-input-form" placeholder="Search Product"
+                                    aria-label="Search" aria-describedby="basic-addon1" name="q"
+                                    value="{{ request('q') }}" style="padding-top: 18px;padding-bottom:18px;background-color:white;border-radius:36px;border-color:white" >
+                                <button class="position-absolute  border-0 bg-transparent header-seach-icon"
+                                    type="submit">
+                                    <i class="fas fa-search fa-fw " style="color:#EC268F"></i>
+                                </button>
+                            </form>
                         </li>
 
 
@@ -245,7 +263,7 @@
                </div>
            </div>
        </div>
-       <div class="d-lg-none d-block bg-white pb-3">
+       <div class="d-lg-none d-block py-4" style="">
            <div class="container">
                <div class="row row-cols-4 ">
                    <div class="col">
@@ -312,6 +330,8 @@
            </div>
        </div>
    </header>
+
+   
    <script>
        const {
            createApp

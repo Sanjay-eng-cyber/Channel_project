@@ -14,16 +14,24 @@
 
     @include('components.frontend.profile-nav-div')
 
-    <section class="my-1">
+    <section class="my-1 position-relative" style="z-index: 999">
         <div class="container">
-            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" class="bread-crum breadcrumb-hover">Profile</a></li>
-                </ol>
-            </nav>
+            <div class="row py-2 d-flex justify-content-center">
+                <div class="col-12 col-lg-11 col-xl-11">
+               
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="" class="bread-crum breadcrumb-hover">Profile</a>
+                                </li>
+                            </ol>
+                        </nav>
+                </div>
+            </div>
+                 
         </div>
     </section>
-    <section class="pb-4">
+    <section class="pb-4 position-relative" style="z-index: 9999">
         <div class="container">
             <div class="row py-2 d-flex justify-content-center">
                 <div class="col-12 col-lg-6 col-xl-6">
