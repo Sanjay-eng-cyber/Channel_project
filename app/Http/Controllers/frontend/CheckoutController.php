@@ -138,7 +138,7 @@ class CheckoutController extends Controller
         $order->update(['status' => 'completed']);
         $userCart = auth()->user()->cart;
         optional($userCart->items()->delete());
-        $transaction = $order->transactions()->whereStatus('completed')->first();
+        $transaction = $order->transactions()->whereStatus('completed')->latest()->first();
         return view('frontend.payment-success', compact('order', 'transaction'));
     }
 

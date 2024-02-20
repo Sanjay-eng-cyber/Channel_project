@@ -63,6 +63,8 @@ class Payment extends Webhook
                 'order_id' => $order->id,
                 'invoice_date' => now()
             ]);
+
+            $order->update(['status' => 'completed']);
         });
     }
 
