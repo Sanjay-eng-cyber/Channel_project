@@ -176,6 +176,17 @@ class DeliveryController extends Controller
         $shipment = Shiprocket::shipment($token)->getSpecific($delivery->shipment_id);
         Log::info('ShipRocket FetchDelivery getSpecific Response @ ' . $time);
         Log::info($shipment);
+
+        // Get Tracking through Shipment ID
+        $tracking =  Shiprocket::track($token)->throwShipmentId($delivery->shipment_id);
+        // dd($tracking);
+        Log::info('ShipRocket Tracking through Shipment ID Response @ ' . $time);
+        Log::info($tracking);
+        $response =  Shiprocket::track($token)->throughAwb($delivery->awb_code ?? '');
+        // dd($response);
+        Log::info('ShipRocket Tracking through AWB Response @ ' . $time);
+        Log::info($response);
+
         // dd($shipment);
         if ($shipment && isset($shipment['data'])) {
             $delivery->update([
