@@ -339,8 +339,8 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <div class="text-end">
-                                                <button type="submit" class="btn btn-pink">Post Your Review</button>
+                                            <div class="text-start">
+                                                <button type="submit" class="btn btn-darkwhite">Post Your Review</button>
                                             </div>
                                         </form>
                                     </div>
