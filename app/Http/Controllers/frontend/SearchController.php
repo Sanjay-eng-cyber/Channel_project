@@ -27,7 +27,9 @@ class SearchController extends Controller
             ->orWhereHas('tags', function ($query) use ($search) {
                 $query->where('name', 'like', '%' . $search . '%');
             })
-            ->paginate(12);
+            ->latest();
+        $products = $this->filterResults($request, $products);
+        $products = $products->paginate(12);
 
         $user = auth()->user();
         $wishlist = $user ? $user->wishlist()->pluck('product_id')->toArray() : [];
@@ -47,9 +49,9 @@ class SearchController extends Controller
     {
         if ($request !== null && $request->has('sort_by')) {
             if ($request['sort_by'] == 'low_to_high') {
-                $products = $products->orderBy('mrp', 'asc');
+                $products = $products->orderBy('final_price', 'asc');
             } elseif ($request['sort_by'] == 'high_to_low') {
-                $products = $products->orderBy('mrp', 'desc');
+                $products = $products->orderBy('final_price', 'desc');
             } elseif ($request['sort_by'] == 'featured') {
                 $products = $products->whereHas('showcases', function ($query) {
                     $query->where('name', 'Featured');
