@@ -283,135 +283,149 @@
 
 
                     <div class="my-0 py-3 py-lg-0 my-lg-2 col-lg-6 col-md-12 product-showpagepills pills-divider-border">
-                        <div class=" d-flex justify-content-start ">
-                            <h5 class="main-head tab-fs py-2 pills-divider-h5">Write a Reviews</h5>
-                        </div>
 
-                        <div class="tab-content my-4">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-10">
+                   
+                                <div class=" d-flex justify-content-center mb-4">
+                                    <h5 class="main-head tab-fs py-2 pills-divider-h5 h2 fw-500">Write a Reviews</h5>
+                                </div>
 
-                            <div class="">
-                                <form action="{{ route('frontend.review.store', $product->slug) }}" method="POST">
-                                    @csrf
-                                    <div class="d-flex justify-content-between flex-column flex-sm-row gap-1">
-                                        <div>Give Your Rating</div>
+                                <div class="tab-content my-4">
 
-                                        <div class="rating-input">
-                                            <input type="radio" id="star5" name="rating" value="5" />
-                                            <label class="star" for="star5" title="Awesome"
-                                                aria-hidden="true"></label>
-                                            <input type="radio" id="star4" name="rating" value="4" />
-                                            <label class="star" for="star4" title="Great"
-                                                aria-hidden="true"></label>
-                                            <input type="radio" id="star3" name="rating" value="3" />
-                                            <label class="star" for="star3" title="Very good"
-                                                aria-hidden="true"></label>
-                                            <input type="radio" id="star2" name="rating" value="2" />
-                                            <label class="star" for="star2" title="Good"
-                                                aria-hidden="true"></label>
-                                            <input type="radio" id="star1" name="rating" value="1" />
-                                            <label class="star" for="star1" title="Bad"
-                                                aria-hidden="true"></label>
-                                        </div>
-                                    </div>
-                                    @if ($errors->has('rating'))
-                                        <div class="text-danger text-end" role="alert">{{ $errors->first('rating') }}
-                                        </div>
-                                    @endif
+                                    <div class="">
+                                        <form action="{{ route('frontend.review.store', $product->slug) }}" method="POST">
+                                            @csrf
+                                            <div class="d-flex justify-content-between flex-column flex-sm-row align-items-center gap-1">
+                                                <div class="fw-400 h5 text-black">Give Your Rating</div>
 
-                                    <div class="py-4">
-                                        <input type="text"
-                                            class="form-control my-2 review-sub-headline review-input-bg"
-                                            placeholder="Enter Title" name="title" required
-                                            value="{{ old('title') }}">
-                                        @if ($errors->has('title'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('title') }}
+                                                <div class="rating-input">
+                                                    <input type="radio" id="star5" name="rating" value="5" />
+                                                    <label class="star" for="star5" title="Awesome"
+                                                        aria-hidden="true"></label>
+                                                    <input type="radio" id="star4" name="rating" value="4" />
+                                                    <label class="star" for="star4" title="Great"
+                                                        aria-hidden="true"></label>
+                                                    <input type="radio" id="star3" name="rating" value="3" />
+                                                    <label class="star" for="star3" title="Very good"
+                                                        aria-hidden="true"></label>
+                                                    <input type="radio" id="star2" name="rating" value="2" />
+                                                    <label class="star" for="star2" title="Good"
+                                                        aria-hidden="true"></label>
+                                                    <input type="radio" id="star1" name="rating" value="1" />
+                                                    <label class="star" for="star1" title="Bad"
+                                                        aria-hidden="true"></label>
+                                                </div>
                                             </div>
-                                        @endif
-                                        <textarea name="body" id="body" cols="10" rows="3"
-                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review"
-                                            minlength="3" maxlength="2000" required>{{ old('body') }}</textarea>
-                                        @if ($errors->has('body'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('body') }}
+                                            @if ($errors->has('rating'))
+                                                <div class="text-danger text-end" role="alert">{{ $errors->first('rating') }}
+                                                </div>
+                                            @endif
+
+                                            <div class="py-4">
+                                                <input type="text"
+                                                    class="form-control my-2 review-sub-headline review-input-bg"
+                                                    placeholder="Enter Title" name="title" required
+                                                    value="{{ old('title') }}">
+                                                @if ($errors->has('title'))
+                                                    <div class="text-danger" role="alert">{{ $errors->first('title') }}
+                                                    </div>
+                                                @endif
+                                                <textarea name="body" id="body" cols="10" rows="3"
+                                                    class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review"
+                                                    minlength="3" maxlength="2000" required>{{ old('body') }}</textarea>
+                                                @if ($errors->has('body'))
+                                                    <div class="text-danger" role="alert">{{ $errors->first('body') }}
+                                                    </div>
+                                                @endif
                                             </div>
-                                        @endif
+                                            <div class="text-end">
+                                                <button type="submit" class="btn btn-pink">Post Your Review</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="text-end">
-                                        <button type="submit" class="btn btn-pink">Post Your Review</button>
-                                    </div>
-                                </form>
+
+                                </div>
+
                             </div>
-
                         </div>
+
                     </div>
 
                     <div class="my-0 my-lg-2 col-lg-6 col-md-12 product-showpagepills pills-divider-border ">
 
-                        <div class="pills-divider d-flex justify-content-start px-0 px-lg-3">
-                            <h5 class="main-head tab-fs pills-divider-h5 py-2">Customer Reviews</h5>
-                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-10">
 
-
-                        <div class="tab-content my-4">
-                            <div class="tab-pane fade show active" id="home" aria-labelledby="home-tab">
-                                <div class="container p-0 px-0 px-lg-3">
-                                    @forelse ($reviews as $re)
-                                        <div class="review-area">
-                                            <div class="review-card ">
-                                                <div class="d-flex align-items-center">
-
-                                                    <div class="review-user">
-                                                        <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="">
-                                                        <div class="d-flex review-head">
-                                                            <div class="five-stars text-green d-flex">
-                                                                @for ($i = 1; $i <= 5; $i++)
-                                                                    @if ($i <= $re->rating)
-                                                                        <i class="fa-solid fa-star"></i>
-                                                                    @else
-                                                                        <i class="fa-regular fa-star"></i>
-                                                                    @endif
-                                                                @endfor
-                                                            </div>
-                                                            <div class="review-title">
-                                                                <h5 class="font-body">
-                                                                    {{ $re->title }}
-                                                                </h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="review-content">
-
-                                                    <div class="review-text">
-                                                        <p>
-                                                            {!! nl2br($re->body) !!}
-                                                        </p>
-                                                    </div>
-                                                    <div
-                                                        class="review-info text-muted d-flex flex-wrap justify-content-between">
-                                                        <div class="py-2">
-                                                            {{ $re->user->first_name ?? 'Anonymous' }}
-                                                            | {{ dd_format($re->created_at, 'd M-Y') }}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @empty
-                                        <p class="text-center my-4">No Reviews</p>
-                                    @endforelse
+                                <div class="pills-divider d-flex justify-content-center px-0 px-lg-3 mb-4">
+                                    <h5 class="main-head tab-fs pills-divider-h5 py-2 h2 fw-500">Customer Reviews</h5>
                                 </div>
-                                <div class="d-flex justify-content-center mt-4">
-                                    {{ $reviews->onEachSide(1)->links('pagination::bootstrap-4') }}
+
+                                <div class="tab-content my-4">
+                                    <div class="tab-pane fade show active" id="home" aria-labelledby="home-tab">
+                                        <div class="container p-0 px-0 px-lg-3">
+                                            @forelse ($reviews as $re)
+                                                <div class="review-area">
+                                                    <div class="review-card ">
+                                                        <div class="d-flex align-items-center justify-content-between">
+
+                                                            <div class="review-user d-flex gap-3 align-items-center">
+                                                                <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
+                                                                    alt="">
+                                                                <div class="review-title">
+                                                                        <h5 class="font-body">
+                                                                            {{ $re->title }}
+                                                                        </h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="">
+                                                                <div class="d-flex review-head">
+                                                                    <div class="five-stars text-green d-flex">
+                                                                        @for ($i = 1; $i <= 5; $i++)
+                                                                            @if ($i <= $re->rating)
+                                                                                <i class="fa-solid fa-star"></i>
+                                                                            @else
+                                                                                <i class="fa-regular fa-star"></i>
+                                                                            @endif
+                                                                        @endfor
+                                                                    </div>
+                                                                 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="review-content">
+
+                                                            <div class="review-text">
+                                                                <p>
+                                                                    {!! nl2br($re->body) !!}
+                                                                </p>
+                                                            </div>
+                                                            <div
+                                                                class="review-info text-muted d-flex flex-wrap justify-content-between">
+                                                                <div class="py-2">
+                                                                    {{ $re->user->first_name ?? 'Anonymous' }}
+                                                                    | {{ dd_format($re->created_at, 'd M-Y') }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @empty
+                                                <p class="text-center my-4">No Reviews</p>
+                                            @endforelse
+                                        </div>
+                                        <div class="d-flex justify-content-center mt-4">
+                                            {{ $reviews->onEachSide(1)->links('pagination::bootstrap-4') }}
+                                        </div>
+                                    </div>
+
+
+
                                 </div>
                             </div>
-
-
-
                         </div>
+
                     </div>
 
 
