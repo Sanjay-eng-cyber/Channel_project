@@ -285,7 +285,7 @@
                     <div class="my-0 py-3 py-lg-0 my-lg-2 col-lg-6 col-md-12 product-showpagepills pills-divider-border">
 
                         <div class="row d-flex justify-content-center">
-                            <div class="col-10">
+                            <div class="col-12 col-xl-10">
                    
                                 <div class=" d-flex justify-content-center mb-4">
                                     <h5 class="main-head tab-fs py-2 pills-divider-h5 h2 fw-500">Write a Reviews</h5>
@@ -339,8 +339,20 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <div class="text-start">
-                                                <button type="submit" class="btn btn-darkwhite">Post Your Review</button>
+                                            <div class="review-sub-colbtn" >
+                                         
+                                                  <div class="up-image-label">
+                                                    <label for="files" class="btn btn-lg fw-500 d-flex align-items-center gap-2" >                                                    
+                                                        <img src="{{asset('frontend/images/icons/upload-icon.svg')}}" alt="" class="img-fluid" style="width: 17px">
+                                                        <div class="h6 mb-0 up-fontSize">
+                                                            Upload Photos
+                                                        </div>
+                                                    </label>
+                                                    <input id="files" style="visibility:hidden;" type="file">
+                                                  </div>   
+                                                  <div class="text-end">
+                                                      <button type="submit" class="btn btn-darkwhite up-fontSize">Post Your Review</button>
+                                                  </div>                                          
                                             </div>
                                         </form>
                                     </div>
@@ -355,7 +367,7 @@
                     <div class="my-0 my-lg-2 col-lg-6 col-md-12 product-showpagepills pills-divider-border ">
 
                         <div class="row d-flex justify-content-center">
-                            <div class="col-10">
+                            <div class="col-12 col-xl-10">
 
                                 <div class="pills-divider d-flex justify-content-center px-0 px-lg-3 mb-4">
                                     <h5 class="main-head tab-fs pills-divider-h5 py-2 h2 fw-500">Customer Reviews</h5>
@@ -373,14 +385,14 @@
                                                                 <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
                                                                     alt="">
                                                                 <div class="review-title">
-                                                                        <h5 class="font-body">
+                                                                        <h6 class="font-body">
                                                                             {{ $re->title }}
-                                                                        </h5>
+                                                                        </h6>
                                                                 </div>
                                                             </div>
                                                             <div class="">
                                                                 <div class="d-flex review-head">
-                                                                    <div class="five-stars text-green d-flex">
+                                                                    <div class="five-stars text-green d-flex gap-2">
                                                                         @for ($i = 1; $i <= 5; $i++)
                                                                             @if ($i <= $re->rating)
                                                                                 <i class="fa-solid fa-star"></i>
@@ -394,18 +406,44 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="review-content">
+                                                        <div class="review-content pb-3">
 
                                                             <div class="review-text">
-                                                                <p>
+                                                                <p class="tinywhite">
                                                                     {!! nl2br($re->body) !!}
                                                                 </p>
                                                             </div>
-                                                            <div
-                                                                class="review-info text-muted d-flex flex-wrap justify-content-between">
+
+                                                           
+                                                            <div class="uploaded-product-img ">
+                                                                <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
+                                                                <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
+                                                                <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
+                                                                <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
+                                                            </div> 
+
+                                                            <div class="review-info text-muted d-flex flex-wrap justify-content-between py-2">
                                                                 <div class="py-2">
                                                                     {{ $re->user->first_name ?? 'Anonymous' }}
                                                                     | {{ dd_format($re->created_at, 'd M-Y') }}
+                                                                </div>
+
+                                                                <div class="d-flex align-items-center gap-4">
+                                                                    <div class="d-flex gap-2 align-items-center">
+                                                                        <button class="border-0 bg-transparent">
+                                                                            <img src="{{asset('frontend/images/icons/like.svg')}}" alt="">
+                                                                        </button>
+                                                                        <div>200</div>
+                                                                    </div>
+
+                                                                    <div>|</div>
+
+                                                                    <div class="d-flex gap-2 align-items-center"> 
+                                                                        <button class="border-0 bg-transparent">                                                                    
+                                                                            <img src="{{asset('frontend/images/icons/dislike.svg')}}" alt="">
+                                                                        </button>
+                                                                        <div>200</div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
