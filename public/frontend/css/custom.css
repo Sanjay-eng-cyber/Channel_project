@@ -22,9 +22,31 @@
 
 } */
 /* Default style for the dropdown menu */
+
+.slider .product-slider .slick-track .slide{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+/* .add-to-wish-showpage svg  {
+    fill:#EC268F !important;
+}  */
+
+/* .add-to-wish-showpage.active svg path {
+    fill:#EC268F !important;
+}  */
 .up-fontSize{
     font-size: 16px;
 }
+
+/* .add-to-wish.active {
+    background-color: #ec268f !important;
+    color: #ec268f;
+}
+
+.add-to-wish.active svg path {
+    fill: #fff;
+} */
+
 .review-sub-colbtn{
     display: grid;
     grid-template-columns:50% 50%;
@@ -52,7 +74,15 @@
 .uploaded-product-img img{
     width: 113px;
 }
-
+.cust-output-review{
+    width: 19.72px;
+}
+.posting-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 170px; /* Adjust width as needed */
+}
 @media screen and (max-width: 1400px) {
     .uploaded-product-img img{
         width: 95px;
@@ -83,7 +113,7 @@
     font-size:14px;
 }
 .stock-width{
-    width: 75%;
+    width: 74%;
 }
 .btn-size-width109{
     width:110px;
@@ -3129,22 +3159,18 @@ a:hover {
     padding-right: 0px;
 }
 
-/* .mt-product-detial .detial-holder {
-    border-left: 1px solid #00000054;
-    padding: 0;
-    padding-left: 20px;
-} */
+
 
 .mt-product-detial {
     background: #fff;
 }
 
 
-.mt-product-detial .product-slider {
+/* .mt-product-detial .product-slider {
     max-width: 498px;
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 @media only screen and (max-width: 767px) {
     .mt-product-detial .detial-holder {
@@ -4015,9 +4041,19 @@ img.cart-p-img {
     border-radius: 8px;
     padding: 35px 40px 20px 20px;
 }
+/* .mt-product-detial .detial-holder {
+    border-left: 1px solid #00000054;
+    padding: 0;
+    padding-left: 20px;
+} */
 
+/* .mt-product-detial .slider .product-slider .slide{
+
+} */
     .mt-product-detial .slider {
-        width: 48%;
+        width: 44%;
+        /* padding-left: 30px;;
+        padding-right: 30px;; */
     }
 
     .mt-product-detial .detial-holder {
@@ -4026,15 +4062,15 @@ img.cart-p-img {
 
  @media (max-width: 1400px) {
     .mt-product-detial .slider {
-        width: 44%;
+        width: 47%;
     }
 
     .mt-product-detial .detial-holder {
-        width: 56%;
+        width: 53%;
     }
     .mt-product-detial > .container {
        
-        padding: 25px 20px 25px 20px;
+        padding: 35px 40px 20px 20px;
     }
     
 } 
@@ -4068,6 +4104,14 @@ img.cart-p-img {
         padding: 20px 20px 20px 20px;
     }
     
+}
+
+@media (max-width: 576px) {
+    .mt-product-detial > .container {
+        border: 0px solid transparent;
+        border-radius: 0px;
+        padding: 35px 40px 20px 20px;
+    }
 }
 
 .isolation-contact {
