@@ -24,8 +24,9 @@
 /* Default style for the dropdown menu */
 
 .slider .product-slider .slick-track .slide{
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 0px;
+    padding-right: 4px;
+    padding-bottom:0px;
 }
 /* .add-to-wish-showpage svg  {
     fill:#EC268F !important;
@@ -354,7 +355,7 @@ a:hover {
     width: 40%;
     float: left;
     padding: 0px 0px;
-    padding-left: 20px;
+    padding-left: 35px;
     position: relative;
   }
 
@@ -3156,7 +3157,8 @@ a:hover {
 }
 
 .mt-product-detial .slider {
-    padding-right: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 
@@ -4061,6 +4063,11 @@ img.cart-p-img {
     }
 
  @media (max-width: 1400px) {
+    .mt-product-detial .slider {
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+    
     .mt-product-detial .slider {
         width: 47%;
     }
