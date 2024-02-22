@@ -58,36 +58,7 @@
                                             </div>
                                         </li>
 
-                                        <li style="padding-left: 30px;padding-right:30px">
-                                            <div class="img">
-                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                    alt="image description" class="min-h-2-80">
-                                            </div>
-                                        </li>
-
-                                        <li style="padding-left: 30px;padding-right:30px">
-                                            <div class="img">
-                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                    alt="image description" class="min-h-2-80">
-                                            </div>
-                                        </li>
-
-
-                                        <li style="padding-left: 30px;padding-right:30px">
-                                            <div class="img">
-                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                    alt="image description" class="min-h-2-80">
-                                            </div>
-                                        </li>
-
-                                        <li style="padding-left: 30px;padding-right:30px">
-                                            <div class="img">
-                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                    alt="image description" class="min-h-2-80">
-                                            </div>
-                                        </li>
-
-                                        
+                                      
 
                                       
                                     @endforeach
