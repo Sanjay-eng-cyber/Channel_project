@@ -114,9 +114,6 @@
                                             </div>
                                         </li>
 
-
-                                        
-
                                       
                                     @endforeach
                                 </ul>
@@ -127,12 +124,13 @@
                             <!-- Slider of the Page end -->
                             <!-- detial Holder of the Page -->
                             <div class="detial-holder">
-                                <h1 class="h4 font-body">
+                                <h1 class="h4 font-body fs-16">
                                     {{ $product->name }}
+                                    raees
                                 </h1>
                                 <hr class="d-none d-sm-block">
                                 @if ($product->short_descriptions)
-                                    <p class="text-muted">
+                                    <p class="text-muted fs-11">
                                         {{ $product->short_descriptions }}
                                     </p>
                                 @endif
@@ -140,11 +138,11 @@
                                 {{-- for small screen --}}
                                 <div class="d-flex d-sm-none flex-row  justify-content-between align-items-start stock-width">
                                     @if ($product->stock)
-                                        <h4 class="font-body h5 text-green in-stock mb-0 font-size14">In Stock
+                                        <h4 class="font-body h5 text-green in-stock mb-0 font-size14 fs-9">In Stock
                                             <i class="fa-regular fa-circle-check"></i> 
                                         </h4>
                                      @else
-                                        <h4 class="font-body h5 text-red font-size14">Out of Stock
+                                        <h4 class="font-body h5 text-red font-size14 fs-9">Out of Stock
                                             <i class="fa-regular fa-circle-xmark"></i> 
                                         </h4>
                                     @endif
@@ -186,7 +184,7 @@
                                                
 
                                                 <div>
-                                                    <h3 class="h6 font-body rem-1 m-0">
+                                                    <h3 class="h6 font-body rem-1 m-0 fs-12">
                                                         From ₹{{ $product->final_price }} <s
                                                             class="text-danger">₹{{ $product->mrp }}</s><br>
                                                         @if ($product->unit_sale_price)
@@ -196,14 +194,14 @@
                                                 </div>
 
                                                 <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
-                                                    <label for="qty" class="px-2">
+                                                    <label for="qty" class="px-2 fs-10">
                                                         Qty
                                                     </label>
                                                     <div class="input-group flex-nowrap counter qty-num-input">
-                                                        <button type="button" class="input-group-text decrease-quantity">-</button>
-                                                        <input type="number" name="quantity" class="form-control quantity-input"
+                                                        <button type="button" class="input-group-text decrease-quantity fs-10">-</button>
+                                                        <input type="number" name="quantity" class="form-control quantity-input fs-10"
                                                             value="1" id="product_quantity" style="border-left: 0px;border-right: 0px;padding-left:0px;padding-right:0px">
-                                                        <button type="button" class="input-group-text increase-quantity">+</button>
+                                                        <button type="button" class="input-group-text increase-quantity fs-10">+</button>
                                                     </div>
                                                 </div>
                                             
@@ -400,10 +398,10 @@
 
 
                                     <hr class="d-none d-sm-block">
-                                    <h6 class="h5 font-body">
+                                    <h6 class="h5 font-body fs-14">
                                         Description
                                     </h6>
-                                    <ul class="text-black">
+                                    <ul class="text-black fs-11 fw-sm-300">
                                         {!! $product->descriptions !!}
                                     </ul>
                                     <hr class="d-none d-sm-block">
@@ -411,8 +409,8 @@
                                         <div class="my-1">
                                             @forelse ($product_attributes as $product_attribute)
                                                 <div class="d-flex gap-2 my-1">
-                                                    <div>{{ $product_attribute->attribute->name . ' : ' }}</div>
-                                                    <div class="fw-500">{{ $product_attribute->value->name }}</div>
+                                                    <div class="fs-11 fw-sm-300">{{ $product_attribute->attribute->name . ' : ' }}</div>
+                                                    <div class="fw-500 fs-11 fw-sm-300">{{ $product_attribute->value->name }}</div>
                                                 </div>
                                             @empty
                                             @endforelse
@@ -423,9 +421,9 @@
                                 </div>
                                 <div class="rating-holder">
                                     <div class="row">
-                                        <div class="col-12 col-sm-6 p-0">
+                                        <div class="col-6 col-sm-6 p-0">
 
-                                                <div class="text-black">
+                                                <div class="text-black fs-11">
                                                     <div class="pb-2">Color : <span class="fw-500">Pink</span> </div>
                                                     <div class="pb-2">Skin Type : <span class="fw-500">Pink</span></div>
                                                     <div class="pb-2">Net Quantity : <span class="fw-500">Pink</span></div>
@@ -436,14 +434,14 @@
 
 
                                         </div>
-                                        <div class="col-12 col-sm-6 p-0">
+                                        <div class="col-6 col-sm-6 p-0">
                                             <div class="rating-stats text-muted">
                                                 <div class="rating">
                                                     <div class="d-flex align-items-center">
-                                                        <h6 class="h6 font-body mb-0 me-2 fw-500 text-black">
+                                                        <h6 class="h6 font-body mb-0 me-2 fw-500 text-black fs-9">
                                                             Ratings
                                                         </h6>
-                                                        <div class="five-stars text-green d-flex gap-1">
+                                                        <div class="five-stars five-stars-main text-green d-flex gap-1 ">
                                                             @for ($i = 1; $i <= 5; $i++)
                                                                 @if ($i <= $reviewRatingAvg)
                                                                     <i class="fa-solid fa-star"></i>
@@ -453,24 +451,24 @@
                                                             @endfor
                                                         </div>
                                                     </div>
-                                                    <div class="py-3">
+                                                    <div class="py-1 py-sm-3">
                                                         <div class="rating-total position-relative isolate " style="display: grid;
                                                         grid-template-columns: 22% 80%;
                                                         align-items: center;">
                                                             <div>
-                                                                <h6 class="h5 font-body text-muted my-2">
-                                                                    {{ $reviewRatingAvg }}
+                                                                <h6 class="h5 font-body text-muted my-2 fs-11">
+                                                                    {{ $reviewRatingAvg }} 
                                                                 </h6>
-                                                                <i class="fa-solid fa-star text-green position-absolute " style="top:0;left:33px"></i>
+                                                                <i class="fa-solid fa-star text-green position-absolute " ></i>
                                                             </div>
-                                                            <h6 class="m-0 p-0 main-head" style="font-size:12px">Based On Verified Buyers</h6>
+                                                            <h6 class="m-0 p-0 main-head fs-md-9" >Based On Verified Buyers</h6>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 @for ($i = 5; $i >= 1; $i--)
                                                 <div>
                                                     <div class="rating-stat">
-                                                        <div>{{ $i }}</div>
+                                                        <div class="fs-8">{{ $i }}</div>
                                                         <div class="review-bar">
                                                             <div class="review-bar-value"
                                                                 style="width: {{ $ratingsArr[$i] }}%;">
@@ -504,8 +502,8 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-12 col-xl-10">
                    
-                                <div class=" d-flex justify-content-center mb-4">
-                                    <h5 class="main-head tab-fs py-2 pills-divider-h5 h2 fw-500">Write a Reviews</h5>
+                                <div class=" d-flex justify-content-start justify-content-sm-center mb-4">
+                                    <h5 class="main-head tab-fs py-2 pills-divider-h5 h2 fw-500 fs-14">Write a Reviews</h5>
                                 </div>
 
                                 <div class="tab-content my-4">
@@ -513,8 +511,8 @@
                                     <div class="">
                                         <form action="{{ route('frontend.review.store', $product->slug) }}" method="POST">
                                             @csrf
-                                            <div class="d-flex justify-content-between flex-column flex-sm-row align-items-center gap-1">
-                                                <div class="fw-400 h5 text-black">Give Your Rating</div>
+                                            <div class="d-flex justify-content-between flex-row align-items-center gap-1">
+                                                <div class="fw-400 h5 text-black fs-12 m-0">Give Your Rating</div>
 
                                                 <div class="rating-input">
                                                     <input type="radio" id="star5" name="rating" value="5" />
@@ -535,13 +533,13 @@
                                                 </div>
                                             </div>
                                             @if ($errors->has('rating'))
-                                                <div class="text-danger text-end" role="alert">{{ $errors->first('rating') }}
+                                                <div class="text-danger text-end fs-11" role="alert">{{ $errors->first('rating') }}
                                                 </div>
                                             @endif
 
                                             <div class="py-4">
                                                 <input type="text"
-                                                    class="form-control my-2 review-sub-headline review-input-bg"
+                                                    class="form-control my-2 review-sub-headline review-input-bg fs-9"
                                                     placeholder="Enter Title" name="title" required
                                                     value="{{ old('title') }}">
                                                 @if ($errors->has('title'))
@@ -549,7 +547,7 @@
                                                     </div>
                                                 @endif
                                                 <textarea name="body" id="body" cols="10" rows="3"
-                                                    class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review"
+                                                    class="mt-3 form-control w-100  review-sub-textarea review-input-bg fs-9" placeholder="Enter Your Review"
                                                     minlength="3" maxlength="2000" required>{{ old('body') }}</textarea>
                                                 @if ($errors->has('body'))
                                                     <div class="text-danger" role="alert">{{ $errors->first('body') }}
@@ -586,8 +584,8 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-12 col-xl-10">
 
-                                <div class="pills-divider d-flex justify-content-center px-0 px-lg-3 mb-4">
-                                    <h5 class="main-head tab-fs pills-divider-h5 py-2 h2 fw-500">Customer Reviews</h5>
+                                <div class="pills-divider d-flex justify-content-start justify-content-sm-center px-0 px-lg-3 mb-4">
+                                    <h5 class="main-head tab-fs pills-divider-h5 py-2 h2 fw-500 fs-14">Customer Reviews</h5>
                                 </div>
 
                                 <div class="tab-content my-4">
@@ -602,14 +600,14 @@
                                                                 <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
                                                                     alt="">
                                                                 <div class="review-title">
-                                                                        <h6 class="font-body  posting-title">
+                                                                        <h6 class="font-body  posting-title fs-12">
                                                                             {{ $re->title }}
                                                                         </h6>
                                                                 </div>
                                                             </div>
                                                             <div class="">
                                                                 <div class="d-flex review-head">
-                                                                    <div class="five-stars text-green d-flex gap-2">
+                                                                    <div class="five-stars five-stars-main text-green d-flex gap-2">
                                                                         @for ($i = 1; $i <= 5; $i++)
                                                                             @if ($i <= $re->rating)
                                                                                 <i class="fa-solid fa-star cust-output-review"></i>
@@ -626,7 +624,7 @@
                                                         <div class="review-content pb-3">
 
                                                             <div class="review-text">
-                                                                <p class="tinywhite">
+                                                                <p class="tinywhite fs-10">
                                                                     {!! nl2br($re->body) !!}
                                                                 </p>
                                                             </div>
@@ -640,7 +638,7 @@
                                                             </div> 
 
                                                             <div class="review-info text-muted d-flex flex-wrap justify-content-between py-2">
-                                                                <div class="py-2">
+                                                                <div class="py-2 fs-12">
                                                                     {{ $re->user->first_name ?? 'Anonymous' }}
                                                                     | {{ dd_format($re->created_at, 'd M-Y') }}
                                                                 </div>
@@ -648,18 +646,18 @@
                                                                 <div class="d-flex align-items-center gap-4">
                                                                     <div class="d-flex gap-2 align-items-center">
                                                                         <button class="border-0 bg-transparent">
-                                                                            <img src="{{asset('frontend/images/icons/like.svg')}}" alt="">
+                                                                            <img src="{{asset('frontend/images/icons/like.svg')}}" alt="" class="img-fluid likeimg">
                                                                         </button>
-                                                                        <div>200</div>
+                                                                        <div class="fs-12">200</div>
                                                                     </div>
 
                                                                     <div>|</div>
 
                                                                     <div class="d-flex gap-2 align-items-center"> 
                                                                         <button class="border-0 bg-transparent">                                                                    
-                                                                            <img src="{{asset('frontend/images/icons/dislike.svg')}}" alt="">
+                                                                            <img src="{{asset('frontend/images/icons/dislike.svg')}}" alt="" class="img-fluid dislikeimg">
                                                                         </button>
-                                                                        <div>200</div>
+                                                                        <div class="fs-12">200</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
