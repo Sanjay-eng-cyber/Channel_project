@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- Slider of the Page -->                      
-                            <div class="slider ">
+                            {{-- <div class="slider ">
                                 <div class="product-slider">
                                     @foreach ($product->medias as $media)
                                         <div class="slide ">
@@ -58,13 +58,72 @@
                                             </div>
                                         </li>
 
+                                        <li style="padding-left: 30px;padding-right:30px">
+                                            <div class="img">
+                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    alt="image description" class="min-h-2-80">
+                                            </div>
+                                        </li>
+
+                                        <li style="padding-left: 30px;padding-right:30px">
+                                            <div class="img">
+                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    alt="image description" class="min-h-2-80">
+                                            </div>
+                                        </li>
+
+
+                                        <li style="padding-left: 30px;padding-right:30px">
+                                            <div class="img">
+                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    alt="image description" class="min-h-2-80">
+                                            </div>
+                                        </li>
+
+                                        <li style="padding-left: 30px;padding-right:30px">
+                                            <div class="img">
+                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    alt="image description" class="min-h-2-80">
+                                            </div>
+                                        </li>
+
+                                        
+
                                       
+                                    @endforeach
+                                </ul>
+                                <!-- Pagg Slider of the Page end -->
+                            </div> --}}
+
+                            <div class="slider " >
+                                <div class="product-slider">
+                                    @foreach ($product->medias as $media)
+                                        <div class="slide ">
+                                            <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                alt="image description" class="pro-slide-pa">
+                                        </div>
+                                    @endforeach
+                                </div>
+
+                                <ul class="list-unstyled slick-slider pagg-slider subslider-product m-0 p-0">
+                                    @foreach ($product->medias as $media)
+                                        <li class="subslider-list">
+                                            <div class="img">
+                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    alt="image description" class="min-h-2-80">
+                                            </div>
+                                        </li>
+
+
+                                        
 
                                       
                                     @endforeach
                                 </ul>
                                 <!-- Pagg Slider of the Page end -->
                             </div>
+
+                            
                             <!-- Slider of the Page end -->
                             <!-- detial Holder of the Page -->
                             <div class="detial-holder">
@@ -79,7 +138,7 @@
                                 @endif
 
                                 {{-- for small screen --}}
-                                <div class="d-flex d-md-none flex-row  justify-content-between align-items-start stock-width">
+                                <div class="d-flex d-sm-none flex-row  justify-content-between align-items-start stock-width">
                                     @if ($product->stock)
                                         <h4 class="font-body h5 text-green in-stock mb-0 font-size14">In Stock
                                             <i class="fa-regular fa-circle-check"></i> 
@@ -92,7 +151,7 @@
                                 </div>
 
                                 {{-- for small large screen --}}                    
-                                <div class="d-none d-md-flex flex-row  justify-content-between align-items-start stock-width">
+                                <div class="d-none d-sm-flex flex-row  justify-content-between align-items-start stock-width">
                                     <div>
                                         <h3 class="h6 font-body rem-1">
                                             From ₹{{ $product->final_price }} <s
@@ -120,7 +179,7 @@
                                     <form action="{{ route('frontend.p.checkout', $product->slug) }}" method="GET">
 
                                         {{-- for small screen --}}
-                                        <div class="d-flex d-md-none flex-column flex-xl-row justify-content-between my-3 ">
+                                        <div class="d-flex d-sm-none flex-column flex-xl-row justify-content-between my-3 ">
 
                                             
                                             <div class="d-flex justify-content-between align-items-center">
@@ -239,7 +298,7 @@
 
 
                                         {{-- for small large screen --}}                    
-                                        <div class="d-none d-md-flex flex-column flex-xl-row justify-content-between my-3 ">
+                                        <div class="d-none d-sm-flex flex-column flex-xl-row justify-content-between my-3 ">
                                             <div class="d-flex align-items-center gap-3">
                                                 <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
                                                     <label for="qty" class="px-2">
