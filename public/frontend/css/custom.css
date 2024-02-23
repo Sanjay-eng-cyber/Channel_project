@@ -4414,14 +4414,20 @@ border-bottom: 0px solid transparent;
     left:33px;
 }
 @media screen and (max-width:576px) {
+    .margin-sm{
+        margin: 0rem 0;
+    }
+    .mt-product-detial {
+      
+        padding: 0 0 0px;
+      
+    }
     .dislikeimg{
         width:16px;
-        height: 16px;
     }
 
     .likeimg{
         width:16px;
-        height: 16px;
     }
     .review-area .review-card .review-user{
         padding-right:0px;

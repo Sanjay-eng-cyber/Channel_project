@@ -21,11 +21,11 @@
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('frontend.cat.show', $category->slug) }}"
-                                class="bread-crum breadcrumb-hover fw-400 opacity-50">{{ $category->name }}</a></li>
+                                class="bread-crum breadcrumb-hover fw-400 opacity-50 fs-14">{{ $category->name }}</a></li>
                         @if ($subCategory)
-                            <li class="breadcrumb-item"><a
+                            <li class="breadcrumb-item d-flex align-items-center"><a
                                     href="{{ route('frontend.sub-category.show', [$category->slug, $subCategory->slug]) }}"
-                                    class="bread-crum breadcrumb-hover  fw-400 opacity-50">{{ $subCategory->name }}</a></li>
+                                    class="bread-crum breadcrumb-hover  fw-400 opacity-50 fs-14">{{ $subCategory->name }}</a></li>
                         @endif
                         {{-- <li class="breadcrumb-item bread-crum" aria-current="page">{{ $product->name }}</li> --}}
                     </ol>
@@ -489,7 +489,7 @@
             </div>
         </section><!-- Mt Product detial of the Page end -->
 
-        <hr class="d-block d-sm-none">
+        <hr class="d-block d-sm-none margin-sm">
 
         <section>
             <div class="container">
@@ -502,11 +502,11 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-12 col-xl-10">
                    
-                                <div class=" d-flex justify-content-start justify-content-sm-center mb-4">
-                                    <h5 class="main-head tab-fs py-2 pills-divider-h5 h2 fw-500 fs-14">Write a Reviews</h5>
+                                <div class=" d-flex justify-content-start justify-content-sm-center mb-2 mb-sm-4">
+                                    <h5 class="main-head tab-fs py-0 py-sm-2 pills-divider-h5 h2 fw-500 fs-14">Write a Reviews</h5>
                                 </div>
 
-                                <div class="tab-content my-4">
+                                <div class="tab-content my-0 my-sm-0">
 
                                     <div class="">
                                         <form action="{{ route('frontend.review.store', $product->slug) }}" method="POST">
@@ -537,7 +537,7 @@
                                                 </div>
                                             @endif
 
-                                            <div class="py-4">
+                                            <div class="pt-sm-4 pb-sm-4 pt-0 pb-4">
                                                 <input type="text"
                                                     class="form-control my-2 review-sub-headline review-input-bg fs-9"
                                                     placeholder="Enter Title" name="title" required
@@ -584,11 +584,11 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-12 col-xl-10">
 
-                                <div class="pills-divider d-flex justify-content-start justify-content-sm-center px-0 px-lg-3 mb-4">
-                                    <h5 class="main-head tab-fs pills-divider-h5 py-2 h2 fw-500 fs-14">Customer Reviews</h5>
+                                <div class="pills-divider d-flex justify-content-start justify-content-sm-center px-0 px-lg-3 mb-sm-4 mb-0">
+                                    <h5 class="main-head tab-fs pills-divider-h5 py-sm-2 py-0 h2 fw-500 fs-14 m-0">Customer Reviews</h5>
                                 </div>
 
-                                <div class="tab-content my-4">
+                                <div class="tab-content my-3 my-sm-4">
                                     <div class="tab-pane fade show active" id="home" aria-labelledby="home-tab">
                                         <div class="container p-0 px-0 px-lg-3">
                                             @forelse ($reviews as $re)
@@ -638,26 +638,26 @@
                                                             </div> 
 
                                                             <div class="review-info text-muted d-flex flex-wrap justify-content-between py-2">
-                                                                <div class="py-2 fs-12">
+                                                                <div class="py-2 fs-14">
                                                                     {{ $re->user->first_name ?? 'Anonymous' }}
                                                                     | {{ dd_format($re->created_at, 'd M-Y') }}
                                                                 </div>
 
-                                                                <div class="d-flex align-items-center gap-4">
-                                                                    <div class="d-flex gap-2 align-items-center">
+                                                                <div class="d-flex align-items-center gap-2 gap-sm-4">
+                                                                    <div class="d-flex gap-1 gap-sm-2 align-items-center">
                                                                         <button class="border-0 bg-transparent">
                                                                             <img src="{{asset('frontend/images/icons/like.svg')}}" alt="" class="img-fluid likeimg">
                                                                         </button>
-                                                                        <div class="fs-12">200</div>
+                                                                        <div class="fs-14">200</div>
                                                                     </div>
 
                                                                     <div>|</div>
 
-                                                                    <div class="d-flex gap-2 align-items-center"> 
+                                                                    <div class="d-flex gap-1 gap-sm-2 align-items-center"> 
                                                                         <button class="border-0 bg-transparent">                                                                    
                                                                             <img src="{{asset('frontend/images/icons/dislike.svg')}}" alt="" class="img-fluid dislikeimg">
                                                                         </button>
-                                                                        <div class="fs-12">200</div>
+                                                                        <div class="fs-14">200</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
