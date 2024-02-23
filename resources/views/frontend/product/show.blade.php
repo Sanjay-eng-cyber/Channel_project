@@ -581,7 +581,9 @@
 
                     <div class="my-0 my-lg-2 col-lg-6 col-md-12 product-showpagepills pills-divider-border ">
 
-                        <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center  position-relative">
+                            <div class="position-absolute d-none d-lg-block" style="height: 72px;width: 1px;background: #979797;left: 0px;padding:0;top:15px"></div>
+
                             <div class="col-12 col-xl-10">
 
                                 <div class="pills-divider d-flex justify-content-start justify-content-sm-center px-0 px-lg-3 mb-sm-4 mb-0">
