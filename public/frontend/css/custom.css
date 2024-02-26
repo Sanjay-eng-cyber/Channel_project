@@ -693,7 +693,7 @@ a:hover {
 }
 
 /*end  btn orange to btn outline pink */
-
+/* 
 .whishlist-new-style{
     background-color:white;
     box-shadow: 0px 4px 4px 0px #0000001C;
@@ -701,24 +701,29 @@ a:hover {
     border: 1px solid #EC268F99;
   
                                                   
-}
+} */
 
 .whishlist-new-style{
-    --bs-btn-color: #000;
+    --bs-btn-color: #EC268F;
     --bs-btn-bg: #fff;
     --bs-btn-border-color: #EC268F99;
-    --bs-btn-hover-color: #000;
+    --bs-btn-hover-color: #EC268F
     --bs-btn-hover-bg: #fff;
     --bs-btn-hover-border-color: #EC268F99;
     --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-active-color: #000;
+    --bs-btn-active-color: #EC268F;
     --bs-btn-active-bg: #fff;
     --bs-btn-active-border-color: #EC268F99;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #000;
+    --bs-btn-disabled-bg: #EC268F;
     --bs-btn-disabled-border-color: #EC268F99;
     box-shadow: 0px 4px 4px 0px #0000001C;
+}
+
+
+.whishlist-new-style:hover {
+    color: #EC268F;
 }
 
 .text-danger {

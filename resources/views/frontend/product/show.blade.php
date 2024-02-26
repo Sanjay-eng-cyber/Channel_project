@@ -39,61 +39,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- Slider of the Page -->                      
-                            {{-- <div class="slider ">
-                                <div class="product-slider">
-                                    @foreach ($product->medias as $media)
-                                        <div class="slide ">
-                                            <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                alt="image description" class="pro-slide-pa">
-                                        </div>
-                                    @endforeach
-                                </div>
-
-                                <ul class="list-unstyled slick-slider pagg-slider subslider-product m-0 p-0">
-                                    @foreach ($product->medias as $media)
-                                        <li style="padding-left: 30px;padding-right:30px">
-                                            <div class="img">
-                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                    alt="image description" class="min-h-2-80">
-                                            </div>
-                                        </li>
-
-                                        <li style="padding-left: 30px;padding-right:30px">
-                                            <div class="img">
-                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                    alt="image description" class="min-h-2-80">
-                                            </div>
-                                        </li>
-
-                                        <li style="padding-left: 30px;padding-right:30px">
-                                            <div class="img">
-                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                    alt="image description" class="min-h-2-80">
-                                            </div>
-                                        </li>
-
-
-                                        <li style="padding-left: 30px;padding-right:30px">
-                                            <div class="img">
-                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                    alt="image description" class="min-h-2-80">
-                                            </div>
-                                        </li>
-
-                                        <li style="padding-left: 30px;padding-right:30px">
-                                            <div class="img">
-                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                    alt="image description" class="min-h-2-80">
-                                            </div>
-                                        </li>
-
-                                        
-
-                                      
-                                    @endforeach
-                                </ul>
-                                <!-- Pagg Slider of the Page end -->
-                            </div> --}}
+                          
 
                             <div class="slider " >
                                 <div class="product-slider">
@@ -218,10 +164,10 @@
                                                 <div>
                                                     @if (in_array($product->id, $wishlist))
                                                         <button type="button" class=" btn  p-show add-to-wish-showpage active d-flex align-items-center justify-content-center gap-1 btn-size-width109 whishlist-new-style" 
-                                                            data-p-id="{{ $product->id }}">
+                                                            data-p-id="{{ $product->id }}" >
 
-                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M12.3601 0.785926C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785926C0.66063 1.54753 0.0448664 2.83274 0.00288252 4.18935C-0.0950798 7.26751 2.312 9.7348 5.98558 13.519L6.05556 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785926ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C3.5995 8.91766 1.40234 6.65664 1.40234 4.36389C1.40234 2.77721 2.45194 1.5872 3.8514 1.5872C4.92899 1.5872 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 9.0714 1.5872 10.149 1.5872C11.5484 1.5872 12.598 2.77721 12.598 4.36389C12.598 6.65664 10.4009 8.91766 7.07017 12.337Z" fill="#EC268F"/>
+                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="#EC268F" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12.3601 0.785925C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785925C0.66063 1.54753 0.0448663 2.83274 0.00288251 4.18935C-0.0950797 7.26751 2.312 9.7348 5.98558 13.519L6.05555 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785925ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C10.149 10 9 7.79275 9 5.5C9 3.91332 6.53837 6.5 7.93783 6.5C9.01542 6.5 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 8.42242 4 9.5 4C10.5 2.5 5.5 1.8728 5.5 3.45948C5.5 5.75223 5.5 10.5 7.07017 12.337Z" fill="#EC268F"/>
                                                             </svg>
                                                                                                                                                                                                                                 
                                                             <span class="tool-tip-text-showpage font-size14 ">
@@ -230,18 +176,12 @@
                                                         </button>
                                                     @else
                                                         <button type="button" class="btn m-0 p-show add-to-wish-showpage   btn-size-width109  d-flex align-items-center justify-content-center gap-1 btn-size-width109 whishlist-new-style whishlist-new-style"
-                                                            data-p-id="{{ $product->id }}">
+                                                            data-p-id="{{ $product->id }}" >
                                                            
-                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M12.3601 0.785925C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785925C0.66063 1.54753 0.0448663 2.83274 0.00288251 4.18935C-0.0950797 7.26751 2.312 9.7348 5.98558 13.519L6.05555 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785925ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C10.149 10 9 7.79275 9 5.5C9 3.91332 6.53837 6.5 7.93783 6.5C9.01542 6.5 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 8.42242 4 9.5 4C10.5 2.5 5.5 1.8728 5.5 3.45948C5.5 5.75223 5.5 10.5 7.07017 12.337Z" fill="#EC268F"/>
-                                                                </svg>
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                      
+                                                            <svg width="14" height="14" viewBox="0 0 14 14"  xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12.3601 0.785926C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785926C0.66063 1.54753 0.0448664 2.83274 0.00288252 4.18935C-0.0950798 7.26751 2.312 9.7348 5.98558 13.519L6.05556 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785926ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C3.5995 8.91766 1.40234 6.65664 1.40234 4.36389C1.40234 2.77721 2.45194 1.5872 3.8514 1.5872C4.92899 1.5872 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 9.0714 1.5872 10.149 1.5872C11.5484 1.5872 12.598 2.77721 12.598 4.36389C12.598 6.65664 10.4009 8.91766 7.07017 12.337Z" fill="#000"/>
+                                                            </svg>
+                                                                                                                                                                                                                                                                                                                                                                                                             
                                                             <span class="tool-tip-text-showpage font-size14 ">
                                                                  Wishlist
                                                             </span>
@@ -297,21 +237,21 @@
 
                                                 <div>
                                                     @if (in_array($product->id, $wishlist))
-                                                        <button type="button" class=" btn  p-show add-to-wish-showpage d-flex align-items-center justify-content-center gap-1 btn-size-width109 whishlist-new-style" data-p-id="{{ $product->id }}" >
+                                                        <button type="button" class=" btn  p-show add-to-wish-showpage active d-flex align-items-center justify-content-center gap-1 btn-size-width109 whishlist-new-style" data-p-id="{{ $product->id }}"  style="width:116px">
                                                                                                                                                                           
-                                                       <svg width="14" height="14" viewBox="0 0 14 14" fill="#EC268F" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M12.3601 0.785925C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785925C0.66063 1.54753 0.0448663 2.83274 0.00288251 4.18935C-0.0950797 7.26751 2.312 9.7348 5.98558 13.519L6.05555 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785925ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C10.149 10 9 7.79275 9 5.5C9 3.91332 6.53837 6.5 7.93783 6.5C9.01542 6.5 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 8.42242 4 9.5 4C10.5 2.5 5.5 1.8728 5.5 3.45948C5.5 5.75223 5.5 10.5 7.07017 12.337Z" />
-                                                       </svg>
+                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="#EC268F" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12.3601 0.785925C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785925C0.66063 1.54753 0.0448663 2.83274 0.00288251 4.18935C-0.0950797 7.26751 2.312 9.7348 5.98558 13.519L6.05555 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785925ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C10.149 10 9 7.79275 9 5.5C9 3.91332 6.53837 6.5 7.93783 6.5C9.01542 6.5 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 8.42242 4 9.5 4C10.5 2.5 5.5 1.8728 5.5 3.45948C5.5 5.75223 5.5 10.5 7.07017 12.337Z" fill="#EC268F"/>
+                                                            </svg>
                                                                                                                                             
                                                             <span class="tool-tip-text-showpage font-size14 ">
                                                                 Wishlisted
                                                             </span>
                                                         </button>
                                                     @else
-                                                        <button type="button" class="btn m-0 p-show add-to-wish-showpage   btn-size-width109 whishlist-new-style"  data-p-id="{{ $product->id }}">
+                                                        <button type="button" class="btn m-0 p-show add-to-wish-showpage   btn-size-width109 whishlist-new-style"  data-p-id="{{ $product->id }}" style="width:116px">
                                                                                                                                                                                                                               
-                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="#EC268F" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M12.3601 0.785926C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785926C0.66063 1.54753 0.0448664 2.83274 0.00288252 4.18935C-0.0950798 7.26751 2.312 9.7348 5.98558 13.519L6.05556 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785926ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C3.5995 8.91766 1.40234 6.65664 1.40234 4.36389C1.40234 2.77721 2.45194 1.5872 3.8514 1.5872C4.92899 1.5872 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 9.0714 1.5872 10.149 1.5872C11.5484 1.5872 12.598 2.77721 12.598 4.36389C12.598 6.65664 10.4009 8.91766 7.07017 12.337Z" />
+                                                            <svg width="14" height="14" viewBox="0 0 14 14"  xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12.3601 0.785926C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785926C0.66063 1.54753 0.0448664 2.83274 0.00288252 4.18935C-0.0950798 7.26751 2.312 9.7348 5.98558 13.519L6.05556 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785926ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C3.5995 8.91766 1.40234 6.65664 1.40234 4.36389C1.40234 2.77721 2.45194 1.5872 3.8514 1.5872C4.92899 1.5872 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 9.0714 1.5872 10.149 1.5872C11.5484 1.5872 12.598 2.77721 12.598 4.36389C12.598 6.65664 10.4009 8.91766 7.07017 12.337Z" fill="#000"/>
                                                             </svg>
                                                                                                                                      
                                                             <span class="tool-tip-text-showpage font-size14 ">
@@ -382,7 +322,7 @@
                                 </div>
                                 <div class="rating-holder">
                                     <div class="row">
-                                        <div class="col-6 col-sm-6 p-0">
+                                        {{-- <div class="col-6 col-sm-6 p-0">
 
                                                 <div class="text-black fs-11">
                                                     <div class="pb-2">Color : <span class="fw-500">Pink</span> </div>
@@ -393,8 +333,7 @@
                                                     <div class="pb-2">Size (L x W x H) : <span class="fw-500">Pink</span></div>
                                                 </div>
 
-
-                                        </div>
+                                        </div> --}}
                                         <div class="col-6 col-sm-6 p-0">
                                             <div class="rating-stats text-muted">
                                                 <div class="rating">
@@ -413,19 +352,22 @@
                                                         </div>
                                                     </div>
                                                     <div class="py-1 py-sm-3">
-                                                        <div class="rating-total position-relative isolate " style="display: grid;
-                                                        grid-template-columns: 22% 80%;
-                                                        align-items: center;">
+                                                        <div class="rating-total position-relative isolate " >
                                                             <div>
                                                                 <h6 class="h5 font-body text-muted my-2 fs-11">
                                                                     {{ $reviewRatingAvg }} 
                                                                 </h6>
                                                                 <i class="fa-solid fa-star text-green position-absolute " ></i>
                                                             </div>
-                                                            <h6 class="m-0 p-0 main-head fs-md-9" >Based On Verified Buyers</h6>
+                                                            {{-- <h6 class="m-0 p-0 main-head fs-md-9" >Based On Verified Buyers</h6> --}}
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6 col-sm-6 p-0">
+                                            <div class="rating-stats text-muted">
                                                 @for ($i = 5; $i >= 1; $i--)
                                                 <div>
                                                     <div class="rating-stat">
@@ -441,6 +383,7 @@
 
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
 
@@ -515,9 +458,9 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <div class="review-sub-colbtn" >
+                                            <div class="" >
                                          
-                                                  <div class="up-image-label">
+                                                  {{-- <div class="up-image-label">
                                                     <label for="files" class="btn btn-lg fw-500 d-flex align-items-center gap-2" >                                                    
                                                         <img src="{{asset('frontend/images/icons/upload-icon.svg')}}" alt="" class="img-fluid" style="width: 17px">
                                                         <div class="h6 mb-0 up-fontSize">
@@ -525,8 +468,8 @@
                                                         </div>
                                                     </label>
                                                     <input id="files" style="visibility:hidden;" type="file">
-                                                  </div>   
-                                                  <div class="text-end">
+                                                  </div>    --}}
+                                                  <div class="text-start text-sm-end">
                                                       <button type="submit" class="btn btn-darkwhite up-fontSize">Post Your Review</button>
                                                   </div>                                          
                                             </div>
@@ -593,12 +536,12 @@
                                                             </div>
 
                                                            
-                                                            <div class="uploaded-product-img ">
+                                                            {{-- <div class="uploaded-product-img ">
                                                                 <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
                                                                 <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
                                                                 <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
                                                                 <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
-                                                            </div> 
+                                                            </div>  --}}
 
                                                             <div class="review-info text-muted d-flex flex-wrap justify-content-between py-2">
                                                                 <div class="py-2 fs-14">
@@ -606,7 +549,7 @@
                                                                     | {{ dd_format($re->created_at, 'd M-Y') }}
                                                                 </div>
 
-                                                                <div class="d-flex align-items-center gap-2 gap-sm-4">
+                                                                {{-- <div class="d-flex align-items-center gap-2 gap-sm-4">
                                                                     <div class="d-flex gap-1 gap-sm-2 align-items-center">
                                                                         <button class="border-0 bg-transparent">
                                                                             <img src="{{asset('frontend/images/icons/like.svg')}}" alt="" class="img-fluid likeimg">
@@ -622,7 +565,7 @@
                                                                         </button>
                                                                         <div class="fs-14">200</div>
                                                                     </div>
-                                                                </div>
+                                                                </div> --}}
                                                             </div>
                                                         </div>
                                                     </div>
