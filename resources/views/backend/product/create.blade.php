@@ -184,7 +184,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
+                                    <div class="col-xl-4 col-md-6 col-sm-12 mb-4">
                                         <label for="formGroupExampleInput" class="">Unit Sale Price</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Unit Sale Price" required name="unit_sale_price"
@@ -195,6 +195,65 @@
                                         @endif
                                     </div>
 
+                                    <div class="col-xl-4 col-md-6 col-sm-12 mb-4">
+                                        <label for="formGroupExampleInput" class="">Skin Type</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput"
+                                            placeholder="Enter Skin Type" name="skin_type"
+                                            value="{{ old('skin_type') }}" minlength="2" maxlength="20">
+                                        @if ($errors->has('skin_type'))
+                                            <div class="text-danger" role="alert">
+                                                {{ $errors->first('skin_type') }}</div>
+                                        @endif
+                                    </div>
+                                    <div class="col-xl-4 col-md-6 col-sm-12 mb-4">
+                                        <label for="formGroupExampleInput" class="">Material</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput"
+                                            placeholder="Enter Material" name="material" value="{{ old('material') }}"
+                                            minlength="2" maxlength="20">
+                                        @if ($errors->has('material'))
+                                            <div class="text-danger" role="alert">
+                                                {{ $errors->first('material') }}</div>
+                                        @endif
+                                    </div>
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
+                                        <label for="formGroupExampleInput" class="">Expiry</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput"
+                                            placeholder="Enter Expiry" name="expiry" value="{{ old('expiry') }}"
+                                            minlength="2" maxlength="20">
+                                        @if ($errors->has('expiry'))
+                                            <div class="text-danger" role="alert">
+                                                {{ $errors->first('expiry') }}</div>
+                                        @endif
+                                    </div>
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
+                                        <label for="formGroupExampleInput" class="">Net Quantity</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput"
+                                            placeholder="Enter Net Quantity" name="net_quantity"
+                                            value="{{ old('net_quantity') }}" minlength="2" maxlength="20">
+                                        @if ($errors->has('net_quantity'))
+                                            <div class="text-danger" role="alert">
+                                                {{ $errors->first('net_quantity') }}</div>
+                                        @endif
+                                    </div>
+                                    <div class="col-xl-6 col-md-6 col-sm-12 mb-6">
+                                        <label for="formGroupExampleInput" class="">Special Ingredients</label>
+                                        <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Special Ingredients"
+                                            name="special_ingredients" minlength="2" maxlength="150" rows="3" cols="50">{{ old('special_ingredients') }}</textarea>
+                                        @if ($errors->has('special_ingredients'))
+                                            <div class="text-danger" role="alert">
+                                                {{ $errors->first('special_ingredients') }}</div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-xl-6 col-md-6 col-sm-12 mb-6">
+                                        <label for="formGroupExampleInput" class="">Care Instruction</label>
+                                        <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Care Instruction"
+                                            name="care_instruction" minlength="2" maxlength="150" rows="3" cols="50">{{ old('care_instruction') }}</textarea>
+                                        @if ($errors->has('care_instruction'))
+                                            <div class="text-danger" role="alert">
+                                                {{ $errors->first('care_instruction') }}</div>
+                                        @endif
+                                    </div>
                                     <div class="col-12 mb-3">
                                         <label for="descriptions">Description</label>
                                         <textarea id="team-about" class="team-about" name="descriptions" minlength="3" maxlength="20000">{{ old('descriptions') }}</textarea>

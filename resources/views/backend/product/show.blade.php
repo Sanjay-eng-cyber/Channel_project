@@ -98,6 +98,45 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Skin
+                                                    Type</label><br>
+                                                <p class="label-title">{{ $product->skin_type ?? '----' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">material</label><br>
+                                                <p class="label-title">{{ $product->material ?? '----' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Special
+                                                    Ingredients</label><br>
+                                                <p class="label-title">{{ $product->special_ingredients ?? '----' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Care Instruction</label><br>
+                                                <p class="label-title">{{ $product->care_instruction ?? '----'}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Expiry</label><br>
+                                                <p class="label-title">{{ $product->expiry ?? '----' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Net Quantity</label><br>
+                                                <p class="label-title">{{ $product->net_quantity ?? '----' }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
                                                 <label for="degree2" class="label-title cust-title">Thumbnail
                                                     Image</label><br>
                                                 <span id="lightgallery1"><a class="text-primary font-weight-bold"
