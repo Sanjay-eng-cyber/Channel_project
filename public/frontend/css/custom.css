@@ -518,6 +518,34 @@ a:hover {
     border:1px solid #ebb579;
 }
 
+
+.btn-buy {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ec268f;
+    --bs-btn-border-color: #ec268f;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ec268f;
+    --bs-btn-hover-border-color: #ec268f;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ec268f;
+    --bs-btn-active-border-color: #ec268f;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #ec268f;
+    --bs-btn-disabled-border-color: #ec268f;
+} 
+
+
+.btn-buy:hover{
+    border:1px solid #AE0961;
+    background-color: #AE0961;
+    color: white;
+}
+
+
+
+
 .btn-darkwhite {
     --bs-btn-color: #fff;
     --bs-btn-bg: #979797;
@@ -557,11 +585,11 @@ a:hover {
 .btn-outline-orange:hover{
     border:1px solid #F58634;
 }
-.rayeen{
+/* .rayeen{
     display:flex !important;
     justify-content:center !important;
     align-items:center !important;
-}
+} */
 
 /* btn lightpink*/
 .btn-lightpink {
@@ -665,6 +693,33 @@ a:hover {
 }
 
 /*end  btn orange to btn outline pink */
+
+.whishlist-new-style{
+    background-color:white;
+    box-shadow: 0px 4px 4px 0px #0000001C;
+    padding:8px 8px 8px 8px; border-radius:8px;
+    border: 1px solid #EC268F99;
+  
+                                                  
+}
+
+.whishlist-new-style{
+    --bs-btn-color: #000;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #EC268F99;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #fff;
+    --bs-btn-hover-border-color: #EC268F99;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #fff;
+    --bs-btn-active-border-color: #EC268F99;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #000;
+    --bs-btn-disabled-border-color: #EC268F99;
+    box-shadow: 0px 4px 4px 0px #0000001C;
+}
 
 .text-danger {
     color: #f64d4d !important;

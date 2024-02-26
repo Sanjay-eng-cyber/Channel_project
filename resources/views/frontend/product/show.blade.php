@@ -126,7 +126,7 @@
                             <div class="detial-holder">
                                 <h1 class="h4 font-body fs-16">
                                     {{ $product->name }}
-                                    raees
+                                  
                                 </h1>
                                 <hr class="d-none d-sm-block">
                                 @if ($product->short_descriptions)
@@ -148,7 +148,7 @@
                                     @endif
                                 </div>
 
-                                {{-- for small large screen --}}                    
+                                {{-- for  large screen --}}                    
                                 <div class="d-none d-sm-flex flex-row  justify-content-between align-items-start stock-width">
                                     <div>
                                         <h3 class="h6 font-body rem-1">
@@ -217,34 +217,19 @@
 
                                                 <div>
                                                     @if (in_array($product->id, $wishlist))
-                                                        <button type="button" class=" btn  p-show add-to-wish-showpage active d-flex align-items-center justify-content-center gap-1 btn-size-width109" 
-                                                            data-p-id="{{ $product->id }}" style="background-color:white;box-shadow: 0px 4px 4px 0px #0000001C;
-                                                            ;padding:8px 8px 8px 8px; border-radius:8px;border: 1px solid #EC268F99;
-                                                            display:flex;
-                                                            justify-content: space-evenly;align-items: center;
-                                                            ">
+                                                        <button type="button" class=" btn  p-show add-to-wish-showpage active d-flex align-items-center justify-content-center gap-1 btn-size-width109 whishlist-new-style" 
+                                                            data-p-id="{{ $product->id }}">
 
                                                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M12.3601 0.785926C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785926C0.66063 1.54753 0.0448664 2.83274 0.00288252 4.18935C-0.0950798 7.26751 2.312 9.7348 5.98558 13.519L6.05556 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785926ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C3.5995 8.91766 1.40234 6.65664 1.40234 4.36389C1.40234 2.77721 2.45194 1.5872 3.8514 1.5872C4.92899 1.5872 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 9.0714 1.5872 10.149 1.5872C11.5484 1.5872 12.598 2.77721 12.598 4.36389C12.598 6.65664 10.4009 8.91766 7.07017 12.337Z" fill="#EC268F"/>
-                                                                </svg>
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
+                                                            </svg>
+                                                                                                                                                                                                                                
                                                             <span class="tool-tip-text-showpage font-size14 ">
                                                                 Wishlisted
                                                             </span>
                                                         </button>
                                                     @else
-                                                        <button type="button" class="btn m-0 p-show add-to-wish-showpage   btn-size-width109" style="background-color:white;
-                                                        box-shadow: 0px 4px 4px 0px #0000001C;
-                                                        ;padding:8px 8px 8px 8px; border-radius:8px;border: 1px solid #EC268F99;
-                                                        display:flex;
-                                                            justify-content: space-evenly;align-items: center;
-                                                        "
+                                                        <button type="button" class="btn m-0 p-show add-to-wish-showpage   btn-size-width109  d-flex align-items-center justify-content-center gap-1 btn-size-width109 whishlist-new-style whishlist-new-style"
                                                             data-p-id="{{ $product->id }}">
                                                            
                                                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -266,7 +251,7 @@
                                                 
                                                 @if (in_array($product->id, $productInCart))
                                                         <a href="javascript:void(0)"
-                                                            class="btn btn-pink add-to-cart btn-outline-pink  font-size14 btn-size-width109 gap-1 rayeen"
+                                                            class="btn btn-pink add-to-cart btn-outline-pink  font-size14 btn-size-width109 gap-1"
                                                             data-p-id="{{ $product->id }}"  style="">
                                                             <svg class="svg-inline--fa fa-check" aria-hidden="true"
                                                                 focusable="false" data-prefix="fas" data-icon="check" role="img"
@@ -295,7 +280,7 @@
                                         </div>
 
 
-                                        {{-- for small large screen --}}                    
+                                        {{-- for large screen --}}                    
                                         <div class="d-none d-sm-flex flex-column flex-xl-row justify-content-between my-3 ">
                                             <div class="d-flex align-items-center gap-3">
                                                 <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
@@ -312,51 +297,27 @@
 
                                                 <div>
                                                     @if (in_array($product->id, $wishlist))
-                                                        <button type="button" class=" btn  p-show add-to-wish-showpage active d-flex align-items-center justify-content-center gap-1 btn-size-width109" 
-                                                            data-p-id="{{ $product->id }}" style="background-color:white;box-shadow: 0px 4px 4px 0px #0000001C;
-                                                            ;padding:8px 8px 8px 8px; border-radius:8px;border: 1px solid #EC268F99;
-                                                            display:flex;
-                                                            justify-content: space-evenly;align-items: center;
-                                                            ">
-                                                            {{-- <i class="fa-regular fa-heart"></i> --}}
-
-                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M12.3601 0.785926C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785926C0.66063 1.54753 0.0448664 2.83274 0.00288252 4.18935C-0.0950798 7.26751 2.312 9.7348 5.98558 13.519L6.05556 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785926ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C3.5995 8.91766 1.40234 6.65664 1.40234 4.36389C1.40234 2.77721 2.45194 1.5872 3.8514 1.5872C4.92899 1.5872 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 9.0714 1.5872 10.149 1.5872C11.5484 1.5872 12.598 2.77721 12.598 4.36389C12.598 6.65664 10.4009 8.91766 7.07017 12.337Z" fill="#EC268F"/>
-                                                                </svg>
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
+                                                        <button type="button" class=" btn  p-show add-to-wish-showpage d-flex align-items-center justify-content-center gap-1 btn-size-width109 whishlist-new-style" data-p-id="{{ $product->id }}" >
+                                                                                                                                                                          
+                                                       <svg width="14" height="14" viewBox="0 0 14 14" fill="#EC268F" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12.3601 0.785925C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785925C0.66063 1.54753 0.0448663 2.83274 0.00288251 4.18935C-0.0950797 7.26751 2.312 9.7348 5.98558 13.519L6.05555 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785925ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C10.149 10 9 7.79275 9 5.5C9 3.91332 6.53837 6.5 7.93783 6.5C9.01542 6.5 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 8.42242 4 9.5 4C10.5 2.5 5.5 1.8728 5.5 3.45948C5.5 5.75223 5.5 10.5 7.07017 12.337Z" />
+                                                       </svg>
+                                                                                                                                            
                                                             <span class="tool-tip-text-showpage font-size14 ">
                                                                 Wishlisted
                                                             </span>
                                                         </button>
                                                     @else
-                                                        <button type="button" class="btn m-0 p-show add-to-wish-showpage   btn-size-width109" style="background-color:white;
-                                                        box-shadow: 0px 4px 4px 0px #0000001C;
-                                                        ;padding:8px 8px 8px 8px; border-radius:8px;border: 1px solid #EC268F99;
-                                                        display:flex;
-                                                            justify-content: space-evenly;align-items: center;
-                                                        "
-                                                            data-p-id="{{ $product->id }}">
-                                                            {{-- <i class="fa-regular fa-heart"></i> --}}
-                                                           
-                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M12.3601 0.785925C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785925C0.66063 1.54753 0.0448663 2.83274 0.00288251 4.18935C-0.0950797 7.26751 2.312 9.7348 5.98558 13.519L6.05555 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785925ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C10.149 10 9 7.79275 9 5.5C9 3.91332 6.53837 6.5 7.93783 6.5C9.01542 6.5 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 8.42242 4 9.5 4C10.5 2.5 5.5 1.8728 5.5 3.45948C5.5 5.75223 5.5 10.5 7.07017 12.337Z" fill="#EC268F"/>
-                                                                </svg>
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                      
+                                                        <button type="button" class="btn m-0 p-show add-to-wish-showpage   btn-size-width109 whishlist-new-style"  data-p-id="{{ $product->id }}">
+                                                                                                                                                                                                                              
+                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="#EC268F" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12.3601 0.785926C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785926C0.66063 1.54753 0.0448664 2.83274 0.00288252 4.18935C-0.0950798 7.26751 2.312 9.7348 5.98558 13.519L6.05556 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785926ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C3.5995 8.91766 1.40234 6.65664 1.40234 4.36389C1.40234 2.77721 2.45194 1.5872 3.8514 1.5872C4.92899 1.5872 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 9.0714 1.5872 10.149 1.5872C11.5484 1.5872 12.598 2.77721 12.598 4.36389C12.598 6.65664 10.4009 8.91766 7.07017 12.337Z" />
+                                                            </svg>
+                                                                                                                                     
                                                             <span class="tool-tip-text-showpage font-size14 ">
                                                                  Wishlist
                                                             </span>
+
                                                         </button>
                                                     @endif
                                                 </div>
@@ -366,7 +327,7 @@
                                             
                                                 @if (in_array($product->id, $productInCart))
                                                     <a href="javascript:void(0)"
-                                                        class="btn btn-pink add-to-cart btn-outline-pink  font-size14 btn-size-width109 gap-1 rayeen"
+                                                        class="btn btn-pink add-to-cart btn-outline-pink  font-size14 btn-size-width109 gap-1 d-flex align-items-center justify-content-center "
                                                         data-p-id="{{ $product->id }}"  style="">
                                                         <svg class="svg-inline--fa fa-check" aria-hidden="true"
                                                             focusable="false" data-prefix="fas" data-icon="check" role="img"
@@ -380,13 +341,13 @@
                                                     </a>
                                                 @else
                                                     <a href="javascript:void(0)"
-                                                        class=" btn btn-pink add-to-cart d-flex align-items-center btn-size-width109 font-size14"
+                                                        class=" btn btn-pink add-to-cart d-flex align-items-center justify-content-center btn-size-width109 font-size14"
                                                         data-p-id="{{ $product->id }}" >
                                                         Add To Cart
                                                     </a>
                                                 @endif
 
-                                                <button class="btn btn-black font-size14 btn-size-width109" type="submit">
+                                                <button class="btn btn-buy font-size14 btn-size-width109" type="submit">
                                                     Buy Now
                                                 </button>
 
@@ -879,17 +840,19 @@
                             btn[0].classList.add('active');
                             if (btn.find(".tool-tip-text-showpage").length) {
                                 btn.find(".tool-tip-text-showpage")[0].innerHTML = "Wishlisted";
+                                btn.find("svg path").attr("fill", "#EC268F");
+
                             }
-                            btn.find("svg path").css("fill", "#EC268F");
-                            btn.find("svg path").css("fill", "#EC268F");
+                        
 
                         } else {
                             btn[0].classList.remove('active');
                             if (btn.find(".tool-tip-text-showpage").length) {
                                 btn.find(".tool-tip-text-showpage")[0].innerHTML = "Wishlist";
+                                btn.find("svg path").attr("fill", "#000"); 
+
                             }
-                            btn.find("svg").css("fill", "none");
-                            btn.find("svg path").css("fill", "#EC268F");
+                     
                         }
 
                         Snackbar.show({
