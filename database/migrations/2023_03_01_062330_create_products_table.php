@@ -29,6 +29,12 @@ class CreateProductsTable extends Migration
             $table->string('sku')->unique()->nullable();
             $table->string('unit_sale_price')->nullable();
             $table->string('rating')->nullable();
+            $table->string('skin_type')->nullable();
+            $table->string('material')->nullable();
+            $table->string('special_ingredients')->nullable();
+            $table->string('care_instruction')->nullable();
+            $table->string('expiry')->nullable();
+            $table->string('net_quantity')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
