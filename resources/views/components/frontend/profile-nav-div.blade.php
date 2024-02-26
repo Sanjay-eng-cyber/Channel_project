@@ -71,13 +71,13 @@
                                             {{ $errors->first('image') }}
                                         </div>
                                     @endif
-                                    @if ($user && $user->first_name)
+                                    {{-- @if ($user && $user->first_name)
                                         <div class="user-name-section">
                                             <p class="name-input text-center mt-2 mb-0">{{ $user->first_name }}
                                             </p>
                                             <hr class="name-border mx-auto m-0">
                                         </div>
-                                    @endif
+                                    @endif --}}
                                 </div>
 
 

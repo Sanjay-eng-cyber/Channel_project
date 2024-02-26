@@ -256,12 +256,33 @@ function initSlickSlider() {
 		asNavFor: '.product-slider',
 		focusOnSelect: true,
 		responsive: [
-		{
-		  breakpoint: 1024,
-		  settings: {
-		    slidesToShow: 3,
-		  }
-		}
+			{
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 3,
+					arrows: false, 
+				  vertical: true,
+				  verticalSwiping: true,
+				}
+			  },
+			  {
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 3,
+				}
+			  },
+			  {
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 3,
+				}
+			  },
+		   {
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 3,
+			}
+			}
 		]
 	});
 }

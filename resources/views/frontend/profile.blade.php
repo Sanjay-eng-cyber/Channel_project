@@ -180,7 +180,7 @@
                                                 </a>
                                             </div>
                                             <div class="modal fade auth-popup" id="trashbtn{{ $key }}"
-                                                tabindex="-1" aria-labelledby="loginPopupLabel" aria-hidden="true">
+                                                tabindex="-1" aria-labelledby="loginPopupLabel" aria-hidden="true" style="z-index: 999999">
                                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                     <div class="modal-content">
 
@@ -334,7 +334,7 @@
 
     {{-- Edit address Modal --}}
     <div class="modal fade auth-popup" id="editaddress" tabindex="-1" aria-labelledby="addressFormPopupLabel"
-        aria-hidden="true">
+        aria-hidden="true" style="z-index:99999">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
 

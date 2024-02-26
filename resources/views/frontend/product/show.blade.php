@@ -21,11 +21,11 @@
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('frontend.cat.show', $category->slug) }}"
-                                class="bread-crum breadcrumb-hover">{{ $category->name }}</a></li>
+                                class="bread-crum breadcrumb-hover fw-400 opacity-50 fs-14">{{ $category->name }}</a></li>
                         @if ($subCategory)
-                            <li class="breadcrumb-item"><a
+                            <li class="breadcrumb-item d-flex align-items-center"><a
                                     href="{{ route('frontend.sub-category.show', [$category->slug, $subCategory->slug]) }}"
-                                    class="bread-crum breadcrumb-hover">{{ $subCategory->name }}</a></li>
+                                    class="bread-crum breadcrumb-hover  fw-400 opacity-50 fs-14">{{ $subCategory->name }}</a></li>
                         @endif
                         {{-- <li class="breadcrumb-item bread-crum" aria-current="page">{{ $product->name }}</li> --}}
                     </ol>
@@ -39,41 +39,117 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- Slider of the Page -->                      
-                            <div class="slider">
+                            {{-- <div class="slider ">
                                 <div class="product-slider">
                                     @foreach ($product->medias as $media)
-                                        <div class="slide">
+                                        <div class="slide ">
                                             <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                alt="image description">
+                                                alt="image description" class="pro-slide-pa">
                                         </div>
                                     @endforeach
                                 </div>
 
-                                <ul class="list-unstyled slick-slider pagg-slider">
+                                <ul class="list-unstyled slick-slider pagg-slider subslider-product m-0 p-0">
                                     @foreach ($product->medias as $media)
-                                        <li>
+                                        <li style="padding-left: 30px;padding-right:30px">
                                             <div class="img">
                                                 <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
                                                     alt="image description" class="min-h-2-80">
                                             </div>
                                         </li>
+
+                                        <li style="padding-left: 30px;padding-right:30px">
+                                            <div class="img">
+                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    alt="image description" class="min-h-2-80">
+                                            </div>
+                                        </li>
+
+                                        <li style="padding-left: 30px;padding-right:30px">
+                                            <div class="img">
+                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    alt="image description" class="min-h-2-80">
+                                            </div>
+                                        </li>
+
+
+                                        <li style="padding-left: 30px;padding-right:30px">
+                                            <div class="img">
+                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    alt="image description" class="min-h-2-80">
+                                            </div>
+                                        </li>
+
+                                        <li style="padding-left: 30px;padding-right:30px">
+                                            <div class="img">
+                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    alt="image description" class="min-h-2-80">
+                                            </div>
+                                        </li>
+
+                                        
+
+                                      
+                                    @endforeach
+                                </ul>
+                                <!-- Pagg Slider of the Page end -->
+                            </div> --}}
+
+                            <div class="slider " >
+                                <div class="product-slider">
+                                    @foreach ($product->medias as $media)
+                                        <div class="slide ">
+                                            <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                alt="image description" class="pro-slide-pa">
+                                        </div>
+                                    @endforeach
+                                </div>
+
+                                <ul class="list-unstyled slick-slider pagg-slider subslider-product m-0 p-0">
+                                    @foreach ($product->medias as $media)
+                                        <li class="subslider-list">
+                                            <div class="img">
+                                                <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
+                                                    alt="image description" class="min-h-2-80">
+                                            </div>
+                                        </li>
+
+                                      
                                     @endforeach
                                 </ul>
                                 <!-- Pagg Slider of the Page end -->
                             </div>
+
+                            
                             <!-- Slider of the Page end -->
                             <!-- detial Holder of the Page -->
-                            <div class="detial-holder p-0">
-                                <h1 class="h4 font-body">
+                            <div class="detial-holder">
+                                <h1 class="h4 font-body fs-16">
                                     {{ $product->name }}
+                                    raees
                                 </h1>
-                                <hr>
+                                <hr class="d-none d-sm-block">
                                 @if ($product->short_descriptions)
-                                    <p class="text-muted">
+                                    <p class="text-muted fs-11">
                                         {{ $product->short_descriptions }}
                                     </p>
                                 @endif
-                                <div class="d-flex flex-row  justify-content-between align-items-start stock-width">
+
+                                {{-- for small screen --}}
+                                <div class="d-flex d-sm-none flex-row  justify-content-between align-items-start stock-width">
+                                    @if ($product->stock)
+                                        <h4 class="font-body h5 text-green in-stock mb-0 font-size14 fs-9">In Stock
+                                            <i class="fa-regular fa-circle-check"></i> 
+                                        </h4>
+                                     @else
+                                        <h4 class="font-body h5 text-red font-size14 fs-9">Out of Stock
+                                            <i class="fa-regular fa-circle-xmark"></i> 
+                                        </h4>
+                                    @endif
+                                </div>
+
+                                {{-- for small large screen --}}                    
+                                <div class="d-none d-sm-flex flex-row  justify-content-between align-items-start stock-width">
                                     <div>
                                         <h3 class="h6 font-body rem-1">
                                             From ₹{{ $product->final_price }} <s
@@ -82,15 +158,7 @@
                                                 <small class="d-block" style="font-size: 85%;">({{ $product->unit_sale_price }})</small>
                                             @endif
                                         </h3>
-                                        {{-- @if ($product->stock)
-                                            <h4 class="font-body h5 text-green in-stock mb-0">
-                                                <i class="fa-regular fa-circle-check"></i> In Stock
-                                            </h4>
-                                        @else
-                                            <h4 class="font-body h5 text-red">
-                                                <i class="fa-regular fa-circle-xmark"></i> Out of Stock
-                                            </h4>
-                                        @endif --}}
+                                      
                                     </div>
                                     @if ($product->stock)
                                             <h4 class="font-body h5 text-green in-stock mb-0 font-size14">In Stock
@@ -101,30 +169,134 @@
                                                 <i class="fa-regular fa-circle-xmark"></i> 
                                             </h4>
                                     @endif
-                                    {{-- @if (in_array($product->id, $wishlist))
-                                        <button type="button" class=" btn p-show add-to-wish active"
-                                            data-p-id="{{ $product->id }}">
-                                            <i class="fa-regular fa-heart"></i>
-                                            <span class="tool-tip-text">
-                                                Remove From Wishlist
-                                            </span>
-                                        </button>
-                                    @else
-                                        <button type="button" class="btn m-0 p-0 p-show add-to-wish  "
-                                            data-p-id="{{ $product->id }}">
-                                            <i class="fa-regular fa-heart"></i>
-                                            <span class="tool-tip-text">
-                                                Add To Wishlist
-                                            </span>
-                                        </button>
-                                    @endif --}}
+                                   
                                 </div>
 
 
                                 <div class="row">
                                     <form action="{{ route('frontend.p.checkout', $product->slug) }}" method="GET">
 
-                                        <div class="d-flex flex-column flex-xl-row justify-content-between my-3 ">
+                                        {{-- for small screen --}}
+                                        <div class="d-flex d-sm-none flex-column flex-xl-row justify-content-between my-3 ">
+
+                                            
+                                            <div class="d-flex justify-content-between align-items-center">
+                                               
+
+                                                <div>
+                                                    <h3 class="h6 font-body rem-1 m-0 fs-12">
+                                                        From ₹{{ $product->final_price }} <s
+                                                            class="text-danger">₹{{ $product->mrp }}</s><br>
+                                                        @if ($product->unit_sale_price)
+                                                            <small class="d-block" style="font-size: 85%;">({{ $product->unit_sale_price }})</small>
+                                                        @endif
+                                                    </h3>
+                                                </div>
+
+                                                <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
+                                                    <label for="qty" class="px-2 fs-10">
+                                                        Qty
+                                                    </label>
+                                                    <div class="input-group flex-nowrap counter qty-num-input">
+                                                        <button type="button" class="input-group-text decrease-quantity fs-10">-</button>
+                                                        <input type="number" name="quantity" class="form-control quantity-input fs-10"
+                                                            value="1" id="product_quantity" style="border-left: 0px;border-right: 0px;padding-left:0px;padding-right:0px">
+                                                        <button type="button" class="input-group-text increase-quantity fs-10">+</button>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+
+
+
+
+                                            <div class="d-flex justify-content-between justify-content-sm-start justify-content-lg-end justify-content-xl-between gap-1 gap-sm-3 mt-3 mt-xl-0  ">
+                                            
+                                               
+
+                                                <div>
+                                                    @if (in_array($product->id, $wishlist))
+                                                        <button type="button" class=" btn  p-show add-to-wish-showpage active d-flex align-items-center justify-content-center gap-1 btn-size-width109" 
+                                                            data-p-id="{{ $product->id }}" style="background-color:white;box-shadow: 0px 4px 4px 0px #0000001C;
+                                                            ;padding:8px 8px 8px 8px; border-radius:8px;border: 1px solid #EC268F99;
+                                                            display:flex;
+                                                            justify-content: space-evenly;align-items: center;
+                                                            ">
+
+                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12.3601 0.785926C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785926C0.66063 1.54753 0.0448664 2.83274 0.00288252 4.18935C-0.0950798 7.26751 2.312 9.7348 5.98558 13.519L6.05556 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785926ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C3.5995 8.91766 1.40234 6.65664 1.40234 4.36389C1.40234 2.77721 2.45194 1.5872 3.8514 1.5872C4.92899 1.5872 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 9.0714 1.5872 10.149 1.5872C11.5484 1.5872 12.598 2.77721 12.598 4.36389C12.598 6.65664 10.4009 8.91766 7.07017 12.337Z" fill="#EC268F"/>
+                                                                </svg>
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                            <span class="tool-tip-text-showpage font-size14 ">
+                                                                Wishlisted
+                                                            </span>
+                                                        </button>
+                                                    @else
+                                                        <button type="button" class="btn m-0 p-show add-to-wish-showpage   btn-size-width109" style="background-color:white;
+                                                        box-shadow: 0px 4px 4px 0px #0000001C;
+                                                        ;padding:8px 8px 8px 8px; border-radius:8px;border: 1px solid #EC268F99;
+                                                        display:flex;
+                                                            justify-content: space-evenly;align-items: center;
+                                                        "
+                                                            data-p-id="{{ $product->id }}">
+                                                           
+                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12.3601 0.785925C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785925C0.66063 1.54753 0.0448663 2.83274 0.00288251 4.18935C-0.0950797 7.26751 2.312 9.7348 5.98558 13.519L6.05555 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785925ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C10.149 10 9 7.79275 9 5.5C9 3.91332 6.53837 6.5 7.93783 6.5C9.01542 6.5 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 8.42242 4 9.5 4C10.5 2.5 5.5 1.8728 5.5 3.45948C5.5 5.75223 5.5 10.5 7.07017 12.337Z" fill="#EC268F"/>
+                                                                </svg>
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                      
+                                                            <span class="tool-tip-text-showpage font-size14 ">
+                                                                 Wishlist
+                                                            </span>
+                                                        </button>
+                                                    @endif
+                                                </div>
+                                                
+                                                @if (in_array($product->id, $productInCart))
+                                                        <a href="javascript:void(0)"
+                                                            class="btn btn-pink add-to-cart btn-outline-pink  font-size14 btn-size-width109 gap-1 rayeen"
+                                                            data-p-id="{{ $product->id }}"  style="">
+                                                            <svg class="svg-inline--fa fa-check" aria-hidden="true"
+                                                                focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                                                data-fa-i2svg="">
+                                                                <path fill="currentColor"
+                                                                    d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                                </path>
+                                                            </svg> 
+                                                            <span>Added</span>
+                                                        </a>
+                                                @else
+                                                    <a href="javascript:void(0)"
+                                                        class=" btn btn-pink add-to-cart d-flex align-items-center btn-size-width109 font-size14"
+                                                        data-p-id="{{ $product->id }}" >
+                                                        Add To Cart
+                                                    </a>
+                                                @endif
+
+
+                                                <button class="btn btn-black font-size14 btn-size-width109" type="submit">
+                                                    Buy Now
+                                                </button>
+
+                                            </div>
+                                        </div>
+
+
+                                        {{-- for small large screen --}}                    
+                                        <div class="d-none d-sm-flex flex-column flex-xl-row justify-content-between my-3 ">
                                             <div class="d-flex align-items-center gap-3">
                                                 <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
                                                     <label for="qty" class="px-2">
@@ -140,19 +312,50 @@
 
                                                 <div>
                                                     @if (in_array($product->id, $wishlist))
-                                                        <button type="button" class=" btn  p-show add-to-wish active d-flex align-items-center justify-content-center gap-1" 
-                                                            data-p-id="{{ $product->id }}" style="background-color:white;box-shadow: 0px 4px 4px 0px #0000001C;padding:7px 7px 7px 7px; border-radius:8px;">
-                                                            <i class="fa-regular fa-heart"></i>
-                                                            <span class="tool-tip-text font-size14">
-                                                                Remove From Wishlist
+                                                        <button type="button" class=" btn  p-show add-to-wish-showpage active d-flex align-items-center justify-content-center gap-1 btn-size-width109" 
+                                                            data-p-id="{{ $product->id }}" style="background-color:white;box-shadow: 0px 4px 4px 0px #0000001C;
+                                                            ;padding:8px 8px 8px 8px; border-radius:8px;border: 1px solid #EC268F99;
+                                                            display:flex;
+                                                            justify-content: space-evenly;align-items: center;
+                                                            ">
+                                                            {{-- <i class="fa-regular fa-heart"></i> --}}
+
+                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12.3601 0.785926C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785926C0.66063 1.54753 0.0448664 2.83274 0.00288252 4.18935C-0.0950798 7.26751 2.312 9.7348 5.98558 13.519L6.05556 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785926ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C3.5995 8.91766 1.40234 6.65664 1.40234 4.36389C1.40234 2.77721 2.45194 1.5872 3.8514 1.5872C4.92899 1.5872 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 9.0714 1.5872 10.149 1.5872C11.5484 1.5872 12.598 2.77721 12.598 4.36389C12.598 6.65664 10.4009 8.91766 7.07017 12.337Z" fill="#EC268F"/>
+                                                                </svg>
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                            <span class="tool-tip-text-showpage font-size14 ">
+                                                                Wishlisted
                                                             </span>
                                                         </button>
                                                     @else
-                                                        <button type="button" class="btn m-0 p-show add-to-wish  " style="background-color:white;box-shadow: 0px 4px 4px 0px #0000001C;padding:7px 7px 7px 7px; border-radius:8px;"
+                                                        <button type="button" class="btn m-0 p-show add-to-wish-showpage   btn-size-width109" style="background-color:white;
+                                                        box-shadow: 0px 4px 4px 0px #0000001C;
+                                                        ;padding:8px 8px 8px 8px; border-radius:8px;border: 1px solid #EC268F99;
+                                                        display:flex;
+                                                            justify-content: space-evenly;align-items: center;
+                                                        "
                                                             data-p-id="{{ $product->id }}">
-                                                            <i class="fa-regular fa-heart"></i>
-                                                            <span class="tool-tip-text font-size14">
-                                                                Add To Wishlist
+                                                            {{-- <i class="fa-regular fa-heart"></i> --}}
+                                                           
+                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12.3601 0.785925C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785925C0.66063 1.54753 0.0448663 2.83274 0.00288251 4.18935C-0.0950797 7.26751 2.312 9.7348 5.98558 13.519L6.05555 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785925ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C10.149 10 9 7.79275 9 5.5C9 3.91332 6.53837 6.5 7.93783 6.5C9.01542 6.5 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 8.42242 4 9.5 4C10.5 2.5 5.5 1.8728 5.5 3.45948C5.5 5.75223 5.5 10.5 7.07017 12.337Z" fill="#EC268F"/>
+                                                                </svg>
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                      
+                                                            <span class="tool-tip-text-showpage font-size14 ">
+                                                                 Wishlist
                                                             </span>
                                                         </button>
                                                     @endif
@@ -163,8 +366,8 @@
                                             
                                                 @if (in_array($product->id, $productInCart))
                                                     <a href="javascript:void(0)"
-                                                        class="btn btn-pink add-to-cart btn-outline-pink  font-size14 btn-size-width109 d-flex justify-content-center align-items-center gap-1"
-                                                        data-p-id="{{ $product->id }}" stye>
+                                                        class="btn btn-pink add-to-cart btn-outline-pink  font-size14 btn-size-width109 gap-1 rayeen"
+                                                        data-p-id="{{ $product->id }}"  style="">
                                                         <svg class="svg-inline--fa fa-check" aria-hidden="true"
                                                             focusable="false" data-prefix="fas" data-icon="check" role="img"
                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
@@ -189,68 +392,90 @@
 
                                             </div>
                                         </div>
+
+
                                     </form>
-                                    <hr>
-                                    <h6 class="h5 font-body">
+
+
+                                    <hr class="d-none d-sm-block">
+                                    <h6 class="h5 font-body fs-14">
                                         Description
                                     </h6>
-                                    <ul class="text-black">
+                                    <ul class="text-black fs-11 fw-sm-300">
                                         {!! $product->descriptions !!}
                                     </ul>
-                                    <hr>
+                                    <hr class="d-none d-sm-block">
                                     @if ($product_attributes->count())
                                         <div class="my-1">
                                             @forelse ($product_attributes as $product_attribute)
                                                 <div class="d-flex gap-2 my-1">
-                                                    <div>{{ $product_attribute->attribute->name . ' : ' }}</div>
-                                                    <div class="fw-500">{{ $product_attribute->value->name }}</div>
+                                                    <div class="fs-11 fw-sm-300">{{ $product_attribute->attribute->name . ' : ' }}</div>
+                                                    <div class="fw-500 fs-11 fw-sm-300">{{ $product_attribute->value->name }}</div>
                                                 </div>
                                             @empty
                                             @endforelse
                                         </div>
-                                        <hr>
+                                        <hr class="d-none d-sm-block">
+
                                     @endif
                                 </div>
                                 <div class="rating-holder">
                                     <div class="row">
-                                        <div class="col-12 col-sm-6 p-0">
-                                            <div class="rating">
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="h5 font-body mb-0 me-2">
-                                                        Ratings
-                                                    </h6>
-                                                    <div class="five-stars text-green d-flex">
-                                                        @for ($i = 1; $i <= 5; $i++)
-                                                            @if ($i <= $reviewRatingAvg)
-                                                                <i class="fa-solid fa-star"></i>
-                                                            @else
-                                                                <i class="fa-regular fa-star"></i>
-                                                            @endif
-                                                        @endfor
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex">
-                                                    <div class="rating-total d-flex align-items-center me-3">
-                                                        <h6 class="display-6 text-muted font-body my-2">
-                                                            {{ $reviewRatingAvg }}
-                                                        </h6>
-                                                        <i class="fa-solid fa-star text-green"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 p-0">
-                                            <div class="rating-stats text-muted">
+                                        <div class="col-6 col-sm-6 p-0">
 
+                                                <div class="text-black fs-11">
+                                                    <div class="pb-2">Color : <span class="fw-500">Pink</span> </div>
+                                                    <div class="pb-2">Skin Type : <span class="fw-500">Pink</span></div>
+                                                    <div class="pb-2">Net Quantity : <span class="fw-500">Pink</span></div>
+                                                    <div class="pb-2">Care Instruction : <span class="fw-500">Pink</span></div>
+                                                    <div class="pb-2">Special Ingredients : <span class="fw-500">Pink</span></div>
+                                                    <div class="pb-2">Size (L x W x H) : <span class="fw-500">Pink</span></div>
+                                                </div>
+
+
+                                        </div>
+                                        <div class="col-6 col-sm-6 p-0">
+                                            <div class="rating-stats text-muted">
+                                                <div class="rating">
+                                                    <div class="d-flex align-items-center">
+                                                        <h6 class="h6 font-body mb-0 me-2 fw-500 text-black fs-9">
+                                                            Ratings
+                                                        </h6>
+                                                        <div class="five-stars five-stars-main text-green d-flex gap-1 ">
+                                                            @for ($i = 1; $i <= 5; $i++)
+                                                                @if ($i <= $reviewRatingAvg)
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                @else
+                                                                    <i class="fa-regular fa-star"></i>
+                                                                @endif
+                                                            @endfor
+                                                        </div>
+                                                    </div>
+                                                    <div class="py-1 py-sm-3">
+                                                        <div class="rating-total position-relative isolate " style="display: grid;
+                                                        grid-template-columns: 22% 80%;
+                                                        align-items: center;">
+                                                            <div>
+                                                                <h6 class="h5 font-body text-muted my-2 fs-11">
+                                                                    {{ $reviewRatingAvg }} 
+                                                                </h6>
+                                                                <i class="fa-solid fa-star text-green position-absolute " ></i>
+                                                            </div>
+                                                            <h6 class="m-0 p-0 main-head fs-md-9" >Based On Verified Buyers</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 @for ($i = 5; $i >= 1; $i--)
+                                                <div>
                                                     <div class="rating-stat">
-                                                        <div>{{ $i }}</div>
+                                                        <div class="fs-8">{{ $i }}</div>
                                                         <div class="review-bar">
                                                             <div class="review-bar-value"
                                                                 style="width: {{ $ratingsArr[$i] }}%;">
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
                                                 @endfor
 
                                             </div>
@@ -263,6 +488,9 @@
                 </div>
             </div>
         </section><!-- Mt Product detial of the Page end -->
+
+        <hr class="d-block d-sm-none margin-sm">
+
         <section>
             <div class="container">
 
@@ -270,135 +498,189 @@
 
 
                     <div class="my-0 py-3 py-lg-0 my-lg-2 col-lg-6 col-md-12 product-showpagepills pills-divider-border">
-                        <div class=" d-flex justify-content-start ">
-                            <h5 class="main-head tab-fs py-2 pills-divider-h5">Write a Reviews</h5>
-                        </div>
 
-                        <div class="tab-content my-4">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-12 col-xl-10">
+                   
+                                <div class=" d-flex justify-content-start justify-content-sm-center mb-2 mb-sm-4">
+                                    <h5 class="main-head tab-fs py-0 py-sm-2 pills-divider-h5 h2 fw-500 fs-14">Write a Reviews</h5>
+                                </div>
 
-                            <div class="">
-                                <form action="{{ route('frontend.review.store', $product->slug) }}" method="POST">
-                                    @csrf
-                                    <div class="d-flex justify-content-between flex-column flex-sm-row gap-1">
-                                        <div>Give Your Rating</div>
+                                <div class="tab-content my-0 my-sm-0">
 
-                                        <div class="rating-input">
-                                            <input type="radio" id="star5" name="rating" value="5" />
-                                            <label class="star" for="star5" title="Awesome"
-                                                aria-hidden="true"></label>
-                                            <input type="radio" id="star4" name="rating" value="4" />
-                                            <label class="star" for="star4" title="Great"
-                                                aria-hidden="true"></label>
-                                            <input type="radio" id="star3" name="rating" value="3" />
-                                            <label class="star" for="star3" title="Very good"
-                                                aria-hidden="true"></label>
-                                            <input type="radio" id="star2" name="rating" value="2" />
-                                            <label class="star" for="star2" title="Good"
-                                                aria-hidden="true"></label>
-                                            <input type="radio" id="star1" name="rating" value="1" />
-                                            <label class="star" for="star1" title="Bad"
-                                                aria-hidden="true"></label>
-                                        </div>
-                                    </div>
-                                    @if ($errors->has('rating'))
-                                        <div class="text-danger text-end" role="alert">{{ $errors->first('rating') }}
-                                        </div>
-                                    @endif
+                                    <div class="">
+                                        <form action="{{ route('frontend.review.store', $product->slug) }}" method="POST">
+                                            @csrf
+                                            <div class="d-flex justify-content-between flex-row align-items-center gap-1">
+                                                <div class="fw-400 h5 text-black fs-12 m-0">Give Your Rating</div>
 
-                                    <div class="py-4">
-                                        <input type="text"
-                                            class="form-control my-2 review-sub-headline review-input-bg"
-                                            placeholder="Enter Title" name="title" required
-                                            value="{{ old('title') }}">
-                                        @if ($errors->has('title'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('title') }}
+                                                <div class="rating-input">
+                                                    <input type="radio" id="star5" name="rating" value="5" />
+                                                    <label class="star" for="star5" title="Awesome"
+                                                        aria-hidden="true"></label>
+                                                    <input type="radio" id="star4" name="rating" value="4" />
+                                                    <label class="star" for="star4" title="Great"
+                                                        aria-hidden="true"></label>
+                                                    <input type="radio" id="star3" name="rating" value="3" />
+                                                    <label class="star" for="star3" title="Very good"
+                                                        aria-hidden="true"></label>
+                                                    <input type="radio" id="star2" name="rating" value="2" />
+                                                    <label class="star" for="star2" title="Good"
+                                                        aria-hidden="true"></label>
+                                                    <input type="radio" id="star1" name="rating" value="1" />
+                                                    <label class="star" for="star1" title="Bad"
+                                                        aria-hidden="true"></label>
+                                                </div>
                                             </div>
-                                        @endif
-                                        <textarea name="body" id="body" cols="10" rows="3"
-                                            class="mt-3 form-control w-100  review-sub-textarea review-input-bg" placeholder="Enter Your Review"
-                                            minlength="3" maxlength="2000" required>{{ old('body') }}</textarea>
-                                        @if ($errors->has('body'))
-                                            <div class="text-danger" role="alert">{{ $errors->first('body') }}
+                                            @if ($errors->has('rating'))
+                                                <div class="text-danger text-end fs-11" role="alert">{{ $errors->first('rating') }}
+                                                </div>
+                                            @endif
+
+                                            <div class="pt-sm-4 pb-sm-4 pt-0 pb-4">
+                                                <input type="text"
+                                                    class="form-control my-2 review-sub-headline review-input-bg fs-9"
+                                                    placeholder="Enter Title" name="title" required
+                                                    value="{{ old('title') }}">
+                                                @if ($errors->has('title'))
+                                                    <div class="text-danger" role="alert">{{ $errors->first('title') }}
+                                                    </div>
+                                                @endif
+                                                <textarea name="body" id="body" cols="10" rows="3"
+                                                    class="mt-3 form-control w-100  review-sub-textarea review-input-bg fs-9" placeholder="Enter Your Review"
+                                                    minlength="3" maxlength="2000" required>{{ old('body') }}</textarea>
+                                                @if ($errors->has('body'))
+                                                    <div class="text-danger" role="alert">{{ $errors->first('body') }}
+                                                    </div>
+                                                @endif
                                             </div>
-                                        @endif
+                                            <div class="review-sub-colbtn" >
+                                         
+                                                  <div class="up-image-label">
+                                                    <label for="files" class="btn btn-lg fw-500 d-flex align-items-center gap-2" >                                                    
+                                                        <img src="{{asset('frontend/images/icons/upload-icon.svg')}}" alt="" class="img-fluid" style="width: 17px">
+                                                        <div class="h6 mb-0 up-fontSize">
+                                                            Upload Photos
+                                                        </div>
+                                                    </label>
+                                                    <input id="files" style="visibility:hidden;" type="file">
+                                                  </div>   
+                                                  <div class="text-end">
+                                                      <button type="submit" class="btn btn-darkwhite up-fontSize">Post Your Review</button>
+                                                  </div>                                          
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="text-end">
-                                        <button type="submit" class="btn btn-pink">Post Your Review</button>
-                                    </div>
-                                </form>
+
+                                </div>
+
                             </div>
-
                         </div>
+
                     </div>
 
                     <div class="my-0 my-lg-2 col-lg-6 col-md-12 product-showpagepills pills-divider-border ">
 
-                        <div class="pills-divider d-flex justify-content-start px-0 px-lg-3">
-                            <h5 class="main-head tab-fs pills-divider-h5 py-2">Customer Reviews</h5>
-                        </div>
+                        <div class="row d-flex justify-content-center  position-relative">
+                            <div class="position-absolute d-none d-lg-block" style="height: 72px;width: 1px;background: #979797;left: 0px;padding:0;top:15px"></div>
 
+                            <div class="col-12 col-xl-10">
 
-                        <div class="tab-content my-4">
-                            <div class="tab-pane fade show active" id="home" aria-labelledby="home-tab">
-                                <div class="container p-0 px-0 px-lg-3">
-                                    @forelse ($reviews as $re)
-                                        <div class="review-area">
-                                            <div class="review-card ">
-                                                <div class="d-flex align-items-center">
-
-                                                    <div class="review-user">
-                                                        <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="">
-                                                        <div class="d-flex review-head">
-                                                            <div class="five-stars text-green d-flex">
-                                                                @for ($i = 1; $i <= 5; $i++)
-                                                                    @if ($i <= $re->rating)
-                                                                        <i class="fa-solid fa-star"></i>
-                                                                    @else
-                                                                        <i class="fa-regular fa-star"></i>
-                                                                    @endif
-                                                                @endfor
-                                                            </div>
-                                                            <div class="review-title">
-                                                                <h5 class="font-body">
-                                                                    {{ $re->title }}
-                                                                </h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="review-content">
-
-                                                    <div class="review-text">
-                                                        <p>
-                                                            {!! nl2br($re->body) !!}
-                                                        </p>
-                                                    </div>
-                                                    <div
-                                                        class="review-info text-muted d-flex flex-wrap justify-content-between">
-                                                        <div class="py-2">
-                                                            {{ $re->user->first_name ?? 'Anonymous' }}
-                                                            | {{ dd_format($re->created_at, 'd M-Y') }}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @empty
-                                        <p class="text-center my-4">No Reviews</p>
-                                    @endforelse
+                                <div class="pills-divider d-flex justify-content-start justify-content-sm-center px-0 px-lg-3 mb-sm-4 mb-0">
+                                    <h5 class="main-head tab-fs pills-divider-h5 py-sm-2 py-0 h2 fw-500 fs-14 m-0">Customer Reviews</h5>
                                 </div>
-                                <div class="d-flex justify-content-center mt-4">
-                                    {{ $reviews->onEachSide(1)->links('pagination::bootstrap-4') }}
+
+                                <div class="tab-content my-3 my-sm-4">
+                                    <div class="tab-pane fade show active" id="home" aria-labelledby="home-tab">
+                                        <div class="container p-0 px-0 px-lg-3">
+                                            @forelse ($reviews as $re)
+                                                <div class="review-area">
+                                                    <div class="review-card ">
+                                                        <div class="d-flex align-items-center justify-content-between">
+
+                                                            <div class="review-user d-flex gap-3 align-items-center">
+                                                                <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
+                                                                    alt="">
+                                                                <div class="review-title">
+                                                                        <h6 class="font-body  posting-title fs-12">
+                                                                            {{ $re->title }}
+                                                                        </h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="">
+                                                                <div class="d-flex review-head">
+                                                                    <div class="five-stars five-stars-main text-green d-flex gap-2">
+                                                                        @for ($i = 1; $i <= 5; $i++)
+                                                                            @if ($i <= $re->rating)
+                                                                                <i class="fa-solid fa-star cust-output-review"></i>
+                                                                            @else
+                                                                                <i class="fa-regular fa-star cust-output-review"></i>
+                                                                            @endif
+                                                                        @endfor
+                                                                    </div>
+                                                                 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="review-content pb-3">
+
+                                                            <div class="review-text">
+                                                                <p class="tinywhite fs-10">
+                                                                    {!! nl2br($re->body) !!}
+                                                                </p>
+                                                            </div>
+
+                                                           
+                                                            <div class="uploaded-product-img ">
+                                                                <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
+                                                                <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
+                                                                <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
+                                                                <img src="https://placehold.co/115x115" alt="" srcset="" class="img-fluid rounded-3">
+                                                            </div> 
+
+                                                            <div class="review-info text-muted d-flex flex-wrap justify-content-between py-2">
+                                                                <div class="py-2 fs-14">
+                                                                    {{ $re->user->first_name ?? 'Anonymous' }}
+                                                                    | {{ dd_format($re->created_at, 'd M-Y') }}
+                                                                </div>
+
+                                                                <div class="d-flex align-items-center gap-2 gap-sm-4">
+                                                                    <div class="d-flex gap-1 gap-sm-2 align-items-center">
+                                                                        <button class="border-0 bg-transparent">
+                                                                            <img src="{{asset('frontend/images/icons/like.svg')}}" alt="" class="img-fluid likeimg">
+                                                                        </button>
+                                                                        <div class="fs-14">200</div>
+                                                                    </div>
+
+                                                                    <div>|</div>
+
+                                                                    <div class="d-flex gap-1 gap-sm-2 align-items-center"> 
+                                                                        <button class="border-0 bg-transparent">                                                                    
+                                                                            <img src="{{asset('frontend/images/icons/dislike.svg')}}" alt="" class="img-fluid dislikeimg">
+                                                                        </button>
+                                                                        <div class="fs-14">200</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @empty
+                                                <p class="text-center my-4">No Reviews</p>
+                                            @endforelse
+                                        </div>
+                                        <div class="d-flex justify-content-center mt-4">
+                                            {{ $reviews->onEachSide(1)->links('pagination::bootstrap-4') }}
+                                        </div>
+                                    </div>
+
+
+
                                 </div>
                             </div>
-
-
-
                         </div>
+
                     </div>
 
 
@@ -576,4 +858,66 @@
             width: 80px;
         }
     </style>
+@endsection
+
+
+
+@section('js')
+<script>
+    $('button.add-to-wish-showpage').click(function() {
+        if ($(this).attr("data-p-id")) {
+            // console.log(this);
+            var btn = $(this);
+            axios.post('{{ route('frontend.p.addToWishlist') }}', {
+                    product_id: $(this).attr("data-p-id")
+                })
+                .then(function(res) {
+                    if (res.data.status) {
+                      
+
+                        if (res.data.addToWishlist) {
+                            btn[0].classList.add('active');
+                            if (btn.find(".tool-tip-text-showpage").length) {
+                                btn.find(".tool-tip-text-showpage")[0].innerHTML = "Wishlisted";
+                            }
+                            btn.find("svg path").css("fill", "#EC268F");
+                            btn.find("svg path").css("fill", "#EC268F");
+
+                        } else {
+                            btn[0].classList.remove('active');
+                            if (btn.find(".tool-tip-text-showpage").length) {
+                                btn.find(".tool-tip-text-showpage")[0].innerHTML = "Wishlist";
+                            }
+                            btn.find("svg").css("fill", "none");
+                            btn.find("svg path").css("fill", "#EC268F");
+                        }
+
+                        Snackbar.show({
+                            text: res.data.message,
+                            pos: 'top-right',
+                            actionTextColor: '#fff',
+                            backgroundColor: '#1abc9c'
+                        });
+                    } else {
+                        Snackbar.show({
+                            text: res.data.message ?? 'Something Went Wrong',
+                            pos: 'top-right',
+                            actionTextColor: '#fff',
+                            backgroundColor: '#2196f3'
+                        });
+                    }
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    Snackbar.show({
+                        text: "Something Went Wrong",
+                        pos: 'top-right',
+                        actionTextColor: '#fff',
+                        backgroundColor: '#e7515a'
+                    });
+                });
+        }
+    });
+</script>
+
 @endsection
