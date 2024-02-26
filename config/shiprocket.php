@@ -13,6 +13,7 @@ return [
     'credentials' => [
         'email' => env('SHIPROCKET_EMAIL', 'youemail@email.com'),
         'password' => env('SHIPROCKET_PASSWORD', 'secret'),
+        'shiprocket_webhook_secret' => env('SHIPROCKET_WEBHOOK_SECRET')
     ],
 
 

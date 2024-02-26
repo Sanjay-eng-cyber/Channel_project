@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\Models\Order;
 use App\Models\Delivery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -14,18 +15,42 @@ class ShipRocketWebhookController extends Controller
         $time = now()->format('d-m-y h:is');
         Log::info('ShipRocket Webhook Response @ ' . $time);
         Log::info($request);
-        Log::info('Headers: ', $request->headers->all()); // Log headers
-        if (isset($request->scans[0]) && $request->scans[0]['activity'] === "SHIPMENT DELIVERED") {
-            Delivery::where('partner_order_id', $request->order_id)->update([
-                'partner_status' => $request->scans[0]['activity'],
-                'status' => 'Delivered'
-            ]);
-        } else {
-            Delivery::where('partner_order_id', $request->order_id)->update([
-                'partner_status' => isset($request->scans[0]) ? $request->scans[0]['activity'] : null,
-                'pickup_scheduled_date' => $request->pickup_scheduled_date ?? null,
-            ]);
+        Log::info('Headers: ', $request->headers->all());
+
+        if ($request->header('x-api-key') !== config('shiprocket.credentials.shiprocket_webhook_secret')) {
+            return response()->json(['error' => 'Unauthorized'], 401);
         }
+
+        $awb = $request->awb;
+        $courierName = $request->courier_name;
+        $partnerStatusId = $request->shipment_status_id;
+        $partnerStatus = $request->shipment_status;
+        $orderId = $request->order_id;
+        $scans = $request->scans;
+
+        $scansJson = json_encode($scans);
+
+        $status = $partnerStatus === "DELIVERED" ? 'Delivered' : ($partnerStatus === "IN TRANSIT" ? 'Intransit' : 'Pending');
+
+        $deliveredDate = null;
+        if ($partnerStatus === "DELIVERED") {
+            foreach ($scans as $scan) {
+                if ($scan['activity'] === "SHIPMENT DELIVERED") {
+                    $deliveredDate = $scan['date'];
+                    break;
+                }
+            }
+        }
+
+        Delivery::where('partner_order_id', $orderId)->update([
+            'awb_code' => $awb,
+            'courier_name' => $courierName,
+            'partner_status_code' => $partnerStatusId,
+            'partner_status' => $partnerStatus,
+            'delivered_date' => $deliveredDate,
+            'status' => $status,
+            'scans' => $scansJson
+        ]);
         return response()->json(['success' => 'Details Updated']);
     }
 }

@@ -35,6 +35,7 @@ class CreateDeliveriesTable extends Migration
             $table->bigInteger('pickup_status')->nullable();
             $table->dateTime('pickup_date')->nullable();
             $table->dateTime('delivered_date')->nullable();
+            $table->longText('scans')->nullable();
             $table->timestamps();
         });
     }
