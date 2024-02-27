@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- Slider of the Page -->
-                        <div class="slider ">
+                        <div class="slider {{ count($product->medias) == 1 ? 'full-width' : '' }}">
                             <div class="product-slider">
                                 @foreach ($product->medias as $media)
                                     <div class="slide ">
@@ -50,7 +50,7 @@
                                 @endforeach
                             </div>
 
-                            <ul class="list-unstyled slick-slider pagg-slider subslider-product m-0 p-0">
+                            <ul class="list-unstyled slick-slider pagg-slider subslider-product m-0 p-0 {{ count($product->medias) == 1 ? 'hidesubslide' : '' }}">
                                 @foreach ($product->medias as $media)
                                     <li class="subslider-list">
                                         <div class="img">
