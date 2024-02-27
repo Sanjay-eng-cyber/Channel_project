@@ -165,7 +165,7 @@
                                             <div>
                                                 @if (in_array($product->id, $wishlist))
                                                     <button type="button"
-                                                        class=" btn  p-show add-to-wish-showpage active d-flex align-items-center justify-content-center gap-1 btn-size-width109 whishlist-new-style"
+                                                        class=" btn  p-show add-to-wish-showpage active d-flex align-items-center justify-content-center gap-1 btn-size-width109 whishlist-new-style px-0 px-sm-0"
                                                         data-p-id="{{ $product->id }}">
 
                                                         <svg width="14" height="14" viewBox="0 0 14 14"
