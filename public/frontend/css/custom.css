@@ -4555,6 +4555,11 @@ border-bottom: 0px solid transparent;
         margin: 0 0 0px;
     }
 }
+
+.mt-product-detial .slider .product-slider .slide img{
+    height: 450px !important;
+    object-fit: cover;
+} 
 @media screen and (max-width:576px) {
     .margin-sm{
         margin: 0rem 0;

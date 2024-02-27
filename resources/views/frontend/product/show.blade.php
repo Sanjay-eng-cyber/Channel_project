@@ -62,11 +62,8 @@
                             </ul>
                             <!-- Pagg Slider of the Page end -->
                         </div>
-
-
-                        <!-- Slider of the Page end -->
-                        <!-- detial Holder of the Page -->
-                        <div class="detial-holder">
+                    
+                        <div class="detial-holder mt-0 mt-sm-3 mt-lg-0">
                             <h1 class="h4 font-body fs-16">
                                 {{ $product->name }}
 
