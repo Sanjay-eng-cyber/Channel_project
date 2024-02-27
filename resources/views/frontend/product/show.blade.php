@@ -334,7 +334,7 @@
 
                                 <hr class="d-none d-sm-block">
                                 <h6 class="h5 font-body fs-14">
-                                    Description
+                                    Mamaearth
                                 </h6>
                                 <ul class="text-black fs-11 fw-sm-300">
                                     {!! $product->descriptions !!}
