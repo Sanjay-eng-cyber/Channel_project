@@ -34,12 +34,12 @@
         </section>
 
         <!-- Mt Product detial of the Page -->
-        <section class="mt-product-detial mt-4 " data-wow-delay="0.4s">
+        <section class="mt-product-detial mt-0 mt-sm-4" data-wow-delay="0.4s">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- Slider of the Page -->                      
-                            <div class="slider " >
+                            <div class="slider {{ count($product->medias) == 1 ? 'full-width' : '' }}"  id="slider" >
                                 <div class="product-slider">
                                     @foreach ($product->medias as $media)
                                         <div class="slide ">
@@ -49,7 +49,7 @@
                                     @endforeach
                                 </div>
 
-                                <ul class="list-unstyled slick-slider pagg-slider subslider-product m-0 p-0">
+                                <ul class="list-unstyled slick-slider pagg-slider subslider-product m-0 p-0 {{ count($product->medias) == 1 ? 'hidesubslide' : '' }}" id="subslider">
                                     @foreach ($product->medias as $media)
                                         <li class="subslider-list">
                                             <div class="img">
@@ -121,7 +121,7 @@
                                     <form action="{{ route('frontend.p.checkout', $product->slug) }}" method="GET">
 
                                         {{-- for small screen --}}
-                                        <div class="d-flex d-sm-none flex-column flex-xl-row justify-content-between my-3 ">
+                                        <div class="d-flex d-sm-none flex-column flex-xl-row justify-content-between my-2 my-sm-0 ">
 
                                             
                                             <div class="d-flex justify-content-between align-items-center">
@@ -655,65 +655,68 @@
                 <ul id="subcategory-slider">
 
                     @foreach ($relatedProducts as $rP)
+                    
                         <div class="product-show-grid my-3 mx-2">
 
-                            <div class="product-show-grid-card">
-                                <div class="product-card-img">
-                                    @if (in_array($rP->id, $wishlist))
-                                        <button class="btn wishlist add-to-wish active" data-p-id="{{ $rP->id }}">
-                                            <span class="has-tool-tip">
-                                                <i class="fa-regular fa-heart"></i>
-                                                <span class="tool-tip-text">Remove From Wishlist</span>
-                                            </span>
-                                        </button>
-                                    @else
-                                        <button class="btn wishlist add-to-wish" data-p-id="{{ $rP->id }}">
-                                            <span class="has-tool-tip">
-                                                <i class="fa-regular fa-heart"></i>
-                                                <span class="tool-tip-text">Add to Wishlist</span>
-                                            </span>
-                                        </button>
-                                    @endif
-                                    <a href="{{ route('frontend.p.show', $rP->slug) }}">
-                                        <img src="{{ asset('storage/images/products/thumbnails/' . $rP->thumbnail_image) }}"
-                                            alt="...">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title font-head fw-bold" title="{{ $rP->name }}">
-                                        <a href="{{ route('frontend.p.show', $rP->slug) }}">
-                                            {{ str_limit($rP->name, 50) }}
-                                        </a>
-                                    </h4>
-                                    <div class="price">
-                                        ₹{{ $rP->final_price }} <s class="text-danger">₹{{ $rP->mrp }}</s>
-                                    </div>
-                                    <div class="buttons">
-                                        <a href="{{ route('frontend.p.show', $rP->slug) }}" class="btn btn-orange"
-                                            title="{{ $rP->name }}">
-                                            Shop now
-                                        </a>
-                                        @if (in_array($rP->id, $productInCart))
-                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
-                                                data-p-id="{{ $rP->id }}" data-p-quantity="1">
-                                                <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"
-                                                    data-prefix="fas" data-icon="check" role="img"
-                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                                    data-fa-i2svg="">
-                                                    <path fill="currentColor"
-                                                        d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                                                    </path>
-                                                </svg> Added
+                                <div class="product-show-grid-card">
+
+                                        <div class="product-card-img">
+                                            @if (in_array($rP->id, $wishlist))
+                                                <button class="btn wishlist add-to-wish active" data-p-id="{{ $rP->id }}">
+                                                    <span class="has-tool-tip">
+                                                        <i class="fa-regular fa-heart"></i>
+                                                        <span class="tool-tip-text">Remove From Wishlist</span>
+                                                    </span>
+                                                </button>
+                                            @else
+                                                <button class="btn wishlist add-to-wish" data-p-id="{{ $rP->id }}">
+                                                    <span class="has-tool-tip">
+                                                        <i class="fa-regular fa-heart"></i>
+                                                        <span class="tool-tip-text">Add to Wishlist</span>
+                                                    </span>
+                                                </button>
+                                            @endif
+                                            <a href="{{ route('frontend.p.show', $rP->slug) }}">
+                                                <img src="{{ asset('storage/images/products/thumbnails/' . $rP->thumbnail_image) }}"
+                                                    alt="...">
                                             </a>
-                                        @else
-                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
-                                                data-p-id="{{ $rP->id }}" data-p-quantity="1">
-                                                Add To Cart
-                                            </a>
-                                        @endif
-                                    </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title font-head fw-bold" title="{{ $rP->name }}">
+                                                <a href="{{ route('frontend.p.show', $rP->slug) }}">
+                                                    {{ str_limit($rP->name, 50) }}
+                                                </a>
+                                            </h4>
+                                            <div class="price">
+                                                ₹{{ $rP->final_price }} <s class="text-danger">₹{{ $rP->mrp }}</s>
+                                            </div>
+                                            <div class="buttons">
+                                                <a href="{{ route('frontend.p.show', $rP->slug) }}" class="btn btn-orange"
+                                                    title="{{ $rP->name }}">
+                                                    Shop now
+                                                </a>
+                                                @if (in_array($rP->id, $productInCart))
+                                                    <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
+                                                        data-p-id="{{ $rP->id }}" data-p-quantity="1">
+                                                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"
+                                                            data-prefix="fas" data-icon="check" role="img"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                                            data-fa-i2svg="">
+                                                            <path fill="currentColor"
+                                                                d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            </path>
+                                                        </svg> Added
+                                                    </a>
+                                                @else
+                                                    <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
+                                                        data-p-id="{{ $rP->id }}" data-p-quantity="1">
+                                                        Add To Cart
+                                                    </a>
+                                                @endif
+                                            </div>
+                                        </div>
                                 </div>
-                            </div>
+                            
 
                         </div>
                     @endforeach
@@ -832,6 +835,17 @@
                 });
         }
     });
+
+//     document.addEventListener('DOMContentLoaded', function() {
+//     var subslider = document.getElementById('subslider');
+//     var slider = document.getElementById('slider');
+
+//     if (subslider.children.length === 1) {
+//         subslider.classList.add('hidesubslide');
+//         slider.classList.add('full-width');
+//     }
+// });
+
 </script>
 
 @endsection
