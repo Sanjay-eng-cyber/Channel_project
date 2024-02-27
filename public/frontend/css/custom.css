@@ -95,11 +95,17 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 170px; /* Adjust width as needed */
+    width: 282px 
 }
 @media screen and (max-width: 1400px) {
     .uploaded-product-img img{
         width: 95px;
+    }
+    .posting-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 226px 
     }
     
 }
@@ -3399,7 +3405,7 @@ a:hover {
 }
 
 .review-area .review-card .review-user {
-    padding-right: 1.5em;
+    /* padding-right: 1.5em; */
 }
 
 .review-area .review-card .review-user img {
@@ -3416,7 +3422,7 @@ a:hover {
 
 .review-area .review-card .five-stars {
     font-size: 1.25em;
-    margin-right: 1em;
+    /* margin-right: 1em; */
 }
 
 .review-area .review-card .review-title {

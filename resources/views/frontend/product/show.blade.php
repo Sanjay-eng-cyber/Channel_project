@@ -220,18 +220,10 @@
 
                                         {{-- for large screen --}}                    
                                         <div class="d-none d-sm-flex flex-column flex-xl-row justify-content-between my-3 ">
-                                            <div class="d-flex align-items-center gap-3">
-                                                <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
-                                                    <label for="qty" class="px-2">
-                                                        Qty
-                                                    </label>
-                                                    <div class="input-group flex-nowrap counter qty-num-input">
-                                                        <button type="button" class="input-group-text decrease-quantity">-</button>
-                                                        <input type="number" name="quantity" class="form-control quantity-input"
-                                                            value="1" id="product_quantity" style="border-left: 0px;border-right: 0px;padding-left:0px;padding-right:0px">
-                                                        <button type="button" class="input-group-text increase-quantity">+</button>
-                                                    </div>
-                                                </div>
+                                                <div class="d-flex align-items-center gap-3">
+                                                   
+                                                   
+
 
                                                 <div>
                                                     @if (in_array($product->id, $wishlist))
@@ -251,6 +243,7 @@
                                                             <svg width="14" height="14" viewBox="0 0 14 14" fill="#EC268F"  xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M12.3601 0.785926C10.5128 -0.642086 8.23172 0.0243193 7.00019 1.6586C5.76867 0.0243193 3.48754 -0.65002 1.64025 0.785926C0.66063 1.54753 0.0448664 2.83274 0.00288252 4.18935C-0.0950798 7.26751 2.312 9.7348 5.98558 13.519L6.05556 13.5904C6.58735 14.1378 7.40604 14.1378 7.93783 13.5825L8.0148 13.5032C11.6884 9.72687 14.0885 7.25958 13.9975 4.18142C13.9555 2.83274 13.3398 1.54753 12.3601 0.785926ZM7.07017 12.337L7.00019 12.4163L6.93022 12.337C3.5995 8.91766 1.40234 6.65664 1.40234 4.36389C1.40234 2.77721 2.45194 1.5872 3.8514 1.5872C4.92899 1.5872 5.97858 2.37261 6.34944 3.45948H7.65794C8.0218 2.37261 9.0714 1.5872 10.149 1.5872C11.5484 1.5872 12.598 2.77721 12.598 4.36389C12.598 6.65664 10.4009 8.91766 7.07017 12.337Z" fill="#EC268F"/>
                                                             </svg>
+                                                            
                                                                                                                                      
                                                             <span class="tool-tip-text-showpage font-size14 ">
                                                                  Wishlist
@@ -259,10 +252,7 @@
                                                         </button>
                                                     @endif
                                                 </div>
-                                            </div>
 
-                                            <div class="d-flex justify-content-between justify-content-sm-start justify-content-lg-end justify-content-xl-between gap-1 gap-sm-3 mt-3 mt-xl-0  ">
-                                            
                                                 @if (in_array($product->id, $productInCart))
                                                     <a href="javascript:void(0)"
                                                         class="btn btn-pink add-to-cart btn-outline-pink  font-size14 btn-size-width109 gap-1 d-flex align-items-center justify-content-center "
@@ -284,6 +274,24 @@
                                                         Add To Cart
                                                     </a>
                                                 @endif
+
+                                            </div>
+
+                                            <div class="d-flex justify-content-between justify-content-sm-start justify-content-lg-end justify-content-xl-between gap-1 gap-sm-3 mt-3 mt-xl-0  ">
+                                            
+                                               
+
+                                                <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
+                                                    <label for="qty" class="px-2">
+                                                        Qty
+                                                    </label>
+                                                    <div class="input-group flex-nowrap counter qty-num-input">
+                                                        <button type="button" class="input-group-text decrease-quantity">-</button>
+                                                        <input type="number" name="quantity" class="form-control quantity-input"
+                                                            value="1" id="product_quantity" style="border-left: 0px;border-right: 0px;padding-left:0px;padding-right:0px">
+                                                        <button type="button" class="input-group-text increase-quantity">+</button>
+                                                    </div>
+                                                </div>
 
                                                 <button class="btn btn-buy font-size14 btn-size-width109" type="submit">
                                                     Buy Now
@@ -504,7 +512,7 @@
                                                                 <img src="{{ $user && $user->profile_image ? asset('storage/images/profile/' . $user->profile_image) : asset('frontend/images/user-pic.png') }}"
                                                                     alt="">
                                                                 <div class="review-title">
-                                                                        <h6 class="font-body  posting-title fs-12">
+                                                                        <h6 class="font-body  posting-title " style="font-size: 14px">
                                                                             {{ $re->title }}
                                                                         </h6>
                                                                 </div>
@@ -527,7 +535,7 @@
 
                                                         <div class="review-content pb-3">
 
-                                                            <div class="review-text">
+                                                            <div class="review-text mb-0">
                                                                 <p class="tinywhite fs-10">
                                                                     {!! nl2br($re->body) !!}
                                                                 </p>
@@ -542,7 +550,7 @@
                                                             </div>  --}}
 
                                                             <div class="review-info text-muted d-flex flex-wrap justify-content-between py-2">
-                                                                <div class="py-2 fs-14">
+                                                                <div class="py-2 fs-14 fw-400 text-black">
                                                                     {{ $re->user->first_name ?? 'Anonymous' }}
                                                                     | {{ dd_format($re->created_at, 'd M-Y') }}
                                                                 </div>
