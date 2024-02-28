@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\Delivery;
 use App\Models\Transaction;
 use App\Models\Subscription;
+use App\Events\OrderPlacedEvent;
 use Illuminate\Support\Facades\DB;
 
 class Payment extends Webhook
@@ -65,6 +66,7 @@ class Payment extends Webhook
             ]);
 
             $order->update(['status' => 'completed']);
+            event(new OrderPlacedEvent($order));
         });
     }
 

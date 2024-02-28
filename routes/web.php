@@ -18,11 +18,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::domain(config('app.web_domain'))->group(function () {
 
-    // Route::get('/test', function () {
-    //     $order = App\Models\Order::with('user', 'items')->first();
-    //     //dd($order);
-    //     event(new App\Events\OrderPlacedEvent($order));
-    // })->name('test');
+    Route::get('/test', function () {
+        $order = App\Models\Order::with('user', 'items')->first();
+        //dd($order);
+        event(new App\Events\OrderPlacedEvent($order));
+    })->name('test');
 
     Route::get('/', 'App\Http\Controllers\frontend\HomeController@index')->name('frontend.index');
 
@@ -217,19 +217,19 @@ Route::domain(config('app.web_domain'))->group(function () {
 
     //Email route
     Route::get('/order-placed-mail', function () {
-        return view('mail/order-placed-mail');
+        return view('mail/order-placed-mail', ['userName' => 'Test User Name', 'productName' => 'Test Product One, Test Product Two', 'adminMail' => 'admin@mail.com']);
     })->name('order-placed-mail');
 
     Route::get('/order-cancelled-mail', function () {
-        return view('mail/order-cancelled-mail');
+        return view('mail/order-cancelled-mail', ['userName' => 'Test User Name', 'productName' => 'Test Product One, Test Product Two', 'adminMail' => 'admin@mail.com']);
     })->name('order-cancelled-mail');
 
     Route::get('/order-proccessing-mail', function () {
-        return view('mail/order-proccessing-mail');
+        return view('mail/order-proccessing-mail', ['userName' => 'Test User Name', 'productName' => 'Test Product One, Test Product Two', 'adminMail' => 'admin@mail.com']);
     })->name('order-proccessing-mail');
 
     Route::get('/order-delivered-mail', function () {
-        return view('mail/order-delivered-mail');
+        return view('mail/order-delivered-mail', ['userName' => 'Test User Name', 'productName' => 'Test Product One, Test Product Two', 'adminMail' => 'admin@mail.com']);
     })->name('order-delivered-mail.blade');
 
 

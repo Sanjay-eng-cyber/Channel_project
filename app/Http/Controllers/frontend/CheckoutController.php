@@ -135,7 +135,6 @@ class CheckoutController extends Controller
             session()->forget('coupon');
             session()->forget('discount');
         }
-        $order->update(['status' => 'completed']);
         $userCart = auth()->user()->cart;
         optional($userCart->items()->delete());
         $transaction = $order->transactions()->whereStatus('completed')->latest()->first();
