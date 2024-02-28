@@ -31,6 +31,12 @@ class ShipRocketWebhookController extends Controller
         $scansJson = json_encode($scans);
 
         $status = $partnerStatus === "DELIVERED" ? 'Delivered' : ($partnerStatus === "IN TRANSIT" ? 'Intransit' : 'Pending');
+        $status = match ($partnerStatus) {
+            'DELIVERED' => 'Delivered',
+            'In Transit' => 'Intransit',
+            'CANCELLED' => 'Cancelled',
+            default => 'Pending',
+        };
 
         $deliveredDate = null;
         if ($partnerStatus === "DELIVERED") {
