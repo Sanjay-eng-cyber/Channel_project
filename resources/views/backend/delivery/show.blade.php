@@ -85,14 +85,14 @@
                                                     Status</label><br>
                                                 {{-- <p class="label-title">{{ $delivery->partner_status ?? '---' }}</p> --}}
                                                 @if ($delivery->partner_status == 'Pending')
-                                                    <span class="badge badge-warning">{{ 'Pending' }}</span>
-                                                @elseif($delivery->partner_status == 'Cancelled')
-                                                    <span class="badge badge-danger">{{ 'Cancelled' }}</span>
+                                                    <label class="text-white badge badge-warning">{{ 'Pending' }}</label>
+                                                @elseif($delivery->partner_status == 'Intransit')
+                                                    <label class="text-white badge badge-danger">{{ 'Cancelled' }}</label>
                                                 @elseif($delivery->partner_status == 'Delivered')
-                                                    <span class="badge badge-success">{{ 'Delivered' }}</span>
+                                                    <label class="text-white badge badge-success">{{ 'Delivered' }}</label>
                                                 @else
-                                                    <span
-                                                        class="badge badge-primary">{{ $delivery->partner_status ?? '--' }}</span>
+                                                    <label
+                                                        class="text-white badge badge-primary">{{ $delivery->partner_status ?? '--' }}</label>
                                                 @endif
                                             </div>
                                         </div>
@@ -133,21 +133,19 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">Status</label><br>
-                                                <p>
-                                                    @if ($delivery->status == 'Pending')
-                                                        <label
-                                                            class="text-white badge badge-warning">{{ $delivery->status }}</label>
-                                                    @elseif ($delivery->status == 'Intransit')
-                                                        <label
-                                                            class="text-white badge badge-primary">{{ $delivery->status }}</label>
-                                                    @elseif ($delivery->status == 'Delivered')
-                                                        <label
-                                                            class="text-white badge badge-success">{{ $delivery->status }}</label>
-                                                    @else
-                                                        <label
-                                                            class="text-white badge badge-secondary">{{ $delivery->status ?? '--' }}</label>
-                                                    @endif
-                                                </p>
+                                                @if ($delivery->status == 'Pending')
+                                                    <label
+                                                        class="text-white badge badge-warning">{{ $delivery->status }}</label>
+                                                @elseif ($delivery->status == 'Intransit')
+                                                    <label
+                                                        class="text-white badge badge-primary">{{ $delivery->status }}</label>
+                                                @elseif ($delivery->status == 'Delivered')
+                                                    <label
+                                                        class="text-white badge badge-success">{{ $delivery->status }}</label>
+                                                @else
+                                                    <label
+                                                        class="text-white badge badge-secondary">{{ $delivery->status ?? '--' }}</label>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

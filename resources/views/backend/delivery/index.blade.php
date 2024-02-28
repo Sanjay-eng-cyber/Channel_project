@@ -81,7 +81,8 @@
                                         <th>Shipment Id</th>
                                         <th>AWB Code</th>
                                         {{-- <th>Pickup Date</th> --}}
-                                        <th>Delivery Partner Status</th>
+                                        <th>Status</th>
+                                        {{-- <th>Delivery Partner Status</th> --}}
                                         <th>Delivered Date</th>
                                         {{-- <th>Status</th> --}}
                                         <th class="text-center">Action</th>
@@ -107,6 +108,18 @@
                                             <td>{{ $d->awb_code ?? '--' }}</td>
                                             {{-- <td>{{ $d->pickup_date ? dd_format($d->pickup_date, 'd-m-y h:i:a') : '--' }} --}}
                                             <td>
+                                                @if ($d->status == 'Pending')
+                                                    <span class="badge badge-warning">{{ 'Pending' }}</span>
+                                                @elseif($d->status == 'Intransit')
+                                                    <span class="badge badge-info">{{ 'Intransit' }}</span>
+                                                @elseif($d->status == 'Delivered')
+                                                    <span class="badge badge-success">{{ 'Delivered' }}</span>
+                                                @else
+                                                    <span
+                                                        class="badge badge-primary">{{ $d->status ?? '--' }}</span>
+                                                @endif
+                                            </td>
+                                            {{-- <td>
                                                 @if ($d->partner_status == 'Pending')
                                                     <span class="badge badge-warning">{{ 'Pending' }}</span>
                                                 @elseif($d->partner_status == 'Cancelled')
@@ -117,7 +130,7 @@
                                                     <span
                                                         class="badge badge-primary">{{ $d->partner_status ?? '--' }}</span>
                                                 @endif
-                                            </td>
+                                            </td> --}}
                                             <td>{{ $d->delivered_date ? dd_format($d->delivered_date, 'd-m-y h:i:a') : '--' }}
                                             </td>
                                             {{-- <td>
