@@ -158,12 +158,20 @@ class DeliveryController extends Controller
         // dd($shipment);
         if ($shipment && isset($shipment['data'])) {
             $partnerStatus = isset($shipment['data']['status']) ? Order::API_STATUS[$shipment['data']['status']] : null;
-            $status = match ($partnerStatus) {
-                'Delivered' => 'Delivered',
-                'In Transit' => 'Intransit',
-                'Cancelled' => 'Cancelled',
-                default => 'Pending',
-            };
+            switch ($partnerStatus) {
+                case 'Delivered':
+                    $status = 'Delivered';
+                    break;
+                case 'In Transit':
+                    $status = 'Intransit';
+                    break;
+                case 'Cancelled':
+                    $status = 'Cancelled';
+                    break;
+                default:
+                    $status = 'Pending';
+                    break;
+            }
             $delivery->update([
                 'awb_code' => isset($shipment['data']['awb']) ? $shipment['data']['awb'] : null,
                 'courier_name' => isset($shipment['data']['courier']) ? $shipment['data']['courier'] : null,
