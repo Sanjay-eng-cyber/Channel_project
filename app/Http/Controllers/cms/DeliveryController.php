@@ -125,38 +125,6 @@ class DeliveryController extends Controller
             return redirect()->route('backend.delivery.index')->with(['alert-type' => 'success', 'message' => 'Delivery Updated Successfully']);
         }
         return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
-
-        // $request->validate([
-        //     'length' => 'required|numeric|min:0.5,max:1000',
-        //     'breadth' => 'required|numeric|min:0.5,max:1000',
-        //     'height' => 'required|numeric|min:0.5,max:1000',
-        //     'weight' => 'required|numeric|min:0.1|max:25'
-        // ]);
-
-        // $delivery = Delivery::whereStatus('Intransit')->findOrFail($delivery_id);
-        // $order = $delivery->order;
-        // $delivery->update([
-        //     "length" => $request->length,
-        //     "breadth" => $request->breadth,
-        //     "height" => $request->height,
-        //     "weight" => $request->weight
-        // ]);
-
-        // $shiprocketDetails = $delivery->sendOrderToShiprocketApi();
-        // dd($shiprocketDetails);
-        // if (!$shiprocketDetails['success']) {
-        //     $delivery->update([
-        //         "message" => isset($shiprocketDetails['message']) ? $shiprocketDetails['message'] : "Something Went Wrong",
-        //     ]);
-        //     Log::info("Delivery ID : " . $delivery->id);
-        //     Log::info($shiprocketDetails['message']);
-        //     return redirect()->back()->with(toast('Failed To Deliver', 'error'));
-        // }
-
-        // Log::info("Delivery ID : " . $delivery->id);
-        // Log::info($shiprocketDetails['message']);
-        // dd($delivery);
-        // return redirect()->back()->with(toast('Delivery Updated', 'success'));
     }
 
     public function fetchDelivery($id)
@@ -189,13 +157,16 @@ class DeliveryController extends Controller
 
         // dd($shipment);
         if ($shipment && isset($shipment['data'])) {
+            $partnerStatus = isset($shipment['data']['status']) ? Order::API_STATUS[$shipment['data']['status']] : null;
+            $status = $partnerStatus === "DELIVERED" ? 'Delivered' : ($partnerStatus === "IN TRANSIT" ? 'Intransit' : 'Pending');
             $delivery->update([
                 'awb_code' => isset($shipment['data']['awb']) ? $shipment['data']['awb'] : null,
                 'courier_name' => isset($shipment['data']['courier']) ? $shipment['data']['courier'] : null,
                 'partner_status_code' => isset($shipment['data']['status']) ? $shipment['data']['status'] : null,
-                'partner_status' => isset($shipment['data']['status']) ? Order::API_STATUS[$shipment['data']['status']] : null,
+                'partner_status' => $partnerStatus,
                 'pickup_token_number' => isset($shipment['data']['pickup_token_number']) ? $shipment['data']['pickup_token_number'] : null,
-                'delivered_date' => isset($shipment['data']['delivered_date']) ? $shipment['data']['delivered_date'] : null
+                'delivered_date' => isset($shipment['data']['delivered_date']) ? $shipment['data']['delivered_date'] : null,
+                'status' => $status,
             ]);
             return redirect()->back()->with(toast('Delivery Fetched Successfully', 'success'));
         }
