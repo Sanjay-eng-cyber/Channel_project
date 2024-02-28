@@ -94,7 +94,7 @@
                                 <div>
                                     <h3 class="h6 font-body rem-1">
                                         From ₹{{ $product->final_price }} <s
-                                            class="text-danger">₹{{ $product->mrp }}</s><br>
+                                            class="text-muted">₹{{ $product->mrp }}</s><br>
                                         @if ($product->unit_sale_price)
                                             <small class="d-block"
                                                 style="font-size: 85%;">({{ $product->unit_sale_price }})</small>

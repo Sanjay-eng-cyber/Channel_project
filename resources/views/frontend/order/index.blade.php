@@ -50,19 +50,19 @@
                                                 @endif --}}
                                                 @if ($order->status == 'completed')
                                                     @php
-                                                        $delivery = $order->deliveries()->whereStatus('Delivered')->latest()->first();
+                                                        $delivery = $order->deliveries->first();
                                                     @endphp
-                                                    @if ($delivery && $delivery->delivered_date)
+                                                    @if ($delivery && $delivery->status == 'Delivered' && $delivery->delivered_date)
                                                         <li class="cancel-order text-red list-unstyled">
                                                             <a href="javascript:void(0)" class="text-red">
                                                                 Delivered On:
-                                                                {{ dd_format($delivery->delivered_date, 'd M Y') }}
+                                                                {{ dd_format($order->deliveries->where('status', 'Delivered')->first()->delivered_date, 'd M Y') }}
                                                             </a>
                                                         </li>
                                                     @else
                                                         <li class="cancel-order text-red list-unstyled">
                                                             <a href="javascript:void(0)" class="text-red">
-                                                                Delivery: {{ $delivery->status }}
+                                                                Delivery: {{ $delivery ? $delivery->status : 'Pending' }}
                                                             </a>
                                                         </li>
                                                     @endif

@@ -185,7 +185,7 @@
                                     <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="formGroupExampleInput" class="">Stock*</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
-                                            placeholder="Enter Stock" minlength="3" maxlength="40" required
+                                            placeholder="Enter Stock" minlength="1" maxlength="40" required
                                             name="stock" value="{{ old('stock') ?? $product->stock }}">
                                         @if ($errors->has('stock'))
                                             <div class="text-danger" role="alert">{{ $errors->first('stock') }}</div>

@@ -23,7 +23,7 @@ class OrderController extends Controller
         // dd($order);
         $gst = gst($order->total_amount);
         // dd($gst);
-        $delivery = $order->deliveries()->latest()->first();
+        $delivery = $order->deliveries()->first();
         return view('frontend.order.show', compact('order', 'delivery', 'gst'));
     }
 

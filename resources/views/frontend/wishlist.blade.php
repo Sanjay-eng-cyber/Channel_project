@@ -41,22 +41,36 @@
                         <div class="col-sm-8 wishlist-main-out">
                             <div class="row wishlist-main-in d-flex align-items-center justify-content-between;">
                                 <div class="col-sm-12 col-md-4 col-lg-4 col-xl-3  wishlist-main-in-img text-center">
-                                    <img src="{{ asset('storage/images/products/thumbnails/' . $w->product->thumbnail_image) }}"
-                                        class="img-fluid" alt=""
-                                        style="max-width:140px;max-height:140px;object-fit:contain">
+                                    <a href="{{ route('frontend.p.show', $w->product->slug) }}">
+                                        <img src="{{ asset('storage/images/products/thumbnails/' . $w->product->thumbnail_image) }}"
+                                            class="img-fluid" alt=""
+                                            style="max-width:140px;max-height:140px;object-fit:contain">
+                                    </a>
                                 </div>
                                 <div
                                     class="col-sm-12 text-md-start text-center  col-md-8 col-lg-8 col-xl-6 wishlist-main-desc pt-3 pt-md-0">
 
-                                    <h5 class="main-head">{{ $w->product->name }}</h5>
+                                    <h5 class="main-head">
+                                        <a href="{{ route('frontend.p.show', $w->product->slug) }}">
+                                            {{ $w->product->name }}
+                                        </a>
+                                    </h5>
                                     <span style="font-size: 14px;opacity: 0.6;">{{ $w->product->short_descriptions }}
 
                                     </span>
 
                                     <ul class="list-unstyled d-flex gap-3 justify-content-md-start justify-content-center">
-                                        <li class="price">From ₹ {{ $w->product->final_price }}</li>
+                                        <li class="price">From ₹ {{ $w->product->final_price }}
+                                            <s class="text-muted">₹{{ $w->product->mrp }}</s>
+                                        </li>
                                         @if ($w->product->stock)
-                                            <li class="status">In Stock</li>
+                                            <li class="status price">In Stock
+                                                <i class="fa-regular fa-circle-check"></i>
+                                            </li>
+                                        @else
+                                            <li class="text-red price">Out of Stock
+                                                <i class="fa-regular fa-circle-xmark"></i>
+                                            </li>
                                         @endif
                                     </ul>
 
@@ -91,7 +105,7 @@
                     </div>
                 </div>
             @empty
-                @include('frontend.not-found' , ['type' => 'Wishlist'])
+                @include('frontend.not-found', ['type' => 'Wishlist'])
             @endforelse
             <div class="row">
                 <div class="col-12">

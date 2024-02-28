@@ -93,7 +93,7 @@
                     @else
                         <br>
                         <span class="h6 font-body">Delivery:
-                            {{ $delivery->status }}</span>
+                            {{ $delivery ? $delivery->status : 'Pending' }}</span>
                     @endif
                     <hr>
                     <span class="h5  font-body text-capitalize">Price Details
