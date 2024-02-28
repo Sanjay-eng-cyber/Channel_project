@@ -41,8 +41,8 @@ class DeliveryController extends Controller
     {
         // return redirect()->back(toast("Work In Progress", 'info'));
 
-        $order = Order::whereStatus('completed')->with('items')->findOrFail($order_id);
-        if ($order->deliveries->where('status', '!=', 'Pending')->count()) {
+        $order = Order::whereStatus('completed')->with('items', 'deliveries')->findOrFail($order_id);
+        if ($order->deliveries->count()) {
             return redirect()->route('backend.order.show', $order_id)->with(toast("Delivery Already Created", 'info'));
         }
 

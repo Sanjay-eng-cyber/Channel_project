@@ -107,7 +107,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
+                    {{-- <div class="col-12">
                         <form class="mt-3" method="POST" action="{{ route('backend.order.update', $order->id) }}"
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
@@ -174,7 +174,7 @@
                             <input type="submit" class="btn btn-primary"
                                 onclick="return confirm('Are you sure, you want to update?')">
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
