@@ -298,7 +298,7 @@
                                     <div class="col-xl-6 col-md-6 col-sm-12 mb-6">
                                         <label for="formGroupExampleInput" class="">Special Ingredients</label>
                                         <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Special Ingredients"
-                                            name="special_ingredients" minlength="2" maxlength="150" rows="3" cols="50">{{ old('special_ingredients') ?? $product->special_ingredients }}</textarea>
+                                            name="special_ingredients" minlength="2" maxlength="1000" rows="3" cols="50">{{ old('special_ingredients') ?? $product->special_ingredients }}</textarea>
                                         @if ($errors->has('special_ingredients'))
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('special_ingredients') }}</div>
@@ -308,7 +308,7 @@
                                     <div class="col-xl-6 col-md-6 col-sm-12 mb-6">
                                         <label for="formGroupExampleInput" class="">Care Instruction</label>
                                         <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Care Instruction"
-                                            name="care_instruction" minlength="2" maxlength="150" rows="3" cols="50">{{ old('care_instruction') ?? $product->care_instruction }}</textarea>
+                                            name="care_instruction" minlength="2" maxlength="1000" rows="3" cols="50">{{ old('care_instruction') ?? $product->care_instruction }}</textarea>
                                         @if ($errors->has('care_instruction'))
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('care_instruction') }}</div>
