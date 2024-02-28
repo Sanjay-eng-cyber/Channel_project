@@ -69,11 +69,7 @@
                                                     </li>
                                                 @elseif ($order->status == 'completed')
                                                     @php
-                                                        $delivery = $order
-                                                            ->deliveries()
-                                                            ->whereStatus('Delivered')
-                                                            ->latest()
-                                                            ->first();
+                                                        $delivery = $order->deliveries()->whereStatus('Delivered')->latest()->first();
                                                     @endphp
                                                     @if (!$order->deliveries->count())
                                                         <li class="cancel-order text-red list-unstyled">
@@ -115,7 +111,20 @@
                     </div>
                 </div>
                 @empty
-                    @include('frontend.not-found')
+                    <section class="">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="d-flex flex-column align-items-center not-found">
+                                        <img src="frontend/images/not-found/not-fond.png" alt="" class="img-fluid"
+                                            style="width:400px">
+                                        <div class="not-found-desc">Looks like you haven't placed an order</div>
+                                        <a href="/" class="btn btn-orange or-secondpage-lbtn mt-4 ">Continue Shopping</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 @endforelse
 
             </div>

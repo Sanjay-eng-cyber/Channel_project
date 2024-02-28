@@ -34,7 +34,7 @@ class ProductController extends Controller
     public function show($productSlug)
     {
         $user = auth()->user();
-        $product = Product::where('slug', $productSlug)->with('medias')->firstOrFail();
+        $product = Product::where('slug', $productSlug)->with('medias', 'brand')->firstOrFail();
         $product_attributes = $product->ProductAttribute()->with('attribute', 'value')->latest()->get();
         // dd($product_attributes);
         $category = $product->category;

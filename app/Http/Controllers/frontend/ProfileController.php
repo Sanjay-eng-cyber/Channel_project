@@ -32,7 +32,6 @@ class ProfileController extends Controller
         $profile->first_name = $request->first_name;
         $profile->last_name = $request->last_name;
         $profile->email = $request->email;
-        //$profile->phone = $request->phone;
         $profile->gender = $request->gender;
         if ($profile->save()) {
             return redirect()->back()->with([

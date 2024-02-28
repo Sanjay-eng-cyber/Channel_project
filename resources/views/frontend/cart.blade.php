@@ -116,7 +116,7 @@
         </section>
         {{-- @else --}}
         <div v-if="cartItems.length == 0">
-            @include('frontend.not-found')
+            @include('frontend.not-found', ['type' => 'Cart'])
         </div>
         {{-- @endif --}}
 

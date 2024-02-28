@@ -50,30 +50,31 @@
                                 @endforeach
                             </div>
 
-                            <ul class="list-unstyled slick-slider pagg-slider subslider-product m-0 p-0 {{ count($product->medias) == 1 ? 'hidesubslide' : '' }}">
+                            <ul
+                                class="list-unstyled slick-slider pagg-slider subslider-product m-0 p-0 {{ count($product->medias) == 1 ? 'hidesubslide' : '' }}">
                                 @foreach ($product->medias as $media)
                                     <li class="subslider-list">
                                         <div class="img">
                                             <img src="{{ asset('storage/images/products/' . $media->file_name) }}"
-                                                alt="image description" class="min-h-2-80">
+                                                alt="image description" class="min-h-2-80 subslider-list-img">
                                         </div>
                                     </li>
                                 @endforeach
                             </ul>
                             <!-- Pagg Slider of the Page end -->
                         </div>
-                    
+
                         <div class="detial-holder mt-0 mt-sm-3 mt-lg-0">
                             <h1 class="h4 font-body fs-16">
                                 {{ $product->name }}
 
                             </h1>
                             <hr class="d-none d-sm-block">
-                            @if ($product->short_descriptions)
+                            {{-- @if ($product->short_descriptions)
                                 <p class="text-muted fs-11">
                                     {{ $product->short_descriptions }}
                                 </p>
-                            @endif
+                            @endif --}}
 
                             {{-- for small screen --}}
                             <div class="d-flex d-sm-none flex-row  justify-content-between align-items-start stock-width">
@@ -333,27 +334,17 @@
 
 
                                 <hr class="d-none d-sm-block">
-                                <h6 class="h5 font-body fs-14">
-                                    Mamaearth
-                                </h6>
-                                <ul class="text-black fs-11 fw-sm-300">
-                                    {!! $product->descriptions !!}
-                                </ul>
-                                <hr class="d-none d-sm-block">
-                                @if ($product_attributes->count())
-                                    <div class="my-1">
-                                        @forelse ($product_attributes as $product_attribute)
-                                            <div class="d-flex gap-2 my-1">
-                                                <div class="fs-11 fw-sm-300">
-                                                    {{ $product_attribute->attribute->name . ' : ' }}</div>
-                                                <div class="fw-500 fs-11 fw-sm-300">{{ $product_attribute->value->name }}
-                                                </div>
-                                            </div>
-                                        @empty
-                                        @endforelse
-                                    </div>
-                                    <hr class="d-none d-sm-block">
 
+                                {{-- @if ($product->brand)
+                                    <h6 class="h5 font-body fs-14">
+                                        {{ $product->brand->name }}
+                                    </h6>
+                                @endif --}}
+                                @if ($product->descriptions)
+                                    <ul class="text-black fs-11 fw-sm-300">
+                                        {!! $product->descriptions !!}
+                                    </ul>
+                                    <hr class="d-none d-sm-block">
                                 @endif
                             </div>
                             <div class="rating-holder">
@@ -361,6 +352,19 @@
                                     <div class="col-6 col-sm-6 p-0">
 
                                         <div class="text-black fs-11">
+                                            @if ($product->brand)
+                                                <div class="pb-2">Brand : <span
+                                                        class="fw-500">{{ $product->brand->name }}</span> </div>
+                                            @endif
+                                            @if ($product_attributes->count())
+                                                @foreach ($product_attributes as $product_attribute)
+                                                    <div class="pb-2">
+                                                        {{ $product_attribute->attribute->name . ' : ' }} <span
+                                                            class="fw-500">{{ $product_attribute->value->name }}</span>
+                                                    </div>
+                                                    {{-- @empty --}}
+                                                @endforeach
+                                            @endif
                                             @if ($product->material)
                                                 <div class="pb-2">Material : <span
                                                         class="fw-500">{{ $product->material }}</span> </div>
@@ -724,68 +728,67 @@
                 <ul id="subcategory-slider">
 
                     @foreach ($relatedProducts as $rP)
-                    
                         <div class="product-show-grid my-3 mx-2">
 
-                                <div class="product-show-grid-card">
+                            <div class="product-show-grid-card">
 
-                                        <div class="product-card-img">
-                                            @if (in_array($rP->id, $wishlist))
-                                                <button class="btn wishlist add-to-wish active" data-p-id="{{ $rP->id }}">
-                                                    <span class="has-tool-tip">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                        <span class="tool-tip-text">Remove From Wishlist</span>
-                                                    </span>
-                                                </button>
-                                            @else
-                                                <button class="btn wishlist add-to-wish" data-p-id="{{ $rP->id }}">
-                                                    <span class="has-tool-tip">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                        <span class="tool-tip-text">Add to Wishlist</span>
-                                                    </span>
-                                                </button>
-                                            @endif
-                                            <a href="{{ route('frontend.p.show', $rP->slug) }}">
-                                                <img src="{{ asset('storage/images/products/thumbnails/' . $rP->thumbnail_image) }}"
-                                                    alt="...">
-                                            </a>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title font-head fw-bold" title="{{ $rP->name }}">
-                                                <a href="{{ route('frontend.p.show', $rP->slug) }}">
-                                                    {{ str_limit($rP->name, 50) }}
-                                                </a>
-                                            </h4>
-                                            <div class="price">
-                                                ₹{{ $rP->final_price }} <s class="text-danger">₹{{ $rP->mrp }}</s>
-                                            </div>
-                                            <div class="buttons">
-                                                <a href="{{ route('frontend.p.show', $rP->slug) }}" class="btn btn-orange"
-                                                    title="{{ $rP->name }}">
-                                                    Shop now
-                                                </a>
-                                                @if (in_array($rP->id, $productInCart))
-                                                    <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
-                                                        data-p-id="{{ $rP->id }}" data-p-quantity="1">
-                                                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"
-                                                            data-prefix="fas" data-icon="check" role="img"
-                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                                            data-fa-i2svg="">
-                                                            <path fill="currentColor"
-                                                                d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                                                            </path>
-                                                        </svg> Added
-                                                    </a>
-                                                @else
-                                                    <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
-                                                        data-p-id="{{ $rP->id }}" data-p-quantity="1">
-                                                        Add To Cart
-                                                    </a>
-                                                @endif
-                                            </div>
-                                        </div>
+                                <div class="product-card-img">
+                                    @if (in_array($rP->id, $wishlist))
+                                        <button class="btn wishlist add-to-wish active" data-p-id="{{ $rP->id }}">
+                                            <span class="has-tool-tip">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="tool-tip-text">Remove From Wishlist</span>
+                                            </span>
+                                        </button>
+                                    @else
+                                        <button class="btn wishlist add-to-wish" data-p-id="{{ $rP->id }}">
+                                            <span class="has-tool-tip">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="tool-tip-text">Add to Wishlist</span>
+                                            </span>
+                                        </button>
+                                    @endif
+                                    <a href="{{ route('frontend.p.show', $rP->slug) }}">
+                                        <img src="{{ asset('storage/images/products/thumbnails/' . $rP->thumbnail_image) }}"
+                                            alt="...">
+                                    </a>
                                 </div>
-                            
+                                <div class="card-body">
+                                    <h4 class="card-title font-head fw-bold" title="{{ $rP->name }}">
+                                        <a href="{{ route('frontend.p.show', $rP->slug) }}">
+                                            {{ str_limit($rP->name, 50) }}
+                                        </a>
+                                    </h4>
+                                    <div class="price">
+                                        ₹{{ $rP->final_price }} <s class="text-danger">₹{{ $rP->mrp }}</s>
+                                    </div>
+                                    <div class="buttons">
+                                        <a href="{{ route('frontend.p.show', $rP->slug) }}" class="btn btn-orange"
+                                            title="{{ $rP->name }}">
+                                            Shop now
+                                        </a>
+                                        @if (in_array($rP->id, $productInCart))
+                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart btn-outline-pink"
+                                                data-p-id="{{ $rP->id }}" data-p-quantity="1">
+                                                <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false"
+                                                    data-prefix="fas" data-icon="check" role="img"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                                    data-fa-i2svg="">
+                                                    <path fill="currentColor"
+                                                        d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                    </path>
+                                                </svg> Added
+                                            </a>
+                                        @else
+                                            <a href="javascript:void(0)" class="btn btn-pink add-to-cart"
+                                                data-p-id="{{ $rP->id }}" data-p-quantity="1">
+                                                Add To Cart
+                                            </a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
 
                         </div>
                     @endforeach

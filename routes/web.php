@@ -121,99 +121,99 @@ Route::domain(config('app.web_domain'))->group(function () {
     // END OF WORKING ROUTES
 
     // Unwanted Static Routes
-    Route::get('/products', function () {
-        return view('frontend/product/index');
-    })->name('products');
+    // Route::get('/products', function () {
+    //     return view('frontend/product/index');
+    // })->name('products');
 
     // Product page
-    Route::get('/skin', function () {
-        return view('frontend.product.skin-care.index');
-    })->name('skin');
+    // Route::get('/skin', function () {
+    //     return view('frontend.product.skin-care.index');
+    // })->name('skin');
 
-    Route::get('/fragrances', function () {
-        return view('frontend.product.fragrances.index');
-    })->name('fragrances');
+    // Route::get('/fragrances', function () {
+    //     return view('frontend.product.fragrances.index');
+    // })->name('fragrances');
 
     // Route::get('/cart', function () {
     //     return view('frontend.cart');
     // })->name('cart');
 
-    Route::get('/gift-card-review', function () {
-        return view('frontend.gift-card-review');
-    })->name('gift-card-review');
+    // Route::get('/gift-card-review', function () {
+    //     return view('frontend.gift-card-review');
+    // })->name('gift-card-review');
 
-    Route::get('/not-yet-shipped', function () {
-        return view('frontend.not-yet-shipped');
-    })->name('not-yet-shipped');
+    // Route::get('/not-yet-shipped', function () {
+    //     return view('frontend.not-yet-shipped');
+    // })->name('not-yet-shipped');
 
-    Route::get('/buy-again', function () {
-        return view('frontend.buy-again');
-    })->name('buy-again');
+    // Route::get('/buy-again', function () {
+    //     return view('frontend.buy-again');
+    // })->name('buy-again');
 
-    Route::get('/cancelled-orders', function () {
-        return view('frontend.cancelled-orders');
-    })->name('cancelled-orders');
+    // Route::get('/cancelled-orders', function () {
+    //     return view('frontend.cancelled-orders');
+    // })->name('cancelled-orders');
 
-    Route::get('/return-order-first', function () {
-        return view('frontend.return-order-first');
-    })->name('return-order-first');
+    // Route::get('/return-order-first', function () {
+    //     return view('frontend.return-order-first');
+    // })->name('return-order-first');
 
-    Route::get('/return-order-second', function () {
-        return view('frontend.return-order-second');
-    })->name('return-order-second');
+    // Route::get('/return-order-second', function () {
+    //     return view('frontend.return-order-second');
+    // })->name('return-order-second');
 
-    Route::get('/cancel-order-first', function () {
-        return view('frontend.cancel-order-first');
-    })->name('cancel-order-first');
+    // Route::get('/cancel-order-first', function () {
+    //     return view('frontend.cancel-order-first');
+    // })->name('cancel-order-first');
 
-    Route::get('/cancel-order-second', function () {
-        return view('frontend.cancel-order-second');
-    })->name('cancel-order-second');
+    // Route::get('/cancel-order-second', function () {
+    //     return view('frontend.cancel-order-second');
+    // })->name('cancel-order-second');
 
-    Route::get('/order-tracking-first', function () {
-        return view('frontend.order-tracking-first');
-    })->name('order-tracking-first');
+    // Route::get('/order-tracking-first', function () {
+    //     return view('frontend.order-tracking-first');
+    // })->name('order-tracking-first');
 
-    Route::get('/order-details', function () {
-        return view('frontend.order-details');
-    })->name('order-details');
+    // Route::get('/order-details', function () {
+    //     return view('frontend.order-details');
+    // })->name('order-details');
 
-    Route::get('/write-review', function () {
-        return view('frontend.write-review');
-    })->name('write-review');
+    // Route::get('/write-review', function () {
+    //     return view('frontend.write-review');
+    // })->name('write-review');
 
-    Route::get('/review-index', function () {
-        return view('frontend.review-index');
-    })->name('review-index');
+    // Route::get('/review-index', function () {
+    //     return view('frontend.review-index');
+    // })->name('review-index');
 
-    Route::get('/review-show', function () {
-        return view('frontend.review-show');
-    })->name('review-show');
+    // Route::get('/review-show', function () {
+    //     return view('frontend.review-show');
+    // })->name('review-show');
 
 
-    Route::get('/gift-card', function () {
-        return view('frontend.gift-card');
-    })->name('gift-card');
+    // Route::get('/gift-card', function () {
+    //     return view('frontend.gift-card');
+    // })->name('gift-card');
 
-    Route::get('/gift-card-index', function () {
-        return view('frontend.gift-card-index');
-    })->name('gift-card-index');
+    // Route::get('/gift-card-index', function () {
+    //     return view('frontend.gift-card-index');
+    // })->name('gift-card-index');
 
-    Route::get('/profile-payment-method', function () {
-        return view('frontend.inside-profile-payment-method');
-    })->name('profile-payment-method');
+    // Route::get('/profile-payment-method', function () {
+    //     return view('frontend.inside-profile-payment-method');
+    // })->name('profile-payment-method');
 
-    Route::get('/payment', function () {
-        return view('frontend.payment');
-    })->name('frontend.payment');
+    // Route::get('/payment', function () {
+    //     return view('frontend.payment');
+    // })->name('frontend.payment');
 
-    Route::get('/payment-process', function () {
-        return view('frontend.payment-process');
-    })->name('frontend.payment-process');
+    // Route::get('/payment-process', function () {
+    //     return view('frontend.payment-process');
+    // })->name('frontend.payment-process');
 
-    Route::get('/payment-success', function () {
-        return view('frontend.payment-success');
-    })->name('frontend.payment-success');
+    // Route::get('/payment-success', function () {
+    //     return view('frontend.payment-success');
+    // })->name('frontend.payment-success');
 
     //Email route
     Route::get('/order-placed-mail', function () {

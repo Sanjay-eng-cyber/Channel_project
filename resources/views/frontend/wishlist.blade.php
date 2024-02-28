@@ -91,7 +91,7 @@
                     </div>
                 </div>
             @empty
-                @include('frontend.not-found')
+                @include('frontend.not-found' , ['type' => 'Wishlist'])
             @endforelse
             <div class="row">
                 <div class="col-12">
