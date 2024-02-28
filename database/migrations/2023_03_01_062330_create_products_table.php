@@ -31,8 +31,8 @@ class CreateProductsTable extends Migration
             $table->string('rating')->nullable();
             $table->string('skin_type')->nullable();
             $table->string('material')->nullable();
-            $table->string('special_ingredients')->nullable();
-            $table->string('care_instruction')->nullable();
+            $table->longText('special_ingredients')->nullable();
+            $table->longText('care_instruction')->nullable();
             $table->string('expiry')->nullable();
             $table->string('net_quantity')->nullable();
             $table->softDeletes();
