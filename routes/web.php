@@ -98,7 +98,7 @@ Route::domain(config('app.web_domain'))->group(function () {
             Route::get('/orders', 'App\Http\Controllers\frontend\OrderController@index')->name('frontend.order.index');
             Route::get('/order/{order_no}', 'App\Http\Controllers\frontend\OrderController@show')->name('frontend.order.show');
 
-            Route::get('/order/cancel/{order_id}', 'App\Http\Controllers\frontend\OrderController@cancel')->name('frontend.order.cancel');
+            // Route::get('/order/cancel/{order_id}', 'App\Http\Controllers\frontend\OrderController@cancel')->name('frontend.order.cancel');
         });
 
         Route::post('/logout', 'App\Http\Controllers\frontend\LoginController@logout')->name('frontend.logout');

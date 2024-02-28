@@ -36,13 +36,6 @@
                                         @endif
                                     </h5>
                                     <ul class="list-unstyled d-flex gap-2 flex-column">
-                                        {{-- <li>
-                                            <ul class="gap-2 d-flex flex-row flex-lg-column flex-xl-column  gap-lg-1 justify-content-between"
-                                                style="padding: 0px 0px 0px 17px;">
-                                                <li>Expected Delivery</li>
-                                                <li class="no-bullet">19 March 2023</li>
-                                            </ul>
-                                        </li> --}}
                                         <li class="price">Total Amount: ₹ {{ $order->total_amount }}</li>
                                         <li class="status">
                                             <ul
@@ -55,34 +48,21 @@
                                                         </a>
                                                     </li>
                                                 @endif --}}
-                                                @if ($order->status == 'cancelled')
-                                                    <li class="cancel-order text-red list-unstyled">
-                                                        <a href="javascript:void(0)" class="text-red">
-                                                            Order Cancelled
-                                                        </a>
-                                                    </li>
-                                                @elseif ($order->status == 'returned')
-                                                    <li class="cancel-order text-red list-unstyled">
-                                                        <a href="javascript:void(0)" class="text-red">
-                                                            Order Returned
-                                                        </a>
-                                                    </li>
-                                                @elseif ($order->status == 'completed')
+                                                @if ($order->status == 'completed')
                                                     @php
                                                         $delivery = $order->deliveries()->whereStatus('Delivered')->latest()->first();
                                                     @endphp
-                                                    @if (!$order->deliveries->count())
-                                                        <li class="cancel-order text-red list-unstyled">
-                                                            <a href="{{ route('frontend.order.cancel', $order->id) }}"
-                                                                class="text-red">
-                                                                Cancel Order
-                                                            </a>
-                                                        </li>
-                                                    @elseif($delivery && $delivery->delivered_date)
+                                                    @if ($delivery && $delivery->delivered_date)
                                                         <li class="cancel-order text-red list-unstyled">
                                                             <a href="javascript:void(0)" class="text-red">
                                                                 Delivered On:
                                                                 {{ dd_format($delivery->delivered_date, 'd M Y') }}
+                                                            </a>
+                                                        </li>
+                                                    @else
+                                                        <li class="cancel-order text-red list-unstyled">
+                                                            <a href="javascript:void(0)" class="text-red">
+                                                                Delivery: {{ $delivery->status }}
                                                             </a>
                                                         </li>
                                                     @endif

@@ -21,33 +21,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mb-2">
-                    {{-- <div class="step-process my-3">
-                        <span class="step completed">
-                            <span class="number">
-                                <i class="fas fa-check "></i>
-                            </span>
-                            <small class="text">
-                                Log In Details
-                            </small>
-                        </span>
-                        <span class="step completed">
-                            <span class="number">
-                                <i class="fas fa-check "></i>
-                            </span>
-                            <small class="text">
-                                Delivery Address
-                            </small>
-                        </span>
-                        <span class="step active">
-                            <span class="number">
-                                3
-                            </span>
-                            <small class="text">
-                                Payment
-                            </small>
-                        </span>
-                    </div> --}}
-
                     <div class="">
                         <h3 class="h5 font-body">
                             Items
@@ -56,13 +29,13 @@
                         <div class="row my-3">
                             @foreach ($order->items()->with('product')->get() as $item)
                                 <div class="col-12 d-flex">
-                                    <a href="{{ route('frontend.p.show', $item->product->slug) }}">
+                                    <a href="{{ route('frontend.p.show', $item->product->slug) }}" target="_blank">
                                         <img src="{{ asset('storage/images/products/thumbnails/' . $item->product->thumbnail_image) }}"
                                             alt="..."
                                             class="my-2 rounded-2 border border-1 pink-border me-3 cart-p-img">
                                     </a>
                                     <div class="mt-1">
-                                        <a href="{{ route('frontend.p.show', $item->product->slug) }}">
+                                        <a href="{{ route('frontend.p.show', $item->product->slug) }}" target="_blank">
                                             <p class="mb-1 text-black">{{ $item->product->name }}</p>
                                         </a>
                                         <span>Price: ₹{{ $item->amount }}</span><br>
@@ -93,13 +66,19 @@
                                         {{ $order->country . ' ' . $order->postal_code }}
                                     </p>
                                 </label>
-                                @if ($order->status == 'completed' && $delivery && $delivery->delivered_date)
+                                {{-- @if ($delivery && $delivery->status == 'Delivered' && $delivery->delivered_date)
                                     <label for="" class="w100 p-2">
-                                        <h6 class="h6 font-body text-capitalize">Delivered On:
-                                            {{ dd_format($delivery->delivered_date, 'd M Y') }}
+                                        <h6 class="h6 font-body">Delivered On:
+                                            {{ dd_format($delivery->delivered_date, 'd M Y h:i a') }}
                                         </h6>
                                     </label>
-                                @endif
+                                @else
+                                    <label for="" class="w100 p-2">
+                                        <h6 class="h6 font-body text-capitalize">Delivery:
+                                            {{ $delivery->status }}
+                                        </h6>
+                                    </label>
+                                @endif --}}
                             </div>
                         </div>
                     </div>
@@ -107,6 +86,15 @@
                     <hr>
                     <span class="h6 font-body">Order Placed On: {{ dd_format($order->created_at, 'd M Y h:i a') }}
                     </span>
+                    @if ($delivery && $delivery->status == 'Delivered' && $delivery->delivered_date)
+                        <br>
+                        <span class="h6 font-body">Delivered On:
+                            {{ dd_format($delivery->delivered_date, 'd M Y h:i a') }}</span>
+                    @else
+                        <br>
+                        <span class="h6 font-body">Delivery:
+                            {{ $delivery->status }}</span>
+                    @endif
                     <hr>
                     <span class="h5  font-body text-capitalize">Price Details
                     </span>
