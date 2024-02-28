@@ -184,7 +184,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-4 col-md-6 col-sm-12 mb-4">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
                                         <label for="formGroupExampleInput" class="">Unit Sale Price</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Unit Sale Price" required name="unit_sale_price"
@@ -195,7 +195,7 @@
                                         @endif
                                     </div>
 
-                                    <div class="col-xl-4 col-md-6 col-sm-12 mb-4">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
                                         <label for="formGroupExampleInput" class="">Skin Type</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Skin Type" name="skin_type"
@@ -205,7 +205,7 @@
                                                 {{ $errors->first('skin_type') }}</div>
                                         @endif
                                     </div>
-                                    <div class="col-xl-4 col-md-6 col-sm-12 mb-4">
+                                    <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
                                         <label for="formGroupExampleInput" class="">Material</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Material" name="material" value="{{ old('material') }}"
@@ -234,6 +234,8 @@
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('net_quantity') }}</div>
                                         @endif
+                                    </div>
+                                    <div class="col-xl-9 col-md-6 col-sm-12 mb-3 d-none d-xl-block">
                                     </div>
                                     <div class="col-xl-6 col-md-6 col-sm-12 mb-6">
                                         <label for="formGroupExampleInput" class="">Special Ingredients</label>

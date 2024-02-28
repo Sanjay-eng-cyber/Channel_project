@@ -215,12 +215,12 @@ Route::domain(config('app.web_domain'))->group(function () {
         return view('frontend.payment-success');
     })->name('frontend.payment-success');
 
-//Email route
+    //Email route
     Route::get('/order-placed-mail', function () {
         return view('mail/order-placed-mail');
     })->name('order-placed-mail');
 
-     Route::get('/order-cancelled-mail', function () {
+    Route::get('/order-cancelled-mail', function () {
         return view('mail/order-cancelled-mail');
     })->name('order-cancelled-mail');
 
