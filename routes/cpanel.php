@@ -89,12 +89,13 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('product/review/delete/{product_id}/{review_id}', 'App\Http\Controllers\cms\ReviewController@destroy')->name('backend.product.review.delete');
 
         Route::get('showcases', 'App\Http\Controllers\cms\ShowcaseController@index')->name('backend.showcase.index');
-        // Route::get('/showcase/show/{id}', 'App\Http\Controllers\cms\ShowcaseController@show')->name("backend.showcase.show");
+        Route::get('/showcase/show/{id}', 'App\Http\Controllers\cms\ShowcaseController@show')->name("backend.showcase.show");
         Route::get('showcase/create', 'App\Http\Controllers\cms\ShowcaseController@create')->name('backend.showcase.create');
         Route::post('showcase/store', 'App\Http\Controllers\cms\ShowcaseController@store')->name('backend.showcase.store');
         Route::get('showcase/edit/{id}', 'App\Http\Controllers\cms\ShowcaseController@edit')->name('backend.showcase.edit');
         Route::post('showcase/update/{id}', 'App\Http\Controllers\cms\ShowcaseController@update')->name('backend.showcase.update');
         Route::get('showcase/delete/{id}', 'App\Http\Controllers\cms\ShowcaseController@destroy')->name('backend.showcase.destroy');
+        Route::get('showcase_product/delete/{id}', 'App\Http\Controllers\cms\ShowcaseController@destroyShowcaseProduct')->name('backend.showcaseproduct.destroy');
 
         Route::get('orders', 'App\Http\Controllers\cms\OrderController@index')->name('backend.order.index');
         Route::get('/order/show/{id}', 'App\Http\Controllers\cms\OrderController@show')->name("backend.order.show");

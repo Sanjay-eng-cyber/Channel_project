@@ -191,14 +191,14 @@ if (!function_exists('getShiprocketToken')) {
         $configToken = App\Models\ShiprocketConfig::where('name', 'token')->where('validity', '>', now())->first();
         // dd($configToken);
         if ($configToken) {
-            $token = $configToken->value;
+            $token = decrypt($configToken->value);
         } else {
             $token =  Shiprocket::getToken() ?? null;
             if ($token) {
                 $configToken = App\Models\ShiprocketConfig::updateOrCreate(
                     ['name' => 'token'],
                     [
-                        'value' => $token,
+                        'value' => encrypt($token),
                         'validity' => Carbon\Carbon::now()->addHours(9)
                     ]
                 );
