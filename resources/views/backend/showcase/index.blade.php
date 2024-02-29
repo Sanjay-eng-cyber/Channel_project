@@ -88,8 +88,10 @@
                                                     </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                        {{-- <a class="dropdown-item"
-                                                            href="{{ route('backend.showcase.show', $showcase->id) }}">View</a> --}}
+                                                        <a class="dropdown-item"
+                                                        href="{{ route('backend.showcase.create', $showcase->id) }}">Create</a>
+                                                        <a class="dropdown-item"
+                                                            href="{{ route('backend.showcase.show', $showcase->id) }}">View</a>
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.showcase.edit', $showcase->id) }}">Edit</a>
                                                             <a class="dropdown-item"

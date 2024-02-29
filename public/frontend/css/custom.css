@@ -3366,7 +3366,7 @@ a:hover {
 .rating-stats {
     /* border-left: 1px solid #00000054; */
     padding: 0;
-    padding-left: 20px;
+    /* padding-left: 20px; */
 }
 
 .rating-stat {
@@ -4502,6 +4502,28 @@ border-bottom: 0px solid transparent;
     border-bottom: 4px solid #FFC2E3
 }
 
+/* tr{
+    display: grid;
+    grid-template-columns: 34% 66%;
+} */
+.data-propety-table .data-propety-tr{
+    display: grid;
+    grid-template-columns: 34% 66%;
+}
+.data-propety-table 
+.data-propety-care-instruction{
+    display: grid;
+    grid-template-columns: 34% 66%;
+}
+.fss-14{
+    font-size: 14px !important;
+}
+
+.rating-grid-stm{
+    display: grid;
+    align-items:start;
+    grid-template-columns: 34% 35%; 
+}
 @media screen and (max-width:992px){
 .divider-border-left{
     border-right: 0px solid rgba(0, 0, 0, 1);
@@ -4545,10 +4567,13 @@ border-bottom: 0px solid transparent;
 .fs-md-9{
     font-size: 12px;
 }
+.rating-total{
+    width:60px;
+}
 .rating-total svg {
     font-size: 13px;
     top:0;
-    left:33px;
+    left:38px;
 }
 
 .subslider-list-img {
@@ -4559,6 +4584,22 @@ border-bottom: 0px solid transparent;
     display: none;
 }
 
+@media (max-width: 1400px) {
+    .rating-total svg {
+        font-size: 13px;
+        top:0;
+        left:35px;
+    }
+    
+}
+@media (max-width: 1200px) {
+
+    .rating-grid-stm{
+        display: grid;
+        align-items:start;
+        grid-template-columns: 47% 35%; 
+    }
+}
 @media (max-width: 768px) {
     .mt-product-detial .slider {
         margin: 0 0 0px;
@@ -4568,7 +4609,18 @@ border-bottom: 0px solid transparent;
 .mt-product-detial .slider .product-slider .slide img{
     height: 450px !important;
 }
+
 @media screen and (max-width:576px) {
+    .data-propety-table .data-propety-tr{
+        display: grid;
+        grid-template-columns: 34% 66%;
+    }
+    .data-propety-table 
+    .data-propety-care-instruction{
+        display: grid;
+        grid-template-columns: 34% 66%;
+    }
+
     .margin-sm{
         margin: 0rem 0;
     }
@@ -4587,10 +4639,13 @@ border-bottom: 0px solid transparent;
     .review-area .review-card .review-user{
         padding-right:0px;
     }
+    .rating-total {
+        width: 35px;
+    }
     .rating-total svg {
-        font-size: 13px;
+        font-size: 8px;
         top:0;
-        left:18px;
+        left:22px;
     }
     .rating-input > label:before{
         font-size: 1.25rem;
@@ -4679,6 +4734,16 @@ border-bottom: 0px solid transparent;
     }
 }
 @media screen and (max-width:480px) {
+    .data-propety-table .data-propety-tr{
+        display: grid;
+        grid-template-columns: 43% 57%;
+    }
+    .data-propety-table 
+    .data-propety-care-instruction{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
     .posting-title {
         white-space: nowrap;
         overflow: hidden;
