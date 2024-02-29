@@ -135,6 +135,81 @@
                                         </div>
                                     @endif
 
+                                    @if ($delivery)
+                                        {{-- <div class="col-md-12"> --}}
+                                        <h3>Delivery Details</h3><br>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title"
+                                                        class="label-title">awb_code</label><br>
+                                                    <p class="label-title">{{ $delivery->awb_code }}</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title" class="label-title">Shipment
+                                                        Id</label><br>
+                                                    <p class="label-title">{{ $delivery->shipment_id ?? '---' }}</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title" class="label-title">Order
+                                                        Id</label><br>
+                                                    <p class="label-title">{{ $delivery->order_id ?? '---' }}</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title"
+                                                        class="label-title">Delivered Date</label><br>
+                                                    <p class="label-title">{{ $delivery->delivered_date ?? '---' }}</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title"
+                                                        class="label-title">Status</label><br>
+                                                    @if ($delivery->status == 'Pending')
+                                                        <label
+                                                            class="text-white badge badge-warning">{{ $delivery->status }}</label>
+                                                    @elseif ($delivery->status == 'Intransit')
+                                                        <label
+                                                            class="text-white badge badge-primary">{{ $delivery->status }}</label>
+                                                    @elseif ($delivery->status == 'Delivered')
+                                                        <label
+                                                            class="text-white badge badge-success">{{ $delivery->status }}</label>
+                                                    @else
+                                                        <label
+                                                            class="text-white badge badge-secondary">{{ $delivery->status ?? '--' }}</label>
+                                                    @endif
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title" class="label-title">Partner Status</label><br>
+                                                    <p class="label-title">{{ $delivery->partner_status ?? '---' }}</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="degree3" class="cust-title" class="label-title">Delivery</label><br>
+                                                    <a class="btn btn-primary"
+                                                    href="{{ route('backend.delivery.show', $delivery->id) }}">View</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {{-- </div> --}}
+                                    @endif
                                 </div>
                             </div>
                         </div>
