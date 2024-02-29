@@ -39,13 +39,16 @@
                                         Pending</option>
                                     <option value="Initial"
                                         {{ request('status') && request('status') == 'Initial' ? 'selected' : '' }}>
-                                        Intransit</option>
+                                        Initial</option>
                                     <option value="Delivered"
                                         {{ request('status') && request('status') == 'Delivered' ? 'selected' : '' }}>
                                         Delivered</option>
                                 </select>
                                 {{-- <input id="rangeCalendarFlatpickr" name="date_range" value="{{request('date_range')}}" class="form-control flatpickr flatpickr-input active w-50"
                                         type="text" placeholder="Select Date.." readonly="readonly"> --}}
+                                <input class="form-control form-control-sm app_form_input col-md-4 mt-md-0 mt-3"
+                                    type="text" placeholder="Order Id/Sipment Id/Awb Id" name="q" value="{{ request('q') ?? '' }}"
+                                    minlength="1" maxlength="40">
                                 <input type="submit" value="Search"
                                     class="btn btn-success ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
                             </form>
@@ -115,8 +118,7 @@
                                                 @elseif($d->status == 'Delivered')
                                                     <span class="badge badge-success">{{ 'Delivered' }}</span>
                                                 @else
-                                                    <span
-                                                        class="badge badge-primary">{{ $d->status ?? '--' }}</span>
+                                                    <span class="badge badge-primary">{{ $d->status ?? '--' }}</span>
                                                 @endif
                                             </td>
                                             {{-- <td>
