@@ -61,18 +61,27 @@
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title" class="label-title">Primary
                                                         Address</label><br>
-                                                    <p class="label-title">{{ $userPrimaryAddress->street_address }}</p>
+                                                    <p class="label-title">{{ $userPrimaryAddress->street_address }},
+                                                        {{ $userPrimaryAddress->city }},
+                                                        {{ $userPrimaryAddress->state }},
+                                                        {{ $userPrimaryAddress->country }} -
+                                                        {{ $userPrimaryAddress->postal }}
+                                                    </p>
                                                 </div>
                                             </div>
                                         @endif
                                         {{-- @dd($userOtherAddress->street_address) --}}
-                                        @if ($userOtherAddress)
+                                        @if ($userOtherAddress->count())
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="degree3" class="cust-title" class="label-title">Other
+                                                    <label for="degree3" class="cust-title" class="label-title">Secondary
                                                         Address</label><br>
                                                     @foreach ($userOtherAddress as $address)
-                                                        <p class="label-title">{{ $address->street_address }}</p>
+                                                        <p class="label-title">{{ $address->street_address }},
+                                                            {{ $address->city }},
+                                                            {{ $address->state }},
+                                                            {{ $address->country }} - {{ $address->postal }}
+                                                        </p>
                                                     @endforeach
 
                                                 </div>
@@ -86,9 +95,10 @@
                                                     <span id="lightgallery1">
                                                         <a
                                                             href="{{ asset('storage/images/profile/' . $user->profile_image) }}">
-                                                            <img src="{{ asset('storage/images/profile/' . $user->profile_image) }}"
+                                                            {{-- <img src="{{ asset('storage/images/profile/' . $user->profile_image) }}"
                                                                 style="height: 150px;width:150px;object-fit:contain;"
-                                                                alt="">
+                                                                alt=""> --}}
+                                                            <button class="btn btn-primary">View</button>
                                                         </a>
                                                     </span>
                                                 </div>

@@ -102,16 +102,16 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|min:3|max:250|unique:products,name,',
             'descriptions' => 'nullable|min:3|max:20000',
-            'mrp' => 'required|numeric',
-            'skin_type' => 'nullable|min:2|max:20',
-            'material' => 'nullable|min:2|max:20',
-            'special_ingredients' => 'nullable|min:2|max:1000',
-            'care_instruction' => 'nullable|min:2|max:1000',
-            'expiry' => 'nullable|min:2|max:20',
-            'net_quantity' => 'nullable|min:2|max:20',
-            'final_price' => 'required|numeric',
-            'stock' => 'required|numeric',
-            'sku' => 'required|string|unique:products,sku,',
+            'mrp' => 'required|numeric|max:10000000',
+            'skin_type' => 'nullable|min:2|max:120',
+            'material' => 'nullable|min:2|max:120',
+            'special_ingredients' => 'nullable|min:2|max:3000',
+            'care_instruction' => 'nullable|min:2|max:3000',
+            'expiry' => 'nullable|min:2|max:120',
+            'net_quantity' => 'nullable|min:2|max:120',
+            'final_price' => 'required|numeric|max:10000000',
+            'stock' => 'required|numeric|max:10000000',
+            'sku' => 'required|string|unique:products,sku|max:120',
             'category_id' => ['required', Rule::in($categorys)],
             'brand_id' => ['nullable', Rule::in($brands)],
             'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
@@ -128,9 +128,17 @@ class ProductController extends Controller
             // 'connection_no' => 'nullable|min:3|max:20',
             'tags' => 'nullable|max:20',
             'tags.*' => 'string|min:3|max:30',
-            'unit_sale_price' => 'nullable|string|min:1|max:60',
+            'unit_sale_price' => 'nullable|string|min:2|max:30',
 
         ]);
+
+        $showcases = $request->showcases ?? [];
+        foreach ($showcases as $showcase) {
+            $checkShowcase = ShowcaseProduct::where('showcase_id', $showcase);
+            if ($checkShowcase->count() >= 16) {
+                return redirect()->back()->with(['alert-type' => 'error', 'message' => $checkShowcase->first()->showcase->name . ' Showcase has limit of 16'])->withInput();
+            }
+        }
 
         $fileWithExtension = $request->file('thumbnail_image');
         //dd($fileWithExtension);
@@ -178,7 +186,6 @@ class ProductController extends Controller
                 $media->file_name = $file_details['filename'];
                 $media->save();
             }
-            $showcases = $request->showcases ?? [];
             foreach ($showcases as $showcase) {
                 $showcase_product = new ShowcaseProduct();
                 $showcase_product->showcase_id = $showcase;
@@ -220,19 +227,20 @@ class ProductController extends Controller
         $attributes = Attribute::pluck('id')->toArray();
         $showcases = Showcase::pluck('id')->toArray();
         // dd($media);
+
         $request->validate([
             'name' => 'required|min:3|max:250|unique:products,name,' . $id,
             'descriptions' => 'nullable|min:3|max:20000',
-            'mrp' => 'required|numeric',
-            'skin_type' => 'nullable|min:2|max:20',
-            'material' => 'nullable|min:2|max:20',
-            'special_ingredients' => 'nullable|min:2|max:1000',
-            'care_instruction' => 'nullable|min:2|max:1000',
-            'expiry' => 'nullable|min:2|max:20',
-            'net_quantity' => 'nullable|min:2|max:20',
-            'final_price' => 'required|numeric',
-            'stock' => 'required|numeric',
-            'sku' => 'required|string|unique:products,sku,' . $id,
+            'mrp' => 'required|numeric|max:10000000',
+            'skin_type' => 'nullable|min:2|max:120',
+            'material' => 'nullable|min:2|max:120',
+            'special_ingredients' => 'nullable|min:2|max:3000',
+            'care_instruction' => 'nullable|min:2|max:3000',
+            'expiry' => 'nullable|min:2|max:120',
+            'net_quantity' => 'nullable|min:2|max:120',
+            'final_price' => 'required|numeric|max:10000000',
+            'stock' => 'required|numeric|max:10000000',
+            'sku' => 'required|string|max:120|unique:products,sku,' . $id,
             'category_id' => ['required', Rule::in($categorys)],
             'brand_id' => ['nullable', Rule::in($brands)],
             'sub_category_id' => ['nullable', Rule::in($sub_categorys)],
@@ -249,9 +257,19 @@ class ProductController extends Controller
             // 'connection_no' => 'nullable|min:3|max:20',
             'tags' => 'nullable|max:20',
             'tags.*' => 'string|min:3|max:30',
-            'unit_sale_price' => 'nullable|string|min:1|max:60',
+            'unit_sale_price' => 'nullable|string|min:2|max:30',
 
         ]);
+
+        $showcases = $request->showcases ?? [];
+        foreach ($showcases as $showcase) {
+            $checkShowcase = ShowcaseProduct::where('showcase_id', $showcase);
+            $checkShowcaseProduct = ShowcaseProduct::where('showcase_id', $showcase)->where('product_id', $id)->exists();
+            $checkShowcaseCount = $checkShowcaseProduct ? $checkShowcase->count() - 1 : $checkShowcase->count();
+            if ($checkShowcaseCount >= 16) {
+                return redirect()->back()->with(['alert-type' => 'error', 'message' => $checkShowcase->first()->showcase->name . ' Showcase has limit of 16'])->withInput();
+            }
+        }
 
         $fileWithExtension = $request->file('thumbnail_image');
         if ($request->has('thumbnail_image')) {
@@ -309,7 +327,6 @@ class ProductController extends Controller
         }
 
         // Showcase functionality
-        $showcases = $request->showcases ?? [];
         if ($showcases) {
             $showcase_products = ShowcaseProduct::where('product_id', $id);
             optional($showcase_products->delete());

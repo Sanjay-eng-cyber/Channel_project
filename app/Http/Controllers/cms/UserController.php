@@ -48,7 +48,7 @@ class UserController extends Controller
         $userOtherAddress =  $user->userAddress()->where('type', '!=', 'primary')->get();
         $orders = $user->orders()->latest()->paginate(10, ['*'], 'orders');
         // dd($orders);
-        $wishlists = $user->wishlist()->latest()->paginate(10, ['*'], 'wishlists');
+        $wishlists = $user->wishlist()->with('product')->latest()->paginate(10, ['*'], 'wishlists');
         $transactions = $user->transactions()->latest()->paginate(10, ['*'], 'transactions');
         // dd($transactions);
         //dd($transactions);

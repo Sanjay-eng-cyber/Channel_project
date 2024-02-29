@@ -35,6 +35,7 @@ class CreateProductsTable extends Migration
             $table->longText('care_instruction')->nullable();
             $table->string('expiry')->nullable();
             $table->string('net_quantity')->nullable();
+            $table->boolean('visibility')->default(1);
             $table->softDeletes();
             $table->timestamps();
         });

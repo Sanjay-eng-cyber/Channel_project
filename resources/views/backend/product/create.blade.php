@@ -143,7 +143,7 @@
                                     <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                         <label for="formGroupExampleInput" class="">SKU*</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
-                                            placeholder="Enter SKU" required name="sku" value="{{ old('sku') }}">
+                                            placeholder="Enter SKU" required name="sku" value="{{ old('sku') }}" maxlength="120">
                                         @if ($errors->has('sku'))
                                             <div class="text-danger" role="alert">{{ $errors->first('sku') }}</div>
                                         @endif
@@ -187,8 +187,8 @@
                                     <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
                                         <label for="formGroupExampleInput" class="">Unit Sale Price</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
-                                            placeholder="Enter Unit Sale Price" required name="unit_sale_price"
-                                            value="{{ old('unit_sale_price') }}">
+                                            placeholder="Enter Unit Sale Price" name="unit_sale_price"
+                                            value="{{ old('unit_sale_price') }}" minlength="2" maxlength="30">
                                         @if ($errors->has('unit_sale_price'))
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('unit_sale_price') }}</div>
@@ -199,7 +199,7 @@
                                         <label for="formGroupExampleInput" class="">Skin Type</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Skin Type" name="skin_type"
-                                            value="{{ old('skin_type') }}" minlength="2" maxlength="20">
+                                            value="{{ old('skin_type') }}" minlength="2" maxlength="120">
                                         @if ($errors->has('skin_type'))
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('skin_type') }}</div>
@@ -209,7 +209,7 @@
                                         <label for="formGroupExampleInput" class="">Material</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Material" name="material" value="{{ old('material') }}"
-                                            minlength="2" maxlength="20">
+                                            minlength="2" maxlength="120">
                                         @if ($errors->has('material'))
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('material') }}</div>
@@ -219,7 +219,7 @@
                                         <label for="formGroupExampleInput" class="">Expiry</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Expiry" name="expiry" value="{{ old('expiry') }}"
-                                            minlength="2" maxlength="20">
+                                            minlength="2" maxlength="120">
                                         @if ($errors->has('expiry'))
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('expiry') }}</div>
@@ -229,7 +229,7 @@
                                         <label for="formGroupExampleInput" class="">Net Quantity</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput"
                                             placeholder="Enter Net Quantity" name="net_quantity"
-                                            value="{{ old('net_quantity') }}" minlength="2" maxlength="20">
+                                            value="{{ old('net_quantity') }}" minlength="2" maxlength="120">
                                         @if ($errors->has('net_quantity'))
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('net_quantity') }}</div>
@@ -240,7 +240,7 @@
                                     <div class="col-xl-6 col-md-6 col-sm-12 mb-6">
                                         <label for="formGroupExampleInput" class="">Special Ingredients</label>
                                         <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Special Ingredients"
-                                            name="special_ingredients" minlength="2" maxlength="1000" rows="3" cols="50">{{ old('special_ingredients') }}</textarea>
+                                            name="special_ingredients" minlength="2" maxlength="3000" rows="3" cols="50">{{ old('special_ingredients') }}</textarea>
                                         @if ($errors->has('special_ingredients'))
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('special_ingredients') }}</div>
@@ -250,7 +250,7 @@
                                     <div class="col-xl-6 col-md-6 col-sm-12 mb-6">
                                         <label for="formGroupExampleInput" class="">Care Instruction</label>
                                         <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Care Instruction"
-                                            name="care_instruction" minlength="2" maxlength="1000" rows="3" cols="50">{{ old('care_instruction') }}</textarea>
+                                            name="care_instruction" minlength="2" maxlength="3000" rows="3" cols="50">{{ old('care_instruction') }}</textarea>
                                         @if ($errors->has('care_instruction'))
                                             <div class="text-danger" role="alert">
                                                 {{ $errors->first('care_instruction') }}</div>
