@@ -157,9 +157,9 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="degree3" class="cust-title" class="label-title">Order
+                                                    <label for="degree3" class="cust-title" class="label-title">Partner Order
                                                         Id</label><br>
-                                                    <p class="label-title">{{ $delivery->order_id ?? '---' }}</p>
+                                                    <p class="label-title">{{ $delivery->partner_order_id ?? '---' }}</p>
 
                                                 </div>
                                             </div>
@@ -167,7 +167,9 @@
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title"
                                                         class="label-title">Delivered Date</label><br>
-                                                    <p class="label-title">{{ $delivery->delivered_date ?? '---' }}</p>
+                                                    <p class="label-title">
+                                                        {{ $delivery->delivered_date ? dd_format($delivery->delivered_date, 'd-M-Y -h:i a') : '---' }}
+                                                    </p>
 
                                                 </div>
                                             </div>
@@ -193,16 +195,18 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="degree3" class="cust-title" class="label-title">Partner Status</label><br>
+                                                    <label for="degree3" class="cust-title" class="label-title">Partner
+                                                        Status</label><br>
                                                     <p class="label-title">{{ $delivery->partner_status ?? '---' }}</p>
 
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="degree3" class="cust-title" class="label-title">Delivery</label><br>
+                                                    <label for="degree3" class="cust-title"
+                                                        class="label-title">Delivery</label><br>
                                                     <a class="btn btn-primary"
-                                                    href="{{ route('backend.delivery.show', $delivery->id) }}">View</a>
+                                                        href="{{ route('backend.delivery.show', $delivery->id) }}">View</a>
 
                                                 </div>
                                             </div>

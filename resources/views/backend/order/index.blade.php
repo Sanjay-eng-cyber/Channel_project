@@ -100,8 +100,8 @@
                                                     <label class="badge badge-secondary">{{ $order->status }}</label>
                                                 @endif
                                             </td>
-                                            <td>{{ $order->created_at }}</td>
-                                           <td>{{ $order->order_no ?? '----'}}</td>
+                                            <td>{{ dd_format($order->created_at, 'd-M-Y -h:i a') }}</td>
+                                            <td>{{ $order->order_no ?? '----' }}</td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">
                                                     <a class="dropdown-toggle" href="#" role="button"
@@ -121,10 +121,11 @@
                                                         <a class="dropdown-item"
                                                             href="{{ route('backend.order.show', $order->id) }}">View</a>
                                                         <a class="dropdown-item" target="_blank"
-                                                            href="{{ route('backend.order.items', $order->id) }}">Order Items</a>
+                                                            href="{{ route('backend.order.items', $order->id) }}">Order
+                                                            Items</a>
                                                         {{-- <a class="dropdown-item"
                                                             href="{{ route('backend.order.edit', $order->id) }}">Edit</a> --}}
-                                                            {{-- <a class="dropdown-item"
+                                                        {{-- <a class="dropdown-item"
                                                             href="{{ route('backend.showcase.destroy', $showcase->id) }}">Delete</a> --}}
                                                     </div>
                                                 </div>
