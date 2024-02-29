@@ -416,69 +416,72 @@
             placeholder: "Select / Enter Tags",
         });
     </script>
+
+    <script>
+        tinymce.init({
+            selector: '.team-about',
+            height: 200,
+            plugins: 'textcolor colorpicker lists link',
+            toolbar: "formatselect | fontsizeselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify  | numlist bullist | link | outdent indent  | removeformat",
+            // theme: 'modern',
+            // plugins: ' fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample  charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern ',
+            // toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+            // image_advtab: true,
+            // templates: [{
+            //         title: 'Test template 1',
+            //         content: 'Test 1'
+            //     },
+            //     {
+            //         title: 'Test template 2',
+            //         content: 'Test 2'
+            //     }
+            // ],
+            // content_css: [
+            //     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+
+            // ]
+        });
+        const sub_category_id = '{{ $product->sub_category_id ?? 'null' }}'
+
+        function getValues() {
+            $('#sub').html('')
+
+            if ($('#sel1').val()) {
+
+                $.ajax({
+                    url: '/category/get/subcategory/' + $('#sel1').val(),
+                    method: "GET",
+                    success: function(data) {
+                        if (data.data == '') {
+                            $('#sub').append(`<option value=''>No data</option>`)
+                        } else {
+                            $('#sub').append(`<option value=''>Select If Required</option>`)
+                            $.each(data.data, function(id, value) {
+                                $('#sub').append(
+                                    `<option value="${value.id}" ${sub_category_id == value.id ? 'selected' : ''}>${value.name}</option>`
+                                )
+                            })
+                        }
+                    },
+                    error: function() {
+                        Snackbar.show({
+                            text: "Internal Error",
+                            pos: 'top-right',
+                            actionTextColor: '#fff',
+                            backgroundColor: '#e7515a'
+                        });
+                    }
+                })
+            }
+        }
+    </script>
+
+
 @endsection
 <style>
     .lg-icon {
         background: transparent !important;
     }
 </style>
-<script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
-</script>
-<script>
-    tinymce.init({
-        selector: '.team-about',
-        height: 200,
-        plugins: 'textcolor colorpicker lists link',
-        toolbar: "formatselect | fontsizeselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify  | numlist bullist | link | outdent indent  | removeformat",
-        // theme: 'modern',
-        // plugins: ' fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample  charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern ',
-        // toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
-        // image_advtab: true,
-        // templates: [{
-        //         title: 'Test template 1',
-        //         content: 'Test 1'
-        //     },
-        //     {
-        //         title: 'Test template 2',
-        //         content: 'Test 2'
-        //     }
-        // ],
-        // content_css: [
-        //     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-
-        // ]
-    });
-    const sub_category_id = '{{ $product->sub_category_id ?? 'null' }}'
-
-    function getValues() {
-        $('#sub').html('')
-
-        if ($('#sel1').val()) {
-
-            $.ajax({
-                url: '/category/get/subcategory/' + $('#sel1').val(),
-                method: "GET",
-                success: function(data) {
-                    if (data.data == '') {
-                        $('#sub').append(`<option value=''>No data</option>`)
-                    } else {
-                        $('#sub').append(`<option value=''>Select If Required</option>`)
-                        $.each(data.data, function(id, value) {
-                            $('#sub').append(
-                                `<option value="${value.id}" ${sub_category_id == value.id ? 'selected' : ''}>${value.name}</option>`
-                            )
-                        })
-                    }
-                },
-                error: function() {
-                    Snackbar.show({
-                        text: "Internal Error",
-                        pos: 'top-right',
-                        actionTextColor: '#fff',
-                        backgroundColor: '#e7515a'
-                    });
-                }
-            })
-        }
-    }
-</script>
+{{-- <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
+</script> --}}

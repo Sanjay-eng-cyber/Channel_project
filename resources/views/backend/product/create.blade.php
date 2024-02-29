@@ -315,8 +315,8 @@
 @section('js')
     <script src="{{ asset('plugins/select2/select2.min.js') }}"></script>
     <script src="{{ asset('plugins/select2/custom-select2.js') }}"></script>
-    <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
-    </script>
+    {{-- <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js">
+    </script> --}}
     <script>
         tinymce.init({
             selector: '.team-about',
