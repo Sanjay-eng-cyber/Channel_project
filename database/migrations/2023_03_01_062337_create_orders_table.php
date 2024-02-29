@@ -30,6 +30,7 @@ class CreateOrdersTable extends Migration
             $table->string('state')->nullable();
             $table->string('country')->nullable();
             $table->string('postal_code')->nullable();
+            $table->string('address_phone')->nullable();
             $table->string('refund_status')->nullable();
             $table->string('refund_amount')->nullable();
             $table->string('refund_date')->nullable();

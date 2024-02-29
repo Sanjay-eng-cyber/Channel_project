@@ -176,14 +176,27 @@ class DeliveryController extends Controller {
         Log::info( 'ShipRocket Tracking through AWB Response @ ' . $time );
         Log::info( $response );
 
-        // dd( $shipment );
-        if ( $shipment && isset( $shipment[ 'data' ] ) ) {
-            $partnerStatus = isset( $shipment[ 'data' ][ 'status' ] ) ? Order::API_STATUS[ $shipment[ 'data' ][ 'status' ] ] : null;
-            $status = $partnerStatus === 'Delivered' ? 'Delivered' : ( $partnerStatus === 'In Transit' ? 'Intransit' : 'Pending' );
-            $delivery->update( [
-                'awb_code' => isset( $shipment[ 'data' ][ 'awb' ] ) ? $shipment[ 'data' ][ 'awb' ] : null,
-                'courier_name' => isset( $shipment[ 'data' ][ 'courier' ] ) ? $shipment[ 'data' ][ 'courier' ] : null,
-                'partner_status_code' => isset( $shipment[ 'data' ][ 'status' ] ) ? $shipment[ 'data' ][ 'status' ] : null,
+        // dd($shipment);
+        if ($shipment && isset($shipment['data'])) {
+            $partnerStatus = isset($shipment['data']['status']) ? Order::API_STATUS[$shipment['data']['status']] : null;
+            switch ($partnerStatus) {
+                case 'Delivered':
+                    $status = 'Delivered';
+                    break;
+                case 'In Transit':
+                    $status = 'Intransit';
+                    break;
+                case 'Cancelled':
+                    $status = 'Cancelled';
+                    break;
+                default:
+                    $status = 'Pending';
+                    break;
+            }
+            $delivery->update([
+                'awb_code' => isset($shipment['data']['awb']) ? $shipment['data']['awb'] : null,
+                'courier_name' => isset($shipment['data']['courier']) ? $shipment['data']['courier'] : null,
+                'partner_status_code' => isset($shipment['data']['status']) ? $shipment['data']['status'] : null,
                 'partner_status' => $partnerStatus,
                 'pickup_token_number' => isset( $shipment[ 'data' ][ 'pickup_token_number' ] ) ? $shipment[ 'data' ][ 'pickup_token_number' ] : null,
                 'delivered_date' => isset( $shipment[ 'data' ][ 'delivered_date' ] ) ? $shipment[ 'data' ][ 'delivered_date' ] : null,
