@@ -18,6 +18,7 @@
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
 {{-- <script src="{{asset('assets/js/components/notification/custom-snackbar.js')}}"></script> --}}
+<script src="{{ asset('backend/assets/js/tinymce/tinymce.min.js') }}"></script>
 <script src="{{ asset('backend/plugins/notification/snackbar/snackbar.min.js') }}"></script>
 <script>
     @if (Session::get('alert-type') == 'success')
