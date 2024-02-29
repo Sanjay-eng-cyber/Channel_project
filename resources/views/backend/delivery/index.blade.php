@@ -37,9 +37,9 @@
                                     <option value="Pending"
                                         {{ request('status') && request('status') == 'Pending' ? 'selected' : '' }}>
                                         Pending</option>
-                                    <option value="Initial"
-                                        {{ request('status') && request('status') == 'Initial' ? 'selected' : '' }}>
-                                        Initial</option>
+                                    <option value="Intransit"
+                                        {{ request('status') && request('status') == 'Intransit' ? 'selected' : '' }}>
+                                        Intransit</option>
                                     <option value="Delivered"
                                         {{ request('status') && request('status') == 'Delivered' ? 'selected' : '' }}>
                                         Delivered</option>

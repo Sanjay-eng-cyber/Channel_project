@@ -26,7 +26,7 @@
             </div>
             <div class="statbox widget box box-shadow col-xl-12">
                 <div class="col-12">
-                        <div class="row m-0">
+                    <div class="row m-0">
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="degree3" class="cust-title" class="label-title">User</label><br>

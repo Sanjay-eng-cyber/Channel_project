@@ -157,7 +157,8 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="degree3" class="cust-title" class="label-title">Partner Order
+                                                    <label for="degree3" class="cust-title" class="label-title">Partner
+                                                        Order
                                                         Id</label><br>
                                                     <p class="label-title">{{ $delivery->partner_order_id ?? '---' }}</p>
 
