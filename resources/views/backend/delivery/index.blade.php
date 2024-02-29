@@ -43,12 +43,18 @@
                                     <option value="Delivered"
                                         {{ request('status') && request('status') == 'Delivered' ? 'selected' : '' }}>
                                         Delivered</option>
+                                    <option value="Returned"
+                                        {{ request('status') && request('status') == 'Returned' ? 'selected' : '' }}>
+                                        Returned</option>
+                                    <option value="Cancelled"
+                                        {{ request('status') && request('status') == 'Cancelled' ? 'selected' : '' }}>
+                                        Cancelled</option>
                                 </select>
                                 {{-- <input id="rangeCalendarFlatpickr" name="date_range" value="{{request('date_range')}}" class="form-control flatpickr flatpickr-input active w-50"
                                         type="text" placeholder="Select Date.." readonly="readonly"> --}}
                                 <input class="form-control form-control-sm app_form_input col-md-4 mt-md-0 mt-3"
-                                    type="text" placeholder="Order Id/Sipment Id/Awb Id" name="q" value="{{ request('q') ?? '' }}"
-                                    minlength="1" maxlength="40">
+                                    type="text" placeholder="Order Id/Sipment Id/Awb Id" name="q"
+                                    value="{{ request('q') ?? '' }}" minlength="1" maxlength="40">
                                 <input type="submit" value="Search"
                                     class="btn btn-success ml-0 ml-lg-4 ml-md-4 ml-sm-4  search_btn  search_btn_size ">
                             </form>
@@ -104,7 +110,7 @@
                                             <td>
                                                 <a class="text-warning"
                                                     href="{{ route('backend.order.show', $d->order_id) }}" target="_blank">
-                                                    {{ $d->order->order_no }}
+                                                    {{ $d->order->order_no ?? '---' }}
                                                 </a>
                                             </td>
                                             <td>{{ $d->shipment_id ?? '--' }}</td>
