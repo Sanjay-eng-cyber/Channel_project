@@ -35,7 +35,7 @@ class SliderController extends Controller
             'title' => 'required|min:3|max:60',
             'descriptions' => 'nullable|min:3|max:120',
             'link' => 'required|min:3|max:120',
-            // 'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf',
+            // 'image' => 'required|max:1024|mimes:jpeg,png,jpg',
 
         ]);
         //dd($rightSliderCount);
@@ -111,7 +111,7 @@ class SliderController extends Controller
 
         if ($slider->type == 'middle slider') {
             $request->validate([
-                'image' => 'nullable|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=200,height=300',
+                'image' => 'nullable|max:1024|mimes:jpeg,png,jpg|dimensions:width=200,height=300',
             ], [
                 'image.dimensions' => 'The image dimension should be 200x300',
             ]);
@@ -120,7 +120,7 @@ class SliderController extends Controller
         }
         if ($slider->type == 'right slider') {
             $request->validate([
-                'image' => 'nullable|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=250,height=150',
+                'image' => 'nullable|max:1024|mimes:jpeg,png,jpg|dimensions:width=250,height=150',
             ], [
                 'image.dimensions' => 'The image dimensions should be 250x150',
             ]);
@@ -129,7 +129,7 @@ class SliderController extends Controller
         }
         if ($slider->type == 'left slider') {
             $request->validate([
-                'image' => 'nullable|max:1024|mimes:jpeg,png,jpg,pdf|dimensions:width=500,height=700',
+                'image' => 'nullable|max:1024|mimes:jpeg,png,jpg|dimensions:width=500,height=700',
             ], [
                 'image.dimensions' => 'The image dimensions should be 500x700',
             ]);

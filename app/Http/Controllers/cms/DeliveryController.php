@@ -76,14 +76,6 @@ class DeliveryController extends Controller
             return redirect()->route('backend.order.show', $order_id)->with(toast('Delivery Already Created', 'info'));
         }
 
-        $items = $order->items()->with('product')->get();
-        // dd( $items );
-        foreach ($items as $item) {
-            if ($item->quantity > $item->product->stock) {
-                return redirect()->back('Some product are not in stock.');
-            }
-        }
-
         $request->validate([
             'length' => 'required|numeric|min:0.5,max:1000',
             'breadth' => 'required|numeric|min:0.5,max:1000',
@@ -165,13 +157,8 @@ class DeliveryController extends Controller
         }
         // dd( $delivery );
         $token = getShiprocketToken();
-        // $time = now()->format( 'd-m-y h:is' );
-        // $response =  Shiprocket::track( $token )->throwShipmentId( $delivery->shipment_id );
-        // Log::info( 'ShipRocket FetchDelivery ThrowShipmentId Response @ ' . $time );
-        // Log::info( $response );
-        // dd( $response );
-        $time = now()->format('d-m-y h:is');
         $shipment = Shiprocket::shipment($token)->getSpecific($delivery->shipment_id);
+        $time = now()->format('d-m-y h:is');
         Log::info('ShipRocket FetchDelivery getSpecific Response @ ' . $time);
         Log::info($shipment);
 
@@ -213,20 +200,6 @@ class DeliveryController extends Controller
             ]);
             return redirect()->back()->with(toast('Delivery Fetched Successfully', 'success'));
         }
-
-        // $awbResponse =  Shiprocket::track( $token )->throughAwb( $delivery->awb_code );
-        // // dd( $awbResponse );
-        // if ( $awbResponse && isset( $awbResponse[ 'tracking_data' ] ) && isset( $awbResponse[ 'tracking_data' ][ 'track_status' ] ) ) {
-        //     // dd( $awbResponse );
-        //     $pickup_date = null;
-        //     if ( isset( $awbResponse[ 'tracking_data' ][ 'shipment_track' ] ) ) {
-        //         $pickup_date = isset( $awbResponse[ 'tracking_data' ][ 'shipment_track' ][ 'pickup_date' ] ) ? $awbResponse[ 'tracking_data' ][ 'shipment_track' ][ 'pickup_date' ] : null;
-        //     }
-        //     $delivery->update( [
-        //         'pickup_date' => $pickup_date
-        // ] );
-        // }
-        // dd( $awbResponse );
         return redirect()->back()->with(toast('Something Went Wrong', 'error'));
     }
 

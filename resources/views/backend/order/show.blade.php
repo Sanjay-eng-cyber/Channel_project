@@ -142,7 +142,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title"
-                                                        class="label-title">awb_code</label><br>
+                                                        class="label-title">AWB Code</label><br>
                                                     <p class="label-title">{{ $delivery->awb_code }}</p>
 
                                                 </div>

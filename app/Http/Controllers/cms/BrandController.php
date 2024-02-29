@@ -33,7 +33,7 @@ class BrandController extends Controller
     {
         $request->validate([
             'name' => 'required|min:3|max:80|unique:brands,name',
-        //    'image' => 'required|max:1024|mimes:jpeg,png,jpg,pdf',
+        //    'image' => 'required|max:1024|mimes:jpeg,png,jpg',
         //    'descriptions' => 'nullable|min:3|max:250'
         ]);
     //     $fileWithExtension = $request->file('image');
@@ -70,7 +70,7 @@ class BrandController extends Controller
     {
         $request->validate([
             'name' => 'required|min:3|max:80|unique:brands,name,' .$id,
-            // 'image' => 'nullable|max:1024|mimes:jpeg,png,jpg,pdf',
+            // 'image' => 'nullable|max:1024|mimes:jpeg,png,jpg',
             // 'descriptions' => 'nullable|min:3|max:250'
         ]);
 
