@@ -41,6 +41,58 @@
                                                 <p class="label-title">{{ $showcase->name }}</p>
                                             </div>
                                         </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title" class="label-title">Products List</label><br>
+                                            </div>
+                                        </div>
+                                        <table class="table mb-4">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @forelse($showcaseProducts as $showcaseProduct)
+                                                    {{-- @dd($showcase->products()->get()); --}}
+                                                    <tr>
+                                                        <td class="w-100">{{ $showcaseProduct->product->name }}</td>
+                                                        <td class="text-center">
+                                                            <div class="dropdown custom-dropdown">
+                                                                <a class="dropdown-toggle" href="#" role="button"
+                                                                    id="dropdownMenuLink1" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                                        stroke="currentColor" stroke-width="2"
+                                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                                        class="feather feather-more-horizontal">
+                                                                        <circle cx="12" cy="12" r="1">
+                                                                        </circle>
+                                                                        <circle cx="19" cy="12" r="1">
+                                                                        </circle>
+                                                                        <circle cx="5" cy="12" r="1">
+                                                                        </circle>
+                                                                    </svg>
+                                                                </a>
+
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuLink1">
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ route('backend.showcaseproduct.destroy', $showcaseProduct->id) }}">Delete</a>
+                                                                </div>
+                                                            </div>
+
+                                                        </td>
+                                                    </tr>
+                                                @empty
+                                                    <tr class="">
+                                                        <td colspan="2">No Records Found</td>
+                                                    </tr>
+                                                @endforelse
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
