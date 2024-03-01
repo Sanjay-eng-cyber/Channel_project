@@ -65,6 +65,8 @@
                                     <tr>
                                         <th>Sr no.</th>
                                         <th>Name</th>
+                                        <th>Rate</th>
+                                        <th>Value</th>
                                         <th>Valid From</th>
                                         <th>Valid Till</th>
                                         <th>Usage</th>
@@ -76,6 +78,8 @@
                                         <tr>
                                             <td>{{ tableRowSrNo($loop->index, $coupons) }}</td>
                                             <td>{{ $coupon->name }}</td>
+                                            <td>{{ ucfirst($coupon->rate) }}</td>
+                                            <td>{{ $coupon->value }}</td>
                                             <td>{{ dd_format($coupon->valid_from, 'd-m-y h:ia') }}</td>
                                             <td>{{ dd_format($coupon->valid_till, 'd-m-y h:ia') }}</td>
                                             <td>{{ $coupon->couponUsage->count() }}</td>

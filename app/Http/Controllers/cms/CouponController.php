@@ -137,12 +137,12 @@ class CouponController extends Controller
     {
         $coupon = Coupon::findOrFail($id);
         $coupon_usages = $coupon->couponUsage()->exists();
-        if (!$coupon_usages) {
-            if ($coupon->delete()) {
-                return redirect()->route('backend.coupon.index')->with(['alert-type' => 'success', 'message' => 'Coupon Deleted Successfully']);
-            }
-            return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
+        if ($coupon_usages) {
+            return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Coupon Already Used']);
         }
-        return redirect()->back()->with(['alert-type' => 'info', 'message' => 'Coupon Already Used']);
+        if ($coupon->delete()) {
+            return redirect()->route('backend.coupon.index')->with(['alert-type' => 'success', 'message' => 'Coupon Deleted Successfully']);
+        }
+        return redirect()->back()->with(['alert-type' => 'error', 'message' => 'Something Went Wrong']);
     }
 }

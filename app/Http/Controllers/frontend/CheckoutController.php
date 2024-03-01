@@ -25,7 +25,7 @@ class CheckoutController extends Controller
         $productsTotalAmount = 0;
         foreach ($cartItems as $key => $item) {
             if ($item->quantity > $item->product->stock) {
-                return redirect()->back('The given product quantity is not available. Please Try after some time.');
+                return redirect()->back()->with(toast('Some products are currently out of stock. Please try again later or remove those products from your cart.', 'info'));
             }
             $productsTotalAmount += $item->product->final_price * $item->quantity;
         }
@@ -34,7 +34,7 @@ class CheckoutController extends Controller
             $userAddresses = $user->userAddresses()->orderBy('type', 'asc')->get();
             return view('frontend.order.checkout', compact('userAddresses', 'cartItems', 'gst', 'subTotal', 'grandTotal', 'discount'));
         }
-        return redirect()->back()->with(toast('No Items in your cart to checkout', 'info'));
+        return redirect()->back()->with(toast('There are no items in your cart to checkout.', 'info'));
         // abort(404);
     }
 
@@ -45,7 +45,7 @@ class CheckoutController extends Controller
         $productsArray = null;
         $selectedAddress = $user->userAddresses()->find($request->address);
         if (!$selectedAddress) {
-            return redirect()->back()->with(toast('Selected Address is Invalid', 'info'));
+            return redirect()->back()->with(toast('The selected address is invalid.', 'info'));
         }
         // dd($selectedAddress->postal_code);
 
@@ -62,14 +62,14 @@ class CheckoutController extends Controller
         if (!isset($checkServiceability['status']) || $checkServiceability['status']  !== 200) {
             Log::info("checkServiceability");
             Log::info($checkServiceability);
-            return redirect()->back()->with(toast("Not Deliverable In Selected Address", 'info'));
+            return redirect()->back()->with(toast("This item cannot be delivered to the selected address.", 'info'));
         }
 
         $cartItems = $user->cart->items()->with('product')->get();
         $productsTotalAmount = 0;
         foreach ($cartItems as $key => $item) {
             if ($item->quantity > $item->product->stock) {
-                return redirect()->back('The given product quantity is not available. Please Try after some time.');
+                return redirect()->back(toast('Some products are currently out of stock. Please try again later or remove those products from your cart.', 'info'));
             }
             $productsTotalAmount += $item->product->final_price * $item->quantity;
         }
@@ -78,7 +78,7 @@ class CheckoutController extends Controller
             $order = $this->getOrderOrCreateNew($user, $api, $subTotal, $discount, $grandTotal, $cartItems, $selectedAddress);
             return view('frontend.order.payment', compact('selectedAddress', 'cartItems', 'order', 'gst', 'subTotal', 'grandTotal', 'discount'));
         }
-        return redirect()->back()->with(toast('No Items in your cart to checkout', 'info'));
+        return redirect()->back()->with(toast('There are no items in your cart to checkout.', 'info'));
         // abort(404);
     }
 
@@ -88,8 +88,8 @@ class CheckoutController extends Controller
         $request->validate([
             'coupon' => 'required|string|min:2|max:60',
         ]);
-        $coupon = Coupon::findPromoCode($request->coupon);
-        // dd($coupon);
+        $coupon = Coupon::where('code', $request->coupon)->first();
+        // dd($coupon->isValid());
         if ($coupon && $coupon->isValid()) {
             session()->has('coupon') ? $this->removeCoupon() : null;
             $cartItems = auth()->user()->cart->items()->with('product')->get();
@@ -101,10 +101,10 @@ class CheckoutController extends Controller
             $discount = $coupon->discount($productsTotalAmount);
             // dd($discount);
             if ($productsTotalAmount < $coupon->min_order_amount) {
-                return redirect()->route('frontend.cart.checkout')->with(['alert-type' => 'info', 'message' => 'This Coupon is applicable on orders above Rs ' . (int)$coupon->min_order_amount . ' only.']);
+                return redirect()->route('frontend.cart.checkout')->with(['alert-type' => 'info', 'message' => 'This coupon is applicable to orders with a minimum value of Rs ' . (int)$coupon->min_order_amount . ' only.']);
             }
             if ($discount >= $productsTotalAmount) {
-                return redirect()->route('frontend.cart.checkout')->with(['alert-type' => 'info', 'message' => 'Coupon Not Applicable']);
+                return redirect()->route('frontend.cart.checkout')->with(['alert-type' => 'info', 'message' => 'The given coupon is not applicable.']);
             }
             session()->put([
                 'coupon' => $coupon,
@@ -112,14 +112,14 @@ class CheckoutController extends Controller
             ]);
             return redirect()->route('frontend.cart.checkout')->with(toast('Coupon Applied'));
         }
-        return redirect()->back()->with(toast('This Coupon is Invalid', 'error'));
+        return redirect()->back()->with(toast('The given coupon is invalid', 'error'));
     }
 
     public function removeCoupon(): \Illuminate\Http\RedirectResponse
     {
         session()->forget('coupon');
         session()->forget('discount');
-        return redirect()->back();
+        return redirect()->back()->with(toast('Coupon has been removed.', 'error'));
     }
 
     public function handleCallback(Request $request)
