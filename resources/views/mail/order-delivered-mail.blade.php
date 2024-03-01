@@ -26,16 +26,21 @@
                 <img src="{{ asset('frontend/images/mail-img/delivery.png') }}" style="max-width: 100%;" alt="">
             </div>
 
-            <h2 style="color:rgba(236, 38, 143, 1);font-weight:500">Order Delivered</h2>
-            <p style="text-align: center;color:#6a7b83;font-weight:;padding-left:20px;padding-right:20px;">
-                Hello <strong> {{ $userName }} </strong>,
-                Your Order For <strong>{{ $productName }}</strong><br />
-                As Been Delivered Successfully. Please Feel<br /> Free To Continue Shopping With Us.
-            </p>
+            <div style="max-width:400px;margin: 0 auto;">
 
-            <p style="color:#6a7b83;font-weight:500;opacity:50%">
-                For Any Queries Please Contact On Email : <a href="mailto:{{ $adminMail }}">{{ $adminMail }}</a>
-            </p>
+                <h2 style="font-family: 'Poppins', sans-serif;font-weight:500;font-size:24px;text-align:center;color:rgba(236, 38, 143, 1);">Order Delivered</h2>
+                <p style="margin-bottom:0px;font-family: 'Poppins', sans-serif;text-align:center;color:#455A64;padding-left:25px;padding-right:25px;font-weight:400;font-size:14px">
+                    Hello <strong style="color: black;font-size:14px;font-weight:500"> {{ $userName }} </strong>,
+                    Your Order For <strong style="color: black;font-size:14px;font-weight:500">{{ $productName }}</strong><br />
+                    As Been Delivered Successfully. Please Feel<br /> Free To Continue Shopping With Us.
+                </p>
+
+                <p style="color:#455A64;font-weight:400;text-align:center;font-size:14px; font-family: 'Poppins', sans-serif;padding-top:10px;padding-bottom:10px">
+                    For Any Queries Please Contact On Email : <a href="mailto:{{ $adminMail }}">{{ $adminMail }}</a>
+                </p>
+            
+            </div>
+            
             <div style="max-width:67px;margin: 0 auto;padding-top:15px;padding-bottom:15px;">
 
                 <img src="{{ asset('frontend/images/mail-img/logo.png') }}" style="max-width: 100%;" alt="">
