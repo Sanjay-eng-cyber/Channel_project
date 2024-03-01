@@ -32,7 +32,7 @@ class OrderProcessingMail extends Mailable implements ShouldQueue
     public function build()
     {
         $order = $this->order;
-        return $this->subject('Your Product Has Been Processing.')->markdown('mail.order-processing-mail')->with([
+        return $this->subject('Your Product Has Been Processing.')->markdown('mail.order-proccessing-mail')->with([
             'userName' => $order->user->first_name,
             'productName' => implode(", ", $this->productsNameArray),
             'adminMail' => config('app.enquiry_email'),
