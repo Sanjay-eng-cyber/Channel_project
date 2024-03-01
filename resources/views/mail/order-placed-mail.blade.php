@@ -21,23 +21,23 @@
 
         <div
             style="border-radius:15px;border:2px solid rgba(16, 130, 6, 1);box-shadow: 8px 9px 8px 0px rgba(0, 0, 0, 0.25);">
-            <div style="max-width: 320px;margin: 0 auto;padding-top:40px;">
+            <div style="max-width: 320px;margin: 0 auto;padding-top:40px;text-align:center">
 
                 <img src="{{ asset('frontend/images/mail-img/success.png') }}" style="max-width: 100%;" alt="">
             </div>
 
-            <h2 style="color:rgba(30, 186, 17, 1);font-weight:500">Order Placed</h2>
-            <p style="text-align: center;color:#6a7b83;font-weight:;padding-left:20px;padding-right:20px;">
-                Hello <strong> {{ $userName }} </strong>, Thank You For Shopping At Channel.<br />
-                Your Order For <strong>{{ $productName }}</strong> Has Been Received<br /> Successfully.
+            <h2 style="font-family: 'Poppins', sans-serif;color:rgba(30, 186, 17, 1);font-weight:500;font-size:24px;text-align:center">Order Placed</h2>
+            <p style="font-family: 'Poppins', sans-serif;text-align:center;color:#6a7b83;padding-left:25px;padding-right:25px;font-weight:500;font-size:16px">
+                Hello <strong style="color: black"> {{ $userName }} </strong>, Thank You For Shopping At Channel.<br />
+                Your Order For <strong style="color: black">{{ $productName }}</strong> Has Been Received<br /> Successfully.
             </p>
-            <p style="color:#6a7b83;">
+            <p style="color:#6a7b83;text-align:center;font-weight:500;font-size:16px; font-family: 'Poppins', sans-serif;">
                 We’ll Soon Let You Know When It’s On The Way.
             </p>
-            <p style="color:#6a7b83;font-weight:500;opacity:50%">
+            <p style="color:#6a7b83;font-weight:500;opacity:60%;text-align:center;font-size:16px; font-family: 'Poppins', sans-serif;">
                 For Any Queries Please Contact On Email : <a href="mailto:{{ $adminMail }}">{{ $adminMail }}</a>
             </p>
-            <div style="max-width:67px;margin: 0 auto;padding-top:15px;padding-bottom:15px;">
+            <div style="max-width:67px;margin: 0 auto;padding-top:15px;padding-bottom:15px;text-align:center">
 
                 <img src="{{ asset('frontend/images/mail-img/logo.png') }}" style="max-width: 100%;" alt="">
             </div>
