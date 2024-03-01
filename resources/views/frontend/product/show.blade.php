@@ -233,7 +233,7 @@
 
 
                                     {{-- for large screen --}}
-                                    <div class="d-none d-sm-flex flex-column flex-xl-row justify-content-between my-3 ">
+                                    <div class="d-none d-sm-flex flex-column flex-sm-row flex-lg-column flex-xl-row justify-content-between my-3 ">
                                         <div class="d-flex align-items-center gap-3">
 
 
@@ -302,7 +302,7 @@
                                         </div>
 
                                         <div
-                                            class="d-flex justify-content-between justify-content-sm-start justify-content-lg-end justify-content-xl-between gap-1 gap-sm-3 mt-3 mt-xl-0  ">
+                                            class="d-flex justify-content-between justify-content-sm-start justify-content-lg-end justify-content-xl-between align-items-center gap-1 gap-sm-3 mt-0 mt-lg-3 mt-xl-0  ">
 
 
 
