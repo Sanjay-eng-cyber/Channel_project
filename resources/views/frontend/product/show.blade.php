@@ -402,34 +402,43 @@
                                         </div> --}}
 
                                         <div class="data-propety-table fs-14 py-2">
-
-                                            <div class="data-propety-tr pb-2">
-                                                <div class="fss-14 fw-500">Brand</div>
-                                                <div class="fss-14 fw-300">{{ $product->brand->name }}</div>
-                                            </div>
+                                            @if ($product->brand)
+                                                <div class="data-propety-tr pb-2">
+                                                    <div class="fss-14 fw-500">Brand</div>
+                                                    <div class="fss-14 fw-300">{{ $product->brand->name }}</div>
+                                                </div>
+                                            @endif
                                             @foreach ($product_attributes as $pa)
                                                 <div class="data-propety-tr pb-2">
                                                     <div class="fss-14 fw-500">{{ $pa->attribute->name }}</div>
                                                     <div class="fss-14 fw-300">{{ $pa->value->name }}</div>
                                                 </div>
                                             @endforeach
-                                            <div class="data-propety-tr pb-2">
-                                                <div class="fss-14 fw-500">Skin Type</div>
-                                                <div class="fss-14 fw-300">{{ $product->skin_type }}</div>
-                                            </div>
-                                            <div class="data-propety-tr pb-2">
-                                                <div class="fss-14 fw-500">Net Quantity</div>
-                                                <div class="fss-14 fw-300">{{ $product->net_quantity }}</div>
-                                            </div>
-                                            <div class="data-propety-care-instruction pb-2">
-                                                <div class="fss-14 fw-500">Care Instruction</div>
-                                                <div class="fss-14 fw-300">{{ $product->care_instruction }}</div>
-                                            </div>
-                                            <div class="data-propety-care-instruction pb-2">
-                                                <div class="fss-14 fw-500">Special Ingredients</div>
-                                                <div class="fss-14 fw-300">{{ $product->special_ingredients }}</div>
-                                                </>
-                                            </div>
+                                            @if ($product->skin_type)
+                                                <div class="data-propety-tr pb-2">
+                                                    <div class="fss-14 fw-500">Skin Type</div>
+                                                    <div class="fss-14 fw-300">{{ $product->skin_type }}</div>
+                                                </div>
+                                            @endif
+                                            @if ($product->net_quantity)
+                                                <div class="data-propety-tr pb-2">
+                                                    <div class="fss-14 fw-500">Net Quantity</div>
+                                                    <div class="fss-14 fw-300">{{ $product->net_quantity }}</div>
+                                                </div>
+                                            @endif
+                                            @if ($product->care_instruction)
+                                                <div class="data-propety-care-instruction pb-2">
+                                                    <div class="fss-14 fw-500">Care Instruction</div>
+                                                    <div class="fss-14 fw-300">{{ $product->care_instruction }}</div>
+                                                </div>
+                                            @endif
+                                            @if ($product->special_ingredients)
+                                                <div class="data-propety-care-instruction pb-2">
+                                                    <div class="fss-14 fw-500">Special Ingredients</div>
+                                                    <div class="fss-14 fw-300">{{ $product->special_ingredients }}</div>
+
+                                                </div>
+                                            @endif
 
 
                                         </div>
