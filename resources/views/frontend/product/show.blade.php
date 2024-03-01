@@ -136,21 +136,23 @@
                                                 </h3>
                                             </div>
 
-                                            <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
-                                                <label for="qty" class="px-2 fs-10">
-                                                    Qty
-                                                </label>
-                                                <div class="input-group flex-nowrap counter qty-num-input">
-                                                    <button type="button"
-                                                        class="input-group-text decrease-quantity fs-10">-</button>
-                                                    <input type="number" name="quantity"
-                                                        class="form-control quantity-input fs-10" value="1"
-                                                        id="product_quantity"
-                                                        style="border-left: 0px;border-right: 0px;padding-left:0px;padding-right:0px">
-                                                    <button type="button"
-                                                        class="input-group-text increase-quantity fs-10">+</button>
+                                            @if ($product->stock)
+                                                <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
+                                                    <label for="qty" class="px-2 fs-10">
+                                                        Qty
+                                                    </label>
+                                                    <div class="input-group flex-nowrap counter qty-num-input">
+                                                        <button type="button"
+                                                            class="input-group-text decrease-quantity fs-10">-</button>
+                                                        <input type="number" name="quantity"
+                                                            class="form-control quantity-input fs-10" value="1"
+                                                            id="product_quantity"
+                                                            style="border-left: 0px;border-right: 0px;padding-left:0px;padding-right:0px">
+                                                        <button type="button"
+                                                            class="input-group-text increase-quantity fs-10">+</button>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            @endif
 
                                         </div>
 
@@ -223,10 +225,12 @@
                                                 </a>
                                             @endif
 
-
-                                            <button class="btn btn-black font-size14 btn-size-width109" type="submit">
-                                                Buy Now
-                                            </button>
+                                            @if ($product->stock)
+                                                <button class="btn btn-black font-size14 btn-size-width109"
+                                                    type="submit">
+                                                    Buy Now
+                                                </button>
+                                            @endif
 
                                         </div>
                                     </div>
@@ -302,32 +306,34 @@
 
                                         </div>
 
-                                        <div
-                                            class="d-flex justify-content-between justify-content-sm-start justify-content-lg-end justify-content-xl-between align-items-center gap-1 gap-sm-3 mt-0 mt-lg-3 mt-xl-0  ">
+                                        @if ($product->stock)
+                                            <div
+                                                class="d-flex justify-content-between justify-content-sm-start justify-content-lg-end justify-content-xl-between align-items-center gap-1 gap-sm-3 mt-0 mt-lg-3 mt-xl-0  ">
 
 
 
-                                            <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
-                                                <label for="qty" class="px-2">
-                                                    Qty
-                                                </label>
-                                                <div class="input-group flex-nowrap counter qty-num-input">
-                                                    <button type="button"
-                                                        class="input-group-text decrease-quantity">-</button>
-                                                    <input type="number" name="quantity"
-                                                        class="form-control quantity-input" value="1"
-                                                        id="product_quantity"
-                                                        style="border-left: 0px;border-right: 0px;padding-left:0px;padding-right:0px">
-                                                    <button type="button"
-                                                        class="input-group-text increase-quantity">+</button>
+                                                <div class="qty-counter my-1 my-sm-0 my-md-3 my-lg-0">
+                                                    <label for="qty" class="px-2">
+                                                        Qty
+                                                    </label>
+                                                    <div class="input-group flex-nowrap counter qty-num-input">
+                                                        <button type="button"
+                                                            class="input-group-text decrease-quantity">-</button>
+                                                        <input type="number" name="quantity"
+                                                            class="form-control quantity-input" value="1"
+                                                            id="product_quantity"
+                                                            style="border-left: 0px;border-right: 0px;padding-left:0px;padding-right:0px">
+                                                        <button type="button"
+                                                            class="input-group-text increase-quantity">+</button>
+                                                    </div>
                                                 </div>
+
+                                                <button class="btn btn-buy font-size14 btn-size-width109" type="submit">
+                                                    Buy Now
+                                                </button>
+
                                             </div>
-
-                                            <button class="btn btn-buy font-size14 btn-size-width109" type="submit">
-                                                Buy Now
-                                            </button>
-
-                                        </div>
+                                        @endif
                                     </div>
 
 
