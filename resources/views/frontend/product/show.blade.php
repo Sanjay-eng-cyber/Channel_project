@@ -233,7 +233,8 @@
 
 
                                     {{-- for large screen --}}
-                                    <div class="d-none d-sm-flex flex-column flex-sm-row flex-lg-column flex-xl-row justify-content-between my-3 ">
+                                    <div
+                                        class="d-none d-sm-flex flex-column flex-sm-row flex-lg-column flex-xl-row justify-content-between my-3 ">
                                         <div class="d-flex align-items-center gap-3">
 
 
@@ -349,7 +350,7 @@
                             </div>
                             <div class="rating-holder">
                                 <div class="row">
-                                    
+
                                     <div class="col-12 col-sm-12 p-0">
 
                                         {{-- <div class="col-6 col-sm-12 p-0">
@@ -371,7 +372,7 @@
                                                     <div class="pb-2">Material : <span
                                                             class="fw-500">{{ $product->material }}</span> </div>
                                                 @endif
-    
+
                                                 @if ($product->skin_type)
                                                     <div class="pb-2">Skin Type : <span
                                                             class="fw-500">{{ $product->skin_type }}</span></div>
@@ -390,111 +391,112 @@
                                                             class="fw-500">{{ $product->special_ingredients }}</span>
                                                     </div>
                                                 @endif
-    
+
                                                 @if ($product->expiry)
                                                     <div class="pb-2">Expiry : <span
                                                             class="fw-500">{{ $product->expiry }}</span>
                                                     </div>
                                                 @endif
                                             </div>
-    
+
                                         </div> --}}
-                                        
+
                                         <div class="data-propety-table fs-14 py-2">
-                                           
+
                                             <div class="data-propety-tr pb-2">
                                                 <div class="fss-14 fw-500">Brand</div>
-                                                <div class="fss-14 fw-300">Mamaearth</div>
+                                                <div class="fss-14 fw-300">{{ $product->brand->name }}</div>
                                             </div>
-                                            <div class="data-propety-tr pb-2">
-                                                <div class="fss-14 fw-500">Color</div>
-                                                <div class="fss-14 fw-300">pink</div>
-                                            </div>
+                                            @foreach ($product_attributes as $pa)
+                                                <div class="data-propety-tr pb-2">
+                                                    <div class="fss-14 fw-500">{{ $pa->attribute->name }}</div>
+                                                    <div class="fss-14 fw-300">{{ $pa->value->name }}</div>
+                                                </div>
+                                            @endforeach
                                             <div class="data-propety-tr pb-2">
                                                 <div class="fss-14 fw-500">Skin Type</div>
-                                                <div class="fss-14 fw-300">pink</div>
+                                                <div class="fss-14 fw-300">{{ $product->skin_type }}</div>
                                             </div>
                                             <div class="data-propety-tr pb-2">
                                                 <div class="fss-14 fw-500">Net Quantity</div>
-                                                <div class="fss-14 fw-300">pink</div>
-                                            </div>
-                                            <div class="data-propety-tr pb-2">
-                                                <div class="fss-14 fw-500">Size (L x W x H)</div>
-                                                <div class="fss-14 fw-300">pink</div>
+                                                <div class="fss-14 fw-300">{{ $product->net_quantity }}</div>
                                             </div>
                                             <div class="data-propety-care-instruction pb-2">
                                                 <div class="fss-14 fw-500">Care Instruction</div>
-                                                <div class="fss-14 fw-300">essence Long Lasting Eye Pencil is a creamy and pigmented eye pencil that brightens and accentuates your eyes.essence Long Lasting Eye Pencil is a creamy and pigmented eye pencil that brightens and accentuates your eyes</div>
+                                                <div class="fss-14 fw-300">{{ $product->care_instruction }}</div>
                                             </div>
                                             <div class="data-propety-care-instruction pb-2">
                                                 <div class="fss-14 fw-500">Special Ingredients</div>
-                                                <div class="fss-14 fw-300">essence Long Lasting Eye Pencil is a creamy and pigmented eye pencil that brightens and accentuates your eyes.essence Long Lasting Eye Pencil is a creamy and pigmented eye pencil that brightens and accentuates your eyes</div>
-                                            </>
+                                                <div class="fss-14 fw-300">{{ $product->special_ingredients }}</div>
+                                                </>
+                                            </div>
+
+
                                         </div>
-                                        
-                                        
-                                    </div>
 
-                                    <div class="col-12 col-sm-12 p-0 mt-3">
+                                        <div class="col-12 col-sm-12 p-0 mt-3">
 
-                                        <div class="rating-grid-stm">
-                                            <div class="rating-stats text-muted">
-                                                <div class="rating">
-                                                    <div class="d-flex align-items-center mb-1">
-                                                        <h6 class="h6 font-body mb-0 me-2 fw-500 text-black fs-9">
-                                                            Ratings
-                                                        </h6>
-                                                        <div class="five-stars five-stars-main text-green d-flex gap-1 ">
-                                                            @for ($i = 1; $i <= 5; $i++)
-                                                                @if ($i <= $reviewRatingAvg)
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                @else
-                                                                    <i class="fa-regular fa-star"></i>
-                                                                @endif
-                                                            @endfor
-                                                        </div>
-                                                    </div>
-                                                    <div class="py-1 py-sm-2">
-                                                        <div class="rating-total position-relative isolate " >
-                                                            <div style="box-shadow: 0px 1px 0.8999999761581421px 0px #00000040;background: white;border-radius:4px;padding: 6px;padding-top: 9px;">
-                                                                <h6 class="h5 font-body text-muted fs-11 m-0" >
-                                                                    {{ $reviewRatingAvg }}
-                                                                </h6>
-                                                                <i class="fa-solid fa-star text-green position-absolute "></i>
+                                            <div class="rating-grid-stm">
+                                                <div class="rating-stats text-muted">
+                                                    <div class="rating">
+                                                        <div class="d-flex align-items-center mb-1">
+                                                            <h6 class="h6 font-body mb-0 me-2 fw-500 text-black fs-9">
+                                                                Ratings
+                                                            </h6>
+                                                            <div
+                                                                class="five-stars five-stars-main text-green d-flex gap-1 ">
+                                                                @for ($i = 1; $i <= 5; $i++)
+                                                                    @if ($i <= $reviewRatingAvg)
+                                                                        <i class="fa-solid fa-star"></i>
+                                                                    @else
+                                                                        <i class="fa-regular fa-star"></i>
+                                                                    @endif
+                                                                @endfor
                                                             </div>
-                                                            {{-- <h6 class="m-0 p-0 main-head fs-md-9">Based On Verified Buyers</h6> --}}
+                                                        </div>
+                                                        <div class="py-1 py-sm-2">
+                                                            <div class="rating-total position-relative isolate ">
+                                                                <div
+                                                                    style="box-shadow: 0px 1px 0.8999999761581421px 0px #00000040;background: white;border-radius:4px;padding: 6px;padding-top: 9px;">
+                                                                    <h6 class="h5 font-body text-muted fs-11 m-0">
+                                                                        {{ $reviewRatingAvg }}
+                                                                    </h6>
+                                                                    <i
+                                                                        class="fa-solid fa-star text-green position-absolute "></i>
+                                                                </div>
+                                                                {{-- <h6 class="m-0 p-0 main-head fs-md-9">Based On Verified Buyers</h6> --}}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="rating-stats text-muted">
-                                                @for ($i = 5; $i >= 1; $i--)
-                                                    <div class="">
-                                                        <div class="rating-stat">
-                                                            <div class="fs-8">{{ $i }}</div>
-                                                            <div class="review-bar">
-                                                                <div class="review-bar-value"
-                                                                    style="width: {{ $ratingsArr[$i] }}%;">
+                                                <div class="rating-stats text-muted">
+                                                    @for ($i = 5; $i >= 1; $i--)
+                                                        <div class="">
+                                                            <div class="rating-stat">
+                                                                <div class="fs-8">{{ $i }}</div>
+                                                                <div class="review-bar">
+                                                                    <div class="review-bar-value"
+                                                                        style="width: {{ $ratingsArr[$i] }}%;">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                @endfor
+                                                    @endfor
+                                                </div>
                                             </div>
+
                                         </div>
 
+
+
                                     </div>
-
-
-
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section><!-- Mt Product detial of the Page end -->
 
         <hr class="d-block d-sm-none margin-sm">
