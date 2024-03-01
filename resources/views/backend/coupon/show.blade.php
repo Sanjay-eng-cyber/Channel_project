@@ -91,7 +91,7 @@
                                         </div><div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
-                                                    class="label-title">Max Usage</label><br>
+                                                    class="label-title">Min Order Amount</label><br>
                                                 <p class="label-title">{{ $coupon->min_order_amount }}</p>
                                             </div>
                                         </div>
