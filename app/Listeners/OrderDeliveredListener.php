@@ -37,7 +37,7 @@ class OrderDeliveredListener implements ShouldQueue
             Mail::to($order->user->email)->send(new OrderDeliveredMail($order, $productsNameArray));
         }
 
-        if (app()->env() == 'production' && $order->user->phone) {
+        if (app()->env == 'production' && $order->user->phone) {
             $res = MSG91::sms([
                 "flow_id" => config('app.msg91_order_delivered_flow_id'),
                 "authkey" => config('app.msg91_auth_key'),
