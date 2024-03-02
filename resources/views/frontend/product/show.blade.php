@@ -574,14 +574,14 @@
                                                 <input type="text"
                                                     class="form-control my-2 review-sub-headline review-input-bg fs-9"
                                                     placeholder="Enter Title" name="title" required
-                                                    value="{{ old('title') }}">
+                                                    value="{{ old('title') }}" minlength="3" maxlength="120">
                                                 @if ($errors->has('title'))
                                                     <div class="text-danger" role="alert">{{ $errors->first('title') }}
                                                     </div>
                                                 @endif
                                                 <textarea name="body" id="body" cols="10" rows="3"
                                                     class="mt-3 form-control w-100  review-sub-textarea review-input-bg fs-9" placeholder="Enter Your Review"
-                                                    minlength="3" maxlength="2000" required>{{ old('body') }}</textarea>
+                                                    minlength="3" maxlength="1000" required>{{ old('body') }}</textarea>
                                                 @if ($errors->has('body'))
                                                     <div class="text-danger" role="alert">{{ $errors->first('body') }}
                                                     </div>

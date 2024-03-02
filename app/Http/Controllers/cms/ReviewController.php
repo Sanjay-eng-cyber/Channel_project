@@ -36,7 +36,7 @@ class ReviewController extends Controller
         $reviews = $product->reviews()->findOrFail($review_id);
         $request->validate([
             'title' => 'required|min:3|max:120',
-            'body' => 'required|min:3|max:2000',
+            'body' => 'required|min:3|max:1000',
             'rating' => 'required|numeric|min:1|max:5',
         ]);
         $reviews->title = $request->title;
