@@ -18,17 +18,17 @@
         <div class="container">
             <div class="row py-2 d-flex justify-content-center">
                 <div class="col-12 col-lg-11 col-xl-11">
-               
-                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="" class="bread-crum breadcrumb-hover">Profile</a>
-                                </li>
-                            </ol>
-                        </nav>
+
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="" class="bread-crum breadcrumb-hover">Profile</a>
+                            </li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
-                 
+
         </div>
     </section>
     <section class="pb-4 position-relative" style="z-index: 9999">
@@ -44,7 +44,7 @@
                                     placeholder="First Name" minlength="3" maxlength="30"
                                     value="{{ old('first_name') ?? $user->first_name }}" required>
                                 @if ($errors->has('first_name'))
-                                    <div id="first_name-error" class="text-primary">{{ $errors->first('first_name') }}</div>
+                                    <div id="first_name-error" class="text-danger">{{ $errors->first('first_name') }}</div>
                                 @endif
                             </div>
                             <div class="col-sm-6 py-2">
@@ -52,7 +52,7 @@
                                     placeholder="Last Name" minlength="3" maxlength="30" required
                                     value="{{ old('last_name') ?? $user->last_name }}">
                                 @if ($errors->has('last_name'))
-                                    <div id="last_name-error" class="text-primary">{{ $errors->first('last_name') }}</div>
+                                    <div id="last_name-error" class="text-danger">{{ $errors->first('last_name') }}</div>
                                 @endif
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                                     placeholder="Mobile" required minlength="10" maxlength="10"
                                     value="{{ old('phone') ?? $user->phone }}" disabled>
                                 @if ($errors->has('phone'))
-                                    <div id="phone-error" class="text-primary">{{ $errors->first('phone') }}</div>
+                                    <div id="phone-error" class="text-danger">{{ $errors->first('phone') }}</div>
                                 @endif
                             </div>
 
@@ -70,7 +70,7 @@
                                 <input type="text" name="email" class=" profile-form-input-custome" placeholder="Email"
                                     minlength="5" maxlength="50" value="{{ old('email') ?? $user->email }}">
                                 @if ($errors->has('email'))
-                                    <div id="email-error" class="text-primary">{{ $errors->first('email') }}</div>
+                                    <div id="email-error" class="text-danger">{{ $errors->first('email') }}</div>
                                 @endif
                             </div>
 
@@ -96,7 +96,7 @@
                                 </label>
                             </div>
                             @if ($errors->has('gender'))
-                                <div id="gender-error" class="text-primary">{{ $errors->first('gender') }}</div>
+                                <div id="gender-error" class="text-danger">{{ $errors->first('gender') }}</div>
                             @endif
                         </div>
                         <div class="col-sm-12 pt-4 text-end">
@@ -180,7 +180,8 @@
                                                 </a>
                                             </div>
                                             <div class="modal fade auth-popup" id="trashbtn{{ $key }}"
-                                                tabindex="-1" aria-labelledby="loginPopupLabel" aria-hidden="true" style="z-index: 999999">
+                                                tabindex="-1" aria-labelledby="loginPopupLabel" aria-hidden="true"
+                                                style="z-index: 999999">
                                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                     <div class="modal-content">
 
@@ -238,21 +239,23 @@
                                 <div class="form-group py-2 req-input position-relative isolation">
                                     <input type="text" name="name"
                                         class=" profile-form-input-custome profile-asterisk" placeholder="Name" required
-                                        minlength="3" maxlength="20" required>
+                                        minlength="3" maxlength="20" required
+                                        value="{{ session()->has('store-form-error') && old('name') ? old('name') : null }}">
                                     <span class="new-asterisk position-absolute" style="top:10px;left:50px">*</span>
                                     @if (session()->has('store-form-error') && $errors->has('name'))
-                                        <div id="name-error" class="text-primary">
+                                        <div id="name-error" class="text-danger">
                                             {{ $errors->first('name') }}</div>
                                     @endif
                                 </div>
                                 <div class="form-group py-2 req-input-2 position-relative isolation">
                                     <input type="text" name="street_address"
                                         class=" profile-form-input-custome profile-asterisk" placeholder="Street Address"
-                                        required minlength="5" maxlength="80" required>
+                                        required minlength="5" maxlength="120" required
+                                        value="{{ session()->has('store-form-error') && old('street_address') ? old('street_address') : null }}">
                                     <span class="new-asterisk  position-absolute" style="top:10px;left:120px">*</span>
 
                                     @if (session()->has('store-form-error') && $errors->has('street_address'))
-                                        <div id="street_address-error" class="text-primary">
+                                        <div id="street_address-error" class="text-danger">
                                             {{ $errors->first('street_address') }}</div>
                                     @endif
                                 </div>
@@ -260,25 +263,28 @@
                                 <div class="form-group py-2">
                                     <input type="text" name="city"
                                         class=" profile-form-input-custome profile-asterisk" placeholder="City"
-                                        minlength="3" maxlength="20" required>
+                                        minlength="3" maxlength="40" required
+                                        value="{{ session()->has('store-form-error') && old('city') ? old('city') : null }}">
                                     @if (session()->has('store-form-error') && $errors->has('city'))
-                                        <div id="city-error" class="text-primary">{{ $errors->first('city') }}</div>
+                                        <div id="city-error" class="text-danger">{{ $errors->first('city') }}</div>
                                     @endif
                                 </div>
 
                                 <div class="form-group py-2">
                                     {{-- <input type="text" name="state" class=" profile-form-input-custome"
                                         placeholder="State" minlength="3" maxlength="50" required> --}}
-                                    <select name="state" class=" profile-form-input-custome profile-asterisk">
+                                    <select name="state" class=" profile-form-input-custome profile-asterisk" required>
                                         <option value="">
                                             Select State
                                         </option>
                                         @foreach (App\Models\UserAddress::STATE as $state)
-                                            <option value="{{ $state }}">{{ $state }}</option>
+                                            <option value="{{ $state }}"
+                                                @if (session()->has('store-form-error') && old('state') == $state) {{ 'selected' }} @endif>
+                                                {{ $state }}</option>
                                         @endforeach
                                     </select>
                                     @if (session()->has('store-form-error') && $errors->has('state'))
-                                        <div id="state-error" class="text-primary">{{ $errors->first('state') }}</div>
+                                        <div id="state-error" class="text-danger">{{ $errors->first('state') }}</div>
                                     @endif
                                 </div>
 
@@ -293,17 +299,18 @@
                                         @endforeach --}}
                                     </select>
                                     @if (session()->has('store-form-error') && $errors->has('country'))
-                                        <div id="country-error" class="text-primary">{{ $errors->first('country') }}
+                                        <div id="country-error" class="text-danger">{{ $errors->first('country') }}
                                         </div>
                                     @endif
                                 </div>
                                 <div class="form-group  profile-form-group-star-pin-code py-2 position-relative isolation">
                                     <input type="text" name="postal_code"
                                         class="profile-form-input-custome profile-asterisk" placeholder="Pin Code"
-                                        minlength="3" maxlength="20" required>
+                                        minlength="6" maxlength="6" required
+                                        value="{{ session()->has('store-form-error') && old('postal_code') ? old('postal_code') : null }}">
                                     <span class="new-asterisk  position-absolute" style="top:10px;left:73px">*</span>
                                     @if (session()->has('store-form-error') && $errors->has('postal_code'))
-                                        <div id="postal_code-error" class="text-primary">
+                                        <div id="postal_code-error" class="text-danger">
                                             {{ $errors->first('postal_code') }}
                                         </div>
                                     @endif
@@ -362,7 +369,7 @@
                             <div class="form-group py-2 req-input-2">
                                 <input type="text" name="street_address" id="street_address"
                                     class=" profile-form-input-custome" placeholder="Street Address" required
-                                    minlength="5" maxlength="80" required>
+                                    minlength="5" maxlength="120" required>
                                 @if (session()->has('edit-form-error') && $errors->has('street_address'))
                                     <div id="street_address-error" class="text-danger text-start">
                                         {{ $errors->first('street_address') }}</div>
@@ -371,7 +378,7 @@
 
                             <div class="form-group py-2 col-md-6">
                                 <input type="text" name="city" id="city" class=" profile-form-input-custome"
-                                    placeholder="City" minlength="3" maxlength="20" required>
+                                    placeholder="City" minlength="3" maxlength="40" required>
                                 @if (session()->has('edit-form-error') && $errors->has('city'))
                                     <div id="city-error" class="text-danger text-start">{{ $errors->first('city') }}
                                     </div>
