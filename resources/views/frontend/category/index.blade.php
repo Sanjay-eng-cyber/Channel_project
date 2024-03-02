@@ -11,12 +11,12 @@
 
 
         <div class="container mb-5">
-            <div class="row mt-5">
+            <div class="row mt-0 mt-lg-5">
 
                 <div class="col-lg-5 col-xl-5 col-xxl-5">
                     <h2 class="main-head text-red">Best In {{ $category->name }} Products</h2>
                 </div>
-                <div class="col-lg-7 col-xl-3 col-xxl-4">
+                <div class="col-lg-7 col-xl-3 col-xxl-4 py-2 py-lg-0">
 
                 </div>
                 <div class="col-lg-12 col-xl-4 col-xxl-3">
