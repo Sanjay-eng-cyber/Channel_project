@@ -5,9 +5,10 @@ namespace App\Http\Controllers\cms;
 use App\Models\Order;
 use App\Models\Delivery;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use App\Http\Controllers\Controller;
 use Seshac\Shiprocket\Shiprocket;
+use Illuminate\Support\Facades\Log;
+use App\Events\OrderProcessingEvent;
+use App\Http\Controllers\Controller;
 
 class DeliveryController extends Controller
 {
@@ -71,7 +72,7 @@ class DeliveryController extends Controller
     {
         // return redirect()->back( toast( 'Work In Progress', 'info' ) );
 
-        $order = Order::whereStatus('completed')->with('items', 'deliveries')->findOrFail($order_id);
+        $order = Order::whereStatus('completed')->with('user', 'items', 'deliveries')->findOrFail($order_id);
         if ($order->deliveries->count()) {
             return redirect()->route('backend.order.show', $order_id)->with(toast('Delivery Already Created', 'info'));
         }
@@ -119,6 +120,8 @@ class DeliveryController extends Controller
             // 'partner_status_code' => isset( $shiprocketOrder[ 'response' ][ 'status_code' ] ) && $shiprocketOrder[ 'response' ][ 'status_code' ] ? $shiprocketOrder[ 'response' ][ 'status_code' ] : null,
             // 'partner_status' => isset( $shiprocketOrder[ 'response' ][ 'status_code' ] ) && isset( Order::API_STATUS[ $shiprocketOrder[ 'response' ][ 'status_code' ] ] ) ? Order::API_STATUS[ $shiprocketOrder[ 'response' ][ 'status_code' ] ] : null,
         ]);
+
+        event(new OrderProcessingEvent($order));
 
         return redirect()->route('backend.delivery.index')->with(toast($shiprocketOrder['message'], 'success'));
     }
@@ -175,20 +178,14 @@ class DeliveryController extends Controller
         // dd($shipment);
         if ($shipment && isset($shipment['data'])) {
             $partnerStatus = isset($shipment['data']['status']) ? Order::API_STATUS[$shipment['data']['status']] : null;
-            switch ($partnerStatus) {
-                case 'Delivered':
-                    $status = 'Delivered';
-                    break;
-                case 'In Transit':
-                    $status = 'Intransit';
-                    break;
-                case 'Cancelled':
-                    $status = 'Cancelled';
-                    break;
-                default:
-                    $status = 'Pending';
-                    break;
-            }
+
+            $statusMap = [
+                'Delivered' => 'Delivered',
+                'In Transit' => 'Intransit',
+                'Cancelled' => 'Cancelled',
+            ];
+            $status = $statusMap[$partnerStatus] ?? 'Pending';
+
             $delivery->update([
                 'awb_code' => isset($shipment['data']['awb']) ? $shipment['data']['awb'] : null,
                 'courier_name' => isset($shipment['data']['courier']) ? $shipment['data']['courier'] : null,

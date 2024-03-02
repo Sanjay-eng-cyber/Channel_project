@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Models\Order;
 use App\Models\Delivery;
 use Illuminate\Http\Request;
+use App\Events\OrderDeliveredEvent;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 
@@ -30,20 +31,12 @@ class ShipRocketWebhookController extends Controller
 
         $scansJson = json_encode($scans);
 
-        switch ($partnerStatus) {
-            case 'DELIVERED':
-                $status = 'Delivered';
-                break;
-            case 'In Transit':
-                $status = 'Intransit';
-                break;
-            case 'CANCELLED':
-                $status = 'Cancelled';
-                break;
-            default:
-                $status = 'Pending';
-                break;
-        }
+        $statusMap = [
+            'DELIVERED' => 'Delivered',
+            'In Transit' => 'Intransit',
+            'CANCELLED' => 'Cancelled',
+        ];
+        $status = $statusMap[$partnerStatus] ?? 'Pending';
 
         $deliveredDate = null;
         if ($partnerStatus === "DELIVERED") {
@@ -52,6 +45,11 @@ class ShipRocketWebhookController extends Controller
                     $deliveredDate = $scan['date'];
                     break;
                 }
+            }
+            $delivery = Delivery::where('partner_order_id', $orderId)->first();
+            if ($delivery) {
+                $order = Order::with('user')->find($delivery->order_id);
+                event(new OrderDeliveredEvent($order));
             }
         }
 

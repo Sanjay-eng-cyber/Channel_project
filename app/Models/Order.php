@@ -146,7 +146,7 @@ class Order extends Model
         Log::info($response);
         // dd($response);
         if ($response['status_code'] === 422) {
-            Log::info('Order Created Code 422');
+            Log::info('Order Create Code 422');
             // foreach ($response['errors'] as $key => $err) {
             //     $string = str_replace(['order_items', '.'], ['', ' '], $key);
             //     session()->flash('error', "{$string}: $err[0]");
