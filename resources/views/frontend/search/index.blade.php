@@ -9,7 +9,7 @@
 
     <section>
         <div class="container mb-5">
-            <div class="row mt-5">
+            <div class="row mt-0 mt-lg-5">
                 <div class="col-lg-5 col-xl-4 col-xxl-4">
                     <h2 class="main-head text-red">Search: {{ $search }}</h2>
                 </div>
