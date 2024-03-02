@@ -461,6 +461,25 @@
                 }
             });
         });
+
+        var bb = document.querySelectorAll('.new-asterisk');
+
+            if (document.getElementById('name-error') ||
+                document.getElementById('street_address-error') ||
+                document.getElementById('city-error') ||
+                document.getElementById('state-error') ||
+                document.getElementById('country-error') ||
+                document.getElementById('postal_code-error')) {
+                bb.forEach(function(element) {
+                    element.style.display = 'none';
+                });
+            }
+
+
+            
+
+            
+
     </script>
     <script>
         $(document).ready(function() {
