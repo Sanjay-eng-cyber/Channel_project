@@ -21,6 +21,8 @@ class OrderDeliveredListener implements ShouldQueue
         //
     }
 
+    public $delay = 120;
+
     /**
      * Handle the event.
      *

@@ -21,6 +21,8 @@ class OrderPlacedListener implements ShouldQueue
         //
     }
 
+    public $delay = 120;
+
     /**
      * Handle the event.
      *
