@@ -35,11 +35,11 @@ class OrderPlacedListener implements ShouldQueue
         $productsNameArray = $order->items()->with('product')->get()->pluck('product.name')->toArray();
         $productsName = implode(", ", $productsNameArray);
 
-        if ($order->user->email) {
-            Mail::to($order->user->email)->send(new OrderPlacedMail($order, $productsNameArray));
-        }
+        // if ($order->user->email) {
+        //     Mail::to($order->user->email)->send(new OrderPlacedMail($order, $productsNameArray));
+        // }
+        // dd($order->user->email);
 
-        // dd($order->user->phone);
         if (app()->env == 'production' && $order->user->phone) {
             $res = MSG91::sms([
                 "flow_id" => config('app.msg91_order_placed_flow_id'),

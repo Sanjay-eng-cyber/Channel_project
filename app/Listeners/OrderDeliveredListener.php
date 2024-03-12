@@ -35,9 +35,9 @@ class OrderDeliveredListener implements ShouldQueue
         $productsNameArray = $order->items()->with('product')->get()->pluck('product.name')->toArray();
         $productsName = implode(", ", $productsNameArray);
 
-        if ($order->user->email) {
-            Mail::to($order->user->email)->send(new OrderDeliveredMail($order, $productsNameArray));
-        }
+        // if ($order->user->email) {
+        //     Mail::to($order->user->email)->send(new OrderDeliveredMail($order, $productsNameArray));
+        // }
 
         if (app()->env == 'production' && $order->user->phone) {
             $res = MSG91::sms([
