@@ -448,7 +448,7 @@
                                             @if ($product->expiry)
                                                 <div class="data-propety-care-instruction pb-2">
                                                     <div class="fss-14 fw-500">Expiry Date</div>
-                                                    <div class="fss-14 fw-300">{{ dd_format($product->expiry, 'd-m-Y') }}</div>
+                                                    <div class="fss-14 fw-300">{{ $product->expiry, 'd-m-Y' }}</div>
 
                                                 </div>
                                             @endif
