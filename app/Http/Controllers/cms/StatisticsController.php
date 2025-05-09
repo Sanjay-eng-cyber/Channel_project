@@ -15,7 +15,7 @@ class StatisticsController extends Controller
 {
     public function index()
     {
-        $users = User::count();
+$users = User::count();
         $brand = Brand::count();
         $category = Category::count();
         $subCategory = SubCategory::count();
